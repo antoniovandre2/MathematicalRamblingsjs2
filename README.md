@@ -7,4 +7,4 @@ Blogger: "[https://mathematicalramblings.blogspot.com/](https://mathematicalramb
 
 Calculadoras: "[https://mathematicalramblings.blogspot.com/search/label/calculadoras](https://mathematicalramblings.blogspot.com/search/label/calculadoras)".
 
-GitHub page: "[https://antoniovandre.github.io/MathematicalRamblingsjs/](https://antoniovandre.github.io/MathematicalRamblingsjs/)".
+GitHub page: "[https://antoniovandre2.github.io/MathematicalRamblingsjs2/](https://antoniovandre.github.io/MathematicalRamblingsjs/)".
