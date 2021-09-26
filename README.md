@@ -12,10 +12,10 @@ README.md do MathematicalRamblingsjs2.
 
 <span style="font-family: 'Courier New';">
 Biblioteca de funções, procedimentos e constantes JavaScript do projeto Mathematical Ramblings.
-<br>
+<br><br>
 Blogger: "[https://mathematicalramblings.blogspot.com/](https://mathematicalramblings.blogspot.com/)".
-<br>
+<br><br>
 Calculadoras: "[https://mathematicalramblings.blogspot.com/search/label/calculadoras](https://mathematicalramblings.blogspot.com/search/label/calculadoras)".
-<br>
+<br><br>
 GitHub page: "[https://antoniovandre2.github.io/MathematicalRamblingsjs2/](https://antoniovandre2.github.io/MathematicalRamblingsjs2/)".
 </span>
