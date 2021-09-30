@@ -7987,8 +7987,6 @@ function antoniovandredistanciapontofuncao (arr)
 	if ((antoniovandrenumeroreal(inf.toString()) == "e") || (antoniovandrenumeroreal(sup.toString()) == "e") || (antoniovandrenumeronaturalpositivo(str[3]) == "e"))
 		return "e";
 	
-	str[3] = str[3].trim();
-
 	precisao = parseInt(str[3].trim());
 
 	for (var i = 0; i < listtam; i++)
