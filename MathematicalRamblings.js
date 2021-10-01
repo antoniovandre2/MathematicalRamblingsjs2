@@ -8166,7 +8166,7 @@ function antoniovandredistanciafuncaofuncao (arr)
 							return result1;
 
 						if (antoniovandrecompararstrings(typeof result2, "string") == 1)
-							return result1;
+							return result2;
 
 						return "e";
 						}
