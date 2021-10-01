@@ -8070,10 +8070,6 @@ function antoniovandredistanciafuncaofuncao (arr)
 	var listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
 	var funcao1;
 	var funcao2;
-	var abscissa1;
-	var ordenada1;
-	var abscissa2;
-	var ordenada2;
 	var precisao;
 	var distancia;
 	var distanciam = Number.MAX_VALUE;
