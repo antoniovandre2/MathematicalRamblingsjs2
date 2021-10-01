@@ -8067,6 +8067,7 @@ function antoniovandredistanciafuncaofuncao (arr)
 	var str = arr.split(";");
 	var strt;
 	var list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
+	var list2 = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
 	var listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
 	var funcao1;
 	var funcao2;
@@ -8116,6 +8117,9 @@ function antoniovandredistanciafuncaofuncao (arr)
 	for (var i = 0; i < listtam; i++)
 		list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
 
+	for (var i = 0; i < listtam; i++)
+		list2.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
+
 	for (var i = 0; i <= precisao; i++) for (var j = 0; j <= precisao; j++)
 		{
 		var expressao1;
@@ -8124,7 +8128,7 @@ function antoniovandredistanciafuncaofuncao (arr)
 		var result2;
 
 		expressao1 = antoniovandresubstituirstrings(funcao1, list);
-		expressao2 = antoniovandresubstituirstrings(funcao2, list);
+		expressao2 = antoniovandresubstituirstrings(funcao2, list2);
 
 		try
 			{
