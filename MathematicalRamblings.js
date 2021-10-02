@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 01-10-2021.
+// Última atualização: 02-10-2021.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js.
 
-function antoniovandremathematicalramblingsjsversao(){return "01-10-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "02-10-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -7906,7 +7906,7 @@ function antoniovandrepossiveisraizes(arr, retorno, avisoanexo)
 		}
 	}
 
-// Distância de um ponto a uma função. Argumentos: separados por ponto e vírgula ";", primeiro a função em "x", segundo o ponto onde a abscissa é separada da ordenada por vírgula ",", terceiro o intervalo de pesquisa separados por vírgula ",", e quarto um inteiro positivo como a resolução da varredura.
+// Distância de um ponto a uma função. Argumentos: separados por ponto e vírgula ";", primeiro a função em "x", segundo o ponto onde a abscissa é separada da ordenada por vírgula ",", terceiro o intervalo de pesquisa separados por vírgula ",", e quarto um inteiro positivo como a resolução da varredura. Retorna a string "e" caso um erro ocorra.
 
 function antoniovandredistanciapontofuncao (arr)
 	{
@@ -8060,7 +8060,7 @@ function antoniovandredistanciapontofuncao (arr)
 		return "Distância não encontrada.";
 	}
 
-// Distância de uma função a uma outra função. Argumentos: separados por ponto e vírgula ";", primeiro a função em "x", segundo a outra função em "x", terceiro o intervalo de pesquisa separado por vírgula ",", e quarto um inteiro positivo como a resolução da varredura.
+// Distância de uma função a uma outra função. Argumentos: separados por ponto e vírgula ";", primeiro a função em "x", segundo a outra função em "x", terceiro o intervalo de pesquisa separado por vírgula ",", e quarto um inteiro positivo como a resolução da varredura. Retorna a string "e" caso um erro ocorra.
 
 function antoniovandredistanciafuncaofuncao (arr)
 	{
@@ -8201,6 +8201,70 @@ function antoniovandredistanciafuncaofuncao (arr)
 		return distanciam
 	else
 		return "Distância não encontrada.";
+	}
+
+// Triângulos pitagóricos. Argumentos: primeiro global: em "a^2 = b^2 + c^2", primeiro: o intervalo de variação de "a", segundo: o intervalor de variação de "b", terceiro: o intervalo de variação de "c"; todos os argumentos inteiros; segundo global: a saída, "0" se matriz, ou "1" se string. Retorna a string "e" caso um erro ocorra.
+
+function antoniovandretriangulospitagoricos(arr, saida)
+	{
+	var str = arr.split(";");
+	var result = [];
+	var resultstr = "";
+	var flag = 0;
+
+	if (str.length != 3) return "e";
+
+	var stra = str[0].split(",");
+
+	if (stra.length != 2) return "e";
+	if (antoniovandrenumeronaturalpositivo(stra[0].trim()) == "e") return "e";
+	if (antoniovandrenumeronaturalpositivo(stra[1].trim()) == "e") return "e";
+	var a1 = parseInt(stra[0].trim());
+	var a2 = parseInt(stra[1].trim())
+	if (a1 >= a2) return "e";
+
+	var strb = str[1].split(",");
+
+	if (strb.length != 2) return "e";
+	if (antoniovandrenumeronaturalpositivo(strb[0].trim()) == "e") return "e";
+	if (antoniovandrenumeronaturalpositivo(strb[1].trim()) == "e") return "e";
+	var b1 = parseInt(strb[0].trim());
+	var b2 = parseInt(strb[1].trim());
+	if (b1 >= b2) return "e";
+
+	var strc = str[2].split(",");
+
+	if (strc.length != 2) return "e";
+	if (antoniovandrenumeronaturalpositivo(strc[0].trim()) == "e") return "e";
+	if (antoniovandrenumeronaturalpositivo(strc[1].trim()) == "e") return "e";
+	var c1 = parseInt(strc[0].trim());
+	var c2 = parseInt(strc[1].trim());
+	if (c1 >= c2) return "e";
+
+	for (var i = a1; i <= a2; i++) for (var j = b1; j <= b2; j++) for (var k = c1; k <= c2; k++)
+		if (i*i == j*j + k*k)
+			{
+			if (flag == 0)
+				resultstr = resultstr + "(" + i.toString() + ", " + j.toString() + ", " + k.toString() + ")"
+			else
+				resultstr = resultstr + "\n(" + i.toString() + ", " + j.toString() + ", " + k.toString() + ")";
+
+			result.push([i, j, k]);
+
+			flag = 1;
+			}
+
+	switch (saida)
+		{
+		case 0:
+			return result;
+			break;
+		case 1:
+			return resultstr;
+			break;
+		default:
+			return "e";
+		}
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
