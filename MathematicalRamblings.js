@@ -8362,13 +8362,13 @@ function antoniovandretermospa(arr)
 
 	if (termosexibir1 >= termosexibir2) return "O intervalo de termos a exibir deve ser crescente.";
 
-	razao = (termo2n - termo1n) / (termo2p - termo1p);
+	razao = antoniovandreformatarreal((termo2n - termo1n) / (termo2p - termo1p));
 
 	if (razao > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(5);
 
 	for (var i = termosexibir1; i <= termosexibir2; i++)
 		{
-		resulttemp = termo1n + (i - termo1p) * razao;
+		resulttemp = antoniovandreformatarreal(termo1n + (i - termo1p) * razao);
 
 		if (resulttemp > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(6);
 
