@@ -8571,9 +8571,9 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 				if ((result == 0) && (valor == 0) && (flag3 == 0))
 					{
 					if (flag != 0)
-						outputstr = outputstr + "," + result.toString() + ",";
+						outputstr = outputstr + "," + (inf + (sup - inf) * ((i - 1) / precisao)).toString() + ",";
 
-					outputstr = outputstr + result.toString();
+					outputstr = outputstr + (inf + (sup - inf) * ((i - 1) / precisao)).toString();
 
 					flag = 2;
 					flag3 = 1;
