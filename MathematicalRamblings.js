@@ -8459,6 +8459,7 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 	var outputstr = "";
 	var flag = 0;
 	var flag2 = 0;
+	var flag3 = 0;
 
 	if (avisoanexo == -1) return antoniovandreoperadoresfuncoesconstantes(1);
 
@@ -8556,19 +8557,25 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 						{
 						outputstr = outputstr + "+";
 						flag = 1;
+						flag3 = 0;
 						}
 
 					if (result < 0)
 						{
 						outputstr = outputstr + "-";
 						flag = -1;
+						flag3 = 0;
 						}
+					}
 
-					if (result == 0)
-						{
-						outputstr = outputstr + "," + (inf + (sup - inf) * (i / precisao)).toString() + ",";
-						flag = -1;
-						}
+				if ((result == 0) && (flag3 == 0))
+					{
+					if (flag != 0)
+						outputstr = outputstr + "," + result.toString() + ",";
+
+					outputstr = outputstr + result.toString() + ",";
+
+					flag3 = 1;
 					}
 
 				if ((result <= 0) && (valor > 0) && (flag2 == 1))
@@ -8580,6 +8587,7 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 					outputstr = outputstr + ",-";
 
 					flag = -1;
+					flag3 = 0;
 					}
 
 				if ((result >= 0) && (valor < 0) && (flag2 == 1))
@@ -8591,6 +8599,7 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 					outputstr = outputstr + ",+";
 
 					flag = 1;
+					flag3 = 0;
 					}
 
 				valor = result;
