@@ -8445,6 +8445,178 @@ function antoniovandretermospg(arr, avisoanexo)
 	return resultstr;
 	}
 
+// Estudo do sinal de uma função. Argumentos: primeiro: uma string separada em três partes por ponto e vírgula ";", a primeira com uma função em "x", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira a precisão, um inteiro positivo, de busca; segundo: -1 para exibir o aviso anexo.
+
+function antoniovandreestudosinalfuncao(arr, avisoanexo)
+	{
+	var str = arr.split(";");
+	var funcao;
+	var strt;
+	var precisao;
+	var list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
+	var listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
+	var valor;
+	var outputstr = "";
+	var flag = 0;
+	var flag2 = 0;
+
+	if (avisoanexo == -1) return antoniovandreoperadoresfuncoesconstantes(1);
+
+	if (str.length != 3) return "e";
+
+	funcao = str[0].trim();
+
+	if (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(funcao, antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(funcao, antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e")
+		return "e";
+
+	strt = str[1].split(",");
+
+	if (strt.length != 2) return "e";
+
+	strt[0] = strt[0].trim();
+	strt[1] = strt[1].trim();
+
+	try
+		{
+		inf = eval(antoniovandretraduzirexpressaofuncional(strt[0], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	try
+		{
+		sup = eval(antoniovandretraduzirexpressaofuncional(strt[1], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	str[2] = str[2].trim();
+
+	if ((antoniovandrenumeroreal(inf.toString()) == "e") || (antoniovandrenumeroreal(sup.toString()) == "e") || (antoniovandrenumeronaturalpositivo(str[2]) == "e"))
+		return "e";
+
+	precisao = parseInt(str[2]);
+
+	if (inf >= sup) return "e";
+
+	for (var i = 0; i < listtam; i++)
+		list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
+
+	for (var i = 0; i <= precisao; i ++)
+		{
+		var expressao;
+		var result;
+
+		expressao = antoniovandresubstituirstrings(funcao, list);
+
+		try
+			{
+			result = eval(antoniovandresubstituirstrings(expressao, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + (inf + (sup - inf) * (i / precisao)).toString() + ")"]]));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+		if (antoniovandrenumeroreal(result.toString()) == "e")
+			{
+			if ((antoniovandrecompararstrings(result, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(result, antoniovandremensagenserro(6)) == 1))
+				return antoniovandremensagenserro(6)
+			else
+				{
+				if ((antoniovandrecompararstrings(result, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(result, antoniovandremensagenserro(4)) == 1))
+					return antoniovandremensagenserro(4)
+				else
+					{
+					if ((antoniovandrecompararstrings(result, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(result, antoniovandremensagenserro(2)) == 1))
+						return antoniovandremensagenserro(2)
+					else
+						{
+						if (antoniovandrecompararstrings(typeof result, "string") == "e")
+							return "e"
+						else
+							return result;
+						}
+					}
+				}
+			}
+		else
+			{
+			if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+				return antoniovandremensagenserro(6)
+			else
+				{
+				if (flag2 == 0)
+					{
+					if (result > 0)
+						{
+						outputstr = outputstr + "+";
+						flag = 1;
+						}
+
+					if (result < 0)
+						{
+						outputstr = outputstr + "-";
+						flag = -1;
+						}
+
+					if (result == 0)
+						{
+						outputstr = outputstr + "," + (inf + (sup - inf) * (i / precisao)).toString() + ",";
+						flag = -1;
+						}
+					}
+
+				if ((result <= 0) && (valor > 0) && (flag2 == 1))
+					{
+					if (flag != 0)
+						outputstr = outputstr + ",";
+
+					outputstr = outputstr + (((inf + (sup - inf) * ((i - 1) / precisao)) + inf + (sup - inf) * (i / precisao)) / 2).toString();
+					outputstr = outputstr + ",-";
+
+					flag = -1;
+					}
+
+				if ((result >= 0) && (valor < 0) && (flag2 == 1))
+					{
+					if (flag != 0)
+						outputstr = outputstr + ",";
+
+					outputstr = outputstr + (((inf + (sup - inf) * ((i - 1) / precisao)) + inf + (sup - inf) * (i / precisao)) / 2).toString();
+					outputstr = outputstr + ",+";
+
+					flag = 1;
+					}
+
+				valor = result;
+				flag2 = 1;
+				}
+			}
+		}
+
+	if (valor > 0) {flag = 1;} else {if (valor < 0) flag = -1;}
+
+	if (antoniovandrecompararstrings(outputstr, "") == 1)
+		switch (flag)
+			{
+			case 1:
+				return "+";
+				break;
+			case -1:
+				return "-";
+				break;
+			default:
+				return "Não foi possível fazer o estudo do sinal da função.";
+			}
+	else
+		return outputstr;
+	}
+
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
 // Início escopos desenvolvidos por terceiros.
