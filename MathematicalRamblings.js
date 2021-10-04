@@ -8568,18 +8568,18 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 						}
 					}
 
-				if ((result == 0) && (flag3 == 0))
+				if ((result == 0) && (valor == 0) && (flag3 == 0))
 					{
 					if (flag != 0)
 						outputstr = outputstr + "," + result.toString() + ",";
 
 					outputstr = outputstr + result.toString();
 
-					flag = 1;
+					flag = 2;
 					flag3 = 1;
 					}
 
-				if ((result < 0) && (valor > 0) && (flag2 == 1))
+				if ((result <= 0) && (valor > 0) && (flag2 == 1))
 					{
 					if (flag != 0)
 						outputstr = outputstr + ",";
@@ -8591,7 +8591,7 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 					flag3 = 0;
 					}
 
-				if ((result > 0) && (valor < 0) && (flag2 == 1))
+				if ((result >= 0) && (valor < 0) && (flag2 == 1))
 					{
 					if (flag != 0)
 						outputstr = outputstr + ",";
