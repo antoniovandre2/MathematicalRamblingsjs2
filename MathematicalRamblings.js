@@ -8385,7 +8385,7 @@ function antoniovandretermospa(arr)
 
 // Termos de uma PG. Argumento: uma string separada por ponto e vírgula ";" com, primeiro: um termo e sua posição, segundo: outro termo com sua posição, terceiro: o intervalo de termos a exibir. Termo e posição separados por vírgula ",", intervalo de termos a exibir separado por vírgula ",". Retorna a string "e" caso um erro genérico ocorra.
 
-function antoniovandretermospg(arr)
+function antoniovandretermospg(arr, avisoanexo)
 	{
 	var str = arr.split(";");
 	var termo1;
@@ -8400,6 +8400,8 @@ function antoniovandretermospg(arr)
 	var razao;
 	var resulttemp;
 	var resultstr = "";
+
+	if (avisoanexo == 1) return "Nos cálculos utiliza-se uma função de potência definida por Fórmula de Taylor, o que pode retornar valores inexatos ou até erros, pois é definida com um número limitado de \"a\'s\" e de derivadas. Gradualmente vou acrescentando mais \"a\'s\" e derivadas afim de que seja mais precisa.";
 
 	if (str.length != 3) return "e";
 
