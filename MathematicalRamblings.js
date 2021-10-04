@@ -8599,20 +8599,8 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 			}
 		}
 
-	if (valor > 0) {flag = 1;} else {if (valor < 0) flag = -1;}
-
 	if (antoniovandrecompararstrings(outputstr, "") == 1)
-		switch (flag)
-			{
-			case 1:
-				return "+";
-				break;
-			case -1:
-				return "-";
-				break;
-			default:
-				return "Não foi possível fazer o estudo do sinal da função.";
-			}
+		return "e";
 	else
 		return outputstr;
 	}
