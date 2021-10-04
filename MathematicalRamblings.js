@@ -8363,6 +8363,7 @@ function antoniovandretermospa(arr)
 	if (termosexibir1 >= termosexibir2) return "O intervalo de termos a exibir deve ser crescente.";
 
 	razao = antoniovandreformatarreal((termo2n - termo1n) / (termo2p - termo1p));
+	if (termo1p == termo2p) return "Especifique posições distintas.";
 
 	if (razao > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(5);
 
@@ -8420,6 +8421,7 @@ function antoniovandretermospg(arr)
 	if ((termo1n > parseFloat(antoniovandremaximovalorentrada(1))) || (termo1p > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2n > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2p > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir1 > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir2 > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
 
 	if (termosexibir1 >= termosexibir2) return "O intervalo de termos a exibir deve ser crescente.";
+	if (termo1p == termo2p) return "Especifique posições distintas.";
 
 	razao = antoniovandrepotencia (termo2n / termo1n, 1 / (termo2p - termo1p));
 
