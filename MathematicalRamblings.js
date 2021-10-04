@@ -8579,7 +8579,7 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 					flag3 = 1;
 					}
 
-				if ((result <= 0) && (valor > 0) && (flag2 == 1))
+				if ((result < 0) && (valor > 0) && (flag2 == 1))
 					{
 					if (flag != 0)
 						outputstr = outputstr + ",";
@@ -8591,7 +8591,7 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 					flag3 = 0;
 					}
 
-				if ((result >= 0) && (valor < 0) && (flag2 == 1))
+				if ((result > 0) && (valor < 0) && (flag2 == 1))
 					{
 					if (flag != 0)
 						outputstr = outputstr + ",";
