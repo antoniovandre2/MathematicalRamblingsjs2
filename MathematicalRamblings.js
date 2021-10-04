@@ -7989,6 +7989,9 @@ function antoniovandredistanciapontofuncao (arr)
 	
 	precisao = parseInt(str[3].trim());
 
+	if ((inf > parseFloat(antoniovandremaximovalorentrada(1))) || (sup > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
+		return antoniovandremensagenserro(2);
+
 	for (var i = 0; i < listtam; i++)
 		list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
 
@@ -8044,6 +8047,9 @@ function antoniovandredistanciapontofuncao (arr)
 					{
 					return "e";
 					}
+
+				if (distancia > parseFloat(antoniovandremaximovalorsaida(1)))
+					return antoniovandremensagenserro(6);
 
 				if (distancia < distanciam)
 					{
@@ -8111,8 +8117,11 @@ function antoniovandredistanciafuncaofuncao (arr)
 	
 	if ((antoniovandrenumeroreal(inf.toString()) == "e") || (antoniovandrenumeroreal(sup.toString()) == "e") || (antoniovandrenumeronaturalpositivo(str[3]) == "e"))
 		return "e";
-	
+
 	precisao = parseInt(str[3].trim());
+
+	if ((inf > parseFloat(antoniovandremaximovalorentrada(1))) || (sup > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
+		return antoniovandremensagenserro(2);
 
 	for (var i = 0; i < listtam; i++)
 		list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
@@ -8188,6 +8197,9 @@ function antoniovandredistanciafuncaofuncao (arr)
 					return "e";
 					}
 
+				if (distancia > parseFloat(antoniovandremaximovalorsaida(1)))
+					return antoniovandremensagenserro(6);
+
 				if (distancia < distanciam)
 					{
 					distanciam = distancia;
@@ -8221,7 +8233,6 @@ function antoniovandretriangulospitagoricos(arr, saida)
 	if (antoniovandrenumeronaturalpositivo(stra[1].trim()) == "e") return "e";
 	var a1 = parseInt(stra[0].trim());
 	var a2 = parseInt(stra[1].trim())
-	if (a1 >= a2) return "e";
 
 	var strb = str[1].split(",");
 
@@ -8230,7 +8241,6 @@ function antoniovandretriangulospitagoricos(arr, saida)
 	if (antoniovandrenumeronaturalpositivo(strb[1].trim()) == "e") return "e";
 	var b1 = parseInt(strb[0].trim());
 	var b2 = parseInt(strb[1].trim());
-	if (b1 >= b2) return "e";
 
 	var strc = str[2].split(",");
 
@@ -8239,7 +8249,10 @@ function antoniovandretriangulospitagoricos(arr, saida)
 	if (antoniovandrenumeronaturalpositivo(strc[1].trim()) == "e") return "e";
 	var c1 = parseInt(strc[0].trim());
 	var c2 = parseInt(strc[1].trim());
-	if (c1 >= c2) return "e";
+
+	if ((a1 > parseFloat(antoniovandremaximovalorentrada(1))) || (a2 > parseFloat(antoniovandremaximovalorentrada(1))) || (b1 > parseFloat(antoniovandremaximovalorentrada(1))) || (b2 > parseFloat(antoniovandremaximovalorentrada(1))) || (c1 > parseFloat(antoniovandremaximovalorentrada(1))) || (c2 > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
+
+	if ((a1 >= a2) || (b1 >= b2) || (c1 >= c2)) return "e";
 
 	for (var i = a1; i <= a2; i++) for (var j = b1; j <= b2; j++) for (var k = c1; k <= c2; k++)
 		if (i*i == j*j + k*k)
@@ -8286,10 +8299,14 @@ function antoniovandreareatriangulolados(arr, saida)
 	b = parseFloat(str[1].trim());
 	c = parseFloat(str[2].trim());
 
+	if ((a > parseFloat(antoniovandremaximovalorentrada(1))) || (b > parseFloat(antoniovandremaximovalorentrada(1))) || (c > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
+
 	if ((a <= Math.abs(b - c)) || (b <= Math.abs(a - c)) || (c <= Math.abs(a - b)) || (a >= b + c) || (b >= a + c) || (c >= a + b)) return "Os lados não são de um triângulo.";
 
 	p = (a + b + c) / 2;
-	result = antoniovandrepotencia(p * (p - a) * (p - b) * (p - c), 0.5)
+	result = antoniovandrepotencia(p * (p - a) * (p - b) * (p - c), 0.5);
+
+	if (result > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(5);
 
 	switch (saida)
 		{
