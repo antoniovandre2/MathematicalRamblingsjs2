@@ -8267,6 +8267,8 @@ function antoniovandretriangulospitagoricos(arr, saida)
 			flag = 1;
 			}
 
+	if (antoniovandrecompararstrings(resultstr, "") == 1) return "Não foram encontrados triângulos pitagóricos nos invervalos.";
+
 	switch (saida)
 		{
 		case 0:
@@ -8285,7 +8287,7 @@ function antoniovandretriangulospitagoricos(arr, saida)
 function antoniovandreareatriangulolados(arr, saida)
 	{
 	var str = arr.split(",");
-	var result = [];
+	var result;
 	var a;
 	var b;
 	var c;
@@ -8314,7 +8316,7 @@ function antoniovandreareatriangulolados(arr, saida)
 			return result;
 			break;
 		case 1:
-			return result.toStri();
+			return result.toString();
 			break;
 		default:
 			return "e";
@@ -8358,7 +8360,7 @@ function antoniovandretermospa(arr)
 	termosexibir1 = parseInt(termosexibir[0].trim());
 	termosexibir2 = parseInt(termosexibir[1].trim());
 
-	if ((termo1n > parseFloat(antoniovandremaximovalorentrada(1))) || (termo1p > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2n > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2p > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir1 > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir2 > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
+	if ((Math.abs(termo1n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo1p > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(termo2n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2p > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir1 > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir2 > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
 
 	if (termosexibir1 >= termosexibir2) return "O intervalo de termos a exibir deve ser crescente.";
 
@@ -8418,7 +8420,7 @@ function antoniovandretermospg(arr)
 	termosexibir1 = parseInt(termosexibir[0].trim());
 	termosexibir2 = parseInt(termosexibir[1].trim());
 
-	if ((termo1n > parseFloat(antoniovandremaximovalorentrada(1))) || (termo1p > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2n > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2p > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir1 > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir2 > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
+	if ((Math.abs(termo1n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo1p > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(termo2n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2p > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir1 > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir2 > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
 
 	if (termosexibir1 >= termosexibir2) return "O intervalo de termos a exibir deve ser crescente.";
 	if (termo1p == termo2p) return "Especifique posições distintas.";
