@@ -8573,8 +8573,9 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 					if (flag != 0)
 						outputstr = outputstr + "," + result.toString() + ",";
 
-					outputstr = outputstr + result.toString() + ",";
+					outputstr = outputstr + result.toString();
 
+					flag = 1;
 					flag3 = 1;
 					}
 
