@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 03-10-2021.
+// Última atualização: 04-10-2021.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js.
 
-function antoniovandremathematicalramblingsjsversao(){return "03-10-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "04-10-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -7989,7 +7989,7 @@ function antoniovandredistanciapontofuncao (arr)
 	
 	precisao = parseInt(str[3].trim());
 
-	if ((inf > parseFloat(antoniovandremaximovalorentrada(1))) || (sup > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
+	if ((Math.abs(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(inf) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(sup) > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
 		return antoniovandremensagenserro(2);
 
 	for (var i = 0; i < listtam; i++)
@@ -8120,7 +8120,7 @@ function antoniovandredistanciafuncaofuncao (arr)
 
 	precisao = parseInt(str[3].trim());
 
-	if ((inf > parseFloat(antoniovandremaximovalorentrada(1))) || (sup > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
+	if ((Math.abs(inf) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(sup) > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
 		return antoniovandremensagenserro(2);
 
 	for (var i = 0; i < listtam; i++)
@@ -8319,6 +8319,124 @@ function antoniovandreareatriangulolados(arr, saida)
 		default:
 			return "e";
 		}
+	}
+
+// Termos de uma PA. Argumento: uma string separada por ponto e vírgula ";" com, primeiro: um termo e sua posição, segundo: outro termo com sua posição, terceiro: o intervalo de termos a exibir. Termo e posição separados por vírgula ",", intervalo de termos a exibir separado por vírgula ",". Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandretermospa(arr)
+	{
+	var str = arr.split(";");
+	var termo1;
+	var termo2;
+	var termosexibir;
+	var termo1n;
+	var termo1p;
+	var termo2n;
+	var termo2p;
+	var termosexibir1;
+	var termosexibir2;
+	var razao;
+	var resulttemp;
+	var resultstr = "";
+
+	if (str.length != 3) return "e";
+
+	termo1 = str[0].split(",");
+	termo2 = str[1].split(",");
+	termosexibir = str[2].split(",");
+
+	if (termo1.length != 2) return "e";
+	if (termo2.length != 2) return "e";
+	if (termosexibir.length != 2) return "e";
+
+	if ((antoniovandrenumeroreal(termo1[0].trim()) == "e") || (antoniovandrenumeroreal(termo2[0].trim()) == "e") || (antoniovandrenumeronaturalpositivo(termo1[1].trim()) == "e") || (antoniovandrenumeronaturalpositivo(termo2[1].trim()) == "e") || (antoniovandrenumeronaturalpositivo(termosexibir[0].trim()) == "e") || (antoniovandrenumeronaturalpositivo(termosexibir[1].trim()) == "e")) return "e";
+
+	termo1n = parseFloat(termo1[0].trim());
+	termo1p = parseInt(termo1[1].trim());
+	termo2n = parseFloat(termo2[0].trim());
+	termo2p = parseInt(termo2[1].trim());
+	termosexibir1 = parseInt(termosexibir[0].trim());
+	termosexibir2 = parseInt(termosexibir[1].trim());
+
+	if ((termo1n > parseFloat(antoniovandremaximovalorentrada(1))) || (termo1p > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2n > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2p > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir1 > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir2 > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
+
+	if (termosexibir1 >= termosexibir2) return "O intervalo de termos a exibir deve ser crescente.";
+
+	razao = (termo2n - termo1n) / (termo2p - termo1p);
+
+	if (razao > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(5);
+
+	for (var i = termosexibir1; i <= termosexibir2; i++)
+		{
+		resulttemp = termo1n + (i - termo1p) * razao;
+
+		if (resulttemp > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(6);
+
+		resultstr = resultstr + resulttemp.toString();
+
+		if (i < termosexibir2) resultstr = resultstr + ", ";
+		}
+
+	return resultstr;
+	}
+
+// Termos de uma PG. Argumento: uma string separada por ponto e vírgula ";" com, primeiro: um termo e sua posição, segundo: outro termo com sua posição, terceiro: o intervalo de termos a exibir. Termo e posição separados por vírgula ",", intervalo de termos a exibir separado por vírgula ",". Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandretermospg(arr)
+	{
+	var str = arr.split(";");
+	var termo1;
+	var termo2;
+	var termosexibir;
+	var termo1n;
+	var termo1p;
+	var termo2n;
+	var termo2p;
+	var termosexibir1;
+	var termosexibir2;
+	var razao;
+	var resulttemp;
+	var resultstr = "";
+
+	if (str.length != 3) return "e";
+
+	termo1 = str[0].split(",");
+	termo2 = str[1].split(",");
+	termosexibir = str[2].split(",");
+
+	if (termo1.length != 2) return "e";
+	if (termo2.length != 2) return "e";
+	if (termosexibir.length != 2) return "e";
+
+	if ((antoniovandrenumeroreal(termo1[0].trim()) == "e") || (antoniovandrenumeroreal(termo2[0].trim()) == "e") || (antoniovandrenumeronaturalpositivo(termo1[1].trim()) == "e") || (antoniovandrenumeronaturalpositivo(termo2[1].trim()) == "e") || (antoniovandrenumeronaturalpositivo(termosexibir[0].trim()) == "e") || (antoniovandrenumeronaturalpositivo(termosexibir[1].trim()) == "e")) return "e";
+
+	termo1n = parseFloat(termo1[0].trim());
+	termo1p = parseInt(termo1[1].trim());
+	termo2n = parseFloat(termo2[0].trim());
+	termo2p = parseInt(termo2[1].trim());
+	termosexibir1 = parseInt(termosexibir[0].trim());
+	termosexibir2 = parseInt(termosexibir[1].trim());
+
+	if ((termo1n > parseFloat(antoniovandremaximovalorentrada(1))) || (termo1p > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2n > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2p > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir1 > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir2 > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
+
+	if (termosexibir1 >= termosexibir2) return "O intervalo de termos a exibir deve ser crescente.";
+
+	razao = antoniovandrepotencia (termo2n / termo1n, 1 / (termo2p - termo1p));
+
+	if (razao > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(5);
+
+	for (var i = termosexibir1; i <= termosexibir2; i++)
+		{
+		resulttemp = termo1n * antoniovandrepotencia(razao, i - termo1p);
+
+		if (resulttemp > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(6);
+
+		resultstr = resultstr + resulttemp.toString();
+
+		if (i < termosexibir2) resultstr = resultstr + ", ";
+		}
+
+	return resultstr;
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
