@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 02-10-2021.
+// Última atualização: 03-10-2021.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js.
 
-function antoniovandremathematicalramblingsjsversao(){return "02-10-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "03-10-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -8261,6 +8261,43 @@ function antoniovandretriangulospitagoricos(arr, saida)
 			break;
 		case 1:
 			return resultstr;
+			break;
+		default:
+			return "e";
+		}
+	}
+
+// Área de um triângulo dados os lados. Argumentos globais: primeiro uma string separada por vírgula "," com os lados; segundo: 0 para saída numérica, ou 1 para saída string. Retorna a string "e" caso um erro ocorra.
+
+function antoniovandreareatriangulolados(arr, saida)
+	{
+	var str = arr.split(",");
+	var result = [];
+	var a;
+	var b;
+	var c;
+	var p;
+
+	if (str.length != 3) return "e";
+
+	if ((antoniovandrenumerorealpositivo(str[0].trim()) == "e") || (antoniovandrenumerorealpositivo(str[1].trim()) == "e") || (antoniovandrenumerorealpositivo(str[2].trim()) == "e")) return "e";
+
+	a = parseFloat(str[0].trim());
+	b = parseFloat(str[1].trim());
+	c = parseFloat(str[2].trim());
+
+	if ((a <= Math.abs(b - c)) || (b <= Math.abs(a - c)) || (c <= Math.abs(a - b)) || (a >= b + c) || (b >= a + c) || (c >= a + b)) return "Os lados não são de um triângulo.";
+
+	p = (a + b + c) / 2;
+	result = antoniovandrepotencia(p * (p - a) * (p - b) * (p - c), 0.5)
+
+	switch (saida)
+		{
+		case 0:
+			return result;
+			break;
+		case 1:
+			return result.toStri();
 			break;
 		default:
 			return "e";
