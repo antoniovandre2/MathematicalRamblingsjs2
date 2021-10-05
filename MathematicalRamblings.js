@@ -8446,7 +8446,7 @@ function antoniovandretermospa(arr)
 	return resultstr;
 	}
 
-// Termos de uma PG. Argumento: uma string separada por ponto e vírgula ";" com, primeiro: um termo e sua posição, segundo: outro termo com sua posição, terceiro: o intervalo de termos a exibir. Termo e posição separados por vírgula ",", intervalo de termos a exibir separado por vírgula ",". Retorna a string "e" caso um erro genérico ocorra.
+// Termos de uma PG. Argumento: uma string separada por ponto e vírgula ";" com, primeiro: um termo e sua posição, segundo: outro termo com sua posição, terceiro: o intervalo de termos a exibir. Termo e posição separados por vírgula ",", termos não nulos, intervalo de termos a exibir separado por vírgula ",". Retorna a string "e" caso um erro genérico ocorra.
 
 function antoniovandretermospg(arr, avisoanexo)
 	{
@@ -8485,6 +8485,8 @@ function antoniovandretermospg(arr, avisoanexo)
 	termo2p = parseInt(termo2[1].trim());
 	termosexibir1 = parseInt(termosexibir[0].trim());
 	termosexibir2 = parseInt(termosexibir[1].trim());
+
+	if ((termo1n == 0) || (termo2n == 0)) return "e";
 
 	if ((Math.abs(termo1n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo1p > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(termo2n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2p > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir1 > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir2 > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
 
