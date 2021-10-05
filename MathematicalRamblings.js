@@ -8512,6 +8512,8 @@ function antoniovandretermospg(arr, avisoanexo)
 
 	if (razao > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(5);
 
+	razao = antoniovandreformatarreal(razao);
+
 	if (flag == 1) razao *= -1;
 
 	for (var i = termosexibir1; i <= termosexibir2; i++)
