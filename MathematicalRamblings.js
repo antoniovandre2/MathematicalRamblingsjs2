@@ -8505,7 +8505,7 @@ function antoniovandretermospg(arr, avisoanexo)
 		for (var i = 1; i <= Math.abs(termo2p - termo1p); i++)
 			resulttemp *= razao;
 
-		} while (Math.abs(resulttemp) - Math.abs(termo2n / termo1n) < antoniovandreprecisaoreal(8));
+		} while (Math.abs(resulttemp - termo2n / termo1n) < antoniovandreprecisaoreal(8));
 
 	if (razao > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(5);
 
