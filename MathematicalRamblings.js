@@ -8460,6 +8460,7 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 	var flag = 0;
 	var flag2 = 0;
 	var flag3 = 0;
+	var flag4 = 0;
 
 	if (avisoanexo == -1) return antoniovandreoperadoresfuncoesconstantes(1);
 
@@ -8611,9 +8612,15 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 
 				valor = result;
 				flag2 = 1;
+
+				if (i == precisao)
+					flag4 = 1;
 				}
 			}
 		}
+
+	if ((flag3 == 1) && (flag4 == 1))
+		outputstr = outputstr + ",zero";
 
 	if (antoniovandrecompararstrings(outputstr, "") == 1)
 		return "e";
