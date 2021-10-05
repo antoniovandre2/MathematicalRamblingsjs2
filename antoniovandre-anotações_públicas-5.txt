@@ -3,6 +3,114 @@ Proprietário: Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_leg
 Arquivo de anotações públicas #5.
 ____________________
 
+05-10-2021
+__
+
+Uma ajuda voluntária em um serviço é uma caridade pontual, que ajuda apenas naquele momento, mas, escrevendo e programando, os resultados dos trabalhos ficam lá armazenados, ajudando várias vezes a todos os que consultarem.
+_____
+
+05-10-2021
+__
+
+Organizando o restante da vida também como uma extensão de organizar os softwares.
+_____
+
+05-10-2021
+__
+
+Eu uso muito o Dropbox, traquilamente pagaria mensalmente pela assinatura professional, mas não cabe em meu orçamento.
+_____
+
+05-10-2021
+__
+
+Softwares matemáticos ao menos quanto a temas elementares; quanto a temas da Matemática Superior, opcionais, pois não são tão familiares ao público em geral.
+_____
+
+05-10-2021
+__
+
+Atribuindo valores a constantes de acordo com a balança "precisão / rapidez".
+_____
+
+05-10-2021
+__
+
+Como minha atual função potência ainda é demasiadamente imprecisa, para extrair uma raiz com radical inteiro, quando precisão é necessária, faço-o através de um loop de tentativa e erro; se o resultado das multiplicações for suficientemente próximo do radicando, é o valor desejado.
+_____
+
+05-10-2021
+__
+
+Se desejar ajudar, não vai faltar trabalho...
+_____
+
+05-10-2021
+__
+
+Tenho coisas que o Wolfram Alpha não tem, então envio a eles os fontes para criarem algo semelhante, se desejarem.
+_____
+
+05-10-2021
+__
+
+Uma condição necessária para que uma função seja diferenciável em um intervalo é que seja contínua; mas para ser integrável, basta que seja descontínua em um número finito de pontos do intervalo.
+_____
+
+05-10-2021
+__
+
+Mesmo não contínuas, ontem adicionei mais duas funções: "piso" e "teto".
+_____
+
+05-10-2021
+__
+
+Dormir pensando no que vou programar amanhã...
+_____
+
+05-10-2021
+__
+
+Muitos commits hoje.
+_____
+
+04-10-2021
+__
+
+Programando apressadamente porque, imprevisivelmente, posso passar um tempo sem acesso a computadores e internet, e não quero ficar angustiado pensando em um erro que deve ser corrigido ou em uma ideia que não foi implementada.
+_____
+
+04-10-2021
+__
+
+Hoje fiz mais 3 calculadoras, e já tenho ideia para outra, mas esperando tomar um fôlego antes.
+_____
+
+04-10-2021
+__
+
+É bom ter algoritmos diferentes para a mesma coisa, enriquece a biblioteca.
+_____
+
+03-10-2021
+__
+
+O mundo lá fora correndo, e eu mergulhado no livro...
+_____
+
+03-10-2021
+__
+
+Humildade e paz...
+_____
+
+03-10-2021
+__
+
+Um cochilinho é revigorante.
+_____
+
 03-10-2021
 __
 
