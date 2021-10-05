@@ -8522,12 +8522,16 @@ function antoniovandretermospg(arr, avisoanexo)
 
 		if (flag2 == 0)
 			{
+			for (var j = i; j < termo1p; j++) resulttemp = resulttemp / razao;
+
 			for (var j = 1; j <= i - termo1p; j++) resulttemp = resulttemp * razao;
 
 			resulttemp *= termo1n;
 			}
 		else
 			{
+			for (var j = i; j < termo2p; j++) resulttemp = resulttemp / razao;
+
 			for (var j = 1; j <= i - termo2p; j++) resulttemp = resulttemp * razao;
 
 			resulttemp *= termo2n;
