@@ -8622,7 +8622,7 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 				if ((result == 0) && (valor == 0) && (flag3 == 0))
 					{
 					if (flag != 0)
-						outputstr = outputstr + "," + (inf + (sup - inf) * ((i - 1) / precisao)).toString() + ",";
+						outputstr = outputstr + ",";
 
 					outputstr = outputstr + (inf + (sup - inf) * ((i - 1) / precisao)).toString();
 
