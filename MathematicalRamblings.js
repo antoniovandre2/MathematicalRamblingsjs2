@@ -1848,7 +1848,7 @@ function antoniovandreprecisaoreal(i)
 	switch (i)
 		{
 		case 1:
-			return 0.00000001; // Utilizada na formatação de números reais no JavaScript. Antigo valor "0.0000000000000000001".
+			return 0.000001; // Utilizada na formatação de números reais no JavaScript. Antigo valor "0.0000000000000000001".
 			break;
 		case 2:
 			return 0.15; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca precisão.
@@ -1869,7 +1869,7 @@ function antoniovandreprecisaoreal(i)
 			return 30; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca pouca precisão.
 			break;
 		case 8:
-			return 0.00000001; // Precisão no cálculo de termos de uma PG.
+			return 0.0000001; // Precisão no cálculo de termos de uma PG.
 			break;
 		default:
 			return "e";
