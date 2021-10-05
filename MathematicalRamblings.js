@@ -6813,7 +6813,7 @@ function antoniovandremoduloargumentoprincipalcomplexo(arr, avisoanexo)
 		}
 
 	if (flag == 0)
-		return "Módulo: " + antoniovandreformatarreal(modulo).toString() + "\nArgumento principal: " + antoniovandreformatarreal(argumento).toString()
+		return "Módulo: " + antoniovandreformatarreal(modulo).toString() + ".\nArgumento principal: " + antoniovandreformatarreal(argumento).toString() + "."
 	else
 		return "e";
 	}
@@ -6927,6 +6927,9 @@ function antoniovandrevelocidadeantoniovandre(str, avisoanexo)
 
 	if (antoniovandrenumeroreal(ponto.toString()) == "e")
 		return "e";
+
+	if ((Math.abs(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ponto) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(velocidade) > parseFloat(antoniovandremaximovalorentrada(1))))
+		return antoniovandremensagenserro(2);
 
 	derivadazero = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[4].trim() + "+" + antoniovandreprecisaoreal(6).toString() + ";0", 1, 0);
 
@@ -7049,6 +7052,9 @@ function antoniovandrevelocidadeangularantoniovandre(str, avisoanexo)
 	if (antoniovandrenumeroreal(ponto.toString()) == "e")
 		return "e";
 
+	if ((Math.abs(abscissa1) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(abscissa2) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada1) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada2) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ponto) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(velocidade) > parseFloat(antoniovandremaximovalorentrada(1))))
+		return antoniovandremensagenserro(2);
+
 	derivadazero = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[6].trim() + ";0", 1, 0);
 
 	if (antoniovandrenumeroreal(derivadazero.toString()) == "e") return derivadazero;
@@ -7139,7 +7145,6 @@ function antoniovandremediaantoniovandre(str, avisoanexo)
 			return "e";
 			}
 
-
 	n2 = parseInt(n);
 
 	if (antoniovandrenumeroreal(inf2.toString()) == "e")
@@ -7147,7 +7152,6 @@ function antoniovandremediaantoniovandre(str, avisoanexo)
 	else
 		if (Math.abs(inf2) > antoniovandremaximovalorentrada(1))
 			return antoniovandremensagenserro(2);
-
 
 	if (antoniovandrenumeroreal(sup2.toString()) == "e")
 		return "e"
@@ -7422,6 +7426,9 @@ function antoniovandrefuncaomaisproxima(str, avisoanexo)
 				return "e";
 				}
 
+			if ((Math.abs(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))))
+				return antoniovandremensagenserro(2);
+		
 			for (var j = 0; j < listtam; j++)
 				list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[j]);
 
@@ -7842,6 +7849,9 @@ function antoniovandrepossiveisraizes(arr, retorno, avisoanexo)
 		return "e";
 
 	precisao = parseInt(str[2]);
+
+	if ((Math.abs(inf) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(sup) > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
+		return antoniovandremensagenserro(2);
 
 	if (inf >= sup) return "e";
 
