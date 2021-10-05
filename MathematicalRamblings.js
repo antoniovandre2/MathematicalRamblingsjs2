@@ -8464,6 +8464,7 @@ function antoniovandretermospg(arr, avisoanexo)
 	var resulttemp;
 	var resultstr = "";
 	var flag = 0;
+	var flag2 = 0;
 
 	if (avisoanexo == 1) return "Há casos em que a razão pode ser tanto negativa quanto positiva. Por padrão, quando há dualidade, escolhemos a positiva.";
 
@@ -8497,6 +8498,8 @@ function antoniovandretermospg(arr, avisoanexo)
 
 	if (((termo2p - termo1p) % 2 == 1) && (termo2n * termo1n < 0)) flag = 1;
 
+	if (termp1p > termo2p) flag2 = 1;
+
 	do
 		{
 		razao += antoniovandreprecisaoreal(8);
@@ -8505,7 +8508,7 @@ function antoniovandretermospg(arr, avisoanexo)
 		for (var i = 1; i <= Math.abs(termo2p - termo1p); i++)
 			resulttemp *= razao;
 
-		} while (Math.abs(Math.abs(resulttemp) - Math.abs(termo2n / termo1n)) < antoniovandreprecisaoreal(8));
+		} while (((resulttemp - Math.abs(termo2n / termo1n) < antoniovandreprecisaoreal(8)) && (flag2 == 0)) || ((resulttemp - Math.abs(termo1n / termo2n) < antoniovandreprecisaoreal(8)) && (flag2 == 1)));
 
 	if (razao > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(5);
 
