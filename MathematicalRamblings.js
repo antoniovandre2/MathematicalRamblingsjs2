@@ -8483,7 +8483,11 @@ function antoniovandretermospg(arr, avisoanexo)
 
 	for (var i = termosexibir1; i <= termosexibir2; i++)
 		{
-		resulttemp = termo1n * antoniovandrepotencia(razao, i - termo1p);
+		resulttemp = 1;
+
+		for (var j = 1; j <= i - termo1p; j++) resulttemp = resulttemp * razao;
+
+		resulttemp = resulttemp * termo1n;
 
 		if (resulttemp > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(6);
 
