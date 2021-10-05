@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 04-10-2021.
+// Última atualização: 05-10-2021.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js.
 
-function antoniovandremathematicalramblingsjsversao(){return "04-10-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "05-10-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1867,6 +1867,9 @@ function antoniovandreprecisaoreal(i)
 			break;
 		case 7:
 			return 30; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca pouca precisão.
+			break;
+		case 8:
+			return 0.000001; // Precisão no cálculo de termos de uma PG.
 			break;
 		default:
 			return "e";
@@ -8447,11 +8450,12 @@ function antoniovandretermospg(arr, avisoanexo)
 	var termo2p;
 	var termosexibir1;
 	var termosexibir2;
-	var razao;
+	var razao = 0;
 	var resulttemp;
 	var resultstr = "";
+	var flag = 0;
 
-	if (avisoanexo == 1) return "Nos cálculos utiliza-se uma função de potência definida por Fórmula de Taylor, o que pode retornar valores inexatos ou até erros, pois é definida com um número limitado de \"a\'s\" e de derivadas. Gradualmente vou acrescentando mais \"a\'s\" e derivadas afim de que seja mais precisa.";
+	if (avisoanexo == 1) return "Há casos em que a razão pode ser tanto negativa quanto positiva. Por padrão, quando há dualidade, escolhemos a positiva.";
 
 	if (str.length != 3) return "e";
 
@@ -8477,9 +8481,25 @@ function antoniovandretermospg(arr, avisoanexo)
 	if (termosexibir1 >= termosexibir2) return "O intervalo de termos a exibir deve ser crescente.";
 	if (termo1p == termo2p) return "Especifique posições distintas.";
 
-	razao = antoniovandrepotencia (termo2n / termo1n, 1 / (termo2p - termo1p));
+	if (((termo2p - termo1p) % 2 == 0) && (termo2n * termo1n < 0)) return "Os termos não são de uma PG.";
+
+	if (((termo2p - termo1p) % 2 == 1) && (termo2n * termo1n < 0)) flag = 1;
+
+	do
+		{
+		razao += antoniovandreprecisaoreal(8);
+		resulttemp = 1;
+
+		for (var i = 1; i <= Math.abs(termo2p - termo1p); i++)
+			resulttemp *= razao;
+
+		} while (Math.abs(resulttemp) - termo2n / termo1n < antoniovandreprecisaoreal(8));
 
 	if (razao > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(5);
+
+	razao = antoniovandreformatarreal(razao);
+
+	if (flag == 1) razao *= -1;
 
 	for (var i = termosexibir1; i <= termosexibir2; i++)
 		{
@@ -8487,7 +8507,7 @@ function antoniovandretermospg(arr, avisoanexo)
 
 		for (var j = 1; j <= i - termo1p; j++) resulttemp = resulttemp * razao;
 
-		resulttemp = resulttemp * termo1n;
+		resulttemp *= termo1n;
 
 		if (resulttemp > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(6);
 
