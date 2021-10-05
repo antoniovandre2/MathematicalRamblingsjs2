@@ -8498,7 +8498,7 @@ function antoniovandretermospg(arr, avisoanexo)
 
 	if (((termo2p - termo1p) % 2 == 1) && (termo2n * termo1n < 0)) flag = 1;
 
-	if (termp1p > termo2p) flag2 = 1;
+	if (termo1p > termo2p) flag2 = 1;
 
 	do
 		{
