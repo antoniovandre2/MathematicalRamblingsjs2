@@ -8520,9 +8520,18 @@ function antoniovandretermospg(arr, avisoanexo)
 		{
 		resulttemp = 1;
 
-		for (var j = 1; j <= i - termo1p; j++) resulttemp = resulttemp * razao;
+		if (flag2 == 0)
+			{
+			for (var j = 1; j <= i - termo1p; j++) resulttemp = resulttemp * razao;
 
-		resulttemp *= termo1n;
+			resulttemp *= termo1n;
+			}
+		else
+			{
+			for (var j = 1; j <= i - termo2p; j++) resulttemp = resulttemp * razao;
+
+			resulttemp *= termo2n;
+			}
 
 		if (resulttemp > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(6);
 
