@@ -157,22 +157,52 @@ function antoniovandrefatorial(n)
 
 // Função piso. Argumento: um número real. Retorna a string "e" caso um erro ocorra.
 
-function antoniovandrepiso(str)
+function antoniovandrepiso(x)
 	{
-	if (antoniovandrenumeroreal(str.trim()) == "e")
-		return "e"
+	if (arguments.length != 1)
+		return "e";
+
+	if (antoniovandrenumeroreal(x.toString()) == "e")
+		{
+		if (antoniovandreexpressaofuncaovalida(x) == "e")
+			return "e";
+
+		x = antoniovandretraduzirexpressaofuncional(x, 0)
+
+		var ev = eval(x);
+
+		if (antoniovandrenumeroreal(ev.toString()) == "e")
+			return "O argumento do módulo deve ser um número real."
+		else
+			return Math.floor(ev);
+		}
 	else
-		return Math.floor(parseFloat(str.trim()));
+		return Math.floor(x);
 	}
 
 // Função teto. Argumento: um número real. Retorna a string "e" caso um erro ocorra.
 
-function antoniovandreteto(str)
+function antoniovandreteto(x)
 	{
-	if (antoniovandrenumeroreal(str.trim()) == "e")
-		return "e"
+	if (arguments.length != 1)
+		return "e";
+
+	if (antoniovandrenumeroreal(x.toString()) == "e")
+		{
+		if (antoniovandreexpressaofuncaovalida(x) == "e")
+			return "e";
+
+		x = antoniovandretraduzirexpressaofuncional(x, 0)
+
+		var ev = eval(x);
+
+		if (antoniovandrenumeroreal(ev.toString()) == "e")
+			return "O argumento do módulo deve ser um número real."
+		else
+			return Math.ceil(ev);
+		}
 	else
-		return Math.ceil(parseFloat(str.trim()));
+		return Math.ceil(x);
 	}
 
 // Média aritmética. Argumento: string de números reais separados por vírgula ",". Retorna a string "e" se ocorre erro.
