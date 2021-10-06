@@ -8781,6 +8781,27 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 				funcoes.push(funcoes[k] + "+" + temp + "(" + j.toString() + ")");
 		}
 
+	if (inteligencia >= 3)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*modulo(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
+
+	if (inteligencia >= 4)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*potencia(x*(" + j.toString() + "),(" + k.toString() + "))+(" + l.toString() + ")");
+
+	if (inteligencia >= 5)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*cos(x*(" + j.toString() + "),(" + k.toString() + "))+(" + l.toString() + ")");
+
 	for (var k = 0; k < funcoes.length; k++)
 		{
 		funcoes[k] = funcoes[k].trim();
@@ -8808,11 +8829,11 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 				}
 			catch (error)
 				{
-				return "e";
+				continue;
 				}
 
 			if (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1)))
-				return antoniovandremensagenserro(2);
+				continue;
 		
 			for (var j = 0; j < listtam; j++)
 				list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[j]);
@@ -8831,21 +8852,21 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 			if (antoniovandrenumeroreal(resultpart.toString()) == "e")
 				{
 				if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(6)) == 1))
-					return antoniovandremensagenserro(6)
+					continue
 				else
 					{
 					if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(4)) == 1))
-						return antoniovandremensagenserro(4)
+						continue
 					else
 						{
 						if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(2)) == 1))
-							return antoniovandremensagenserro(2)
+							continue
 						else
 							{
 							if (antoniovandrecompararstrings(typeof resultpart, "string") == "e")
-								return "e"
+								continue
 							else
-								return resultpart;
+								continue;
 							}
 						}
 					}
