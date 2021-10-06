@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 05-10-2021.
+// Última atualização: 06-10-2021.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js.
 
-function antoniovandremathematicalramblingsjsversao(){return "05-10-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "06-10-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -8547,7 +8547,7 @@ function antoniovandretermospg(arr, avisoanexo)
 	return resultstr;
 	}
 
-// Estudo do sinal de uma função. Argumentos: primeiro: uma string separada em três partes por ponto e vírgula ";", a primeira com uma função em "x", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira a precisão, um inteiro positivo, de busca; segundo: -1 para exibir o aviso anexo.
+// Estudo do sinal de uma função. Argumentos: primeiro: uma string separada em três partes por ponto e vírgula ";", a primeira com uma função em "x", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira a precisão, um inteiro positivo, de busca; segundo: -1 para exibir o aviso anexo. Retorna a string "e" caso um erro genérico ocorra.
 
 function antoniovandreestudosinalfuncao(arr, avisoanexo)
 	{
@@ -8728,6 +8728,190 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 		return "e";
 	else
 		return outputstr;
+	}
+
+// Próximo termo de uma sequência. Argumento: primeiro global: uma string separada por ponto e vírgula ";" contendo, primeiro, um conjunto de números reais separados por vírgula ",", e, segundo, o inteiro positivo inteligência; segundo global: -1 para exibir o aviso anexo. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandreproximotermosequencia(str, avisoanexo)
+	{
+	var arr = [];
+	var arr = str.split(";");
+	var inteligencia;
+	var abscissa = 0;
+	var ordenada;
+	var funcoes = [];
+	var incremento;
+	var limite;
+	var denominador = 1;
+	var pontos;
+	var result = [];
+
+	if (avisoanexo == -1) return antoniovandreoperadoresfuncoesconstantes(1);
+
+	if (arr.length != 2) return "e";
+
+	pontos = arr[0].split(",");
+
+	if (antoniovandrenumeronaturalpositivo(arr[1].trim()) == "e")
+		return "e";
+
+	inteligencia = parseInt(arr[1].trim());
+
+	limite = 5 * inteligencia;
+
+	for (var j = 1; j <= inteligencia; j++)
+		denominador *= 2;
+
+	incremento = 1 / denominador;
+
+	for (j = -limite; j <= limite; j += incremento)
+		funcoes.push("(" + j.toString() + ")");
+
+	for (i = 1; i <= inteligencia; i++)
+		{
+		var temp = "";
+
+		for (j = 1; j <= i; j++)
+			temp = temp + "x*";
+
+		var l = funcoes.length;
+
+		for (k = 0; k < l; k++)
+			for (j = -limite; j <= limite; j += incremento)
+				funcoes.push(funcoes[k] + "+" + temp + "(" + j.toString() + ")");
+		}
+
+	for (var k = 0; k < funcoes.length; k++)
+		{
+		funcoes[k] = funcoes[k].trim();
+		result.push(0);
+		abscissa = 0;
+
+		if (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(funcoes[k], antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(funcoes[k], antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e")
+			return "e";
+
+		for (var i = 0; i < pontos.length; i++)
+			{
+			var list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
+			var listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
+			var expressao;
+			var resultpart;
+
+			abscissa++;
+
+			if (antoniovandreexpressaofuncaovalida(pontos[i]) == "e")
+				return "e";
+
+			try
+				{
+				ordenada = eval(antoniovandretraduzirexpressaofuncional(pontos[i], 0));
+				}
+			catch (error)
+				{
+				return "e";
+				}
+
+			if (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1)))
+				return antoniovandremensagenserro(2);
+		
+			for (var j = 0; j < listtam; j++)
+				list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[j]);
+
+			expressao = antoniovandresubstituirstrings(funcoes[k], list);
+
+			try
+				{
+				resultpart = eval(antoniovandresubstituirstrings(expressao, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + abscissa.toString() + ")"]]));
+				}
+			catch (error)
+				{
+				return "e";
+				}
+
+			if (antoniovandrenumeroreal(resultpart.toString()) == "e")
+				{
+				if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(6)) == 1))
+					return antoniovandremensagenserro(6)
+				else
+					{
+					if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(4)) == 1))
+						return antoniovandremensagenserro(4)
+					else
+						{
+						if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(2)) == 1))
+							return antoniovandremensagenserro(2)
+						else
+							{
+							if (antoniovandrecompararstrings(typeof resultpart, "string") == "e")
+								return "e"
+							else
+								return resultpart;
+							}
+						}
+					}
+				}
+			else
+				{
+				if (Math.abs(resultpart) > parseFloat(antoniovandremaximovalorsaida(1)))
+					return antoniovandremensagenserro(6)
+				else
+					result[k] += Math.abs(resultpart - ordenada);
+
+				if (Math.abs(result[k]) > parseFloat(antoniovandremaximovalorsaida(1)))
+					return antoniovandremensagenserro(6);
+				}
+			}
+		}
+
+	var min = antoniovandremaximovalorsaida(1);
+
+	for (var i = 0; i < result.length; i++)
+		if (result[i] < min)
+			{
+			min = result[i];
+			mini = i;
+			}
+
+	expressao = antoniovandresubstituirstrings(funcoes[mini], list);
+
+	try
+		{
+		resultpart = eval(antoniovandresubstituirstrings(expressao, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + (abscissa + 1).toString() + ")"]]));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if (antoniovandrenumeroreal(resultpart.toString()) == "e")
+		{
+		if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(6)) == 1))
+			return antoniovandremensagenserro(6)
+		else
+			{
+			if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(4)) == 1))
+				return antoniovandremensagenserro(4)
+			else
+				{
+				if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(2)) == 1))
+					return antoniovandremensagenserro(2)
+				else
+					{
+					if (antoniovandrecompararstrings(typeof resultpart, "string") == "e")
+						return "e"
+					else
+						return resultpart;
+					}
+				}
+			}
+		}
+	else
+		{
+		if (Math.abs(resultpart) > parseFloat(antoniovandremaximovalorsaida(1)))
+			return antoniovandremensagenserro(6)
+		else
+			return antoniovandreformatarreal(resultpart);
+		}
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
