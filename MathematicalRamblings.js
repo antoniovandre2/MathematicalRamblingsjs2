@@ -8757,10 +8757,19 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 
 	inteligencia = parseInt(arr[1].trim());
 
+	if (Math.abs(inteligencia) > parseFloat(antoniovandremaximovalorsaida(1)))
+		return antoniovandremensagenserro(2);
+
 	limite = 5 * inteligencia;
+
+	if (Math.abs(limite) > parseFloat(antoniovandremaximovalorsaida(1)))
+		return antoniovandremensagenserro(4);
 
 	for (var j = 1; j <= inteligencia; j++)
 		denominador *= 2;
+
+	if (Math.abs(denominador) > parseFloat(antoniovandremaximovalorsaida(1)))
+		return antoniovandremensagenserro(4);
 
 	incremento = 1 / denominador;
 
@@ -8802,7 +8811,7 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 					for (var l = -limite; l <= limite; l += incremento)
 						funcoes.push("(" + i.toString() + ")*cos(x*(" + j.toString() + "),(" + k.toString() + "))+(" + l.toString() + ")");
 
-	for (var k = 0; k < funcoes.length; k++)
+	labelproximotermosequencia: for (var k = 0; k < funcoes.length; k++)
 		{
 		funcoes[k] = funcoes[k].trim();
 		result.push(0);
@@ -8829,11 +8838,15 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 				}
 			catch (error)
 				{
-				continue;
+				result[k] = parseFloat(antoniovandremaximovalorsaida(1));
+				continue labelproximotermosequencia;
 				}
 
 			if (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1)))
-				continue;
+				{
+				result[k] = parseFloat(antoniovandremaximovalorsaida(1));
+				continue labelproximotermosequencia;
+				}
 		
 			for (var j = 0; j < listtam; j++)
 				list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[j]);
@@ -8846,27 +8859,40 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 				}
 			catch (error)
 				{
-				return "e";
+				result[k] = parseFloat(antoniovandremaximovalorsaida(1));
+				continue labelproximotermosequencia;
 				}
 
 			if (antoniovandrenumeroreal(resultpart.toString()) == "e")
 				{
 				if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(6)) == 1))
-					continue
+					continue labelproximotermosequencia
 				else
 					{
 					if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(4)) == 1))
-						continue
+						{
+						result[k] = parseFloat(antoniovandremaximovalorsaida(1));
+						continue labelproximotermosequencia;
+						}
 					else
 						{
 						if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(2)) == 1))
-							continue
+							{
+							result[k] = parseFloat(antoniovandremaximovalorsaida(1));
+							continue labelproximotermosequencia;
+							}
 						else
 							{
 							if (antoniovandrecompararstrings(typeof resultpart, "string") == "e")
-								continue
+								{
+								result[k] = parseFloat(antoniovandremaximovalorsaida(1));
+								continue labelproximotermosequencia;
+								}
 							else
-								continue;
+								{
+								result[k] = parseFloat(antoniovandremaximovalorsaida(1));
+								continue labelproximotermosequencia;
+								}
 							}
 						}
 					}
