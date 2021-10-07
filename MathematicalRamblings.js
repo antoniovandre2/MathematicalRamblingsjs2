@@ -8819,6 +8819,27 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 					for (var l = -limite; l <= limite; l += incremento)
 						funcoes.push("(" + i.toString() + ")*tg(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
 
+	if (inteligencia >= 6)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*cotg(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
+
+	if (inteligencia >= 7)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*sec(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
+
+	if (inteligencia >= 7)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*cossec(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
+				
 	if (inteligencia >= 7)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
@@ -8826,6 +8847,48 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 					for (var l = -limite; l <= limite; l += incremento)
 						for (var m = -limite; m <= limite; m += incremento)
 							funcoes.push("(" + i.toString() + ")*log(x*(" + j.toString() + ")+(" + k.toString() + "),(" + l.toString() + "))+(" + m.toString() + ")");
+
+	if (inteligencia >= 8)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*arcsen(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
+
+	if (inteligencia >= 8)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*arccos(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
+									
+	if (inteligencia >= 8)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*arctg(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
+
+	if (inteligencia >= 8)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*arccotg(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
+
+	if (inteligencia >= 8)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*arcsec(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
+
+	if (inteligencia >= 8)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*arccossec(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
 				
 	labelproximotermosequencia: for (var k = 0; k < funcoes.length; k++)
 		{
