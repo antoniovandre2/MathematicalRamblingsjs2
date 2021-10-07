@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 06-10-2021.
+// Última atualização: 07-10-2021.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js.
 
-function antoniovandremathematicalramblingsjsversao(){return "06-10-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "07-10-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -8773,19 +8773,19 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 
 	incremento = 1 / denominador;
 
-	for (j = -limite; j <= limite; j += incremento)
+	for (var j = -limite; j <= limite; j += incremento)
 		funcoes.push("(" + j.toString() + ")");
 
-	for (i = 1; i <= inteligencia; i++)
+	for (var i = 1; i <= inteligencia; i++)
 		{
 		var temp = "";
 
-		for (j = 1; j <= i; j++)
+		for (var j = 1; j <= i; j++)
 			temp = temp + "x*";
 
 		var l = funcoes.length;
 
-		for (k = 0; k < l; k++)
+		for (var k = 0; k < l; k++)
 			for (j = -limite; j <= limite; j += incremento)
 				funcoes.push(funcoes[k] + "+" + temp + "(" + j.toString() + ")");
 		}
@@ -8793,24 +8793,40 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 	if (inteligencia >= 3)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
-				for (k = -limite; k <= limite; k += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
 					for (var l = -limite; l <= limite; l += incremento)
 						funcoes.push("(" + i.toString() + ")*modulo(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
 
 	if (inteligencia >= 4)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
-				for (k = -limite; k <= limite; k += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
 					for (var l = -limite; l <= limite; l += incremento)
-						funcoes.push("(" + i.toString() + ")*potencia(x*(" + j.toString() + "),(" + k.toString() + "))+(" + l.toString() + ")");
+						funcoes.push("(" + i.toString() + ")*cos(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
 
 	if (inteligencia >= 5)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
-				for (k = -limite; k <= limite; k += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
 					for (var l = -limite; l <= limite; l += incremento)
-						funcoes.push("(" + i.toString() + ")*cos(x*(" + j.toString() + "),(" + k.toString() + "))+(" + l.toString() + ")");
+						for (var m = -limite; m <= limite; m += incremento)
+							funcoes.push("(" + i.toString() + ")*potencia(x*(" + j.toString() + ")+(" + k.toString() + "),(" + l.toString() + "))+(" + m.toString() + ")");
 
+	if (inteligencia >= 6)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*tg(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
+
+	if (inteligencia >= 7)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						for (var m = -limite; m <= limite; m += incremento)
+							funcoes.push("(" + i.toString() + ")*log(x*(" + j.toString() + ")+(" + k.toString() + "),(" + l.toString() + "))+(" + m.toString() + ")");
+				
 	labelproximotermosequencia: for (var k = 0; k < funcoes.length; k++)
 		{
 		funcoes[k] = funcoes[k].trim();
