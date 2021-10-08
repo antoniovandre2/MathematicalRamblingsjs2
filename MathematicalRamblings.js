@@ -8104,7 +8104,7 @@ function antoniovandredistanciapontofuncao (arr)
 				{
 				try
 					{
-					distancia = eval(antoniovandrepotencia((abscissa - (inf + (sup - inf) * (i / precisao))) * (abscissa - (inf + (sup - inf) * (i / precisao))) + (ordenada - result) * (ordenada - result), 0.5));
+					distancia = Math.pow((abscissa - (inf + (sup - inf) * (i / precisao))) * (abscissa - (inf + (sup - inf) * (i / precisao))) + (ordenada - result) * (ordenada - result), 0.5);
 					}
 				catch (error)
 					{
@@ -8253,7 +8253,7 @@ function antoniovandredistanciafuncaofuncao (arr)
 				{
 				try
 					{
-					distancia = eval(antoniovandrepotencia((((inf + (sup - inf) * (j / precisao))) - (inf + (sup - inf) * (i / precisao))) * (((inf + (sup - inf) * (j / precisao))) - (inf + (sup - inf) * (i / precisao))) + (result2 - result1) * (result2 - result1), 0.5));
+					distancia = Math.pow((((inf + (sup - inf) * (j / precisao))) - (inf + (sup - inf) * (i / precisao))) * (((inf + (sup - inf) * (j / precisao))) - (inf + (sup - inf) * (i / precisao))) + (result2 - result1) * (result2 - result1), 0.5);
 					}
 				catch (error)
 					{
@@ -8347,7 +8347,7 @@ function antoniovandretriangulospitagoricos(arr, saida)
 
 // Área de um triângulo dados os lados. Argumentos globais: primeiro uma string separada por vírgula "," com os lados; segundo: 0 para saída numérica, ou 1 para saída string; terceiro: -1 para exibir a mensagem anexa. Retorna a string "e" caso um erro ocorra.
 
-function antoniovandreareatriangulolados(arr, saida, avisoanexo)
+function antoniovandreareatriangulolados(arr, saida)
 	{
 	var str = arr.split(",");
 	var result;
@@ -8355,8 +8355,6 @@ function antoniovandreareatriangulolados(arr, saida, avisoanexo)
 	var b;
 	var c;
 	var p;
-
-	if (avisoanexo == -1) return "Trata-se um resultado aproximado porque há o uso da função \"potencia\", que depende dos a\'s e do número de derivadas nos polinômios de Taylor para a dada função.";
 
 	if (str.length != 3) return "e";
 
@@ -8371,7 +8369,7 @@ function antoniovandreareatriangulolados(arr, saida, avisoanexo)
 	if ((a <= Math.abs(b - c)) || (b <= Math.abs(a - c)) || (c <= Math.abs(a - b)) || (a >= b + c) || (b >= a + c) || (c >= a + b)) return "Os lados não são de um triângulo.";
 
 	p = (a + b + c) / 2;
-	result = antoniovandrepotencia(p * (p - a) * (p - b) * (p - c), 0.5);
+	result = Math.pow(p * (p - a) * (p - b) * (p - c), 0.5);
 
 	if (result > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(5);
 
