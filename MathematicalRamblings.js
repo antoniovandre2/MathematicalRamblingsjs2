@@ -8345,9 +8345,9 @@ function antoniovandretriangulospitagoricos(arr, saida)
 		}
 	}
 
-// Área de um triângulo dados os lados. Argumentos globais: primeiro uma string separada por vírgula "," com os lados; segundo: 0 para saída numérica, ou 1 para saída string. Retorna a string "e" caso um erro ocorra.
+// Área de um triângulo dados os lados. Argumentos globais: primeiro uma string separada por vírgula "," com os lados; segundo: 0 para saída numérica, ou 1 para saída string; terceiro: -1 para exibir a mensagem anexa. Retorna a string "e" caso um erro ocorra.
 
-function antoniovandreareatriangulolados(arr, saida)
+function antoniovandreareatriangulolados(arr, saida, avisoanexo)
 	{
 	var str = arr.split(",");
 	var result;
@@ -8355,6 +8355,8 @@ function antoniovandreareatriangulolados(arr, saida)
 	var b;
 	var c;
 	var p;
+
+	if (avisoanexo == -1) return "Trata-se um resultado aproximado porque há o uso da função \"potencia\", que depende dos a\'s e do número de derivadas nos polinômios de Taylor para a dada função.";
 
 	if (str.length != 3) return "e";
 
