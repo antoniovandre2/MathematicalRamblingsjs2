@@ -4672,15 +4672,10 @@ function antoniovandrepotencia(a, b)
 					return antoniovandreexp(eval(b * antoniovandreln(antoniovandremodulo(a))))
 				else
 					{
-					if ((b - 1) % 2 == 0)
+					if (antoniovandrefracaogeratriz(b, 1)[1] % 2 == 1)
 						return (-1) * Math.pow(Math.abs(a), b)
 					else
-						{
-						if (antoniovandrefracaogeratriz(b, 1)[1] % 2 == 0)
-							return "O resultado da potência não é um número real."
-						else
-							return (-1) * Math.pow(Math.abs(a), b);
-						}
+						return "O resultado da potência não é um número real.";
 					}
 				}
 			}
