@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 07-10-2021.
+// Última atualização: 08-10-2021.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js.
 
-function antoniovandremathematicalramblingsjsversao(){return "07-10-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "08-10-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -4640,7 +4640,7 @@ function antoniovandrepotencia(a, b)
 				return antoniovandreexp(eval(b.toString()) * antoniovandreln(a));
 				}
 			else
-				return antoniovandreexp(b * antoniovandreln(a));
+				return Math.pow(a, b);
 			}
 		else
 			{
@@ -4673,13 +4673,13 @@ function antoniovandrepotencia(a, b)
 				else
 					{
 					if ((b - 1) % 2 == 0)
-						return (-1) * antoniovandreexp(eval(b * antoniovandreln(antoniovandremodulo(a))))
+						return (-1) * Math.pow(Math.abs(a), b)
 					else
 						{
 						if (antoniovandrefracaogeratriz(b, 1)[1] % 2 == 0)
 							return "O resultado da potência não é um número real."
 						else
-							return (-1) * antoniovandreexp(eval(b * antoniovandreln(antoniovandremodulo(a))))
+							return (-1) * Math.pow(Math.abs(a), b);
 						}
 					}
 				}
@@ -8795,16 +8795,30 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 			for (var j = -limite; j <= limite; j += incremento)
 				for (var k = -limite; k <= limite; k += incremento)
 					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*piso(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
+
+	if (inteligencia >= 3)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
+						funcoes.push("(" + i.toString() + ")*teto(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
+				
+	if (inteligencia >= 4)
+		for (var i = -limite; i <= limite; i += incremento)
+			for (var j = -limite; j <= limite; j += incremento)
+				for (var k = -limite; k <= limite; k += incremento)
+					for (var l = -limite; l <= limite; l += incremento)
 						funcoes.push("(" + i.toString() + ")*modulo(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
 
-	if (inteligencia >= 4)
+	if (inteligencia >= 5)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
 				for (var k = -limite; k <= limite; k += incremento)
 					for (var l = -limite; l <= limite; l += incremento)
 						funcoes.push("(" + i.toString() + ")*cos(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
 
-	if (inteligencia >= 5)
+	if (inteligencia >= 6)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
 				for (var k = -limite; k <= limite; k += incremento)
@@ -8812,14 +8826,14 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 						for (var m = -limite; m <= limite; m += incremento)
 							funcoes.push("(" + i.toString() + ")*potencia(x*(" + j.toString() + ")+(" + k.toString() + "),(" + l.toString() + "))+(" + m.toString() + ")");
 
-	if (inteligencia >= 6)
+	if (inteligencia >= 7)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
 				for (var k = -limite; k <= limite; k += incremento)
 					for (var l = -limite; l <= limite; l += incremento)
 						funcoes.push("(" + i.toString() + ")*tg(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
 
-	if (inteligencia >= 6)
+	if (inteligencia >= 7)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
 				for (var k = -limite; k <= limite; k += incremento)
@@ -8840,7 +8854,7 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 					for (var l = -limite; l <= limite; l += incremento)
 						funcoes.push("(" + i.toString() + ")*cossec(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
 				
-	if (inteligencia >= 7)
+	if (inteligencia >= 8)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
 				for (var k = -limite; k <= limite; k += incremento)
@@ -8848,42 +8862,42 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 						for (var m = -limite; m <= limite; m += incremento)
 							funcoes.push("(" + i.toString() + ")*log(x*(" + j.toString() + ")+(" + k.toString() + "),(" + l.toString() + "))+(" + m.toString() + ")");
 
-	if (inteligencia >= 8)
+	if (inteligencia >= 9)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
 				for (var k = -limite; k <= limite; k += incremento)
 					for (var l = -limite; l <= limite; l += incremento)
 						funcoes.push("(" + i.toString() + ")*arcsen(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
 
-	if (inteligencia >= 8)
+	if (inteligencia >= 9)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
 				for (var k = -limite; k <= limite; k += incremento)
 					for (var l = -limite; l <= limite; l += incremento)
 						funcoes.push("(" + i.toString() + ")*arccos(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
 									
-	if (inteligencia >= 8)
+	if (inteligencia >= 9)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
 				for (var k = -limite; k <= limite; k += incremento)
 					for (var l = -limite; l <= limite; l += incremento)
 						funcoes.push("(" + i.toString() + ")*arctg(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
 
-	if (inteligencia >= 8)
+	if (inteligencia >= 9)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
 				for (var k = -limite; k <= limite; k += incremento)
 					for (var l = -limite; l <= limite; l += incremento)
 						funcoes.push("(" + i.toString() + ")*arccotg(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
 
-	if (inteligencia >= 8)
+	if (inteligencia >= 9)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
 				for (var k = -limite; k <= limite; k += incremento)
 					for (var l = -limite; l <= limite; l += incremento)
 						funcoes.push("(" + i.toString() + ")*arcsec(x*(" + j.toString() + ")+(" + k.toString() + "))+(" + l.toString() + ")");
 
-	if (inteligencia >= 8)
+	if (inteligencia >= 9)
 		for (var i = -limite; i <= limite; i += incremento)
 			for (var j = -limite; j <= limite; j += incremento)
 				for (var k = -limite; k <= limite; k += incremento)
