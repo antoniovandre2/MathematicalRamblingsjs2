@@ -4621,10 +4621,10 @@ function antoniovandrepotencia(a, b)
 
 			b = antoniovandretraduzirexpressaofuncional(b, 0)
 
-			return antoniovandreexp(eval(b.toString()) * antoniovandreln(eval(a).toString()));
+			return antoniovandrepotencia(eval(a), eval(b));
 			}
 		else
-			return antoniovandreexp(eval(b * antoniovandreln(eval(a).toString())));
+			return antoniovandrepotencia(eval(a), b);
 		}
 	else
 		{
@@ -4637,7 +4637,7 @@ function antoniovandrepotencia(a, b)
 
 				b = antoniovandretraduzirexpressaofuncional(b, 0)
 
-				return antoniovandreexp(eval(b.toString()) * antoniovandreln(a));
+				return antoniovandrepotencia(a, eval(b));;
 				}
 			else
 				return Math.pow(a, b);
@@ -4651,32 +4651,14 @@ function antoniovandrepotencia(a, b)
 
 				b = antoniovandretraduzirexpressaofuncional(b, 0)
 
-				if (eval(b) % 2 == 0)
-					return antoniovandreexp(eval(eval(b) * antoniovandreln(antoniovandremodulo(a))))
-				else
-					{
-					if ((eval(b) - 1) % 2 == 0)
-						return (-1) * antoniovandreexp(eval(eval(b) * antoniovandreln(antoniovandremodulo(a))))
-					else
-						{
-						if (antoniovandrefracaogeratriz(eval(b), 1)[1] % 2 == 0)
-							return "O resultado da potência não é um número real."
-						else
-							return (-1) * antoniovandreexp(eval(eval(b) * antoniovandreln(antoniovandremodulo(a))))
-						}
-					}
+				return antoniovandrepotencia(a, eval(b));
 				}
 			else
 				{
-				if (b % 2 == 0)
-					return antoniovandreexp(eval(b * antoniovandreln(antoniovandremodulo(a))))
+				if (antoniovandrefracaogeratriz(b, 1)[1] % 2 == 1)
+					return (-1) * Math.pow(Math.abs(a), b)
 				else
-					{
-					if (antoniovandrefracaogeratriz(b, 1)[1] % 2 == 1)
-						return (-1) * Math.pow(Math.abs(a), b)
-					else
-						return "O resultado da potência não é um número real.";
-					}
+					return "O resultado da potência não é um número real.";
 				}
 			}
 		}
