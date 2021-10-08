@@ -4655,7 +4655,7 @@ function antoniovandrepotencia(a, b)
 				}
 			else
 				{
-				if (antoniovandrenumerointeiro(b) == "e")
+				if (antoniovandrenumerointeiro(b.toString()) == "e")
 					{
 					if (antoniovandrefracaogeratriz(b, 1)[1] % 2 == 1)
 						return (-1) * Math.pow(Math.abs(a), b)
