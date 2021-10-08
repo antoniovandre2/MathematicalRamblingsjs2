@@ -4655,10 +4655,15 @@ function antoniovandrepotencia(a, b)
 				}
 			else
 				{
-				if (antoniovandrefracaogeratriz(b, 1)[1] % 2 == 1)
-					return (-1) * Math.pow(Math.abs(a), b)
+				if (antoniovandrenumerointeiro(b) == "e")
+					{
+					if (antoniovandrefracaogeratriz(b, 1)[1] % 2 == 1)
+						return (-1) * Math.pow(Math.abs(a), b)
+					else
+						return "O resultado da potência não é um número real.";
+					}
 				else
-					return "O resultado da potência não é um número real.";
+					return Math.pow(a, b);
 				}
 			}
 		}
