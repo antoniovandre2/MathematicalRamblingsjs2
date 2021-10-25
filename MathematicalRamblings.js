@@ -9040,7 +9040,7 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 
 function antoniovandrecodigomorse(entradaraw)
 	{
-	var antoniovandrecodigomorsearr = [["A", ".-"], ["B", "-..."], ["C", "-.-."], ["D", "-.."], ["E", "."], ["F", "..-."], ["G", "--."], ["H", "...."], ["I", ".."], ["J", ".---"], ["K", "-.-"], ["L", ".-.."], ["M","--"], ["N", "-."], ["O", "---"], ["P", ".--."], ["Q", "--.-"], ["R", ".-."], ["S", "..."], ["T", "-"], ["U", "..-"], ["V", "...-"], ["W", ".--"], ["X", "-..-"], ["Y", "-.--"], ["Z", "--.."], ["1", ".----"], ["2", "..---"], ["3", "...--"], ["4", "....-"], ["5", "....."], ["6", "-...."], ["7", "--..."], ["8", "---.."], ["9", "----."], ["0", "-----"], [".", ".-.-.-"], [",", "--..--"], ["?", "..--.."], ["\'", ".----."], ["!", "-.-.--"], ["/", "-..-."], ["(", "-.--."], [")", "-.--.-"], ["&", ".-..."], [":", "---..."], [";", "-.-.-."], ["=", "-...-"], ["-", "-....-"], ["_", "..--.-"], ["\"", ".-..-."], ["$", "...-..-"], ["@", ".--.-."], ["Ä", ".-.-"], ["À", ".--.-"], ["Ç", "-.-.."], ["ð", "..--."], ["È", ".-..-"], ["É", "..-.."], ["Ĝ", "--.-."], ["Ĥ", "-.--."], ["Ĵ", ".---."], ["Ñ", "--.--"], ["Ö", "---."], ["Ŝ", "...-."], ["þ", ".--.."], ["Ü", "..--"], [" ", "  "]];
+	var antoniovandrecodigomorsearr = [["A", ".-"], ["B", "-..."], ["C", "-.-."], ["D", "-.."], ["E", "."], ["F", "..-."], ["G", "--."], ["H", "...."], ["I", ".."], ["J", ".---"], ["K", "-.-"], ["L", ".-.."], ["M","--"], ["N", "-."], ["O", "---"], ["P", ".--."], ["Q", "--.-"], ["R", ".-."], ["S", "..."], ["T", "-"], ["U", "..-"], ["V", "...-"], ["W", ".--"], ["X", "-..-"], ["Y", "-.--"], ["Z", "--.."], ["1", ".----"], ["2", "..---"], ["3", "...--"], ["4", "....-"], ["5", "....."], ["6", "-...."], ["7", "--..."], ["8", "---.."], ["9", "----."], ["0", "-----"], [".", ".-.-.-"], [",", "--..--"], ["?", "..--.."], ["\'", ".----."], ["!", "-.-.--"], ["/", "-..-."], ["(", "-.--."], [")", "-.--.-"], ["&", ".-..."], [":", "---..."], [";", "-.-.-."], ["=", "-...-"], ["-", "-....-"], ["_", "..--.-"], ["\"", ".-..-."], ["$", "...-..-"], ["@", ".--.-."], ["Ä", ".-.-"], ["À", ".--.-"], ["Ç", "-.-.."], ["ð", "..--."], ["È", ".-..-"], ["É", "..-.."], ["Ĝ", "--.-."], ["Ĥ", "-.--."], ["Ĵ", ".---."], ["Ñ", "--.--"], ["Ö", "---."], ["Ŝ", "...-."], ["þ", ".--.."], ["Ü", "..--"], [" ", "  "], ["\n", "   "]];
 	var resultstr = "";
 	var entradarawt = entradaraw.split("\\");
 	var entrada = entradarawt[0];
@@ -9059,6 +9059,7 @@ function antoniovandrecodigomorse(entradaraw)
 	switch (codigo)
 		{
 		case "m":
+			entrada = entrada.replaceAll("\n", "◿").replaceAll("◿", "\n");
 			entrada = entrada.replaceAll(" ", "◿").replaceAll("◿", " ");
 
 			for (var i = 0; i < entrada.length; i++)
@@ -9068,14 +9069,25 @@ function antoniovandrecodigomorse(entradaraw)
 				for (var j = 0; j < antoniovandrecodigomorsearr.length; j++)
 					if (entrada[i] == antoniovandrecodigomorsearr[j][0])
 						{
+						if (entrada[i] == "\n")
+							{
+							do resultstr = resultstr.substring(0, resultstr.length - 1); while (resultstr[resultstr.length - 1] == " ");
+
+							resultstr = resultstr + antoniovandrecodigomorsearr[j][1];
+							flag = 1;
+							break;
+							}
+
 						if (entrada[i] == " ")
 							{
 							do resultstr = resultstr.substring(0, resultstr.length - 1); while (resultstr[resultstr.length - 1] == " ");
 
 							resultstr = resultstr + antoniovandrecodigomorsearr[j][1];
+							flag = 1;
+							break;
 							}
-						else
-							resultstr = resultstr + antoniovandrecodigomorsearr[j][1] + " ";
+
+						resultstr = resultstr + antoniovandrecodigomorsearr[j][1] + " ";
 						flag = 1;
 						break;
 						}
@@ -9087,28 +9099,35 @@ function antoniovandrecodigomorse(entradaraw)
 
 			break;
 		case "t":
-			var entradamorse = entrada.split("  ");
+			var entradamorse = entrada.split("\n");
 
-			for (var i = 0; i < entradamorse.length; i++)
+			for (var i = 0; entradamorse.length; i++)
 				{
-				entradamorse[i] = entradamorse[i].split(" ");
+				entradamorse[i] = entrada.split("  ");
 
 				for (var j = 0; j < entradamorse[i].length; j++)
 					{
-					var flag = 0;
+					entradamorse[i][j] = entradamorse[i][j].split(" ");
 
-					for (var k = 0; k < antoniovandrecodigomorsearr.length; k++)
-						if (antoniovandrecompararstrings(entradamorse[i][j], antoniovandrecodigomorsearr[k][1]) == 1)
-							{
-							resultstr = resultstr + antoniovandrecodigomorsearr[k][0];
-							flag = 1;
-							break;
-							}
+					for (var k = 0; k < entradamorse[i][j].length; k++)
+						{
+						var flag = 0;
 
-					if (flag == 0) return "Há uma sequência não reconhecida no código Morse fornecido.";
+						for (var l = 0; l < antoniovandrecodigomorsearr.length; l++)
+							if (antoniovandrecompararstrings(entradamorse[i][j][k], antoniovandrecodigomorsearr[l][1]) == 1)
+								{
+								resultstr = resultstr + antoniovandrecodigomorsearr[l][0];
+								flag = 1;
+								break;
+								}
+
+						if (flag == 0) return "Há uma sequência não reconhecida no código Morse fornecido.";
+						}
+
+					if (i < entradamorse[i].length - 1) resultstr = resultstr + " ";
 					}
 
-				if (i < entradamorse.length - 1) resultstr = resultstr + " ";
+				if (i < entradamorse.length - 1) resultstr = resultstr + "\n";
 				}
 			break;
 		default:
