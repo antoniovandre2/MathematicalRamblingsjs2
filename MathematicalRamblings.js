@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 08-10-2021.
+// Última atualização: 25-10-2021.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js.
 
-function antoniovandremathematicalramblingsjsversao(){return "08-10-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "25-10-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -9034,6 +9034,88 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 		else
 			return antoniovandreformatarreal(resultpart);
 		}
+	}
+
+// Código Morse. Entre com uma string separada por barra inversa "\", onde o primeiro argumento é a parte a ser traduzida, e a segunda é "m" para converter para código Morse, ou "t" para traduzir do código morse fornecido. Retorna a string barra inversa "\" se um erro genérico ocorre.
+
+function antoniovandrecodigomorse(entradaraw)
+	{
+	var antoniovandrecodigomorsearr = [["A", ".-"], ["B", "-..."], ["C", "-.-."], ["D", "-.."], ["E", "."], ["F", "..-."], ["G", "--."], ["H", "...."], ["I", ".."], ["J", ".---"], ["K", "-.-"], ["L", ".-.."], ["M","--"], ["N", "-."], ["O", "---"], ["P", ".--."], ["Q", "--.-"], ["R", ".-."], ["S", "..."], ["T", "-"], ["U", "..-"], ["V", "...-"], ["W", ".--"], ["X", "-..-"], ["Y", "-.--"], ["Z", "--.."], ["1", ".----"], ["2", "..---"], ["3", "...--"], ["4", "....-"], ["5", "....."], ["6", "-...."], ["7", "--..."], ["8", "---.."], ["9", "----."], ["0", "-----"], [".", ".-.-.-"], [",", "--..--"], ["?", "..--.."], ["\'", ".----."], ["!", "-.-.--"], ["/", "-..-."], ["(", "-.--."], [")", "-.--.-"], ["&", ".-..."], [":", "---..."], [";", "-.-.-."], ["=", "-...-"], ["-", "-....-"], ["_", "..--.-"], ["\"", ".-..-."], ["$", "...-..-"], ["@", ".--.-."], ["ä", ".-.-"], ["à", ".--.-"], ["ç", "-.-.."], ["ð", "..--."], ["è", ".-..-"], ["é", "..-.."], ["ĝ", "--.-."], ["ĥ", "-.--."], ["ĵ", ".---."], ["ñ", "--.--"], ["ö", "---."], ["ŝ", "...-."], ["þ", ".--.."], ["ü", "..--"], [" ", "  "]];
+	var resultstr = "";
+	var entradarawt = entradaraw.split("\\");
+	var entrada = entradarawt[0];
+	var codigo = entradarawt[1].trim();
+
+	for (var i = entradarawt[0].length - 1; i >= 0; i--)
+		if (entradarawt[0][i] == " ")
+			entrada = entrada.substring(0, entrada.length - 1)
+		else
+			break;
+
+	entrada = entrada.toUpperCase();
+
+	if (antoniovandrecompararstrings(typeof entrada, "string") == "e") return "\\";
+
+	switch (codigo)
+		{
+		case "m":
+			entrada = entrada.replaceAll(" ", "◿").replaceAll("◿", " ");
+
+			for (var i = 0; i < entrada.length; i++)
+				{
+				var flag = 0;
+
+				for (var j = 0; j < antoniovandrecodigomorsearr.length; j++)
+					if (entrada[i] == antoniovandrecodigomorsearr[j][0])
+						{
+						if (entrada[i] == " ")
+							{
+							do resultstr = resultstr.substring(0, resultstr.length - 1); while (resultstr[resultstr.length - 1] == " ");
+
+							resultstr = resultstr + antoniovandrecodigomorsearr[j][1];
+							}
+						else
+							resultstr = resultstr + antoniovandrecodigomorsearr[j][1] + " ";
+						flag = 1;
+						break;
+						}
+
+					if (flag == 0) return "Há um caractere não reconhecido no código Morse.";
+				}
+
+			do resultstr = resultstr.substring(0, resultstr.length - 1); while (resultstr[resultstr.length - 1] == " ");
+
+			break;
+		case "t":
+			var entradamorse = entrada.split("  ");
+
+			for (var i = 0; i < entradamorse.length; i++)
+				{
+				entradamorse[i] = entradamorse[i].split(" ");
+
+				for (var j = 0; j < entradamorse[i].length; j++)
+					{
+					var flag = 0;
+
+					for (var k = 0; k < antoniovandrecodigomorsearr.length; k++)
+						if (antoniovandrecompararstrings(entradamorse[i][j], antoniovandrecodigomorsearr[k][1]) == 1)
+							{
+							resultstr = resultstr + antoniovandrecodigomorsearr[k][0];
+							flag = 1;
+							break;
+							}
+
+					if (flag == 0) return "Há uma sequência não reconhecida no código Morse fornecido.";
+					}
+
+				if (i < entradamorse.length - 1) resultstr = resultstr + " ";
+				}
+			break;
+		default:
+			return "\\";
+		}
+
+	return resultstr;
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).

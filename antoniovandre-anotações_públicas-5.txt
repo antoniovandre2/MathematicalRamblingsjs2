@@ -3,6 +3,274 @@ Proprietário: Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_leg
 Arquivo de anotações públicas #5.
 ____________________
 
+24-10-2021
+__
+
+Independentemente se os registros irão permanecer ou não, escrever Matemática e jogar Matemática, pois assim cresço em Matemática.
+
+É o caminho a seguir. A diversão está liberada.
+_____
+
+24-10-2021
+__
+
+Tudo bem se quebrou, posso fazer outro...
+_____
+
+24-10-2021
+__
+
+Ter o prazer de dizer: "Eu sei e eu sou capaz...".
+_____
+
+24-10-2021
+__
+
+Dou muitos saltos lógicos em meus artigos, pois sei que, por uma desventura ou outra, eles poderão deixar de existir. Então escrevo mais para meu próprio desenvolvimento pessoal; escrevendo, aprendo melhor.
+_____
+
+24-10-2021
+__
+
+Perdão se não produzo mais e melhor, há as restrições do materialismo; ou teria que sacrificar minha alma, que pretendo preservar...
+_____
+
+23-10-2021
+__
+
+Computadores são bons, mas não é bom se apegar muito, pois são coisas das quais poderemos ser privados.
+_____
+
+23-10-2021
+__
+
+Às vezes resolver um problema de Matemática é semelhante a esculpir, pouco a pouco, uma obra de arte, e é arte mesmo...
+_____
+
+23-10-2021
+__
+
+Se não há bugs a corrigir, não há pressa.
+_____
+
+23-10-2021
+__
+
+Agora dando um tempo na programação de softwares e voltando a fazer poesias matemáticas...
+_____
+
+23-10-2021
+__
+
+Expressar-se bastante para não sentir mais muita vontade.
+_____
+
+23-10-2021
+__
+
+Não ter, ser...
+_____
+
+23-10-2021
+__
+
+Oferecer as costas aos flagelos para ficar mais forte...
+_____
+
+23-10-2021
+__
+
+Que não percamos o foco que é se sentir bem...
+_____
+
+22-10-2021
+__
+
+Temo que, se eu trabalhar por dinheiro, deixarei de ter prazer. Não quero pagar para ver...
+_____
+
+22-10-2021
+__
+
+Computadores são uma boa interface entre o que é material e o que é espiritual.
+_____
+
+22-10-2021
+__
+
+Investir mais no espiritual para ser mais independente do material...
+_____
+
+22-10-2021
+__
+
+Continuar programando qualquer coisa que seja para me estressar mais e ficar mais inteligente e psiquicamente resistente; deve-se sempre progredir...
+_____
+
+22-10-2021
+__
+
+Fiz o game, é o game que mais gosto, é de Matemática, não envolve violência, armazena estatísticas, está disponível para qualquer um que também desejar jogar, e divirto-me enquanto aprendo.
+_____
+
+22-10-2021
+__
+
+Em alguns livros espíritas caberia bem uma tarja "+18", pois há coisas que assustam até os mais vividos...
+_____
+
+22-10-2021
+__
+
+Em um loop de criação de objetos, lembrar de dar um "var = null" para limpar a memória.
+_____
+
+22-10-2021
+__
+
+Ao criar um software, deve-se pensar também no estresse ao qual estará submetido com a possibilidade de lidar com muitos dados e usuários no futuro.
+_____
+
+22-10-2021
+__
+
+É bom criar procedimentos do zero, mas, também visando um melhor currículo, utilizar bibliotecas de terceiros; ter um misto de autonomia e saber trabalhar com cooperação.
+_____
+
+21-10-2021
+__
+
+Assim como me vejo, eu sou...
+_____
+
+21-10-2021
+__
+
+O Universo conspira a favor de quem não conspira contra ninguém...
+_____
+
+21-10-2021
+__
+
+O ideal seria ter seu próprio servidor para não ficar dependente de outras empresas.
+
+E me preparo para isto mantendo cópias offline dos arquivos.
+_____
+
+21-10-2021
+__
+
+Se deixar, passo o dia inteiro em frente ao computador, e programando; estou bem condicionado e com excelente capacidade de concentração.
+_____
+
+21-10-2021
+__
+
+Para ter paz, é preciso fugir de concorrências...
+_____
+
+21-10-2021
+__
+
+Um software simples que posso fazer, mas não por em meu blog, é um tradutor de código Morse; não posso porque não há muita relação com Matemática.
+_____
+
+21-10-2021
+__
+
+Não teria a paz que tenho hoje se não tivesse feito alguns softwares, o subconsciente estaria me cobrando...
+_____
+
+21-10-2021
+__
+
+Resolvendo probleminha por probleminha e ganhando mais paz interior...
+_____
+
+21-10-2021
+__
+
+Poderia fazer uma animação de loading em JavaScript, no entanto optei por por um simples gif animado.
+_____
+
+20-10-2021
+__
+
+Quedas e superações são sementes de sabedoria...
+_____
+
+20-10-2021
+__
+
+Quando há sucesso, a programação dá um bom "up" na autoestima.
+_____
+
+20-10-2021
+__
+
+A tranquilidade de ter implementado tudo o que tinha em mente.
+_____
+
+20-10-2021
+__
+
+Acabou o café do copo, vou preparar mais.
+_____
+
+20-10-2021
+__
+
+Como agora as estatísticas estão mais importantes, implementei a checagem de MD5 dos saves. Não garante, mas é uma camada de segurança da integridade dos dados.
+_____
+
+19-10-2021
+__
+
+Ter os pensamentos-base bem construídos para que se possa agir com convicção e velocidade.
+_____
+
+19-10-2021
+__
+
+Para algumas coisas a mais, preciso aprender PHP, o que pretendo deixar para depois...
+_____
+
+19-10-2021
+__
+
+Em links de anexos ao Blogger, é bom optar por arquivos hospedados no Google Drive, afinal são da mesma empresa. Se importados de outro serviço, poderei ter problemas caso este seja descontinuado.
+_____
+
+19-10-2021
+__
+
+Dentro de um "$.get(,)" não se pode fazer muita coisa, restrições para garantir segurança.
+_____
+
+19-10-2021
+__
+
+Tenho artigos, memes, pensamentos... Mas minhas calculadoras são as publicações mais visitadas.
+_____
+
+19-10-2021
+__
+
+Beber o cálice da ansiedade para ficar mais forte...
+_____
+
+19-10-2021
+__
+
+A alma só descansa quando está feliz...
+_____
+
+19-10-2021
+__
+
+Ajudar a manter a plataforma Blogger continuada gerando acessos a ela através do meu blog. O Google costuma descontinuar projetos que não são mais rentáveis.
+_____
+
 19-10-2021
 __
 
