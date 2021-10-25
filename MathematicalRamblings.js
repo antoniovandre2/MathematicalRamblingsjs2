@@ -9099,11 +9099,11 @@ function antoniovandrecodigomorse(entradaraw)
 
 			break;
 		case "t":
-			var entradamorse = entrada.split("\n");
+			var entradamorse = entrada.split("   ");
 
-			for (var i = 0; entradamorse.length; i++)
+			for (var i = 0; i < entradamorse.length; i++)
 				{
-				entradamorse[i] = entrada.split("  ");
+				entradamorse[i] = entradamorse[i].split("  ");
 
 				for (var j = 0; j < entradamorse[i].length; j++)
 					{
