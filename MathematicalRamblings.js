@@ -9036,10 +9036,13 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 		}
 	}
 
-// Código Morse. Entre com uma string separada por barra inversa "\", onde o primeiro argumento é a parte a ser traduzida, e a segunda é "m" para converter para código Morse, ou "t" para traduzir do código morse fornecido. Retorna a string barra inversa "\" se um erro genérico ocorre.
+// Código Morse. Entre com dois argumentos globais: primeiro: entre com uma string separada por barra inversa "\", onde o primeiro argumento é a parte a ser traduzida, e a segunda é "m" para converter para código Morse, ou "t" para traduzir do código morse fornecido; segundo: -1 para retornar o aviso anexo. Retorna a string barra inversa "\" se um erro genérico ocorre.
 
-function antoniovandrecodigomorse(entradaraw)
+function antoniovandrecodigomorse(entradaraw, avisoanexo)
 	{
+	if (avisoanexo == -1) return "No código Morse aqui interpretado, letras são separadas por espaços simples \" \"; palavras são separadas por espaços duplos \"  \"; e linhas são separadas por espaços triplos \"   \".";
+
+
 	var antoniovandrecodigomorsearr = [["A", ".-"], ["B", "-..."], ["C", "-.-."], ["D", "-.."], ["E", "."], ["F", "..-."], ["G", "--."], ["H", "...."], ["I", ".."], ["J", ".---"], ["K", "-.-"], ["L", ".-.."], ["M","--"], ["N", "-."], ["O", "---"], ["P", ".--."], ["Q", "--.-"], ["R", ".-."], ["S", "..."], ["T", "-"], ["U", "..-"], ["V", "...-"], ["W", ".--"], ["X", "-..-"], ["Y", "-.--"], ["Z", "--.."], ["1", ".----"], ["2", "..---"], ["3", "...--"], ["4", "....-"], ["5", "....."], ["6", "-...."], ["7", "--..."], ["8", "---.."], ["9", "----."], ["0", "-----"], [".", ".-.-.-"], [",", "--..--"], ["?", "..--.."], ["\'", ".----."], ["!", "-.-.--"], ["/", "-..-."], ["(", "-.--."], [")", "-.--.-"], ["&", ".-..."], [":", "---..."], [";", "-.-.-."], ["=", "-...-"], ["-", "-....-"], ["_", "..--.-"], ["\"", ".-..-."], ["$", "...-..-"], ["@", ".--.-."], ["Ä", ".-.-"], ["À", ".--.-"], ["Ç", "-.-.."], ["ð", "..--."], ["È", ".-..-"], ["É", "..-.."], ["Ĝ", "--.-."], ["Ĥ", "-.--."], ["Ĵ", ".---."], ["Ñ", "--.--"], ["Ö", "---."], ["Ŝ", "...-."], ["þ", ".--.."], ["Ü", "..--"], [" ", "  "], ["\n", "   "]];
 	var resultstr = "";
 	var entradarawt = entradaraw.split("\\");
