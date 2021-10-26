@@ -3,6 +3,126 @@ Proprietário: Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_leg
 Arquivo de anotações públicas #5.
 ____________________
 
+26-10-2021
+__
+
+Quando um professor de Cálculo for corrigir provas, deve considerar que diferentes respostas podem estar corretas para integrais indefinidas, desde que diferenciem-se por uma constante.
+_____
+
+26-10-2021
+__
+
+É melhor estar do lado dos torturados que dos torturadores...
+_____
+
+25-10-2021
+__
+
+Agora posso olhar para as estrelas...
+_____
+
+25-10-2021
+__
+
+Algumas redes sociais não reconhecem o autodidatismo e nem a profissão de autônomo. A solução que encontrei foi criar uma empresa cujo dono sou eu mesmo. =)
+_____
+
+25-10-2021
+__
+
+Resolvidos os problemas profissionais, com a inteligência mais livre para trabalhar, agora, o Eu...
+_____
+
+25-10-2021
+__
+
+Tenho o costume de ter cópias offline também de bibliotecas de terceiros que uso, como o tão útil a mim MathJax, assim fico mais tranquilo.
+_____
+
+25-10-2021
+__
+
+Meu blog é o principal item do meu portfólio, devo cuidar bem dele.
+_____
+
+25-10-2021
+__
+
+Parece-me também ser necessário, em um loop, dar um "$('id').empty()" antes de um "$('id').html(foo)" para limpar a memória.
+_____
+
+25-10-2021
+__
+
+Cuidando de um blog, desenvolvo-me em muitos aspectos, vai de programação a design gráfico, passando por publicidade também.
+_____
+
+25-10-2021
+__
+
+O apego material aos registros me parece o mais saudável de todos...
+_____
+
+25-10-2021
+__
+
+Procuro usar CSS apenas quando necessário.
+_____
+
+25-10-2021
+__
+
+Para por espaços duplos ou triplos na página HTML, usar "<pre>foo</pre>".
+_____
+
+25-10-2021
+__
+
+A dependência de computadores dura apenas enquanto há problemas importantes a resolver. Depois pode-se continuar usando, mas sem o apego.
+_____
+
+25-10-2021
+__
+
+Tenho que ser disciplinado também com a forma física porque sou muito observado...
+_____
+
+25-10-2021
+__
+
+Acho que é melhor escrever na internet que editar um livro de papel, o acesso será mais fácil, o que gerará mais visualizações.
+_____
+
+25-10-2021
+__
+
+Quando não tiver acesso a computadores, escrever rascunhos em papel o que vai publicar.
+_____
+
+25-10-2021
+__
+
+Utilizar o materialismo quanto aos registros físicos para, através de, dentre outras coisas, os sofrimentos, evoluir mais.
+_____
+
+25-10-2021
+__
+
+Ao menos enquanto estiver vivo, pretendo cuidar bem dos meus dados na internet, se for a mim possível.
+_____
+
+25-10-2021
+__
+
+Perdão Intel só aceitar a atualização agora, precisava terminar algumas coisas aqui.
+_____
+
+25-10-2021
+__
+
+Faça backup no cérebro.
+_____
+
 24-10-2021
 __
 
