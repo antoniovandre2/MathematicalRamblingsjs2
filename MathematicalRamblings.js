@@ -8540,6 +8540,8 @@ function antoniovandretermospg(arr, avisoanexo)
 
 	if (termo1p > termo2p) flag2 = 1;
 
+/*	Se desejando uma implementação por aproximação por Taylor.
+
 	do
 		{
 		razao += antoniovandreprecisaoreal(8);
@@ -8552,7 +8554,9 @@ function antoniovandretermospg(arr, avisoanexo)
 
 	if (razao > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(5);
 
-	razao = antoniovandreformatarreal(razao);
+	razao = antoniovandreformatarreal(razao);*/
+
+	razao = antoniovandrepotencia(termo2n / termo1n, 1 / (termo2p - termo1p));
 
 	if (flag == 1) razao *= -1;
 
