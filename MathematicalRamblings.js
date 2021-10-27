@@ -4594,10 +4594,20 @@ function antoniovandreexp(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		return antoniovandreaproximacaotaylor("exp, " + eval(x).toString());
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("exp, " + eval(x).toString());*/
+
+		return Math.exp(eval(x));
 		}
 	else
-		return antoniovandreaproximacaotaylor("exp, " + x.toString())
+		{
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("exp, " + x.toString());*/
+
+		return Math.exp(x);
+		}
 	}
 
 // Potência, "a" elevado a "b". Retorna a string "e" se um erro genérico ocorre.
