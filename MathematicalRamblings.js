@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 25-10-2021.
+// Última atualização: 27-10-2021.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js.
 
-function antoniovandremathematicalramblingsjsversao(){return "25-10-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "27-10-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -4621,10 +4621,20 @@ function antoniovandrepotencia(a, b)
 
 			b = antoniovandretraduzirexpressaofuncional(b, 0)
 
+/*			Se desejando uma implementação por aproximação por Taylor.
+
+			return antoniovandreexp(eval(b.toString()) * antoniovandreln(eval(a).toString()));*/
+
 			return antoniovandrepotencia(eval(a), eval(b));
 			}
 		else
+			{
+/*			Se desejando uma implementação por aproximação por Taylor.
+
+			return antoniovandreexp(eval(b * antoniovandreln(eval(a).toString())));*/
+
 			return antoniovandrepotencia(eval(a), b);
+			}
 		}
 	else
 		{
@@ -4637,10 +4647,20 @@ function antoniovandrepotencia(a, b)
 
 				b = antoniovandretraduzirexpressaofuncional(b, 0)
 
+/*				Se desejando uma implementação por aproximação por Taylor.
+
+				return antoniovandreexp(eval(b.toString()) * antoniovandreln(a));*/
+
 				return antoniovandrepotencia(a, eval(b));;
 				}
 			else
+				{
+/*				Se desejando uma implementação por aproximação por Taylor.
+
+				return antoniovandreexp(b * antoniovandreln(a));;*/
+
 				return Math.pow(a, b);
+				}
 			}
 		else
 			{
@@ -4658,12 +4678,24 @@ function antoniovandrepotencia(a, b)
 				if (antoniovandrenumerointeiro(b.toString()) == "e")
 					{
 					if (antoniovandrefracaogeratriz(b, 1)[1] % 2 == 1)
-						return (-1) * Math.pow(Math.abs(a), b)
+						{
+/*						Se desejando uma implementação por aproximação por Taylor.
+
+						return (-1) * antoniovandreexp(eval(eval(b) * antoniovandreln(antoniovandremodulo(a))))*/
+
+						return (-1) * Math.pow(Math.abs(a), b);
+						}
 					else
 						return "O resultado da potência não é um número real.";
 					}
 				else
+					{
+/*					Se desejando uma implementação por aproximação por Taylor.
+
+					return antoniovandreexp(eval(b * antoniovandreln(a)))*/
+
 					return Math.pow(a, b);
+					}
 				}
 			}
 		}
@@ -4985,10 +5017,16 @@ function antoniovandresen(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		return antoniovandreaproximacaotaylor("sen, " + eval(x).toString());
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("sen, " + eval(x).toString());*/
+
+		return Math.sin(eval(x));
 		}
 	else
 		{
+/*		Se desejando uma implementação por aproximação por Taylor.
+
 		var m = x;
 
 		if (x >= 0)
@@ -5002,7 +5040,9 @@ function antoniovandresen(x)
 				m += 2 * Math.PI;
 			}
 
-		return antoniovandreaproximacaotaylor("sen, " + m.toString());
+		return antoniovandreaproximacaotaylor("sen, " + m.toString());*/
+
+		return Math.sin(x);
 		}
 	}
 
@@ -5020,10 +5060,15 @@ function antoniovandrecos(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		return antoniovandreaproximacaotaylor("cos, " + eval(x).toString());
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("cos, " + eval(x).toString());*/
+
+		return Math.cos(eval(x));
 		}
 	else
 		{
+/*		Se desejando uma implementação por aproximação por Taylor.
 		var m = x;
 
 		if (x >= 0)
@@ -5037,7 +5082,10 @@ function antoniovandrecos(x)
 				m += 2 * Math.PI;
 			}
 
-		return antoniovandreaproximacaotaylor("cos, " + m.toString());
+
+		return antoniovandreaproximacaotaylor("cos, " + m.toString());*/
+
+		return Math.cos(x);
 		}
 	}
 
