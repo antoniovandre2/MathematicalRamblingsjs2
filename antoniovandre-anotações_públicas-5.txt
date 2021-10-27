@@ -3,6 +3,62 @@ Proprietário: Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_leg
 Arquivo de anotações públicas #5.
 ____________________
 
+27-10-2021
+__
+
+É algo meio mágico ver que, através da integração, sair um pi, a razão entre o comprimento e o diâmetro de uma circunferência, de um polinômio.
+_____
+
+27-10-2021
+__
+
+O materialismo é só uma fase.
+_____
+
+27-10-2021
+__
+
+Acho que não há descanso mais gostoso que o do programador após concluir os projetos.
+_____
+
+27-10-2021
+__
+
+É fonte de muitos estresses, mas, para ter um vida plena, é preciso passar pela experiência de criar softwares.
+_____
+
+26-10-2021
+__
+
+O "Math.random()" do JavaScript funciona muito bem.
+
+Já criei minha própria função random, mas para que a aleatoriedade fosse qualitativa, precisei de cerca de 10 seeds.
+_____
+
+26-10-2021
+__
+
+Meditando, estou fazendo revisões de tudo o que já vi...
+_____
+
+26-10-2021
+__
+
+Se é materialista, aprender a compartilhar...
+_____
+
+26-10-2021
+__
+
+Um pouco de materialismo para evoluir...
+_____
+
+26-10-2021
+__
+
+Não vou me censurar por ser apegado a registros. Escrevendo, desenvolvo-me.
+_____
+
 26-10-2021
 __
 
