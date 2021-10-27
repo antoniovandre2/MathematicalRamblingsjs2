@@ -5200,10 +5200,20 @@ function antoniovandrearcsen(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		return antoniovandreaproximacaotaylor("arcsen, " + eval(x).toString());
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("arcsen, " + eval(x).toString());*/
+
+		return Math.asin(eval(x));
 		}
 	else
-		return antoniovandreaproximacaotaylor("arcsen, " + x.toString());
+		{
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("arcsen, " + x.toString());*/
+
+		return Math.asin(x);
+		}
 	}
 
 // Arco-cosseno. Retorna a string "e" se um erro genérico ocorre.
@@ -5220,10 +5230,20 @@ function antoniovandrearccos(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		return antoniovandreaproximacaotaylor("arccos, " + eval(x).toString());
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("arccos, " + eval(x).toString());*/
+
+		return Math.acos(eval(x));
 		}
 	else
-		return antoniovandreaproximacaotaylor("arccos, " + x.toString());
+		{
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("arccos, " + x.toString());*/
+
+		return Math.acos(x);
+		}
 	}
 
 // Arco-tangente. Retorna a string "e" se um erro genérico ocorre.
@@ -5240,10 +5260,20 @@ function antoniovandrearctg(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		return antoniovandreaproximacaotaylor("arctg, " + eval(x).toString());
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("arctg, " + eval(x).toString());*/
+
+		return Math.atan(eval(x));
 		}
 	else
-		return antoniovandreaproximacaotaylor("arctg, " + x.toString());
+		{
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("arctg, " + x.toString());*/
+
+		return Math.atan(x);
+		}
 	}
 
 // Arco-cotangente. Retorna a string "e" se um erro genérico ocorre.
@@ -5260,10 +5290,20 @@ function antoniovandrearccotg(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		return antoniovandreaproximacaotaylor("arccotg, " + eval(x).toString());
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("arccotg, " + eval(x).toString());*/
+
+		return Math.PI / 2 - Math.atan(eval(x));
 		}
 	else
-		return antoniovandreaproximacaotaylor("arccotg, " + x.toString());
+		{
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("arccotg, " + x.toString());*/
+
+		return Math.PI / 2 - Math.atan(x);
+		}
 	}
 
 // Arco-secante. Retorna a string "e" se um erro genérico ocorre.
