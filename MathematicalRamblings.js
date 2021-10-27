@@ -4782,10 +4782,20 @@ function antoniovandreln(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		return antoniovandreaproximacaotaylor("ln, " + eval(x).toString());
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("ln, " + eval(x).toString());*/
+
+		return Math.log(eval(x));
 		}
 	else
-		return antoniovandreaproximacaotaylor("ln, " + x.toString());
+		{
+/*		Se desejando uma implementação por aproximação por Taylor.
+
+		return antoniovandreaproximacaotaylor("ln, " + x.toString());*/
+
+		return Math.log(x);
+		}
 	}
 
 // Logaritmo de base 10. Retorna a string "e" se um erro genérico ocorre.
