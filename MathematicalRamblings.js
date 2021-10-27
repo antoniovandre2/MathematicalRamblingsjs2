@@ -8540,7 +8540,7 @@ function antoniovandretermospg(arr, avisoanexo)
 
 	if (termo1p > termo2p) flag2 = 1;
 
-/*	Se desejando uma implementação por aproximação por Taylor.
+/*	Se desejando um algoritmo alternativo.
 
 	do
 		{
