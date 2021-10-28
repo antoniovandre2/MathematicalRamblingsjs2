@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 27-10-2021.
+// Última atualização: 28-10-2021.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js.
 
-function antoniovandremathematicalramblingsjsversao(){return "27-10-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "28-10-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1848,7 +1848,7 @@ function antoniovandreprecisaoreal(i)
 	switch (i)
 		{
 		case 1:
-			return 0.000005; // Utilizada na formatação de números reais no JavaScript. Antigo valor "0.0000000000000000001".
+			return 0.0000000000000000001; // Utilizada na formatação de números reais no JavaScript. Valor padrão de Antonio Vandré: "0.0000000000000000001".
 			break;
 		case 2:
 			return 0.15; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca precisão.
@@ -6140,7 +6140,10 @@ function antoniovandreoperadoresfuncoesconstantes(i)
 		case 6:
 			return "Algumas funções podem retornar valores aproximados ou demasiadamente discrepantes, pois, em suas implementações, das funções elementares, aplica-se a fórmula de Taylor em apenas alguns pontos e com um limitado número de derivadas.\n\nGradativamente vou refinando as funções para que sejam mais precisas.";
 			break;
-		default:
+		case 7:
+			return "antoniovandrereferenciavariavel2";
+			break;
+			default:
 		}
 	}
 
