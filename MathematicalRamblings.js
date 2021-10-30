@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 28-10-2021.
+// Última atualização: 30-10-2021. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -14,9 +14,9 @@
 
 console.log("                                                  \n          .\',;;;,\'.        ..,;;;,..              \n       \':oddolloxxdl,.  .;codollodxo;.            \n     \'lxo:\'.   .\'lxkxo;cxkd:.  .,oxkxc.           \n   .cxd;.        \'dkkkkxo:\'   .lxkkkkd\'           \n  .lxo.          \'dkkkko\'     :xkkkkkl.           \n .lko.           :xkkkx:      \'oxxxd:.        ....\n .;:.           .okkkko.       .....  ......\'\'\'\'\'\'\n                :xkkkx;           ...\'\'\'\'\'\'\'\'\'\'\'\'\'\n               .okkkko.       ...\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n               ;xkkkx:      ..\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n              .okkkko.  ...\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n   ....       ;xkkkx:...\'\'\'\'\'\'\'\'\',cl:,\'\'\'\'\'\'\'\'\'\'\'\'\n .codxd:.    .okkkkd,.\'\'\'\'\'\'\'\'\'\',lxxl,\'\'\'\'\'\'\'\'\'\'\'\'\n\'dkkkkkd\'   .cxkkkko,\'\'\'\'\'\'\'\'\'\',cxxl;\'\'\'\'\'\'\'\'\'\'\'\'\'\n:xkkkkd:.  .:xkkkkkl,\'\'\'\'\'\'\'\',:oxxl,\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n,dkkdc.  .\'lxd:lxkkdc,\'\'\'\',;:oxxo:,\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n ,lxxolccoxo;. .:oxxxdoooodxxdl:,\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n   .,;:::,..  ..\',;:cllllllc;,\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n              .\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n             .\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n            ..\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n            .\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n           ..\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n           .\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n\nProjeto Mathematical Ramblings. Organização sem fins lucrativos voltada para a pesquisa e educação em Matemática.\n\nmathematicalramblings.blogspot.com\n\nLicença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).\n\nSugestão ou comunicar erro: \"a.vandre.g@gmail.com\".\n\nVersão:", antoniovandremathematicalramblingsjsversao(), ".\n\n____________________");
 
-// Versão do MathematicalRamblings.js.
+// Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "28-10-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "30-10-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1841,7 +1841,7 @@ function antoniovandreformatarreal(r)
 		}
 	}
 
-// Precisão para arredondamentos de números reais. Argumento: o índice da precisão. Retorna a string "e" se um erro ocorre.
+// Precisão para arredondamentos de números reais. Argumento: o índice da precisão. Retorna a string "e" se um erro ocorre. As constantes aqui são consideradas macros, podem ser alteradas sem ocasionar a alteração da versão da biblioteca.
 
 function antoniovandreprecisaoreal(i)
 	{
@@ -1851,25 +1851,25 @@ function antoniovandreprecisaoreal(i)
 			return 0.0000000000000000001; // Utilizada na formatação de números reais no JavaScript. Valor padrão de Antonio Vandré: "0.0000000000000000001".
 			break;
 		case 2:
-			return 0.15; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca precisão.
+			return 0.0015; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca precisão.
 			break;
 		case 3:
-			return 0.06; // A variação no domínio das funções para o cálculo de limites e derivadas. Maior precisão.
+			return 0.0006; // A variação no domínio das funções para o cálculo de limites e derivadas. Maior precisão.
 			break;
 		case 4:
-			return 0.001; // A margem de erro para resultados nulos das funções.
+			return 0.00001; // A margem de erro para resultados nulos das funções.
 			break;
 		case 5:
-			return 0.000001; // Menor valor atribuído ao domínio na matriz dos polinômios de Taylor.
+			return 0.00000001; // Menor valor atribuído ao domínio na matriz dos polinômios de Taylor.
 			break;
 		case 6:
-			return 0.01; // Valor de shift para quando conveniente.
+			return 0.0001; // Valor de shift para quando conveniente.
 			break;
 		case 7:
-			return 30; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca pouca precisão.
+			return 0.3; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca pouca precisão.
 			break;
 		case 8:
-			return 0.00000005; // Precisão no cálculo de termos de uma PG.
+			return 0.0000000005; // Precisão no cálculo de termos de uma PG.
 			break;
 		default:
 			return "e";
