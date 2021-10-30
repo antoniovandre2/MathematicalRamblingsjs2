@@ -1851,25 +1851,25 @@ function antoniovandreprecisaoreal(i)
 			return 0.0000000000000000001; // Utilizada na formatação de números reais no JavaScript. Valor padrão de Antonio Vandré: "0.0000000000000000001".
 			break;
 		case 2:
-			return 0.0015; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca precisão.
+			return 0.000015; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca precisão.
 			break;
 		case 3:
-			return 0.0006; // A variação no domínio das funções para o cálculo de limites e derivadas. Maior precisão.
+			return 0.000006; // A variação no domínio das funções para o cálculo de limites e derivadas. Maior precisão.
 			break;
 		case 4:
-			return 0.00001; // A margem de erro para resultados nulos das funções.
+			return 0.0000001; // A margem de erro para resultados nulos das funções.
 			break;
 		case 5:
-			return 0.00000001; // Menor valor atribuído ao domínio na matriz dos polinômios de Taylor.
+			return 0.0000000001; // Menor valor atribuído ao domínio na matriz dos polinômios de Taylor.
 			break;
 		case 6:
-			return 0.0001; // Valor de shift para quando conveniente.
+			return 0.000001; // Valor de shift para quando conveniente.
 			break;
 		case 7:
-			return 0.3; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca pouca precisão.
+			return 0.003; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca pouca precisão.
 			break;
 		case 8:
-			return 0.0000000005; // Precisão no cálculo de termos de uma PG.
+			return 0.000000000005; // Precisão no cálculo de termos de uma PG.
 			break;
 		default:
 			return "e";
@@ -7160,7 +7160,7 @@ function antoniovandrevelocidadeangularantoniovandre(str, avisoanexo)
 
 	try
 		{
-		result = ((((abscissa2 - abscissa1) + (ordenada2 - ordenada1) * primeiraderivada) * antoniovandrepotencia(temp, 0.5) - (((abscissa2 - abscissa1) * (ponto - abscissa1) + (ordenada2 - ordenada1) * (derivadazero - ordenada1)) * ((antoniovandrepotencia(abscissa2 - abscissa1, 2) + antoniovandrepotencia(ordenada2 - ordenada1, 2)) * (2 * (ponto - abscissa1) + 2 * (derivadazero - ordenada1) * primeiraderivada) / (2 * antoniovandrepotencia(temp, 0.5))))) / temp * velocidade / antoniovandrepotencia(1 + antoniovandrepotencia(primeiraderivada, 2), 0.5) * (-1) / antoniovandrepotencia(1 - antoniovandrepotencia((abscissa2 - abscissa1) * (ponto - abscissa1) + (ordenada2 - ordenada1) * (derivadazero - ordenada1), 2) / temp, 0.5));
+		result = (((abscissa2 - abscissa1) + (ordenada2 - ordenada1) * primeiraderivada) * antoniovandrepotencia(temp, 0.5) - (((abscissa2 - abscissa1) * (ponto - abscissa1) + (ordenada2 - ordenada1) * (derivadazero - ordenada1)) * ((antoniovandrepotencia(abscissa2 - abscissa1, 2) + antoniovandrepotencia(ordenada2 - ordenada1, 2)) * (2 * (ponto - abscissa1) + 2 * (derivadazero - ordenada1) * primeiraderivada) / (2 * antoniovandrepotencia(temp, 0.5))))) / temp * velocidade / antoniovandrepotencia(1 + antoniovandrepotencia(primeiraderivada, 2), 0.5) / antoniovandrepotencia(1 - antoniovandrepotencia((abscissa2 - abscissa1) * (ponto - abscissa1) + (ordenada2 - ordenada1) * (derivadazero - ordenada1), 2) / temp, 0.5);
 		}
 	catch (error)
 		{
