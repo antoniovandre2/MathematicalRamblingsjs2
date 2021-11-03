@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 30-10-2021. Não considerando alterações em macros.
+// Última atualização: 03-11-2021. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "30-10-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "03-11-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -6141,7 +6141,7 @@ function antoniovandreoperadoresfuncoesconstantes(i)
 			return "Algumas funções podem retornar valores aproximados ou demasiadamente discrepantes, pois, em suas implementações, das funções elementares, aplica-se a fórmula de Taylor em apenas alguns pontos e com um limitado número de derivadas.\n\nGradativamente vou refinando as funções para que sejam mais precisas.";
 			break;
 		case 7:
-			return "antoniovandrereferenciavariavel2";
+			return "ANTONIOVANDREREFERENCIAVARIAVEL";
 			break;
 			default:
 		}
