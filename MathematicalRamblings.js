@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 03-11-2021. Não considerando alterações em macros.
+// Última atualização: 06-11-2021. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "03-11-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "06-11-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -9253,6 +9253,472 @@ function antoniovandrecodigomorse(entradaraw, avisoanexo)
 		}
 
 	return resultstr;
+	}
+
+// Probabilidade, segundo Antonio Vandré, de, em um torneio, classificar-se entre os n primeiros ou entre os n últimos. Entre com uma string contendo, separada por ponto e vírgula ";", primeiro; os times com os respectivos pontos separados por vírgula ",", os times e os pontos já conquistados separados por dois pontos ":"; segundo, os confrontos a seguir separados por vírgula ",", um confrontante separado de outro confrontante por dois pontos ":"; terceiro: a resposta que se deseja: separados por vírgula ",", o time, n, e "p" para mostrar a probabilidade de estar entre os n primeiros, ou "u", para mostrar a probabilidade de estar entre os n últimos; quarto: o número de pontos ganhos em caso de derrota; quinto: o número de pontos ganhos em caso de empate; sexto: o número de pontos ganhos em caso de vitória. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandretorneioprobabilidade(str)
+	{
+	if (str == "") return "e";
+
+	var str2 = str.trim();
+	str2 = str2.split(";");
+
+	if (str2.length != 6) return "e";
+
+	var timespontos = str2[0].split(",");
+	var confrontos = str2[1].split(",");
+	var requisicao = str2[2].split(",");
+	var requisicaopos;
+	var pontosperdastr = str2[3].trim();
+	var pontosempatestr = str2[4].trim();
+	var pontosganhostr = str2[5].trim();
+	var pontosperda;
+	var pontosempate;
+	var pontosganho;
+
+	var resultados = [];
+	var posicaoarr = [];
+	var maxresultado = 0;
+	var maxresultadooutros = 0;
+	var maxresultadomenor = 0;
+	var maxresultadomaior = 0;
+	var minresultado = Number.MAX_SAFE_INTEGER;
+	var minresultadooutros = Number.MAX_SAFE_INTEGER;
+	var minresultadomenor = Number.MAX_SAFE_INTEGER;
+	var minresultadomaior = Number.MAX_SAFE_INTEGER;
+	var times = [];
+	var times2 = [];
+	var shift = 0;
+
+	if (antoniovandrenumerointeiro(pontosperdastr) == "e")
+		return "O número de pontos ganhos em caso de perda deve ser um inteiro."
+	else
+		pontosperda = parseInt(pontosperdastr);
+
+	if (antoniovandrenumerointeiro(pontosempatestr) == "e")
+		return "O número de pontos ganhos em caso de empate deve ser um inteiro."
+	else
+		pontosempate = parseInt(pontosempatestr);
+
+	if (antoniovandrenumerointeiro(pontosganhostr) == "e")
+		return "O número de pontos ganhos em caso de vitória deve ser um inteiro."
+	else
+		pontosganho = parseInt(pontosganhostr);
+
+	if (requisicao.length != 3) return "e";
+
+	if (antoniovandrenumeronaturalpositivo(requisicao[1]) == "e")
+		return "As colocações devem ter como referência um número inteiro positivo."
+	else
+		requisicaopos = parseInt(requisicao[1]);
+
+	if (! ((requisicao[2].trim() == "p") || (requisicao[2].trim() == "u"))) return "e";
+
+	if (requisicaopos > timespontos.length)
+		return "A posicação a ser estudada deve ser menor ou igual ao número de times em disputa."
+
+	for (var i = 0; i < timespontos.length; i++)
+		for (var j = i + 1; j < timespontos.length; j++)
+			{
+			var timespontosarr1 = timespontos[i].split(":");
+			var timespontosarr2 = timespontos[j].split(":");
+
+			if (antoniovandrecompararstrings(timespontosarr2[0].trim(), timespontosarr1[0].trim()) == 1)
+				return "Há times repetidos.";
+			}
+
+	for (var i = 0; i < timespontos.length; i++)
+		{
+		var timespontosarr = timespontos[i].split(":");
+
+		if (timespontosarr.length != 2) return "e";
+
+		resultados.push([timespontosarr[0].trim(), parseInt(timespontosarr[1])]);
+		}
+
+	if (confrontos.length < 1)
+		return "Deve haver ao menos um confronto futuro."
+
+	for (var i = 0; i < confrontos.length; i++)
+		{
+		var confrontosarr = confrontos[i].split(":");
+
+		if (antoniovandrecompararstrings(confrontosarr[0].trim(), confrontosarr[1].trim()) == 1)
+			return "Há confrontos de um time contra ele mesmo."
+
+		if (confrontosarr.length != 2) return "e";
+
+		var tamanhoresultado = resultados.length;
+
+		for (var j = 0; j < tamanhoresultado; j++)
+			if (antoniovandrecompararstrings(resultados[j][0], confrontosarr[0].trim()) == 1)
+				{
+				resultados[j] = [resultados[j][0], resultados[j][1] + pontosperda];
+				resultados.push([resultados[j][0], resultados[j][1] + pontosempate]);
+				resultados.push([resultados[j][0], resultados[j][1] + pontosganho]);
+				}
+
+		tamanhoresultado = resultados.length;
+
+		for (var j = 0; j < tamanhoresultado; j++)
+			if (antoniovandrecompararstrings(resultados[j][0], confrontosarr[1].trim()) == 1)
+				{
+				resultados[j] = [resultados[j][0], resultados[j][1] + pontosperda];
+				resultados.push([resultados[j][0], resultados[j][1] + pontosempate]);
+				resultados.push([resultados[j][0], resultados[j][1] + pontosganho]);
+				}
+		}
+
+	for (var i = resultados.length - 1; i >= 0; i--)
+		{
+		if (antoniovandrecompararstrings(resultados[i][0], requisicao[0].trim()) == 1)
+			posicaoarr.push([resultados[i][0], resultados[i][1]]);
+		else
+			posicaoarr.push([resultados[i][0], resultados[i][1]]);
+		}
+
+	for (var i = 0; i < posicaoarr.length; i++)
+		for (var j = 0; j < posicaoarr.length; j++)
+			if (posicaoarr[j][1] > posicaoarr[i][1])
+				{
+				var temp = posicaoarr[i];
+				posicaoarr[i] = posicaoarr[j];
+				posicaoarr[j] = temp;
+				}
+
+	for (var i = 0; i < posicaoarr.length; i++)
+		{
+		if ((antoniovandrecompararstrings(posicaoarr[i][0], requisicao[0].trim()) == 1) && (maxresultado < posicaoarr[i][1])) maxresultado = posicaoarr[i][1];
+
+		if ((antoniovandrecompararstrings(posicaoarr[i][0], requisicao[0].trim()) == 1) && (minresultado > posicaoarr[i][1])) minresultado = posicaoarr[i][1];
+
+		if ((antoniovandrecompararstrings(posicaoarr[i][0], requisicao[0].trim()) == "e") && (maxresultadooutros < posicaoarr[i][1])) maxresultadooutros = posicaoarr[i][1];
+
+		if ((antoniovandrecompararstrings(posicaoarr[i][0], requisicao[0].trim()) == "e") && (minresultadooutros > posicaoarr[i][1])) minresultadooutros = posicaoarr[i][1];
+		}
+
+	times = [];
+	times2 = [];
+
+	for (var i = 0; i < posicaoarr.length; i++)
+		for (var j = 0; j < posicaoarr.length; j++)
+			if ((antoniovandrecompararstrings(posicaoarr[i][0], requisicao[0].trim()) == 1) && (antoniovandrecompararstrings(posicaoarr[i][0], posicaoarr[j][0].trim()) == "e"))
+				{
+				if (posicaoarr[i][1] > posicaoarr[j][1])
+					times.push([posicaoarr[j][0], posicaoarr[j][1]])
+				else
+					times2.push([posicaoarr[j][0], posicaoarr[j][1]]);
+				}
+
+	if (requisicao[2].trim() == "p")
+		{
+		var strrol = "";
+
+		for (var i = 0; i < times2.length; i++)
+			{
+			strrol = strrol + times2[i][1].toString();
+
+			if (i < times2.length - 1)
+				strrol = strrol + ",";
+			}
+
+		strrol = strrol + "; c";
+
+		var rol = antoniovandrerol(strrol, 1);
+
+		var contador = 0;
+		var buffer = [];
+
+		for (var j = 0; j < rol.length; j++)
+			for (var i = 0; i < times2.length; i++)
+				if (times2[i][1] == rol[j])
+					{
+					var flagbuffer = 0;
+
+					for (var k = 0; k < buffer.length; k++)
+						if (antoniovandrecompararstrings(times2[i][0], buffer[j]) == 1)
+							flagbuffer = 1;
+
+						if ((flagbuffer == 0) && (contador < requisicaopos - 1))
+							{
+							buffer.push([times2[i][0], times2[i][1]]);
+							contador++;
+							}
+
+					if ((buffer.length == 0) && (contador < requisicaopos - 1))
+						{
+						buffer.push([times2[i][0], times2[i][1]]);
+						contador++;
+						}
+					}
+
+		for (var i = 0; i < buffer.length; i++)
+			times.push(buffer[i]);
+
+		var times2p = [];
+		var flagpt = 0;
+
+		for (var i = 0; i < buffer.length; i++)
+			for (var j = 0; j < times2.length; j++)
+				if (antoniovandrecompararstrings(buffer[i][0], times2[j][0]) == "e")
+					{
+					times2p.push(times2[j]);
+					flagpt = 1;
+					}
+
+		if (flagpt == 1) times2 = times2p;
+		}
+
+	if (requisicao[2].trim() == "u")
+		{
+		var strrol = "";
+
+		for (var i = 0; i < times.length; i++)
+			{
+			strrol = strrol + times[i][1].toString();
+
+			if (i < times.length - 1)
+				strrol = strrol + ",";
+			}
+
+		strrol = strrol + "; c";
+
+		var rol = antoniovandrerol(strrol, 1);
+
+		var contador = 0;
+		var buffer = [];
+
+		for (var j = 0; j < rol.length; j++)
+			for (var i = 0; i < times.length; i++)
+				if (times[i][1] == rol[j])
+					{
+					var flagbuffer = 0;
+
+					for (var k = 0; k < buffer.length; k++)
+						if (antoniovandrecompararstrings(times[i][0], buffer[j]) == 1)
+							flagbuffer = 1;
+
+						if ((flagbuffer == 0) && (contador < requisicaopos - 1))
+							{
+							buffer.push([times[i][0], times[i][1]]);
+							contador++;
+							}
+
+					if ((buffer.length == 0) && (contador < requisicaopos - 1))
+						{
+						buffer.push([times[i][0], times[i][1]]);
+						contador++;
+						}
+					}
+
+		for (var i = 0; i < buffer.length; i++)
+			times2.push(buffer[i]);
+
+		var timesp = [];
+		var flagpt = 0;
+
+		for (var i = 0; i < buffer.length; i++)
+			for (var j = 0; j < times.length; j++)
+				if (antoniovandrecompararstrings(buffer[i][0], times[j][0]) == "e")
+					{
+					timesp.push(times[j]);
+					flagpt = 1;
+					}
+
+		if (flagpt == 1) times = timesp;
+		}
+
+	for (var i = 0; i < times.length; i++)
+		for (var j = 0; j < times.length; j++)
+			if (times[j][1] < times[i][1])
+				{
+				var temp = times[i];
+				times[i] = times[j];
+				times[j] = temp;
+				}
+
+	for (var i = 0; i < times2.length; i++)
+		for (var j = 0; j < times2.length; j++)
+			if (times2[j][1] < times2[i][1])
+				{
+				var temp = times2[i];
+				times2[i] = times2[j];
+				times2[j] = temp;
+				}
+
+	var contadormaxresultadomenor = 0;
+
+	buffer = [];
+
+	if (times.length > 0) buffer.push([times[times.length - 1][0]]);
+
+	for (var k = times.length - 1; k >= 0; k--)
+		{
+		if (maxresultadomenor < times[k][1])
+			{
+			var flagbuffer = 0;
+
+			for (var i = 0; i < buffer.length; i++)
+				if (antoniovandrecompararstrings(buffer[i], times[k][0]) == 1)
+					flagbuffer = 1
+
+			if (flagbuffer == 0)
+				{
+				contadormaxresultadomenor++;
+				buffer.push(times[k][0]);
+				}
+
+			if (contadormaxresultadomenor == requisicaopos) break;
+
+			maxresultadomenor = times[k][1];
+			}
+		}
+
+	var contadorminresultadomenor = 0;
+
+	buffer = [];
+
+	if (times.length > 0) buffer.push([times[0][0]]);
+
+	for (var k = 0; k < times.length; k++)
+		{
+		if (minresultadomenor > times[k][1])
+			{
+			var flagbuffer = 0;
+
+			for (var i = 0; i < buffer.length; i++)
+				if (antoniovandrecompararstrings(buffer[i], times[k][0]) == 1)
+					flagbuffer = 1
+
+			if (flagbuffer == 0)
+				{
+				contadorminresultadomenor++;
+				buffer.push(times[k][0]);
+				}
+
+			if (contadorminresultadomenor == requisicaopos) break;
+
+			minresultadomenor = times[k][1];
+			}
+		}
+
+	var contadormaxresultadomaior = 0;
+
+	buffer = [];
+
+	if (times2.length > 0) buffer.push([times2[times2.length - 1][0]]);
+
+	for (var k = times2.length - 1; k >= 0; k--)
+		{
+		if (maxresultadomaior < times2[k][1])
+			{
+			var flagbuffer = 0;
+
+			for (var i = 0; i < buffer.length; i++)
+				if (antoniovandrecompararstrings(buffer[i], times2[k][0]) == 1)
+					flagbuffer = 1
+
+			if (flagbuffer == 0)
+				{
+				contadormaxresultadomaior++;
+				buffer.push(times2[k][0]);
+				}
+
+			if (contadormaxresultadomaior == requisicaopos) break;
+
+			maxresultadomaior = times2[k][1];
+			}
+		}
+
+	var contadorminresultadomaior = 0;
+
+	buffer = [];
+
+	if (times2.length > 0) buffer.push([times2[0][0]]);
+
+	for (var k = 0; k < times2.length; k++)
+		{
+		if (minresultadomaior > times2[k][1])
+			{
+			var flagbuffer = 0;
+
+			for (var i = 0; i < buffer.length; i++)
+				if (antoniovandrecompararstrings(buffer[i], times2[k][0]) == 1)
+					flagbuffer = 1;
+
+			if (flagbuffer == 0)
+				{
+				contadorminresultadomaior++;
+				buffer.push(times2[k][0]);
+				}
+
+			if (contadorminresultadomaior == requisicaopos) break;
+
+			minresultadomaior = times2[k][1];
+			}
+		}
+
+	var strrol = "";
+
+	for (var i = 0; i < timespontos.length; i++)
+		{
+		var timespontosarr = timespontos[i].split(":");
+
+		if (antoniovandrecompararstrings(timespontosarr[0].trim(), requisicao[0].trim()) == "e")
+			{
+			strrol = strrol + timespontosarr[1].trim().toString();
+
+			if (i < timespontos.length - 1)
+				strrol = strrol + ",";
+			}
+		}
+
+	strrol = strrol + "; d";
+
+	var rol = antoniovandrerol(strrol, 1);
+
+	if ((Math.abs(minresultado - maxresultadomenor) == 0) || ((minresultadomaior != Number.MAX_SAFE_INTEGER) && (Math.abs(maxresultado - minresultadomaior) == 0)) || ((minresultadomaior == Number.MAX_SAFE_INTEGER) && (maxresultado == rol[rol.length - requisicaopos])))
+		shift = 1;
+
+	if (requisicao[2].trim() == "p")
+		{
+		if (minresultadomaior != Number.MAX_SAFE_INTEGER)
+			{
+			if (maxresultado < minresultadomaior)
+				return "0 %";
+			}
+		else if (maxresultado < rol[requisicaopos - 1])
+			return "0 %";
+		
+		if (maxresultado < rol[requisicaopos - 1])
+			return "0 %";
+
+		if (maxresultado == rol[requisicaopos - 1])
+			return (100 * times.length / (times.length + times2.length + shift)).toString() + " %";
+
+		if (contadorminresultadomenor > timespontos.length - requisicaopos)
+			return "100 %";
+
+		return (100 * times.length / (times.length + times2.length + shift)).toString() + " %";
+		}
+
+	if (requisicao[2].trim() == "u")
+		{
+		if (minresultado > minresultadomaior)
+			return "0 %";
+
+		if (minresultado > rol[rol.length - requisicaopos])
+			return "0 %";
+		
+		if (maxresultado == rol[rol.length - requisicaopos])
+			return (100 * times2.length / (times.length + times2.length + shift)).toString() + " %";
+
+		if (contadorminresultadomaior > timespontos.length - requisicaopos)
+			return "100 %";
+
+		return (100 * times2.length / (times.length + times2.length + shift)).toString() + " %";
+		}
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
