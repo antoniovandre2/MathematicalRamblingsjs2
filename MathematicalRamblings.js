@@ -7160,7 +7160,7 @@ function antoniovandrevelocidadeangularantoniovandre(str, avisoanexo)
 
 	try
 		{
-		result = (((abscissa2 - abscissa1) + (ordenada2 - ordenada1) * primeiraderivada) * antoniovandrepotencia(temp, 0.5) - (((abscissa2 - abscissa1) * (ponto - abscissa1) + (ordenada2 - ordenada1) * (derivadazero - ordenada1)) * ((antoniovandrepotencia(abscissa2 - abscissa1, 2) + antoniovandrepotencia(ordenada2 - ordenada1, 2)) * (2 * (ponto - abscissa1) + 2 * (derivadazero - ordenada1) * primeiraderivada) / (2 * antoniovandrepotencia(temp, 0.5))))) / temp * velocidade / antoniovandrepotencia(1 + antoniovandrepotencia(primeiraderivada, 2), 0.5) / antoniovandrepotencia(1 - antoniovandrepotencia((abscissa2 - abscissa1) * (ponto - abscissa1) + (ordenada2 - ordenada1) * (derivadazero - ordenada1), 2) / temp, 0.5);
+		result = (((abscissa2 - abscissa1) + (ordenada2 - ordenada1) * primeiraderivada) * antoniovandrepotencia(temp, 0.5) - (((abscissa2 - abscissa1) * (ponto - abscissa1) + (ordenada2 - ordenada1) * (derivadazero - ordenada1)) * ((antoniovandrepotencia(abscissa2 - abscissa1, 2) + antoniovandrepotencia(ordenada2 - ordenada1, 2)) * (2 * (ponto - abscissa1) + 2 * (derivadazero - ordenada1) * primeiraderivada) / (2 * antoniovandrepotencia(temp, 0.5))))) / temp * (-1) * velocidade / antoniovandrepotencia(1 + antoniovandrepotencia(primeiraderivada, 2), 0.5) / antoniovandrepotencia(1 - antoniovandrepotencia((abscissa2 - abscissa1) * (ponto - abscissa1) + (ordenada2 - ordenada1) * (derivadazero - ordenada1), 2) / temp, 0.5);
 		}
 	catch (error)
 		{
