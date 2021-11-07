@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 06-11-2021. Não considerando alterações em macros.
+// Última atualização: 07-11-2021. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "06-11-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "07-11-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -9705,16 +9705,23 @@ function antoniovandretorneioprobabilidade(str)
 
 	if (requisicao[2].trim() == "u")
 		{
-		if (minresultado > minresultadomaior)
-			return "0 %";
+		if (minresultadomenor != Number.MAX_SAFE_INTEGER)
+			{
+			if (minresultado > minresultadomenor)
+				return "0 %";
 
-		if (minresultado > rol[rol.length - requisicaopos])
-			return "0 %";
-		
-		if (maxresultado == rol[rol.length - requisicaopos])
-			return (100 * times2.length / (times.length + times2.length + shift)).toString() + " %";
+			if (minresultado == minresultadomenor)
+				(100 * times2.length / (times.length + times2.length + shift)).toString() + " %";
+			}
+		else
+			{
+			if (minresultado > rol[rol.length - requisicaopos])
+				return "0 %";
 
-		if (contadorminresultadomaior > timespontos.length - requisicaopos)
+			if (minresultado == rol[rol.length - requisicaopos])
+				return (100 * times2.length / (times.length + times2.length + shift)).toString() + " %";
+			}
+		if (contadorminresultadomaior > timespontos.length - requisicaopos + 2)
 			return "100 %";
 
 		return (100 * times2.length / (times.length + times2.length + shift)).toString() + " %";
