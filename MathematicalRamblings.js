@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 07-11-2021. Não considerando alterações em macros.
+// Última atualização: 08-11-2021. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "07-11-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "08-11-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -9726,6 +9726,39 @@ function antoniovandretorneioprobabilidade(str)
 
 		return (100 * times2.length / (times.length + times2.length + shift)).toString() + " %";
 		}
+	}
+
+// Parcelas com juros embutidos. Entre com uma string separada com pontos e vírgula ";" contendo, primeiro, o valor da mercadoria / serviço; segundo: o valor de entrada; terceiro, o número de parcelas; e quarto, a taxa de juros. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandreparcelasjurosembutidos(str)
+	{
+	var strargs = str.split(";");
+
+	if (strargs.length != 4) return "e";
+
+	var valor = strargs[0].trim();
+	var entrada = strargs[1].trim();
+	var numeroparcelas = strargs[2].trim();
+	var taxajuros = strargs[3].trim();
+
+	var soma = 0;
+
+	if (antoniovandrenumerorealpositivo(valor) == "e")
+		return "O valor deve ser um real positivo.";
+
+	if (antoniovandrenumerorealnaonegativo(entrada) == "e")
+		return "A entrada deve ser um real não negativo.";
+
+	if (antoniovandrenumeronaturalpositivo(numeroparcelas) == "e")
+		return "O número de parcelas deve ser um inteiro positivo.";
+
+	if (antoniovandrenumerorealpositivo(taxajuros) == "e")
+		return "A taxa de juros deve ser um real positivo.";
+
+	for (var i = 0; i < parseInt(numeroparcelas); i++)
+		soma += antoniovandrepotencia((1 + parseFloat(taxajuros)), i);
+
+	return (parseFloat(valor) - parseFloat(entrada)) * antoniovandrepotencia((1 + parseFloat(taxajuros)), parseInt(numeroparcelas)) / soma;
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
