@@ -6143,7 +6143,13 @@ function antoniovandreoperadoresfuncoesconstantes(i)
 		case 7:
 			return "ANTONIOVANDREREFERENCIAVARIAVEL";
 			break;
-			default:
+		case 8:
+			return "avreferencevariable";
+			break;
+		case 9:
+			return "AVREFERENCEVARIABLE";
+			break;
+		default:
 		}
 	}
 
