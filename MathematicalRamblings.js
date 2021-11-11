@@ -9761,6 +9761,43 @@ function antoniovandreparcelasjurosembutidos(str)
 	return (parseFloat(valor) - parseFloat(entrada)) * antoniovandrepotencia((1 + parseFloat(taxajuros)), parseInt(numeroparcelas)) / soma;
 	}
 
+// IMC (índice de massa corporal). Argumentos: primeiro: o peso em kg; segundo: a altura em centímetros. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandreimc(str)
+	{
+	var strargs = str.split(";");
+
+	if (strargs.length != 2) return "e";
+
+	if (antoniovandrenumerorealpositivo(strargs[0].trim()) == "e")
+		return "O peso deve ser um número real positivo.";
+
+	if (antoniovandrenumerorealpositivo(strargs[1].trim()) == "e")
+		return "A altura deve ser um número real positivo.";
+
+	var peso = parseFloat(strargs[0].trim());
+	var altura = parseFloat(strargs[1].trim());
+
+	var imc = 10000 * peso / (altura * altura);
+
+	if (imc < 16)
+		return "IMC: " + imc.toString() + ".\n\nMagreza grave!"
+	else if (imc < 17)
+		return "IMC: " + imc.toString() + ".\n\nMagreza moderada."
+	else if (imc < 18.5)
+		return "IMC: " + imc.toString() + ".\n\nMagreza leve."
+	else if (imc < 25)
+		return "IMC: " + imc.toString() + ".\n\nSaudável!"
+	else if (imc < 30)
+		return "IMC: " + imc.toString() + ".\n\nSobrepeso."
+	else if (imc < 35)
+		return "IMC: " + imc.toString() + ".\n\nObesidade grau I."
+	else if (imc < 40)
+		return "IMC: " + imc.toString() + ".\n\nObesidade grau II (severa)!"
+	else
+		return "IMC: " + imc.toString() + ".\n\nObesidade grau III (mórbida)!"
+	}
+
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
 // Início escopos desenvolvidos por terceiros.
