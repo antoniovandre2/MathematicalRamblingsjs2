@@ -3,6 +3,528 @@ Proprietário: Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_leg
 Arquivo de anotações públicas #5.
 ____________________
 
+11-11-2021
+__
+
+Sei que estou agindo corretamente se me sinto bem...
+_____
+
+11-11-2021
+__
+
+Se tem uma assinatura, o YouTube Music deixa as músicas tocando infinitamente... Devo pausar quando sair do computador.
+_____
+
+11-11-2021
+__
+
+Antes de ir à festa, resolver os problemas...
+_____
+
+11-11-2021
+__
+
+O sofrimento faz a alma mais bela...
+_____
+
+11-11-2021
+__
+
+Sendo cuidadoso até com os z-index's. Atribuindo valores no mínimo espectro possível.
+_____
+
+11-11-2021
+__
+
+Acho que muitos gamers deixariam os jogos um pouco de lado se começassem a experimentar programação. Em minha particular opinião, é mais divertido.
+_____
+
+11-11-2021
+__
+
+Ultimamente, quando vou dormir, já deitado, fico buscando ideias sobre o que programar no dia seguinte.
+
+Tenho que aproveitar o privilégio de ter acesso a computadores.
+_____
+
+09-11-2021
+__
+
+Com a precisão das funções, também ficou bastante precisa a calculadora da primeira e segunda derivadas.
+_____
+
+09-11-2021
+__
+
+Um pãozinho francês esquentado no micro-ondas com manteiga...
+_____
+
+09-11-2021
+__
+
+No início programar era extremamente estressante, hoje é semelhante a tomar um suco.
+_____
+
+09-11-2021
+__
+
+Gosto de jornais, mas tem muitos assuntos que não são do meu interesse, prefiro ficar com os livros.
+_____
+
+09-11-2021
+__
+
+Não programo de qualquer jeito; tenho que conhecer bem cada trecho de todos os meus softwares; e se algo não funcionar, saber porque não funciona.
+_____
+
+09-11-2021
+__
+
+Experiência como programador também.
+_____
+
+09-11-2021
+__
+
+Talvez as minhas publicações sejam só significativamente apreciadas quando eu não mais estiver encarnado por aqui; também escrevo pensando nisto.
+_____
+
+09-11-2021
+__
+
+É perigoso desobedecer aos líderes quando não se é dono de si...
+_____
+
+09-11-2021
+__
+
+Para quem pratica exercícios físicos com regularidade, comer é uma diversão.
+_____
+
+09-11-2021
+__
+
+O loading da página do meu blog é baseado na quantidade de imagens totalmente carregadas dentre todas dentro do <body>.
+_____
+
+09-11-2021
+__
+
+Como o matemático pode ser útil? Escrevendo.
+_____
+
+09-11-2021
+__
+
+O que de mais valioso temos é o Amor Interior...
+_____
+
+09-11-2021
+__
+
+Utilizando muito os computadores para que, depois, os livros bastem para me satisfazer plenamente.
+_____
+
+09-11-2021
+__
+
+Meus dados na internet podem desaparecer com o tempo, no entanto procuro os deixar o mais organizados possível; trabalhando neles também cresço, além de, eles estando lá, é algo semelhante a ser fisicamente belo, mesmo sabendo que o tempo poderá me tirar a beleza.
+_____
+
+09-11-2021
+__
+
+Desde que não muito, tudo bem um algoritmo exigir um pouco mais que o necessário de processamento para realizar a sua finalidade.
+_____
+
+09-11-2021
+__
+
+Despreocupado em escrever mais porque já escrevi muito...
+_____
+
+08-11-2021
+__
+
+Mesmo não funcionando em meu navegador, implemento, pois pode funcionar em outros.
+_____
+
+08-11-2021
+__
+
+Desde que não importantes, lidar com problemas que não consegui resolver.
+_____
+
+08-11-2021
+__
+
+Ter estresses para crescer com eles e não sentir inveja dos que tem...
+_____
+
+08-11-2021
+__
+
+Resolvendo os problemas que nem tenho, que talvez venha a ter...
+_____
+
+08-11-2021
+__
+
+O paraíso dos problemas resolvidos...
+_____
+
+08-11-2021
+__
+
+Não me preocupo muito em ter audiência ou dinheiro porque o que busco primeiramente é meu crescimento pessoal.
+_____
+
+08-11-2021
+__
+
+Visualizando todo o planeta dentro de 1 hora:
+
+(...) https://www.fourmilab.ch/cgi-bin/Earth?img=learth&opt=-l&dynimg=y&alt=150000000&date=0&imgsize=600&ns=South&ew=West&lat=0&lon=' + (360 * hojedl.getMinutes() / 60 - 180).toString() (...)
+_____
+
+07-11-2021
+__
+
+No momento não tenho Netflix porque o que já tenho já me ocupa bastante. Seria desperdício.
+_____
+
+07-11-2021
+__
+
+Estou muito bem, no entanto, devido justamente a isto, às vezes me pergunto porque ainda estou encarnado aqui, e penso que, se estou evoluindo em uma boa velocidade, melhor continuar mesmo...
+_____
+
+07-11-2021
+__
+
+Muitas vezes não vou a igrejas ou centros religiosos porque meditar em casa é mais que suficiente.
+_____
+
+07-11-2021
+__
+
+Em softwares, às vezes deixo variáveis coletadas que seriam úteis em uma parte do algoritmo que deixou de existir para dar lugar a outro. RAM não é problema.
+_____
+
+07-11-2021
+__
+
+Acho que, para uma encarnação ser proveitosa, é necessário sofrer um pouquinho...
+_____
+
+07-11-2021
+__
+
+Às vezes vou programar só porque é estressante, e com o estresse eu cresço em força psíquica.
+_____
+
+07-11-2021
+__
+
+Acho que, de agora em diante, vou esperar receber e-mails "Ação necessária", e não fazer login nos diversos serviços afim de não perder meus dados.
+_____
+
+07-11-2021
+__
+
+Procurando agora o que mais organizar além do meu interior... A casa já está limpinha e organizada, já estou em boa forma física...
+_____
+
+07-11-2021
+__
+
+É bom ter um cantinho seu onde pode escrever ou publicar sem limites; em um espaço compartilhado quase sempre há regras, e consequentemente perda de liberdade.
+_____
+
+07-11-2021
+__
+
+Mais importante que ainda não ter tudo, é não ter bugs com o já publicado.
+_____
+
+07-11-2021
+__
+
+Trabalhando com Matemática, posso fazer muitos softwares sobre as muitas aplicações dela.
+_____
+
+07-11-2021
+__
+
+Surgiu a ideia de mais um software a fazer, mas é simples, posso deixar para depois, hoje estou com vontade de relaxar. Já fiz coisas bem mais complexas...
+_____
+
+07-11-2021
+__
+
+Foi uma grande diferença sentida por mim entre programar em outras linguagem e em JavaScript; nesta última, o acesso é bem mais fácil e prático.
+
+Sabendo que há mais visualizações, mais me dedico em aperfeiçoar, trabalhando também a mim mesmo, programar também é crescer.
+_____
+
+07-11-2021
+__
+
+Explicitando que o blog é para desktop, posso ficar tranquilo em programar exigindo muito do hardware.
+_____
+
+07-11-2021
+__
+
+Ao criar entradas, sempre fazer as validações.
+_____
+
+06-11-2021
+__
+
+Programando, além de ter os softwares prontos, há um grande ganho de inteligência.
+_____
+
+06-11-2021
+__
+
+Vir para as redes sociais só depois de resolver todas as pendências.
+_____
+
+06-11-2021
+__
+
+Passei 3 dias seguidos em concentração intensa em implementar um software. Só sosseguei depois que ficou pronto.
+_____
+
+03-11-2021
+__
+
+Mesmo sem ter com o que usar, está lá, o software de fazer gráficos 3D com coordenadas polares "teta" e "phi". Talvez possa precisar no futuro...
+_____
+
+02-11-2021
+__
+
+Muitas vezes é melhor estragar o corpo para crescer espiritualmente...
+_____
+
+02-11-2021
+__
+
+Marginalizado quanto às demais coisas, porém, dado o meu tempo, na vanguarda da Matemática.
+_____
+
+02-11-2021
+__
+
+Posso já estar bem pesado, mas, quanto a músculos, ajo pensando: quanto mais, melhor; para a estética e para a saúde...
+_____
+
+02-11-2021
+__
+
+Desfrutando da sensação de todos os problemas resolvidos, é uma ocasião rara...
+_____
+
+01-11-2021
+__
+
+Já tendo programado para outros sistemas, basta fazer pequenas alterações nos sources para funcionarem aqui.
+
+E é uma sensação divina os vendo funcionar...
+_____
+
+01-11-2021
+__
+
+Nada mal meus softwares para quem deseja ser um simples matemático.
+_____
+
+01-11-2021
+__
+
+Ainda que também velho, ter um computador de reserva; também vou o configurando, mas sem pressa, pois já estou usando este.
+_____
+
+01-11-2021
+__
+
+A ansiedade pode ser até desejável se servir como um meio de progresso.
+_____
+
+01-11-2021
+__
+
+O mundo é muito grande, vou ficar só a Matemática...
+_____
+
+01-11-2021
+__
+
+Meditar pode ser a coisa mais útil que podemos fazer...
+_____
+
+01-11-2021
+__
+
+Como estudante de Matemática, devo ser DONO dos meus computadores, um materialismo que parece-me ser necessário. Ao menos é um materialismo pequeno.
+_____
+
+01-11-2021
+__
+
+Tudo organizado, resta apenas meditar mais para livrar-me mais da ansiedade; já tive excelentes progressos.
+_____
+
+01-11-2021
+__
+
+Um matemático precisa ter ao menos um computador velho para escrever, utilizar como calculadora, e programar.
+_____
+
+01-11-2021
+__
+
+O desapego vem quando abrimos mão da posse, de sermos donos...
+
+Desapego por quê? Porque assim não entramos em conflitos, e não ficamos sujeitos aos danos e imperfeições do que é material...
+_____
+
+01-11-2021
+__
+
+Escrever continua sendo uma boa terapia...
+_____
+
+01-11-2021
+__
+
+Consegui retomar o acesso a computadores utilizando celulares velhos, pois não preciso gastar dinheiro com eles. Também ajuda o fato de que não é necessário ter bons hardwares para estudar.
+_____
+
+01-11-2021
+__
+
+Para manter a sanidade mental, manter-me sempre ocupado, no entanto ocupar-se a todo tempo estudando mais Matemática é praticamente impossível, logo, ora fico fazendo revisões, ora fico jogando no divertido game que eu mesmo fiz.
+_____
+
+30-10-2021
+__
+
+Tenho offline até aquelas imagens bonitinhas que faço no Gimp, tive um trabalhinho para fazer todas elas, são quase em número de 1000.
+_____
+
+30-10-2021
+__
+
+Os softwares JavaScript também podem funcionar no desktop sem ser necessário ter acesso à internet, como um software tradicional, basta montar um pacote com os arquivos necessários.
+_____
+
+30-10-2021
+__
+
+Para verdadeiramente ficarmos tranquilos quanto à posse de arquivos, ter cópias offline, e não em servidores da internet, que, por uma ocasião fortuita qualquer que não depende de nós, serem modificadas ou deletadas.
+_____
+
+30-10-2021
+__
+
+Oportunamente usando mais um pouco computadores para ser mais independente deles. Evitando mais investimentos.
+_____
+
+29-10-2021
+__
+
+Ultimamente passando por mais frequentes privações de acesso a computadores e internet. Treinando o desapego apegando-me mais aos livros físicos.
+
+Ajuda bastante já ter feito os softwares que tinha em mente, tendo cópias offline.
+_____
+
+29-10-2021
+__
+
+Agora, além do wxMaxima, tenho a opção das calculadoras do meu blog para fazer gráficos a anexar em artigos.
+_____
+
+28-10-2021
+__
+
+Meu blog é pesado, mas é meu principal item do portfólio, tem que estar bem feito, com qualidade.
+_____
+
+28-10-2021
+__
+
+Sem internet, acho que posso evoluir socialmente através dos jornais.
+_____
+
+28-10-2021
+__
+
+Quero evoluir em alguns aspectos, mas as circunstâncias dizem que devo evoluir em outros...
+_____
+
+28-10-2021
+__
+
+O descanso do perfeccionista é raro como uma flor que brota no deserto...
+_____
+
+28-10-2021
+__
+
+Para fazer os gráficos 3D tive que implementar o suporte a duas variáveis no core js.
+_____
+
+28-10-2021
+__
+
+Para não se apegar às coisas, saber as construir novamente...
+_____
+
+28-10-2021
+__
+
+Há pedras no caminho, mas é o caminho...
+_____
+
+28-10-2021
+__
+
+Mesmo que não seja tão legível, gosto de usar fontes (de escrever em computadores) finas; transmite a mensagem de zelo para com os detalhes.
+_____
+
+28-10-2021
+__
+
+Do que escrevemos, levamos a inteligência e as sabedorias...
+_____
+
+28-10-2021
+__
+
+Feliz por estar perdendo o interesse por coisas materiais.
+_____
+
+27-10-2021
+__
+
+Devoro a RAM sem pena; os computadores de hoje tem muita memória.
+_____
+
+27-10-2021
+__
+
+Se não tenho mais problemas pessoais a resolver, resolver os de Matemática.
+_____
+
+27-10-2021
+__
+
+É preciso amar a paz...
+_____
+
 27-10-2021
 __
 
