@@ -814,6 +814,8 @@ function antoniovandrereduzirfracao(str, tiporetorno)
 
 function antoniovandrenumeroreal(arr)
 	{
+	if (antoniovandrecompararstrings(typeof arr, "string") == "e") return "e";
+
 	var bufferverificacaonumerica = arr.trim().split(/\s+/);
 	var flag = 0;
 
@@ -823,7 +825,7 @@ function antoniovandrenumeroreal(arr)
 		if (! parseFloat(bufferverificacaonumerica[0]) && parseFloat(bufferverificacaonumerica[0]) != 0)
 			flag = 1
 		else
-			if ((antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), ".") == "e" && parseFloat(bufferverificacaonumerica[0]) >= 0) || (antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-.") == "e" && parseFloat(bufferverificacaonumerica[0]) < 0))
+			if ((antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "") == "e" && ((antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), ".") == "e" && parseFloat(bufferverificacaonumerica[0]) >= 0) && (antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-.") == "e" && parseFloat(bufferverificacaonumerica[0]) < 0) && (antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "e") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "e+") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "e-") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), ".e+") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), ".e-") == "e" && parseFloat(bufferverificacaonumerica[0]) >= 0) && (antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-e") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-e+") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-e-") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-.e") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-.e+") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-.e-") == "e" && parseFloat(bufferverificacaonumerica[0]) < 0))))
 				flag = 1;
 
 	if (flag == 0)
@@ -1848,7 +1850,7 @@ function antoniovandreprecisaoreal(i)
 	switch (i)
 		{
 		case 1:
-			return 0.0000000000000000001; // Utilizada na formatação de números reais no JavaScript. Valor padrão de Antonio Vandré: "0.0000000000000000001".
+			return 0.0000000001; // Utilizada na formatação de números reais no JavaScript. Valor padrão de Antonio Vandré: "0.0000000001".
 			break;
 		case 2:
 			return 0.000015; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca precisão.
