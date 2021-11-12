@@ -9886,10 +9886,10 @@ function antoniovandremaximominimofuncao(arr, avisoanexo)
 
 			if ((antoniovandrecompararstrings(typeof result, "number") == "e") || (result == Math.abs(Infinity)))
 				{
-				if ((retorno == "M") && (((i == 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "+ infinito") == 1)) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "+ infinito") == 1) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "+ infinito") == 1))))
+				if ((retorno == "M") && (((i == 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "+ infinito") == 1)) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "+ infinito") == 1) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "+ infinito") == 1))))
 					return "A função não tem máximo.";
 
-				if ((retorno == "m") && (((i == 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "- infinito") == 1)) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "- infinito") == 1) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "- infinito") == 1))))
+				if ((retorno == "m") && (((i == 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "- infinito") == 1)) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "- infinito") == 1) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "- infinito") == 1))))
 					return "A função não tem mínimo.";
 
 				continue;
