@@ -9875,64 +9875,39 @@ function antoniovandremaximominimofuncao(arr, avisoanexo)
 		list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
 
 	for (var i = 0; i <= precisao; i++)
+		{
+		var expressao;
+
+		expressao = antoniovandresubstituirstrings(funcao, list);
+
+		try
 			{
-			var expressao;
-
-			expressao = antoniovandresubstituirstrings(funcao, list);
-
-			try
-				{
-				result = eval(antoniovandresubstituirstrings(expressao, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + (inf + (sup - inf) * (i / precisao)).toString() + ")"]]));
-				}
-			catch (error) {}
-
-			if ((antoniovandrecompararstrings(typeof result, "number") == "e") || (result == Math.abs(Infinity)))
-				{
-				if ((retorno == "M") && (((i == 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "+ infinito") == 1)) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "+ infinito") == 1) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "+ infinito") == 1))))
-					return "A função não tem máximo.";
-
-				if ((retorno == "m") && (((i == 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "- infinito") == 1)) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "- infinito") == 1) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "- infinito") == 1))))
-					return "A função não tem mínimo.";
-
-				continue;
-				}
-
-			if (antoniovandrenumeroreal(result.toString()) == "e")
-				{
-				if ((antoniovandrecompararstrings(result, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(result, antoniovandremensagenserro(6)) == 1))
-					return antoniovandremensagenserro(6)
-				else
-					{
-					if ((antoniovandrecompararstrings(result, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(result, antoniovandremensagenserro(4)) == 1))
-						return antoniovandremensagenserro(4)
-					else
-						{
-						if ((antoniovandrecompararstrings(result, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(result, antoniovandremensagenserro(2)) == 1))
-							return antoniovandremensagenserro(2)
-						else
-							{
-							if (antoniovandrecompararstrings(typeof result, "string") == "e")
-								return "e"
-							else
-								return result;
-							}
-						}
-					}
-				}
-			else
-				{
-				if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
-					return antoniovandremensagenserro(6)
-				else
-					{
-					if (minimo == Number.MAX_VALUE) minimo = result;
-					if (maximo == (-1) * Number.MAX_VALUE) maximo = result;
-			
-					if (result < minimo) minimo = result;
-					if (result > maximo) maximo = result;
-					}
-				}
+			result = eval(antoniovandresubstituirstrings(expressao, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + (inf + (sup - inf) * (i / precisao)).toString() + ")"]]));
 			}
+		catch (error) {}
+
+		if (antoniovandrenumeroreal(result.toString()) == "e")
+			{
+			if ((retorno == "M") && (((i == 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "+ infinito") == 1)) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "+ infinito") == 1) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "+ infinito") == 1))))
+				return "A função não tem máximo.";
+
+			if ((retorno == "m") && (((i == 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "- infinito") == 1)) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "- infinito") == 1) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "- infinito") == 1))))
+				return "A função não tem mínimo.";
+
+			continue;
+			}
+
+		if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+			return antoniovandremensagenserro(6)
+		else
+			{
+			if (minimo == Number.MAX_VALUE) minimo = result;
+			if (maximo == (-1) * Number.MAX_VALUE) maximo = result;
+	
+			if (result < minimo) minimo = result;
+			if (result > maximo) maximo = result;
+			}
+		}
 
 	switch (retorno)
 		{
