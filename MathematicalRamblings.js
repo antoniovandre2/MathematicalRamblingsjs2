@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 11-11-2021. Não considerando alterações em macros.
+// Última atualização: 12-11-2021. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "11-11-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "12-11-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -9802,6 +9802,138 @@ function antoniovandreimc(str)
 		return "IMC: " + imc.toString() + ".\n\nObesidade grau II (severa)!"
 	else
 		return "IMC: " + imc.toString() + ".\n\nObesidade grau III (mórbida)!"
+	}
+
+// Máximo ou mínimo de uma função. Argumentos: primeiro: uma string separada em três partes por ponto e vírgula ";", a primeira com uma função em "x", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira "m" se deseja o mínimo ou "M" se deseja o máximo, a quarta a precisão, um inteiro positivo, de busca; segundo: -1 para exibir o aviso anexo. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandremaximominimofuncao(arr, avisoanexo)
+	{
+	var str = arr.split(";");
+	var funcao;
+	var strt;
+	var maximo = 0;
+	var minimo = Number.MAX_VALUE;
+	var precisao;
+	var list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
+	var listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
+	var result;
+	var retorno;
+
+	if (avisoanexo == -1) return antoniovandreoperadoresfuncoesconstantes(1);
+
+
+	if (str.length != 4) return "e";
+
+	funcao = str[0].trim();
+	retorno = str[2].trim();
+
+	if (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(funcao, antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(funcao, antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e")
+		return "e";
+
+	strt = str[1].split(",");
+
+	if (strt.length != 2) return "e";
+
+	strt[0] = strt[0].trim();
+	strt[1] = strt[1].trim();
+
+	try
+		{
+		inf = eval(antoniovandretraduzirexpressaofuncional(strt[0], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	try
+		{
+		sup = eval(antoniovandretraduzirexpressaofuncional(strt[1], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	str[3] = str[3].trim();
+
+	if ((antoniovandrenumeroreal(inf.toString()) == "e") || (antoniovandrenumeroreal(sup.toString()) == "e") || (antoniovandrenumeronaturalpositivo(str[3]) == "e"))
+		return "e";
+
+	precisao = parseInt(str[3]);
+
+	if ((Math.abs(inf) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(sup) > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
+		return antoniovandremensagenserro(2);
+
+	if (inf >= sup) return "e";
+
+	for (var i = 0; i < listtam; i++)
+		list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
+
+	for (var i = 0; i <= precisao; i ++)
+			{
+			var expressao;
+
+			expressao = antoniovandresubstituirstrings(funcao, list);
+
+			try
+				{
+				result = eval(antoniovandresubstituirstrings(expressao, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + (inf + (sup - inf) * (i / precisao)).toString() + ")"]]));
+				}
+			catch (error)
+				{
+				if ((retorno == "M") && ((antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "+ infinito") == 1) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "+ infinito") == 1))))
+					return "A função não tem máximo.";
+
+				if ((retorno == "m") && ((antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "- infinito") == 1) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "- infinito") == 1))))
+					return "A função não tem mínimo.";
+				}
+
+			if (antoniovandrenumeroreal(result.toString()) == "e")
+				{
+				if ((antoniovandrecompararstrings(result, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(result, antoniovandremensagenserro(6)) == 1))
+					return antoniovandremensagenserro(6)
+				else
+					{
+					if ((antoniovandrecompararstrings(result, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(result, antoniovandremensagenserro(4)) == 1))
+						return antoniovandremensagenserro(4)
+					else
+						{
+						if ((antoniovandrecompararstrings(result, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(result, antoniovandremensagenserro(2)) == 1))
+							return antoniovandremensagenserro(2)
+						else
+							{
+							if (antoniovandrecompararstrings(typeof result, "string") == "e")
+								return "e"
+							else
+								return result;
+							}
+						}
+					}
+				}
+			else
+				{
+				if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+					return antoniovandremensagenserro(6)
+				else
+					{
+					if (result < minimo) minimo = result;
+					if (result > maximo) maximo = result;
+					}
+				}
+			}
+
+	switch (retorno)
+		{
+		case "m":
+			return minimo;
+			break;
+		case "M":
+			return maximo;
+			break;
+		default:
+			return "e";
+		}
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
