@@ -9811,8 +9811,10 @@ function antoniovandremaximominimofuncao(arr, avisoanexo)
 	var str = arr.split(";");
 	var funcao;
 	var strt;
-	var maximo = 0;
+	var maximo = (-1) * Number.MAX_VALUE;
 	var minimo = Number.MAX_VALUE;
+	var inf;
+	var sup;
 	var precisao;
 	var list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
 	var listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
@@ -9870,7 +9872,7 @@ function antoniovandremaximominimofuncao(arr, avisoanexo)
 	for (var i = 0; i < listtam; i++)
 		list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
 
-	for (var i = 0; i <= precisao; i ++)
+	for (var i = 0; i <= precisao; i++)
 			{
 			var expressao;
 
@@ -9880,13 +9882,17 @@ function antoniovandremaximominimofuncao(arr, avisoanexo)
 				{
 				result = eval(antoniovandresubstituirstrings(expressao, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + (inf + (sup - inf) * (i / precisao)).toString() + ")"]]));
 				}
-			catch (error)
+			catch (error) {}
+
+			if ((antoniovandrecompararstrings(typeof result, "number") == "e") || (result == Math.abs(Infinity)))
 				{
-				if ((retorno == "M") && ((antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "+ infinito") == 1) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "+ infinito") == 1))))
+				if ((retorno == "M") && (((i == 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "+ infinito") == 1)) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "+ infinito") == 1) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "+ infinito") == 1))))
 					return "A função não tem máximo.";
 
-				if ((retorno == "m") && ((antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "- infinito") == 1) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "- infinito") == 1))))
+				if ((retorno == "m") && (((i == 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "- infinito") == 1)) || ((i > 0) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; esquerda", 0), "- infinito") == 1) && (antoniovandrecompararstrings(antoniovandrelimitefuncaocontinua(funcao + ";" + (inf + (sup - inf) * (i / precisao)).toString() + "; direita", 0), "- infinito") == 1))))
 					return "A função não tem mínimo.";
+
+				continue;
 				}
 
 			if (antoniovandrenumeroreal(result.toString()) == "e")
@@ -9917,6 +9923,9 @@ function antoniovandremaximominimofuncao(arr, avisoanexo)
 					return antoniovandremensagenserro(6)
 				else
 					{
+					if (minimo == Number.MAX_VALUE) minimo = result;
+					if (maximo == (-1) * Number.MAX_VALUE) maximo = result;
+			
 					if (result < minimo) minimo = result;
 					if (result > maximo) maximo = result;
 					}
