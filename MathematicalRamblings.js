@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 12-11-2021. Não considerando alterações em macros.
+// Última atualização: 13-11-2021. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "12-11-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "13-11-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -9922,6 +9922,33 @@ function antoniovandremaximominimofuncao(arr, avisoanexo)
 		}
 	}
 
+// Nomes dos polígonos. Retorna a string "" se não há nome.
+
+function antoniovandrepoligonosnomes(nlados, saida)
+	{
+	var polinomiosnomesarr = [[3, "triângulo equilátero"], [4, "quadrado"], [5, "pentágono"], [6, "hexágono"], [7, "heptágono"], [8, "octógono"], [9, "eneágono"], [10, "decágono"], [11, "undecácono"], [12, "dodecágono"], [13, "tridecágono"], [14, "tetradecágono"], [15, "pentadecágono"], [16, "hexadecágono"], [17, "heptadecágono"], [18, "octadecágono"], [19, "eneadecágono"], [20, "icoságono"], [30, "triacontágono"], [40, "tetracontágono"], [50, "pentacontágono"], [60, "hexacontágono"], [70, "heptacontágono"], [80, "octacontágono"], [90, "eneacontágono"], [100, "hectágono"]];
+
+	var flag = 0;
+	var nome = "";
+
+	for (var i = 0; i < polinomiosnomesarr.length; i++)
+		if (polinomiosnomesarr[i][0] == nlados)
+			{
+			nome = polinomiosnomesarr[i][1];
+			flag = 1;
+			break;
+			}
+
+	if (saida == -1)
+		{
+		if (flag == 1)
+			return 1
+		else
+			return 0;
+		}
+	else
+		return nome;
+	}
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
 // Início escopos desenvolvidos por terceiros.
