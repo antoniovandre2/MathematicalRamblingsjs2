@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 13-11-2021. Não considerando alterações em macros.
+// Última atualização: 14-11-2021. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "13-11-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "14-11-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -10092,6 +10092,95 @@ function antoniovandrecomprimentograficofuncao(str, avisoanexo)
 		return antoniovandremensagenserro(5);
 
 	return antoniovandreformatarreal(result);
+	}
+
+// Ponto Cego de Antonio Vandré no eixo Ox. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte a abscissa do ponto de referência, a terceira a ordenada do ponto de referência, e a quarta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna um número real raio (aproximado) da função para o "x" dado, ou a string "e" caso ocorra um erro.
+
+function antoniovandrepontocegooxantoniovandre(str, avisoanexo)
+	{
+	var argumentos = str.split(";");
+	var derivadazero;
+	var primeiraderivada;
+	var abscissa;
+	var ordenada;
+	var ponto;
+	var result;
+
+	if (avisoanexo == -1) return antoniovandreoperadoresfuncoesconstantes(1);
+
+	if (argumentos.length != 4) return "e";
+
+	if (argumentos[0].trim() == "") return "e";
+
+	if ((antoniovandreexpressaofuncaovalida(argumentos[1].trim()) == "e") || (antoniovandreexpressaofuncaovalida(argumentos[2].trim()) == "e") || (antoniovandreexpressaofuncaovalida(argumentos[3].trim()) == "e"))
+	return "e";
+
+	try
+		{
+		abscissa = eval(antoniovandretraduzirexpressaofuncional(argumentos[1], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if (antoniovandrenumeroreal(abscissa.toString()) == "e")
+		return "e";
+
+	try
+		{
+		ordenada = eval(antoniovandretraduzirexpressaofuncional(argumentos[2], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if (antoniovandrenumeroreal(ordenada.toString()) == "e")
+		return "e";
+
+	try
+		{
+		ponto = eval(antoniovandretraduzirexpressaofuncional(argumentos[3], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if (antoniovandrenumeroreal(ponto.toString()) == "e")
+		return "e";
+
+	if (abscissa == ponto) return ponto;
+
+	if ((Math.abs(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ponto) > parseFloat(antoniovandremaximovalorentrada(1))))
+		return antoniovandremensagenserro(2);
+
+	derivadazero = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[3].trim() + "+" + antoniovandreprecisaoreal(6).toString() + ";0", 1, 0);
+
+	if (antoniovandrenumeroreal(derivadazero.toString()) == "e") return derivadazero;
+
+	primeiraderivada = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[3].trim() + "+" + antoniovandreprecisaoreal(6).toString() + ";1", 1, 0);
+
+	if (antoniovandrenumeroreal(primeiraderivada.toString()) == "e") return primeiraderivada;
+
+	if (Math.abs(derivadazero) <= Math.abs(ordenada)) return "A ordenada do ponto de referência deve estar entre o eixo Ox e o valor da função no ponto.";
+
+	try
+		{
+		result = ((derivadazero - ordenada) * abscissa - (ponto - abscissa) * ordenada) / (derivadazero - ordenada);
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if ((antoniovandrenumeroreal(result.toString()) == "e") || (result == null) || (result == undefined) || (isNaN(result))) return "e";
+
+	if (Math.abs(result) > antoniovandremaximovalorsaida(1))
+		return antoniovandremensagenserro(5)
+	else
+		return result;
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
