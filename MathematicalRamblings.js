@@ -10164,7 +10164,7 @@ function antoniovandrepontocegooxantoniovandre(str, avisoanexo)
 
 	if (antoniovandrenumeroreal(primeiraderivada.toString()) == "e") return primeiraderivada;
 
-	if (Math.abs(derivadazero) <= Math.abs(ordenada)) return "A ordenada do ponto de referência deve estar entre o eixo Ox e o valor da função no ponto.";
+	if (((derivadazero >= 0) && (ordenada >= 0) && (derivadazero <= ordenada)) || ((derivadazero <= 0) && (ordenada <= 0) && (derivadazero >= ordenada))) return "A ordenada do ponto de referência deve estar entre o eixo Ox e o valor da função no ponto.";
 
 	try
 		{
