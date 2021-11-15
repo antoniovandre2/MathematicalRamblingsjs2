@@ -10151,8 +10151,6 @@ function antoniovandrepontocegooxantoniovandre(str, avisoanexo)
 	if (antoniovandrenumeroreal(ponto.toString()) == "e")
 		return "e";
 
-	if (abscissa == ponto) return ponto;
-
 	if ((Math.abs(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ponto) > parseFloat(antoniovandremaximovalorentrada(1))))
 		return antoniovandremensagenserro(2);
 
@@ -10164,11 +10162,113 @@ function antoniovandrepontocegooxantoniovandre(str, avisoanexo)
 
 	if (antoniovandrenumeroreal(primeiraderivada.toString()) == "e") return primeiraderivada;
 
-	if (((derivadazero >= 0) && (ordenada >= 0) && (derivadazero <= ordenada)) || ((derivadazero <= 0) && (ordenada <= 0) && (derivadazero >= ordenada))) return "A ordenada do ponto de referência deve estar entre o eixo Ox e o valor da função no ponto.";
+	if (((derivadazero >= 0) && (ordenada >= 0) && (derivadazero <= ordenada)) || ((derivadazero <= 0) && (ordenada <= 0) && (derivadazero >= ordenada)) || (derivadazero * ordenada <= 0)) return "A ordenada do ponto de referência deve estar entre o eixo Ox e o valor da função no ponto.";
+
+	if (abscissa == ponto) return ponto;
 
 	try
 		{
 		result = ((derivadazero - ordenada) * abscissa - (ponto - abscissa) * ordenada) / (derivadazero - ordenada);
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if ((antoniovandrenumeroreal(result.toString()) == "e") || (result == null) || (result == undefined) || (isNaN(result))) return "e";
+
+	if (Math.abs(result) > antoniovandremaximovalorsaida(1))
+		return antoniovandremensagenserro(5)
+	else
+		return result;
+	}
+
+// Velocidade do Ponto Cego de Antonio Vandré no eixo Ox. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte um número real para a velocidade de deslocamento sob o gráfico da função, a terceira a abscissa do ponto de referência, a quarta a ordenada do ponto de referência, e a quinta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna um número real raio (aproximado) da função para o "x" dado, ou a string "e" caso ocorra um erro.
+
+function antoniovandrevelocidadepontocegooxantoniovandre(str, avisoanexo)
+	{
+	var argumentos = str.split(";");
+	var derivadazero;
+	var primeiraderivada;
+	var velocidade;
+	var abscissa;
+	var ordenada;
+	var ponto;
+	var result;
+
+	if (avisoanexo == -1) return antoniovandreoperadoresfuncoesconstantes(1);
+
+	if (argumentos.length != 5) return "e";
+
+	if (argumentos[0].trim() == "") return "e";
+
+	if ((antoniovandreexpressaofuncaovalida(argumentos[1].trim()) == "e") || (antoniovandreexpressaofuncaovalida(argumentos[2].trim()) == "e") || (antoniovandreexpressaofuncaovalida(argumentos[3].trim()) == "e") || (antoniovandreexpressaofuncaovalida(argumentos[4].trim()) == "e"))
+	return "e";
+
+	try
+		{
+		velocidade = eval(antoniovandretraduzirexpressaofuncional(argumentos[1], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if (antoniovandrenumeroreal(velocidade.toString()) == "e")
+		return "e";
+
+	try
+		{
+		abscissa = eval(antoniovandretraduzirexpressaofuncional(argumentos[2], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if (antoniovandrenumeroreal(abscissa.toString()) == "e")
+		return "e";
+
+	try
+		{
+		ordenada = eval(antoniovandretraduzirexpressaofuncional(argumentos[3], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if (antoniovandrenumeroreal(ordenada.toString()) == "e")
+		return "e";
+
+	try
+		{
+		ponto = eval(antoniovandretraduzirexpressaofuncional(argumentos[4], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if (antoniovandrenumeroreal(ponto.toString()) == "e")
+		return "e";
+
+	if ((Math.abs(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ponto) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(velocidade) > parseFloat(antoniovandremaximovalorentrada(1))))
+		return antoniovandremensagenserro(2);
+
+	derivadazero = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[4].trim() + "+" + antoniovandreprecisaoreal(6).toString() + ";0", 1, 0);
+
+	if (antoniovandrenumeroreal(derivadazero.toString()) == "e") return derivadazero;
+
+	primeiraderivada = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[4].trim() + "+" + antoniovandreprecisaoreal(6).toString() + ";1", 1, 0);
+
+	if (antoniovandrenumeroreal(primeiraderivada.toString()) == "e") return primeiraderivada;
+
+	if (((derivadazero >= 0) && (ordenada >= 0) && (derivadazero <= ordenada)) || ((derivadazero <= 0) && (ordenada <= 0) && (derivadazero >= ordenada)) || (derivadazero * ordenada <= 0)) return "A ordenada do ponto de referência deve estar entre o eixo Ox e o valor da função no ponto.";
+
+	try
+		{
+		result = velocidade / antoniovandresqrt(1 + antoniovandrepotencia(primeiraderivada, 2)) * ((abscissa * primeiraderivada - ordenada) * (derivadazero - ordenada) - primeiraderivada * (abscissa * derivadazero - ordenada * ponto)) / antoniovandrepotencia(derivadazero - ordenada, 2);
 		}
 	catch (error)
 		{
