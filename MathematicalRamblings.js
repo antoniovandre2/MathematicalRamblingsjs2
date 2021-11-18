@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 14-11-2021. Não considerando alterações em macros.
+// Última atualização: 18-11-2021. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "14-11-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "18-11-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1872,6 +1872,9 @@ function antoniovandreprecisaoreal(i)
 			break;
 		case 8:
 			return 0.000000000005; // Precisão no cálculo de termos de uma PG.
+			break;
+		case 9:
+			return 0.1; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca pouca pouca precisão.
 			break;
 		default:
 			return "e";
@@ -10039,7 +10042,7 @@ function antoniovandrecomprimentograficofuncao(str, avisoanexo)
 	expressao = antoniovandresubstituirstrings(expressaopart, list);
 
 	for (var i = 0; i <= n2; i++)
-	{
+		{
 		var x = inf2 + (i * parcela);
 
 		try
@@ -10080,13 +10083,18 @@ function antoniovandrecomprimentograficofuncao(str, avisoanexo)
 			else
 				{
 				if (xp != null)
-					result += antoniovandresqrt((x - xp) * (x - xp) + (resultpart - resultpartp) * (resultpart - resultpartp));
+					{
+					if (Math.abs(resultpart - resultpartp) > antoniovandreprecisaoreal(7))
+						return "Aparentemente a função não é contínua no domínio dado."
+					else
+						result += antoniovandresqrt((x - xp) * (x - xp) + (resultpart - resultpartp) * (resultpart - resultpartp));
 
-				xp = x;
-				resultpartp = resultpart;
+					xp = x;
+					resultpartp = resultpart;
+					}
 				}
 			}
-	}
+		}
 
 	if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(5);
