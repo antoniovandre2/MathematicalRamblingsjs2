@@ -1874,7 +1874,7 @@ function antoniovandreprecisaoreal(i)
 			return 0.000000000005; // Precisão no cálculo de termos de uma PG.
 			break;
 		case 9:
-			return 0.5; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca pouca pouca precisão.
+			return 1; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca pouca pouca precisão.
 			break;
 		default:
 			return "e";
