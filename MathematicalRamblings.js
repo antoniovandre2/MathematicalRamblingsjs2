@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 18-11-2021. Não considerando alterações em macros.
+// Última atualização: 19-11-2021. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "18-11-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "19-11-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -10289,6 +10289,45 @@ function antoniovandrevelocidadepontocegooxantoniovandre(str, avisoanexo)
 		return antoniovandremensagenserro(5)
 	else
 		return result;
+	}
+
+// Completar quadrados. O único argumento é um polinômio que deve ser do segundo grau e em "x".
+
+function antoniovandrecompletarquadrado(str)
+	{
+	if (antoniovandrepolinomio(str) == "e")
+		return "O argumento não é um polinômio.";
+
+	if (antoniovandregraupolinomio(str) != 2)
+		return "O argumento não é um polinômio de grau 2.";
+
+	if ((antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, 0)), "xx") == "e") || (antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, 1)), "x") == "e") || (antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, 2)), "") == "e"))
+		return "O polinômio deve ser em \"x\"."
+
+	var segundotermopart = antoniovandreformatarreal(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, 1)) / antoniovandresqrt(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, 0))) / 2);
+
+	var concatenacao1;
+
+	if (segundotermopart < 0)
+		concatenacao1 = " - "
+	else
+		concatenacao1 = " + ";
+
+	var termoindependente = antoniovandreformatarreal(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, 2)) - segundotermopart * segundotermopart);
+
+	var concatenacao2;
+
+	if (termoindependente < 0)
+		concatenacao2 = " - "
+	else
+		concatenacao2 = " + ";
+
+	var coeficientexx = "";
+
+	if (antoniovandreformatarreal(antoniovandresqrt(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, 0)))) != 1)
+		coeficientexx = antoniovandreformatarreal(antoniovandresqrt(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, 0)))).toString();
+	
+	return "(" + coeficientexx + "x" + concatenacao1 + antoniovandreformatarreal(antoniovandremodulo(segundotermopart)).toString() + ")^2" + concatenacao2 + antoniovandremodulo(termoindependente).toString();
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
