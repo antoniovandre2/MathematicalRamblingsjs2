@@ -10301,10 +10301,12 @@ function antoniovandrecompletarquadrado(str)
 	if (antoniovandregraupolinomio(str) != 2)
 		return "O argumento não é um polinômio de grau 2.";
 
-	if ((antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, 0)), "xx") == "e") || (antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, 1)), "x") == "e") || (antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, 2)), "") == "e"))
+	var pol = antoniovandrereduzirtermossemelhantes(str);
+
+	if ((antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(pol, 0)), "xx") == "e") || (antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(pol, 1)), "x") == "e") || (antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(pol, 2)), "") == "e"))
 		return "O polinômio deve ser em \"x\"."
 
-	var segundotermopart = antoniovandreformatarreal(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, 1)) / antoniovandresqrt(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, 0))) / 2);
+	var segundotermopart = antoniovandreformatarreal(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(pol, 1)) / antoniovandresqrt(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(pol, 0))) / 2);
 
 	var concatenacao1;
 
@@ -10313,7 +10315,7 @@ function antoniovandrecompletarquadrado(str)
 	else
 		concatenacao1 = " + ";
 
-	var termoindependente = antoniovandreformatarreal(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, 2)) - segundotermopart * segundotermopart);
+	var termoindependente = antoniovandreformatarreal(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(pol, 2)) - segundotermopart * segundotermopart);
 
 	var concatenacao2;
 
@@ -10324,8 +10326,8 @@ function antoniovandrecompletarquadrado(str)
 
 	var coeficientexx = "";
 
-	if (antoniovandreformatarreal(antoniovandresqrt(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, 0)))) != 1)
-		coeficientexx = antoniovandreformatarreal(antoniovandresqrt(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, 0)))).toString();
+	if (antoniovandreformatarreal(antoniovandresqrt(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(pol, 0)))) != 1)
+		coeficientexx = antoniovandreformatarreal(antoniovandresqrt(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(pol, 0)))).toString();
 	
 	return "(" + coeficientexx + "x" + concatenacao1 + antoniovandreformatarreal(antoniovandremodulo(segundotermopart)).toString() + ")^2" + concatenacao2 + antoniovandremodulo(termoindependente).toString();
 	}
