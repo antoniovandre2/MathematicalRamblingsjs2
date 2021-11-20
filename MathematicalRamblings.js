@@ -155,6 +155,67 @@ function antoniovandrefatorial(n)
 			}
 	}
 
+// Arranjos. Argumentos: dois números naturais. Retorna a string "e" se ocorre erro.
+
+function antoniovandrearranjos(n, p)
+{
+var a = 1;
+
+if ((antoniovandrenumeronatural(n.toString()) == "e") || (antoniovandrenumeronatural(p.toString()) == "e"))
+	return "e"
+else
+	{
+	if ((Math.abs(n) > antoniovandremaximovalorentrada(2)) || (Math.abs(p) > antoniovandremaximovalorentrada(2)))
+		return antoniovandremensagenserro(1)
+	else
+		{
+		if (p > n)
+			return "O numerador deve ser menor ou igual ao denominador."
+		else
+			for (var i = n; i >= n - p + 1; i--) a *= i;
+
+		if (Math.abs(a) > parseFloat(antoniovandremaximovalorsaida(1)))
+			return antoniovandremensagenserro(5);
+
+		return a;
+		}
+	}
+}
+
+// Combinações. Argumentos: dois números naturais. Retorna a string "e" se ocorre erro.
+
+function antoniovandrecombinacoes(n, p)
+	{
+	var c;
+
+	if ((antoniovandrenumeronatural(n.toString()) == "e") || (antoniovandrenumeronatural(p.toString()) == "e"))
+		return "e"
+	else
+		{
+		if ((Math.abs(n) > antoniovandremaximovalorentrada(2)) || (Math.abs(p) > antoniovandremaximovalorentrada(2)))
+			return antoniovandremensagenserro(1)
+		else
+			{
+			if (p > n)
+				return "O numerador deve ser menor ou igual ao denominador."
+			else
+				{
+				var f = antoniovandrefatorial(p);
+
+				if (Math.abs(f) > parseFloat(antoniovandremaximovalorsaida(1)))
+				return antoniovandremensagenserro(4);
+
+				c = antoniovandrearranjos(n, p) / f;
+				}
+
+			if (Math.abs(c) > parseFloat(antoniovandremaximovalorsaida(1)))
+				return antoniovandremensagenserro(5);
+
+			return c;
+			}
+		}
+	}
+
 // Função piso. Argumento: um número real. Retorna a string "e" caso um erro ocorra.
 
 function antoniovandrepiso(x)
@@ -5490,6 +5551,48 @@ function antoniovandrefatorialescopofuncoes(x)
 		return antoniovandrefatorial(x);
 	}
 
+// Arranjos, escopo funções. Retorna a string "e" se um erro genérico ocorre.
+
+function antoniovandrearranjosescopofuncoes(x, y)
+	{
+	if (arguments.length != 2)
+		return "e";
+
+	if ((antoniovandrenumeronatural(x.toString()) == "e") || (antoniovandrenumeronatural(y.toString()) == "e"))
+		{
+		if ((antoniovandreexpressaofuncaovalida(x) == "e") || (antoniovandreexpressaofuncaovalida(y) == "e"))
+			return "e";
+
+		x = antoniovandretraduzirexpressaofuncional(x, 0);
+		y = antoniovandretraduzirexpressaofuncional(y, 0);
+
+		return antoniovandrearranjosescopofuncoes(eval(x), eval(y));
+		}
+	else
+		return antoniovandrearranjos(x, y);
+	}
+
+// Combinações, escopo funções. Retorna a string "e" se um erro genérico ocorre.
+
+function antoniovandrecombinacoesescopofuncoes(x, y)
+	{
+	if (arguments.length != 2)
+		return "e";
+
+	if ((antoniovandrenumeronatural(x.toString()) == "e") || (antoniovandrenumeronatural(y.toString()) == "e"))
+		{
+		if ((antoniovandreexpressaofuncaovalida(x) == "e") || (antoniovandreexpressaofuncaovalida(y) == "e"))
+			return "e";
+
+		x = antoniovandretraduzirexpressaofuncional(x, 0);
+		y = antoniovandretraduzirexpressaofuncional(y, 0);
+
+		return antoniovandrecombinacoesescopofuncoes(eval(x), eval(y));
+		}
+	else
+		return antoniovandrecombinacoes(x, y);
+	}
+
 // Calcular uma expressão composta de funções. Argumentos: primeiro: string contendo a expressão a ser calculada; segundo: -1 se deseja retornar o aviso anexo, outro valor qualquer para não. Retorna a string "e" se um erro genérico ocorre.
 
 function antoniovandreexpressaofuncoes(str, avisoanexo)
@@ -6128,13 +6231,13 @@ function antoniovandreoperadoresfuncoesconstantes(i)
 	switch (i)
 		{
 		case 1:
-			return "Relações, operadores, funções e constantes disponíveis na base de dados (última atualização: 11-11-2021):\n\n\">=\": relação maior ou igual;\n\"<=\": relação menor ou igual;\n\">\": relação maior;\n\"<\": relação menor;\n\"=\": relação igual;\n\"+\": operador soma;\n\"-\": operador subtração;\n\"*\": operador multiplicação;\n\"/\": operador divisão;\n\"exp()\": função exponencial base \"e\";\n\"potencia(a, b)\": função potência (\"a\" elevado a \"b\");\n\"modulo()\": função módulo;\n\"ln()\": função logaritmo natural;\n\"log10()\": função logaritmo de base 10;\n\"log2()\": função logaritmo de base 2;\n\"log(a, b)\": função logaritmo (logaritmo de \"a\" na base \"b\");\n\"sqrt()\": função raiz quadrada;\n\"sqrt3()\": função raiz cúbica;\n\"sqrtn(x, n)\": função raiz enésima de \"x\";\n\"sen()\": função seno;\n\"cos()\": função cosseno;\n\"tg()\": função tangente;\n\"cotg()\": função cotangente;\n\"sec()\": função secante;\n\"cossec()\": função cossecante;\n\"cord()\": função corda;\n\"arcsen()\": função arco-seno;\n\"arccos()\": função arco-cosseno;\n\"arctg()\": função arco-tangente;\n\"arccotg()\": função arco-cotangente;\n\"arcsec()\": função arco-secante;\n\"arccossec()\": função arco-cossecante;\n\"arccord()\": função arco-corda;\n\"senh()\": função seno hiperbólico;\n\"cosh()\": função cosseno hiperbólico;\n\"tgh()\": função tangente hiperbólica;\n\"cotgh()\": função cotangente hiperbólica;\n\"sech()\": função secante hiperbólica;\n\"cossech()\": função cossecante hiperbólica;\n\"fatorial()\": função fatorial;\n\"piso()\": função piso;\n\"teto()\": função teto;;\n\"pi\": constante \"pi\";\n\"T\": constante \"T\" (tal), o dobro de \"pi\";\n\"e\": constante \"e\", base dos logaritmos naturais\;\n\"Ge11\": constante da gravitação universal de Newton, vezes 10^11, no SI;\n\"c\": velocidade da luz no vácuo, no SI;\n\"he34\": constante de Planck, vezes 10^34, no SI;\n\"ke23\": constante de Boltzmann, vezes 10^23, no SI;\n\"NAe-23\": número de Avogadro, vezes 10^(-23);\n\"mee31\": massa do elétron, vezes 10^31, no SI;\n\"mpe27\": massa do próton, vezes 10^27, no SI;\n\"qee19\": carga elementar, vezes 10^19, no SI.\n\nAlgumas funções podem retornar valores aproximados ou demasiadamente discrepantes, pois, em suas implementações, das funções elementares, aplica-se a fórmula de Taylor em apenas alguns pontos e com um limitado número de derivadas.\n\nGradativamente vou refinando as funções para que sejam mais precisas.";
+			return "Relações, operadores, funções e constantes disponíveis na base de dados (última atualização: 20-11-2021):\n\n\">=\": relação maior ou igual;\n\"<=\": relação menor ou igual;\n\">\": relação maior;\n\"<\": relação menor;\n\"=\": relação igual;\n\"+\": operador soma;\n\"-\": operador subtração;\n\"*\": operador multiplicação;\n\"/\": operador divisão;\n\"exp()\": função exponencial base \"e\";\n\"potencia(a, b)\": função potência (\"a\" elevado a \"b\");\n\"modulo()\": função módulo;\n\"ln()\": função logaritmo natural;\n\"log10()\": função logaritmo de base 10;\n\"log2()\": função logaritmo de base 2;\n\"log(a, b)\": função logaritmo (logaritmo de \"a\" na base \"b\");\n\"sqrt()\": função raiz quadrada;\n\"sqrt3()\": função raiz cúbica;\n\"sqrtn(x, n)\": função raiz enésima de \"x\";\n\"sen()\": função seno;\n\"cos()\": função cosseno;\n\"tg()\": função tangente;\n\"cotg()\": função cotangente;\n\"sec()\": função secante;\n\"cossec()\": função cossecante;\n\"cord()\": função corda;\n\"arcsen()\": função arco-seno;\n\"arccos()\": função arco-cosseno;\n\"arctg()\": função arco-tangente;\n\"arccotg()\": função arco-cotangente;\n\"arcsec()\": função arco-secante;\n\"arccossec()\": função arco-cossecante;\n\"arccord()\": função arco-corda;\n\"senh()\": função seno hiperbólico;\n\"cosh()\": função cosseno hiperbólico;\n\"tgh()\": função tangente hiperbólica;\n\"cotgh()\": função cotangente hiperbólica;\n\"sech()\": função secante hiperbólica;\n\"cossech()\": função cossecante hiperbólica;\n\"fatorial()\": função fatorial;\n\"arranjos()\": função arranjos;\n\"combinacoes()\": função combinações;\n\"piso()\": função piso;\n\"teto()\": função teto;;\n\"pi\": constante \"pi\";\n\"T\": constante \"T\" (tal), o dobro de \"pi\";\n\"e\": constante \"e\", base dos logaritmos naturais\;\n\"Ge11\": constante da gravitação universal de Newton, vezes 10^11, no SI;\n\"c\": velocidade da luz no vácuo, no SI;\n\"he34\": constante de Planck, vezes 10^34, no SI;\n\"ke23\": constante de Boltzmann, vezes 10^23, no SI;\n\"NAe-23\": número de Avogadro, vezes 10^(-23);\n\"mee31\": massa do elétron, vezes 10^31, no SI;\n\"mpe27\": massa do próton, vezes 10^27, no SI;\n\"qee19\": carga elementar, vezes 10^19, no SI.\n\nAlgumas funções podem retornar valores aproximados ou demasiadamente discrepantes, pois, em suas implementações, das funções elementares, aplica-se a fórmula de Taylor em apenas alguns pontos e com um limitado número de derivadas.\n\nGradativamente vou refinando as funções para que sejam mais precisas.";
 			break;
 		case 2:
-			return "exp,potencia,modulo,ln,log10,log2,log,sqrt,sqrt3,sqrtn,sen,cos,tg,cotg,sec,cossec,cord,arcsen,arccos,arctg,arccotg,arcsec,arccossec,arccord,senh,cosh,tgh,cotgh,sech,cossech,fatorial,piso,teto,antoniovandreexp,antoniovandrepotencia,antoniovandremodulo,antoniovandreln,antoniovandrelog10,antoniovandrelog2,antoniovandrelog,antoniovandresqrt,antoniovandresqrt3,antoniovandresqrtn,antoniovandresen,antoniovandrecos,antoniovandretg,antoniovandrecotg,antoniovandresec,antoniovandrecossec,antoniovandrecord,antoniovandrearcsen,antoniovandrearccos,antoniovandrearctg,antoniovandrearccotg,antoniovandrearcsec,antoniovandrearccossec,antoniovandrearccord,antoniovandresenh,antoniovandrecosh,antoniovandretgh,antoniovandrecotgh,antoniovandresech,antoniovandrecossech,antoniovandrefatorial,antoniovandrepiso,antoniovandreteto,pi,T,e,Ge11,c,he34,ke23,NAe-23,mee31,mpe27,qee19";
+			return "exp,potencia,modulo,ln,log10,log2,log,sqrt,sqrt3,sqrtn,sen,cos,tg,cotg,sec,cossec,cord,arcsen,arccos,arctg,arccotg,arcsec,arccossec,arccord,senh,cosh,tgh,cotgh,sech,cossech,fatorial,arranjos,combinacoes,piso,teto,antoniovandreexp,antoniovandrepotencia,antoniovandremodulo,antoniovandreln,antoniovandrelog10,antoniovandrelog2,antoniovandrelog,antoniovandresqrt,antoniovandresqrt3,antoniovandresqrtn,antoniovandresen,antoniovandrecos,antoniovandretg,antoniovandrecotg,antoniovandresec,antoniovandrecossec,antoniovandrecord,antoniovandrearcsen,antoniovandrearccos,antoniovandrearctg,antoniovandrearccotg,antoniovandrearcsec,antoniovandrearccossec,antoniovandrearccord,antoniovandresenh,antoniovandrecosh,antoniovandretgh,antoniovandrecotgh,antoniovandresech,antoniovandrecossech,antoniovandrefatorial,antoniovandrefatorialescopofuncoes,antoniovandrearranjos,antoniovandrearranjosescopofuncoes,antoniovandrecombinacoes,antoniovandrecombinacoesescopofuncoes,antoniovandrepiso,antoniovandreteto,pi,T,e,Ge11,c,he34,ke23,NAe-23,mee31,mpe27,qee19";
 			break;
 		case 3:
-			return [[" ", ""], ["+", "-(-1)*"], ["-", "-"], ["pi", "Math.PI"], ["T", "2*Math.PI"], ["e", "Math.E"], ["Ge11", "6.674184"], ["c", "299792458"], ["he34", "6.62606957"], ["ke23", "1.3806488"], ["NAe-23", "6.022114129"], ["mee31", "9.10938291"], ["mpe27", "1.672621777"], ["qee19", "1.602176565"], ["exp", "antoniovandreexp"], ["potencia", "antoniovandrepotencia"], ["modulo", "antoniovandremodulo"], ["ln", "antoniovandreln"], ["log10", "antoniovandrelog10"], ["log2", "antoniovandrelog2"], ["log", "antoniovandrelog"], ["sqrt", "antoniovandresqrt"], ["sqrt3", "antoniovandresqrt3"], ["sqrtn", "antoniovandresqrtn"], ["sen", "antoniovandresen"], ["cos", "antoniovandrecos"], ["tg", "antoniovandretg"], ["cotg", "antoniovandrecotg"], ["sec", "antoniovandresec"], ["cossec", "antoniovandrecossec"], ["cord", "antoniovandrecord"], ["arcsen", "antoniovandrearcsen"], ["arccos", "antoniovandrearccos"], ["arctg", "antoniovandrearctg"], ["arccotg", "antoniovandrearccotg"], ["arcsec", "antoniovandrearcsec"], ["arccossec", "antoniovandrearccossec"], ["arccord", "antoniovandrearccord"], ["senh", "antoniovandresenh"], ["cosh", "antoniovandrecosh"], ["tgh", "antoniovandretgh"], ["cotgh", "antoniovandrecotgh"], ["sech", "antoniovandresech"], ["cossech", "antoniovandrecossech"], ["fatorial", "antoniovandrefatorialescopofuncoes"], ["piso", "antoniovandrepiso"], ["teto", "antoniovandreteto"], ["antoniovandreexp", "antoniovandreexp"], ["antoniovandrepotencia", "antoniovandrepotencia"], ["antoniovandremodulo", "antoniovandremodulo"], ["antoniovandreln", "antoniovandreln"], ["antoniovandrelog10", "antoniovandrelog10"], ["antoniovandrelog2", "antoniovandrelog2"], ["antoniovandrelog", "antoniovandrelog"], ["antoniovandresqrt", "antoniovandresqrt"], ["antoniovandresqrt3", "antoniovandresqrt3"], ["antoniovandresqrtn", "antoniovandresqrtn"], ["antoniovandresen", "antoniovandresen"], ["antoniovandrecos", "antoniovandrecos"], ["antoniovandretg", "antoniovandretg"], ["antoniovandrecotg", "antoniovandrecotg"], ["antoniovandresec", "antoniovandresec"], ["antoniovandrecossec", "antoniovandrecossec"], ["antoniovandrecord", "antoniovandrecord"], ["antoniovandrearcsen", "antoniovandrearcsen"], ["antoniovandrearccos", "antoniovandrearccos"], ["antoniovandrearctg", "antoniovandrearctg"], ["antoniovandrearccotg", "antoniovandrearccotg"], ["antoniovandrearcsec", "antoniovandrearcsec"], ["antoniovandrearccossec", "antoniovandrearccossec"], ["antoniovandrearccord", "antoniovandrearccord"], ["antoniovandresenh", "antoniovandresenh"], ["antoniovandrecosh", "antoniovandrecosh"], ["antoniovandretgh", "antoniovandretgh"], ["antoniovandrecotgh", "antoniovandrecotgh"], ["antoniovandresech", "antoniovandresech"], ["antoniovandrecossech", "antoniovandrecossech"], ["antoniovandrefatorialescopofuncoes", "antoniovandrefatorialescopofuncoes"], ["antoniovandrepiso","antoniovandrepiso"], ["antoniovandreteto","antoniovandreteto"]];
+			return [[" ", ""], ["+", "-(-1)*"], ["-", "-"], ["pi", "Math.PI"], ["T", "2*Math.PI"], ["e", "Math.E"], ["Ge11", "6.674184"], ["c", "299792458"], ["he34", "6.62606957"], ["ke23", "1.3806488"], ["NAe-23", "6.022114129"], ["mee31", "9.10938291"], ["mpe27", "1.672621777"], ["qee19", "1.602176565"], ["exp", "antoniovandreexp"], ["potencia", "antoniovandrepotencia"], ["modulo", "antoniovandremodulo"], ["ln", "antoniovandreln"], ["log10", "antoniovandrelog10"], ["log2", "antoniovandrelog2"], ["log", "antoniovandrelog"], ["sqrt", "antoniovandresqrt"], ["sqrt3", "antoniovandresqrt3"], ["sqrtn", "antoniovandresqrtn"], ["sen", "antoniovandresen"], ["cos", "antoniovandrecos"], ["tg", "antoniovandretg"], ["cotg", "antoniovandrecotg"], ["sec", "antoniovandresec"], ["cossec", "antoniovandrecossec"], ["cord", "antoniovandrecord"], ["arcsen", "antoniovandrearcsen"], ["arccos", "antoniovandrearccos"], ["arctg", "antoniovandrearctg"], ["arccotg", "antoniovandrearccotg"], ["arcsec", "antoniovandrearcsec"], ["arccossec", "antoniovandrearccossec"], ["arccord", "antoniovandrearccord"], ["senh", "antoniovandresenh"], ["cosh", "antoniovandrecosh"], ["tgh", "antoniovandretgh"], ["cotgh", "antoniovandrecotgh"], ["sech", "antoniovandresech"], ["cossech", "antoniovandrecossech"], ["fatorial", "antoniovandrefatorialescopofuncoes"], ["arranjos", "antoniovandrearranjosescopofuncoes"], ["combinacoes", "antoniovandrecombinacoesescopofuncoes"], ["piso", "antoniovandrepiso"], ["teto", "antoniovandreteto"], ["antoniovandreexp", "antoniovandreexp"], ["antoniovandrepotencia", "antoniovandrepotencia"], ["antoniovandremodulo", "antoniovandremodulo"], ["antoniovandreln", "antoniovandreln"], ["antoniovandrelog10", "antoniovandrelog10"], ["antoniovandrelog2", "antoniovandrelog2"], ["antoniovandrelog", "antoniovandrelog"], ["antoniovandresqrt", "antoniovandresqrt"], ["antoniovandresqrt3", "antoniovandresqrt3"], ["antoniovandresqrtn", "antoniovandresqrtn"], ["antoniovandresen", "antoniovandresen"], ["antoniovandrecos", "antoniovandrecos"], ["antoniovandretg", "antoniovandretg"], ["antoniovandrecotg", "antoniovandrecotg"], ["antoniovandresec", "antoniovandresec"], ["antoniovandrecossec", "antoniovandrecossec"], ["antoniovandrecord", "antoniovandrecord"], ["antoniovandrearcsen", "antoniovandrearcsen"], ["antoniovandrearccos", "antoniovandrearccos"], ["antoniovandrearctg", "antoniovandrearctg"], ["antoniovandrearccotg", "antoniovandrearccotg"], ["antoniovandrearcsec", "antoniovandrearcsec"], ["antoniovandrearccossec", "antoniovandrearccossec"], ["antoniovandrearccord", "antoniovandrearccord"], ["antoniovandresenh", "antoniovandresenh"], ["antoniovandrecosh", "antoniovandrecosh"], ["antoniovandretgh", "antoniovandretgh"], ["antoniovandrecotgh", "antoniovandrecotgh"], ["antoniovandresech", "antoniovandresech"], ["antoniovandrecossech", "antoniovandrecossech"], ["antoniovandrefatorialescopofuncoes", "antoniovandrefatorialescopofuncoes"], ["antoniovandrepiso","antoniovandrepiso"], ["antoniovandreteto","antoniovandreteto"]];
 			break;
 		case 4:
 			return "Erro do JavaScript (não meu) ou entrada inválida.";
