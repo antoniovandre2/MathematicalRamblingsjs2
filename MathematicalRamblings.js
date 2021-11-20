@@ -10303,8 +10303,17 @@ function antoniovandrecompletarquadrado(str)
 
 	var pol = antoniovandrereduzirtermossemelhantes(str);
 
-	if ((antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(pol, 0)), "xx") == "e") || (antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(pol, 1)), "x") == "e") || (antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(pol, 2)), "") == "e"))
-		return "O polinômio deve ser em \"x\"."
+	if (antoniovandrepolinomionumerotermos(pol) < 3)
+		{
+		if ((antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(pol, 0)), "xx") == "e") || (antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(pol, 1)), "x") == "e"))
+			return "O polinômio deve ser para completar e em \"x\".";
+
+		pol = pol + "+ 0";
+		}
+
+	if (antoniovandrepolinomionumerotermos(pol) == 3)
+		if (antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(pol, 2)), "") == "e")
+			return "O polinômio deve ser para completar e em \"x\".";
 
 	var segundotermopart = antoniovandreformatarreal(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(pol, 1)) / antoniovandresqrt(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(pol, 0))) / 2);
 
