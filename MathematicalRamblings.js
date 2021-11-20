@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 19-11-2021. Não considerando alterações em macros.
+// Última atualização: 20-11-2021. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "19-11-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "20-11-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -10303,7 +10303,10 @@ function antoniovandrecompletarquadrado(str)
 
 	var pol = antoniovandrereduzirtermossemelhantes(str);
 
-	if (antoniovandrepolinomionumerotermos(pol) < 3)
+	if ((antoniovandrepolinomionumerotermos(pol) < 2) || (antoniovandrepolinomionumerotermos(pol) > 3))
+		return "O polinômio deve ser para completar e em \"x\".";
+
+	if (antoniovandrepolinomionumerotermos(pol) == 2)
 		{
 		if ((antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(pol, 0)), "xx") == "e") || (antoniovandrecompararstrings(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(pol, 1)), "x") == "e"))
 			return "O polinômio deve ser para completar e em \"x\".";
