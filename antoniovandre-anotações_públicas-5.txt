@@ -3,6 +3,60 @@ Proprietário: Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_leg
 Arquivo de anotações públicas #5.
 ____________________
 
+27-11-2021
+__
+
+A permissão de Deus é se auto-permitir...
+_____
+
+27-11-2021
+__
+
+Mais resolvido com a Matemática e comigo mesmo, sinto que me concentro melhor nos games.
+_____
+
+27-11-2021
+__
+
+Já não me censuro tanto por reclamar, parece até que me sinto mais hábil com os pensamentos, crescendo em inteligência emocional.
+_____
+
+27-11-2021
+__
+
+Evoluí muito em programação, mas ainda não me julgo capaz de aceitar os convites de trabalho.
+
+Nestas horas é melhor ser humilde que se arriscar a cometer erros ou decepcionar alguém.
+_____
+
+27-11-2021
+__
+
+Não sei se o problema foi no site ou em algum ponto da rota, o Dropbox ficou alguns minutos fora do ar.
+
+É algo que me preocupa um pouco, pois é o principal serviço de internet que uso.
+_____
+
+27-11-2021
+__
+
+Se o hardware suportar 144 Hz, meu blog roda em 144 Hz.
+_____
+
+27-11-2021
+__
+
+Tive que usar o DevTools para descobrir o porquê dos freezings, descobri que o MathJax estava tomando muita memória devido a um typeset dentro de um setTinterval, e toda vez que o typeset era chamado, havia um freezing.
+
+Tirei o setInterval e deixei um setTimeout 2000 para ter um único e suficiente typeset.
+_____
+
+27-11-2021
+__
+
+Tenha opções para não ser dependente...
+_____
+
 26-11-2021
 __
 
