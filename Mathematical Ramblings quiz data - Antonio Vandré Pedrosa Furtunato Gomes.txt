@@ -1,4 +1,4 @@
-Número de acertos: 1087. Número de erros: 0. MD5sum: baccc0cce88702f27fa336d5525e4ae6.
+Número de acertos: 1257. Número de erros: 3. MD5sum: c98f256c23cf13027ad1d2e839643cc4.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -1086,3 +1086,176 @@ Quanto é 4^4? Resposta: 256. Acertou. Em 4/12/2021 @ 15:37:9.
 Quanto é 39 - 74? Resposta: -35. Acertou. Em 4/12/2021 @ 15:37:53.
 Quanto é 13 x 10? Resposta: 130. Acertou. Em 4/12/2021 @ 16:14:15.
 Quanto é 9^2? Resposta: 81. Acertou. Em 4/12/2021 @ 16:14:22.
+Quanto é 14 x 3? Resposta: 42. Acertou. Em 5/12/2021 @ 11:51:4.
+Quanto é 0^3? Resposta: 0. Acertou. Em 5/12/2021 @ 11:51:10.
+Quanto é 6^0? Resposta: 1. Acertou. Em 5/12/2021 @ 11:51:14.
+Quanto é 54 / 9? Resposta: 6. Acertou. Em 5/12/2021 @ 11:51:36.
+Quanto é 4^3? Resposta: 64. Acertou. Em 5/12/2021 @ 11:51:44.
+Quanto é 5 x 3? Resposta: 15. Acertou. Em 5/12/2021 @ 11:51:49.
+Quanto é 3^0? Resposta: 1. Acertou. Em 5/12/2021 @ 11:51:54.
+Quanto é 0^4? Resposta: 0. Acertou. Em 5/12/2021 @ 11:51:58.
+Quanto é 13 x 13? Resposta: 169. Acertou. Em 5/12/2021 @ 11:52:6.
+Quanto é 1 + 97? Resposta: 98. Acertou. Em 5/12/2021 @ 11:52:13.
+Quanto é 9 x 2? Resposta: 18. Acertou. Em 5/12/2021 @ 11:52:35.
+Quanto é 9 x 1? Resposta: 9. Acertou. Em 5/12/2021 @ 11:52:40.
+Quanto é 0 / 93? Resposta: 0. Acertou. Em 5/12/2021 @ 11:52:46.
+Quanto é 6 x 8? Resposta: 48. Acertou. Em 5/12/2021 @ 11:54:26.
+Quanto é 44 - 14? Resposta: 30. Acertou. Em 5/12/2021 @ 11:55:25.
+Quanto é 36 / 9? Resposta: 4. Acertou. Em 5/12/2021 @ 11:58:3.
+Quanto é 6 + 62? Resposta: 68. Acertou. Em 5/12/2021 @ 11:58:11.
+Quanto é 19 - 45? Resposta: -26. Acertou. Em 5/12/2021 @ 12:13:17.
+Quanto é 1 x 13? Resposta: 13. Acertou. Em 5/12/2021 @ 12:13:23.
+Quanto é 64 - 45? Resposta: 19. Acertou. Em 5/12/2021 @ 12:15:10.
+Quanto é 9^0? Resposta: 1. Acertou. Em 5/12/2021 @ 12:15:15.
+Quanto é 4^6? Resposta: 4096. Acertou. Em 5/12/2021 @ 12:15:29.
+Quanto é 0 / 30? Resposta: 0. Acertou. Em 5/12/2021 @ 12:15:33.
+Quanto é 13 + 47? Resposta: 60. Acertou. Em 5/12/2021 @ 12:16:18.
+Quanto é 83 / 1? Resposta: 83. Acertou. Em 5/12/2021 @ 12:20:27.
+Quanto é 66 / 66? Resposta: 1. Acertou. Em 5/12/2021 @ 12:20:31.
+Quanto é 90 - 7? Resposta: 83. Acertou. Em 5/12/2021 @ 12:20:40.
+Quanto é 84 + 86? Resposta: 170. Acertou. Em 5/12/2021 @ 12:20:55.
+Quanto é 85 + 52? Resposta: 137. Acertou. Em 5/12/2021 @ 12:21:36.
+Quanto é 0^4? Resposta: 0. Acertou. Em 5/12/2021 @ 12:21:45.
+Quanto é 84 + 43? Resposta: 127. Acertou. Em 5/12/2021 @ 12:22:5.
+Quanto é 43 - 58? Resposta: -15. Acertou. Em 5/12/2021 @ 12:27:19.
+Quanto é 94 + 49? Resposta: 143. Acertou. Em 5/12/2021 @ 12:27:42.
+Quanto é 8 x 8? Resposta: 64. Acertou. Em 5/12/2021 @ 12:27:47.
+Quanto é 9 x 4? Resposta: 36. Acertou. Em 5/12/2021 @ 12:27:54.
+Quanto é 51 / 3? Resposta: 17. Acertou. Em 5/12/2021 @ 12:28:0.
+Quanto é 54 - 69? Resposta: -15. Acertou. Em 5/12/2021 @ 12:55:26.
+Quanto é 160 / 10? Resposta: 16. Acertou. Em 5/12/2021 @ 12:55:33.
+Quanto é 37 + 76? Resposta: 113. Acertou. Em 5/12/2021 @ 12:55:58.
+Quanto é 14 - 85? Resposta: -71. Acertou. Em 5/12/2021 @ 12:56:17.
+Quanto é 2^4? Resposta: 16. Acertou. Em 5/12/2021 @ 13:13:54.
+Quanto é 91 + 31? Resposta: 122. Acertou. Em 5/12/2021 @ 13:15:6.
+Quanto é 10^0? Resposta: 1. Acertou. Em 5/12/2021 @ 13:15:11.
+Quanto é 14^2? Resposta: 196. Acertou. Em 5/12/2021 @ 13:15:20.
+Quanto é 4^2? Resposta: 16. Acertou. Em 5/12/2021 @ 13:15:26.
+Quanto é 74 - 98? Resposta: -24. Acertou. Em 5/12/2021 @ 13:15:44.
+Quanto é 59 - 56? Resposta: 3. Acertou. Em 5/12/2021 @ 13:16:3.
+Quanto é 8 x 13? Resposta: 104. Acertou. Em 5/12/2021 @ 13:16:18.
+Quanto é 13 x 0? Resposta: 0. Acertou. Em 5/12/2021 @ 13:16:24.
+Quanto é 25 - 91? Resposta: -66. Acertou. Em 5/12/2021 @ 13:16:51.
+Quanto é 0 / 54? Resposta: 0. Acertou. Em 5/12/2021 @ 13:20:34.
+Quanto é 3^4? Resposta: 81. Acertou. Em 5/12/2021 @ 13:20:43.
+Quanto é 70 + 71? Resposta: 141. Acertou. Em 5/12/2021 @ 13:20:53.
+Quanto é 1^7? Resposta: 1. Acertou. Em 5/12/2021 @ 13:20:59.
+Quanto é 8 + 58? Resposta: 66. Acertou. Em 5/12/2021 @ 13:21:6.
+Quanto é 67 / 67? Resposta: 1. Acertou. Em 5/12/2021 @ 13:21:9.
+Quanto é 53 - 66? Resposta: -13. Acertou. Em 5/12/2021 @ 13:21:40.
+Quanto é 11 x 9? Resposta: 99. Acertou. Em 5/12/2021 @ 13:24:54.
+Quanto é 8 x 10? Resposta: 80. Acertou. Em 5/12/2021 @ 13:31:2.
+Quanto é 56 / 7? Resposta: 8. Acertou. Em 5/12/2021 @ 13:31:8.
+Quanto é 4^9? Resposta: 131072. Errou. Em 5/12/2021 @ 13:34:15.
+Quanto é 4^9? Resposta: 262144. Acertou. Em 5/12/2021 @ 13:36:36.
+Quanto é 2^8? Resposta: 256. Acertou. Em 5/12/2021 @ 13:50:46.
+Quanto é 108 / 12? Resposta: 9. Acertou. Em 5/12/2021 @ 13:51:14.
+Quanto é 3 + 73? Resposta: 76. Acertou. Em 5/12/2021 @ 13:51:24.
+Quanto é 58 + 47? Resposta: 105. Acertou. Em 5/12/2021 @ 13:52:11.
+Quanto é 2^4? Resposta: 16. Acertou. Em 5/12/2021 @ 13:52:17.
+Quanto é 144 / 16? Resposta: 9. Acertou. Em 5/12/2021 @ 13:52:47.
+Quanto é 49 - 39? Resposta: 10. Acertou. Em 5/12/2021 @ 13:53:5.
+Quanto é 0^6? Resposta: 0. Acertou. Em 5/12/2021 @ 14:1:59.
+Quanto é 6 x 2? Resposta: 12. Acertou. Em 5/12/2021 @ 14:2:5.
+Quanto é 4 - 59? Resposta: -55. Acertou. Em 5/12/2021 @ 14:2:28.
+Quanto é 4^9? Resposta: 262144. Acertou. Em 5/12/2021 @ 14:5:49.
+Quanto é 2^3? Resposta: 8. Acertou. Em 5/12/2021 @ 14:57:10.
+Quanto é 22 - 89? Resposta: -67. Acertou. Em 5/12/2021 @ 14:57:45.
+Quanto é 6 x 3? Resposta: 18. Acertou. Em 5/12/2021 @ 15:37:41.
+Quanto é 75 + 45? Resposta: 120. Acertou. Em 5/12/2021 @ 15:37:50.
+Quanto é 67 - 89? Resposta: -22. Acertou. Em 5/12/2021 @ 15:38:1.
+Quanto é 66 + 12? Resposta: 78. Acertou. Em 5/12/2021 @ 15:38:14.
+Quanto é 6^3? Resposta: 216. Acertou. Em 5/12/2021 @ 15:38:29.
+Quanto é 78 / 1? Resposta: 78. Acertou. Em 5/12/2021 @ 15:38:35.
+Quanto é 9 x 14? Resposta: 126. Acertou. Em 5/12/2021 @ 15:38:54.
+Quanto é 14 x 12? Resposta: 168. Acertou. Em 5/12/2021 @ 16:56:29.
+Quanto é 2^1? Resposta: 2. Acertou. Em 5/12/2021 @ 16:56:34.
+Quanto é 6^3? Resposta: 216. Acertou. Em 5/12/2021 @ 16:56:39.
+Quanto é 1 x 2? Resposta: 2. Acertou. Em 5/12/2021 @ 16:56:43.
+Quanto é 22 + 44? Resposta: 66. Acertou. Em 5/12/2021 @ 16:56:55.
+Quanto é 6^1? Resposta: 6. Acertou. Em 5/12/2021 @ 16:57:0.
+Quanto é 0^6? Resposta: 0. Acertou. Em 5/12/2021 @ 16:57:8.
+Quanto é 0 + 7? Resposta: 7. Acertou. Em 5/12/2021 @ 16:57:12.
+Quanto é 82 + 73? Resposta: 155. Acertou. Em 5/12/2021 @ 16:57:44.
+Quanto é 12 x 12? Resposta: 144. Acertou. Em 5/12/2021 @ 16:57:50.
+Quanto é 0 x 8? Resposta: 0. Acertou. Em 5/12/2021 @ 16:57:55.
+Quanto é 75 - 57? Resposta: 48. Errou. Em 5/12/2021 @ 17:2:34.
+Quanto é 75 - 57? Resposta: 18. Acertou. Em 5/12/2021 @ 17:3:3.
+Quanto é 68 - 15? Resposta: 53. Acertou. Em 5/12/2021 @ 17:3:36.
+Quanto é 68 + 41? Resposta: 109. Acertou. Em 5/12/2021 @ 17:3:48.
+Quanto é 8^3? Resposta: 512. Acertou. Em 5/12/2021 @ 17:4:0.
+Quanto é 11 x 10? Resposta: 110. Acertou. Em 5/12/2021 @ 17:4:7.
+Quanto é 8 x 4? Resposta: 32. Acertou. Em 5/12/2021 @ 17:4:12.
+Quanto é 2^0? Resposta: 1. Acertou. Em 5/12/2021 @ 17:4:17.
+Quanto é 29 - 51? Resposta: -22. Acertou. Em 5/12/2021 @ 17:4:52.
+Quanto é 48 / 48? Resposta: 1. Acertou. Em 5/12/2021 @ 17:4:57.
+Quanto é 2 x 14? Resposta: 28. Acertou. Em 5/12/2021 @ 17:5:4.
+Quanto é 4^9? Resposta: 262144. Acertou. Em 5/12/2021 @ 17:14:37.
+Quanto é 132 / 22? Resposta: 6. Acertou. Em 5/12/2021 @ 17:16:4.
+Quanto é 9 - 2? Resposta: 7. Acertou. Em 5/12/2021 @ 17:34:22.
+Quanto é 96 - 92? Resposta: 4. Acertou. Em 5/12/2021 @ 17:34:47.
+Quanto é 19 + 54? Resposta: 73. Acertou. Em 5/12/2021 @ 17:35:22.
+Quanto é 5^0? Resposta: 1. Acertou. Em 5/12/2021 @ 17:44:28.
+Quanto é 0^2? Resposta: 0. Acertou. Em 5/12/2021 @ 17:44:33.
+Quanto é 31 + 85? Resposta: 116. Acertou. Em 5/12/2021 @ 17:44:46.
+Quanto é 62 + 22? Resposta: 84. Acertou. Em 5/12/2021 @ 17:44:57.
+Quanto é 196 / 49? Resposta: 4. Acertou. Em 5/12/2021 @ 17:45:39.
+Quanto é 9 + 20? Resposta: 29. Acertou. Em 5/12/2021 @ 17:45:45.
+Quanto é 10^1? Resposta: 10. Acertou. Em 5/12/2021 @ 17:45:55.
+Quanto é 88 + 8? Resposta: 96. Acertou. Em 5/12/2021 @ 18:2:27.
+Quanto é 20 - 53? Resposta: -33. Acertou. Em 5/12/2021 @ 18:45:9.
+Quanto é 17 + 2? Resposta: 19. Acertou. Em 5/12/2021 @ 18:45:15.
+Quanto é 68 / 34? Resposta: 2. Acertou. Em 5/12/2021 @ 18:45:24.
+Quanto é 65 - 0? Resposta: 65. Acertou. Em 5/12/2021 @ 19:19:7.
+Quanto é 28 - 84? Resposta: -56. Acertou. Em 5/12/2021 @ 19:20:7.
+Quanto é 4^2? Resposta: 16. Acertou. Em 5/12/2021 @ 19:20:17.
+Quanto é 10 x 7? Resposta: 70. Acertou. Em 5/12/2021 @ 19:20:22.
+Quanto é 42 + 4? Resposta: 46. Acertou. Em 5/12/2021 @ 19:20:30.
+Quanto é 34 / 2? Resposta: 17. Acertou. Em 5/12/2021 @ 19:20:35.
+Quanto é 10 x 5? Resposta: 50. Acertou. Em 5/12/2021 @ 19:20:41.
+Quanto é 4^7? Resposta: 32384. Errou. Em 5/12/2021 @ 19:21:51.
+Quanto é 4^7? Resposta: 16384. Acertou. Em 5/12/2021 @ 19:23:27.
+Quanto é 78 / 2? Resposta: 39. Acertou. Em 5/12/2021 @ 19:23:48.
+Quanto é 12 / 12? Resposta: 1. Acertou. Em 5/12/2021 @ 19:23:53.
+Quanto é 32 + 41? Resposta: 73. Acertou. Em 5/12/2021 @ 19:24:11.
+Quanto é 85 - 27? Resposta: 58. Acertou. Em 5/12/2021 @ 19:31:34.
+Quanto é 54 / 1? Resposta: 54. Acertou. Em 5/12/2021 @ 19:31:39.
+Quanto é 13^0? Resposta: 1. Acertou. Em 5/12/2021 @ 19:31:43.
+Quanto é 134 / 1? Resposta: 134. Acertou. Em 5/12/2021 @ 19:31:49.
+Quanto é 94 / 1? Resposta: 94. Acertou. Em 5/12/2021 @ 19:31:54.
+Quanto é 15 + 46? Resposta: 61. Acertou. Em 5/12/2021 @ 19:32:34.
+Quanto é 26 - 16? Resposta: 10. Acertou. Em 5/12/2021 @ 19:32:53.
+Quanto é 2^1? Resposta: 2. Acertou. Em 5/12/2021 @ 19:32:58.
+Quanto é 4 - 82? Resposta: -78. Acertou. Em 5/12/2021 @ 19:34:21.
+Quanto é 0 x 12? Resposta: 0. Acertou. Em 5/12/2021 @ 19:52:16.
+Quanto é 75 / 3? Resposta: 25. Acertou. Em 5/12/2021 @ 19:52:23.
+Quanto é 10 x 5? Resposta: 50. Acertou. Em 5/12/2021 @ 19:52:27.
+Quanto é 0 / 38? Resposta: 0. Acertou. Em 5/12/2021 @ 19:52:31.
+Quanto é 76 + 32? Resposta: 108. Acertou. Em 5/12/2021 @ 19:53:20.
+Quanto é 9 - 92? Resposta: -83. Acertou. Em 5/12/2021 @ 19:53:33.
+Quanto é 3^1? Resposta: 3. Acertou. Em 5/12/2021 @ 19:53:38.
+Quanto é 10^1? Resposta: 10. Acertou. Em 5/12/2021 @ 19:53:43.
+Quanto é 34 / 17? Resposta: 2. Acertou. Em 5/12/2021 @ 19:53:47.
+Quanto é 9 x 10? Resposta: 90. Acertou. Em 5/12/2021 @ 19:57:59.
+Quanto é 14 x 8? Resposta: 112. Acertou. Em 5/12/2021 @ 19:58:15.
+Quanto é 10 x 10? Resposta: 100. Acertou. Em 5/12/2021 @ 20:40:57.
+Quanto é 9 / 3? Resposta: 3. Acertou. Em 5/12/2021 @ 20:41:2.
+Quanto é 8 x 7? Resposta: 56. Acertou. Em 5/12/2021 @ 20:41:15.
+Quanto é 60 + 39? Resposta: 99. Acertou. Em 5/12/2021 @ 20:41:24.
+Quanto é 33 / 33? Resposta: 1. Acertou. Em 5/12/2021 @ 20:41:27.
+Quanto é 90 + 27? Resposta: 117. Acertou. Em 5/12/2021 @ 20:41:47.
+Quanto é 78 + 87? Resposta: 165. Acertou. Em 5/12/2021 @ 20:42:15.
+Quanto é 3 x 2? Resposta: 6. Acertou. Em 5/12/2021 @ 20:42:20.
+Quanto é 4 + 86? Resposta: 90. Acertou. Em 5/12/2021 @ 21:19:1.
+Quanto é 6 x 14? Resposta: 84. Acertou. Em 5/12/2021 @ 21:19:11.
+Quanto é 195 / 39? Resposta: 5. Acertou. Em 5/12/2021 @ 21:27:22.
+Quanto é 79 + 48? Resposta: 127. Acertou. Em 5/12/2021 @ 21:27:58.
+Quanto é 94 + 94? Resposta: 188. Acertou. Em 5/12/2021 @ 21:28:7.
+Quanto é 44 - 59? Resposta: -15. Acertou. Em 5/12/2021 @ 21:28:24.
+Quanto é 7^2? Resposta: 49. Acertou. Em 5/12/2021 @ 21:28:32.
+Quanto é 55 + 92? Resposta: 147. Acertou. Em 5/12/2021 @ 21:28:42.
+Quanto é 0 x 6? Resposta: 0. Acertou. Em 5/12/2021 @ 21:28:46.
+Quanto é 3^9? Resposta: 19683. Acertou. Em 5/12/2021 @ 21:32:17.
+Quanto é 3 x 7? Resposta: 21. Acertou. Em 5/12/2021 @ 21:32:21.
+Quanto é 12 / 12? Resposta: 1. Acertou. Em 5/12/2021 @ 21:32:24.
+Quanto é 38 + 18? Resposta: 56. Acertou. Em 5/12/2021 @ 21:32:46.
