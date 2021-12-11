@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 20-11-2021. Não considerando alterações em macros.
+// Última atualização: 11-12-2021. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "20-11-2021";}
+function antoniovandremathematicalramblingsjsversao(){return "11-12-2021";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -10445,6 +10445,63 @@ function antoniovandrecompletarquadrado(str)
 		coeficientexx = antoniovandreformatarreal(antoniovandresqrt(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(pol, 0)))).toString();
 	
 	return "(" + coeficientexx + "x" + concatenacao1 + antoniovandreformatarreal(antoniovandremodulo(segundotermopart)).toString() + ")^2" + concatenacao2 + antoniovandremodulo(termoindependente).toString();
+	}
+
+// Área de um polígono convexo. Argumentos: um número finito de pontos separados por ponto e vírgula ";", a abscissa separada da ordenada por vírgula ",". Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandreareapoligonoconvexo(str)
+	{
+	var pontos = str.split(";");
+	var vertices = [];
+	var area = 0;
+
+	if (pontos.length < 3) return "e";
+
+	for (var i = 0; i < pontos.length; i++)
+		{
+		var ponto = pontos[i].split(",");
+
+		if (ponto.length != 2) return "e";
+
+		if ((antoniovandrenumeroreal(ponto[0].trim()) == "e") || (antoniovandrenumeroreal(ponto[1]) == "e"))
+			return "e"
+		else
+			vertices.push([parseFloat(ponto[0].trim()), parseFloat(ponto[1].trim())]);
+		}
+
+	for (var i = 1; i < vertices.length; i++)
+		{
+		var partarea = Number.MAX_VALUE;
+		var partareap = Number.MAX_VALUE;
+		
+		for (var j = 0; j < vertices.length; j++)
+			{
+			if (partarea != Number.MAX_VALUE)
+				partareap = partarea;
+
+			if ((j != i - 1) && (j != i))
+				{
+				partarea = antoniovandredeterminante([[vertices[i - 1][0], vertices[i - 1][1], 1], [vertices[i][0], vertices[i][1], 1], [vertices[j][0], vertices[j][1], 1]]);
+
+				if (Math.abs(partarea) > antoniovandremaximovalorsaida(1))
+					return antoniovandremensagenserro(4);
+				}
+
+			if (partareap != Number.MAX_VALUE)
+				if (partarea * partareap <= 0)
+					return "O polígono fornecido não é convexo.";
+			}
+		}
+
+	for (var i = 2; i < vertices.length; i++)
+		{
+		area = area + antoniovandremodulo(antoniovandredeterminante([[vertices[0][0], vertices[0][1], 1], [vertices[i - 1][0], vertices[i - 1][1], 1], [vertices[i][0], vertices[i][1], 1]])) / 2;
+
+		if (Math.abs(area) > antoniovandremaximovalorsaida(1))
+			return antoniovandremensagenserro(4);
+		}
+
+	return antoniovandreformatarreal(area);
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
