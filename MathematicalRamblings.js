@@ -10489,7 +10489,7 @@ function antoniovandreareapoligonoconvexo(str)
 
 			if (partareap != Number.MAX_VALUE)
 				if (partarea * partareap <= 0)
-					return "O polígono fornecido não é convexo.";
+					return "O polígono fornecido não é convexo ou os vértices não são de um polígono.";
 			}
 		}
 
