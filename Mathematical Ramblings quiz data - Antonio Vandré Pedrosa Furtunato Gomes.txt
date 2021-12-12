@@ -1,4 +1,4 @@
-Número de acertos: 1257. Número de erros: 3. MD5sum: c98f256c23cf13027ad1d2e839643cc4.
+Número de acertos: 1276. Número de erros: 4. MD5sum: ec038f56f2829b540467dd0acb15c882.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -1259,3 +1259,23 @@ Quanto é 3^9? Resposta: 19683. Acertou. Em 5/12/2021 @ 21:32:17.
 Quanto é 3 x 7? Resposta: 21. Acertou. Em 5/12/2021 @ 21:32:21.
 Quanto é 12 / 12? Resposta: 1. Acertou. Em 5/12/2021 @ 21:32:24.
 Quanto é 38 + 18? Resposta: 56. Acertou. Em 5/12/2021 @ 21:32:46.
+Quanto é 41 - 85? Resposta: -44. Acertou. Em 10/12/2021 @ 15:48:20.
+Quanto é 1^6? Resposta: 1. Acertou. Em 10/12/2021 @ 15:48:25.
+Quanto é 53 + 73? Resposta: 126. Acertou. Em 10/12/2021 @ 15:48:33.
+Quanto é 5 x 11? Resposta: 55. Acertou. Em 10/12/2021 @ 15:54:54.
+Quanto é 56 - 72? Resposta: -16. Acertou. Em 10/12/2021 @ 15:55:16.
+Quanto é 2 + 13? Resposta: 16. Errou. Em 10/12/2021 @ 15:55:21.
+Quanto é 2 + 13? Resposta: 15. Acertou. Em 10/12/2021 @ 15:55:35.
+Quanto é 10 - 96? Resposta: -86. Acertou. Em 10/12/2021 @ 15:55:56.
+Quanto é 81 - 32? Resposta: 49. Acertou. Em 10/12/2021 @ 15:56:13.
+Quanto é 7^2? Resposta: 49. Acertou. Em 10/12/2021 @ 15:56:19.
+Quanto é 2 x 2? Resposta: 4. Acertou. Em 10/12/2021 @ 15:56:23.
+Quanto é 13 x 0? Resposta: 0. Acertou. Em 10/12/2021 @ 15:56:29.
+Quanto é 6 x 12? Resposta: 72. Acertou. Em 10/12/2021 @ 15:56:36.
+Quanto é 87 / 29? Resposta: 3. Acertou. Em 10/12/2021 @ 16:2:46.
+Quanto é 5 x 6? Resposta: 30. Acertou. Em 10/12/2021 @ 16:2:51.
+Quanto é 1^1? Resposta: 1. Acertou. Em 10/12/2021 @ 16:2:57.
+Quanto é 72 / 24? Resposta: 3. Acertou. Em 10/12/2021 @ 16:3:7.
+Quanto é 74 / 74? Resposta: 1. Acertou. Em 10/12/2021 @ 16:3:12.
+Quanto é 91 + 72? Resposta: 163. Acertou. Em 10/12/2021 @ 16:3:26.
+Quanto é 19 - 29? Resposta: -10. Acertou. Em 10/12/2021 @ 16:3:37.
