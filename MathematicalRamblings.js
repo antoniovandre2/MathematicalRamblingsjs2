@@ -7065,7 +7065,7 @@ function antoniovandreraiocurvaturafuncao(str, avisoanexo)
 		return result;
 	}
 
-// Velocidade de Antonio Vandré. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte um número real para a velocidade de deslocamento sob o gráfico da função, a terceira a abscissa do ponto de referência, a quarta a ordenada do ponto de referência, e a quinta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna a string "e" caso ocorra um erro.
+// Velocidade de Antonio Vandré. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte um número real para a velocidade de deslocamento sob o gráfico da função, a terceira a abscissa do ponto de referência, a quarta a ordenada do ponto de referência, e a quinta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna a Velocidade de Antonio Vandré para os argumentos fornecidos ou a string "e" caso ocorra um erro.
 
 function antoniovandrevelocidadeantoniovandre(str, avisoanexo)
 	{
@@ -7163,7 +7163,7 @@ function antoniovandrevelocidadeantoniovandre(str, avisoanexo)
 		return result;
 	}
 
-// Velocidade Angular de Antonio Vandré. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte a abscissa do primeiro ponto do vetor de referência, a terceira parte a ordenada do primeiro ponto do vetor de referência, a quarta parte a abscissa do segundo ponto do vetor de referência, a quinta parte a ordenada do segundo ponto do vetor de referência, a sexta parte um número real para a velocidade de deslocamento sob o gráfico da função, a sétima parte o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna a string "e" caso ocorra um erro.
+// Velocidade Angular de Antonio Vandré. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte a abscissa do primeiro ponto do vetor de referência, a terceira parte a ordenada do primeiro ponto do vetor de referência, a quarta parte a abscissa do segundo ponto do vetor de referência, a quinta parte a ordenada do segundo ponto do vetor de referência, a sexta parte um número real para a velocidade de deslocamento sob o gráfico da função, a sétima parte o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna a Velocidade Angular de Antonio Vandré para os argumentos fornecidos ou a string "e" caso ocorra um erro.
 
 function antoniovandrevelocidadeangularantoniovandre(str, avisoanexo)
 	{
@@ -10205,7 +10205,7 @@ function antoniovandrecomprimentograficofuncao(str, avisoanexo)
 	return antoniovandreformatarreal(result);
 	}
 
-// Ponto Cego de Antonio Vandré no eixo Ox. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte a abscissa do ponto de referência, a terceira a ordenada do ponto de referência, e a quarta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna um número real raio (aproximado) da função para o "x" dado, ou a string "e" caso ocorra um erro.
+// Ponto Cego de Antonio Vandré no eixo Ox. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte a abscissa do ponto de referência, a terceira a ordenada do ponto de referência, e a quarta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna a string "e" caso ocorra um erro.
 
 function antoniovandrepontocegooxantoniovandre(str, avisoanexo)
 	{
@@ -10294,7 +10294,7 @@ function antoniovandrepontocegooxantoniovandre(str, avisoanexo)
 		return result;
 	}
 
-// Velocidade do Ponto Cego de Antonio Vandré no eixo Ox. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte um número real para a velocidade de deslocamento sob o gráfico da função, a terceira a abscissa do ponto de referência, a quarta a ordenada do ponto de referência, e a quinta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna um número real raio (aproximado) da função para o "x" dado, ou a string "e" caso ocorra um erro.
+// Velocidade do Ponto Cego de Antonio Vandré no eixo Ox. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte um número real para a velocidade de deslocamento sob o gráfico da função, a terceira a abscissa do ponto de referência, a quarta a ordenada do ponto de referência, e a quinta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna a Velocidade do Ponto Cego de Antonio Vandré para os argumentos fornecidos ou a string "e" caso ocorra um erro.
 
 function antoniovandrevelocidadepontocegooxantoniovandre(str, avisoanexo)
 	{
@@ -10504,7 +10504,7 @@ function antoniovandreareapoligonoconvexo(str)
 	return antoniovandreformatarreal(area);
 	}
 
-// Velocidade Funcional de Antonio Vandré. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte um número real para a velocidade de deslocamento sob o eixo Ox, a terceira a abscissa do ponto no qual se deseja conhecer a velocidade; segundo: -1 para exibir o aviso anexo. Retorna a string "e" caso ocorra um erro.
+// Velocidade Funcional de Antonio Vandré. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte um número real para a velocidade de deslocamento sob o eixo Ox, a terceira a abscissa do ponto no qual se deseja conhecer a velocidade; segundo: -1 para exibir o aviso anexo. Retorna a Velocidade Funcional de Antonio Vandré para os argumentos fornecidos ou a string "e" caso ocorra um erro.
 
 function antoniovandrevelocidadefuncionalantoniovandre(str, avisoanexo)
 	{
