@@ -10547,6 +10547,16 @@ function antoniovandrepontosimetricoreta(str, retorno)
 		abscissaimg = abscissa;
 		ordenadaimg = 2 * (-1) * c / b - ordenada;
 		}
+	else if (a == (-1) * b)
+		{
+		abscissaimg = ordenada + c / b;
+		ordenadaimg = abscissa - c / b;
+		}
+	else if (a == b)
+		{
+		abscissaimg = (-1) * ordenada - c / b;
+		ordenadaimg = (-1) * abscissa - c / b;
+		}
 	else
 		{
 		abscissaimg = (2 * (ordenada + c / b) * (-1) * a / b) / (a / b * a / b + 1) - abscissa;
