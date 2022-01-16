@@ -10472,7 +10472,7 @@ function antoniovandreareapoligonoconvexo(str)
 
 			try
 				{
-				temp = eval(ponto[0].trim());
+				temp = eval(antoniovandretraduzirexpressaofuncional(ponto[0].trim(), 0));
 				}
 			catch (err)
 				{
@@ -10481,7 +10481,7 @@ function antoniovandreareapoligonoconvexo(str)
 
 			try
 				{
-				temp2 = eval(ponto[1].trim());
+				temp2 = eval(antoniovandretraduzirexpressaofuncional(ponto[1].trim(), 0));
 				}
 			catch (err)
 				{
@@ -10532,6 +10532,8 @@ function antoniovandreareapoligonoconvexo(str)
 function antoniovandrepontosimetricoreta(str, retorno)
 	{
 	var argumentos = str.split(";");
+	var abscissa;
+	var ordenada;
 
 	if (argumentos.length != 2) return "e";
 
@@ -10544,7 +10546,7 @@ function antoniovandrepontosimetricoreta(str, retorno)
 
 	try
 		{
-		var abscissa = eval(ponto[0].trim());
+		abscissa = eval(antoniovandretraduzirexpressaofuncional(ponto[0].trim(), 0));
 		}
 	catch (err)
 		{
@@ -10553,7 +10555,7 @@ function antoniovandrepontosimetricoreta(str, retorno)
 
 	try
 		{
-		var ordenada = eval(ponto[1].trim());
+		ordenada = eval(antoniovandretraduzirexpressaofuncional(ponto[1].trim(), 0));
 		}
 	catch (err)
 		{
@@ -10570,7 +10572,7 @@ function antoniovandrepontosimetricoreta(str, retorno)
 
 	try
 		{
-		var a = eval(coeficientes[0].trim());
+		var a = eval(antoniovandretraduzirexpressaofuncional(coeficientes[0].trim(), 0));
 		}
 	catch (err)
 		{
@@ -10579,7 +10581,7 @@ function antoniovandrepontosimetricoreta(str, retorno)
 
 		try
 		{
-		var b = eval(coeficientes[1].trim());
+		var b = eval(antoniovandretraduzirexpressaofuncional(coeficientes[1].trim(), 0));
 		}
 	catch (err)
 		{
@@ -10588,7 +10590,7 @@ function antoniovandrepontosimetricoreta(str, retorno)
 
 	try
 		{
-		var c = eval(coeficientes[2].trim());
+		var c = eval(antoniovandretraduzirexpressaofuncional(coeficientes[2].trim(), 0));
 		}
 	catch (err)
 		{
