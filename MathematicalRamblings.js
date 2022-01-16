@@ -10537,7 +10537,9 @@ function antoniovandrepontosimetricoreta(str, retorno)
 	var abscissaimg;
 	var ordenadaimg;
 
-	if (b == 0)
+	if ((a == 0) && (b == 0))
+		return "Ao menos um coeficiente de variável deve ser não nulo."
+	else if (b == 0)
 		{
 		abscissaimg = 2 * (-1) * c / a - abscissa;
 		ordenadaimg = ordenada;
@@ -10566,10 +10568,10 @@ function antoniovandrepontosimetricoreta(str, retorno)
 	switch (retorno)
 		{
 		case 0:
-			return abscissaimg.toString() + ", " + ordenadaimg.toString();
+			return antoniovandreformatarreal(abscissaimg).toString() + ", " + antoniovandreformatarreal(ordenadaimg).toString();
 			break;
 		case 1:
-			return [abscissaimg, ordenadaimg];
+			return [antoniovandreformatarreal(abscissaimg), antoniovandreformatarreal(ordenadaimg)];
 			break;
 		default:
 			return "e";
