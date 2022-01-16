@@ -10463,10 +10463,33 @@ function antoniovandreareapoligonoconvexo(str)
 
 		if (ponto.length != 2) return "e";
 
-		if ((antoniovandrenumeroreal(ponto[0].trim()) == "e") || (antoniovandrenumeroreal(ponto[1]) == "e"))
+		if ((antoniovandreexpressaofuncaovalida(ponto[0].trim()) == "e") || (antoniovandreexpressaofuncaovalida(ponto[1].trim()) == "e"))
 			return "e"
 		else
-			vertices.push([parseFloat(ponto[0].trim()), parseFloat(ponto[1].trim())]);
+			{
+			var temp;
+			var temp2;
+
+			try
+				{
+				temp = eval(ponto[0].trim());
+				}
+			catch (err)
+				{
+				return "e";
+				}
+
+			try
+				{
+				temp2 = eval(ponto[1].trim());
+				}
+			catch (err)
+				{
+				return "e";
+				}
+
+			vertices.push([temp, temp2]);
+			}
 		}
 
 	for (var i = 1; i < vertices.length; i++)
@@ -10516,23 +10539,61 @@ function antoniovandrepontosimetricoreta(str, retorno)
 
 	if (ponto.length != 2) return "e";
 
-	if (antoniovandrenumeroreal(ponto[0].trim()) == "e") return "e";
-	if (antoniovandrenumeroreal(ponto[1].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(ponto[0].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(ponto[1].trim()) == "e") return "e";
 
-	var abscissa = parseFloat(ponto[0].trim());
-	var ordenada = parseFloat(ponto[1].trim());
+	try
+		{
+		var abscissa = eval(ponto[0].trim());
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	try
+		{
+		var ordenada = eval(ponto[1].trim());
+		}
+	catch (err)
+		{
+		return "e";
+		}
 
 	var coeficientes = argumentos[1].split(",");
 
 	if (coeficientes.length != 3) return "e";
 
-	if (antoniovandrenumeroreal(coeficientes[0].trim()) == "e") return "e";
-	if (antoniovandrenumeroreal(coeficientes[1].trim()) == "e") return "e";
-	if (antoniovandrenumeroreal(coeficientes[2].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(coeficientes[0].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(coeficientes[1].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(coeficientes[2].trim()) == "e") return "e";
 
-	var a = parseFloat(coeficientes[0].trim());
-	var b = parseFloat(coeficientes[1].trim());
-	var c = parseFloat(coeficientes[2].trim());
+	try
+		{
+		var a = eval(coeficientes[0].trim());
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+		try
+		{
+		var b = eval(coeficientes[1].trim());
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	try
+		{
+		var c = eval(coeficientes[2].trim());
+		}
+	catch (err)
+		{
+		return "e";
+		}
 
 	var abscissaimg;
 	var ordenadaimg;
