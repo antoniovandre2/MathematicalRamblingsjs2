@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 16-01-2022. Não considerando alterações em macros.
+// Última atualização: 19-01-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "16-01-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "19-01-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1534,11 +1534,24 @@ function antoniovandreunidadesmedida(i)
 				return "e";
 	}
 
-// Escalonamento de matriz. Argumentos: string números reais dispostos em linhas e colunas, o separador de linhas é o ponto e vírgula ";" e o separador dos elementos de uma linha é a vírgula ","; e o tipo de saída: 0 para string, e 1 para array. Retorna a string "e" se um erro ocorre.
+// Escalonamento de matriz. Argumentos globais: primeiro global: string separada por barra vertical "|": primeiro: a matriz de números reais dispostos em linhas e colunas, o separador de linhas é o ponto e vírgula ";" e o separador dos elementos de uma linha é a vírgula ","; segundo: "e" para matriz escalonada ou "r" para matriz escalonada reduzida por linhas; segundo global: o tipo de saída: 0 para string, e 1 para array. Retorna a string "e" se um erro ocorre.
 
 function antoniovandreescalonarmatriz(M, saida)
 	{
-	var Ml = M.split(";");
+	var argumentos = M.split("|");
+
+	if (argumentos.length != 2) return "e";
+
+	var reduzidalinhas;
+
+	if (antoniovandrecompararstrings(argumentos[1].trim(), "r") == 1)
+		reduzidalinhas = 1
+	else if (antoniovandrecompararstrings(argumentos[1].trim(), "e") == 1)
+		reduzidalinhas = 0
+	else
+		return "e";
+
+	var Ml = argumentos[0].split(";");
 	var Me = [];
 	var outputstr ="";
 
@@ -1563,7 +1576,7 @@ function antoniovandreescalonarmatriz(M, saida)
 	var flag4;
 	var flag5 = 0;
 	var contador = 0;
-
+console.log("ola");
 	for (var i = 0; i < nl; i++)
 		if (nc != Me[i].length)
 			{
@@ -1650,26 +1663,106 @@ function antoniovandreescalonarmatriz(M, saida)
 		outputstr = outputstr + "\n_____\n\n";
 		}
 
-	while (flag5 == 0) {flag5 = 1;
-
-	for (var i = 0; i < nl; i++)
+	while (flag5 == 0)
 		{
-		var l = 0;
-		var l2 = 0;
+		flag5 = 1;
 
-		while (parseFloat(Mep[i][l]) == 0)
-			l++;
-
-		if (l < nc)
+		for (var i = 0; i < nl; i++)
 			{
-			var d = parseFloat(Mep[i][l]);
+			var l = 0;
+			var l2 = 0;
 
-			if (d != 1)
+			while (parseFloat(Mep[i][l]) == 0)
+				l++;
+
+			if (reduzidalinhas == 1) if (l < nc)
 				{
-				outputstr = outputstr + "Dividindo a linha " + (i + 1).toString() + " por " + antoniovandreformatarreal(d).toString() + ":\n\n";
+				var d = parseFloat(Mep[i][l]);
+
+				if (d != 1)
+					{
+					outputstr = outputstr + "Dividindo a linha " + (i + 1).toString() + " por " + antoniovandreformatarreal(d).toString() + ":\n\n";
+
+					for (var j = 0; j < nc; j++)
+						Mep[i][j] = antoniovandreformatarreal(parseFloat(Mep[i][j]) / d);
+
+					for (var l = 0; l < nl; l++)
+						{
+						for (var m = 0; m < nc; m++)
+							{
+							if (antoniovandrecompararstrings(typeof Mep[l][m], "String") == "e")
+								outputstr = outputstr + Mep[l][m].toString()
+							else
+								outputstr = outputstr + Mep[l][m];
+
+								if (m < nc - 1)
+								outputstr = outputstr + " ";
+							}
+			
+						if (l < nl - 1)
+							outputstr = outputstr + "\n";
+						}
+
+					outputstr = outputstr + "\n_____\n\n";
+					}
+				}
+
+			if (reduzidalinhas == 1) for (var k = 0; k < i; k++)
+				{
+				while ((parseFloat(Mep[i][l2]) == 0) || (parseFloat(Mep[i][l2]) == 1))
+					{
+					if (l2 == nc) break;
+					if (parseFloat(Mep[i][l2]) == 1) break;
+					l2++;
+					}
+
+				if (l2 == nc) continue;
+
+				var f = parseFloat(Mep[k][l2]);
+				var f2 = parseFloat(Mep[i][l2]);
+
+				if ((f == 0) || (f2 == 0)) continue;
+
+				outputstr = outputstr + "Somando à linha " + (k + 1).toString() + " a linha " + (i + 1).toString() + " multiplicada por " + antoniovandreformatarreal((-1) * f).toString() + ":\n\n";
 
 				for (var j = 0; j < nc; j++)
-					Mep[i][j] = antoniovandreformatarreal(parseFloat(Mep[i][j]) / d);
+					if (Math.abs(parseFloat(Mep[i][j]) * f) > parseFloat(antoniovandremaximovalorsaida(1)))
+						return antoniovandremensagenserro(6)
+					else
+						Mep[k][j] = antoniovandreformatarreal(parseFloat(Mep[k][j]) - parseFloat(Mep[i][j]) * f);
+
+				for (var l = 0; l < nl; l++)
+					{
+					for (var m = 0; m < nc; m++)
+						{
+						outputstr = outputstr + Mep[l][m].toString();
+						if (m < nc - 1)
+							outputstr = outputstr + " ";
+						}
+		
+					if (l < nl - 1)
+						outputstr = outputstr + "\n";
+					}
+
+				outputstr = outputstr + "\n_____\n\n";
+				}
+
+			for (var k = i + 1; k < nl; k++)
+				{
+				if (l2 == nc) continue;
+
+				var f = parseFloat(Mep[k][l2]);
+				var f2 = parseFloat(Mep[i][l2]);
+			
+				if ((f == 0) || (f2 == 0)) continue;
+
+				outputstr = outputstr + "Somando à linha " + (k + 1).toString() + " a linha " + (i + 1).toString() + " multiplicada por " + antoniovandreformatarreal((-1) * f / f2).toString() + ":\n\n";
+
+				for (var j = 0; j < nc; j++)
+					if (Math.abs(parseFloat(Mep[i][j]) * f / f2) > parseFloat(antoniovandremaximovalorsaida(1)))
+						return antoniovandremensagenserro(6)
+					else
+						Mep[k][j] = antoniovandreformatarreal(parseFloat(Mep[k][j]) - parseFloat(Mep[i][j]) * f / f2);
 
 				for (var l = 0; l < nl; l++)
 					{
@@ -1680,7 +1773,7 @@ function antoniovandreescalonarmatriz(M, saida)
 						else
 							outputstr = outputstr + Mep[l][m];
 
-							if (m < nc - 1)
+						if (m < nc - 1)
 							outputstr = outputstr + " ";
 						}
 		
@@ -1688,166 +1781,88 @@ function antoniovandreescalonarmatriz(M, saida)
 						outputstr = outputstr + "\n";
 					}
 
-				outputstr = outputstr + "\n_____\n\n";
+					outputstr = outputstr + "\n_____\n\n";
 				}
 			}
 
-		for (var k = 0; k < i; k++)
+		str = "";
+
+		for (var i = 0; i < nl; i++)
 			{
-			while ((parseFloat(Mep[i][l2]) == 0) || (parseFloat(Mep[i][l2]) == 1))
+			var l = 0;
+
+			while (Mep[i][l] == 0)
+				l++;
+
+			str = str + l.toString()
+			if (i < nl - 1)
+				str = str + ", "
+			}
+
+		arrol = antoniovandrerol(str + "; c", 1);
+
+		linhasvistas = [];
+		Mep2 = [];
+
+		for (var i = 0; i < arrol.length; i++)
+			for (var j = 0; j < nl; j++)
 				{
-				if (l2 == nc) break;
-				if (parseFloat(Mep[i][l2]) == 1) break;
-				l2++;
+				var flag3 = 0;
+
+				for (var k = 0; k < linhasvistas.length; k++)
+					if (j == linhasvistas[k])
+						flag3 = 1;
+
+				if (flag3 == 0)
+					{
+					var l = 0;
+
+					while (Mep[j][l] == 0)
+						l++;
+
+					if (l == arrol[i])
+						{
+						Mep2.push(Mep[j]);
+						linhasvistas.push(j);
+						}
+					}
 				}
 
-			if (l2 == nc) continue;
+		flag4 = 0;
 
-			var f = parseFloat(Mep[k][l2]);
-			var f2 = parseFloat(Mep[i][l2]);
+		label: for (var i = 0; i < nl; i++)
+				for (var j = 0; j < nc; j++)
+					if (Mep[i][j] != Mep2[i][j])
+						{
+						flag4 = 1;
+						break label;
+						}
 
-			if ((f == 0) || (f2 == 0)) continue;
-
-			outputstr = outputstr + "Somando à linha " + (k + 1).toString() + " a linha " + (i + 1).toString() + " multiplicada por " + antoniovandreformatarreal((-1) * f).toString() + ":\n\n";
-
-			for (var j = 0; j < nc; j++)
-				if (Math.abs(parseFloat(Mep[i][j]) * f) > parseFloat(antoniovandremaximovalorsaida(1)))
-					return antoniovandremensagenserro(6)
-				else
-					Mep[k][j] = antoniovandreformatarreal(parseFloat(Mep[k][j]) - parseFloat(Mep[i][j]) * f);
+		if (flag4 == 1)
+			{
+			outputstr = outputstr + "Reordenando as linhas:\n\n";
 
 			for (var l = 0; l < nl; l++)
 				{
 				for (var m = 0; m < nc; m++)
 					{
-					outputstr = outputstr + Mep[l][m].toString();
+					outputstr = outputstr + Mep2[l][m].toString();
 					if (m < nc - 1)
 						outputstr = outputstr + " ";
 					}
-	
+
 				if (l < nl - 1)
 					outputstr = outputstr + "\n";
 				}
 
 			outputstr = outputstr + "\n_____\n\n";
+
+			for (var i = 0; i < nl; i++)
+				for (var j = 0; j < nc; j++)
+					Mep[i][j] = Mep2[i][j];
+
+			flag5 = 0; contador++;
 			}
-
-		for (var k = i + 1; k < nl; k++)
-			{
-			if (l2 == nc) continue;
-
-			var f = parseFloat(Mep[k][l2]);
-			var f2 = parseFloat(Mep[i][l2]);
-		
-			if ((f == 0) || (f2 == 0)) continue;
-
-			outputstr = outputstr + "Somando à linha " + (k + 1).toString() + " a linha " + (i + 1).toString() + " multiplicada por " + antoniovandreformatarreal((-1) * f).toString() + ":\n\n";
-
-			for (var j = 0; j < nc; j++)
-				if (Math.abs(parseFloat(Mep[i][j]) * f) > parseFloat(antoniovandremaximovalorsaida(1)))
-					return antoniovandremensagenserro(6)
-				else
-					Mep[k][j] = antoniovandreformatarreal(parseFloat(Mep[k][j]) - parseFloat(Mep[i][j]) * f);
-
-			for (var l = 0; l < nl; l++)
-				{
-				for (var m = 0; m < nc; m++)
-					{
-					if (antoniovandrecompararstrings(typeof Mep[l][m], "String") == "e")
-						outputstr = outputstr + Mep[l][m].toString()
-					else
-						outputstr = outputstr + Mep[l][m];
-
-					if (m < nc - 1)
-						outputstr = outputstr + " ";
-					}
-	
-				if (l < nl - 1)
-					outputstr = outputstr + "\n";
-				}
-
-				outputstr = outputstr + "\n_____\n\n";
-			}
-		}
-
-	str = "";
-
-	for (var i = 0; i < nl; i++)
-		{
-		var l = 0;
-
-		while (Mep[i][l] == 0)
-			l++;
-
-		str = str + l.toString()
-		if (i < nl - 1)
-			str = str + ", "
-		}
-
-	arrol = antoniovandrerol(str + "; c", 1);
-
-	linhasvistas = [];
-	Mep2 = [];
-
-	for (var i = 0; i < arrol.length; i++)
-		for (var j = 0; j < nl; j++)
-			{
-			var flag3 = 0;
-
-			for (var k = 0; k < linhasvistas.length; k++)
-				if (j == linhasvistas[k])
-					flag3 = 1;
-
-			if (flag3 == 0)
-				{
-				var l = 0;
-
-				while (Mep[j][l] == 0)
-					l++;
-
-				if (l == arrol[i])
-					{
-					Mep2.push(Mep[j]);
-					linhasvistas.push(j);
-					}
-				}
-			}
-
-	flag4 = 0;
-
-	label: for (var i = 0; i < nl; i++)
-			for (var j = 0; j < nc; j++)
-				if (Mep[i][j] != Mep2[i][j])
-					{
-					flag4 = 1;
-					break label;
-					}
-
-	if (flag4 == 1)
-		{
-		outputstr = outputstr + "Reordenando as linhas:\n\n";
-
-		for (var l = 0; l < nl; l++)
-			{
-			for (var m = 0; m < nc; m++)
-				{
-				outputstr = outputstr + Mep2[l][m].toString();
-				if (m < nc - 1)
-					outputstr = outputstr + " ";
-				}
-
-			if (l < nl - 1)
-				outputstr = outputstr + "\n";
-			}
-
-		outputstr = outputstr + "\n_____\n\n";
-
-		for (var i = 0; i < nl; i++)
-			for (var j = 0; j < nc; j++)
-				Mep[i][j] = Mep2[i][j];
-
-		flag5 = 0; contador++;
-		}
 	}
 
 	outputstr = outputstr.substring(0, outputstr.length - 8);
@@ -2155,7 +2170,7 @@ function antoniovandrebalancearequacaoquimica(str, saida)
 					strM = strM + "; ";
 				}
 
-			M = antoniovandreescalonarmatriz(strM, 1);
+			M = antoniovandreescalonarmatriz(strM + "| r", 1);
 
 			if (antoniovandrecompararstrings(M, antoniovandremensagenserro(6)) == 1)
 				return antoniovandremensagenserro(6);
@@ -2828,7 +2843,7 @@ function antoniovandrematrizinversa(strM, saida)
 				Mstr = Mstr + "; ";
 			}
 
-		M2 = antoniovandreescalonarmatriz(Mstr, 1);
+		M2 = antoniovandreescalonarmatriz(Mstr + "| r", 1);
 
 		if (antoniovandrecompararstrings(M2, antoniovandremensagenserro(6)) == 1)
 			return antoniovandremensagenserro(6)
