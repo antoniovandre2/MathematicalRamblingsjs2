@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 19-01-2022. Não considerando alterações em macros.
+// Última atualização: 08-02-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "19-01-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "08-02-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -886,11 +886,11 @@ function antoniovandrenumeroreal(arr)
 		if (! parseFloat(bufferverificacaonumerica[0]) && parseFloat(bufferverificacaonumerica[0]) != 0)
 			flag = 1
 		else
-			if ((antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "") == "e" && ((antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), ".") == "e" && parseFloat(bufferverificacaonumerica[0]) >= 0) && (antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-.") == "e" && parseFloat(bufferverificacaonumerica[0]) < 0) && (antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "e") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "e+") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "e-") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), ".e+") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), ".e-") == "e" && parseFloat(bufferverificacaonumerica[0]) >= 0) && (antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-e") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-e+") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-e-") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-.e") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-.e+") == "e" && antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-.e-") == "e" && parseFloat(bufferverificacaonumerica[0]) < 0))))
-				flag = 1;
+			if ((antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "") == "e" && ! ((antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), ".") == 1 && parseFloat(bufferverificacaonumerica[0]) >= 0) || ((antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-") == 1 || antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-.") == 1) && parseFloat(bufferverificacaonumerica[0]) < 0) || ((antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "e") == 1 || antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "e+") == 1 || antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "e-") == 1 || antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), ".e+") == 1 || antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), ".e-") == 1) && parseFloat(bufferverificacaonumerica[0]) >= 0) || ((antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-e") == 1 || antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-e+") == 1 || antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-e-") == 1 || antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-.e") == 1 || antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-.e+") == 1 || antoniovandrecompararstrings(antoniovandreremovernumerosstring(bufferverificacaonumerica[0]), "-.e-") == 1 && parseFloat(bufferverificacaonumerica[0]) < 0)))))
+				flag = 1
 
 	if (flag == 0)
-		return parseFloat(bufferverificacaonumerica[0])
+		return parseFloat(antoniovandresubstituirstrings(bufferverificacaonumerica[0], [["e", "E"]]))
 	else
 		return "e";
 	}
