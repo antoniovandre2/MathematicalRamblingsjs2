@@ -1576,7 +1576,7 @@ function antoniovandreescalonarmatriz(M, saida)
 	var flag4;
 	var flag5 = 0;
 	var contador = 0;
-console.log("ola");
+
 	for (var i = 0; i < nl; i++)
 		if (nc != Me[i].length)
 			{
