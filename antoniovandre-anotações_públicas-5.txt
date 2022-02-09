@@ -3,6 +3,42 @@ Proprietário: Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_leg
 Arquivo de anotações públicas #5.
 ____________________
 
+09-02-2022
+__
+
+Também quanto a games e outras coisas, às vezes digo a mim mesmo: não preciso ir muito à fundo, já tenho a Matemática para levar a sério.
+_____
+
+09-02-2022
+__
+
+Em MathematicalRamblings.js o "e" era convertido para o número de Euler; tive que substituir o "e" por "euler" para não haver problemas de compatibilidade com notações científicas, como, por exemplo, "3.2e+2".
+_____
+
+09-02-2022
+__
+
+Já há brinquedos suficientes para uma encarnação estudando até Cálculo III e pré-requisitos.
+_____
+
+09-02-2022
+__
+
+Experiência matemática também em ir dormir com problemas não solucionados para resolver no outro dia.
+_____
+
+08-02-2022
+__
+
+Poderia ir mais a fundo em programação, mas, assim como um físico para com a Matemática, não é tão necessário, o foco é M.
+_____
+
+08-02-2022
+__
+
+Repousar na autoestima...
+_____
+
 08-02-2022
 __
 
