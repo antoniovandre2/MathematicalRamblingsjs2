@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 14-02-2022. Não considerando alterações em macros.
+// Última atualização: 23-02-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "14-02-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "23-02-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -3868,7 +3868,7 @@ function antoniovandregraupolinomio(str)
 	if (antoniovandrecompararstrings(antoniovandrepolinomio(str), antoniovandremensagenserro(2)) == 1)
 		return antoniovandremensagenserro(2);
 
-	for (var i = 0; i < antoniovandrepolinomionumerotermos(str); i++)
+	for (var i = 0; (i < antoniovandrepolinomionumerotermos(str)) && (antoniovandrenumeroreal(str.trim()) == "e") ; i++)
 		if (max < antoniovandregraumonomio(antoniovandrepolinomiotermo(str, i)))
 			max = antoniovandregraumonomio(antoniovandrepolinomiotermo(str, i));
 
@@ -3955,7 +3955,7 @@ function antoniovandredividirmonomio(str1, str2)
 	str1l = antoniovandreparteliteralmonomio(str1.trim().replace(/ /g,''));
 	str2l = antoniovandreparteliteralmonomio(str2.trim().replace(/ /g,''));
 
-	do
+	while (str2l.length > 0)
 		{
 		label: for (var i = 0; i < str2l.length; i++)
 			{
@@ -3975,7 +3975,7 @@ function antoniovandredividirmonomio(str1, str2)
 			if (flag == 0)
 				return "e_";
 			}
-		} while (str2l.length > 0);
+		}
 
 	coef = parseFloat(antoniovandrecoeficientemonomio(str1.trim().replace(/ /g,''))) / parseFloat(antoniovandrecoeficientemonomio(str2.trim().replace(/ /g,'')));
 
@@ -3993,7 +3993,7 @@ function antoniovandretermomaiorgraupolinomioumavariavel(str)
 	var grau;
 	var n;
 
-	if (antoniovandrepolinomio(str) == "e" || antoniovandrenumerovariaveispolinomio(str) != 1)
+	if (antoniovandrepolinomio(str) == "e" || antoniovandrenumerovariaveispolinomio(str) > 1)
 		return "e";
 
 	if (antoniovandrecompararstrings(antoniovandrepolinomio(str), antoniovandremensagenserro(2)) == 1)
@@ -4007,7 +4007,7 @@ function antoniovandretermomaiorgraupolinomioumavariavel(str)
 	if (antoniovandrecompararstrings(strb, antoniovandremensagenserro(6)) == 1)
 		return antoniovandremensagenserro(6);
 
-	grau = antoniovandregraupolinomio(str);
+	grau = antoniovandregraupolinomio(strb);
 	n = antoniovandrepolinomionumerotermos(strb);
 
 	for (var i = 0; i < n; i++)
