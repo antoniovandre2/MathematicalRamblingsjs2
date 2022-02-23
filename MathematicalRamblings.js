@@ -4038,7 +4038,7 @@ function antoniovandredividirpolinomioumavariavel(str, saida)
 	if (antoniovandrecompararstrings(antoniovandrepolinomio(strb[1]), antoniovandremensagenserro(2)) == 1)
 		return antoniovandremensagenserro(2);
 
-	if (antoniovandrenumerovariaveispolinomio(strb[0].trim().replace(/ /g,'')) != 1 || antoniovandrenumerovariaveispolinomio(strb[1].trim().replace(/ /g,'')) != 1 || antoniovandrecompararstringssemordem(antoniovandrevariaveispolinomio(strb[0].trim().replace(/ /g,'')), antoniovandrevariaveispolinomio(strb[1].trim().replace(/ /g,''))) == "e")
+	if ((antoniovandrenumerovariaveispolinomio(strb[0].trim().replace(/ /g,'')) != 1 || antoniovandrenumerovariaveispolinomio(strb[1].trim().replace(/ /g,'')) != 1 || antoniovandrecompararstringssemordem(antoniovandrevariaveispolinomio(strb[0].trim().replace(/ /g,'')), antoniovandrevariaveispolinomio(strb[1].trim().replace(/ /g,''))) == "e") && (antoniovandrevariaveispolinomio(strb[0].trim().replace(/ /g,'')) != "") && (antoniovandrevariaveispolinomio(strb[1].trim().replace(/ /g,'')) != ""))
 		return "O dividendo e o divisor devem ser polinômios em uma única variável e na mesma variável.";
 
 	resto = antoniovandrereduzirtermossemelhantes(strb[0]);
@@ -4057,7 +4057,7 @@ function antoniovandredividirpolinomioumavariavel(str, saida)
 		flag = 1;
 		}
 
-	while (antoniovandregraupolinomio(resto) >= antoniovandregraupolinomio(divisor) && flag == 0)
+	while (antoniovandregraupolinomio(resto) >= antoniovandregraupolinomio(divisor) && parseFloat(resto) != 0 && flag == 0)
 		{
 		termo = antoniovandredividirmonomio(antoniovandretermomaiorgraupolinomioumavariavel(resto), antoniovandretermomaiorgraupolinomioumavariavel(divisor));
 
