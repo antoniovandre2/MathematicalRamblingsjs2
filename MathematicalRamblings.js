@@ -4069,7 +4069,7 @@ function antoniovandredividirpolinomioumavariavel(str, saida)
 		flag = 1;
 		}
 
-	if (flag2 == 0) do
+	if (flag == 0) do
 		{
 		termo = antoniovandredividirmonomio(antoniovandretermomaiorgraupolinomioumavariavel(resto), antoniovandretermomaiorgraupolinomioumavariavel(divisor));
 
