@@ -3844,7 +3844,6 @@ function antoniovandresomapolinomios(str)
 		}
 
 	out = antoniovandrereduzirtermossemelhantes(strr);
-	out = antoniovandreordenartermospolinomio(out, "d");
 
 	if (antoniovandrecompararstrings(out, antoniovandremensagenserro(2)) == 1)
 		return antoniovandremensagenserro(2);
@@ -4161,7 +4160,7 @@ function antoniovandreordenartermospolinomio(str, ordem)
 	n = antoniovandregraupolinomio(str);
 	n2 = antoniovandrepolinomionumerotermos(str);
 
-	if (n = -Number.MAX_VALUE) return str;
+	if (n == -Number.MAX_VALUE) return str;
 
 	if (ordem == "c")
 		{
