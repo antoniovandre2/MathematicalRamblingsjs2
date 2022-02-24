@@ -3844,6 +3844,7 @@ function antoniovandresomapolinomios(str)
 		}
 
 	out = antoniovandrereduzirtermossemelhantes(strr);
+	out = antoniovandreordenartermospolinomio(out, "d");
 
 	if (antoniovandrecompararstrings(out, antoniovandremensagenserro(2)) == 1)
 		return antoniovandremensagenserro(2);
