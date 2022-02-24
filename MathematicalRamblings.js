@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 23-02-2022. Não considerando alterações em macros.
+// Última atualização: 24-02-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "23-02-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "24-02-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -3534,7 +3534,7 @@ function antoniovandrepolinomionumerotermos(str)
 
 function antoniovandremonomio(str)
 	{
-	if (str.trim() == "") return "0";
+	if (str.trim() == "0") return "0";
 
 	var strb = str.trim().replace(/ /g,'');
 
@@ -3632,7 +3632,7 @@ function antoniovandreremoverletrasstring(str)
 
 function antoniovandrepolinomio(str)
 	{
-	if (str.trim() == "") return "0";
+	if (str.trim() == "0") return "0";
 
 	var termos1 = str.split("+");
 	var termos2;
@@ -3816,8 +3816,6 @@ function antoniovandremultiplicarmonomios(str1, str2)
 
 function antoniovandresomapolinomios(str)
 	{
-	if (str.trim() == "") return "0";
-
 	var stra = str.split(",");
 	var strM = [];
 	var strr = "";
@@ -3872,7 +3870,7 @@ function antoniovandregraupolinomio(str)
 	{
 	var max = 0;
 
-	if (str.trim() == "0" || str.trim() == "") return -Number.MAX_VALUE;
+	if (str.trim() == "0") return -Number.MAX_VALUE;
 
 	if (antoniovandrepolinomio(str) == "e")
 		return "e";
@@ -3891,7 +3889,7 @@ function antoniovandregraupolinomio(str)
 
 function antoniovandregraumonomio(str)
 	{
-	if (str.trim() == "0" || str.trim() == "") return -Number.MAX_VALUE;
+	if (str.trim() == "0") return -Number.MAX_VALUE;
 
 	if (antoniovandremonomio(str.trim().replace(/ /g,'')) == "e")
 		return "e";
@@ -3956,9 +3954,6 @@ function antoniovandredividirmonomio(str1, str2)
 	var str2l;
 	var coef;
 	var flag;
-
-	if (antoniovandrecompararstrings(typeof str1, "undefined") == 1) return "0";
-	if (antoniovandrecompararstrings(typeof str2, "undefined") == 1) return "e_";
 
 	if (antoniovandremonomio(str1.trim().replace(/ /g,'')) == "e" || antoniovandremonomio(str2.trim().replace(/ /g,'')) == "e")
 		return "e_";
@@ -4090,8 +4085,6 @@ function antoniovandredividirpolinomioumavariavel(str, saida)
 		quociente = antoniovandresomapolinomios(quociente + ", " + termo);
 
 		resto = antoniovandresomapolinomios(resto + ", " + antoniovandremultiplicarpolinomios(termo + ", " + divisor + ", -1"));
-
-		if (resto == "") resto = "0";
 		} while (antoniovandregraupolinomio(resto) >= antoniovandregraupolinomio(divisor));
 
 	quociente = antoniovandreordenartermospolinomio(quociente, "d");
@@ -4168,6 +4161,8 @@ function antoniovandreordenartermospolinomio(str, ordem)
 
 	n = antoniovandregraupolinomio(str);
 	n2 = antoniovandrepolinomionumerotermos(str);
+
+	if (n = -Number.MAX_VALUE) return str;
 
 	if (ordem == "c")
 		{
