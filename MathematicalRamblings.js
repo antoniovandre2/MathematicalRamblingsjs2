@@ -3724,7 +3724,7 @@ function antoniovandremultiplicarpolinomios(str)
 		if (antoniovandrepolinomio(stra[i]) == "e")
 			return "e";
 
-		if (stra[i].trim() == "") return "0";
+		if (stra[i].trim() == "0") return "0";
 
 		if (antoniovandrecompararstrings(antoniovandrepolinomio(stra[i]), antoniovandremensagenserro(2)) == 1)
 			return antoniovandremensagenserro(2);
@@ -3825,8 +3825,6 @@ function antoniovandresomapolinomios(str)
 		{
 		if (antoniovandrepolinomio(stra[i]) == "e")
 			return "e";
-
-		if (stra[i].trim() == "") stra[i] = "0";
 
 		if (antoniovandrecompararstrings(antoniovandrepolinomio(stra[i]), antoniovandremensagenserro(2)) == 1)
 			return antoniovandremensagenserro(2);
