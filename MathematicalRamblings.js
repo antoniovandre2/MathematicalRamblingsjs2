@@ -3534,6 +3534,8 @@ function antoniovandrepolinomionumerotermos(str)
 
 function antoniovandremonomio(str)
 	{
+	if (str.trim() == "") return "0";
+
 	var strb = str.trim().replace(/ /g,'');
 
 	if (antoniovandrenumeroreal(antoniovandreremoverletrasstring(strb)) == "e" && antoniovandreremoverletrasstring(strb) != "" && antoniovandreremoverletrasstring(strb) != "-" && antoniovandrecompararstrings(antoniovandreremoverletrasstring(strb), "-.") == "e")
@@ -3630,6 +3632,8 @@ function antoniovandreremoverletrasstring(str)
 
 function antoniovandrepolinomio(str)
 	{
+	if (str.trim() == "") return "0";
+
 	var termos1 = str.split("+");
 	var termos2;
 	var outputstr = "";
@@ -3719,6 +3723,8 @@ function antoniovandremultiplicarpolinomios(str)
 		{
 		if (antoniovandrepolinomio(stra[i]) == "e")
 			return "e";
+
+		if (stra[i].trim() == "") return "0";
 
 		if (antoniovandrecompararstrings(antoniovandrepolinomio(stra[i]), antoniovandremensagenserro(2)) == 1)
 			return antoniovandremensagenserro(2);
@@ -3810,6 +3816,8 @@ function antoniovandremultiplicarmonomios(str1, str2)
 
 function antoniovandresomapolinomios(str)
 	{
+	if (str.trim() == "") return "0";
+
 	var stra = str.split(",");
 	var strM = [];
 	var strr = "";
@@ -3819,6 +3827,8 @@ function antoniovandresomapolinomios(str)
 		{
 		if (antoniovandrepolinomio(stra[i]) == "e")
 			return "e";
+
+		if (stra[i].trim() == "") stra[i] = "0";
 
 		if (antoniovandrecompararstrings(antoniovandrepolinomio(stra[i]), antoniovandremensagenserro(2)) == 1)
 			return antoniovandremensagenserro(2);
@@ -3862,6 +3872,8 @@ function antoniovandregraupolinomio(str)
 	{
 	var max = 0;
 
+	if (str.trim() == "0" || str.trim() == "") return -Number.MAX_VALUE;
+
 	if (antoniovandrepolinomio(str) == "e")
 		return "e";
 
@@ -3879,6 +3891,8 @@ function antoniovandregraupolinomio(str)
 
 function antoniovandregraumonomio(str)
 	{
+	if (str.trim() == "0" || str.trim() == "") return -Number.MAX_VALUE;
+
 	if (antoniovandremonomio(str.trim().replace(/ /g,'')) == "e")
 		return "e";
 
@@ -3942,6 +3956,9 @@ function antoniovandredividirmonomio(str1, str2)
 	var str2l;
 	var coef;
 	var flag;
+
+	if (antoniovandrecompararstrings(typeof str1, "undefined") == 1) return "0";
+	if (antoniovandrecompararstrings(typeof str2, "undefined") == 1) return "e_";
 
 	if (antoniovandremonomio(str1.trim().replace(/ /g,'')) == "e" || antoniovandremonomio(str2.trim().replace(/ /g,'')) == "e")
 		return "e_";
@@ -4057,7 +4074,7 @@ function antoniovandredividirpolinomioumavariavel(str, saida)
 		flag = 1;
 		}
 
-	while (antoniovandregraupolinomio(resto) >= antoniovandregraupolinomio(divisor) && parseFloat(resto) != 0 && flag == 0)
+	if (flag2 == 0) do
 		{
 		termo = antoniovandredividirmonomio(antoniovandretermomaiorgraupolinomioumavariavel(resto), antoniovandretermomaiorgraupolinomioumavariavel(divisor));
 
@@ -4073,7 +4090,9 @@ function antoniovandredividirpolinomioumavariavel(str, saida)
 		quociente = antoniovandresomapolinomios(quociente + ", " + termo);
 
 		resto = antoniovandresomapolinomios(resto + ", " + antoniovandremultiplicarpolinomios(termo + ", " + divisor + ", -1"));
-		}
+
+		if (resto == "") resto = "0";
+		} while (antoniovandregraupolinomio(resto) >= antoniovandregraupolinomio(divisor));
 
 	quociente = antoniovandreordenartermospolinomio(quociente, "d");
 	resto = antoniovandreordenartermospolinomio(resto, "d");
