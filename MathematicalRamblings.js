@@ -10738,10 +10738,20 @@ function antoniovandrebinascii(str, avisoanexo)
 
 // Início escopos desenvolvidos por terceiros.
 
-// Retorna a n-ésima posição de uma substring em uma string.
+// Retorna a n-ésima posição de uma substring em uma string. Retorna -1 caso n-ésima substring não encontrada.
 
-function getPosition(string, subString, index) {
-	return string.split(subString, index).join(subString).length;
-  }
+String.prototype.nthIndexOf = function(searchElement, n, fromElement) {
+    n = n || 0;
+    fromElement = fromElement || 0;
+    while (n > 0) {
+        fromElement = this.indexOf(searchElement, fromElement);
+        if (fromElement < 0) {
+            return -1;
+        }
+        --n;
+        ++fromElement;
+    }
+    return fromElement - 1;
+};
 
 // Fim escopos desenvolvidos por terceiros.
