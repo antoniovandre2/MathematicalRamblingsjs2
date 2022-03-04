@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 24-02-2022. Não considerando alterações em macros.
+// Última atualização: 04-03-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "24-02-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "04-03-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -10737,5 +10737,11 @@ function antoniovandrebinascii(str, avisoanexo)
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
 // Início escopos desenvolvidos por terceiros.
+
+// Retorna a n-ésima posição de uma substring em uma string.
+
+function getPosition(string, subString, index) {
+	return string.split(subString, index).join(subString).length;
+  }
 
 // Fim escopos desenvolvidos por terceiros.
