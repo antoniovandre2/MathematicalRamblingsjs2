@@ -6658,6 +6658,9 @@ function antoniovandreexpressaofuncaovalida(str)
 	if (antoniovandrecompararstrings(typeof str, "string") == "e")
 		return "e";
 
+	if ((str.trim() == "e") || (antoniovandrecompararstrings(str.trim(), "e_") == 1))
+		return "e";
+
 	if (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(str, antoniovandreoperadoresfuncoesconstantes(2))), antoniovandreremoverstrings(str, antoniovandreoperadoresfuncoesconstantes(2))) == "e")
 		return "e"
 	else
