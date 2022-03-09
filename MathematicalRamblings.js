@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 09-03-2022. Não considerando alterações em macros.
+// Última atualização: 04-03-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "09-03-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "04-03-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -54,10 +54,10 @@ function antoniovandredecomporfatoresprimos(n, saida)
 		flag = 1
 	else
 		{
-		if (antoniovandremodulo(n) > antoniovandremaximovalorentrada(1))
+		if (Math.abs(n) > antoniovandremaximovalorentrada(1))
 			return antoniovandremensagenserro(1)
 		else
-			if (antoniovandremodulo(n) > antoniovandremaximovalorentrada(3))
+			if (Math.abs(n) > antoniovandremaximovalorentrada(3))
 				return antoniovandremensagenserro(3);
 
 		for (i = 0; i < antoniovandreprimoslength; i++) antoniovandreprimosarr.push(antoniovandreprimos(i));
@@ -135,7 +135,7 @@ function antoniovandrefatorial(n)
 	if (antoniovandrenumeronatural(n.toString()) == "e")
 		return "e"
 	else
-		if (antoniovandremodulo(n) > antoniovandremaximovalorentrada(2))
+		if (Math.abs(n) > antoniovandremaximovalorentrada(2))
 			return antoniovandremensagenserro(1)
 		else
 			{
@@ -147,7 +147,7 @@ function antoniovandrefatorial(n)
 				{
 				for (var i = 1; i <= n; i++) f *= i;
 
-				if (antoniovandremodulo(f) > parseFloat(antoniovandremaximovalorsaida(1)))
+				if (Math.abs(f) > parseFloat(antoniovandremaximovalorsaida(1)))
 					return antoniovandremensagenserro(5);
 
 				return f;
@@ -165,7 +165,7 @@ if ((antoniovandrenumeronatural(n.toString()) == "e") || (antoniovandrenumeronat
 	return "e"
 else
 	{
-	if ((antoniovandremodulo(n) > antoniovandremaximovalorentrada(2)) || (antoniovandremodulo(p) > antoniovandremaximovalorentrada(2)))
+	if ((Math.abs(n) > antoniovandremaximovalorentrada(2)) || (Math.abs(p) > antoniovandremaximovalorentrada(2)))
 		return antoniovandremensagenserro(1)
 	else
 		{
@@ -174,7 +174,7 @@ else
 		else
 			for (var i = n; i >= n - p + 1; i--) a *= i;
 
-		if (antoniovandremodulo(a) > parseFloat(antoniovandremaximovalorsaida(1)))
+		if (Math.abs(a) > parseFloat(antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(5);
 
 		return a;
@@ -192,7 +192,7 @@ function antoniovandrecombinacoes(n, p)
 		return "e"
 	else
 		{
-		if ((antoniovandremodulo(n) > antoniovandremaximovalorentrada(2)) || (antoniovandremodulo(p) > antoniovandremaximovalorentrada(2)))
+		if ((Math.abs(n) > antoniovandremaximovalorentrada(2)) || (Math.abs(p) > antoniovandremaximovalorentrada(2)))
 			return antoniovandremensagenserro(1)
 		else
 			{
@@ -202,13 +202,13 @@ function antoniovandrecombinacoes(n, p)
 				{
 				var f = antoniovandrefatorial(p);
 
-				if (antoniovandremodulo(f) > parseFloat(antoniovandremaximovalorsaida(1)))
+				if (Math.abs(f) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(4);
 
 				c = antoniovandrearranjos(n, p) / f;
 				}
 
-			if (antoniovandremodulo(c) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(c) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(5);
 
 			return c;
@@ -282,7 +282,7 @@ function antoniovandremediaaritmetica(str)
 			}
 		else
 			{
-			if (antoniovandremodulo(parseFloat(nstr[i].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
+			if (Math.abs(parseFloat(nstr[i].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
 				{
 				flag = 2;
 				break;
@@ -296,7 +296,7 @@ function antoniovandremediaaritmetica(str)
 		case 0:
 			var ma = soma / nstr.length;
 
-			if (antoniovandremodulo(ma) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(ma) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(5);
 
 			return antoniovandreformatarreal(ma);
@@ -338,7 +338,7 @@ function antoniovandremediaaritmeticaponderada(str)
 				}
 			else
 				{
-				if (antoniovandremodulo(parseFloat(nstr[0].trim())) > parseFloat(antoniovandremaximovalorentrada(1)) || antoniovandremodulo(parseFloat(nstr[1].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
+				if (Math.abs(parseFloat(nstr[0].trim())) > parseFloat(antoniovandremaximovalorentrada(1)) || Math.abs(parseFloat(nstr[1].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
 					{
 					flag = 2;
 					break;
@@ -355,7 +355,7 @@ function antoniovandremediaaritmeticaponderada(str)
 		case 0:
 			var map = soman / somad;
 
-			if (antoniovandremodulo(map) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(map) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(5);
 
 			return antoniovandreformatarreal(map);
@@ -387,7 +387,7 @@ function antoniovandremediageometrica(str)
 			}
 		else
 			{
-			if (antoniovandremodulo(parseFloat(nstr[i].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
+			if (Math.abs(parseFloat(nstr[i].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
 				{
 				flag = 2;
 				break;
@@ -401,7 +401,7 @@ function antoniovandremediageometrica(str)
 		case 0:
 			var mg = Math.pow(f,1 / nstr.length);
 
-			if (antoniovandremodulo(mg) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(mg) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(5);
 
 			return antoniovandreformatarreal(mg);
@@ -432,7 +432,7 @@ function antoniovandremediaharmonica(str)
 			}
 		else
 			{
-			if (antoniovandremodulo(parseFloat(nstr[i].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
+			if (Math.abs(parseFloat(nstr[i].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
 				{
 				flag = 2;
 				break;
@@ -446,7 +446,7 @@ function antoniovandremediaharmonica(str)
 		case 0:
 			var mh = nstr.length / soma;
 
-			if (antoniovandremodulo(mh) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(mh) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(5);
 
 			return antoniovandreformatarreal(mh);
@@ -481,7 +481,7 @@ function antoniovandremoda(str, saida)
 			}
 		else
 			{
-			if (antoniovandremodulo(parseFloat(amostra[i].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
+			if (Math.abs(parseFloat(amostra[i].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
 				return antoniovandremensagenserro(2);
 
 			var flag3 = 0;
@@ -559,11 +559,11 @@ function antoniovandredesvioabsolutomedio(str)
 			var soma = 0;
 
 			for (var i = 0; i < nstr.length; i++)
-				soma += antoniovandremodulo(parseFloat(nstr[i].trim()) - ma);
+				soma += Math.abs(parseFloat(nstr[i].trim()) - ma);
 
 			var dam = soma / nstr.length;
 
-			if (antoniovandremodulo(dam) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(dam) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(5);
 
 			return antoniovandreformatarreal(dam);
@@ -591,7 +591,7 @@ function antoniovandrevariancia(str)
 
 			var v = soma / nstr.length;
 
-			if (antoniovandremodulo(v) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(v) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(5);
 
 			return antoniovandreformatarreal(v);
@@ -613,7 +613,7 @@ function antoniovandredesviopadrao(str)
 			{
 			var sigma = Math.sqrt(v);
 
-			if (antoniovandremodulo(sigma) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(sigma) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(5);
 
 
@@ -643,7 +643,7 @@ function antoniovandremmc (arr)
 	if (flag == 0)
 		{
 		for (var i = 0; i < nstr.length; i++)
-			if (antoniovandremodulo(parseInt(nstr[i].trim())) > antoniovandremaximovalorentrada(1))
+			if (Math.abs(parseInt(nstr[i].trim())) > antoniovandremaximovalorentrada(1))
 				return antoniovandremensagenserro(2);
 
 		for (var i = 0; i < nstr.length; i++)
@@ -671,7 +671,7 @@ function antoniovandremmc (arr)
 
 		for (var i = 0; i < buffer.length; i++) result *= Math.pow(buffer[i][0],buffer[i][1]);
 
-		if (antoniovandremodulo(result) > antoniovandremaximovalorsaida(1))
+		if (Math.abs(result) > antoniovandremaximovalorsaida(1))
 			return antoniovandremensagenserro(5);
 
 		return result;
@@ -699,7 +699,7 @@ function antoniovandremdc (arr)
 	if (flag == 0)
 		{
 		for (var i = 0; i < nstr.length; i++)
-			if (antoniovandremodulo(parseInt(nstr[i].trim())) > antoniovandremaximovalorentrada(1))
+			if (Math.abs(parseInt(nstr[i].trim())) > antoniovandremaximovalorentrada(1))
 				return antoniovandremensagenserro(2);
 
 		for (var i = 0; i < nstr.length; i++)
@@ -744,7 +744,7 @@ function antoniovandremdc (arr)
 
 		for (var i = 0; i < buffer.length; i++) result *= Math.pow(buffer[i][0],buffer[i][1]);
 
-		if (antoniovandremodulo(result) > antoniovandremaximovalorsaida(1))
+		if (Math.abs(result) > antoniovandremaximovalorsaida(1))
 			return antoniovandremensagenserro(5);
 
 		return result;
@@ -769,7 +769,7 @@ function antoniovandremdcsimples(arr)
 	if (flag == 0)
 		{
 		for (var i = 0; i < nstr.length; i++)
-			if (antoniovandremodulo(parseInt(nstr[i].trim())) > antoniovandremaximovalorentrada(1))
+			if (Math.abs(parseInt(nstr[i].trim())) > antoniovandremaximovalorentrada(1))
 				return antoniovandremensagenserro(2);
 
 		for (var i = 0; i < nstr.length; i++)
@@ -790,7 +790,7 @@ function antoniovandremdcsimples(arr)
 				result = i;
 			}
 
-		if (antoniovandremodulo(result) > antoniovandremaximovalorsaida(1))
+		if (Math.abs(result) > antoniovandremaximovalorsaida(1))
 			return antoniovandremensagenserro(5);
 
 
@@ -817,7 +817,7 @@ function antoniovandrereduzirfracao(str, tiporetorno)
 			flag = 1
 		else
 			{
-			if (antoniovandremodulo(parseInt(termos[0].trim())) > antoniovandremaximovalorentrada(1) || antoniovandremodulo(parseInt(termos[1].trim())) > antoniovandremaximovalorentrada(1))
+			if (Math.abs(parseInt(termos[0].trim())) > antoniovandremaximovalorentrada(1) || Math.abs(parseInt(termos[1].trim())) > antoniovandremaximovalorentrada(1))
 				return antoniovandremensagenserro(2);
 
 			if (parseInt(termos[0].trim()) != 0)
@@ -829,7 +829,7 @@ function antoniovandrereduzirfracao(str, tiporetorno)
 				numerador /= nmdc;
 				denominador /= nmdc;
 
-				if (antoniovandremodulo(numerador) > antoniovandremaximovalorsaida(1) || antoniovandremodulo(denominador) > antoniovandremaximovalorsaida(1))
+				if (Math.abs(numerador) > antoniovandremaximovalorsaida(1) || Math.abs(denominador) > antoniovandremaximovalorsaida(1))
 					return antoniovandremensagenserro(6);
 
 				if (denominador != 1)
@@ -1124,7 +1124,7 @@ function antoniovandrecnb(arr)
 					nb += antoniovandrenbr(nstr[0].trim().substring(i, i + 1)) * Math.pow(parseInt(nstr[1].trim()), q1 - i - 1);
 			}
 
-		if (flag2 == 0 && (antoniovandremodulo(nb) > antoniovandremaximovalorentrada(1) || antoniovandrenumeronatural(nb.toString()) == "e"))
+		if (flag2 == 0 && (Math.abs(nb) > antoniovandremaximovalorentrada(1) || antoniovandrenumeronatural(nb.toString()) == "e"))
 			return antoniovandremensagenserro(1);
 
 		if (flag2 == 0)
@@ -1257,7 +1257,7 @@ function antoniovandrerol(str, saida)
 				}
 			else
 				{
-				if (antoniovandremodulo(parseFloat(nstr[i].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
+				if (Math.abs(parseFloat(nstr[i].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
 					{
 					flag = 2;
 
@@ -1406,7 +1406,7 @@ function antoniovandremediana(str)
 			break;
 			}
 		else
-			if (antoniovandremodulo(parseFloat(amostra[i].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
+			if (Math.abs(parseFloat(amostra[i].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
 				return antoniovandremensagenserro(2);
 
 
@@ -1419,7 +1419,7 @@ function antoniovandremediana(str)
 			var strargmd = rol[parseInt(amostra.length / 2) - 1].toString() + ", " + rol[parseInt(amostra.length / 2)].toString();
 			var md = antoniovandremediaaritmetica(strargmd);
 
-			if (antoniovandremodulo(md) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(md) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(5);
 
 			return antoniovandreformatarreal(md);
@@ -1447,7 +1447,7 @@ function antoniovandreconversaounidadesmedida(str)
 		if (antoniovandrenumeroreal(elementos[0]) == "e")
 			flag = 1
 		else
-			if (antoniovandremodulo(parseFloat(elementos[0].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
+			if (Math.abs(parseFloat(elementos[0].trim())) > parseFloat(antoniovandremaximovalorentrada(1)))
 				return antoniovandremensagenserro(1);
 
 
@@ -1487,7 +1487,7 @@ function antoniovandreconversaounidadesmedida(str)
 		{
 		if (flag4 == 1)
 			{
-			if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(5);
 
 			return antoniovandreformatarreal(result);
@@ -1588,7 +1588,7 @@ function antoniovandreescalonarmatriz(M, saida)
 				if (antoniovandrenumeroreal(Me[i][j].toString()) == "e")
 					return "e"
 				else
-					if (antoniovandremodulo(parseFloat(Me[i][j])) > antoniovandremaximovalorentrada(1))
+					if (Math.abs(parseFloat(Me[i][j])) > antoniovandremaximovalorentrada(1))
 						return antoniovandremensagenserro(2);
 
 	str = "";
@@ -1726,7 +1726,7 @@ function antoniovandreescalonarmatriz(M, saida)
 				outputstr = outputstr + "Somando à linha " + (k + 1).toString() + " a linha " + (i + 1).toString() + " multiplicada por " + antoniovandreformatarreal((-1) * f).toString() + ":\n\n";
 
 				for (var j = 0; j < nc; j++)
-					if (antoniovandremodulo(parseFloat(Mep[i][j]) * f) > parseFloat(antoniovandremaximovalorsaida(1)))
+					if (Math.abs(parseFloat(Mep[i][j]) * f) > parseFloat(antoniovandremaximovalorsaida(1)))
 						return antoniovandremensagenserro(6)
 					else
 						Mep[k][j] = antoniovandreformatarreal(parseFloat(Mep[k][j]) - parseFloat(Mep[i][j]) * f);
@@ -1759,7 +1759,7 @@ function antoniovandreescalonarmatriz(M, saida)
 				outputstr = outputstr + "Somando à linha " + (k + 1).toString() + " a linha " + (i + 1).toString() + " multiplicada por " + antoniovandreformatarreal((-1) * f / f2).toString() + ":\n\n";
 
 				for (var j = 0; j < nc; j++)
-					if (antoniovandremodulo(parseFloat(Mep[i][j]) * f / f2) > parseFloat(antoniovandremaximovalorsaida(1)))
+					if (Math.abs(parseFloat(Mep[i][j]) * f / f2) > parseFloat(antoniovandremaximovalorsaida(1)))
 						return antoniovandremensagenserro(6)
 					else
 						Mep[k][j] = antoniovandreformatarreal(parseFloat(Mep[k][j]) - parseFloat(Mep[i][j]) * f / f2);
@@ -1906,13 +1906,13 @@ function antoniovandreformatarreal(r)
 
 	for (var i = 0; i < sft; i++)
 		{
-		if (antoniovandremodulo(Math.trunc(parseFloat(r) * Math.pow(10, i)) - parseFloat(r) * Math.pow(10, i)) < antoniovandreprecisaoreal(1) * Math.pow(10, i))
+		if (Math.abs(Math.trunc(parseFloat(r) * Math.pow(10, i)) - parseFloat(r) * Math.pow(10, i)) < antoniovandreprecisaoreal(1) * Math.pow(10, i))
 			return Math.trunc(parseFloat(r) * Math.pow(10, i)) / Math.pow(10, i);
 
-		if (antoniovandremodulo(Math.trunc(parseFloat(r) * Math.pow(10, i) + 1) - parseFloat(r) * Math.pow(10, i)) < antoniovandreprecisaoreal(1) * Math.pow(10, i))
+		if (Math.abs(Math.trunc(parseFloat(r) * Math.pow(10, i) + 1) - parseFloat(r) * Math.pow(10, i)) < antoniovandreprecisaoreal(1) * Math.pow(10, i))
 			return Math.trunc(parseFloat(r) * Math.pow(10, i) + 1) / Math.pow(10, i);
 
-		if (antoniovandremodulo(Math.trunc(parseFloat(r) * Math.pow(10, i) - 1) - parseFloat(r) * Math.pow(10, i)) < antoniovandreprecisaoreal(1) * Math.pow(10, i))
+		if (Math.abs(Math.trunc(parseFloat(r) * Math.pow(10, i) - 1) - parseFloat(r) * Math.pow(10, i)) < antoniovandreprecisaoreal(1) * Math.pow(10, i))
 			return Math.trunc(parseFloat(r) * Math.pow(10, i) - 1) / Math.pow(10, i);
 
 		if (i == sft - 1) return parseFloat(r);
@@ -2009,7 +2009,7 @@ function antoniovandrebalancearequacaoquimica(str, saida)
 				if (antoniovandrenumeronaturalpositivo(el[1]) == "e")
 					return "e"
 
-				if (antoniovandremodulo(parseInt(el[1].trim())) > antoniovandremaximovalorentrada(1))
+				if (Math.abs(parseInt(el[1].trim())) > antoniovandremaximovalorentrada(1))
 					return antoniovandremensagenserro(2);
 
 				for (var k = 0; k < antoniovandreelementosquimicos(-1); k++)
@@ -2338,7 +2338,7 @@ function antoniovandrearrayindices(index, colunas, valorminimo, valormaximo)
 	if (antoniovandrenumeronaturalpositivo(valormaximo.toString()) == "e")
 		return "e"
 
-	if (antoniovandremodulo(index) > antoniovandremaximovalorentrada(1))
+	if (Math.abs(index) > antoniovandremaximovalorentrada(1))
 		return antoniovandremensagenserro(1);
 
 	if (n >= Math.pow(valormaximo - valorminimo, colunas))
@@ -2402,7 +2402,7 @@ function antoniovandremassamolecular(str)
 		if (antoniovandrenumeronaturalpositivo(e[1]) == "e")
 					return "e";
 
-		if (antoniovandremodulo(parseInt(e[1].trim())) > antoniovandremaximovalorentrada(1))
+		if (Math.abs(parseInt(e[1].trim())) > antoniovandremaximovalorentrada(1))
 			return antoniovandremensagenserro(2);
 
 		}
@@ -2418,7 +2418,7 @@ function antoniovandremassamolecular(str)
 				soma += antoniovandreformatarreal(antoniovandreelementosquimicos(j)[1] * parseInt(e[1].trim()));
 		}
 
-	if (antoniovandremodulo(soma) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(soma) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(5);
 
 	return soma;
@@ -2468,7 +2468,7 @@ function antoniovandredeterminante(M)
 					for (j = 0; j < colunas.length; j++)
 						if (antoniovandrenumeroreal(colunas[j]) != "e")
 							{
-							if (antoniovandremodulo(parseFloat(colunas[j])) > antoniovandremaximovalorentrada(1))
+							if (Math.abs(parseFloat(colunas[j])) > antoniovandremaximovalorentrada(1))
 								return antoniovandremensagenserro(2)
 							else
 								M2[i].push(parseFloat(colunas[j]));
@@ -2482,7 +2482,7 @@ function antoniovandredeterminante(M)
 					soma += antoniovandreformatarreal(M2[i][0] * Math.pow(-1, i) * antoniovandredeterminante(antoniovandreremoverlinhacoluna(M2, i, 0, 1)));
 					}
 
-				if (antoniovandremodulo(soma) > parseFloat(antoniovandremaximovalorsaida(1)))
+				if (Math.abs(soma) > parseFloat(antoniovandremaximovalorsaida(1)))
 						return antoniovandremensagenserro(5)
 
 				return soma;
@@ -2515,7 +2515,7 @@ function antoniovandreremoverlinhacoluna(M, i, j, saida)
 			for (l = 0; l < colunas.length; l++)
 				if (antoniovandrenumeroreal(colunas[l]) != "e")
 					{
-					if (antoniovandremodulo(parseFloat(colunas[l])) > antoniovandremaximovalorentrada(1))
+					if (Math.abs(parseFloat(colunas[l])) > antoniovandremaximovalorentrada(1))
 						return antoniovandremensagenserro(2)
 					else
 						M2[k].push(parseFloat(colunas[l]));
@@ -2716,12 +2716,12 @@ function antoniovandremultiplicacaomatrizes(strM, saida)
 				if (antoniovandrenumeroreal(m1[i][k]) == "e" || antoniovandrenumeroreal(m2[k][j]) == "e")
 				return "e";
 
-				if (antoniovandremodulo(parseFloat(m1[i][k])) > antoniovandremaximovalorentrada(1) || antoniovandremodulo(parseFloat(m2[k][j])) > antoniovandremaximovalorentrada(1))
+				if (Math.abs(parseFloat(m1[i][k])) > antoniovandremaximovalorentrada(1) || Math.abs(parseFloat(m2[k][j])) > antoniovandremaximovalorentrada(1))
 						return antoniovandremensagenserro(2);
 
 				soma += antoniovandreformatarreal(parseFloat(m1[i][k]) * parseFloat(m2[k][j]));
 
-				if (antoniovandremodulo(soma) > parseFloat(antoniovandremaximovalorsaida(1)))
+				if (Math.abs(soma) > parseFloat(antoniovandremaximovalorsaida(1)))
 						return antoniovandremensagenserro(6)
 
 				}
@@ -2813,7 +2813,7 @@ function antoniovandrematrizinversa(strM, saida)
 				if (antoniovandrenumeroreal(colunas[k]) == "e")
 					return "e";
 
-				if (antoniovandremodulo(parseFloat(colunas[k])) > antoniovandremaximovalorentrada(1))
+				if (Math.abs(parseFloat(colunas[k])) > antoniovandremaximovalorentrada(1))
 					return antoniovandremensagenserro(2);
 
 				t.push(parseFloat(colunas[k]));
@@ -2931,7 +2931,7 @@ function antoniovandrematriztransposta(M, saida)
 				if (antoniovandrenumeroreal(colunas[j]) == "e")
 					return "e";
 
-				if (antoniovandremodulo(parseFloat(colunas[j])) > antoniovandremaximovalorentrada(1))
+				if (Math.abs(parseFloat(colunas[j])) > antoniovandremaximovalorentrada(1))
 					return antoniovandremensagenserro(2);
 
 				if (col == 0) col = colunas.length;
@@ -3055,7 +3055,7 @@ function antoniovandrenomesnumeros(str)
 	if (antoniovandrenumeronatural(str) == "e")
 		return "e";
 
-	if (antoniovandremodulo(parseInt(str)) > antoniovandremaximovalorentrada(1))
+	if (Math.abs(parseInt(str)) > antoniovandremaximovalorentrada(1))
 		return antoniovandremensagenserro(1);
 
 	n = parseInt(str);
@@ -3254,7 +3254,7 @@ function antoniovandreconversaoalgarismosromanos(str)
 	if (antoniovandrenumeronaturalpositivo(str.toString()) == "e")
 		return "e";
 
-	if (antoniovandremodulo(parseInt(str)) > antoniovandremaximovalorentrada(1))
+	if (Math.abs(parseInt(str)) > antoniovandremaximovalorentrada(1))
 		return antoniovandremensagenserro(7);
 
 	n = parseInt(str.trim());
@@ -3382,7 +3382,7 @@ function antoniovandrereduzirtermossemelhantes(str)
 
 		if (flag == 0)
 			{
-			if (antoniovandremodulo(coef) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(coef) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(6);
 
 			coef = antoniovandreformatarreal(coef);
@@ -3405,12 +3405,12 @@ function antoniovandrereduzirtermossemelhantes(str)
 				if (antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, i)) != "")
 					{
 					if (coef != -1)
-						outputM.push([antoniovandremodulo(coef).toString() + antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, i)), 0]);
+						outputM.push([Math.abs(coef).toString() + antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, i)), 0]);
 					else
 						outputM.push([antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, i)), 0]);
 					}
 				else
-					outputM.push([antoniovandremodulo(coef).toString(), 0]);
+					outputM.push([Math.abs(coef).toString(), 0]);
 				}
 
 			buffer.push(i);
@@ -3544,7 +3544,7 @@ function antoniovandremonomio(str)
 		{
 		if (antoniovandrenumeroreal(antoniovandreremoverletrasstring(strb)) != "e")
 			{
-			if (antoniovandremodulo(parseFloat(antoniovandreremoverletrasstring(strb))) > antoniovandremaximovalorentrada(1))
+			if (Math.abs(parseFloat(antoniovandreremoverletrasstring(strb))) > antoniovandremaximovalorentrada(1))
 				return antoniovandremensagenserro(1);
 
 			var l = antoniovandrenumeroreal(antoniovandreremoverletrasstring(strb)).toString().length;
@@ -3570,7 +3570,7 @@ function antoniovandrecoeficientemonomio(str)
 		return "e"
 	else
 		{
-		if (antoniovandremodulo(parseFloat(antoniovandreremoverletrasstring(str))) > antoniovandremaximovalorentrada(1))
+		if (Math.abs(parseFloat(antoniovandreremoverletrasstring(str))) > antoniovandremaximovalorentrada(1))
 			return antoniovandremensagenserro(1);
 
 		var buffer = antoniovandreremoverletrasstring(str).trim().replace(/ /g,'');
@@ -3795,12 +3795,12 @@ function antoniovandremultiplicarmonomios(str1, str2)
 	if (antoniovandrecompararstrings(antoniovandremonomio(str1.trim().replace(/ /g,'')), antoniovandremensagenserro(1)) == 1 || antoniovandrecompararstrings(antoniovandremonomio(str1.trim().replace(/ /g,'')), antoniovandremensagenserro(1)) == 1)
 		return antoniovandremensagenserro(2);
 
-	if (antoniovandremodulo(parseFloat(antoniovandrecoeficientemonomio(str1.trim().replace(/ /g,''))) * parseFloat(antoniovandrecoeficientemonomio(str2.trim().replace(/ /g,'')))) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(parseFloat(antoniovandrecoeficientemonomio(str1.trim().replace(/ /g,''))) * parseFloat(antoniovandrecoeficientemonomio(str2.trim().replace(/ /g,'')))) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(5);
 
 	out = parseFloat(antoniovandrecoeficientemonomio(str1.trim().replace(/ /g,''))) * parseFloat(antoniovandrecoeficientemonomio(str2.trim().replace(/ /g,'')));
 
-	if (antoniovandremodulo(out) > antoniovandremaximovalorentrada(1))
+	if (Math.abs(out) > antoniovandremaximovalorentrada(1))
 		return antoniovandremensagenserro(1);
 
 	out = antoniovandreformatarreal(out);
@@ -3989,7 +3989,7 @@ function antoniovandredividirmonomio(str1, str2)
 
 	coef = parseFloat(antoniovandrecoeficientemonomio(str1.trim().replace(/ /g,''))) / parseFloat(antoniovandrecoeficientemonomio(str2.trim().replace(/ /g,'')));
 
-	if (antoniovandremodulo(coef) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(coef) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(5);
 
 	return antoniovandreformatarreal(coef).toString() + str1l;
@@ -4193,7 +4193,7 @@ function antoniovandreordenartermospolinomio(str, ordem)
 						if (antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, j)) != "" && antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, j)) == -1)
 							outputstr = outputstr + antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, j))
 						else
-							outputstr = outputstr + antoniovandremodulo(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, j))) + antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, j));
+							outputstr = outputstr + Math.abs(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, j))) + antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, j));
 						}
 					else
 						outputstr = outputstr + antoniovandrepolinomiotermo(str, j);
@@ -4230,7 +4230,7 @@ function antoniovandreordenartermospolinomio(str, ordem)
 						if (antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, j)) != "" && antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, j)) == -1)
 							outputstr = outputstr + antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, j))
 						else
-							outputstr = outputstr + antoniovandremodulo(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, j))) + antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, j));
+							outputstr = outputstr + Math.abs(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(str, j))) + antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(str, j));
 						}
 					else
 						outputstr = outputstr + antoniovandrepolinomiotermo(str, j);
@@ -4432,12 +4432,12 @@ function antoniovandrevalornumericomonomio(str)
 					if (antoniovandrenumeroreal(strb2[1].trim().replace(/ /g,'')) == "e")
 						return "e";
 
-					if (antoniovandremodulo(parseFloat(strb2[1].trim().replace(/ /g,''))) > parseFloat(antoniovandremaximovalorentrada(1)))
+					if (Math.abs(parseFloat(strb2[1].trim().replace(/ /g,''))) > parseFloat(antoniovandremaximovalorentrada(1)))
 						return antoniovandremensagenserro(2);
 
 					fator *= parseFloat(strb2[1].trim().replace(/ /g,''));
 
-					if (antoniovandremodulo(fator) > parseFloat(antoniovandremaximovalorsaida(1)))
+					if (Math.abs(fator) > parseFloat(antoniovandremaximovalorsaida(1)))
 						return antoniovandremensagenserro(5);
 
 					buffer.push(strb3.charAt(j));
@@ -4451,7 +4451,7 @@ function antoniovandrevalornumericomonomio(str)
 
 	fator *= antoniovandrecoeficientemonomio(strb[0].trim().replace(/ /g,''));
 
-	if (antoniovandremodulo(fator) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(fator) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(5);
 
 	return antoniovandreformatarreal(fator).toString() + strb3;
@@ -4498,7 +4498,7 @@ function antoniovandrederivadapolinomio(str)
 		if (antoniovandrenumeronaturalpositivo(v[1].trim().replace(/ /g,'')) == "e")
 			return "e";
 
-		if (antoniovandremodulo(parseFloat(v[1].trim().replace(/ /g,''))) > antoniovandremaximovalorentrada(1))
+		if (Math.abs(parseFloat(v[1].trim().replace(/ /g,''))) > antoniovandremaximovalorentrada(1))
 			return antoniovandremensagenserro(2);
 
 		for (var j = 0; j < parseInt(v[1].trim().replace(/ /g,'')); j++)
@@ -4512,7 +4512,7 @@ function antoniovandrederivadapolinomio(str)
 				{
 				fator = antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(pol, k)) * antoniovandrenumerocaracteres(antoniovandreparteliteralmonomio(antoniovandrepolinomiotermo(pol, k)), v[0].trim().replace(/ /g,''));
 
-				if (antoniovandremodulo(fator) > antoniovandremaximovalorsaida(1))
+				if (Math.abs(fator) > antoniovandremaximovalorsaida(1))
 					return antoniovandremensagenserro(6);
 
 				fator = antoniovandreformatarreal(fator);
@@ -4575,7 +4575,7 @@ function antoniovandreaproximacaotaylor(str)
 		{
 		result = parseFloat(parseFloat(antoniovandrevalornumericopolinomio(pol + ", x = " + args[1].toString().trim()).replace(/ /g,'')).toFixed(Math.trunc(Math.log(antoniovandreprecisaoreal(1)) / Math.log(10)) * (-1)));
 
-		if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+		if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(5);
 
 		return antoniovandreformatarreal(result);
@@ -4600,7 +4600,7 @@ function antoniovandrepolinomiostaylor(str, v, avisoanexo)
 	if (antoniovandrenumeroreal(v.toString()) == "e")
 		return "e";
 
-	if (antoniovandremodulo(parseFloat(v)) > antoniovandremaximovalorentrada(1))
+	if (Math.abs(parseFloat(v)) > antoniovandremaximovalorentrada(1))
 		return antoniovandremensagenserro(1);
 
 	label: for (var i = 0; i < antoniovandrepolinomiostaylorarr.length; i++)
@@ -4637,7 +4637,7 @@ function antoniovandrepolinomiostaylor(str, v, avisoanexo)
 
 			for (var j = 0; j < antoniovandrepolinomiostaylorarr[i][2].length; j++)
 				{
-				d = antoniovandremodulo(parseFloat(v.trim()) - antoniovandrepolinomiostaylorarr[i][2][j][0]);
+				d = Math.abs(parseFloat(v.trim()) - antoniovandrepolinomiostaylorarr[i][2][j][0]);
 
 				if (d < md)
 					{
@@ -4663,7 +4663,7 @@ function antoniovandrepolinomiostaylor(str, v, avisoanexo)
 			return "Uma ou mais funções duplicadas na base de dados.";
 			break;
 		case 1:
-			if (antoniovandremodulo(parseFloat(out)) > antoniovandremaximovalorsaida(1))
+			if (Math.abs(parseFloat(out)) > antoniovandremaximovalorsaida(1))
 				return antoniovandremensagenserro(5);
 
 			return out;
@@ -4786,7 +4786,7 @@ function antoniovandrepotencia(a, b)
 
 						return (-1) * antoniovandreexp(eval(eval(b) * antoniovandreln(antoniovandremodulo(a))))*/
 
-						return (-1) * Math.pow(antoniovandremodulo(a), b);
+						return (-1) * Math.pow(Math.abs(a), b);
 						}
 					else
 						return "O resultado da potência não é um número real.";
@@ -5214,7 +5214,7 @@ function antoniovandretg(x)
 	if (c == "e")
 		return "e";
 
-	if (antoniovandremodulo(c) > antoniovandreprecisaoreal(4))
+	if (Math.abs(c) > antoniovandreprecisaoreal(4))
 		return antoniovandresen(x) / c
 	else
 		return "O argumento da tangente deve ser diferente de pi/2 + k*pi, com k inteiro.";
@@ -5232,7 +5232,7 @@ function antoniovandrecotg(x)
 	if (s == "e")
 		return "e";
 
-	if (antoniovandremodulo(s) > antoniovandreprecisaoreal(4))
+	if (Math.abs(s) > antoniovandreprecisaoreal(4))
 		return antoniovandrecos(x) / s
 	else
 		return "O argumento da cotangente deve ser diferente de k*pi, com k inteiro.";
@@ -5250,7 +5250,7 @@ function antoniovandresec(x)
 	if (c == "e")
 		return "e";
 
-	if (antoniovandremodulo(c) > antoniovandreprecisaoreal(4))
+	if (Math.abs(c) > antoniovandreprecisaoreal(4))
 		return 1 / c
 	else
 		return "O argumento da secante deve ser diferente de pi/2 + k*pi, com k inteiro.";
@@ -5268,7 +5268,7 @@ function antoniovandrecossec(x)
 	if (s == "e")
 		return "e";
 
-	if (antoniovandremodulo(s) > antoniovandreprecisaoreal(4))
+	if (Math.abs(s) > antoniovandreprecisaoreal(4))
 		return 1 / s
 	else
 		return "O argumento da cossecante deve ser diferente de k*pi, com k inteiro.";
@@ -5518,7 +5518,7 @@ function antoniovandrecotgh(x)
 	if (antoniovandrenumeroreal(sh.toString()) == "e")
 		return sh;
 
-	if (antoniovandremodulo(sh) > antoniovandreprecisaoreal(4))
+	if (Math.abs(sh) > antoniovandreprecisaoreal(4))
 		return antoniovandrecosh(x) / sh;
 	else
 		return "O argumento da cotangente hiperbólica deve ser diferente de 0.";
@@ -5551,7 +5551,7 @@ function antoniovandrecossech(x)
 	if (antoniovandrenumeroreal(sh.toString()) == "e")
 		return sh;
 
-	if (antoniovandremodulo(sh) > antoniovandreprecisaoreal(4))
+	if (Math.abs(sh) > antoniovandreprecisaoreal(4))
 		return 1 / sh;
 	else
 		return "O argumento da cossecante hiperbólica deve ser diferente de 0.";
@@ -5944,7 +5944,7 @@ function antoniovandreintegraldefinidaaproximacaosomariemann(str, avisoanexo)
 		if (parseInt(n) == 1)
 			return "O número de elementos da partição deve ser maior que 1.";
 
-	if (antoniovandremodulo(parseInt(n)) > antoniovandremaximovalorentrada(1))
+	if (Math.abs(parseInt(n)) > antoniovandremaximovalorentrada(1))
 		return antoniovandremensagenserro(2);
 
 	if (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopart, antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(expressaopart, antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e")
@@ -5980,14 +5980,14 @@ function antoniovandreintegraldefinidaaproximacaosomariemann(str, avisoanexo)
 	if (antoniovandrenumeroreal(inf2.toString()) == "e")
 		return "e"
 	else
-		if (antoniovandremodulo(inf2) > antoniovandremaximovalorentrada(1))
+		if (Math.abs(inf2) > antoniovandremaximovalorentrada(1))
 			return antoniovandremensagenserro(2);
 
 
 	if (antoniovandrenumeroreal(sup2.toString()) == "e")
 		return "e"
 	else
-		if (antoniovandremodulo(sup2) > antoniovandremaximovalorentrada(1))
+		if (Math.abs(sup2) > antoniovandremaximovalorentrada(1))
 			return antoniovandremensagenserro(2);
 
 	parcela = (sup2 - inf2) / n2;
@@ -6036,14 +6036,14 @@ function antoniovandreintegraldefinidaaproximacaosomariemann(str, avisoanexo)
 			}
 		else
 			{
-			if ((antoniovandremodulo(resultpart) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1))))
+			if ((Math.abs(resultpart) > parseFloat(antoniovandremaximovalorsaida(1))) || (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1))))
 				return antoniovandremensagenserro(6)
 			else
 				result += resultpart * parcela;
 			}
 	}
 
-	if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(5);
 
 	return antoniovandreformatarreal(result);
@@ -6084,10 +6084,10 @@ function antoniovandresomatorio(str, avisoanexo)
 		if (parseInt(inf) > parseInt(sup))
 			return "O índice inferior deve ser menor ou igual ao superior.";
 
-	if (antoniovandremodulo(parseInt(sup)) > antoniovandremaximovalorentrada(1))
+	if (Math.abs(parseInt(sup)) > antoniovandremaximovalorentrada(1))
 		return antoniovandremensagenserro(2);
 
-	if (antoniovandremodulo(parseInt(inf)) > antoniovandremaximovalorentrada(1))
+	if (Math.abs(parseInt(inf)) > antoniovandremaximovalorentrada(1))
 		return antoniovandremensagenserro(2);
 
 	if (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopart, antoniovandreoperadoresfuncoesconstantes(2) + ",n")), antoniovandreremoverstrings(expressaopart, antoniovandreoperadoresfuncoesconstantes(2) + ",n")) == "e")
@@ -6137,14 +6137,14 @@ function antoniovandresomatorio(str, avisoanexo)
 			}
 		else
 			{
-			if (antoniovandremodulo(resultpart) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(resultpart) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(6)
 			else
 				result += resultpart;
 			}
 	}
 
-	if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(5);
 
 	return antoniovandreformatarreal(result);
@@ -6185,10 +6185,10 @@ function antoniovandreprodutorio(str, avisoanexo)
 		if (parseInt(inf) > parseInt(sup))
 			return "O índice inferior deve ser menor ou igual ao superior.";
 
-	if (antoniovandremodulo(parseInt(sup)) > antoniovandremaximovalorentrada(1))
+	if (Math.abs(parseInt(sup)) > antoniovandremaximovalorentrada(1))
 		return antoniovandremensagenserro(2);
 
-	if (antoniovandremodulo(parseInt(inf)) > antoniovandremaximovalorentrada(1))
+	if (Math.abs(parseInt(inf)) > antoniovandremaximovalorentrada(1))
 		return antoniovandremensagenserro(2);
 
 	if (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopart, antoniovandreoperadoresfuncoesconstantes(2) + ",n")), antoniovandreremoverstrings(expressaopart, antoniovandreoperadoresfuncoesconstantes(2) + ",n")) == "e")
@@ -6238,14 +6238,14 @@ function antoniovandreprodutorio(str, avisoanexo)
 			}
 		else
 			{
-			if (antoniovandremodulo(resultpart) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(resultpart) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(6)
 			else
 				result *= resultpart;
 			}
 	}
 
-	if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(5);
 
 	return antoniovandreformatarreal(result);
@@ -6345,7 +6345,7 @@ function antoniovandrederivadaemumponto(str, retorno, avisoanexo)
 	if (antoniovandrenumeroreal(ponto2.toString()) == "e")
 		return "e"
 	else
-		if (antoniovandremodulo(ponto2) > antoniovandremaximovalorentrada(1))
+		if (Math.abs(ponto2) > antoniovandremaximovalorentrada(1))
 			return antoniovandremensagenserro(2);
 
 
@@ -6436,7 +6436,7 @@ function antoniovandrederivadaemumponto(str, retorno, avisoanexo)
 		}
 	else
 		{
-		if (antoniovandremodulo(resultt) > parseFloat(antoniovandremaximovalorsaida(1)))
+		if (Math.abs(resultt) > parseFloat(antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(6);
 		}
 
@@ -6464,7 +6464,7 @@ function antoniovandrederivadaemumponto(str, retorno, avisoanexo)
 		}
 	else
 		{
-		if (antoniovandremodulo(result1) > parseFloat(antoniovandremaximovalorsaida(1)))
+		if (Math.abs(result1) > parseFloat(antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(6);
 		}
 
@@ -6492,7 +6492,7 @@ function antoniovandrederivadaemumponto(str, retorno, avisoanexo)
 		}
 	else
 		{
-		if (antoniovandremodulo(result2) > parseFloat(antoniovandremaximovalorsaida(1)))
+		if (Math.abs(result2) > parseFloat(antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(6);
 		}
 
@@ -6520,7 +6520,7 @@ function antoniovandrederivadaemumponto(str, retorno, avisoanexo)
 		}
 	else
 		{
-		if (antoniovandremodulo(result21) > parseFloat(antoniovandremaximovalorsaida(1)))
+		if (Math.abs(result21) > parseFloat(antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(6);
 		}
 
@@ -6548,7 +6548,7 @@ function antoniovandrederivadaemumponto(str, retorno, avisoanexo)
 		}
 	else
 		{
-		if (antoniovandremodulo(result22) > parseFloat(antoniovandremaximovalorsaida(1)))
+		if (Math.abs(result22) > parseFloat(antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(6);
 		}
 
@@ -6558,14 +6558,14 @@ function antoniovandrederivadaemumponto(str, retorno, avisoanexo)
 			result = resultt;
 			break;
 		case "1":
-			if (antoniovandremodulo(result1 - result2) < antoniovandreprecisaoreal(7))
+			if (Math.abs(result1 - result2) < antoniovandreprecisaoreal(7))
 				result = (result2 - resultt) / antoniovandreprecisaoreal(3)
 			else
 				return "Limites laterais diferentes.";
 
 			break;
 		case "2":
-			if (antoniovandremodulo(result21 - result22) < antoniovandreprecisaoreal(7))
+			if (Math.abs(result21 - result22) < antoniovandreprecisaoreal(7))
 				result = (result22 - 2 * result2 + resultt) / (antoniovandrepotencia(antoniovandreprecisaoreal(2), 2));
 			else
 				return "Limites laterais diferentes.";
@@ -6575,7 +6575,7 @@ function antoniovandrederivadaemumponto(str, retorno, avisoanexo)
 			return "e"
 		}
 
-	if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(5);
 
 	switch (retorno) {
@@ -6608,7 +6608,7 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 	else
 		num = parseFloat(x);
 
-	if (antoniovandremodulo(num) > parseFloat(antoniovandremaximovalorentrada(1)))
+	if (Math.abs(num) > parseFloat(antoniovandremaximovalorentrada(1)))
 		return antoniovandremensagenserro(1);
 
 	do
@@ -6619,7 +6619,7 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 	if (i == lim)
 		return "Não foi possível encontrar a fração geratriz. Talvez a entrada tenha casas decimais demais.";
 
-	if (antoniovandremodulo(parseFloat(rnum)) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(parseFloat(rnum)) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(6);
 
 	if (rnum >= 0)
@@ -6627,7 +6627,7 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 	else
 		flag = 1;
 
-	rnum = antoniovandremodulo(rnum);
+	rnum = Math.abs(rnum);
 
 	i2 = i - 1;
 
@@ -6738,7 +6738,7 @@ function antoniovandrelimitefuncaocontinua(str, avisoanexo)
 	if (antoniovandrenumeroreal(ponto2.toString()) == "e")
 		return "e"
 	else
-		if (antoniovandremodulo(ponto2) > antoniovandremaximovalorentrada(1))
+		if (Math.abs(ponto2) > antoniovandremaximovalorentrada(1))
 			return antoniovandremensagenserro(2);
 
 	ponto2inf = ponto2 - antoniovandreprecisaoreal(3);
@@ -6805,7 +6805,7 @@ function antoniovandrelimitefuncaocontinua(str, avisoanexo)
 		flag1 = 1
 	else
 		{
-		if (antoniovandremodulo(result1) > parseFloat(antoniovandremaximovalorsaida(1)))
+		if (Math.abs(result1) > parseFloat(antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(6)
 		}
 
@@ -6813,7 +6813,7 @@ function antoniovandrelimitefuncaocontinua(str, avisoanexo)
 		flag2 = 1
 	else
 		{
-		if (antoniovandremodulo(result2) > parseFloat(antoniovandremaximovalorsaida(1)))
+		if (Math.abs(result2) > parseFloat(antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(6)
 		}
 
@@ -6837,7 +6837,7 @@ function antoniovandrelimitefuncaocontinua(str, avisoanexo)
 		case 1:
 			if (flag1 == 0)
 				{
-				if (antoniovandremodulo(result1 - result3) < antoniovandrecoeficientes(1) * antoniovandreprecisaoreal(3))
+				if (Math.abs(result1 - result3) < antoniovandrecoeficientes(1) * antoniovandreprecisaoreal(3))
 					{
 					if (flag == 0)
 						return result
@@ -6860,7 +6860,7 @@ function antoniovandrelimitefuncaocontinua(str, avisoanexo)
 		case 2:
 			if (flag2 == 0)
 				{
-				if (antoniovandremodulo(result2 - result4) < antoniovandrecoeficientes(1) * antoniovandreprecisaoreal(3))
+				if (Math.abs(result2 - result4) < antoniovandrecoeficientes(1) * antoniovandreprecisaoreal(3))
 					{
 					if (flag == 0)
 						return result
@@ -6883,7 +6883,7 @@ function antoniovandrelimitefuncaocontinua(str, avisoanexo)
 		case 0:
 			if ((flag1 == 0) && (flag2 == 0))
 				{
-				if (antoniovandremodulo(result1 - result2) < antoniovandrecoeficientes(1) * antoniovandreprecisaoreal(3))
+				if (Math.abs(result1 - result2) < antoniovandrecoeficientes(1) * antoniovandreprecisaoreal(3))
 					{
 					if (flag == 0)
 						return result
@@ -7086,7 +7086,7 @@ function antoniovandreraiocurvaturafuncao(str, avisoanexo)
 
 	if ((antoniovandrenumeroreal(result.toString()) == "e") || (result == null) || (result == undefined) || (isNaN(result))) return "e";
 
-	if (antoniovandremodulo(result) > antoniovandremaximovalorsaida(1))
+	if (Math.abs(result) > antoniovandremaximovalorsaida(1))
 		return antoniovandremensagenserro(5)
 	else
 		return result;
@@ -7162,7 +7162,7 @@ function antoniovandrevelocidadeantoniovandre(str, avisoanexo)
 	if (antoniovandrenumeroreal(ponto.toString()) == "e")
 		return "e";
 
-	if ((antoniovandremodulo(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(ponto) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(velocidade) > parseFloat(antoniovandremaximovalorentrada(1))))
+	if ((Math.abs(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ponto) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(velocidade) > parseFloat(antoniovandremaximovalorentrada(1))))
 		return antoniovandremensagenserro(2);
 
 	derivadazero = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[4].trim() + "+" + antoniovandreprecisaoreal(6).toString() + ";0", 1, 0);
@@ -7184,7 +7184,7 @@ function antoniovandrevelocidadeantoniovandre(str, avisoanexo)
 
 	if ((antoniovandrenumeroreal(result.toString()) == "e") || (result == null) || (result == undefined) || (isNaN(result))) return "e";
 
-	if (antoniovandremodulo(result) > antoniovandremaximovalorsaida(1))
+	if (Math.abs(result) > antoniovandremaximovalorsaida(1))
 		return antoniovandremensagenserro(5)
 	else
 		return result;
@@ -7286,7 +7286,7 @@ function antoniovandrevelocidadeangularantoniovandre(str, avisoanexo)
 	if (antoniovandrenumeroreal(ponto.toString()) == "e")
 		return "e";
 
-	if ((antoniovandremodulo(abscissa1) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(abscissa2) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(ordenada1) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(ordenada2) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(ponto) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(velocidade) > parseFloat(antoniovandremaximovalorentrada(1))))
+	if ((Math.abs(abscissa1) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(abscissa2) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada1) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada2) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ponto) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(velocidade) > parseFloat(antoniovandremaximovalorentrada(1))))
 		return antoniovandremensagenserro(2);
 
 	derivadazero = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[6].trim() + ";0", 1, 0);
@@ -7310,7 +7310,7 @@ function antoniovandrevelocidadeangularantoniovandre(str, avisoanexo)
 
 	if ((antoniovandrenumeroreal(result.toString()) == "e") || (result == null) || (result == undefined) || (isNaN(result))) return "e";
 
-	if (antoniovandremodulo(result) > antoniovandremaximovalorsaida(1))
+	if (Math.abs(result) > antoniovandremaximovalorsaida(1))
 		return antoniovandremensagenserro(5)
 	else
 		return result;
@@ -7349,7 +7349,7 @@ function antoniovandremediaantoniovandre(str, avisoanexo)
 	if (antoniovandrenumeronaturalpositivo(n) == "e")
 		return "e"
 
-	if (antoniovandremodulo(parseInt(n)) > antoniovandremaximovalorentrada(1))
+	if (Math.abs(parseInt(n)) > antoniovandremaximovalorentrada(1))
 		return antoniovandremensagenserro(2);
 
 	if (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopart, antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(expressaopart, antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e")
@@ -7384,13 +7384,13 @@ function antoniovandremediaantoniovandre(str, avisoanexo)
 	if (antoniovandrenumeroreal(inf2.toString()) == "e")
 		return "e"
 	else
-		if (antoniovandremodulo(inf2) > antoniovandremaximovalorentrada(1))
+		if (Math.abs(inf2) > antoniovandremaximovalorentrada(1))
 			return antoniovandremensagenserro(2);
 
 	if (antoniovandrenumeroreal(sup2.toString()) == "e")
 		return "e"
 	else
-		if (antoniovandremodulo(sup2) > antoniovandremaximovalorentrada(1))
+		if (Math.abs(sup2) > antoniovandremaximovalorentrada(1))
 			return antoniovandremensagenserro(2);
 
 	parcela = (sup2 - inf2) / n2;
@@ -7439,7 +7439,7 @@ function antoniovandremediaantoniovandre(str, avisoanexo)
 			}
 		else
 			{
-			if ((antoniovandremodulo(resultpart) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1))))
+			if ((Math.abs(resultpart) > parseFloat(antoniovandremaximovalorsaida(1))) || (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1))))
 				return antoniovandremensagenserro(6)
 			else
 				result += resultpart;
@@ -7448,7 +7448,7 @@ function antoniovandremediaantoniovandre(str, avisoanexo)
 
 	result = result / (n2 + 1);
 
-	if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(5);
 
 	return antoniovandreformatarreal(result);
@@ -7591,7 +7591,7 @@ function antoniovandreposicaostring(args)
 
 	contador++;
 
-	if (antoniovandremodulo(contador) > antoniovandremaximovalorsaida(1))
+	if (Math.abs(contador) > antoniovandremaximovalorsaida(1))
 		return antoniovandremensagenserro(5)
 	else
 		return contador;
@@ -7660,7 +7660,7 @@ function antoniovandrefuncaomaisproxima(str, avisoanexo)
 				return "e";
 				}
 
-			if ((antoniovandremodulo(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))))
+			if ((Math.abs(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))))
 				return antoniovandremensagenserro(2);
 		
 			for (var j = 0; j < listtam; j++)
@@ -7701,12 +7701,12 @@ function antoniovandrefuncaomaisproxima(str, avisoanexo)
 				}
 			else
 				{
-				if (antoniovandremodulo(resultpart) > parseFloat(antoniovandremaximovalorsaida(1)))
+				if (Math.abs(resultpart) > parseFloat(antoniovandremaximovalorsaida(1)))
 					return antoniovandremensagenserro(6)
 				else
-					result[k] += antoniovandremodulo(resultpart - ordenada);
+					result[k] += Math.abs(resultpart - ordenada);
 
-				if (antoniovandremodulo(result[k]) > parseFloat(antoniovandremaximovalorsaida(1)))
+				if (Math.abs(result[k]) > parseFloat(antoniovandremaximovalorsaida(1)))
 					return antoniovandremensagenserro(6)
 				}
 			}
@@ -7762,7 +7762,7 @@ function antoniovandreanalisetexto(str, avisoanexo)
 	if (avisoanexo == -1)
 		return "Para textos escritos em Português segundo as normas vigentes em 16 de julho de 2021.";
 
-	if (antoniovandremodulo(str.length) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(str.length) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(6)
 
 	for (var i = 0; i < str.length; i++)
@@ -8084,7 +8084,7 @@ function antoniovandrepossiveisraizes(arr, retorno, avisoanexo)
 
 	precisao = parseInt(str[2]);
 
-	if ((antoniovandremodulo(inf) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(sup) > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
+	if ((Math.abs(inf) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(sup) > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
 		return antoniovandremensagenserro(2);
 
 	if (inf >= sup) return "e";
@@ -8132,11 +8132,11 @@ function antoniovandrepossiveisraizes(arr, retorno, avisoanexo)
 				}
 			else
 				{
-				if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+				if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 					return antoniovandremensagenserro(6)
 				else
 					{
-					if (antoniovandremodulo(result) < antoniovandreprecisaoreal(4))
+					if (Math.abs(result) < antoniovandreprecisaoreal(4))
 						{
 						if (flag == 0)
 							{
@@ -8286,7 +8286,7 @@ function antoniovandredistanciapontofuncao (arr)
 	
 	precisao = parseInt(str[3].trim());
 
-	if ((antoniovandremodulo(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(inf) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(sup) > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
+	if ((Math.abs(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(inf) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(sup) > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
 		return antoniovandremensagenserro(2);
 
 	for (var i = 0; i < listtam; i++)
@@ -8332,7 +8332,7 @@ function antoniovandredistanciapontofuncao (arr)
 			}
 		else
 			{
-			if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(6)
 			else
 				{
@@ -8417,7 +8417,7 @@ function antoniovandredistanciafuncaofuncao (arr)
 
 	precisao = parseInt(str[3].trim());
 
-	if ((antoniovandremodulo(inf) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(sup) > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
+	if ((Math.abs(inf) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(sup) > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
 		return antoniovandremensagenserro(2);
 
 	for (var i = 0; i < listtam; i++)
@@ -8481,7 +8481,7 @@ function antoniovandredistanciafuncaofuncao (arr)
 			}
 		else
 			{
-			if ((antoniovandremodulo(result1) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(result2) > parseFloat(antoniovandremaximovalorsaida(1))))
+			if ((Math.abs(result1) > parseFloat(antoniovandremaximovalorsaida(1))) || (Math.abs(result2) > parseFloat(antoniovandremaximovalorsaida(1))))
 				return antoniovandremensagenserro(6)
 			else
 				{
@@ -8600,7 +8600,7 @@ function antoniovandreareatriangulolados(arr, saida)
 
 	if ((a > parseFloat(antoniovandremaximovalorentrada(1))) || (b > parseFloat(antoniovandremaximovalorentrada(1))) || (c > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
 
-	if ((a <= antoniovandremodulo(b - c)) || (b <= antoniovandremodulo(a - c)) || (c <= antoniovandremodulo(a - b)) || (a >= b + c) || (b >= a + c) || (c >= a + b)) return "Os lados não são de um triângulo.";
+	if ((a <= Math.abs(b - c)) || (b <= Math.abs(a - c)) || (c <= Math.abs(a - b)) || (a >= b + c) || (b >= a + c) || (c >= a + b)) return "Os lados não são de um triângulo.";
 
 	p = (a + b + c) / 2;
 	result = Math.pow(p * (p - a) * (p - b) * (p - c), 0.5);
@@ -8657,7 +8657,7 @@ function antoniovandretermospa(arr)
 	termosexibir1 = parseInt(termosexibir[0].trim());
 	termosexibir2 = parseInt(termosexibir[1].trim());
 
-	if ((antoniovandremodulo(termo1n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo1p > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(termo2n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2p > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir1 > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir2 > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
+	if ((Math.abs(termo1n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo1p > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(termo2n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2p > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir1 > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir2 > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
 
 	if (termosexibir1 >= termosexibir2) return "O intervalo de termos a exibir deve ser crescente.";
 
@@ -8723,7 +8723,7 @@ function antoniovandretermospg(arr, avisoanexo)
 
 	if ((termo1n == 0) || (termo2n == 0)) return "e";
 
-	if ((antoniovandremodulo(termo1n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo1p > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(termo2n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2p > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir1 > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir2 > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
+	if ((Math.abs(termo1n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo1p > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(termo2n) > parseFloat(antoniovandremaximovalorentrada(1))) || (termo2p > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir1 > parseFloat(antoniovandremaximovalorentrada(1))) || (termosexibir2 > parseFloat(antoniovandremaximovalorentrada(1)))) return antoniovandremensagenserro(2);
 
 	if (termosexibir1 >= termosexibir2) return "O intervalo de termos a exibir deve ser crescente.";
 	if (termo1p == termo2p) return "Especifique posições distintas.";
@@ -8741,10 +8741,10 @@ function antoniovandretermospg(arr, avisoanexo)
 		razao += antoniovandreprecisaoreal(8);
 		resulttemp = 1;
 
-		for (var i = 1; i <= antoniovandremodulo(termo2p - termo1p); i++)
+		for (var i = 1; i <= Math.abs(termo2p - termo1p); i++)
 			resulttemp *= razao;
 
-		} while (((resulttemp - antoniovandremodulo(termo2n / termo1n) < antoniovandreprecisaoreal(8)) && (flag2 == 0)) || ((resulttemp - antoniovandremodulo(termo1n / termo2n) < antoniovandreprecisaoreal(8)) && (flag2 == 1)));
+		} while (((resulttemp - Math.abs(termo2n / termo1n) < antoniovandreprecisaoreal(8)) && (flag2 == 0)) || ((resulttemp - Math.abs(termo1n / termo2n) < antoniovandreprecisaoreal(8)) && (flag2 == 1)));
 
 	if (razao > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(5);
 
@@ -8888,7 +8888,7 @@ function antoniovandreestudosinalfuncao(arr, avisoanexo)
 			}
 		else
 			{
-			if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+			if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(6)
 			else
 				{
@@ -8995,18 +8995,18 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 
 	inteligencia = parseInt(arr[1].trim());
 
-	if (antoniovandremodulo(inteligencia) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(inteligencia) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(2);
 
 	limite = 5 * inteligencia;
 
-	if (antoniovandremodulo(limite) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(limite) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(4);
 
 	for (var j = 1; j <= inteligencia; j++)
 		denominador *= 2;
 
-	if (antoniovandremodulo(denominador) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(denominador) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(4);
 
 	incremento = 1 / denominador;
@@ -9173,7 +9173,7 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 				continue labelproximotermosequencia;
 				}
 
-			if (antoniovandremodulo(ordenada) > parseFloat(antoniovandremaximovalorentrada(1)))
+			if (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1)))
 				{
 				result[k] = parseFloat(antoniovandremaximovalorsaida(1));
 				continue labelproximotermosequencia;
@@ -9230,12 +9230,12 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 				}
 			else
 				{
-				if (antoniovandremodulo(resultpart) > parseFloat(antoniovandremaximovalorsaida(1)))
+				if (Math.abs(resultpart) > parseFloat(antoniovandremaximovalorsaida(1)))
 					return antoniovandremensagenserro(6)
 				else
-					result[k] += antoniovandremodulo(resultpart - ordenada);
+					result[k] += Math.abs(resultpart - ordenada);
 
-				if (antoniovandremodulo(result[k]) > parseFloat(antoniovandremaximovalorsaida(1)))
+				if (Math.abs(result[k]) > parseFloat(antoniovandremaximovalorsaida(1)))
 					return antoniovandremensagenserro(6);
 				}
 			}
@@ -9285,7 +9285,7 @@ function antoniovandreproximotermosequencia(str, avisoanexo)
 		}
 	else
 		{
-		if (antoniovandremodulo(resultpart) > parseFloat(antoniovandremaximovalorsaida(1)))
+		if (Math.abs(resultpart) > parseFloat(antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(6)
 		else
 			return antoniovandreformatarreal(resultpart);
@@ -9819,7 +9819,7 @@ function antoniovandretorneioprobabilidade(str)
 
 	var rol = antoniovandrerol(strrol, 1);
 
-	if ((antoniovandremodulo(minresultado - maxresultadomenor) == 0) || ((minresultadomaior != Number.MAX_SAFE_INTEGER) && (antoniovandremodulo(maxresultado - minresultadomaior) == 0)) || ((minresultadomaior == Number.MAX_SAFE_INTEGER) && (maxresultado == rol[rol.length - requisicaopos])))
+	if ((Math.abs(minresultado - maxresultadomenor) == 0) || ((minresultadomaior != Number.MAX_SAFE_INTEGER) && (Math.abs(maxresultado - minresultadomaior) == 0)) || ((minresultadomaior == Number.MAX_SAFE_INTEGER) && (maxresultado == rol[rol.length - requisicaopos])))
 		shift = 1;
 
 	if (requisicao[2].trim() == "p")
@@ -9999,7 +9999,7 @@ function antoniovandremaximominimofuncao(arr, avisoanexo)
 
 	precisao = parseInt(str[3]);
 
-	if ((antoniovandremodulo(inf) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(sup) > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
+	if ((Math.abs(inf) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(sup) > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
 		return antoniovandremensagenserro(2);
 
 	if (inf >= sup) return "e";
@@ -10030,7 +10030,7 @@ function antoniovandremaximominimofuncao(arr, avisoanexo)
 			continue;
 			}
 
-		if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+		if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(6)
 		else
 			{
@@ -10118,7 +10118,7 @@ function antoniovandrecomprimentograficofuncao(str, avisoanexo)
 	if (antoniovandrenumeronaturalpositivo(n) == "e")
 		return "e"
 
-	if (antoniovandremodulo(parseInt(n)) > antoniovandremaximovalorentrada(1))
+	if (Math.abs(parseInt(n)) > antoniovandremaximovalorentrada(1))
 		return antoniovandremensagenserro(2);
 
 	if (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopart, antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(expressaopart, antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e")
@@ -10153,13 +10153,13 @@ function antoniovandrecomprimentograficofuncao(str, avisoanexo)
 	if (antoniovandrenumeroreal(inf2.toString()) == "e")
 		return "e"
 	else
-		if (antoniovandremodulo(inf2) > antoniovandremaximovalorentrada(1))
+		if (Math.abs(inf2) > antoniovandremaximovalorentrada(1))
 			return antoniovandremensagenserro(2);
 
 	if (antoniovandrenumeroreal(sup2.toString()) == "e")
 		return "e"
 	else
-		if (antoniovandremodulo(sup2) > antoniovandremaximovalorentrada(1))
+		if (Math.abs(sup2) > antoniovandremaximovalorentrada(1))
 			return antoniovandremensagenserro(2);
 
 	parcela = (sup2 - inf2) / n2;
@@ -10208,13 +10208,13 @@ function antoniovandrecomprimentograficofuncao(str, avisoanexo)
 			}
 		else
 			{
-			if ((antoniovandremodulo(resultpart) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1))))
+			if ((Math.abs(resultpart) > parseFloat(antoniovandremaximovalorsaida(1))) || (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1))))
 				return antoniovandremensagenserro(6)
 			else
 				{
 				if (xp != null)
 					{
-					if (antoniovandremodulo(resultpart - resultpartp) > antoniovandreprecisaoreal(9))
+					if (Math.abs(resultpart - resultpartp) > antoniovandreprecisaoreal(9))
 						return "Aparentemente a função não é contínua no domínio dado."
 					else
 						result += antoniovandresqrt((x - xp) * (x - xp) + (resultpart - resultpartp) * (resultpart - resultpartp));
@@ -10226,7 +10226,7 @@ function antoniovandrecomprimentograficofuncao(str, avisoanexo)
 			}
 		}
 
-	if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+	if (Math.abs(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(5);
 
 	return antoniovandreformatarreal(result);
@@ -10289,7 +10289,7 @@ function antoniovandrepontocegooxantoniovandre(str, avisoanexo)
 	if (antoniovandrenumeroreal(ponto.toString()) == "e")
 		return "e";
 
-	if ((antoniovandremodulo(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(ponto) > parseFloat(antoniovandremaximovalorentrada(1))))
+	if ((Math.abs(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ponto) > parseFloat(antoniovandremaximovalorentrada(1))))
 		return antoniovandremensagenserro(2);
 
 	derivadazero = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[3].trim() + "+" + antoniovandreprecisaoreal(6).toString() + ";0", 1, 0);
@@ -10315,7 +10315,7 @@ function antoniovandrepontocegooxantoniovandre(str, avisoanexo)
 
 	if ((antoniovandrenumeroreal(result.toString()) == "e") || (result == null) || (result == undefined) || (isNaN(result))) return "e";
 
-	if (antoniovandremodulo(result) > antoniovandremaximovalorsaida(1))
+	if (Math.abs(result) > antoniovandremaximovalorsaida(1))
 		return antoniovandremensagenserro(5)
 	else
 		return result;
@@ -10391,7 +10391,7 @@ function antoniovandrevelocidadepontocegooxantoniovandre(str, avisoanexo)
 	if (antoniovandrenumeroreal(ponto.toString()) == "e")
 		return "e";
 
-	if ((antoniovandremodulo(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(ponto) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(velocidade) > parseFloat(antoniovandremaximovalorentrada(1))))
+	if ((Math.abs(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(ponto) > parseFloat(antoniovandremaximovalorentrada(1))) || (Math.abs(velocidade) > parseFloat(antoniovandremaximovalorentrada(1))))
 		return antoniovandremensagenserro(2);
 
 	derivadazero = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[4].trim() + "+" + antoniovandreprecisaoreal(6).toString() + ";0", 1, 0);
@@ -10415,7 +10415,7 @@ function antoniovandrevelocidadepontocegooxantoniovandre(str, avisoanexo)
 
 	if ((antoniovandrenumeroreal(result.toString()) == "e") || (result == null) || (result == undefined) || (isNaN(result))) return "e";
 
-	if (antoniovandremodulo(result) > antoniovandremaximovalorsaida(1))
+	if (Math.abs(result) > antoniovandremaximovalorsaida(1))
 		return antoniovandremensagenserro(5)
 	else
 		return result;
@@ -10533,7 +10533,7 @@ function antoniovandreareapoligonoconvexo(str)
 				{
 				partarea = antoniovandredeterminante([[vertices[i - 1][0], vertices[i - 1][1], 1], [vertices[i][0], vertices[i][1], 1], [vertices[j][0], vertices[j][1], 1]]);
 
-				if (antoniovandremodulo(partarea) > antoniovandremaximovalorsaida(1))
+				if (Math.abs(partarea) > antoniovandremaximovalorsaida(1))
 					return antoniovandremensagenserro(4);
 				}
 
@@ -10547,7 +10547,7 @@ function antoniovandreareapoligonoconvexo(str)
 		{
 		area = area + antoniovandremodulo(antoniovandredeterminante([[vertices[0][0], vertices[0][1], 1], [vertices[i - 1][0], vertices[i - 1][1], 1], [vertices[i][0], vertices[i][1], 1]])) / 2;
 
-		if (antoniovandremodulo(area) > antoniovandremaximovalorsaida(1))
+		if (Math.abs(area) > antoniovandremaximovalorsaida(1))
 			return antoniovandremensagenserro(4);
 		}
 
