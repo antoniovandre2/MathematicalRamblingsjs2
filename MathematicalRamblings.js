@@ -4865,7 +4865,7 @@ function antoniovandremodulo(x)
 		if (antoniovandrenumeroreal(ev.toString()) == "e")
 			return "O argumento do módulo deve ser um número real."
 		else
-			return antoniovandremodulo(ev);
+			return Math.abs(ev);
 		}
 	else
 		return Math.abs(x);
