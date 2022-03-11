@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 09-03-2022. Não considerando alterações em macros.
+// Última atualização: 11-03-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "09-03-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "11-03-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -399,7 +399,7 @@ function antoniovandremediageometrica(str)
 	switch (flag)
 		{
 		case 0:
-			var mg = Math.pow(f,1 / nstr.length);
+			var mg = antoniovandrepotencia(f,1 / nstr.length);
 
 			if (antoniovandremodulo(mg) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(5);
@@ -587,7 +587,7 @@ function antoniovandrevariancia(str)
 			var soma = 0;
 
 			for (var i = 0; i < nstr.length; i++)
-				soma += Math.pow(parseFloat(nstr[i].trim()) - ma, 2);
+				soma += antoniovandrepotencia(parseFloat(nstr[i].trim()) - ma, 2);
 
 			var v = soma / nstr.length;
 
@@ -611,7 +611,7 @@ function antoniovandredesviopadrao(str)
 	if (v != "e")
 		if (antoniovandrecompararstrings(v, antoniovandremensagenserro(2)) == "e")
 			{
-			var sigma = Math.sqrt(v);
+			var sigma = antoniovandresqrt(v);
 
 			if (antoniovandremodulo(sigma) > parseFloat(antoniovandremaximovalorsaida(1)))
 				return antoniovandremensagenserro(5);
@@ -669,7 +669,7 @@ function antoniovandremmc (arr)
 						if (buffer[k][1] < decomposicoes[i][j][1])
 							buffer[k][1] = decomposicoes[i][j][1];
 
-		for (var i = 0; i < buffer.length; i++) result *= Math.pow(buffer[i][0],buffer[i][1]);
+		for (var i = 0; i < buffer.length; i++) result *= antoniovandrepotencia(buffer[i][0],buffer[i][1]);
 
 		if (antoniovandremodulo(result) > antoniovandremaximovalorsaida(1))
 			return antoniovandremensagenserro(5);
@@ -742,7 +742,7 @@ function antoniovandremdc (arr)
 		for (var i = 0; i < buffer.length; i++)
 			if (buffer[i][1] == M || buffer[i][1] == "e") buffer[i][1] = 0;
 
-		for (var i = 0; i < buffer.length; i++) result *= Math.pow(buffer[i][0],buffer[i][1]);
+		for (var i = 0; i < buffer.length; i++) result *= antoniovandrepotencia(buffer[i][0],buffer[i][1]);
 
 		if (antoniovandremodulo(result) > antoniovandremaximovalorsaida(1))
 			return antoniovandremensagenserro(5);
@@ -1121,7 +1121,7 @@ function antoniovandrecnb(arr)
 					break;
 					}
 				else
-					nb += antoniovandrenbr(nstr[0].trim().substring(i, i + 1)) * Math.pow(parseInt(nstr[1].trim()), q1 - i - 1);
+					nb += antoniovandrenbr(nstr[0].trim().substring(i, i + 1)) * antoniovandrepotencia(parseInt(nstr[1].trim()), q1 - i - 1);
 			}
 
 		if (flag2 == 0 && (antoniovandremodulo(nb) > antoniovandremaximovalorentrada(1) || antoniovandrenumeronatural(nb.toString()) == "e"))
@@ -1134,11 +1134,11 @@ function antoniovandrecnb(arr)
 
 			for (var i = 0; i < q2; i++)
 				{
-				var c = Math.trunc(n2 / Math.pow(parseInt(nstr[2].trim()), q2 - i - 1));
+				var c = Math.trunc(n2 / antoniovandrepotencia(parseInt(nstr[2].trim()), q2 - i - 1));
 
 				s = s + antoniovandrenb(c.toString());
 
-				n2 = n2 - parseInt(c * Math.pow(parseInt(nstr[2].trim()), q2 - i - 1));
+				n2 = n2 - parseInt(c * antoniovandrepotencia(parseInt(nstr[2].trim()), q2 - i - 1));
 				}
 			}
 
@@ -1906,14 +1906,14 @@ function antoniovandreformatarreal(r)
 
 	for (var i = 0; i < sft; i++)
 		{
-		if (antoniovandremodulo(Math.trunc(parseFloat(r) * Math.pow(10, i)) - parseFloat(r) * Math.pow(10, i)) < antoniovandreprecisaoreal(1) * Math.pow(10, i))
-			return Math.trunc(parseFloat(r) * Math.pow(10, i)) / Math.pow(10, i);
+		if (antoniovandremodulo(Math.trunc(parseFloat(r) * antoniovandrepotencia(10, i)) - parseFloat(r) * antoniovandrepotencia(10, i)) < antoniovandreprecisaoreal(1) * antoniovandrepotencia(10, i))
+			return Math.trunc(parseFloat(r) * antoniovandrepotencia(10, i)) / antoniovandrepotencia(10, i);
 
-		if (antoniovandremodulo(Math.trunc(parseFloat(r) * Math.pow(10, i) + 1) - parseFloat(r) * Math.pow(10, i)) < antoniovandreprecisaoreal(1) * Math.pow(10, i))
-			return Math.trunc(parseFloat(r) * Math.pow(10, i) + 1) / Math.pow(10, i);
+		if (antoniovandremodulo(Math.trunc(parseFloat(r) * antoniovandrepotencia(10, i) + 1) - parseFloat(r) * antoniovandrepotencia(10, i)) < antoniovandreprecisaoreal(1) * antoniovandrepotencia(10, i))
+			return Math.trunc(parseFloat(r) * antoniovandrepotencia(10, i) + 1) / antoniovandrepotencia(10, i);
 
-		if (antoniovandremodulo(Math.trunc(parseFloat(r) * Math.pow(10, i) - 1) - parseFloat(r) * Math.pow(10, i)) < antoniovandreprecisaoreal(1) * Math.pow(10, i))
-			return Math.trunc(parseFloat(r) * Math.pow(10, i) - 1) / Math.pow(10, i);
+		if (antoniovandremodulo(Math.trunc(parseFloat(r) * antoniovandrepotencia(10, i) - 1) - parseFloat(r) * antoniovandrepotencia(10, i)) < antoniovandreprecisaoreal(1) * antoniovandrepotencia(10, i))
+			return Math.trunc(parseFloat(r) * antoniovandrepotencia(10, i) - 1) / antoniovandrepotencia(10, i);
 
 		if (i == sft - 1) return parseFloat(r);
 		}
@@ -2341,14 +2341,14 @@ function antoniovandrearrayindices(index, colunas, valorminimo, valormaximo)
 	if (antoniovandremodulo(index) > antoniovandremaximovalorentrada(1))
 		return antoniovandremensagenserro(1);
 
-	if (n >= Math.pow(valormaximo - valorminimo, colunas))
+	if (n >= antoniovandrepotencia(valormaximo - valorminimo, colunas))
 		return "Valor acima do permitido para preencher a array."
 	else
 		{
 		for (var i = colunas - 1; i >= 0; i--)
 			{
-			r = n % Math.pow(valormaximo - valorminimo, i);
-			n = Math.trunc(n / Math.pow(valormaximo - valorminimo, i));
+			r = n % antoniovandrepotencia(valormaximo - valorminimo, i);
+			n = Math.trunc(n / antoniovandrepotencia(valormaximo - valorminimo, i));
 			M.push(n);
 			n = r;
 			}
@@ -2439,7 +2439,7 @@ function antoniovandredeterminante(M)
 			if (M.length > 1 || M[0].length > 1)
 				{
 				for (var i = 0; i < M.length; i++)
-					soma += M[i][0] * Math.pow(-1, i) * antoniovandredeterminante(antoniovandreremoverlinhacoluna(M, i, 0, 1));
+					soma += M[i][0] * antoniovandrepotencia(-1, i) * antoniovandredeterminante(antoniovandreremoverlinhacoluna(M, i, 0, 1));
 
 				return soma;
 				}
@@ -2479,7 +2479,7 @@ function antoniovandredeterminante(M)
 
 				for (var i = 0; i < M2.length; i++)
 					{
-					soma += antoniovandreformatarreal(M2[i][0] * Math.pow(-1, i) * antoniovandredeterminante(antoniovandreremoverlinhacoluna(M2, i, 0, 1)));
+					soma += antoniovandreformatarreal(M2[i][0] * antoniovandrepotencia(-1, i) * antoniovandredeterminante(antoniovandreremoverlinhacoluna(M2, i, 0, 1)));
 					}
 
 				if (antoniovandremodulo(soma) > parseFloat(antoniovandremaximovalorsaida(1)))
@@ -3063,8 +3063,8 @@ function antoniovandrenomesnumeros(str)
 	if (n == 0)
 		 return "Zero.";
 
-	if (n >= Math.pow(1000, mil + 1))
-		return "Números maiores que " + (Math.pow(1000, mil + 1) - 1).toString() + " ainda não tem nome de acordo com a base de dados.";
+	if (n >= antoniovandrepotencia(1000, mil + 1))
+		return "Números maiores que " + (antoniovandrepotencia(1000, mil + 1) - 1).toString() + " ainda não tem nome de acordo com a base de dados.";
 
 	if (n % 10 == 0)
 		mil2 = Math.trunc(Math.log(n) / Math.log(10)) + 2
@@ -3095,7 +3095,7 @@ function antoniovandrenomesnumeros(str)
 		flag6 = 0;
 		flag9 = 0;
 
-		n2 = Math.trunc(n / Math.pow(1000, Math.trunc((mil2 - 1) / 3)));
+		n2 = Math.trunc(n / antoniovandrepotencia(1000, Math.trunc((mil2 - 1) / 3)));
 
 		n2 = n2 % 1000;
 
@@ -3224,7 +3224,7 @@ function antoniovandrevalorabsoluto(str, v, saida)
 	if (antoniovandrenumeroreal(str.toString()) == "e" || antoniovandrenumerointeiro(v.toString()) == "e")
 		return "e";
 
-	r = Math.trunc(parseFloat(str) / Math.pow(10, parseInt(v)));
+	r = Math.trunc(parseFloat(str) / antoniovandrepotencia(10, parseInt(v)));
 
 	r = r % 10;
 
@@ -3274,38 +3274,38 @@ function antoniovandreconversaoalgarismosromanos(str)
 
 	do
 		{
-		int = Math.trunc(n / Math.pow(10, i));
-		resto = n % Math.pow(10, i);
+		int = Math.trunc(n / antoniovandrepotencia(10, i));
+		resto = n % antoniovandrepotencia(10, i);
 
 		if (int == 9)
-			outputstr = outputstr + antoniovandrealgarismosromanos(Math.pow(10, i)) + antoniovandrealgarismosromanos(Math.pow(10, i) * 10);
+			outputstr = outputstr + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i)) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i) * 10);
 
 		if (int == 8)
-			outputstr = outputstr + antoniovandrealgarismosromanos(Math.pow(10, i) * 5) + antoniovandrealgarismosromanos(Math.pow(10, i)) + antoniovandrealgarismosromanos(Math.pow(10, i)) + antoniovandrealgarismosromanos(Math.pow(10, i));
+			outputstr = outputstr + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i) * 5) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i)) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i)) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i));
 
 		if (int == 7)
-			outputstr = outputstr + antoniovandrealgarismosromanos(Math.pow(10, i) * 5) + antoniovandrealgarismosromanos(Math.pow(10, i)) + antoniovandrealgarismosromanos(Math.pow(10, i));
+			outputstr = outputstr + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i) * 5) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i)) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i));
 
 		if (int == 6)
-			outputstr = outputstr + antoniovandrealgarismosromanos(Math.pow(10, i) * 5) + antoniovandrealgarismosromanos(Math.pow(10, i));
+			outputstr = outputstr + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i) * 5) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i));
 
 		if (int == 5)
-			outputstr = outputstr + antoniovandrealgarismosromanos(Math.pow(10, i) * 5);
+			outputstr = outputstr + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i) * 5);
 
 		if (int == 4)
 			if (i < 3)
-				outputstr = outputstr + antoniovandrealgarismosromanos(Math.pow(10, i)) + antoniovandrealgarismosromanos(Math.pow(10, i) * 5)
+				outputstr = outputstr + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i)) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i) * 5)
 			else
-				outputstr = outputstr + antoniovandrealgarismosromanos(Math.pow(10, i)) + antoniovandrealgarismosromanos(Math.pow(10, i)) + antoniovandrealgarismosromanos(Math.pow(10, i)) + antoniovandrealgarismosromanos(Math.pow(10, i));
+				outputstr = outputstr + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i)) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i)) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i)) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i));
 
 		if (int == 3)
-			outputstr = outputstr + antoniovandrealgarismosromanos(Math.pow(10, i)) + antoniovandrealgarismosromanos(Math.pow(10, i)) + antoniovandrealgarismosromanos(Math.pow(10, i));
+			outputstr = outputstr + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i)) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i)) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i));
 
 		if (int == 2)
-			outputstr = outputstr + antoniovandrealgarismosromanos(Math.pow(10, i)) + antoniovandrealgarismosromanos(Math.pow(10, i));
+			outputstr = outputstr + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i)) + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i));
 
 		if (int == 1)
-			outputstr = outputstr + antoniovandrealgarismosromanos(Math.pow(10, i));
+			outputstr = outputstr + antoniovandrealgarismosromanos(antoniovandrepotencia(10, i));
 
 		n = resto;
 		i--;
@@ -4708,7 +4708,7 @@ function antoniovandreexp(x)
 function antoniovandrepotencia(a, b)
 	{
 	if (arguments.length != 2)
-		return "e";
+		return "A função \"antoniovandrepotencia\" requer 2 argumentos.";
 
 	if (antoniovandrenumeroreal(a.toString()) == "e")
 		{
@@ -4809,7 +4809,7 @@ function antoniovandrepotencia(a, b)
 function antoniovandresqrtn(x, n)
 	{
 	if (arguments.length != 2)
-		return "e";
+		return "A função \"antoniovandresqrtn\" requer 2 argumentos.";
 
 	if (antoniovandrenumeroreal(x.toString()) == "e")
 		{
@@ -4893,6 +4893,9 @@ function antoniovandreln(x)
 		}
 	else
 		{
+		if (x <= 0)
+			return "O logaritimando deve ser um número real positivo.";
+
 /*		Se desejando uma implementação por aproximação por Taylor.
 
 		return antoniovandreaproximacaotaylor("ln, " + x.toString());*/
@@ -4916,6 +4919,9 @@ function antoniovandrelog10(x)
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
 		var n = antoniovandreln(eval(x));
+
+		if (antoniovandrecompararstrings(n, "O logaritimando deve ser um número real positivo.") == 1)
+			return "O logaritimando deve ser um número real positivo.";
 
 		if (antoniovandrenumeroreal(n.toString()) == "e")
 			return "O logaritimando deve ser um número real positivo."
@@ -4949,6 +4955,9 @@ function antoniovandrelog2(x)
 
 		var n = antoniovandreln(eval(x));
 
+		if (antoniovandrecompararstrings(n, "O logaritimando deve ser um número real positivo.") == 1)
+			return "O logaritimando deve ser um número real positivo.";
+
 		if (antoniovandrenumeroreal(n.toString()) == "e")
 			return "O logaritimando deve ser um número real positivo."
 		else
@@ -4970,7 +4979,7 @@ function antoniovandrelog2(x)
 function antoniovandrelog(a, b)
 	{
 	if (arguments.length != 2)
-		return "e";
+		return "A função \"antoniovandrelog\" requer 2 argumentos.";
 
 	if (antoniovandrenumeroreal(a.toString()) == "e")
 		{
@@ -4981,8 +4990,11 @@ function antoniovandrelog(a, b)
 
 		var la = antoniovandreln(eval(a));
 
+		if (antoniovandrecompararstrings(la, "O logaritimando deve ser um número real positivo.") == 1)
+			return "O logaritimando deve ser um número real positivo.";
+
 		if (antoniovandrenumeroreal(la.toString()) == "e")
-			return "O logaritimando deve ser um número real positivo."
+			return "e"
 		else
 			{
 			if (antoniovandrenumeroreal(b.toString()) == "e")
@@ -5014,8 +5026,11 @@ function antoniovandrelog(a, b)
 		{
 		var la = antoniovandreln(a);
 
+		if (antoniovandrecompararstrings(la, "O logaritimando deve ser um número real positivo.") == 1)
+			return "O logaritimando deve ser um número real positivo.";
+
 		if (antoniovandrenumeroreal(la.toString()) == "e")
-			return "O logaritimando deve ser um número real positivo."
+			return "e"
 		else
 			{
 			if (antoniovandrenumeroreal(b.toString()) == "e")
@@ -5583,7 +5598,7 @@ function antoniovandrefatorialescopofuncoes(x)
 function antoniovandrearranjosescopofuncoes(x, y)
 	{
 	if (arguments.length != 2)
-		return "e";
+		return "A função \"antoniovandrearranjosescopofuncoes\" requer 2 argumentos.";
 
 	if ((antoniovandrenumeronatural(x.toString()) == "e") || (antoniovandrenumeronatural(y.toString()) == "e"))
 		{
@@ -5604,7 +5619,7 @@ function antoniovandrearranjosescopofuncoes(x, y)
 function antoniovandrecombinacoesescopofuncoes(x, y)
 	{
 	if (arguments.length != 2)
-		return "e";
+		return "A função \"antoniovandrecombinacoesescopofuncoes\" requer 2 argumentos.";
 
 	if ((antoniovandrenumeronatural(x.toString()) == "e") || (antoniovandrenumeronatural(y.toString()) == "e"))
 		{
@@ -8341,7 +8356,7 @@ function antoniovandredistanciapontofuncao (arr)
 				{
 				try
 					{
-					distancia = Math.pow((abscissa - (inf + (sup - inf) * (i / precisao))) * (abscissa - (inf + (sup - inf) * (i / precisao))) + (ordenada - result) * (ordenada - result), 0.5);
+					distancia = antoniovandrepotencia((abscissa - (inf + (sup - inf) * (i / precisao))) * (abscissa - (inf + (sup - inf) * (i / precisao))) + (ordenada - result) * (ordenada - result), 0.5);
 					}
 				catch (error)
 					{
@@ -8490,7 +8505,7 @@ function antoniovandredistanciafuncaofuncao (arr)
 				{
 				try
 					{
-					distancia = Math.pow((((inf + (sup - inf) * (j / precisao))) - (inf + (sup - inf) * (i / precisao))) * (((inf + (sup - inf) * (j / precisao))) - (inf + (sup - inf) * (i / precisao))) + (result2 - result1) * (result2 - result1), 0.5);
+					distancia = antoniovandrepotencia((((inf + (sup - inf) * (j / precisao))) - (inf + (sup - inf) * (i / precisao))) * (((inf + (sup - inf) * (j / precisao))) - (inf + (sup - inf) * (i / precisao))) + (result2 - result1) * (result2 - result1), 0.5);
 					}
 				catch (error)
 					{
@@ -8606,7 +8621,7 @@ function antoniovandreareatriangulolados(arr, saida)
 	if ((a <= antoniovandremodulo(b - c)) || (b <= antoniovandremodulo(a - c)) || (c <= antoniovandremodulo(a - b)) || (a >= b + c) || (b >= a + c) || (c >= a + b)) return "Os lados não são de um triângulo.";
 
 	p = (a + b + c) / 2;
-	result = Math.pow(p * (p - a) * (p - b) * (p - c), 0.5);
+	result = antoniovandrepotencia(p * (p - a) * (p - b) * (p - c), 0.5);
 
 	if (result > parseFloat(antoniovandremaximovalorsaida(1))) return antoniovandremensagenserro(5);
 
