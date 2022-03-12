@@ -3,6 +3,66 @@ Proprietário: Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_leg
 Arquivo de anotações públicas #5.
 ____________________
 
+12-03-2022
+__
+
+Estar de bem com a Matemática influencia bastante, pesa bastante, em meu bem-estar emocional.
+_____
+
+12-03-2022
+__
+
+Alguns servem cafezinho, outros são recepcionistas; semelhantemente escrevo Matemática em meu blog, mesmo com poucos visitantes.
+
+E levo isto bastante a sério.
+_____
+
+12-03-2022
+__
+
+Trabalhando como programador ajudando voluntariamente em alguns projetos na internet, não somente nos os meus.
+
+Dinheiro não é o meu foco, mas realização pessoal.
+_____
+
+12-03-2022
+__
+
+Computadores muito mais velozes podem surgir no futuro, logo pus um setTimeout de 10 milissegundos para cada frame na rotação automática de gráficos 3D. Assim, no máximo, o fps será de 100 Hz.
+_____
+
+12-03-2022
+__
+
+Estou gostando do formato JSON.
+_____
+
+12-03-2022
+__
+
+Mudei de ideia e decidi programar mais um pouquinho, e tive sucesso. Saboroso para o ego...
+_____
+
+12-03-2022
+__
+
+Poderia agora programar mais, mas a prioridade, agora, parece que é experimentar outras coisas. Não se trata de programar algoritmos que são urgentes / críticos, mas opcionais e não muito relevantes.
+_____
+
+12-03-2022
+__
+
+Ignorando algumas coisas de programação sabendo que, com um pouco de esforço, posso fazer; não se trata de algo para provar a si mesmo que é capaz; já muitas vezes provei a mim mesmo que sou capaz de fazer bastantes coisas.
+_____
+
+12-03-2022
+__
+
+Matemática exige um certo conhecimento de programação, mas acho que já aprendi e implementei o bastante para quem não tem desenolvimento de softwares como foco. Meu foco é Matemática.
+
+Agora, ignorando mais de programação assim como faço com outras coisas, como quanto a jornais e outros campos do conhecimento.
+_____
+
 11-03-2022
 __
 
