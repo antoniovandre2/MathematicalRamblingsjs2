@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 11-03-2022. Não considerando alterações em macros.
+// Última atualização: 20-03-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "11-03-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "20-03-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -7110,7 +7110,7 @@ function antoniovandreraiocurvaturafuncao(str, avisoanexo)
 		return result;
 	}
 
-// Velocidade de Antonio Vandré. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte um número real para a velocidade de deslocamento sob o gráfico da função, a terceira a abscissa do ponto de referência, a quarta a ordenada do ponto de referência, e a quinta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna um número real raio (aproximado) da função para o "x" dado, ou a string "e" caso ocorra um erro.
+// Velocidade de Antonio Vandré. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte um número real para a velocidade de deslocamento sob o gráfico da função, a terceira a abscissa do ponto de referência, a quarta a ordenada do ponto de referência, e a quinta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna a string "e" caso ocorra um erro.
 
 function antoniovandrevelocidadeantoniovandre(str, avisoanexo)
 	{
@@ -7208,7 +7208,7 @@ function antoniovandrevelocidadeantoniovandre(str, avisoanexo)
 		return result;
 	}
 
-// Velocidade Angular de Antonio Vandré. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte a abscissa do primeiro ponto do vetor de referência, a terceira parte a ordenada do primeiro ponto do vetor de referência, a quarta parte a abscissa do segundo ponto do vetor de referência, a quinta parte a ordenada do segundo ponto do vetor de referência, a sexta parte um número real para a velocidade de deslocamento sob o gráfico da função, a sétima parte o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna um número real raio (aproximado) da função para o "x" dado, ou a string "e" caso ocorra um erro.
+// Velocidade Angular de Antonio Vandré. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte a abscissa do primeiro ponto do vetor de referência, a terceira parte a ordenada do primeiro ponto do vetor de referência, a quarta parte a abscissa do segundo ponto do vetor de referência, a quinta parte a ordenada do segundo ponto do vetor de referência, a sexta parte um número real para a velocidade de deslocamento sob o gráfico da função, a sétima parte o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna a string "e" caso ocorra um erro.
 
 function antoniovandrevelocidadeangularantoniovandre(str, avisoanexo)
 	{
@@ -10250,7 +10250,7 @@ function antoniovandrecomprimentograficofuncao(str, avisoanexo)
 	return antoniovandreformatarreal(result);
 	}
 
-// Ponto Cego de Antonio Vandré no eixo Ox. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte a abscissa do ponto de referência, a terceira a ordenada do ponto de referência, e a quarta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna um número real raio (aproximado) da função para o "x" dado, ou a string "e" caso ocorra um erro.
+// Ponto Cego de Antonio Vandré no eixo Ox. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte a abscissa do ponto de referência, a terceira a ordenada do ponto de referência, e a quarta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna a string "e" caso ocorra um erro.
 
 function antoniovandrepontocegooxantoniovandre(str, avisoanexo)
 	{
@@ -10339,7 +10339,7 @@ function antoniovandrepontocegooxantoniovandre(str, avisoanexo)
 		return result;
 	}
 
-// Velocidade do Ponto Cego de Antonio Vandré no eixo Ox. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte um número real para a velocidade de deslocamento sob o gráfico da função, a terceira a abscissa do ponto de referência, a quarta a ordenada do ponto de referência, e a quinta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna um número real raio (aproximado) da função para o "x" dado, ou a string "e" caso ocorra um erro.
+// Velocidade do Ponto Cego de Antonio Vandré no eixo Ox. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte um número real para a velocidade de deslocamento sob o gráfico da função, a terceira a abscissa do ponto de referência, a quarta a ordenada do ponto de referência, e a quinta o valor para "x"; segundo: -1 para exibir o aviso anexo. Retorna a string "e" caso ocorra um erro.
 
 function antoniovandrevelocidadepontocegooxantoniovandre(str, avisoanexo)
 	{
@@ -10490,6 +10490,76 @@ function antoniovandrecompletarquadrado(str)
 		coeficientexx = antoniovandreformatarreal(antoniovandresqrt(antoniovandrecoeficientemonomio(antoniovandrepolinomiotermo(pol, 0)))).toString();
 	
 	return "(" + coeficientexx + "x" + concatenacao1 + antoniovandreformatarreal(antoniovandremodulo(segundotermopart)).toString() + ")^2" + concatenacao2 + antoniovandremodulo(termoindependente).toString();
+	}
+
+// Velocidade Funcional de Antonio Vandré. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte um número real para a velocidade de deslocamento sob o eixo Ox, a terceira a abscissa do ponto no qual se deseja conhecer a velocidade; segundo: -1 para exibir o aviso anexo. Retorna a string "e" caso ocorra um erro.
+
+function antoniovandrevelocidadefuncionalantoniovandre(str, avisoanexo)
+	{
+	var argumentos = str.split(";");
+	var derivadazero;
+	var primeiraderivada;
+	var velocidade;
+	var abscissa;
+	var ordenada;
+	var ponto;
+	var result;
+
+	if (avisoanexo == -1) return antoniovandreoperadoresfuncoesconstantes(1);
+
+	if (argumentos.length != 3) return "e";
+
+	if (argumentos[0].trim() == "") return "e";
+
+	if ((antoniovandreexpressaofuncaovalida(argumentos[1].trim()) == "e") || (antoniovandreexpressaofuncaovalida(argumentos[2].trim()) == "e"))
+	    return "e";
+
+	try
+		{
+		velocidade = eval(antoniovandretraduzirexpressaofuncional(argumentos[1], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if (antoniovandrenumeroreal(velocidade.toString()) == "e")
+		return "e";
+
+	try
+		{
+		abscissa = eval(antoniovandretraduzirexpressaofuncional(argumentos[2], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if (antoniovandrenumeroreal(abscissa.toString()) == "e")
+		return "e";
+
+	if ((antoniovandremodulo(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(velocidade) > parseFloat(antoniovandremaximovalorentrada(1))))
+		return antoniovandremensagenserro(2);
+
+	primeiraderivada = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[2].trim() + "+" + antoniovandreprecisaoreal(6).toString() + ";1", 1, 0);
+
+	if (antoniovandrenumeroreal(primeiraderivada.toString()) == "e") return primeiraderivada;
+
+	try
+		{
+		result = velocidade * antoniovandresqrt(1 + primeiraderivada * primeiraderivada);
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if ((antoniovandrenumeroreal(result.toString()) == "e") || (result == null) || (result == undefined) || (isNaN(result))) return "e";
+
+	if (antoniovandremodulo(result) > antoniovandremaximovalorsaida(1))
+		return antoniovandremensagenserro(5)
+	else
+		return result;
 	}
 
 // Área de um polígono convexo. Argumentos: um número finito de pontos separados por ponto e vírgula ";", a abscissa separada da ordenada por vírgula ",". Retorna a string "e" caso um erro genérico ocorra.
