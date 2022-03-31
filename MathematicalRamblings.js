@@ -1312,7 +1312,7 @@ function antoniovandrerol(str, saida)
 						outstr = outstr + buffer[i].toString();
 
 						if (i < buffer.length - 1)
-							outstr = outstr + " ,";
+							outstr = outstr + ", ";
 						}
 
 						return outstr;
