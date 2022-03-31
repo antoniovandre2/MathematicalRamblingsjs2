@@ -10845,7 +10845,7 @@ function antoniovandrepontosimetrico(str)
 
     if (out != "e") for (var i = 0; i < coordenadas.length; i++)
         {
-		if (antoniovandrenumeroreal(coordenadas[i].trim()) == "e")
+		if ((antoniovandrenumeroreal(coordenadas[i].trim()) == "e") || (antoniovandrenumeroreal(coordenadasr[i].trim()) == "e"))
 			{
 			out = "e";
 			break;
