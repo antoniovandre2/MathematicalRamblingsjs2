@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 20-03-2022. Não considerando alterações em macros.
+// Última atualização: 31-03-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "20-03-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "31-03-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1312,7 +1312,7 @@ function antoniovandrerol(str, saida)
 						outstr = outstr + buffer[i].toString();
 
 						if (i < buffer.length - 1)
-							outstr = outstr + " , ";
+							outstr = outstr + " ,";
 						}
 
 						return outstr;
@@ -10820,6 +10820,64 @@ function antoniovandrebinascii(str, avisoanexo)
 		return null;
 
 	return strout;
+	}
+
+// Ponto simétrico. Argumentos: uma string de pontos separados por ponto e vírgula ";", coordenadas separadas por vírgula ",". Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandrepontosimetrico(str)
+	{
+    var pontos = str.split(";");
+    var out = "";
+	var outt = "";
+    var flag = 0;
+
+    if (pontos.length != 2)
+        out = "e"
+
+	var coordenadas = pontos[0].split(",");
+	var coordenadasr = pontos[1].split(",");
+
+	if (coordenadas.length != coordenadasr.length)
+		{
+		out = "e";
+		flag = 1;
+		}
+
+    if (out != "e") for (var i = 0; i < coordenadas.length; i++)
+        {
+		if (antoniovandrenumeroreal(coordenadas[i].trim()) == "e")
+			{
+			out = "e";
+			break;
+			}
+		else if (antoniovandremodulo(parseFloat(coordenadas[i].trim())) > antoniovandremaximovalorentrada(1))
+			{
+			out = "e";
+			flag = 2;
+			break;
+			}
+		else
+			{
+			outt = outt + antoniovandreformatarreal((2 * parseFloat(coordenadasr[i].trim()) - coordenadas[i]).toString());
+
+			if (i < coordenadas.length - 1)
+				outt = outt + ", "
+			else
+				out = outt;
+			}
+		}
+
+	if (out != "e")
+		return out;
+	else
+		{
+		if (flag == 1)
+			return "Os pontos devem ter o mesmo número de coordenadas."
+		else if (flag == 2)
+			return antoniovandremensagenserro(1)
+		else
+			return "e";
+		}
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
