@@ -10880,7 +10880,7 @@ function antoniovandrepontosimetrico(str)
 		}
 	}
 
-// Fração geratriz de uma dízima periódica. Argumentos: primeiro: uma string do tipo "m.npo" onde "m", "n" e "o" são números inteiros, "p" é um marcador do início da periodicidade, "n" pode ser omitido; segundo: o tipo de retorno, 0 para string ou 1 para matriz. Retorna a string "e" caso um erro genérico ocorra.
+// Fração geratriz de uma dízima periódica. Argumentos: primeiro: uma string do tipo "m.npo" onde "m", "n" e "o" são números inteiros, "p" é um marcador do início da periodicidade, "n" e "o" positivos, "n" pode ser omitido; segundo: o tipo de retorno, 0 para string ou 1 para matriz. Retorna a string "e" caso um erro genérico ocorra.
 
 function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
 	{
