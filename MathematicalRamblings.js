@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 31-03-2022. Não considerando alterações em macros.
+// Última atualização: 01-04-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "31-03-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "01-04-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -10878,6 +10878,41 @@ function antoniovandrepontosimetrico(str)
 		else
 			return "e";
 		}
+	}
+
+// Fração geratriz de uma dízima periódica. Argumentos: primeiro: uma string do tipo "m.npo" onde "m", "n" e "o" são números inteiros, "p" é um marcador do início da periodicidade, "n" pode ser omitido; segundo: o tipo de retorno, 0 para string ou 1 para matriz. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
+	{
+	if (antoniovandrecompararstrings(typeof x, "string") == "e") return "e";
+
+	var args = x.trim().split("p");
+
+	if (args.length != 2) return "e";
+
+	var args2 = args[0].split(".");
+
+	if (args2.length > 2) return "e";
+
+	if (antoniovandrenumerointeiro(args2[0].trim()) == "e") return "e"
+
+	if (args2[1].length != 0) if (antoniovandrenumeronatural(args2[1].trim()) == "e") return "e";
+
+	if (antoniovandrenumeronatural(args[1].trim()) == "e") return "e"
+
+	if (args2.length == 2)
+		{
+		var denominador = "";
+
+		for (var i = 0; i < args[1].length; i++) denominador = denominador + "9";
+		for (var i = 0; i < args2[1].length; i++) denominador = denominador + "0";
+
+		if (parseInt(args2[0]) >= 0)
+			return (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 1)[0]).toString() + " / " + (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 1)[1]).toString();
+		else
+			return ((-1) * antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[0]).toString() + " / " + (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[1]).toString();
+		}
+	else return "e";
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
