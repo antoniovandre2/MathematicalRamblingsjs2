@@ -10892,7 +10892,7 @@ function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
 
 	var args2 = args[0].split(".");
 
-	if (args2.length > 2) return "e";
+	if (args2.length != 2) return "e";
 
 	if (antoniovandrenumerointeiro(args2[0].trim()) == "e") return "e"
 
