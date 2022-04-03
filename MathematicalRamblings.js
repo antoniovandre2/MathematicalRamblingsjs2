@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 02-04-2022. Não considerando alterações em macros.
+// Última atualização: 03-04-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "02-04-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "03-04-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -10916,6 +10916,155 @@ function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
 			return ((-1) * antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[0]).toString() + " / " + (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[1]).toString();
 		}
 	else return "e";
+	}
+
+// Comprimento do gráfico de uma função em coordenadas polares. Argumentos: primeiro: uma string contendo, separados por ponto e vírgula: primeiro: a expressão da função da qual se deseja obter o valor do comprimento, deve ser uma função em "teta"; segundo: um número real como valor inferior; terceiro: um número real como valor superior; quarto: a resolução que será utilizada no cálculo; segundo: "-1" para retornar o aviso anexo. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandrecomprimentograficofuncaocoordenadaspolares(str, avisoanexo)
+	{
+	var argumentos = str.split(";");
+	var expressao;
+	var expressaopart;
+	var inf;
+	var sup;
+	var n;
+	var result = 0;
+	var resultpart;
+	var xp = null;
+	var resultpartp;
+	var parcela;
+	var n2;
+	var inf2;
+	var sup2;
+	var list = [["teta", antoniovandreoperadoresfuncoesconstantes(5)]];
+	var listtam;
+
+	if (avisoanexo == -1)
+		return antoniovandreoperadoresfuncoesconstantes(1) + "\n\nQuanto maior a resolução escolhida, mais demorado será o cálculo, em extremos pode haver freeze ou crash do sistema.";
+
+	if (argumentos.length != 4)
+		return "e";
+
+	expressaopart = argumentos[0];
+	inf = argumentos[1].trim();
+	sup = argumentos[2].trim();
+	n = argumentos[3].trim();
+
+	if (antoniovandrenumeronaturalpositivo(n) == "e")
+		return "e"
+
+	if (antoniovandremodulo(parseInt(n)) > antoniovandremaximovalorentrada(1))
+		return antoniovandremensagenserro(2);
+
+	if (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopart, antoniovandreoperadoresfuncoesconstantes(2) + ",teta")), antoniovandreremoverstrings(expressaopart, antoniovandreoperadoresfuncoesconstantes(2) + ",teta")) == "e")
+		return "e";
+
+	if (antoniovandreexpressaofuncaovalida(inf) == "e")
+		return "e";
+
+	if (antoniovandreexpressaofuncaovalida(sup) == "e")
+		return "e";
+
+		try
+			{
+			inf2 = eval(antoniovandretraduzirexpressaofuncional(inf, 0));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+		try
+			{
+			sup2 = eval(antoniovandretraduzirexpressaofuncional(sup, 0));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+	n2 = parseInt(n);
+
+	if (antoniovandrenumeroreal(inf2.toString()) == "e")
+		return "e"
+	else
+		if (antoniovandremodulo(inf2) > antoniovandremaximovalorentrada(1))
+			return antoniovandremensagenserro(2);
+
+	if (antoniovandrenumeroreal(sup2.toString()) == "e")
+		return "e"
+	else
+		if (antoniovandremodulo(sup2) > antoniovandremaximovalorentrada(1))
+			return antoniovandremensagenserro(2);
+
+	parcela = (sup2 - inf2) / n2;
+
+	listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
+
+	for (var i = 0; i < listtam; i++)
+		list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
+
+	expressao = antoniovandresubstituirstrings(expressaopart, list);
+
+	for (var i = 0; i <= n2; i++)
+		{
+		var x = inf2 + (i * parcela);
+
+		try
+			{
+			resultpart = eval(antoniovandresubstituirstrings(expressao, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + x.toString() + ")"]]));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+		if (antoniovandrenumeroreal(resultpart.toString()) == "e")
+			{
+			if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(6)) == 1))
+				return antoniovandremensagenserro(6)
+			else
+				{
+				if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(4)) == 1))
+					return antoniovandremensagenserro(4)
+				else
+					{
+					if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(2)) == 1))
+						return antoniovandremensagenserro(2)
+					else
+						{
+						if (antoniovandrecompararstrings(typeof resultpart, "string") == 1)
+							return resultpart
+						else
+							return "e";
+						}
+					}
+				}
+			}
+		else
+			{
+			if ((antoniovandremodulo(resultpart) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1))))
+				return antoniovandremensagenserro(6)
+			else
+				{
+				if (xp != null)
+					{
+					if (antoniovandremodulo(resultpart - resultpartp) > antoniovandreprecisaoreal(9))
+						return "Aparentemente a função não é contínua no domínio dado."
+					else
+                        result += antoniovandresqrt((resultpart*antoniovandrecos(x) - resultpartp*antoniovandrecos(xp)) * (resultpart*antoniovandrecos(x) - resultpartp*antoniovandrecos(xp)) + (resultpart*antoniovandresen(x) - resultpartp*antoniovandresen(xp)) * (resultpart*antoniovandresen(x) - resultpartp*antoniovandresen(xp)));
+					}
+
+				xp = x;
+				resultpartp = resultpart;
+				}
+			}
+		}
+
+	if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+		return antoniovandremensagenserro(5);
+
+	return antoniovandreformatarreal(result);
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
