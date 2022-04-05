@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 03-04-2022. Não considerando alterações em macros.
+// Última atualização: 05-04-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "03-04-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "05-04-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -11057,6 +11057,366 @@ function antoniovandrecomprimentograficofuncaocoordenadaspolares(str, avisoanexo
 
 				xp = x;
 				resultpartp = resultpart;
+				}
+			}
+		}
+
+	if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+		return antoniovandremensagenserro(5);
+
+	return antoniovandreformatarreal(result);
+	}
+
+// Comprimento de uma curva por coordenadas paramétricas. Argumentos: primeiro: uma string contendo, separados por ponto e vírgula: primeiro: a expressão da função para "x" da qual se deseja obter o valor do comprimento, deve ser uma função em "t"; segundo: a expressão da função para "y" da qual se deseja obter o valor do comprimento, deve ser uma função em "t"; terceiro: um número real como valor inferior para "t"; quarto: um número real como valor superior para "t"; quinto: a resolução que será utilizada no cálculo; segundo: "-1" para retornar o aviso anexo. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandrecomprimentocurvaparametrica(str, avisoanexo)
+	{
+	var argumentos = str.split(";");
+	var expressaox;
+	var expressaoy;
+	var expressaopartx;
+	var expressaoparty;
+	var inf;
+	var sup;
+	var n;
+	var tp = null;
+	var result = 0;
+	var resultpartx;
+	var resultparty;
+	var resultpartxp;
+	var resultpartyp;
+	var parcela;
+	var n2;
+	var inf2;
+	var sup2;
+	var list = [["t", antoniovandreoperadoresfuncoesconstantes(5)]];
+	var listtam;
+
+	if (avisoanexo == -1)
+		return antoniovandreoperadoresfuncoesconstantes(1) + "\n\nQuanto maior a resolução escolhida, mais demorado será o cálculo, em extremos pode haver freeze ou crash do sistema.";
+
+	if (argumentos.length != 5)
+		return "e";
+
+	expressaopartx = argumentos[0];
+	expressaoparty = argumentos[1];
+	inf = argumentos[2].trim();
+	sup = argumentos[3].trim();
+	n = argumentos[4].trim();
+
+	if (antoniovandrenumeronaturalpositivo(n) == "e")
+		return "e"
+
+	if (antoniovandremodulo(parseInt(n)) > antoniovandremaximovalorentrada(1))
+		return antoniovandremensagenserro(2);
+
+	if ((antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopartx, antoniovandreoperadoresfuncoesconstantes(2) + ",t")), antoniovandreremoverstrings(expressaopartx, antoniovandreoperadoresfuncoesconstantes(2) + ",t")) == "e") || (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaoparty, antoniovandreoperadoresfuncoesconstantes(2) + ",t")), antoniovandreremoverstrings(expressaoparty, antoniovandreoperadoresfuncoesconstantes(2) + ",t")) == "e"))
+		return "e";
+
+	if (antoniovandreexpressaofuncaovalida(inf) == "e")
+		return "e";
+
+	if (antoniovandreexpressaofuncaovalida(sup) == "e")
+		return "e";
+
+		try
+			{
+			inf2 = eval(antoniovandretraduzirexpressaofuncional(inf, 0));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+		try
+			{
+			sup2 = eval(antoniovandretraduzirexpressaofuncional(sup, 0));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+	n2 = parseInt(n);
+
+	if (antoniovandrenumeroreal(inf2.toString()) == "e")
+		return "e"
+	else
+		if (antoniovandremodulo(inf2) > antoniovandremaximovalorentrada(1))
+			return antoniovandremensagenserro(2);
+
+	if (antoniovandrenumeroreal(sup2.toString()) == "e")
+		return "e"
+	else
+		if (antoniovandremodulo(sup2) > antoniovandremaximovalorentrada(1))
+			return antoniovandremensagenserro(2);
+
+	parcela = (sup2 - inf2) / n2;
+
+	listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
+
+	for (var i = 0; i < listtam; i++)
+		list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
+
+	expressaox = antoniovandresubstituirstrings(expressaopartx, list);
+	expressaoy = antoniovandresubstituirstrings(expressaoparty, list);
+
+	for (var i = 0; i <= n2; i++)
+		{
+		var t = inf2 + (i * parcela);
+
+		try
+			{
+			resultpartx = eval(antoniovandresubstituirstrings(expressaox, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + t.toString() + ")"]]));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+		try
+			{
+			resultparty = eval(antoniovandresubstituirstrings(expressaoy, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + t.toString() + ")"]]));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+		if ((antoniovandrenumeroreal(resultpartx.toString()) == "e") || (antoniovandrenumeroreal(resultparty.toString()) == "e"))
+			{
+			if ((antoniovandrecompararstrings(resultpartx, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpartx, antoniovandremensagenserro(6)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(6)) == 1))
+				return antoniovandremensagenserro(6)
+			else
+				{
+				if ((antoniovandrecompararstrings(resultpartx, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpartx, antoniovandremensagenserro(4)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(4)) == 1))
+					return antoniovandremensagenserro(4)
+				else
+					{
+					if ((antoniovandrecompararstrings(resultpartx, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpartx, antoniovandremensagenserro(2)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(2)) == 1))
+						return antoniovandremensagenserro(2)
+					else
+						{
+						if (antoniovandrecompararstrings(typeof resultpartx, "string") == 1)
+							return resultpartx
+						else if (antoniovandrecompararstrings(typeof resultparty, "string") == 1)
+							return resultparty
+						else
+							return "e";
+						}
+					}
+				}
+			}
+		else
+			{
+			if ((antoniovandremodulo(resultpartx) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(resultparty) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1))))
+				return antoniovandremensagenserro(6)
+			else
+				{
+				if (tp != null)
+					{
+					if ((antoniovandremodulo(resultpartx - resultpartxp) > antoniovandreprecisaoreal(9)) || (antoniovandremodulo(resultparty - resultpartyp) > antoniovandreprecisaoreal(9)))
+						return "Aparentemente a curva não é contínua no intervalo dado."
+					else
+						result += antoniovandresqrt((resultpartx - resultpartxp) * (resultpartx - resultpartxp) + (resultparty - resultpartyp) * (resultparty - resultpartyp));
+					}
+
+                tp = t;
+                resultpartxp = resultpartx;
+                resultpartyp = resultparty;
+				}
+			}
+		}
+
+	if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
+		return antoniovandremensagenserro(5);
+
+	return antoniovandreformatarreal(result);
+	}
+
+// Comprimento de uma curva tridimensional por coordenadas paramétricas. Argumentos: primeiro: uma string contendo, separados por ponto e vírgula: primeiro: a expressão da função para "x" da qual se deseja obter o valor do comprimento, deve ser uma função em "t"; segundo: a expressão da função para "y" da qual se deseja obter o valor do comprimento, deve ser uma função em "t"; terceiro: a expressão da função para "z" da qual se deseja obter o valor do comprimento, deve ser uma função em "t"; quarto: um número real como valor inferior para "t"; quinto: um número real como valor superior para "t"; sexto: a resolução que será utilizada no cálculo; segundo: "-1" para retornar o aviso anexo. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandrecomprimentocurvatridimensionalparametrica(str, avisoanexo)
+	{
+	var argumentos = str.split(";");
+	var expressaox;
+	var expressaoy;
+	var expressaoz;
+	var expressaopartx;
+	var expressaoparty;
+	var expressaopartz;
+	var inf;
+	var sup;
+	var n;
+	var tp = null;
+	var result = 0;
+	var resultpartx;
+	var resultparty;
+	var resultpartz;
+	var resultpartxp;
+	var resultpartyp;
+	var resultpartzp;
+	var parcela;
+	var n2;
+	var inf2;
+	var sup2;
+	var listx = [["t", antoniovandreoperadoresfuncoesconstantes(5)]];
+	var listy = [["t", antoniovandreoperadoresfuncoesconstantes(5)]];
+	var listz = [["t", antoniovandreoperadoresfuncoesconstantes(5)]];
+	var listtam;
+
+	if (avisoanexo == -1)
+		return antoniovandreoperadoresfuncoesconstantes(1) + "\n\nQuanto maior a resolução escolhida, mais demorado será o cálculo, em extremos pode haver freeze ou crash do sistema.";
+
+	if (argumentos.length != 6)
+		return "e";
+
+	expressaopartx = argumentos[0];
+	expressaoparty = argumentos[1];
+	expressaopartz = argumentos[2];
+	inf = argumentos[3].trim();
+	sup = argumentos[4].trim();
+	n = argumentos[5].trim();
+
+	if (antoniovandrenumeronaturalpositivo(n) == "e")
+		return "e"
+
+	if (antoniovandremodulo(parseInt(n)) > antoniovandremaximovalorentrada(1))
+		return antoniovandremensagenserro(2);
+
+	if ((antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopartx, antoniovandreoperadoresfuncoesconstantes(2) + ",t")), antoniovandreremoverstrings(expressaopartx, antoniovandreoperadoresfuncoesconstantes(2) + ",t")) == "e") || (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaoparty, antoniovandreoperadoresfuncoesconstantes(2) + ",t")), antoniovandreremoverstrings(expressaoparty, antoniovandreoperadoresfuncoesconstantes(2) + ",t")) == "e") || (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopartz, antoniovandreoperadoresfuncoesconstantes(2) + ",t")), antoniovandreremoverstrings(expressaopartz, antoniovandreoperadoresfuncoesconstantes(2) + ",t")) == "e"))
+		return "e";
+
+	if (antoniovandreexpressaofuncaovalida(inf) == "e")
+		return "e";
+
+	if (antoniovandreexpressaofuncaovalida(sup) == "e")
+		return "e";
+
+		try
+			{
+			inf2 = eval(antoniovandretraduzirexpressaofuncional(inf, 0));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+		try
+			{
+			sup2 = eval(antoniovandretraduzirexpressaofuncional(sup, 0));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+	n2 = parseInt(n);
+
+	if (antoniovandrenumeroreal(inf2.toString()) == "e")
+		return "e"
+	else
+		if (antoniovandremodulo(inf2) > antoniovandremaximovalorentrada(1))
+			return antoniovandremensagenserro(2);
+
+	if (antoniovandrenumeroreal(sup2.toString()) == "e")
+		return "e"
+	else
+		if (antoniovandremodulo(sup2) > antoniovandremaximovalorentrada(1))
+			return antoniovandremensagenserro(2);
+
+	parcela = (sup2 - inf2) / n2;
+
+	listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
+
+	for (var i = 0; i < listtam; i++)
+		listx.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
+
+	for (var i = 0; i < listtam; i++)
+		listy.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
+
+	for (var i = 0; i < listtam; i++)
+		listz.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
+
+	expressaox = antoniovandresubstituirstrings(expressaopartx, listx);
+	expressaoy = antoniovandresubstituirstrings(expressaoparty, listy);
+	expressaoz = antoniovandresubstituirstrings(expressaopartz, listz);
+
+	for (var i = 0; i <= n2; i++)
+		{
+		var t = inf2 + (i * parcela);
+
+		try
+			{
+			resultpartx = eval(antoniovandresubstituirstrings(expressaox, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + t.toString() + ")"]]));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+		try
+			{
+			resultparty = eval(antoniovandresubstituirstrings(expressaoy, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + t.toString() + ")"]]));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+		try
+			{
+			resultpartz = eval(antoniovandresubstituirstrings(expressaoz, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + t.toString() + ")"]]));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+		if ((antoniovandrenumeroreal(resultpartx.toString()) == "e") || (antoniovandrenumeroreal(resultparty.toString()) == "e") || (antoniovandrenumeroreal(resultpartz.toString()) == "e"))
+			{
+			if ((antoniovandrecompararstrings(resultpartx, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpartx, antoniovandremensagenserro(6)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(6)) == 1) || (antoniovandrecompararstrings(resultpartz, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpartz, antoniovandremensagenserro(6)) == 1))
+				return antoniovandremensagenserro(6)
+			else
+				{
+				if ((antoniovandrecompararstrings(resultpartx, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpartx, antoniovandremensagenserro(4)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(4)) == 1) || (antoniovandrecompararstrings(resultpartz, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpartz, antoniovandremensagenserro(4)) == 1))
+					return antoniovandremensagenserro(4)
+				else
+					{
+					if ((antoniovandrecompararstrings(resultpartx, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpartx, antoniovandremensagenserro(2)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(2)) == 1) || (antoniovandrecompararstrings(resultpartz, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpartz, antoniovandremensagenserro(2)) == 1))
+						return antoniovandremensagenserro(2)
+					else
+						{
+						if (antoniovandrecompararstrings(typeof resultpartx, "string") == 1)
+							return resultpartx
+						else if (antoniovandrecompararstrings(typeof resultparty, "string") == 1)
+							return resultparty
+						else if (antoniovandrecompararstrings(typeof resultpartz, "string") == 1)
+							return resultpartz
+						else
+							return "e";
+						}
+					}
+				}
+			}
+		else
+			{
+			if ((antoniovandremodulo(resultpartx) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(resultparty) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(resultpartz) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1))))
+				return antoniovandremensagenserro(6)
+			else
+				{
+				if (tp != null)
+					{
+					if ((antoniovandremodulo(resultpartx - resultpartxp) > antoniovandreprecisaoreal(9)) || (antoniovandremodulo(resultparty - resultpartyp) > antoniovandreprecisaoreal(9)) || (antoniovandremodulo(resultpartz - resultpartzp) > antoniovandreprecisaoreal(9)))
+						return "Aparentemente a curva não é contínua no intervalo dado."
+					else
+						result += antoniovandresqrt((resultpartx - resultpartxp) * (resultpartx - resultpartxp) + (resultparty - resultpartyp) * (resultparty - resultpartyp) + (resultpartz - resultpartzp) * (resultpartz - resultpartzp));
+					}
+
+                tp = t;
+                resultpartxp = resultpartx;
+                resultpartyp = resultparty;
+                resultpartzp = resultpartz;
 				}
 			}
 		}
