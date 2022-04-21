@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 05-04-2022. Não considerando alterações em macros.
+// Última atualização: 21-04-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "05-04-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "21-04-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1337,6 +1337,8 @@ function antoniovandrerol(str, saida)
 	}
 
 // Principais mensagens de erro.
+
+function antoniovandremensagemerro(i) {return antoniovandremensagenserro(i);}
 
 function antoniovandremensagenserro(i)
 	{
