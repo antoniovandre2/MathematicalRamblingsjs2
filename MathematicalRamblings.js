@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 21-04-2022. Não considerando alterações em macros.
+// Última atualização: 22-04-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "21-04-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "22-04-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -6703,8 +6703,8 @@ function antoniovandretraduzirexpressaofuncional(str, verificacao)
 		}
 
 	retorno = antoniovandresubstituirstrings(str, antoniovandreoperadoresfuncoesconstantes(3));
-console.log(retorno);
-	if (antoniovandrenumeroreal(eval(retorno).toString()) != "e")
+
+	if (antoniovandrenumero(eval(retorno).toString()) != "e")
 		return retorno
 	else
 		throw new Error;
@@ -6948,16 +6948,33 @@ function antoniovandrecoeficientes(i)
 function antoniovandrenumerocomplexo(arr)
 	{
 	var bufferverificacaonumerica = arr.trim().split(",");
-	var flag = 0;
+	var tam = bufferverificacaonumerica.length;
 
-	if (bufferverificacaonumerica.length != 2)
-		flag = 1
-	else
+	if (tam > 2)
+		return "e";
+
+	if (tam == 2)
+		{
 		if (antoniovandrenumeroreal(bufferverificacaonumerica[0]) == "e" || antoniovandrenumeroreal(bufferverificacaonumerica[1]) == "e")
-			flag = 1;
+			return "e"
+		else
+			return bufferverificacaonumerica[0] + ", " + bufferverificacaonumerica[1];
+		}
+	else
+		{
+		if (antoniovandrenumeroreal(bufferverificacaonumerica[0]) == "e")
+			return "e"
+		else
+			return bufferverificacaonumerica[0];
+		}
+	}
 
-	if (flag == 0)
-		return bufferverificacaonumerica[0] + ", " + bufferverificacaonumerica[1]
+// Verifica se a string argumento é um número. Retorna o número.
+
+function antoniovandrenumero(str)
+	{
+	if (antoniovandrenumerocomplexo(str) != "e")
+		return str
 	else
 		return "e";
 	}
