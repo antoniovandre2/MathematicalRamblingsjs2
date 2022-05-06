@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 26-04-2022. Não considerando alterações em macros.
+// Última atualização: 06-05-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "26-04-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "06-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1085,8 +1085,8 @@ function antoniovandreremovernumerosstring(str)
 	var buffer = "";
 
 	for (var i = 0; i < str.length; i++)
-		if (! (str.charAt(i) === "0" || str.charAt(i) === "1" || str.charAt(i) === "2" || str.charAt(i) === "3" || str.charAt(i) === "4" || str.charAt(i) === "5" || str.charAt(i) === "6" || str.charAt(i) === "7" || str.charAt(i) === "8" || str.charAt(i) === "9"))
-		buffer = buffer + str.charAt(i);
+		if (! (str.charAt(i) === "0" || str.charAt(i) === "1" || str.charAt(i) === "2" || str.charAt(i) === "3" || str.charAt(i) === "4" || str.charAt(i) === "5" || str.charAt(i) === "6" || str.charAt(i) === "7" || str.charAt(i) === "8" || str.charAt(i) === "9" || str.charAt(i) === "." || str.charAt(i) === "e" || str.charAt(i) === "E" || str.charAt(i) === ","))
+			buffer = buffer + str.charAt(i);
 
 	return buffer;
 	}
@@ -4351,10 +4351,9 @@ function antoniovandrepolinomiotex(str)
 	var c1;
 	var c2;
 	var contador;
-	var buffer = [];
+	var numstr = "";
+	var coef;
 	var outputstr = "";
-	var j;
-	var flag;
 
 	if (antoniovandrepolinomio(str) == "e")
 		return "e";
@@ -4371,6 +4370,9 @@ function antoniovandrepolinomiotex(str)
 
 		contador = 0;
 
+		if (! ((antoniovandrenumeronatural(strb.charAt(i)) == "e") && (strb.charAt(i) != ".") && (strb.charAt(i) != "e") && (strb.charAt(i) != "E") && (strb.charAt(i) != ",")))
+			numstr = numstr + strb.charAt(i);
+
 		while (c2 != "" && c2 != "+" && c2 != "-" && c1 === c2 && i < strb.length - 1)
 			{
 			contador++;
@@ -4380,14 +4382,60 @@ function antoniovandrepolinomiotex(str)
 
 		if (contador > 1)
 			{
-			outputstr = outputstr + c1 + "^{" + contador.toString() + "}";
+			if (numstr != "")
+				{
+				coef = antoniovandrefracaogeratriz(parseFloat(numstr), 1);
+				numstr = "";
+
+				if (coef[1] == 1)
+					outputstr = outputstr + antoniovandreformatarreal(coef[0]).toString() + c1 + "^{" + contador.toString() + "}"
+				else
+					{
+					if (coef[0] == 1)
+						outputstr = outputstr + "\\dfrac{" + c1 + "^{" + contador.toString() + "}}{" + antoniovandreformatarreal(coef[1]).toString() + "}";
+					else
+						outputstr = outputstr + "\\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + c1 + "^{" + contador.toString() + "}}{" + antoniovandreformatarreal(coef[1]).toString() + "}";
+					}
+				}
+			else
+				outputstr = outputstr + c1 + "^{" + contador.toString() + "}";
+
 			i += contador - 1;
 			}
 		else
-			outputstr = outputstr + strb.charAt(i);
+			{
+			if ((antoniovandrenumeronatural(strb.charAt(i)) == "e") && (strb.charAt(i) != ".") && (strb.charAt(i) != "e") && (strb.charAt(i) != "E") && (strb.charAt(i) != ","))
+				if (numstr != "")
+					{
+					coef = antoniovandrefracaogeratriz(parseFloat(numstr), 1);
+					numstr = "";
+
+					if (coef[1] == 1)
+						outputstr = outputstr + antoniovandreformatarreal(coef[0]).toString() + strb.charAt(i)
+					else
+						{
+						if (coef[0] == 1)
+							outputstr = outputstr + "\\dfrac{" + strb.charAt(i)  + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}";
+						else
+							outputstr = outputstr + "\\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + strb.charAt(i) + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}";
+						}
+					}
+				else
+					outputstr = outputstr + strb.charAt(i);
+			}
 		}
 
-	return outputstr;
+	if (numstr == "")
+		return outputstr
+	else
+		{
+		coef = antoniovandrefracaogeratriz(parseFloat(numstr), 1);
+
+		if (coef[1] == 1)
+			return outputstr + antoniovandreformatarreal(coef[0]).toString()
+		else
+			return outputstr + "\\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}"
+		}
 	}
 
 // Valor numérico de um polinômio. Argumentos: primeiramente o monômio, depois os valores a serem atribuídos às variáveis: a variável, depois o caractere "=", e depois o valor real. Retorna a string "e" se um erro ocorre.
@@ -6744,6 +6792,7 @@ function antoniovandreexpressaofuncaovalida(str)
 function antoniovandretraduzirexpressaofuncional(str, verificacao)
 	{
 	var retorno;
+	var retornoev;
 
 	switch (verificacao)
 		{
@@ -6759,10 +6808,12 @@ function antoniovandretraduzirexpressaofuncional(str, verificacao)
 
 	retorno = antoniovandresubstituirstrings(str, antoniovandreoperadoresfuncoesconstantes(3));
 
-	if (antoniovandrenumero(eval(retorno).toString()) != "e")
+	try{retornoev = eval(retorno);} catch (e) {return "e";}
+
+	if (antoniovandrenumero(retornoev.toString()) != "e")
 		return retorno
 	else
-		throw new Error;
+		return "e";
 	}
 
 // Limite de uma função contínua. Argumentos: primeiro: uma string, separada por ponto e vírgula ";", onde há a expressão da função, que deve ser na variável "x", o ponto do domínio considerado, e o tipo de cálculo: "definicao" para limite; "esquerda" para limite lateral à esquerda, ou "direita" para limite lateral à direita; e, segundo, -1 para exibir o aviso anexo.
