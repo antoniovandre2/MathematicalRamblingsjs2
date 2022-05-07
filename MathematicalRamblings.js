@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 06-05-2022. Não considerando alterações em macros.
+// Última atualização: 07-05-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "06-05-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "07-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -6709,9 +6709,12 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 	var lim = antoniovandreprimos(-2) + 1;
 	var i = 1;
 	var i2;
-	var flag;
+	var flag = 0;
+	var contador = 0;
 	var str;
 	var result = [];
+	var dizima;
+	var ppos;
 
 	if (antoniovandrenumeroreal(x.toString()) == "e")
 		return "e"
@@ -6720,6 +6723,33 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 
 	if (antoniovandremodulo(num) > parseFloat(antoniovandremaximovalorentrada(1)))
 		return antoniovandremensagenserro(1);
+
+	dizima = x.toString();
+	ppos = dizima.length - 1;
+
+	for (var i = 0; i < dizima.length; i++)
+		if (dizima.charAt(i) === ".")
+			{
+			ppos = i;
+			break;
+			}
+
+	for (var i = ppos + 4; i < dizima.length - 1; i++)
+		{
+		if (dizima.charAt(i) != dizima.charAt(ppos + 4)) {flag = 1; break;}
+		contador++;
+		}
+
+	if ((flag == 0) && (contador >= 4))
+		switch (tiporetorno)
+			{
+			case 0:
+				return antoniovandrefracaogeratrizdizimaperiodica(dizima.substring(0, ppos + 3) + "p" + dizima.charAt(ppos + 4), 0);
+			case 1:
+				return antoniovandrefracaogeratrizdizimaperiodica(dizima.substring(0, ppos + 3) + "p" + dizima.charAt(ppos + 4), 1);
+			default:
+				return "e";
+			}
 
 	do
 		{
@@ -11040,9 +11070,29 @@ function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
 		for (var i = 0; i < args2[1].length; i++) denominador = denominador + "0";
 
 		if (parseInt(args2[0]) >= 0)
-			return (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 1)[0]).toString() + " / " + (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 1)[1]).toString();
+			{
+			switch (tiporetorno)
+				{
+				case 0:
+					return (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 1)[0]).toString() + " / " + (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 1)[1]).toString();
+				case 1:
+					return [antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 1)[0], antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 1)[1]];
+				default:
+					return "e";
+				}
+			}
 		else
-			return ((-1) * antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[0]).toString() + " / " + (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[1]).toString();
+			{
+			switch (tiporetorno)
+				{
+				case 0:
+					return ((-1) * antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[0]).toString() + " / " + (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[1]).toString();
+				case 1:
+					return [(-1) * antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[0], antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[1]];
+				default:
+					return "e";
+				}
+			}
 		}
 	else return "e";
 	}
