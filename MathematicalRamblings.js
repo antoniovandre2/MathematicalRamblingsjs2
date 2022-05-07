@@ -6740,7 +6740,7 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 		contador++;
 		}
 
-	if ((flag == 0) && (contador >= 4))
+	if ((flag == 0) && (contador >= antoniovandremodulo(antoniovandrelog10(antoniovandreprecisaoreal(1))) - ppos))
 		switch (tiporetorno)
 			{
 			case 0:
