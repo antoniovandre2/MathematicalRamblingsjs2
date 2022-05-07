@@ -6740,13 +6740,15 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 		contador++;
 		}
 
-	if ((flag == 0) && (contador >= antoniovandremodulo(antoniovandrelog10(antoniovandreprecisaoreal(1))) - ppos))
+	if ((flag == 0) && (contador > ppos + 3))
 		switch (tiporetorno)
 			{
 			case 0:
 				return antoniovandrefracaogeratrizdizimaperiodica(dizima.substring(0, ppos + 3) + "p" + dizima.charAt(ppos + 4), 0);
 			case 1:
 				return antoniovandrefracaogeratrizdizimaperiodica(dizima.substring(0, ppos + 3) + "p" + dizima.charAt(ppos + 4), 1);
+			case 3:
+				break;
 			default:
 				return "e";
 			}
@@ -6761,10 +6763,10 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 			{
 			case 0:
 				return antoniovandreformatarreal(num.toString()).toString();
-				break;
 			case 1:
 				return [antoniovandreformatarreal(num.toString()), 1];
-				break;
+			case 3:
+				return [antoniovandreformatarreal(num.toString()), 1];
 			default:
 				return "e";
 			}
@@ -6792,10 +6794,10 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 		{
 		case 0:
 			return result[0][0].toString() + " / " + result[0][1].toString();
-			break;
 		case 1:
 			return result[0];
-			break;
+		case 3:
+			return result[0];
 		default:
 			return "e";
 		}
@@ -11074,9 +11076,9 @@ function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
 			switch (tiporetorno)
 				{
 				case 0:
-					return (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 1)[0]).toString() + " / " + (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 1)[1]).toString();
+					return (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 3)[1]), 3)[0]).toString() + " / " + (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 3)[1]), 3)[1]).toString();
 				case 1:
-					return [antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 1)[0], antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 1)[1]];
+					return [antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 3)[0], antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 3)[1]), 3)[1]];
 				default:
 					return "e";
 				}
@@ -11086,9 +11088,9 @@ function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
 			switch (tiporetorno)
 				{
 				case 0:
-					return ((-1) * antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[0]).toString() + " / " + (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[1]).toString();
+					return ((-1) * antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 3)[0]).toString() + " / " + (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[1]), 3)[1]).toString();
 				case 1:
-					return [(-1) * antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[0], antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 1)[1]];
+					return [(-1) * antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 3)[0], antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[1]), 3)[1]];
 				default:
 					return "e";
 				}
