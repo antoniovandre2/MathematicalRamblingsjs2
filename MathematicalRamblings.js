@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 07-05-2022. Não considerando alterações em macros.
+// Última atualização: 08-05-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "07-05-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "08-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -43,6 +43,10 @@ function antoniovandreprimos(i)
 		else
 			return "e";
 	}
+
+// Retorna um valor para pi.
+
+function antoniovandrepi(){return 3.14159;}
 
 // Decomposição em fatores primos. Argumentos: número natural positivo e o tipo de saída (0 para retornar string, 1 para matriz da decomposição, composta de duas colunas, na primeira um primo fator e, na segunda, seu expoente; cada linha corresponde a um primo fator e seu expoente), e 2 para a matriz de decomposição incluindo as pontências de expoente nulo. Retorna a string "e" se ocorre erro.
 
@@ -5259,13 +5263,13 @@ function antoniovandresen(x)
 
 		if (x >= 0)
 			{
-			while (m > 2 * Math.PI)
-				m -= 2 * Math.PI;
+			while (m > 2 * antoniovandrepi())
+				m -= 2 * antoniovandrepi();
 			}
 		else
 			{
 			while (m < 0)
-				m += 2 * Math.PI;
+				m += 2 * antoniovandrepi();
 			}
 
 		return antoniovandreaproximacaotaylor("sen, " + m.toString());*/
@@ -5301,13 +5305,13 @@ function antoniovandrecos(x)
 
 		if (x >= 0)
 			{
-			while (m > 2 * Math.PI)
-				m -= 2 * Math.PI;
+			while (m > 2 * antoniovandrepi())
+				m -= 2 * antoniovandrepi();
 			}
 		else
 			{
 			while (m < 0)
-				m += 2 * Math.PI;
+				m += 2 * antoniovandrepi();
 			}
 
 		return antoniovandreaproximacaotaylor("cos, " + m.toString());*/
@@ -5511,7 +5515,7 @@ function antoniovandrearccotg(x)
 
 		return antoniovandreaproximacaotaylor("arccotg, " + eval(x).toString());*/
 
-		return Math.PI / 2 - Math.atan(eval(x));
+		return antoniovandrepi() / 2 - Math.atan(eval(x));
 		}
 	else
 		{
@@ -5519,7 +5523,7 @@ function antoniovandrearccotg(x)
 
 		return antoniovandreaproximacaotaylor("arccotg, " + x.toString());*/
 
-		return Math.PI / 2 - Math.atan(x);
+		return antoniovandrepi() / 2 - Math.atan(x);
 		}
 	}
 
@@ -6375,7 +6379,7 @@ function antoniovandreoperadoresfuncoesconstantes(i)
 			return "exp,potencia,modulo,ln,log10,log2,log,sqrt,sqrt3,sqrtn,sen,cos,tg,cotg,sec,cossec,cord,arcsen,arccos,arctg,arccotg,arcsec,arccossec,arccord,senh,cosh,tgh,cotgh,sech,cossech,fatorial,arranjos,combinacoes,piso,teto,antoniovandreexp,antoniovandrepotencia,antoniovandremodulo,antoniovandreln,antoniovandrelog10,antoniovandrelog2,antoniovandrelog,antoniovandresqrt,antoniovandresqrt3,antoniovandresqrtn,antoniovandresen,antoniovandrecos,antoniovandretg,antoniovandrecotg,antoniovandresec,antoniovandrecossec,antoniovandrecord,antoniovandrearcsen,antoniovandrearccos,antoniovandrearctg,antoniovandrearccotg,antoniovandrearcsec,antoniovandrearccossec,antoniovandrearccord,antoniovandresenh,antoniovandrecosh,antoniovandretgh,antoniovandrecotgh,antoniovandresech,antoniovandrecossech,antoniovandrefatorial,antoniovandrefatorialescopofuncoes,antoniovandrearranjos,antoniovandrearranjosescopofuncoes,antoniovandrecombinacoes,antoniovandrecombinacoesescopofuncoes,antoniovandrepiso,antoniovandreteto,pi,T,e,E,euler,Ge11,c,he34,ke23,NAe-23,mee31,mpe27,qee19";
 			break;
 		case 3:
-			return [[" ", ""], ["+", "-(-1)*"], ["-", "-"], ["pi", "Math.PI"], ["T", "2*Math.PI"], ["e", "e"], ["E", "E"], ["euler", "Math.E"], ["Ge11", "6.674184"], ["c", "299792458"], ["he34", "6.62606957"], ["ke23", "1.3806488"], ["NAe-23", "6.022114129"], ["mee31", "9.10938291"], ["mpe27", "1.672621777"], ["qee19", "1.602176565"], ["exp", "antoniovandreexp"], ["potencia", "antoniovandrepotencia"], ["modulo", "antoniovandremodulo"], ["ln", "antoniovandreln"], ["log10", "antoniovandrelog10"], ["log2", "antoniovandrelog2"], ["log", "antoniovandrelog"], ["sqrt", "antoniovandresqrt"], ["sqrt3", "antoniovandresqrt3"], ["sqrtn", "antoniovandresqrtn"], ["sen", "antoniovandresen"], ["cos", "antoniovandrecos"], ["tg", "antoniovandretg"], ["cotg", "antoniovandrecotg"], ["sec", "antoniovandresec"], ["cossec", "antoniovandrecossec"], ["cord", "antoniovandrecord"], ["arcsen", "antoniovandrearcsen"], ["arccos", "antoniovandrearccos"], ["arctg", "antoniovandrearctg"], ["arccotg", "antoniovandrearccotg"], ["arcsec", "antoniovandrearcsec"], ["arccossec", "antoniovandrearccossec"], ["arccord", "antoniovandrearccord"], ["senh", "antoniovandresenh"], ["cosh", "antoniovandrecosh"], ["tgh", "antoniovandretgh"], ["cotgh", "antoniovandrecotgh"], ["sech", "antoniovandresech"], ["cossech", "antoniovandrecossech"], ["fatorial", "antoniovandrefatorialescopofuncoes"], ["arranjos", "antoniovandrearranjosescopofuncoes"], ["combinacoes", "antoniovandrecombinacoesescopofuncoes"], ["piso", "antoniovandrepiso"], ["teto", "antoniovandreteto"], ["antoniovandreexp", "antoniovandreexp"], ["antoniovandrepotencia", "antoniovandrepotencia"], ["antoniovandremodulo", "antoniovandremodulo"], ["antoniovandreln", "antoniovandreln"], ["antoniovandrelog10", "antoniovandrelog10"], ["antoniovandrelog2", "antoniovandrelog2"], ["antoniovandrelog", "antoniovandrelog"], ["antoniovandresqrt", "antoniovandresqrt"], ["antoniovandresqrt3", "antoniovandresqrt3"], ["antoniovandresqrtn", "antoniovandresqrtn"], ["antoniovandresen", "antoniovandresen"], ["antoniovandrecos", "antoniovandrecos"], ["antoniovandretg", "antoniovandretg"], ["antoniovandrecotg", "antoniovandrecotg"], ["antoniovandresec", "antoniovandresec"], ["antoniovandrecossec", "antoniovandrecossec"], ["antoniovandrecord", "antoniovandrecord"], ["antoniovandrearcsen", "antoniovandrearcsen"], ["antoniovandrearccos", "antoniovandrearccos"], ["antoniovandrearctg", "antoniovandrearctg"], ["antoniovandrearccotg", "antoniovandrearccotg"], ["antoniovandrearcsec", "antoniovandrearcsec"], ["antoniovandrearccossec", "antoniovandrearccossec"], ["antoniovandrearccord", "antoniovandrearccord"], ["antoniovandresenh", "antoniovandresenh"], ["antoniovandrecosh", "antoniovandrecosh"], ["antoniovandretgh", "antoniovandretgh"], ["antoniovandrecotgh", "antoniovandrecotgh"], ["antoniovandresech", "antoniovandresech"], ["antoniovandrecossech", "antoniovandrecossech"], ["antoniovandrefatorialescopofuncoes", "antoniovandrefatorialescopofuncoes"], ["antoniovandrepiso","antoniovandrepiso"], ["antoniovandreteto","antoniovandreteto"]];
+			return [[" ", ""], ["+", "-(-1)*"], ["-", "-"], ["pi", "antoniovandrepi()"], ["T", "2*antoniovandrepi()"], ["e", "e"], ["E", "E"], ["euler", "Math.E"], ["Ge11", "6.674184"], ["c", "299792458"], ["he34", "6.62606957"], ["ke23", "1.3806488"], ["NAe-23", "6.022114129"], ["mee31", "9.10938291"], ["mpe27", "1.672621777"], ["qee19", "1.602176565"], ["exp", "antoniovandreexp"], ["potencia", "antoniovandrepotencia"], ["modulo", "antoniovandremodulo"], ["ln", "antoniovandreln"], ["log10", "antoniovandrelog10"], ["log2", "antoniovandrelog2"], ["log", "antoniovandrelog"], ["sqrt", "antoniovandresqrt"], ["sqrt3", "antoniovandresqrt3"], ["sqrtn", "antoniovandresqrtn"], ["sen", "antoniovandresen"], ["cos", "antoniovandrecos"], ["tg", "antoniovandretg"], ["cotg", "antoniovandrecotg"], ["sec", "antoniovandresec"], ["cossec", "antoniovandrecossec"], ["cord", "antoniovandrecord"], ["arcsen", "antoniovandrearcsen"], ["arccos", "antoniovandrearccos"], ["arctg", "antoniovandrearctg"], ["arccotg", "antoniovandrearccotg"], ["arcsec", "antoniovandrearcsec"], ["arccossec", "antoniovandrearccossec"], ["arccord", "antoniovandrearccord"], ["senh", "antoniovandresenh"], ["cosh", "antoniovandrecosh"], ["tgh", "antoniovandretgh"], ["cotgh", "antoniovandrecotgh"], ["sech", "antoniovandresech"], ["cossech", "antoniovandrecossech"], ["fatorial", "antoniovandrefatorialescopofuncoes"], ["arranjos", "antoniovandrearranjosescopofuncoes"], ["combinacoes", "antoniovandrecombinacoesescopofuncoes"], ["piso", "antoniovandrepiso"], ["teto", "antoniovandreteto"], ["antoniovandreexp", "antoniovandreexp"], ["antoniovandrepotencia", "antoniovandrepotencia"], ["antoniovandremodulo", "antoniovandremodulo"], ["antoniovandreln", "antoniovandreln"], ["antoniovandrelog10", "antoniovandrelog10"], ["antoniovandrelog2", "antoniovandrelog2"], ["antoniovandrelog", "antoniovandrelog"], ["antoniovandresqrt", "antoniovandresqrt"], ["antoniovandresqrt3", "antoniovandresqrt3"], ["antoniovandresqrtn", "antoniovandresqrtn"], ["antoniovandresen", "antoniovandresen"], ["antoniovandrecos", "antoniovandrecos"], ["antoniovandretg", "antoniovandretg"], ["antoniovandrecotg", "antoniovandrecotg"], ["antoniovandresec", "antoniovandresec"], ["antoniovandrecossec", "antoniovandrecossec"], ["antoniovandrecord", "antoniovandrecord"], ["antoniovandrearcsen", "antoniovandrearcsen"], ["antoniovandrearccos", "antoniovandrearccos"], ["antoniovandrearctg", "antoniovandrearctg"], ["antoniovandrearccotg", "antoniovandrearccotg"], ["antoniovandrearcsec", "antoniovandrearcsec"], ["antoniovandrearccossec", "antoniovandrearccossec"], ["antoniovandrearccord", "antoniovandrearccord"], ["antoniovandresenh", "antoniovandresenh"], ["antoniovandrecosh", "antoniovandrecosh"], ["antoniovandretgh", "antoniovandretgh"], ["antoniovandrecotgh", "antoniovandrecotgh"], ["antoniovandresech", "antoniovandresech"], ["antoniovandrecossech", "antoniovandrecossech"], ["antoniovandrefatorialescopofuncoes", "antoniovandrefatorialescopofuncoes"], ["antoniovandrepiso","antoniovandrepiso"], ["antoniovandreteto","antoniovandreteto"]];
 			break;
 		case 4:
 			return "Erro do JavaScript (não meu) ou entrada inválida.";
