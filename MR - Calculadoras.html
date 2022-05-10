@@ -8,7 +8,7 @@ Compilação das calculadoras JavaScript do Mathematical Ramblings.
 
 Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
-Última atualização: 09-05-2022.
+Última atualização: 10-05-2022.
 
 -->
 
@@ -22188,7 +22188,7 @@ Entre com, separados por ponto e vírgula "<span class="notranslate">;</span>", 
 <br><br>
 Reta de Euler:
 <br>
-<table border="1" width="100%" height="50px"><tr><td style="padding: 10px; text-align: center; vertical-align: center;"><p2 id="resultadoretaeuler"></p2></td></tr></table>
+<table border="1" width="100%" height="50px"><tr><td style="padding: 10px; text-align: center; vertical-align: center;"><p2 id="resultadoretaeuler"><i>A equação da reta apareerá aqui...</i></p2></td></tr></table>
 
 <script>
 
@@ -22270,11 +22270,25 @@ function processarretaeuler()
         var M = antoniovandreescalonarmatriz(g.toString() + ", " + h.toString() + ", " + k.toString() + "; " + l.toString() + ", " + m.toString() + ", " + n.toString() + " | r", 1);
 
         if ((a + c + e) / 3 == M[0][2])
-            out = "x = " + antoniovandreformatarreal(M[0][2]).toString()
+            {
+            var coef = antoniovandrefracaogeratriz(M[0][2], 1);
+
+            if (coef[1] == 1)
+                out = "x = " + antoniovandreformatarreal(coef[0]).toString()
+            else
+                out = "x = \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}";
+            }
         else
             {
             if (M[1][2] == (b + d + f) / 3)
-                out = "y = " + antoniovandreformatarreal((b + d + f) / 3).toString()
+                {
+                var coef = antoniovandrefracaogeratriz((b + d + f) / 3, 1);
+
+                if (coef[1] == 1)
+                    out = "y = " + antoniovandreformatarreal(coef[0]).toString()
+                else
+                    out = "y = \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}";
+                }
             else
                 {
                 if ((M[1][2] - (b + d + f) / 3) / (M[0][2] - (a + c + e) / 3) == 1)
@@ -22282,14 +22296,35 @@ function processarretaeuler()
                 else if ((M[1][2] - (b + d + f) / 3) / (M[0][2] - (a + c + e) / 3) == -1)
                     out = "y = -x"
                 else
-                    out = "y = " + antoniovandreformatarreal((M[1][2] - (b + d + f) / 3) / (M[0][2] - (a + c + e) / 3)).toString() + "x";
+                    {
+                    var coef = antoniovandrefracaogeratriz((M[1][2] - (b + d + f) / 3) / (M[0][2] - (a + c + e) / 3), 1);
+
+                    if (coef[1] == 1)
+                        out = "y = " + antoniovandreformatarreal(coef[0]).toString() + "x"
+                    else
+                        out = "y = \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "x}{" + antoniovandreformatarreal(coef[1]).toString() + "}";
+                    }
 
                 if (-(a + c + e) / 3 * (M[1][2] - (b + d + f) / 3) / (M[0][2] - (a + c + e) / 3) + (b + d + f) / 3 != 0)
                     {
                     if (-(a + c + e) / 3 * (M[1][2] - (b + d + f) / 3) / (M[0][2] - (a + c + e) / 3) + (b + d + f) / 3 > 0)
-                        out = out + " + " + antoniovandreformatarreal(-(a + c + e) / 3 * (M[1][2] - (b + d + f) / 3) / (M[0][2] - (a + c + e) / 3) + (b + d + f) / 3).toString()
+                        {
+                        var coef = antoniovandrefracaogeratriz(-(a + c + e) / 3 * (M[1][2] - (b + d + f) / 3) / (M[0][2] - (a + c + e) / 3) + (b + d + f) / 3, 1);
+
+                        if (coef[1] == 1)
+                            out = out + " + " + antoniovandreformatarreal(coef[0]).toString()
+                        else
+                            out = out + " + \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}"
+                        }
                     else
-                        out = out + " - " + antoniovandreformatarreal(antoniovandremodulo(-(a + c + e) / 3 * (M[1][2] - (b + d + f) / 3) / (M[0][2] - (a + c + e) / 3) + (b + d + f) / 3)).toString();
+                        {
+                        var coef = antoniovandrefracaogeratriz(-(a + c + e) / 3 * (M[1][2] - (b + d + f) / 3) / (M[0][2] - (a + c + e) / 3) + (b + d + f) / 3, 1);
+
+                        if (coef[1] == 1)
+                            out = out + " - " + antoniovandreformatarreal(antoniovandremodulo(coef[0])).toString()
+                        else
+                            out = out + " - \\dfrac{" + antoniovandreformatarreal(antoniovandremodulo(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}"    
+                        }
                     }
                 }
             }
