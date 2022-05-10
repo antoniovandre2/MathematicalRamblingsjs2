@@ -33503,16 +33503,16 @@ function processarmenorcirculopontosdados()
             if (coef[1] == 1)
                 {
                 if (coef[0] > 0)
-                    out = "x^2 + \\\left(y - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 \\le " + rtail
+                    out = "x^2 + \\left(y - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 \\le " + rtail
                 else
-                    out = "x^2 + \\\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 \\le " + rtail;
+                    out = "x^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 \\le " + rtail;
                 }
             else
                 {
                 if (coef[0] > 0)
-                    out = "x^2 + \\\left(y - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "\\right)^2 \\le " + rtail
+                    out = "x^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "\\right)^2 \\le " + rtail
                 else
-                    out = "x^2 + \\\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "\\right)^2 \\le " + rtail
+                    out = "x^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "\\right)^2 \\le " + rtail
                 }
             }
         else if (centro[1] == 0)
@@ -33522,16 +33522,16 @@ function processarmenorcirculopontosdados()
             if (coef[1] == 1)
                 {
                 if (coef[0] > 0)
-                    out = "\\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + y^2 \\le " + rtail
+                    out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + y^2 \\le " + rtail
                 else
-                    out = "\\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + y^2 \\le " + rtail
+                    out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + y^2 \\le " + rtail
                 }
             else
                 {
                 if (coef[0] > 0)
-                    out = "\\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "\\right)^2 + y^2 \\le " + rtail
+                    out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "\\right)^2 + y^2 \\le " + rtail
                 else
-                    out = "\\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "\\right)^2 + y^2 \\le " + rtail
+                    out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "\\right)^2 + y^2 \\le " + rtail
                 }
             }
         else
@@ -33546,16 +33546,16 @@ function processarmenorcirculopontosdados()
                     if (coef2[1] == 1)
                         {
                         if (coef2[0] > 0)
-                            out = "\\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 \\le " + rtail
+                            out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 \\le " + rtail
                         else
-                            out = "\\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 \\le " + rtail;
+                            out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 \\le " + rtail;
                         }
                     else
                         {
                         if (coef2[0] > 0)
-                            out = "\\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                            out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
                         else
-                            out = "\\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                            out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
                         }
                     }
                 else
@@ -33563,16 +33563,16 @@ function processarmenorcirculopontosdados()
                     if (coef2[1] == 1)
                         {
                         if (coef2[0] > 0)
-                            out = "\\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 \\le " + rtail
+                            out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 \\le " + rtail
                         else
-                            out = "\\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 \\le " + rtail;
+                            out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 \\le " + rtail;
                         }
                     else
                         {
                         if (coef2[0] > 0)
-                            out = "\\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                            out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
                         else
-                            out = "\\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                            out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
                         }
                     }
                 }
@@ -33583,16 +33583,16 @@ function processarmenorcirculopontosdados()
                     if (coef2[1] == 1)
                         {
                         if (coef2[0] > 0)
-                            out = "\\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 \\le " + rtail
+                            out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 \\le " + rtail
                         else
-                            out = "\\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 \\le " + rtail;
+                            out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 \\le " + rtail;
                         }
                     else
                         {
                         if (coef2[0] > 0)
-                            out = "\\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                            out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
                         else
-                            out = "\\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                            out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
                         }
                     }
                 else
@@ -33600,16 +33600,16 @@ function processarmenorcirculopontosdados()
                     if (coef2[1] == 1)
                         {
                         if (coef2[0] > 0)
-                            out = "\\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 \\le " + rtail
+                            out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 \\le " + rtail
                         else
-                            out = "\\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 \\le " + rtail;
+                            out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 \\le " + rtail;
                         }
                     else
                         {
                         if (coef2[0] > 0)
-                            out = "\\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                            out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
                         else
-                            out = "\\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                            out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
                         }
                     }
                 }
@@ -33629,6 +33629,569 @@ function processarmenorcirculopontosdados()
             el.innerHTML = antoniovandremensagenserro(2)
         else
             el.innerHTML = "Erro do JavaScript, não meu, ou entrada inválida. Entre com, separados por ponto e vírgula \";\", os pontos; as abscissas separadas das ordenadas por vírgula \",\".";
+        }
+	}
+
+</script>
+
+<br><br>
+
+<h2>Inequação cartesiana da menor bola que contém os pontos dados:</h2>
+
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: menor bola que contém os pontos dados.
+
+Dependências: "MathematicalRamblings.js", MathJax.
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
+
+Entre com, separados por ponto e vírgula "<span class="notranslate">;</span>", os pontos; as abscissas, ordenadas e cotas separadas por vírgula "<span class="notranslate">,</span>".
+<br><br>
+<table border="1" width="100%"><tr><td><input type="text" name="argumentosmenorbolapontosdados" style="width : 100%"></td></tr></table>
+<br>
+<input type="button" onclick="processarmenorbolapontosdados()" value="Calcular">
+<br><br>
+Inequação cartesiana da menor bola que contém os pontos dados:
+<br>
+<table border="1" width="100%" height="50px"><tr><td style="padding: 10px; text-align: center; vertical-align: center;"><p2 id="resultadomenorbolapontosdados"><i>A inequação aparecerá aqui...</i></p2></td></tr></table>
+
+<script>
+
+function processarmenorbolapontosdados()
+	{
+	var str = document.getElementsByName('argumentosmenorbolapontosdados');
+    var el = document.getElementById('resultadomenorbolapontosdados');
+	var argumentos = str[0].value.split(";");
+    var pontos = [];
+	var centro;
+	var dmed;
+    var mind = Number.MAX_VALUE;
+    var out = "";
+    var flag = 0;
+
+	if (argumentos.length < 2) {out = "e"; flag = 1;}
+
+    if (flag == 0) for (var i = 0; i < argumentos.length; i++)
+        {
+        var ponto = argumentos[i].split(",");
+
+        if (ponto.length != 3) {out = "e"; flag = 1; break;}
+
+        if ((antoniovandrenumeroreal(ponto[0].trim()) == "e") || (antoniovandrenumeroreal(ponto[1].trim()) == "e") || (antoniovandrenumeroreal(ponto[2].trim()) == "e"))
+            {
+            out = "e";
+            flag = 1;
+            break;
+            }
+
+        if ((antoniovandremodulo(parseFloat(ponto[0].trim())) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(parseFloat(ponto[1].trim())) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(parseFloat(ponto[2].trim())) > antoniovandremaximovalorentrada(1)))
+            {
+            out = "e";
+            flag = 2;
+            break;
+            }
+
+        pontos.push([parseFloat(ponto[0]), parseFloat(ponto[1]), parseFloat(ponto[2])]);
+        }
+
+    if (flag == 0)
+        {
+		if (pontos.length == 2)
+			{
+			mind = ((pontos[0][0] - pontos[1][0]) * (pontos[0][0] - pontos[1][0]) + (pontos[0][1] - pontos[1][1]) * (pontos[0][1] - pontos[1][1]) + (pontos[0][2] - pontos[1][2]) * (pontos[0][2] - pontos[1][2])) / 4;
+
+			centro = [(pontos[0][0] + pontos[1][0]) / 2, (pontos[0][1] + pontos[1][1]) / 2, (pontos[0][2] + pontos[1][2]) / 2];
+			}
+		else
+			{
+			label: for (var i = 0; i < pontos.length; i++)
+				for (var j = i + 1; j < pontos.length; j++)
+					{
+					var pmed = [(pontos[i][0] + pontos[j][0]) / 2, (pontos[i][1] + pontos[j][1]) / 2, (pontos[i][2] + pontos[j][2]) / 2];
+
+					var d = ((pontos[i][0] - pontos[j][0]) * (pontos[i][0] - pontos[j][0]) + (pontos[i][1] - pontos[j][1]) * (pontos[i][1] - pontos[j][1]) + (pontos[i][2] - pontos[j][2]) * (pontos[i][2] - pontos[j][2])) / 4;
+
+					for (var k = 0; k < pontos.length; k++) if ((k != i) && (k != j))
+						if (((pontos[k][0] - pmed[0]) * (pontos[k][0] - pmed[0]) + (pontos[k][1] - pmed[1]) * (pontos[k][1] - pmed[1]) + (pontos[k][2] - pmed[2]) * (pontos[k][2] - pmed[2])) / 4 > d)
+							continue label;
+
+					if (mind > d) {mind = d; centro = pmed;}
+					}
+			}
+        }
+
+    if (flag == 0)
+        {
+        var rtail;
+
+        var coefr = antoniovandrefracaogeratriz(mind, 1);
+
+        if (coefr[1] == 1)
+            rtail = antoniovandreformatarreal(coefr[0]).toString()
+        else
+            rtail = "\\dfrac{" + antoniovandreformatarreal(coefr[0]).toString() + "}{" + antoniovandreformatarreal(coefr[1]).toString() + "}";
+
+        if ((centro[0] == 0) && (centro[1] == 0) && (centro[2] == 0))
+            out = "x^2 + y^2 + z^2 \\le " + rtail
+        else if ((centro[0] == 0) && (centro[1] == 0))
+            {
+            var coef = antoniovandrefracaogeratriz(centro[2], 1);
+
+            if (coef[1] == 1)
+                {
+                if (coef[0] > 0)
+                    out = "x^2 + y^2 + \\left(z - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 \\le " + rtail
+                else
+                    out = "x^2 + y^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 \\le " + rtail;
+                }
+            else
+                {
+                if (coef[0] > 0)
+                    out = "x^2 + y^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "\\right)^2 \\le " + rtail
+                else
+                    out = "x^2 + y^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "\\right)^2 \\le " + rtail
+                }
+            }
+        else if ((centro[0] == 0) && (centro[2] == 0))
+            {
+            var coef = antoniovandrefracaogeratriz(centro[1], 1);
+
+            if (coef[1] == 1)
+                {
+                if (coef[0] > 0)
+                    out = "x^2 \\left(y - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + z^2 \\le " + rtail
+                else
+                    out = "x^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + z^2 \\le " + rtail
+                }
+            else
+                {
+                if (coef[0] > 0)
+                    out = "x^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "\\right)^2 + z^2 \\le " + rtail
+                else
+                    out = "x^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "\\right)^2 + z^2 \\le " + rtail
+                }
+            }
+        else if (centro[0] == 0)
+            {
+            var coef = antoniovandrefracaogeratriz(centro[1], 1);
+            var coef2 = antoniovandrefracaogeratriz(centro[2], 1);
+
+            if (coef[1] == 1)
+                {
+                if (coef[0] > 0)
+                    {
+                    if (coef2[1] == 1)
+                        {
+                        if (coef2[0] > 0)
+                            out = "x^2 + \\left(y - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 \\le " + rtail
+                        else
+                            out = "x^2 + \\left(y - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 \\le " + rtail;
+                        }
+                    else
+                        {
+                        if (coef2[0] > 0)
+                            out = "x^2 + \\left(y - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                        else
+                            out = "x^2 + \\left(y - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                        }
+                    }
+                else
+                    {
+                    if (coef2[1] == 1)
+                        {
+                        if (coef2[0] > 0)
+                            out = "x^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 \\le " + rtail
+                        else
+                            out = "x^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 \\le " + rtail;
+                        }
+                    else
+                        {
+                        if (coef2[0] > 0)
+                            out = "x^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                        else
+                            out = "x^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                        }
+                    }
+                }
+            else
+                {
+                if (coef[0] > 0)
+                    {
+                    if (coef2[1] == 1)
+                        {
+                        if (coef2[0] > 0)
+                            out = "x^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 \\le " + rtail
+                        else
+                            out = "x^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 \\le " + rtail;
+                        }
+                    else
+                        {
+                        if (coef2[0] > 0)
+                            out = "x^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                        else
+                            out = "x^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                        }
+                    }
+                else
+                    {
+                    if (coef2[1] == 1)
+                        {
+                        if (coef2[0] > 0)
+                            out = "x^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 \\le " + rtail
+                        else
+                            out = "x^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 \\le " + rtail;
+                        }
+                    else
+                        {
+                        if (coef2[0] > 0)
+                            out = "x^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                        else
+                            out = "x^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 \\le " + rtail
+                        }
+                    }
+                }
+			}
+		else
+			{
+			var coef = antoniovandrefracaogeratriz(centro[0], 1);
+			var coef2 = antoniovandrefracaogeratriz(centro[1], 1);
+			var coef3 = antoniovandrefracaogeratriz(centro[2], 1);
+
+			if (coef[1] == 1)
+				{
+				if (coef[0] > 0)
+					{
+					if (coef2[1] == 1)
+						{
+						if (coef2[0] > 0)
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						else
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						}
+					else
+						{
+						if (coef2[0] > 0)
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						else
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - " + antoniovandreformatarreal(coef[0]).toString() + "\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						}
+					}
+				else
+					{
+					if (coef2[1] == 1)
+						{
+						if (coef2[0] > 0)
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						else
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						}
+					else
+						{
+						if (coef2[0] > 0)
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						else
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + " + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						}
+					}
+				}
+			else
+				{
+				if (coef[0] > 0)
+					{
+					if (coef2[1] == 1)
+						{
+						if (coef2[0] > 0)
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						else
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								else
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						}
+					else
+						{
+						if (coef2[0] > 0)
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						else
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x - \\dfrac{" + antoniovandreformatarreal(coef[0]).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						}
+					}
+				else
+					{
+					if (coef2[1] == 1)
+						{
+						if (coef2[0] > 0)
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - " + antoniovandreformatarreal(coef2[0]).toString() + "\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						else
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + " + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						}
+					else
+						{
+						if (coef2[0] > 0)
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								else
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y - \\dfrac{" + antoniovandreformatarreal(coef2[0]).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						else
+							{
+							if (coef3[1] == 1)
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - " + antoniovandreformatarreal(coef3[0]).toString() + "\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + " + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "\\right)^2 \\le " + rtail;
+								}
+							else
+								{
+								if (coef3[0] > 0)
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z - \\dfrac{" + antoniovandreformatarreal(coef3[0]).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail
+								else
+									out = "\\left(x + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef[0])).toString() + "}{" + antoniovandreformatarreal(coef[1]).toString() + "}\\right)^2 + \\left(y + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef2[0])).toString() + "}{" + antoniovandreformatarreal(coef2[1]).toString() + "}\\right)^2 + \\left(z + \\dfrac{" + antoniovandremodulo(antoniovandreformatarreal(coef3[0])).toString() + "}{" + antoniovandreformatarreal(coef3[1]).toString() + "}\\right)^2 \\le " + rtail;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+	MathJax.typesetClear([el]);
+
+    if (out != "e")
+        {
+        el.innerHTML = "$\\fbox{$\\displaylines{" + out + "}$}$";
+		MathJax.typeset([el]);
+        }
+	else
+        {
+        if (flag == 2)
+            el.innerHTML = antoniovandremensagenserro(2)
+        else
+            el.innerHTML = "Erro do JavaScript, não meu, ou entrada inválida. Entre com, separados por ponto e vírgula \";\", os pontos; as abscissas, ordenadas e cotas separadas por vírgula \",\".";
         }
 	}
 
