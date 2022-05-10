@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 09-05-2022. Não considerando alterações em macros.
+// Última atualização: 10-05-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "09-05-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "10-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -10815,7 +10815,23 @@ function antoniovandrepontosimetricoreta(str, retorno)
 	switch (retorno)
 		{
 		case 0:
-			return antoniovandreformatarreal(abscissaimg).toString() + ", " + antoniovandreformatarreal(ordenadaimg).toString();
+			var coef = antoniovandrefracaogeratriz(abscissaimg, 1);
+			var coef2 = antoniovandrefracaogeratriz(ordenadaimg, 1);
+
+			if (coef[1] == 1)
+				{
+				if (coef2[1] == 1)
+					return antoniovandreformatarreal(coef[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+				else
+					return antoniovandreformatarreal(coef[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+				}
+			else
+				{
+				if (coef2[1] == 1)
+					return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+				else
+					return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+				}
 		case 1:
 			return [antoniovandreformatarreal(abscissaimg), antoniovandreformatarreal(ordenadaimg)];
 		default:
@@ -10889,7 +10905,7 @@ function antoniovandrebinascii(str, avisoanexo)
 	return strout;
 	}
 
-// Ponto simétrico. Argumentos: uma string de pontos separados por ponto e vírgula ";", coordenadas separadas por vírgula ",". Retorna a string "e" caso um erro genérico ocorra.
+// Ponto simétrico. Argumentos: uma string de dois pontos separados por ponto e vírgula ";", retorna o simétrico do primeiro ponto com relação ao segundo; coordenadas separadas por vírgula ",". Retorna a string "e" caso um erro genérico ocorra.
 
 function antoniovandrepontosimetrico(str)
 	{
@@ -10925,7 +10941,12 @@ function antoniovandrepontosimetrico(str)
 			}
 		else
 			{
-			outt = outt + antoniovandreformatarreal((2 * parseFloat(coordenadasr[i].trim()) - coordenadas[i]).toString());
+			var coef = antoniovandrefracaogeratriz(2 * parseFloat(coordenadasr[i].trim()) - coordenadas[i], 1);
+
+			if (coef[1] == 1)
+				outt = outt + antoniovandreformatarreal(coef[0]).toString()
+			else
+				outt = outt + antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString();
 
 			if (i < coordenadas.length - 1)
 				outt = outt + ", "
