@@ -46,7 +46,7 @@ function antoniovandreprimos(i)
 
 // Retorna um valor para a constante matemática "pi", a razão entre o comprimento e o diâmetro de uma circunferência.
 
-function antoniovandrepi(){return 3.14159;}
+function antoniovandrepi() {return 3.14159;}
 
 // Retorna um valor para a constante matemática "e", base dos logaritmos naturais.
 
@@ -5173,13 +5173,13 @@ function antoniovandresen(x)
 
 		if (x >= 0)
 			{
-			while (m > 2 * antoniovandrepi())
-				m -= 2 * antoniovandrepi();
+			while (m > 2 * Math.PI)
+				m -= 2 * Math.PI;
 			}
 		else
 			{
 			while (m < 0)
-				m += 2 * antoniovandrepi();
+				m += 2 * Math.PI;
 			}
 
 		return antoniovandreaproximacaotaylor("sen, " + m.toString());*/
@@ -5215,13 +5215,13 @@ function antoniovandrecos(x)
 
 		if (x >= 0)
 			{
-			while (m > 2 * antoniovandrepi())
-				m -= 2 * antoniovandrepi();
+			while (m > 2 * Math.PI)
+				m -= 2 * Math.PI;
 			}
 		else
 			{
 			while (m < 0)
-				m += 2 * antoniovandrepi();
+				m += 2 * Math.PI;
 			}
 
 		return antoniovandreaproximacaotaylor("cos, " + m.toString());*/
@@ -5425,7 +5425,7 @@ function antoniovandrearccotg(x)
 
 		return antoniovandreaproximacaotaylor("arccotg, " + eval(x).toString());*/
 
-		return antoniovandrepi() / 2 - Math.atan(eval(x));
+		return Math.PI / 2 - Math.atan(eval(x));
 		}
 	else
 		{
@@ -5433,7 +5433,7 @@ function antoniovandrearccotg(x)
 
 		return antoniovandreaproximacaotaylor("arccotg, " + x.toString());*/
 
-		return antoniovandrepi() / 2 - Math.atan(x);
+		return Math.PI / 2 - Math.atan(x);
 		}
 	}
 
@@ -12053,7 +12053,7 @@ function antoniovandreangulovetores(str)
 		case "r":
 			return antoniovandreformatarreal(antoniovandrearccos(num / den));
 		case "g":
-			return antoniovandreformatarreal(antoniovandrearccos(num / den) * 180 / antoniovandrepi());
+			return antoniovandreformatarreal(antoniovandrearccos(num / den) * 180 / Math.PI);
 		default:
 			return "e";
 		}
