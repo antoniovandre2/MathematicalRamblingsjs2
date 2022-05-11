@@ -11843,7 +11843,7 @@ function antoniovandrepontosimetricoplano(str, retorno)
 
 	var coeficientes = argumentos[1].split(";");
 
-	if (coeficientes.length != 3) return "e";
+	if (coeficientes.length != 4) return "e";
 
 	if (antoniovandreexpressaofuncaovalida(coeficientes[0].trim()) == "e") return "e";
 	if (antoniovandreexpressaofuncaovalida(coeficientes[1].trim()) == "e") return "e";
