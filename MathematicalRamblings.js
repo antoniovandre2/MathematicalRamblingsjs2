@@ -11605,6 +11605,9 @@ function antoniovandreprojecaopontoreta(str, retorno)
 		return "e";
 		}
 
+	if ((antoniovandremodulo(abscissa) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(ordenada) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(a) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1)))
+		return antoniovandremensagenserro(2);
+
 	var abscissaimg;
 	var ordenadaimg;
 
@@ -11733,6 +11736,9 @@ function antoniovandreprojecaopontoplano(str, retorno)
 		{
 		return "e";
 		}
+
+	if ((antoniovandremodulo(abscissa) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(ordenada) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(cota) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(a) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(d) > antoniovandremaximovalorentrada(1)))
+		return antoniovandremensagenserro(2);
 
 	var abscissaimg;
 	var ordenadaimg;
@@ -11885,6 +11891,9 @@ function antoniovandrepontosimetricoplano(str, retorno)
 		{
 		return "e";
 		}
+
+	if ((antoniovandremodulo(abscissa) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(ordenada) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(cota) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(a) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(d) > antoniovandremaximovalorentrada(1)))
+		return antoniovandremensagenserro(2);
 
 	var abscissaimg;
 	var ordenadaimg;
