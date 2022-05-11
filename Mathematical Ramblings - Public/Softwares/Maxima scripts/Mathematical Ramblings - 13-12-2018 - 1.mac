@@ -1,0 +1,29 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima resolução de sistemas lineares.
+
+Utilizada a versão Maxima on Android 3.2.1.
+
+Requer Antonio Vandré Pedrosa Furtunato Gomes - Maxima API.
+
+Comunicar erro: "a.vandre.g@gmail.com".
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima resolução de sistemas lineares.");
+
+m : read ("Quantas equações tem o sistema?");
+
+n : read ("Quantas incógnitas tem o sistema?");
+
+A : zeromatrix (m, n);
+
+b : zeromatrix (m, 1);
+
+for i : 1 thru m do for j : 1 thru n do A [i, j] : read ("Entre com o elemento da linha ", i, " e coluna ", j, " da matriz incompleta dos coeficientes.");
+
+for i : 1 thru m do b [i, 1] : read ("Entre com o elemento da ", i, "-ésima linha da matriz dos coeficientes independentes");
+
+antoniovandre_linsolve_gauss_format (A, b);

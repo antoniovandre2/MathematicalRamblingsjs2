@@ -1,0 +1,26 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima parcelamentos iguais com juros embutidos.
+
+Comunicar erro: "a.vandre.g@gmail.com".
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima parcelamentos iguais com juros embutidos.");
+
+P : read ("Entre com o preço da mercadoria/serviço:");
+
+n: read ("Entre com o número de parcelas:");
+
+E : read ("Entre com o valor de entrada:");
+
+i : read ("Entre com a taxa de juros:");
+
+c : 0;
+
+for j : 1 thru n do c : c + 1 / (1 + i)^j;
+
+print ("As parcelas terão um valor de ", (P - E) / c, ".");
+

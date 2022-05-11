@@ -1,0 +1,25 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima para, dado o seno, calcular todos os demais números trigonométricos.
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima para, dado o seno, calcular todos os demais números trigonométricos.");
+
+s: read ("Entre com o seno:");
+
+c: sqrt(1 - s^2);
+
+print ("O cosseno é :", c);
+
+print ("A tangente é :", s/c);
+
+print ("A cotangente é :", c/s);
+
+print ("A secante é :", 1/c);
+
+print ("A cossecante é :", 1/s);
+
+kill (s, c);

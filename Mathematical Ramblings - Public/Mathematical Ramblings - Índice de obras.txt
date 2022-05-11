@@ -8152,10 +8152,10 @@ __
 
 _____
 
-VSCode VSIX Mathematical Ramblings - Pré-moldados digitais - Language support.
+VSCode VSIX Mathematical Ramblings - Snippets.
 __
 
-Pré-modados digitais/mathematicalramblings-premoldadosdigitais-languagesupport-0.0.1.vsix
+Extensões/VS Code/mathematicalramblings-snippets-0.0.1.vsix
 __
 
 _____
@@ -9256,4 +9256,12 @@ Softwares/JavaScripts/Mathematical Ramblings - 10-05-2022 - 1.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Pacote de curvas e superfícies "Ciclo trigonométrico".
+__
+
+Pacotes de curvas e superfícies paramétricas/Ciclo trigonométrico.mrccpar
+__
+
 _____

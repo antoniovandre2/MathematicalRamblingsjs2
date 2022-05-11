@@ -1,0 +1,13 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima ...
+
+Utilizada a versão Maxima on Android 3.2.1.
+
+Comunicar erro: "a.vandre.g@gmail.com".
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima ...");

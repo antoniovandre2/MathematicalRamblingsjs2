@@ -1,0 +1,21 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima de cálculo do determinante de uma matriz 2x2.
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima de cálculo do determinante de uma matriz 2x2.");
+
+a_11: read ("Entre com o valor de a_11:");
+
+a_12: read ("Entre com o valor de a_12:");
+
+a_21: read ("Entre com o valor de a_21:");
+
+a_22: read ("Entre com o valor de a_22:");
+
+print ("O determinante é ", a_11 * a_22 - a_12 * a_21);
+
+kill (a_11, a_12, a_21, a_22);

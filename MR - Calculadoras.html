@@ -12647,7 +12647,17 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <table border="1" width="100%"><tr><td><input type="text" name="entradacurvacoordenadaparametrica" style="width : 100%"></td></tr></table>
 <br>
 <table><tr><td><table><tr><td><input type="button" onclick="processarcurvacoordenadaparametricaout()" value="Calcular"></td><td> <div class="cancelarcurvacoordenadaparametrica"></div></td></tr></table></td></tr></table>
+<br><br>
+Carregar arquivo .mrccpar:
 <br>
+<form id="mrccparmyform">
+	<p>
+	<input id="mrccparmyfile" type="file" />
+	<br>
+	<table border="1" width="100%"><tr><td><textarea id="mrccparuploadtext" style="width: 100%; overflow-y: scroll; resize: none" readonly rows="1"></textarea></td></tr></table>
+	</p>
+</form>
+<br><br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadocurvacoordenadaparametricaavisoanexo" id="resultadocurvacoordenadaparametricaavisoanexo" readonly rows="5"></textarea></td></tr></table>
 <br>
 <div id="dot-chart-curvacoordenadaparametrica"></div>
@@ -13630,8 +13640,39 @@ function curvacoordenadaparametricamensagemerro()
 	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: as expressões das funções para \"x\", separadas por dois pontos \":\", das quais se deseja obter as curvas, devem ser funções em \"t\"; segundo: as expressões das funções para \"y\", separadas por dois pontos \":\", das quais se deseja obter as curvas, devem ser funções em \"t\"; terceiro: um número real como valor inferior; quarto: um número real como valor superior; quinto: a abscissa do centro de expansão radial; sexto: a ordenada do centro de expansão radial; sétimo: o raio de expansão radial; oitavo: a rotação do eixo \"Ox\"; nono: a rotação do eixo \"Oy\"; décimo: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.";
 	}
 
+document.forms['mrccparmyform'].elements['mrccparmyfile'].onchange = function(evt)
+	{
+	if(!window.FileReader)
+		{
+		document.forms['mrccparmyform'].elements['mrccparuploadtext'].value = "O navegador é incompatível.";
+		return;
+		}
+
+	var reader = new FileReader();
+
+	document.forms['mrccparmyform'].elements['mrccparuploadtext'].value = "Carregando. Favor aguardar...";
+
+	reader.onload = function(evt) {
+		if(evt.target.readyState != 2) return;
+		if(evt.target.error) {
+			document.forms['mrccparmyform'].elements['mrccparuploadtext'].value = "Erro ao carregar o arquivo.";
+			return;
+		}
+
+	document.forms['mrccparmyform'].elements['mrccparuploadtext'].value = "Sucesso ao carregar.";
+
+	var filecontent = evt.target.result.split("$$$");
+
+	document.getElementsByName('entradacurvacoordenadaparametrica')[0].value = filecontent[filecontent.length - 1];
+
+	processarcurvacoordenadaparametricaout();
+	}
+
+	reader.readAsText(evt.target.files[0]);
+	}
+
 </script>
-		
+
 <br><br>
 
 <h2>Calculadora: curva tridimensional por coordenadas paramétricas.</h2>
@@ -23999,7 +24040,9 @@ document.forms['linhapoligonalform'].elements['linhapoligonalmyfile'].onchange =
 			return;
 		}
 
-		filecontentlinhapoligonal = evt.target.result.split("$$$")[1];
+		var filecontentlinhapoligonalarr = evt.target.result.split("$$$");
+
+		filecontentlinhapoligonal = filecontentlinhapoligonalarr[filecontentlinhapoligonalarr.length - 1];
 
 		processarlinhapoligonalout();
 
@@ -24270,7 +24313,9 @@ document.forms['linhapoligonaltridimensionalform'].elements['linhapoligonaltridi
 			return;
 		}
 
-		filecontentlinhapoligonaltridimensional = evt.target.result.split("$$$")[1];
+		var filecontentlinhapoligonaltridimensionalarr = evt.target.result.split("$$$");
+
+		filecontentlinhapoligonaltridimensional = [filecontentlinhapoligonaltridimensionalarr.length - 1];
 
 		processarlinhapoligonaltridimensionalout();
 

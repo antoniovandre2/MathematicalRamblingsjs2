@@ -1,0 +1,33 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima gerador de livro de senos e cossenos explícitos segundo as funções antoniovandre_sin_divneav e antoniovandre_cos_divneav.
+
+Utilizada a versão Maxima on Android 3.2.1.
+
+Requer Antonio Vandré Pedrosa Furtunato Gomes - Maxima API.
+
+Pode ser necessário um pós-processamento de texto.
+
+Última atualização : 13-01-2022.
+
+Comunicar erro: "a.vandre.g@gmail.com".
+*/
+
+arquivo_output : "livro.txt"$
+
+inicio : 0$
+
+fim : 15$
+
+bases : [2,3,5]$
+
+delimiter : "$"$
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima gerador de livro de senos e cossenos explícitos segundo as funções antoniovandre_sin_divneav e antoniovandre_cos_divneav.");
+
+for i in bases do for j : inicio thru fim do (stringout (arquivo_output, sconcat (delimiter, "\\sin \\frac{\\pi}{", i * 2 ^ j, "}", delimiter, "=", delimiter, tex1 (antoniovandre_sin_divneav (%pi, i * 2 ^ j)), delimiter)), stringout (arquivo_output, sconcat (delimiter, "\\cos \\frac{\\pi}{", i * 2 ^ j, "}", delimiter, "=", delimiter, tex1 (antoniovandre_cos_divneav (%pi, i * 2 ^ j)), delimiter)));
+
+print ("Concluído.");

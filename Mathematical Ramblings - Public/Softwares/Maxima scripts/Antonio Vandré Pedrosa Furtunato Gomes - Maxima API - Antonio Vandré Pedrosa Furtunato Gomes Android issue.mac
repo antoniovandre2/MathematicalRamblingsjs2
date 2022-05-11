@@ -1,0 +1,286 @@
+/*
+API Maxima de Antonio Vandré Pedrosa Furtunato Gomes (http://bit.ly/antoniovandre_legadoontologico) - Antonio Vandré Pedrosa Furtunato Gomes Android issue.
+
+Pode ser necessária permissão para escrever em dispositivo.
+
+Última atualização: 18-07-2019.
+*/
+
+/* Início funções e procedimentos programados por terceiros. */
+
+/* Fim funções e procedimentos programados por terceiros. */
+
+/* Início funções e procedimentos programados por Antonio Vandré Pedrosa Furtunato Gomes. */
+
+/* Início setar variáveis globais. */
+
+antoniovandre_armazenar_estatisticas_uso_funcoes : true$
+
+antoniovandre_arquivo_estatisticas_funcoes : "/storage/emulated/0/antoniovandre_dropbox_sync_folder/antoniovandre_maxima_history.txt"$
+
+antoniovandre_arquivo_grafico_estatisticas_funcoes : "/storage/emulated/0/antoniovandre_dropbox_sync_folder/antoniovandre_maxima_history.png"$ /* Requer outros softwares para processamento. */
+
+antoniovandre_tempfile_1 : "/storage/emulated/0/av_temp/avmt1"$
+
+antoniovandre_tempfile_2 : "/storage/emulated/0/av_temp/avmt2"$
+
+antoniovandre_tempfile_3 : "/storage/emulated/0/av_temp/avmt3"$
+
+antoniovandre_testfile : "/storage/emulated/0/av_temp/t.txt"$
+
+file_output_append : true$
+
+antoniovandre_primos : matrix ([2 ,3 ,5 ,7 ,11 ,13 ,17 ,19 ,23 ,29 ,31 ,37 ,41 ,43 ,47 ,53 ,59 ,61 ,67 ,71 ,73 ,79 ,83 ,89 ,97 ,101 ,103 ,107 ,109 ,113 ,127 ,131 ,137 ,139 ,149 ,151 ,157 ,163 ,167 ,173 ,179 ,181 ,191 ,193 ,197 ,199 ,211 ,223 ,227 ,229 ,233 ,239 ,241 ,251 ,257 ,263 ,269 ,271 ,277 ,281 ,283 ,293 ,307 ,311 ,313 ,317 ,331 ,337 ,347 ,349 ,353 ,359 ,367 ,373 ,379 ,383 ,389 ,397 ,401 ,409 ,419 ,421 ,431 ,433 ,439 ,443 ,449 ,457 ,461 ,463 ,467 ,479 ,487 ,491 ,499 ,503 ,509 ,521 ,523 ,541 ,547 ,557 ,563 ,569 ,571 ,577 ,587 ,593 ,599 ,601 ,607 ,613 ,617 ,619 ,631 ,641 ,643 ,647 ,653 ,659 ,661 ,673 ,677 ,683 ,691 ,701 ,709 ,719 ,727 ,733 ,739 ,743 ,751 ,757 ,761 ,769 ,773 ,787 ,797 ,809 ,811 ,821 ,823 ,827 ,829 ,839 ,853 ,857 ,859 ,863 ,877 ,881 ,883 ,887 ,907 ,911 ,919 ,929 ,937 ,941 ,947 ,953 ,967 ,971 ,977 ,983 ,991 ,997 ,1009 ,1013 ,1019 ,1021 ,1031 ,1033 ,1039 ,1049 ,1051 ,1061 ,1063 ,1069 ,1087 ,1091 ,1093 ,1097 ,1103 ,1109 ,1117 ,1123 ,1129 ,1151 ,1153 ,1163 ,1171 ,1181 ,1187 ,1193 ,1201 ,1213 ,1217 ,1223 ,1229 ,1231 ,1237 ,1249 ,1259 ,1277 ,1279 ,1283 ,1289 ,1291 ,1297 ,1301 ,1303 ,1307 ,1319 ,1321 ,1327 ,1361 ,1367 ,1373 ,1381 ,1399 ,1409 ,1423 ,1427 ,1429 ,1433 ,1439 ,1447 ,1451 ,1453 ,1459 ,1471 ,1481 ,1483 ,1487 ,1489 ,1493 ,1499 ,1511 ,1523 ,1531 ,1543 ,1549 ,1553 ,1559 ,1567 ,1571 ,1579 ,1583 ,1597 ,1601 ,1607 ,1609 ,1613 ,1619 ,1621 ,1627 ,1637 ,1657 ,1663 ,1667 ,1669 ,1693 ,1697 ,1699 ,1709 ,1721 ,1723 ,1733 ,1741 ,1747 ,1753 ,1759 ,1777 ,1783 ,1787 ,1789 ,1801 ,1811 ,1823 ,1831 ,1847 ,1861 ,1867 ,1871 ,1873 ,1877 ,1879 ,1889 ,1901 ,1907 ,1913 ,1931 ,1933 ,1949 ,1951 ,1973 ,1979 ,1987 ,1993 ,1997 ,1999 ,2003 ,2011 ,2017 ,2027 ,2029 ,2039 ,2053 ,2063 ,2069 ,2081 ,2083 ,2087 ,2089 ,2099 ,2111 ,2113 ,2129 ,2131 ,2137 ,2141 ,2143 ,2153 ,2161 ,2179 ,2203 ,2207 ,2213 ,2221 ,2237 ,2239 ,2243 ,2251 ,2267 ,2269 ,2273 ,2281 ,2287 ,2293 ,2297 ,2309 ,2311 ,2333 ,2339 ,2341 ,2347 ,2351 ,2357 ,2371 ,2377 ,2381 ,2383 ,2389 ,2393 ,2399 ,2411 ,2417 ,2423 ,2437 ,2441 ,2447 ,2459 ,2467 ,2473 ,2477 ,2503 ,2521 ,2531 ,2539 ,2543 ,2549 ,2551 ,2557 ,2579 ,2591 ,2593 ,2609 ,2617 ,2621 ,2633 ,2647 ,2657 ,2659 ,2663 ,2671 ,2677 ,2683 ,2687 ,2689 ,2693 ,2699 ,2707 ,2711 ,2713 ,2719 ,2729 ,2731 ,2741 ,2749 ,2753 ,2767 ,2777 ,2789 ,2791 ,2797 ,2801 ,2803 ,2819 ,2833 ,2837 ,2843 ,2851 ,2857 ,2861 ,2879 ,2887 ,2897 ,2903 ,2909 ,2917 ,2927 ,2939 ,2953 ,2957 ,2963 ,2969 ,2971 ,2999 ,3001 ,3011 ,3019 ,3023 ,3037 ,3041 ,3049 ,3061 ,3067 ,3079 ,3083 ,3089 ,3109 ,3119 ,3121 ,3137 ,3163 ,3167 ,3169 ,3181 ,3187 ,3191 ,3203 ,3209 ,3217 ,3221 ,3229 ,3251 ,3253 ,3257 ,3259 ,3271 ,3299 ,3301 ,3307 ,3313 ,3319 ,3323 ,3329 ,3331 ,3343 ,3347 ,3359 ,3361 ,3371 ,3373 ,3389 ,3391 ,3407 ,3413 ,3433 ,3449 ,3457 ,3461 ,3463 ,3467 ,3469 ,3491 ,3499 ,3511 ,3517 ,3527 ,3529 ,3533 ,3539 ,3541 ,3547 ,3557 ,3559 ,3571 ,3581 ,3583 ,3593 ,3607 ,3613 ,3617 ,3623 ,3631 ,3637 ,3643 ,3659 ,3671 ,3673 ,3677 ,3691 ,3697 ,3701 ,3709 ,3719 ,3727 ,3733 ,3739 ,3761 ,3767 ,3769 ,3779 ,3793 ,3797 ,3803 ,3821 ,3823 ,3833 ,3847 ,3851 ,3853 ,3863 ,3877 ,3881 ,3889 ,3907 ,3911 ,3917 ,3919 ,3923 ,3929 ,3931 ,3943 ,3947 ,3967 ,3989 ,4001 ,4003 ,4007 ,4013 ,4019 ,4021 ,4027 ,4049 ,4051 ,4057 ,4073 ,4079 ,4091 ,4093 ,4099 ,4111 ,4127 ,4129 ,4133 ,4139 ,4153 ,4157 ,4159 ,4177 ,4201 ,4211 ,4217 ,4219 ,4229 ,4231 ,4241 ,4243 ,4253 ,4259 ,4261 ,4271 ,4273 ,4283 ,4289 ,4297 ,4327 ,4337 ,4339 ,4349 ,4357 ,4363 ,4373 ,4391 ,4397 ,4409 ,4421 ,4423 ,4441 ,4447 ,4451 ,4457 ,4463 ,4481 ,4483 ,4493 ,4507 ,4513 ,4517 ,4519 ,4523 ,4547 ,4549 ,4561 ,4567 ,4583 ,4591 ,4597 ,4603 ,4621 ,4637 ,4639 ,4643 ,4649 ,4651 ,4657 ,4663 ,4673 ,4679 ,4691 ,4703 ,4721 ,4723 ,4729 ,4733 ,4751 ,4759 ,4783 ,4787 ,4789 ,4793 ,4799 ,4801 ,4813 ,4817 ,4831 ,4861 ,4871 ,4877 ,4889 ,4903 ,4909 ,4919 ,4931 ,4933 ,4937 ,4943 ,4951 ,4957 ,4967 ,4969 ,4973 ,4987 ,4993 ,4999 ,5003 ,5009 ,5011 ,5021 ,5023 ,5039 ,5051 ,5059 ,5077 ,5081 ,5087 ,5099 ,5101 ,5107 ,5113 ,5119 ,5147 ,5153 ,5167 ,5171 ,5179 ,5189 ,5197 ,5209 ,5227 ,5231 ,5233 ,5237 ,5261 ,5273 ,5279 ,5281 ,5297 ,5303 ,5309 ,5323 ,5333 ,5347 ,5351 ,5381 ,5387 ,5393 ,5399 ,5407 ,5413 ,5417 ,5419 ,5431 ,5437 ,5441 ,5443 ,5449 ,5471 ,5477 ,5479 ,5483 ,5501 ,5503 ,5507 ,5519 ,5521 ,5527 ,5531 ,5557 ,5563 ,5569 ,5573 ,5581 ,5591 ,5623 ,5639 ,5641 ,5647 ,5651 ,5653 ,5657 ,5659 ,5669 ,5683 ,5689 ,5693 ,5701 ,5711 ,5717 ,5737 ,5741 ,5743 ,5749 ,5779 ,5783 ,5791 ,5801 ,5807 ,5813 ,5821 ,5827 ,5839 ,5843 ,5849 ,5851 ,5857 ,5861 ,5867 ,5869 ,5879 ,5881 ,5897 ,5903 ,5923 ,5927 ,5939 ,5953 ,5981 ,5987 ,6007 ,6011 ,6029 ,6037 ,6043 ,6047 ,6053 ,6067 ,6073 ,6079 ,6089 ,6091 ,6101 ,6113 ,6121 ,6131 ,6133 ,6143 ,6151 ,6163 ,6173 ,6197 ,6199 ,6203 ,6211 ,6217 ,6221 ,6229 ,6247 ,6257 ,6263 ,6269 ,6271 ,6277 ,6287 ,6299 ,6301 ,6311 ,6317 ,6323 ,6329 ,6337 ,6343 ,6353 ,6359 ,6361 ,6367 ,6373 ,6379 ,6389 ,6397 ,6421 ,6427 ,6449 ,6451 ,6469 ,6473 ,6481 ,6491 ,6521 ,6529 ,6547 ,6551 ,6553 ,6563 ,6569 ,6571 ,6577 ,6581 ,6599 ,6607 ,6619 ,6637 ,6653 ,6659 ,6661 ,6673 ,6679 ,6689 ,6691 ,6701 ,6703 ,6709 ,6719 ,6733 ,6737 ,6761 ,6763 ,6779 ,6781 ,6791 ,6793 ,6803 ,6823 ,6827 ,6829 ,6833 ,6841 ,6857 ,6863 ,6869 ,6871 ,6883 ,6899 ,6907 ,6911 ,6917 ,6947 ,6949 ,6959 ,6961 ,6967 ,6971 ,6977 ,6983 ,6991 ,6997 ,7001 ,7013 ,7019 ,7027 ,7039 ,7043 ,7057 ,7069 ,7079 ,7103 ,7109 ,7121 ,7127 ,7129 ,7151 ,7159 ,7177 ,7187 ,7193 ,7207 ,7211 ,7213 ,7219 ,7229 ,7237 ,7243 ,7247 ,7253 ,7283 ,7297 ,7307 ,7309 ,7321 ,7331 ,7333 ,7349 ,7351 ,7369 ,7393 ,7411 ,7417 ,7433 ,7451 ,7457 ,7459 ,7477 ,7481 ,7487 ,7489 ,7499 ,7507 ,7517 ,7523 ,7529 ,7537 ,7541 ,7547 ,7549 ,7559 ,7561 ,7573 ,7577 ,7583 ,7589 ,7591 ,7603 ,7607 ,7621 ,7639 ,7643 ,7649 ,7669 ,7673 ,7681 ,7687 ,7691 ,7699 ,7703 ,7717 ,7723 ,7727 ,7741 ,7753 ,7757 ,7759 ,7789 ,7793 ,7817 ,7823 ,7829 ,7841 ,7853 ,7867 ,7873 ,7877 ,7879 ,7883 ,7901 ,7907 ,7919 ,7927 ,7933 ,7937 ,7949 ,7951 ,7963 ,7993 ,8009 ,8011 ,8017 ,8039 ,8053 ,8059 ,8069 ,8081 ,8087 ,8089 ,8093 ,8101 ,8111 ,8117 ,8123 ,8147 ,8161 ,8167 ,8171 ,8179 ,8191 ,8209 ,8219 ,8221 ,8231 ,8233 ,8237 ,8243 ,8263 ,8269 ,8273 ,8287 ,8291 ,8293 ,8297 ,8311 ,8317 ,8329 ,8353 ,8363 ,8369 ,8377 ,8387 ,8389 ,8419 ,8423 ,8429 ,8431 ,8443 ,8447 ,8461 ,8467 ,8501 ,8513 ,8521 ,8527 ,8537 ,8539 ,8543 ,8563 ,8573 ,8581 ,8597 ,8599 ,8609 ,8623 ,8627 ,8629 ,8641 ,8647 ,8663 ,8669 ,8677 ,8681 ,8689 ,8693 ,8699 ,8707 ,8713 ,8719 ,8731 ,8737 ,8741 ,8747 ,8753 ,8761 ,8779 ,8783 ,8803 ,8807 ,8819 ,8821 ,8831 ,8837 ,8839 ,8849 ,8861 ,8863 ,8867 ,8887 ,8893 ,8923 ,8929 ,8933 ,8941 ,8951 ,8963 ,8969 ,8971 ,8999 ,9001 ,9007 ,9011 ,9013 ,9029 ,9041 ,9043 ,9049 ,9059 ,9067 ,9091 ,9103 ,9109 ,9127 ,9133 ,9137 ,9151 ,9157 ,9161 ,9173 ,9181 ,9187 ,9199 ,9203 ,9209 ,9221 ,9227 ,9239 ,9241 ,9257 ,9277 ,9281 ,9283 ,9293 ,9311 ,9319 ,9323 ,9337 ,9341 ,9343 ,9349 ,9371 ,9377 ,9391 ,9397 ,9403 ,9413 ,9419 ,9421 ,9431 ,9433 ,9437 ,9439 ,9461 ,9463 ,9467 ,9473 ,9479 ,9491 ,9497 ,9511 ,9521 ,9533 ,9539 ,9547 ,9551 ,9587 ,9601 ,9613 ,9619 ,9623 ,9629 ,9631 ,9643 ,9649 ,9661 ,9677 ,9679 ,9689 ,9697 ,9719 ,9721 ,9733 ,9739 ,9743 ,9749 ,9767 ,9769 ,9781 ,9787 ,9791 ,9803 ,9811 ,9817 ,9829 ,9833 ,9839 ,9851 ,9857 ,9859 ,9871 ,9883 ,9887 ,9901 ,9907 ,9923 ,9929 ,9931 ,9941 ,9949 ,9967 ,9973 ,10007, 10009 ,10037 ,10039 ,10061 ,10067 ,10069 ,10079 ,10091 ,10093 ,10099 ,10103 ,10111 ,10133 ,10139 ,10141 ,10151 ,10159 ,10163 ,10169 ,10177 ,10181 ,10193 ,10211 ,10223 ,10243 ,10247 ,10253 ,10259 ,10267 ,10271 ,10273 ,10289 ,10301 ,10303 ,10313 ,10321 ,10331 ,10333 ,10337 ,10343 ,10357 ,10369 ,10391 ,10399 ,10427 ,10429 ,10433 ,10453 ,10457 ,10459 ,10463 ,10477 ,10487 ,10499 ,10501 ,10513 ,10529 ,10531 ,10559 ,10567 ,10589 ,10597 ,10601 ,10607 ,10613 ,10627 ,10631 ,10639 ,10651 ,10657 ,10663 ,10667 ,10687 ,10691 ,10709 ,10711 ,10723 ,10729 ,10733 ,10739 ,10753 ,10771 ,10781 ,10789 ,10799 ,10831 ,10837 ,10847 ,10853 ,10859 ,10861 ,10867 ,10883 ,10889 ,10891 ,10903 ,10909 ,10937 ,10939 ,10949 ,10957 ,10973 ,10979 ,10987 ,10993 ,11003 ,11027 ,11047 ,11057 ,11059 ,11069 ,11071 ,11083 ,11087 ,11093 ,11113 ,11117 ,11119 ,11131 ,11149 ,11159 ,11161 ,11171 ,11173 ,11177 ,11197 ,11213 ,11239 ,11243 ,11251 ,11257 ,11261 ,11273 ,11279 ,11287 ,11299 ,11311 ,11317 ,11321 ,11329 ,11351 ,11353 ,11369 ,11383 ,11393 ,11399 ,11411 ,11423 ,11437 ,11443 ,11447 ,11467 ,11471 ,11483 ,11489 ,11491 ,11497 ,11503 ,11519 ,11527 ,11549 ,11551 ,11579 ,11587 ,11593 ,11597 ,11617 ,11621 ,11633 ,11657 ,11677 ,11681 ,11689 ,11699 ,11701 ,11717 ,11719 ,11731 ,11743 ,11777 ,11779 ,11783 ,11789 ,11801 ,11807 ,11813 ,11821 ,11827 ,11831 ,11833 ,11839 ,11863 ,11867 ,11887 ,11897 ,11903 ,11909 ,11923 ,11927 ,11933 ,11939 ,11941 ,11953 ,11959 ,11969 ,11971 ,11981 ,11987 ,12007 ,12011 ,12037 ,12041 ,12043 ,12049 ,12071 ,12073 ,12097 ,12101 ,12107 ,12109 ,12113 ,12119 ,12143 ,12149 ,12157 ,12161 ,12163 ,12197 ,12203 ,12211 ,12227 ,12239 ,12241 ,12251 ,12253 ,12263 ,12269 ,12277 ,12281 ,12289 ,12301 ,12323 ,12329 ,12343 ,12347 ,12373 ,12377 ,12379 ,12391 ,12401 ,12409 ,12413 ,12421 ,12433 ,12437 ,12451 ,12457 ,12473 ,12479 ,12487 ,12491 ,12497 ,12503 ,12511 ,12517 ,12527 ,12539 ,12541 ,12547 ,12553 ,12569 ,12577 ,12583 ,12589 ,12601 ,12611 ,12613 ,12619 ,12637 ,12641 ,12647 ,12653 ,12659 ,12671 ,12689 ,12697 ,12703 ,12713 ,12721 ,12739 ,12743 ,12757 ,12763 ,12781 ,12791 ,12799 ,12809 ,12821 ,12823 ,12829 ,12841 ,12853 ,12889 ,12893 ,12899 ,12907 ,12911 ,12917 ,12919 ,12923 ,12941 ,12953 ,12959 ,12967 ,12973 ,12979 ,12983 ,13001 ,13003 ,13007 ,13009 ,13033 ,13037 ,13043 ,13049 ,13063 ,13093 ,13099 ,13103 ,13109 ,13121 ,13127 ,13147 ,13151 ,13159 ,13163 ,13171 ,13177 ,13183 ,13187 ,13217 ,13219 ,13229 ,13241 ,13249 ,13259 ,13267 ,13291 ,13297 ,13309 ,13313 ,13327 ,13331 ,13337 ,13339 ,13367 ,13381 ,13397 ,13399 ,13411 ,13417 ,13421 ,13441 ,13451 ,13457 ,13463 ,13469 ,13477 ,13487 ,13499 ,13513 ,13523 ,13537 ,13553 ,13567 ,13577 ,13591 ,13597 ,13613 ,13619 ,13627 ,13633 ,13649 ,13669 ,13679 ,13681 ,13687 ,13691 ,13693 ,13697 ,13709 ,13711 ,13721 ,13723 ,13729 ,13751 ,13757 ,13759 ,13763 ,13781 ,13789 ,13799 ,13807 ,13829 ,13831 ,13841 ,13859 ,13873 ,13877 ,13879 ,13883 ,13901 ,13903 ,13907 ,13913 ,13921 ,13931 ,13933 ,13963 ,13967 ,13997 ,13999 ,14009 ,14011 ,14029 ,14033 ,14051 ,14057 ,14071 ,14081 ,14083 ,14087 ,14107 ,14143 ,14149 ,14153 ,14159 ,14173 ,14177 ,14197 ,14207 ,14221 ,14243 ,14249 ,14251 ,14281 ,14293 ,14303 ,14321 ,14323 ,14327 ,14341 ,14347 ,14369 ,14387 ,14389 ,14401 ,14407 ,14411 ,14419 ,14423 ,14431 ,14437 ,14447 ,14449 ,14461 ,14479 ,14489 ,14503 ,14519 ,14533 ,14537 ,14543 ,14549 ,14551 ,14557 ,14561 ,14563 ,14591 ,14593 ,14621 ,14627 ,14629 ,14633 ,14639 ,14653 ,14657 ,14669 ,14683 ,14699 ,14713 ,14717 ,14723 ,14731 ,14737 ,14741 ,14747 ,14753 ,14759 ,14767 ,14771 ,14779 ,14783 ,14797 ,14813 ,14821 ,14827 ,14831 ,14843 ,14851 ,14867 ,14869 ,14879 ,14887 ,14891 ,14897 ,14923 ,14929 ,14939 ,14947 ,14951 ,14957 ,14969 ,14983 ,15013 ,15017 ,15031 ,15053 ,15061 ,15073 ,15077 ,15083 ,15091 ,15101 ,15107 ,15121 ,15131 ,15137 ,15139 ,15149 ,15161 ,15173 ,15187 ,15193 ,15199 ,15217 ,15227 ,15233 ,15241 ,15259 ,15263 ,15269 ,15271 ,15277 ,15287 ,15289 ,15299 ,15307 ,15313 ,15319 ,15329 ,15331 ,15349 ,15359 ,15361 ,15373 ,15377 ,15383 ,15391 ,15401 ,15413 ,15427 ,15439 ,15443 ,15451 ,15461 ,15467 ,15473 ,15493 ,15497 ,15511 ,15527 ,15541 ,15551 ,15559 ,15569 ,15581 ,15583 ,15601 ,15607 ,15619 ,15629 ,15641 ,15643 ,15647 ,15649 ,15661 ,15667 ,15671 ,15679 ,15683 ,15727 ,15731 ,15733 ,15737 ,15739 ,15749 ,15761 ,15767 ,15773 ,15787 ,15791 ,15797 ,15803 ,15809 ,15817 ,15823 ,15859 ,15877 ,15881 ,15887 ,15889 ,15901 ,15907 ,15913 ,15919 ,15923 ,15937 ,15959 ,15971 ,15973 ,15991 ,16001 ,16007 ,16033 ,16057 ,16061 ,16063 ,16067 ,16069 ,16073 ,16087 ,16091 ,16097 ,16103 ,16111 ,16127 ,16139 ,16141 ,16183 ,16187 ,16189 ,16193 ,16217 ,16223 ,16229 ,16231 ,16249 ,16253 ,16267 ,16273 ,16301 ,16319 ,16333 ,16339 ,16349 ,16361 ,16363 ,16369 ,16381 ,16411 ,16417 ,16421 ,16427 ,16433 ,16447 ,16451 ,16453 ,16477 ,16481 ,16487 ,16493 ,16519 ,16529 ,16547 ,16553 ,16561 ,16567 ,16573 ,16603 ,16607 ,16619 ,16631 ,16633 ,16649 ,16651 ,16657 ,16661 ,16673 ,16691 ,16693 ,16699 ,16703 ,16729 ,16741 ,16747 ,16759 ,16763 ,16787 ,16811 ,16823 ,16829 ,16831 ,16843 ,16871 ,16879 ,16883 ,16889 ,16901 ,16903 ,16921 ,16927 ,16931 ,16937 ,16943 ,16963 ,16979 ,16981 ,16987 ,16993 ,17011 ,17021 ,17027 ,17029 ,17033 ,17041 ,17047 ,17053 ,17077 ,17093 ,17099 ,17107 ,17117 ,17123 ,17137 ,17159 ,17167 ,17183 ,17189 ,17191 ,17203 ,17207 ,17209 ,17231 ,17239 ,17257 ,17291 ,17293 ,17299 ,17317 ,17321 ,17327 ,17333 ,17341 ,17351 ,17359 ,17377 ,17383 ,17387 ,17389 ,17393 ,17401 ,17417 ,17419 ,17431 ,17443 ,17449 ,17467 ,17471 ,17477 ,17483 ,17489 ,17491 ,17497 ,17509 ,17519 ,17539 ,17551 ,17569 ,17573 ,17579 ,17581 ,17597 ,17599 ,17609 ,17623 ,17627 ,17657 ,17659 ,17669 ,17681 ,17683 ,17707 ,17713 ,17729 ,17737 ,17747 ,17749 ,17761 ,17783 ,17789 ,17791 ,17807 ,17827 ,17837 ,17839 ,17851 ,17863 ,17881 ,17891 ,17903 ,17909 ,17911 ,17921 ,17923 ,17929 ,17939 ,17957 ,17959 ,17971 ,17977 ,17981 ,17987 ,17989 ,18013 ,18041 ,18043 ,18047 ,18049 ,18059 ,18061 ,18077 ,18089 ,18097 ,18119 ,18121 ,18127 ,18131 ,18133 ,18143 ,18149 ,18169 ,18181 ,18191 ,18199 ,18211 ,18217 ,18223 ,18229 ,18233 ,18251 ,18253 ,18257 ,18269 ,18287 ,18289 ,18301 ,18307 ,18311 ,18313 ,18329 ,18341 ,18353 ,18367 ,18371 ,18379 ,18397 ,18401 ,18413 ,18427 ,18433 ,18439 ,18443 ,18451 ,18457 ,18461 ,18481 ,18493 ,18503 ,18517 ,18521 ,18523 ,18539 ,18541 ,18553 ,18583 ,18587 ,18593 ,18617 ,18637 ,18661 ,18671 ,18679 ,18691 ,18701 ,18713 ,18719 ,18731 ,18743 ,18749 ,18757 ,18773 ,18787 ,18793 ,18797 ,18803 ,18839 ,18859 ,18869 ,18899 ,18911 ,18913 ,18917 ,18919 ,18947 ,18959 ,18973 ,18979 ,19001 ,19009 ,19013 ,19031 ,19037 ,19051 ,19069 ,19073 ,19079 ,19081 ,19087 ,19121 ,19139 ,19141 ,19157 ,19163 ,19181 ,19183 ,19207 ,19211 ,19213 ,19219 ,19231 ,19237 ,19249 ,19259 ,19267 ,19273 ,19289 ,19301 ,19309 ,19319 ,19333 ,19373 ,19379 ,19381 ,19387 ,19391 ,19403 ,19417 ,19421 ,19423 ,19427 ,19429 ,19433 ,19441 ,19447 ,19457 ,19463 ,19469 ,19471 ,19477 ,19483 ,19489 ,19501 ,19507 ,19531 ,19541 ,19543 ,19553 ,19559 ,19571 ,19577 ,19583 ,19597 ,19603 ,19609 ,19661 ,19681 ,19687 ,19697 ,19699 ,19709 ,19717 ,19727 ,19739 ,19751 ,19753 ,19759 ,19763 ,19777 ,19793 ,19801 ,19813 ,19819 ,19841 ,19843 ,19853 ,19861 ,19867 ,19889 ,19891 ,19913 ,19919 ,19927 ,19937 ,19949 ,19961 ,19963 ,19973 ,19979 ,19991 ,19993 ,19997 ,20011 ,20021 ,20023 ,20029 ,20047 ,20051 ,20063 ,20071 ,20089 ,20101])$
+
+antoniovandre_max_natural : 100$
+
+antoniovandre_simbolonumeracao : matrix ([0, "0"], [1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"], [6, "6"], [7, "7"], [8, "8"], [9, "9"], [10, "a"], [11, "b"], [12, "c"], [13, "d"], [14, "e"], [15, "f"], [16, "g"], [17, "h"], [18, "i"], [19, "j"], [20, "k"], [21, "l"], [22, "m"], [23, "n"], [24, "o"], [25, "p"], [26, "q"], [27, "r"], [28, "s"], [29, "t"], [30, "u"], [31, "v"], [32, "w"], [33, "x"], [34, "y"], [35, "z"], [36, "A"], [37, "B"], [38, "C"], [39, "D"], [40, "E"], [41, "F"], [42, "G"], [43, "H"], [44, "I"], [45, "J"], [46, "K"], [47, "L"], [48, "M"], [49, "N"], [50, "O"], [51, "P"], [52, "Q"], [53, "R"], [54, "S"], [55, "T"], [56, "U"], [57, "V"], [58, "W"], [59, "X"], [60, "Y"], [61, "Z"])$
+
+antoniovandre_stringendmark : "*"$
+
+antoniovandre_tempglobalvariable_1 : 0$
+
+/* Fim setar variáveis globais. */
+
+/* Início carregar packages. */
+
+/* Fim carregar packages. */
+
+/* Início procedimentos iniciais. */
+
+/* Fim procedimentos iniciais. */
+
+/* Raíz enésima. Argumentos: "a" número complexo ou polinômio, "n" número natural. */
+
+antoniovandre_nthroot (a, n) := block (if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_nthroot, ", timedate ())), a ^ (1 / n))$
+
+/* Raíz enésima de um número real, saída float. Argumentos: "a" número real, "n" número natural. */
+
+antoniovandre_nthroot_real_float (a, n) := block (if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_nthroot_real_float, ", timedate ())), float (exp (log (a)/n)))$
+
+/* Enésima potência. Argumentos: "a" número complexo ou polinômio, "n" número natural. */
+
+antoniovandre_exp (a, n) := block (if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_exp, ", timedate ())), a ^ n)$
+
+/* Enésima potência de um número real, saída float. Argumentos: "a" número real, "n" número natural. */
+
+antoniovandre_exp_real_float (a, n) := block (if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_exp_real_float, ", timedate ())), float (exp (n * log (a))))$
+
+/* Raíz enésima simplificada. Argumentos: "a" número natural, "n" número natural. */
+
+antoniovandre_nthroot_simp (a, n) := block ([f1, f2, M, m, i], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_nthroot_simp, ", timedate ())), f1 : 1, f2 : 1, M : antoniovandre_dfp (a), m : length (M), for i : 1 thru m do (f1 : f1 * M [i, 1] ^ truncate (M [i, 2] / n), f2 : f2 * (M [i, 1] ^ mod (M [i, 2], n)) ^ (1 / n)), matrix ([f1, f2]))$
+
+/* Raíz enésima simplificada com saída formatada. Argumentos: "a" número natural, "n" número natural. */
+
+antoniovandre_nthroot_simp_format (a, n) := block ([M, s, s2], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_nthroot_simp_format, ", timedate ())), M : antoniovandre_nthroot_simp (a, n), if M [1, 2] = 1 then s : string (M [1, 1]) else (s2 : concat (string (M [1, 2] ^ n), "^(1/", string (n), ")"), s : concat (string (M[1, 1]), concat ("(", s2, ")"))), s)$
+
+/* Raízes enésimas de um número complexo. Argumentos: "z" número complexo, "n" número natural. */
+
+antoniovandre_nthroot_complex (z, n) := block ([m, a, mo, ao, k, i, r], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_nthroot_complex, ", timedate ())), m : abs (z), a : carg (z), mo : m ^ (1 / n), ao : (a + 2 * k * %pi) / n, r : zeromatrix (n, 1), for i : 0 thru n - 1 do r [i + 1, 1] : mo * (cos (ev (ao, k = i)) + %i * sin (ev (ao, k = i))), r)$
+
+/* Raízes enésimas de um número complexo, saídas float. Argumentos: "z" número complexo, "n" número natural. */
+
+antoniovandre_nthroot_complex_float (z, n) := block ([m, a, mo, ao, k, i, r], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_nthroot_complex_float, ", timedate ())), m : abs (z), a : carg (z), mo : antoniovandre_nthroot_real_float (m, n), ao : (a + 2 * k * %pi) / n, r : zeromatrix (n, 1), for i : 0 thru n - 1 do r [i + 1, 1] : mo * float (cos (ev (ao, k = i))) + %i * mo * float (sin (ev (ao, k = i))), r)$
+
+/* Enésima potência de um número complexo. Argumentos: "z" número complexo, "n" número natural. */
+
+antoniovandre_exp_complex (z, n) := block ([m, a, mo], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_exp_complex, ", timedate ())), m : abs (z), a : carg (z), mo : m ^ n, mo * (cos (a * n) + %i  * sin (a * n)))$
+
+/* Enésima potência de um número complexo, saída float. Argumentos: "z" número complexo, "n" número natural. */
+
+antoniovandre_exp_complex_float (z, n) := block ([m, a, mo], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_exp_complex_float, ", timedate ())), m : abs (z), a : carg (z), mo : antoniovandre_exp_real_float (m, n), mo * float (cos (a * n)) + %i * mo * float (sin (a * n)))$
+
+/* Fórmula do cosseno de nx. Argumento: "n" número natural. A variável "x" é exportada com fins úteis, como no uso da função "ev". */
+
+antoniovandre_cos_formula_nx (n) := block (if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_cos_formula_nx, ", timedate ())), realpart ((cos (x) + %i * sin (x))^n))$
+
+/* Fórmula do seno de nx. Argumento: "n" número natural. A variável "x" é exportada com fins úteis, como no uso da função "ev". */
+
+antoniovandre_sin_formula_nx (n) := block (if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_sin_formula_nx, ", timedate ())), imagpart ((cos (x) + %i * sin (x))^n))$
+
+/* Cosseno arco-n-metade. Argumentos: "a" número real, "n" número natural. */
+
+antoniovandre_cos_div2pn (a, n) := block ([r, i, j, f, k, seek : 20], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_cos_div2pn, ", timedate ())), r : cos (a), for i : 1 thru n do (f : 1, for j : - seek thru seek do if (a / (2 * i) > ev (- %pi / 2 + 2 * k * %pi, k = j)) and (a / (2 * i) < ev (%pi / 2 + 2 * k * %pi, k = j)) then f : 2, r : (-1) ^ f * sqrt (ratsimp (expand ((r + 1) / 2)))), r)$
+
+/* Seno arco-n-metade. Argumentos: "a" número real, "n" número natural. */
+
+antoniovandre_sin_div2pn (a, n) := block ([r, i, j, f, f2, k, seek : 20], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_sin_div2pn, ", timedate ())), r : sin (a), for i : 1 thru n do (f : 1, for j : - seek thru seek do if (a / (2 * i) > ev (2 * k * %pi, k = j)) and (a / (2 * i) < ev (%pi + 2 * k * %pi, k = j)) then f : 2, f2 : 1, for j : - seek thru seek do if (a / i > ev (- %pi / 2 + 2 * k * %pi, k = j)) and (a / i < ev (%pi / 2 + 2 * k * %pi, k = j)) then f2 : 2, r : (-1) ^ f * sqrt (ratsimp (expand ((1 - (-1) ^ f2 * sqrt (ratsimp (expand (1 - r ^ 2)))) / 2)))), r)$
+
+/* Cosseno de "a" dividido por "n" com expressão a mais explícita possível segundo Antonio Vandré. Argumentos: "a" número real, "n" número natural. */
+
+antoniovandre_cos_divneav (a, n) := block ([r, P, lP, fde, f, i, k, l, v, x, cosseno, expr, seek : 20, d, dc, di], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_cos_divneav, ", timedate ())), P : antoniovandre_dfp (n), lP : length (P), fde : 1, for i : 1 thru lP do if P [i, 1] = 2 then fde : 1 * P [i, 2], f : 1, for i : - seek thru seek do if (a / (n / 2 ^ (fde - 1)) > ev (2 * k * %pi, k = i)) and (a / (n / 2 ^ (fde - 1)) < ev (%pi + 2 * k * %pi, k = i)) then f : 2, expr : cos (a) = subst (((-1) ^ f * sqrt (1 - cos (x) ^ 2)), sin (x), antoniovandre_cos_formula_nx (n / 2 ^ (fde - 1))), expr : subst (cosseno, cos (x), expr), v : solve (expr, cosseno), l : length (v), d : 2, di : 1, for i : 1 thru l do (v [i] : rhs (v [i]), dc : abs (float (v [i]) - float (cos (a / (n / 2 ^ (fde - 1))))), if dc < d then (d : dc, di : i)), if not listofvars (v) = [cosseno] then r : antoniovandre_cos_div2pn (acos (1 * v [di]), fde - 1) else r : cos (a / n), r)$
+
+/* Seno de "a" dividido por "n" com expressão a mais explícita possível segundo Antonio Vandré. Argumentos: "a" número real, "n" número natural. */
+
+antoniovandre_sin_divneav (a, n) := block ([r, P, lP, fde, f, i, k, l, v, x, seno, expr, seek : 20, d, dc, di], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_sin_divneav, ", timedate ())), P : antoniovandre_dfp (n), lP : length (P), fde : 1, for i : 1 thru lP do if P [i, 1] = 2 then fde : 1 * P [i, 2], f : 1, for i : - seek thru seek do if (a / (n / 2 ^ (fde - 1)) > ev (- %pi / 2 + 2 * k * %pi, k = i)) and (a / (n / 2 ^ (fde - 1)) < ev (%pi / 2 + 2 * k * %pi, k = i)) then f : 2, expr : cos (a) = subst (((-1) ^ f * sqrt (1 - sin (x) ^ 2)), cos (x), antoniovandre_cos_formula_nx (n / 2 ^ (fde - 1))), expr : subst (seno, sin (x), expr), v : solve (expr, seno), l : length (v), d : 2, di : 1, for i : 1 thru l do (v [i] : rhs (v [i]), dc : abs (float (v [i]) - float (sin (a / (n / 2 ^ (fde - 1))))), if dc < d then (d : dc, di : i)), if not listofvars (v) = [seno] then r : antoniovandre_sin_div2pn (asin (1 * v [di]), fde - 1) else r : sin (a / n), r)$
+
+/* Resolução de um sistema linear com 2 equações e 2 incógnitas pelo método de Cramer. Argumentos: "A" matriz quadrada 2x2, "b" matriz-coluna de 2 linhas.*/
+
+antoniovandre_sqlinsolve_cramer_2 (A, b) := block ([D, Dx, Dy, x, y], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_sqlinsolve_cramer_2, ", timedate ())), D : A [1, 1] * A [2, 2] - A [1, 2] * A [2, 1], Dx : b [1, 1] * A [2, 2] - A [1, 2] * b [2, 1], Dy : A [1, 1] * b [2, 1] - b [1, 1] * A [2, 1], x : Dx / D, y : Dy / D, matrix ([x], [y]))$
+
+/* Resolução de um sistema linear com o mesmo número de equações e incógnitas pelo método de Cramer. Argumentos: "A" matriz quadrada nxn, "b" matriz-coluna de n linhas. */
+
+antoniovandre_sqlinsolve_cramer (A, b) := block ([D, s, X, j, Ai, i], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_sqlinsolve_cramer, ", timedate ())), D : antoniovandre_determinante (A), s : length (A), X : zeromatrix (s, 1), for j : 1 thru s do (Ai : 1 * A, for i : 1 thru s do Ai [i, j] : b [i, 1], X [j, 1] : antoniovandre_determinante (Ai) / D), X)$
+
+/* Resolução de um sistema linear pelo método de Gauss. Argumentos: "A" matriz de m linhas, "b" matriz-coluna de m linhas. */
+
+antoniovandre_linsolve_gauss (A, b) := block ([M, m, n, i, j, k, l, f, c1, c2], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_linsolve_gauss, ", timedate ())), M : antoniovandre_addcol (A, b), m : length (M), n : length (transpose (M)), for i : 1 thru m do (k : 1, f : 0, for j : 1 thru n - 1 do if (f = 0) and (not M [i, j] = 0) then (k : j, c1 : 1 * M [i, j], f : 1), if f = 1 then (for j : 1 thru n do M [i, j] : M [i, j] / c1, for l : 1 thru m do if not l = i then (c2 : 1 * M [l, k], for j : 1 thru n do M [l, j] : M [l, j] - c2 * M [i, j]))), M)$
+
+/* Resolução de um sistema linear pelo método de Gauss, com saída formatada. Argumentos: "A" matriz, "b" matriz-coluna. */
+
+antoniovandre_linsolve_gauss_format (A, b) := block ([M, m, n, o, s, i, j, f1, f2, f3], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_linsolve_gauss_format, ", timedate ())), s : "", m : length (A), n : length (b), if not m = n then s : "A matriz incompleta dos coeficientes e a matriz dos coeficientes independentes devem ter o mesmo número de linhas." else (M : antoniovandre_linsolve_gauss (A, b), o : length (transpose (M)), f2 : 0, for i : 1 thru m do (f1 : 0, for j : 1 thru o - 1 do if not M [i, j] = 0 then f1 : 1, if (f1 = 0) and (not M [i, o] = 0) then (s : "Sistema impossível.", f2 : 1)), p : length (antoniovandre_elzf (M)), f3 : 0, if (f2 = 0) and (p < o - 1) then (s : sconcat ("Sistema indeterminado, com grau de indeterminação ", o - 1 - p, "."), f3 : 1), if (f2 = 0) and (f3 = 0) then if p = 1 then s : sconcat ("Raíz: ", 1 * M [1, o], ".") else (s : "Raízes: ", for i : 1 thru p - 1 do s : sconcat (s, 1 * M [i, o], ","), s : sconcat (s, 1 * M [p, o], "."))), s)$
+
+/* Retorna uma matriz qualquer completada com elementos para tornar-se quadrada. Argumento: "M" matriz. */
+
+antoniovandre_sqmatrix (M) := block ([n, m, Mo, i, j], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_sqmatrix, ", timedate ())), n : length (M), m : length (transpose (M)), if n < m then (Mo : zeromatrix (m, m), for i : 1 thru n do for j : 1 thru m do Mo [i, j] : 1 * M [i, j], for i : n + 1 thru m do for j : 1 thru m do Mo [i, j] : a_(i, j)) else (Mo : zeromatrix (n, n), for i : 1 thru n do for j : 1 thru m do Mo [i, j] : 1 * M [i, j], for i : 1 thru n do for j : m + 1 thru n do Mo [i, j] : a_(i, j)), Mo)$
+
+/* Decomposição em fatores primos. Argumento: "n" número natural. */
+
+antoniovandre_dfp (n) := block ([n2, l, flag_p, flag_p_m, p, i, j, n3, o, n4], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_dfp, ", timedate ())), if n = 1 then o : matrix ([1, 1]) else (n2 : n, p : zeromatrix (n, 1), l : length (transpose (antoniovandre_primos)), for i : 2 while i <= n2 do (flag_p : 0, flag_p_m : 0, for j : 1 thru l do (if antoniovandre_primos [1, j] = 1 * i then (flag_p : 1, return), if (j = l and flag_p = 0) then flag_p_m : 1), if (flag_p = 1 or flag_p_m = 1) then for j : 1 while mod (n2, i) = 0 do (n2 : n2 / i, p [i, 1] : p [i, 1] + 1, if n2 = 1 then return)), n3 : 0, for i : 2 thru n do if not p [i, 1] = 0 then n3 : n3 + 1, o : zeromatrix (n3, 2), n4 : 0, for i : 2 thru n do if not p [i, 1] = 0 then (n4 : n4 + 1, o [n4, 1] : i, o [n4, 2] : p [i, 1])), o)$
+
+/* Adiciona a linha v ao final da matriz M. Argumentos: "M" matriz de n colunas, "v" matriz-linha de n colunas.*/
+
+antoniovandre_addrow (M, v) := block ([m, n, R, i, j], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_addrow, ", timedate ())), m : length (M), n : length (transpose (M)), R : zeromatrix (m + 1, n), for i : 1 thru m do for j : 1 thru n do R [i, j] : 1 * M [i, j], for i : 1 thru n do R [m + 1, i] : 1 * v [1, i], R)$
+
+/* Adiciona a coluna v ao final da matriz M. Argumentos: "M" matriz de m linhas, "v" matriz-coluna de m linhas. */
+
+antoniovandre_addcol (M, v) := block ([m, n, R, i, j], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_addcol, ", timedate ())), m : length (M), n : length (transpose (M)), R : zeromatrix (m, n + 1), for i : 1 thru m do for j : 1 thru n do R [i, j] : 1 * M [i, j], for i : 1 thru m do R [i, n + 1] : 1 * v [i, 1], R)$
+
+/* Mínimo múltiplo comum dos elementos da matriz-coluna N. Argumento: "N" matriz-coluna de números naturais. */
+
+antoniovandre_mmc (N) := block ([n, d, v, k, i, j, mmc], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_mmc, ", timedate ())), n : length (N), d : zeromatrix (n, 1), v : matrix ([2, 0]), for i : 1 thru n do (d [i, 1] : antoniovandre_dfp (N [i, 1]), for j : 1 thru length (d [i, 1]) do (f : 0, for k : 1 thru length (v) do if v [k, 1] = d [i, 1] [j, 1] then (f : 1, if v [k, 2] < d [i, 1] [j, 2] then v [k, 2] : 1 * d [i, 1] [j, 2]), if f = 0 then v : antoniovandre_addrow (v, matrix ([1 * d [i, 1] [j, 1], 1 * d [i, 1] [j, 2]])))), mmc : 1, for i : 1 thru length (v) do mmc : mmc * (v [i, 1] ^ v [i, 2]), mmc)$
+
+/* Máximo divisor comum dos elementos da matriz-coluna N. Argumento: "N" matriz-coluna de números naturais. */
+
+antoniovandre_mdc (N) := block ([n, d, m, k, i, j, mdc], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_mdc, ", timedate ())), n : length (N), d : zeromatrix (n, 1), v : matrix ([2, 0]), for i : 1 thru n do d [i, 1] : antoniovandre_dfp (N [i, 1]), mdc : 1, for j : 1 thru length (d [1, 1]) do (f : 0, m : 0, for i : 1 thru n do for k : 1 thru length (d [i, 1]) do if d [1, 1] [j, 1] = d [i, 1] [k, 1] then (f : f +1, if m > d [i, 1] [j, 2] or m = 0 then m : d [i, 1] [j, 2]), if f = n then mdc : mdc * (d [1, 1] [j, 1] ^ m)), mdc)$
+
+/* Probabilidade de cada um dos elementos da matriz-coluna E no espaço amostral matriz-coluna A. Argumentos: "E" matriz-coluna, "A" matriz-coluna. */
+
+antoniovandre_probabilidade (E, A) := block([a, e, p, i, j], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_probabilidade, ", timedate ())), a : length (A), e : length (E), p : zeromatrix (e, 3), for i : 1 thru e do p [i, 1] : E [i, 1], for i : 1 thru e do for j : 1 thru a do if A [j, 1] = E [i, 1] then p [i, 2] : p [i, 2] + 1, for i : 1 thru e do p [i, 3] : p [i, 2] / a, p)$
+
+/* Conversão de um número para um símbolo. Função auxiliar da antoniovandre_cnb. Argumento: "n" número natural que possui correspondente em "antoniovandre_simbolonumeracao". */
+
+antoniovandre_nb (n) := block ([r, i], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_nb, ", timedate ())), for i : 1 thru length (antoniovandre_simbolonumeracao) do if n = antoniovandre_simbolonumeracao [i, 1] then r : antoniovandre_simbolonumeracao [i, 2], r)$
+
+/* Conversão de um símbolo para um número. Função auxiliar da antoniovandre_cnb. Argumento: "s" string que possui correspondente em "antoniovandre_simbolonumeracao". */
+
+antoniovandre_nbr (s) := block ([n, i], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_nbr, ", timedate ())), for i : 1 thru length (antoniovandre_simbolonumeracao) do if s = antoniovandre_simbolonumeracao [i, 2] then n : antoniovandre_simbolonumeracao [i, 1], n)$
+
+/* Tamanho de uma string. Argumento: "s" string. */
+
+antoniovandre_stringlength (s) := block ([sb, n, i], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_stringlength, ", timedate ())), sb : concat (s, antoniovandre_stringendmark), n : 1, for i : 1 while not substring (sb, n, n + 1) = antoniovandre_stringendmark do n : n + 1, n - 1)$
+
+/* Substring entre os índices "inicio" e "fim". Argumentos: "s" string, "inicio" número natural, "fim" número natural. */
+
+antoniovandre_substring (s, inicio, fim) := block ([i, sub, f], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_substring, ", timedate ())), sub : "", if inicio < antoniovandre_stringlength (s) then (f : min (fim, antoniovandre_stringlength (s) - 1), for i : inicio thru f do sub : concat (sub, s [i])), sub)$
+
+/* Conversão de números entre bases de numeração. Argumentos: "n" string, "b1" número natural que possui correspondente em "antoniovandre_simbolonumeracao", "b2" número natural que possui correspondente em "antoniovandre_simbolonumeracao". */
+
+antoniovandre_cnb (n, b1, b2) := block ([s, q1, i, n2, nb, q2, c], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_cnb, ", timedate ())), s : "", nb : 0, q1 : antoniovandre_stringlength (n), for i : 1 thru q1 do nb : nb + antoniovandre_nbr (antoniovandre_substring (n, i - 1, i - 1)) * b1 ^ (q1 - i), n2 : nb, q2 : truncate (log (nb) / log (b2)) + 1, for i : 1 thru q2 do (c : truncate (n2 / b2 ^ (q2 - i)), s : concat (s, antoniovandre_nb(c)), n2 : mod (n2, c * b2 ^ (q2 - i))), s)$
+
+/* Ocorrências da substring "sub" dentro da string "s". Argumentos: "s" string, "sub" string. Retorna uma matriz de duas colunas contendo, em cada linha, os índices inicial e final de cada ocorrência. */
+
+antoniovandre_substrings (s, sub) := block ([l, l2, i, c, strs], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_substrings, ", timedate ())), l : antoniovandre_stringlength (s), l2 : antoniovandre_stringlength (sub), strs : zeromatrix (l, 2), c : 0, for i : 0 thru l - 1 do if antoniovandre_substring (s, i, i + l2 - 1) = sub then (c : c + 1, strs [c, 1] : i + 1, strs [c, 2] : i + l2), antoniovandre_elzf (strs) - 1)$
+
+/* Substring da n-ésima ocorrência entre tokens. Argumentos: "s" string, "t" string, "n" número natural, "modo" string "i" (intercalado), string "c" (contínuo) ou string "s" (separado). */
+
+antoniovandre_snt (s, t, n, modo) := block ([l, l2, i, o, c, p, so], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_snt, ", timedate ())), so : "", l : antoniovandre_stringlength (s), l2 : antoniovandre_stringlength (t), o : zeromatrix (1, 2), c : 0, p : 0, for i : 0 thru l - 1 do if (antoniovandre_substring (s, i, i + l2 - 1) = t or i = l - 1) then (o [1, 1] : 1 * o [1, 2], o [1, 2] : 1 * (i + l2), c : c + 1, if (modo = "i" and i = l - 1 and c = n) then p : l + l2 - o [1, 2], if (modo = "i" and c = n) or (modo = "c" and c - 1 = n) or (modo = "s" and c / 2 = n) then so : antoniovandre_substring (s, 1 * o [1, 1], o [1, 2] - l2 - 1 + p)), so)$
+
+/* Eliminar linhas nulas no final de uma matriz. Argumento: "M" matriz. */
+
+antoniovandre_elzf (M) := block ([n, m, s, l, i, j, Mo], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_elzf, ", timedate ())), n : length (M), m : length (transpose (M)), l : 0, for i : 1 thru n do (s : 0, for j : 1 thru m do s : s + M [n - i + 1, j], if s = 0 then l : l + 1), Mo : zeromatrix (n - l, m), for i : 1 thru n - l do for j : 1 thru m do Mo [i, j] : 1 * M [i, j], Mo)$
+
+/* Divisão de polinômios em 1 variável. Argumentos: "P" polinômio, "D" polinômio. */
+
+antoniovandre_dp1v (P, D) := block ([n, m, Q, R, i, j], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_dp1v, ", timedate ())), n : length (P), m : length (D), Q : zeromatrix (n - m + 1, 1), R : 1 * P, for i : 0 thru n - m do (Q [n - m - i + 1, 1] : R [n - i, 1] / D [m, 1], for j : 1 thru m do R [n - i - j + 1, 1] : R [n - i - j + 1, 1] - Q [n - m - i + 1, 1] * D [m - j + 1, 1]), R: antoniovandre_elzf (R), matrix ([Q, R]))$
+
+/* Verificar se uma matriz é nula. Argumento: "M" matriz. */
+
+antoniovandre_matrixzero (M) := block ([n, m, i, j, s, o], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_matrixzero, ", timedate ())), n : length (M), m : length (transpose (M)), s : 0, for i : 1 thru n do for j : 1 thru m do s : s + M [i, j], if s = 0 then o : true else o : false, o)$
+
+/* Divisão de polinômios em 1 variável, com saída formatada. Argumentos: "P" polinômio, "D" polinômio. */
+
+antoniovandre_dp1v_format (P, D) := block ([M, di, dv, q, r, i, x, s, plus], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_dp1v_format, ", timedate ())), s : "", M : antoniovandre_dp1v (P, D), di : length (P), dv : length (D), q: length (M [1, 1]), r : length (M [1, 2]), for i : 1 thru di do if not P [di - i + 1, 1] = 0 then (if (i = 1) or (P [di - i + 1, 1] < 0) then plus : "" else plus : "+", s : sconcat (s, plus, P [di - i + 1, 1] * x^(di - i))), s : sconcat (s, " = ("), for i : 1 thru dv do if not D [dv - i + 1, 1] = 0 then (if (i = 1) or (D [dv - i + 1, 1] < 0) then plus : "" else plus : "+", s : sconcat (s, plus, D [dv - i + 1, 1] * x^(dv - i))), s : sconcat (s, ")("), for i : 1 thru q do if not M [1, 1] [q - i + 1, 1] = 0 then (if (i = 1) or (M [1, 1] [q - i + 1, 1] < 0) then plus : "" else plus : "+", s : sconcat (s, plus, M [1, 1] [q - i + 1, 1] * x^(q - i))), s : sconcat (s, ") + "), if antoniovandre_matrixzero (M [1, 2]) then s : sconcat (s, "0") else for i : 1 thru r do if not M [1, 2] [r - i + 1, 1] = 0 then (if (i = 1) or (M [1, 2] [r - i + 1, 1] < 0) then plus : "" else plus : "+", s : sconcat (s, plus, M [1, 2] [r - i + 1, 1] * x^(r - i))), s)$
+
+/* Fatorial. Argumento: "n" número natural. */
+
+antoniovandre_fatorial (n) := block ([], if antoniovandre_armazenar_estatisticas_uso_funcoes and n = 0 then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_fatorial, ", timedate ())), if n > 0 then n * antoniovandre_fatorial (n - 1) else 1)$
+
+/* Remover linha "i" e coluna "j" da matriz. Argumentos: "M" matriz, "i" número natural, "j" número natural. */
+
+antoniovandre_rmlc (M, i, j) := block ([l, l2, k, k2, c, c2, Mo], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_rmlc, ", timedate ())), l : length (M), l2 : length (transpose (M)), Mo : zeromatrix (l - 1, l2 - 1), c : 0, for k : 1 thru l do if not k = i then (c : c + 1, c2 : 0, for k2 : 1 thru l2 do if not k2 = j then (c2 : c2 + 1, Mo [c, c2] : 1 * M [k, k2])), Mo)$
+
+/* Determinante sem armazenamento de estatísticas. Função auxiliar de "antoniovandre_determinante". Argumento: "M" matriz quadrada. */
+
+antoniovandre_det (M) := block ([l, i, d], l : length (M), d : 0, if l > 1 then for i : 1 thru l do d : d + M [i, 1] * (-1) ^ (i + 1) * antoniovandre_det (antoniovandre_rmlc (M, i, 1)) else d : 1 * M [1, 1], d)$
+
+/* Determinante. Argumento: "M" matriz quadrada. */
+
+antoniovandre_determinante (M) := block ([], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_determinante, ", timedate ())), antoniovandre_det (M))$
+
+/* Arranjos de "n" elementos tomados "p" a "p". Argumentos: "n" número natural, "p" número natural menor ou igual a "n". */
+
+antoniovandre_arranjos (n, p) := block ([], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_arranjos, ", timedate ())), antoniovandre_fatorial (n) / antoniovandre_fatorial (n - p))$
+
+/* Arranjos com repetição de "n" elementos tomados "p" a "p". Argumentos: "n" número natural, "p" número natural menor ou igual a "n". */
+
+antoniovandre_arranjos_repeticao (n, p) := block ([], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_arranjos_repeticao, ", timedate ())), n ^ p)$
+
+/* Combinações de "n" elementos tomados "p" a "p". Argumentos: "n" número natural, "p" número natural menor ou igual a "n". */
+
+antoniovandre_combinacoes (n, p) := block ([], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_combinacoes, ", timedate ())), antoniovandre_arranjos (n, p) / antoniovandre_fatorial (p))$
+
+/* Permutações com repetição de "n" elementos, em que um ou mais elementos são repetidos com os números de repetições que estão no vetor-linha "r". Argumentos: "n" número natural, "r" vetor-linha cuja soma dos elementos não ultrapasse "n". */
+
+antoniovandre_permutacoes_repeticao (n, r) := block ([l, i, f], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_permutacoes_repeticao, ", timedate ())), l : length (transpose (r)), f : 1, for i : 1 thru l do f : f * antoniovandre_fatorial (r [1, i]), antoniovandre_fatorial (n) / f)$
+
+/* Média aritmética dos elementos de um vetor. Argumento: "v" vetor-linha. */
+
+antoniovandre_media_aritmetica (v) := block ([i, n, s : 0], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_media_aritmetica, ", timedate ())), n : length (transpose (v)), for i : 1 thru n do s : s + v [1, i], s / n)$
+
+/* Média aritmética ponderada dos elementos de uma linha de uma matriz. Argumento: "m"  matriz de duas linhas, na primeira os valores, e, na segunda, os respectivos pesos. */
+
+antoniovandre_media_aritmetica_ponderada (m) := block ([i, n, s : 0, sp : 0], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_media_aritmetica_ponderada, ", timedate ())), n : length (transpose (m)), for i : 1 thru n do (s : s + m [1, i] * m [2, i], sp : sp + m [2, i]), s / sp)$
+
+/* Média geométrica dos elementos de um vetor. Argumento: "v" vetor-linha. */
+
+antoniovandre_media_geometrica (v) := block ([i, n, p : 1], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_media_geometrica, ", timedate ())), n : length (transpose (v)), for i : 1 thru n do p : p * v [1, i], antoniovandre_nthroot (p, n))$
+
+/* Média harmônica dos elementos de um vetor. Argumento: "v" vetor-linha. */
+
+antoniovandre_media_harmonica (v) := block ([i, n, s : 0], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_media_harmonica, ", timedate ())), n : length (transpose (v)), for i : 1 thru n do s : s + 1 / v [1, i], n / s)$
+
+/* Desvio absoluto médio dos elementos de um vetor. Argumento: "v" vetor-linha. */
+
+antoniovandre_dam (v) := block ([ma, i, n, s : 0], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_dam, ", timedate ())), ma : antoniovandre_media_aritmetica (v), n : length (transpose (v)), for i : 1 thru n do s : s + abs (v [1, i] - ma), s / n)$
+
+/* Variância dos elementos de um vetor. Argumento: "v" vetor-linha. */
+
+antoniovandre_variancia (v) := block ([ma, i, n, s : 0], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_variancia, ", timedate ())), ma : antoniovandre_media_aritmetica (v), n : length (transpose (v)), for i : 1 thru n do s : s + (v [1, i] - ma)^2, s / n)$
+
+/* Desvio padrão dos elementos de um vetor. Argumento: "v" vetor-linha. */
+
+antoniovandre_desvio_padrao (v) := block ([ma, i, n, s : 0], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_desvio_padrao, ", timedate ())), sqrt (antoniovandre_variancia (v)))$
+
+/* Matriz de frequências. Os dados de entrada são os elementos da matriz argumento, e os dados são separados em classes de mesma amplitude em um número passado como argumento. Argumentos: "M" matriz, "n" número natural. */
+
+antoniovandre_matriz_frequencias (M, n) := block ([l, c, i, j, k, min : 99999, max : -99999, o], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_matriz_frequencias, ", timedate ())), l : length (M), c : length (transpose (M)), for i : 1 thru l do for j : 1 thru c do (if min > M [i, j] then min : M [i, j], if max < M [i, j] then max : M [i, j]), s : (max - min) / n, o : zeromatrix (n, 4), for i : 1 thru l do for j : 1 thru c do for k : 1 thru n do (o [k, 1] : min + (k - 1) * s, o [k, 2] : min + k * s, if (M [i, j] >= min + (k - 1) * s) and (((k < n) and (M [i, j] < min + k * s)) or ((k = n) and (M [i, j] <= min + k * s))) then o [k, 3] : o [k, 3] + 1), for i : 1 thru n do o [i, 4] : o [i, 3] / (l * c), o)$
+
+/* Dados em rol, em uma matriz-linha. Os dados de entrada estão em uma matriz argumento. Argumentos: "M" matriz de números de ao menos 2 elementos, "r" um dos valores 0 ou outro número qualquer, para rol crescente ou decrescente, respecificamente. */
+
+antoniovandre_rol (M, r) := block ([i, j, l, c, b, t, s, flag : 0, o], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_rol, ", timedate ())), l : length (M), c : length (transpose (M)), t : l * c, o : zeromatrix (1, t), if t = 1 then o [1, 1] : 1 * M [1, 1] else (for i : 1 thru t do (s : mod (i, c), if s = 0 then s : c, o [1, i] : 1 * M [ceiling (i / c), s]), for j : 1 while flag = 0 step 0 do (flag : 1, for i : 1 while mod (i, 2 * t) # 0 step 1 do (if r = 0 then (if o [1, mod (i, t - 1) + 1] > o [1, mod (i, t - 1) + 2] then (b : 1 * o [1, mod (i, t - 1) + 1], o [1, mod (i, t - 1) + 1] : 1 * o [1, mod (i, t - 1) + 2], o [1, mod (i, t - 1) + 2] : b, flag : 0)) else (if o [1, mod (i, t - 1) + 1] < o [1, mod (i, t - 1) + 2] then (b : 1 * o [1, mod (i, t - 1) + 1], o [1, mod (i, t - 1) + 1] : 1 * o [1, mod (i, t - 1) + 2], o [1, mod (i, t - 1) + 2] : b, flag : 0))))), o)$
+
+/* Mediana de um conjunto de dados passados como uma matriz por argumento. Argumento: "M" matriz de números. */
+
+antoniovandre_mediana (M) := block ([r, l, m], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_mediana, ", timedate ())), r : antoniovandre_rol (M, 0), l : length (transpose (r)), if mod (l, 2) = 0 then m : (r [1, l / 2] + r [1, l / 2 + 1]) / 2 else m : r [1, ceiling (l / 2)], m)$
+
+/* Moda de um conjunto de dados numéricos passados como uma matriz argumento. Argumento : "M" matriz de números. */
+
+antoniovandre_moda (M) := block ([i, j, k, l, c, t, b, b2, b3, b4, e, a : 1], if antoniovandre_armazenar_estatisticas_uso_funcoes then stringout (antoniovandre_arquivo_estatisticas_funcoes, sconcat ("antoniovandre_moda, ", timedate ())), l : length (M), c : length (transpose (M)), t : l * c, b : zeromatrix (t, 2), for i : 1 thru l do for j : 1 thru c do (flag : 0, for k : 1 thru t do (if M [i, j] = b [k, 1] then b [k, 2] : b [k, 2] + 1, if (b [k, 1] = 0) and (flag = 0) then (e : k, flag : 1)), if flag = 1 then (b [e, 1] : 1 * M [i, j], b [e, 2] : 1)), b2 : zeromatrix (t, 1), for i : 1 thru t do b2 [i, 1] : 1 * b [i, 2], b3 : antoniovandre_rol (b2, 1), flag : 0, for i : 2 while (flag = 0 and i < t) step 1 do (flag : 0, if b3 [1, i - 1] # b3 [1, i] then (e : i - 1, flag : 1)), if flag = 0 then e : t, b4 : zeromatrix (e, 2), for i : 1 thru t do if b3 [1, 1] = b [i, 2] then (b4 [a, 1] : 1 * b [i, 1], b4 [a, 2] : 1 * b [i, 2], a : a + 1), b4)$
+
+/* Início funções e procedimentos em desenvolvimento.
+
+Fim funções e procedimentos em desenvolvimento. */
+
+/* Fim funções e procedimentos programados por Antonio Vandré Pedrosa Furtunato Gomes. */
+

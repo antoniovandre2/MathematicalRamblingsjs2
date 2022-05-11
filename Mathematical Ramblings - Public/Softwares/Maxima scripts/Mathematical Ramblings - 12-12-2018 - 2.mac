@@ -1,0 +1,22 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima raízes enésimas de um complexo.
+
+Utilizada a versão Maxima on Android 3.2.1.
+
+Requer Antonio Vandré Pedrosa Furtunato Gomes - Maxima API.
+
+Comunicar erro: "a.vandre.g@gmail.com".
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima raízes enésimas de um complexo.");
+
+z : read ("Entre com um número complexo:");
+
+n : read ("Entre com n:");
+
+antoniovandre_nthroot_complex (z, n);
+

@@ -1,0 +1,19 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima decomposição em fatores primos.
+
+Utilizada a versão Maxima on Android 3.2.1.
+
+Requer Antonio Vandré Pedrosa Furtunato Gomes - Maxima API.
+
+Comunicar erro: "a.vandre.g@gmail.com".
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima decomposição em fatores primos.");
+
+n : read ("Entre com um número natural maior que 1:");
+
+antoniovandre_dfp (n);

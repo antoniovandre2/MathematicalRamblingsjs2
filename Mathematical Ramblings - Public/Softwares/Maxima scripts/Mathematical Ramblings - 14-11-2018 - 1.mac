@@ -1,0 +1,23 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima conversão para número na base n.
+
+Requer Antonio Vandré Pedrosa Furtunato Gomes - Máxima API.
+
+Utilizada a versão MaximaOnAdroid 3.2.1.
+
+Comunicar erro: "a.vandre.g@gmail.com".
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima conversão para número na base n.");
+
+b: read ("Qual a base do número de entrada?");
+
+n : read ("No formato de string, entre com o número natural a ser convertido. Pode conter caracteres alfanuméricos.");
+
+b2 : read ("Entre com a base de saída:");
+
+antoniovandre_cnb (n, b, b2);

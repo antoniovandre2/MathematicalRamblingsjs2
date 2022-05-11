@@ -1,0 +1,23 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima seno e cosseno de "a" dividido por "n" com expressão a mais explícita possível segundo Antonio Vandré.
+
+Utilizada a versão Maxima on Android 3.2.1.
+
+Requer Antonio Vandré Pedrosa Furtunato Gomes - Maxima API.
+
+Comunicar erro: "a.vandre.g@gmail.com".
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima seno e cosseno de a dividido por n com expressão a mais explícita possível segundo Antonio Vandré.");
+
+a : read ("Entre com a:");
+
+n : read ("Entre com n:");
+
+print ("Seno : ", antoniovandre_sin_divneav (a, n));
+
+print ("Cosseno : ", antoniovandre_cos_divneav (a, n));

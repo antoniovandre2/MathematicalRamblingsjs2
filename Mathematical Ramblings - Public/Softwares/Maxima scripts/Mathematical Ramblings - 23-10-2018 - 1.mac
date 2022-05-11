@@ -1,0 +1,17 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima gerador do gráfico de uma função afim.
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima gerador do gráfico de uma função afim.");
+
+a: read ("Entre com o coeficiente angular:");
+
+b: read ("Entre com o coeficiente linear:");
+
+plot2d (a*x + b, [x, -10, 10]);
+
+kill (a, b);

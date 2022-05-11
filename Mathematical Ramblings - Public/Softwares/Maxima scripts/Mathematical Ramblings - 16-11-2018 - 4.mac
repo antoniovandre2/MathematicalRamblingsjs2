@@ -1,0 +1,37 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima função que melhor descreve amostras.
+
+Comunicar erro: "a.vandre.g@gmail.com".
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima função que melhor descreve amostras.");
+
+n : read ("Quantas amostras deseja inserir?");
+
+a : zeromatrix (n, 2);
+
+for i : 1 thru n do
+     (a [i, 1] : read ("Insira o valor jogado na amostra ", i, ":"),
+     a [i, 2] : read ("Insira o valor coletado na amostra ", i, ":"));
+
+nf : read ("Quantas funções candidatas deseja inserir?");
+
+e : zeromatrix (nf, 1);
+
+f : zeromatrix (nf, 1);
+
+for i : 1 thru nf do
+     (e [i, 1] : read ("Insira a função candidata ", i, "na variável x:"),
+     g (x) := ''e [i, 1],
+     t : g (x),
+     for j : 1 thru n do f [i, 1] : f [i, 1] + abs (ev (t, x = a [j, 1]) - a [j, 2]));
+
+m : 1;
+
+for i : 2 thru nf do if f [i, 1] < f [i - 1, 1] then m : i;
+
+print ("A melhor função que descreve o objeto é ", e [m, 1], ".");

@@ -1,0 +1,17 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima área de um polígono regular de n lados de comprimento l.
+
+Comunicar erro: "a.vandre.g@gmail.com".
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima área de um polígono regular de n lados de comprimento l.");
+
+n : read ("Entre com o número de lados n:");
+
+l : read ("Entre com o comprimento do lado l:");
+
+print (float (tan (%pi / 2 - %pi / n) * n * l^2 / 4));

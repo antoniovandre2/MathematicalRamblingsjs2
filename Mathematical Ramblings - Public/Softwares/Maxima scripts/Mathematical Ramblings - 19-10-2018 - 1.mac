@@ -1,0 +1,21 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima de resolução de uma equação polinomial do segundo grau.
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima de resolução de uma equação polinomial do segundo grau.");
+
+a: read("Entre com o valor do coeficiente a:");
+
+b: read("Entre com o valor do coeficiente b:");
+
+c: read("Entre com o valor do coeficiente c:");
+
+print ("x' = ", (-b + sqrt(b^2 - 4*a*c)) / (2*a));
+
+print ("x'' = ", (-b - sqrt(b^2 - 4*a*c)) / (2*a));
+
+kill (a, b, c);

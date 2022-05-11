@@ -1,0 +1,24 @@
+/*
+Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+
+Script Maxima mmc.
+
+Requer Antonio Vandré Pedrosa Furtunato Gomes - Maxima API.
+
+Utilizada a versão Maxima on Android 3.2.1.
+
+Comunicar erro: "a.vandre.g@gmail.com".
+*/
+
+print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+
+print ("Script Maxima mmc");
+
+
+n : read ("De quantos números deseja saber o mmc?");
+
+v : zeromatrix (n, 1);
+
+for i : 1 thru n do v [i, 1] : read ("Entre com o inteiro positivo ", i, ":");
+
+print ("O mmc é ", antoniovandre_mmc (v), ".");
