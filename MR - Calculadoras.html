@@ -13725,9 +13725,9 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <br><br>
 Carregar arquivo .mrctcpar:
 <br>
-<form id="mrcctparmyform">
+<form id="mrctcparmyform">
 	<p>
-	<input id="mrcctparmyfile" type="file" />
+	<input id="mrctcparmyfile" type="file" />
 	<br>
 	<table border="1" width="100%"><tr><td><textarea id="mrctcparuploadtext" style="width: 100%; overflow-y: scroll; resize: none" readonly rows="1"></textarea></td></tr></table>
 	</p>
@@ -20935,11 +20935,11 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 -->
 
-Entre com os argumentos, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: o ponto com abscissa separada da ordenada por vírgula "<span class="notranslate">,</span>"; segundo: os coeficientes $a$, $b$ e $c$ da reta $ax + by + c = 0$, separados por vírgula "<span class="notranslate">,</span>":
+Entre com os argumentos, separados por barra vertical "<span class="notranslate">|</span>": primeiro: o ponto com abscissa separada da ordenada por ponto e vírgula "<span class="notranslate">;</span>"; segundo: os coeficientes $a$, $b$ e $c$ da reta $ax + by + c = 0$, separados por ponto e vírgula "<span class="notranslate">;</span>":
 <br><br>
 Exemplo:
 <br><br>
-Input: "<span class="notranslate">0, 3; -1, 1, 0</span>". Output: "<span class="notranslate">3,0</span>".
+Input: "<span class="notranslate">0; 3 | -1; 1; 0</span>". Output: "<span class="notranslate">3, 0</span>".
 <br><br>
 <table border="1" width="100%"><tr><td><input type="text" name="argumentospontosimetricoreta" style="width : 100%"></td></tr></table>
 <br>
@@ -20963,7 +20963,7 @@ function processarpontosimetricoreta()
 	if (out != "e")
 		document.getElementById('resultadopontosimetricoreta').value = out
 	else
-		document.getElementById('resultadopontosimetricoreta').value = "Entre com os argumentos, separados por ponto e vírgula \";\": primeiro: o ponto com abscissa separada da ordenada por vírgula \",\"; segundo: os coeficientes \"a\", \"b\" e \"c\" da reta \"ax + by + c = 0\", separados por vírgula \",\".";
+		document.getElementById('resultadopontosimetricoreta').value = "Entre com os argumentos, separados por barra vertical \"|\": primeiro: o ponto com abscissa separada da ordenada por ponto e vírgula \";\"; segundo: os coeficientes \"a\", \"b\" e \"c\" da reta \"ax + by + c = 0\", separados por ponto e vírgula \";\".";
 	}
 
 </script>
@@ -34355,6 +34355,104 @@ function processarmenorbolapontosdados()
         else
             el.innerHTML = "Erro do JavaScript, não meu, ou entrada inválida. Entre com, separados por ponto e vírgula \";\", os pontos; as abscissas, ordenadas e cotas separadas por vírgula \",\".";
         }
+	}
+
+</script>
+
+<br><br>
+
+<h2>Calculadora: projeção de um ponto em uma reta.</h2>
+
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: projeção de um ponto em uma reta.
+
+Dependências: "MathematicalRamblings.js", MathJax.
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
+
+Entre com os argumentos, separados por barra vertical "<span class="notranslate">|</span>": primeiro: o ponto com abscissa separada da ordenada por ponto e vírgula "<span class="notranslate">;</span>"; segundo: os coeficientes $a$, $b$ e $c$ da reta $ax + by + c = 0$, separados por ponto e vírgula "<span class="notranslate">;</span>":
+<br><br>
+Exemplo:
+<br><br>
+Input: "<span class="notranslate">1; 3 | -1; 1; 0</span>". Output: "<span class="notranslate">2, 2</span>".
+<br><br>
+<table border="1" width="100%"><tr><td><input type="text" name="argumentosprojecaopontoreta" style="width : 100%"></td></tr></table>
+<br>
+<input type="button" onclick="processarprojecaopontoreta()" value="Calcular">
+<br><br>
+Projeção do ponto na reta:
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadoprojecaopontoreta" id="resultadoprojecaopontoreta" readonly rows="3"></textarea></td></tr></table>
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadoprojecaopontoretaavisoanexo" id="resultadoprojecaopontoretaavisoanexo" readonly rows="5"></textarea></td></tr></table>
+
+<script>
+
+document.getElementById('resultadoprojecaopontoretaavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
+
+function processarprojecaopontoreta()
+	{
+	var str = document.getElementsByName('argumentosprojecaopontoreta');
+	var out = antoniovandreprojecaopontoreta(str[0].value, 0);
+
+	if (out != "e")
+		document.getElementById('resultadoprojecaopontoreta').value = out
+	else
+		document.getElementById('resultadoprojecaopontoreta').value = "Entre com os argumentos, separados por barra vertical \"|\": primeiro: o ponto com abscissa separada da ordenada por ponto e vírgula \";\"; segundo: os coeficientes \"a\", \"b\" e \"c\" da reta \"ax + by + c = 0\", separados por ponto e vírgula \";\".";
+	}
+
+</script>
+
+<br><br>
+
+<h2>Calculadora: projeção de um ponto em um plano.</h2>
+
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: projeção de um ponto em um plano.
+
+Dependências: "MathematicalRamblings.js", MathJax.
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
+
+Entre com os argumentos, separados por barra vertical "<span class="notranslate">|</span>": primeiro: o ponto com abscissa, ordenada e cota separadas por ponto e vírgula "<span class="notranslate">;</span>"; segundo: os coeficientes "<span class="notranslate">a</span>", "<span class="notranslate">b</span>", "<span class="notranslate">c</span>" e "<span class="notranslate">d</span>" do plano "<span class="notranslate">ax + by + cz + d = 0</span>", separados por ponto e vírgula ";":
+<br><br>
+Exemplo:
+<br><br>
+Input: "<span class="notranslate">1; 3; 4 | -1; 1; 2; 5</span>". Output: "<span class="notranslate">7 / 2, 1 / 2, -1</span>".
+<br><br>
+<table border="1" width="100%"><tr><td><input type="text" name="argumentosprojecaopontoplano" style="width : 100%"></td></tr></table>
+<br>
+<input type="button" onclick="processarprojecaopontoplano()" value="Calcular">
+<br><br>
+Projeção do ponto na reta:
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadoprojecaopontoplano" id="resultadoprojecaopontoplano" readonly rows="3"></textarea></td></tr></table>
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadoprojecaopontoplanoavisoanexo" id="resultadoprojecaopontoplanoavisoanexo" readonly rows="5"></textarea></td></tr></table>
+
+<script>
+
+document.getElementById('resultadoprojecaopontoplanoavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
+
+function processarprojecaopontoplano()
+	{
+	var str = document.getElementsByName('argumentosprojecaopontoplano');
+	var out = antoniovandreprojecaopontoplano(str[0].value, 0);
+
+	if (out != "e")
+		document.getElementById('resultadoprojecaopontoplano').value = out
+	else
+		document.getElementById('resultadoprojecaopontoplano').value = "Entre com os argumentos, separados por barra vertical \"|\": primeiro: o ponto com abscissa, ordenada e cota separadas por ponto e vírgula \";\"; segundo: os coeficientes \"a\", \"b\", \"c\" e \"d\" do plano \"ax + by + cz + d = 0\", separados por ponto e vírgula \";\".";
 	}
 
 </script>

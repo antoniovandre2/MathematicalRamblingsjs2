@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 10-05-2022. Não considerando alterações em macros.
+// Última atualização: 11-05-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "10-05-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "11-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -10711,17 +10711,17 @@ function antoniovandreareapoligonoconvexo(str)
 	return antoniovandreformatarreal(area);
 	}
 
-// Ponto simétrico a uma reta. Argumentos: primeiro global: separado por ponto e vírgula ";": primeiro: o ponto com abscissa separada da ordenada por vírgula ","; segundo: os coeficientes "a", "b" e "c" da reta "ax + by + c = 0", separados por vírgula ","; segundo global: o tipo de retorno: "0" para string, ou "1" para array. Retorna o ponto imagem ou a string "e" caso um erro genérico ocorra.
+// Ponto simétrico a uma reta. Argumentos: primeiro global: separado por barra vertical "|": primeiro: o ponto com abscissa separada da ordenada por ponto e vírgula ";"; segundo: os coeficientes "a", "b" e "c" da reta "ax + by + c = 0", separados por ponto e vírgula ";"; segundo global: o tipo de retorno: "0" para string, ou "1" para array. Retorna o ponto imagem ou a string "e" caso um erro genérico ocorra.
 
 function antoniovandrepontosimetricoreta(str, retorno)
 	{
-	var argumentos = str.split(";");
+	var argumentos = str.split("|");
 	var abscissa;
 	var ordenada;
 
 	if (argumentos.length != 2) return "e";
 
-	var ponto = argumentos[0].split(",");
+	var ponto = argumentos[0].split(";");
 
 	if (ponto.length != 2) return "e";
 
@@ -10746,7 +10746,7 @@ function antoniovandrepontosimetricoreta(str, retorno)
 		return "e";
 		}
 
-	var coeficientes = argumentos[1].split(",");
+	var coeficientes = argumentos[1].split(";");
 
 	if (coeficientes.length != 3) return "e";
 
@@ -11533,6 +11533,418 @@ function antoniovandrecomprimentocurvatridimensionalparametrica(str, avisoanexo)
 		return antoniovandremensagenserro(5);
 
 	return antoniovandreformatarreal(result);
+	}
+
+// Projeção de um ponto em uma reta. Argumentos: primeiro global: separado por barra vertical "|": primeiro: o ponto com abscissa separada da ordenada por ponto e vírgula ";"; segundo: os coeficientes "a", "b" e "c" da reta "ax + by + c = 0", separados por ponto e vírgula ";"; segundo global: o tipo de retorno: "0" para string, ou "1" para array. Retorna o ponto imagem ou a string "e" caso um erro genérico ocorra.
+
+function antoniovandreprojecaopontoreta(str, retorno)
+	{
+	var argumentos = str.split("|");
+	var abscissa;
+	var ordenada;
+
+	if (argumentos.length != 2) return "e";
+
+	var ponto = argumentos[0].split(";");
+
+	if (ponto.length != 2) return "e";
+
+	if (antoniovandreexpressaofuncaovalida(ponto[0].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(ponto[1].trim()) == "e") return "e";
+
+	try
+		{
+		abscissa = eval(antoniovandretraduzirexpressaofuncional(ponto[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	try
+		{
+		ordenada = eval(antoniovandretraduzirexpressaofuncional(ponto[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	var coeficientes = argumentos[1].split(";");
+
+	if (coeficientes.length != 3) return "e";
+
+	if (antoniovandreexpressaofuncaovalida(coeficientes[0].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(coeficientes[1].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(coeficientes[2].trim()) == "e") return "e";
+
+	try
+		{
+		var a = eval(antoniovandretraduzirexpressaofuncional(coeficientes[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+		try
+		{
+		var b = eval(antoniovandretraduzirexpressaofuncional(coeficientes[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	try
+		{
+		var c = eval(antoniovandretraduzirexpressaofuncional(coeficientes[2].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	var abscissaimg;
+	var ordenadaimg;
+
+	if ((a == 0) && (b == 0))
+		return "Ao menos um coeficiente de variável deve ser não nulo."
+	else
+		{
+		abscissaimg = abscissa - a * (c + a * abscissa + b * ordenada) / (a*a + b*b);
+		ordenadaimg = ordenada - b * (c + a * abscissa + b * ordenada) / (a*a + b*b);;
+		}
+
+	switch (retorno)
+		{
+		case 0:
+			var coef = antoniovandrefracaogeratriz(abscissaimg, 1);
+			var coef2 = antoniovandrefracaogeratriz(ordenadaimg, 1);
+
+			if (coef[1] == 1)
+				{
+				if (coef2[1] == 1)
+					return antoniovandreformatarreal(coef[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+				else
+					return antoniovandreformatarreal(coef[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+				}
+			else
+				{
+				if (coef2[1] == 1)
+					return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+				else
+					return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+				}
+		case 1:
+			return [antoniovandreformatarreal(abscissaimg), antoniovandreformatarreal(ordenadaimg)];
+		default:
+			return "e";
+		}
+	}
+
+// Projeção de um ponto em um plano. Argumentos: primeiro global: separado por barra vertical "|": primeiro: o ponto com abscissa, ordenada e cota separadas por ponto e vírgula ";"; segundo: os coeficientes "a", "b", "c" e "d" do plano "ax + by + cz + d = 0", separados por ponto e vírgula ";"; segundo global: o tipo de retorno: "0" para string, ou "1" para array. Retorna o ponto imagem ou a string "e" caso um erro genérico ocorra.
+
+function antoniovandreprojecaopontoplano(str, retorno)
+	{
+	var argumentos = str.split("|");
+	var abscissa;
+	var ordenada;
+	var cota;
+
+	if (argumentos.length != 2) return "e";
+
+	var ponto = argumentos[0].split(";");
+
+	if (ponto.length != 3) return "e";
+
+	if (antoniovandreexpressaofuncaovalida(ponto[0].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(ponto[1].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(ponto[2].trim()) == "e") return "e";
+
+	try
+		{
+		abscissa = eval(antoniovandretraduzirexpressaofuncional(ponto[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	try
+		{
+		ordenada = eval(antoniovandretraduzirexpressaofuncional(ponto[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	try
+		{
+		cota = eval(antoniovandretraduzirexpressaofuncional(ponto[2].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	var coeficientes = argumentos[1].split(";");
+
+	if (coeficientes.length != 4) return "e";
+
+	if (antoniovandreexpressaofuncaovalida(coeficientes[0].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(coeficientes[1].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(coeficientes[2].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(coeficientes[3].trim()) == "e") return "e";
+
+	try
+		{
+		var a = eval(antoniovandretraduzirexpressaofuncional(coeficientes[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+		try
+		{
+		var b = eval(antoniovandretraduzirexpressaofuncional(coeficientes[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	try
+		{
+		var c = eval(antoniovandretraduzirexpressaofuncional(coeficientes[2].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	try
+		{
+		var d = eval(antoniovandretraduzirexpressaofuncional(coeficientes[3].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	var abscissaimg;
+	var ordenadaimg;
+	var cotaimg;
+
+	if ((a == 0) && (b == 0))
+		return "Ao menos um coeficiente de variável deve ser não nulo."
+	else
+		{
+		abscissaimg = abscissa - a * (d + a * abscissa + b * ordenada + c * cota) / (a*a + b*b + c*c);
+		ordenadaimg = ordenada - b * (d + a * abscissa + b * ordenada + c * cota) / (a*a + b*b + c*c);
+		cotaimg = cota - c * (d + a * abscissa + b * ordenada + c * cota) / (a*a + b*b + c*c);
+		}
+
+	switch (retorno)
+		{
+		case 0:
+			var coef = antoniovandrefracaogeratriz(abscissaimg, 1);
+			var coef2 = antoniovandrefracaogeratriz(ordenadaimg, 1);
+			var coef3 = antoniovandrefracaogeratriz(cotaimg, 1);
+
+			if (coef[1] == 1)
+				{
+				if (coef2[1] == 1)
+					{
+					if (coef3[1] == 1)
+						return antoniovandreformatarreal(coef[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString()
+					else
+						return antoniovandreformatarreal(coef[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString()
+					}
+				else
+					{
+					if (coef3[1] == 1)
+						return antoniovandreformatarreal(coef[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString()
+					else
+						return antoniovandreformatarreal(coef[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString()
+					}
+				}
+			else
+				{
+				if (coef2[1] == 1)
+					{
+					if (coef3[1] == 1)
+						return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString()
+					else
+						return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString()
+					}
+				else
+					{
+					if (coef3[1] == 1)
+						return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString()
+					else
+						return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString()
+					}
+				}
+		case 1:
+			return [antoniovandreformatarreal(abscissaimg), antoniovandreformatarreal(ordenadaimg), antoniovandreformatarreal(cotaimg)];
+		default:
+			return "e";
+		}
+	}
+
+// Ponto simétrico de um ponto com relação a um plano. Argumentos: primeiro global: separado por barra vertical "|": primeiro: o ponto com abscissa, ordenada e cota separadas por ponto e vírgula ";"; segundo: os coeficientes "a", "b", "c" e "d" do plano "ax + by + cz + d = 0", separados por ponto e vírgula ";"; segundo global: o tipo de retorno: "0" para string, ou "1" para array. Retorna o ponto imagem ou a string "e" caso um erro genérico ocorra.
+
+function antoniovandrepontosimetricoplano(str, retorno)
+	{
+	var argumentos = str.split("|");
+	var abscissa;
+	var ordenada;
+	var cota;
+
+	if (argumentos.length != 2) return "e";
+
+	var ponto = argumentos[0].split(";");
+
+	if (ponto.length != 3) return "e";
+
+	if (antoniovandreexpressaofuncaovalida(ponto[0].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(ponto[1].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(ponto[2].trim()) == "e") return "e";
+
+	try
+		{
+		abscissa = eval(antoniovandretraduzirexpressaofuncional(ponto[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	try
+		{
+		ordenada = eval(antoniovandretraduzirexpressaofuncional(ponto[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	try
+		{
+		cota = eval(antoniovandretraduzirexpressaofuncional(ponto[2].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	var coeficientes = argumentos[1].split(";");
+
+	if (coeficientes.length != 3) return "e";
+
+	if (antoniovandreexpressaofuncaovalida(coeficientes[0].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(coeficientes[1].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(coeficientes[2].trim()) == "e") return "e";
+	if (antoniovandreexpressaofuncaovalida(coeficientes[3].trim()) == "e") return "e";
+
+	try
+		{
+		var a = eval(antoniovandretraduzirexpressaofuncional(coeficientes[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+		try
+		{
+		var b = eval(antoniovandretraduzirexpressaofuncional(coeficientes[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	try
+		{
+		var c = eval(antoniovandretraduzirexpressaofuncional(coeficientes[2].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	try
+		{
+		var d = eval(antoniovandretraduzirexpressaofuncional(coeficientes[3].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	var abscissaimg;
+	var ordenadaimg;
+	var cotaimg;
+
+	if ((a == 0) && (b == 0))
+		return "Ao menos um coeficiente de variável deve ser não nulo."
+	else
+		{
+		abscissaimg = abscissa - 2 * a * (d + a * abscissa + b * ordenada + c * cota) / (a*a + b*b + c*c);
+		ordenadaimg = ordenada - 2 * b * (d + a * abscissa + b * ordenada + c * cota) / (a*a + b*b + c*c);
+		cotaimg = cota - 2 * c * (d + a * abscissa + b * ordenada + c * cota) / (a*a + b*b + c*c);
+		}
+
+	switch (retorno)
+		{
+		case 0:
+			var coef = antoniovandrefracaogeratriz(abscissaimg, 1);
+			var coef2 = antoniovandrefracaogeratriz(ordenadaimg, 1);
+			var coef3 = antoniovandrefracaogeratriz(cotaimg, 1);
+
+			if (coef[1] == 1)
+				{
+				if (coef2[1] == 1)
+					{
+					if (coef3[1] == 1)
+						return antoniovandreformatarreal(coef[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString()
+					else
+						return antoniovandreformatarreal(coef[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString()
+					}
+				else
+					{
+					if (coef3[1] == 1)
+						return antoniovandreformatarreal(coef[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString()
+					else
+						return antoniovandreformatarreal(coef[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString()
+					}
+				}
+			else
+				{
+				if (coef2[1] == 1)
+					{
+					if (coef3[1] == 1)
+						return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString()
+					else
+						return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString()
+					}
+				else
+					{
+					if (coef3[1] == 1)
+						return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString()
+					else
+						return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString() + ", " + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString()
+					}
+				}
+		case 1:
+			return [antoniovandreformatarreal(abscissaimg), antoniovandreformatarreal(ordenadaimg), antoniovandreformatarreal(cotaimg)];
+		default:
+			return "e";
+		}
 	}
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
