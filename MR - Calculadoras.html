@@ -14586,7 +14586,7 @@ function downloadgifrotacaocurvatridimensionalcoordenadaparametricaout()
 	curvatridimensionalcoordenadaparametricaencoder.download("Mathematical Ramblings - ctpcpar - " + document.getElementsByName("entradacurvatridimensionalcoordenadaparametrica")[0].value.replaceAll(" ", "").replaceAll(";", "[pv]").replaceAll(",", "[v]").replaceAll(":", "[dp]").replaceAll("|", "[bv]").replaceAll("*", "[mult]").replaceAll("/", "[div]") + ".gif");
 	}
 
-	document.forms['mrctcparmyform'].elements['mrctcparmyfile'].onchange = function(evt)
+document.forms['mrctcparmyform'].elements['mrctcparmyfile'].onchange = function(evt)
 	{
 	if(!window.FileReader)
 		{
@@ -14682,7 +14682,7 @@ Carregar arquivo .mrstcpar:
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosuperficietridimensionalcoordenadasparametricasavisoanexo" id="resultadosuperficietridimensionalcoordenadasparametricasavisoanexo" readonly rows="5"></textarea></td></tr></table>
 <br>
 <div id="dot-chart-3d-superficietridimensionalcoordenadasparametricas"></div>
-<div id="dot-chart-3d-superficietridimensionalcoordenadasparametricas-espera" class="dot-chart-3d-superficietridimensionalcoordenadasparametricas-espera"><img src="https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-3d-superficietridimensionalcoordenadasparametricas-espera" class="dot-chart-3d-superficietridimensionalcoordenadasparametricas-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
 <span hidden>
 <img width=400 height=400 id="dot-chart-superficietridimensionalcoordenadasparametricas-esperagif"/>
 <canvas width=400 height=400 id="dot-chart-superficietridimensionalcoordenadasparametricas-esperacanvas"></canvas>
@@ -14779,7 +14779,7 @@ function processarsuperficietridimensionalcoordenadasparametricasout()
 	if (flagplotly3Dsuperficietridimensionalcoordenadasparametricas == 1)
 		{
 		Plotly.purge("dot-chart-3d-superficietridimensionalcoordenadasparametricas");
-		$("#dot-chart-3d-superficietridimensionalcoordenadasparametricas-espera").html("<img src=\"https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
+		$("#dot-chart-3d-superficietridimensionalcoordenadasparametricas-espera").html("<img src=\"Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
 		}
 
 	antoniovandresuperficietridimensionalcoordenadasparametricasout(str[0].value, 0);
