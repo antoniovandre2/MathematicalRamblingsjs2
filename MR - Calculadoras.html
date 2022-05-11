@@ -34403,7 +34403,7 @@ function processarprojecaopontoreta()
 	if (out != "e")
 		document.getElementById('resultadoprojecaopontoreta').value = out
 	else
-		document.getElementById('resultadoprojecaopontoreta').value = "Entre com os argumentos, separados por barra vertical \"|\": primeiro: o ponto com abscissa separada da ordenada por ponto e vírgula \";\"; segundo: os coeficientes \"a\", \"b\" e \"c\" da reta \"ax + by + c = 0\", separados por ponto e vírgula \";\".";
+		document.getElementById('resultadoprojecaopontoreta').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com os argumentos, separados por barra vertical \"|\": primeiro: o ponto com abscissa separada da ordenada por ponto e vírgula \";\"; segundo: os coeficientes \"a\", \"b\" e \"c\" da reta \"ax + by + c = 0\", separados por ponto e vírgula \";\".";
 	}
 
 </script>
@@ -34452,7 +34452,7 @@ function processarprojecaopontoplano()
 	if (out != "e")
 		document.getElementById('resultadoprojecaopontoplano').value = out
 	else
-		document.getElementById('resultadoprojecaopontoplano').value = "Entre com os argumentos, separados por barra vertical \"|\": primeiro: o ponto com abscissa, ordenada e cota separadas por ponto e vírgula \";\"; segundo: os coeficientes \"a\", \"b\", \"c\" e \"d\" do plano \"ax + by + cz + d = 0\", separados por ponto e vírgula \";\".";
+		document.getElementById('resultadoprojecaopontoplano').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com os argumentos, separados por barra vertical \"|\": primeiro: o ponto com abscissa, ordenada e cota separadas por ponto e vírgula \";\"; segundo: os coeficientes \"a\", \"b\", \"c\" e \"d\" do plano \"ax + by + cz + d = 0\", separados por ponto e vírgula \";\".";
 	}
 
 </script>
@@ -34501,7 +34501,58 @@ function processarpontosimetricoplano()
 	if (out != "e")
 		document.getElementById('resultadopontosimetricoplano').value = out
 	else
-		document.getElementById('resultadopontosimetricoplano').value = "Entre com os argumentos, separados por barra vertical \"|\": primeiro: o ponto com abscissa, ordenada e cota separadas por ponto e vírgula \";\"; segundo: os coeficientes \"a\", \"b\", \"c\" e \"d\" do plano \"ax + by + cz + d = 0\", separados por ponto e vírgula \";\".";
+		document.getElementById('resultadopontosimetricoplano').value = antoniovandreoperadoresfuncoesconstantes(4) +" Entre com os argumentos, separados por barra vertical \"|\": primeiro: o ponto com abscissa, ordenada e cota separadas por ponto e vírgula \";\"; segundo: os coeficientes \"a\", \"b\", \"c\" e \"d\" do plano \"ax + by + cz + d = 0\", separados por ponto e vírgula \";\".";
+	}
+
+</script>
+
+<br><br>
+
+<h2>Calculadora: ângulo entre dois vetores.</h2>
+
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: ângulo entre dois vetores.
+
+Dependências: "MathematicalRamblings.js".
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
+
+Entre com os argumentos separados por duas barras verticais "<span class="notranslate">||</span>": primeiro: uma string separada por barra vertical "<span class="notranslate">|</span>" onde cada elemento é um ponto onde as coordenadas são separadas por ponto e vírgula "<span class="notranslate">;</span>"; segundo "<span class="notranslate">r</span>" para radianos ou "<span class="notranslate">g</span>" para graus.
+<br><br>
+Exemplos:
+<br><br>
+Input: "<span class="notranslate">0; 1 | 1; 0 || g</span>". Output: aproximadamente "<span class="notranslate">90</span>".
+<br><br>
+Input: "<span class="notranslate">0; pi; euler | cos(2); 3; log(5, 2) || r</span>". Output: aproximadamente "<span class="notranslate">0.12210138</span>".
+<br><br>
+<table border="1" width="100%"><tr><td><input type="text" name="argumentosangulovetores" style="width : 100%"></td></tr></table>
+<br>
+<input type="button" onclick="processarangulovetores()" value="Calcular">
+<br><br>
+Ângulo entre os dois vetores:
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadoangulovetores" id="resultadoangulovetores" readonly rows="3"></textarea></td></tr></table>
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadoangulovetoresavisoanexo" id="resultadoangulovetoresavisoanexo" readonly rows="5"></textarea></td></tr></table>
+
+<script>
+
+document.getElementById('resultadoangulovetoresavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
+
+function processarangulovetores()
+	{
+	var str = document.getElementsByName('argumentosangulovetores');
+	var out = antoniovandreangulovetores(str[0].value, 0);
+
+	if (out != "e")
+		document.getElementById('resultadoangulovetores').value = out
+	else
+		document.getElementById('resultadoangulovetores').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com os argumentos separados por duas barras verticais \"||\": primeiro: uma string separada por barra vertical \"|\" onde cada elemento é um ponto onde as coordenadas são separadas por ponto e vírgula \";\"; segundo \"r\" para radianos ou \"g\" para graus.";
 	}
 
 </script>

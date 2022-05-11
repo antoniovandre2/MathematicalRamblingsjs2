@@ -10781,6 +10781,9 @@ function antoniovandrepontosimetricoreta(str, retorno)
 		return "e";
 		}
 
+	if ((antoniovandremodulo(abscissa) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(ordenada) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(a) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1)))
+		return antoniovandremensagenserro(2);
+
 	var abscissaimg;
 	var ordenadaimg;
 
@@ -10811,6 +10814,9 @@ function antoniovandrepontosimetricoreta(str, retorno)
 		abscissaimg = (2 * (ordenada + c / b) * (-1) * a / b) / (a / b * a / b + 1) - abscissa;
 		ordenadaimg = (2 * (ordenada + c / b) * a / b * a / b) / (a / b * a / b + 1) - 2 * c / b - ordenada;
 		}
+
+	if ((antoniovandremodulo(abscissaimg) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(ordenadaimg) > antoniovandremaximovalorsaida(1)))
+		return antoniovandremensagenserro(6);
 
 	switch (retorno)
 		{
@@ -11619,6 +11625,9 @@ function antoniovandreprojecaopontoreta(str, retorno)
 		ordenadaimg = ordenada - b * (c + a * abscissa + b * ordenada) / (a*a + b*b);;
 		}
 
+	if ((antoniovandremodulo(abscissaimg) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(ordenadaimg) > antoniovandremaximovalorsaida(1)))
+		return antoniovandremensagenserro(6);
+
 	switch (retorno)
 		{
 		case 0:
@@ -11752,6 +11761,9 @@ function antoniovandreprojecaopontoplano(str, retorno)
 		ordenadaimg = ordenada - b * (d + a * abscissa + b * ordenada + c * cota) / (a*a + b*b + c*c);
 		cotaimg = cota - c * (d + a * abscissa + b * ordenada + c * cota) / (a*a + b*b + c*c);
 		}
+
+	if ((antoniovandremodulo(abscissaimg) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(ordenadaimg) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(cotaimg) > antoniovandremaximovalorsaida(1)))
+		return antoniovandremensagenserro(6);
 
 	switch (retorno)
 		{
@@ -11908,6 +11920,9 @@ function antoniovandrepontosimetricoplano(str, retorno)
 		cotaimg = cota - 2 * c * (d + a * abscissa + b * ordenada + c * cota) / (a*a + b*b + c*c);
 		}
 
+	if ((antoniovandremodulo(abscissaimg) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(ordenadaimg) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(cotaimg) > antoniovandremaximovalorsaida(1)))
+		return antoniovandremensagenserro(6);
+
 	switch (retorno)
 		{
 		case 0:
@@ -11951,6 +11966,94 @@ function antoniovandrepontosimetricoplano(str, retorno)
 				}
 		case 1:
 			return [antoniovandreformatarreal(abscissaimg), antoniovandreformatarreal(ordenadaimg), antoniovandreformatarreal(cotaimg)];
+		default:
+			return "e";
+		}
+	}
+
+// Ângulo entre dois vetores. Argumentos separados por duas barras verticais "||": primeiro: uma string separada por barra vertical "|" onde cada elemento é um ponto onde as coordenadas são separadas por ponto e vírgula ";"; segundo "r" para radianos ou "g" para graus. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandreangulovetores(str)
+	{
+	var argumentos = str.split("||");
+
+	if (argumentos.length != 2)
+		return "e";
+
+	var arr = argumentos[0].split("|");
+	var nc = -1;
+	var pescarr = [];
+	var norma = [];
+	var num = 0;
+	var den = 1;
+
+	if (arr.length != 2)
+		return "Devem haver dois e apenas dois vetores.";
+
+	for (var i = 0; i < arr.length; i++)
+		{
+		norma.push(0);
+
+		var ponto = arr[i].split(";");
+
+		if (nc == -1)
+			{
+			nc = ponto.length;
+
+			for (var j = 0; j < nc; j++)
+				pescarr.push(1);	
+			}
+		else
+			{
+			if (nc == 0)
+				return "Deve haver ao menos uma coordenada em um vetor.";
+
+			if (nc != ponto.length)
+				return "Os pontos devem ter o mesmo número de coordenadas.";
+			}
+
+		for (var j = 0; j < nc; j++)
+			{
+			if (antoniovandreexpressaofuncaovalida(ponto[j].trim()) == "e") return "e";
+
+			try
+				{
+				var cord = eval(antoniovandretraduzirexpressaofuncional(ponto[j].trim(), 0));
+				}
+			catch (err)
+				{
+				return "e";
+				}
+
+			if (antoniovandremodulo(cord) > antoniovandremaximovalorentrada(1))
+				return antoniovandremensagenserro(2);
+
+			pescarr[j] *= cord;
+
+			norma[i] += cord * cord;
+			}
+		}
+
+	for (var i = 0; i < pescarr.length; i++)
+		num += pescarr[i];
+
+	if (antoniovandremodulo(num) > antoniovandremaximovalorsaida(1))
+		return antoniovandremensagenserro(6);
+
+	for (var i = 0; i < norma.length; i++)
+		den *= norma[i];
+
+	if (antoniovandremodulo(den) > antoniovandremaximovalorsaida(1))
+		return antoniovandremensagenserro(6);
+
+	den = antoniovandresqrt(den);
+
+	switch (argumentos[1].trim())
+		{
+		case "r":
+			return antoniovandreformatarreal(antoniovandrearccos(num / den));
+		case "g":
+			return antoniovandreformatarreal(antoniovandrearccos(num / den) * 180 / antoniovandrepi());
 		default:
 			return "e";
 		}
