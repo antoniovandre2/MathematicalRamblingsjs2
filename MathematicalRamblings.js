@@ -1932,7 +1932,7 @@ function antoniovandreprecisaoreal(i)
 	switch (i)
 		{
 		case 1:
-			return 0.0000000001; // Utilizada na formatação de números reais no JavaScript. Valor padrão de Antonio Vandré: "0.0000000001".
+			return 0.001; // Utilizada na formatação de números reais no JavaScript. Valor padrão de Antonio Vandré: "0.0000000001".
 		case 2:
 			return 0.000015; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca precisão.
 		case 3:
