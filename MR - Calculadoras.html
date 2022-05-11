@@ -8,7 +8,7 @@ Compilação das calculadoras JavaScript do Mathematical Ramblings.
 
 Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
-Última atualização: 10-05-2022.
+Última atualização: 11-05-2022.
 
 -->
 
@@ -13722,7 +13722,17 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <table border="1" width="100%"><tr><td><input type="text" name="entradacurvatridimensionalcoordenadaparametrica" style="width : 100%"></td></tr></table>
 <br>
 <table><tr><td><table><tr><td><input type="button" onclick="processarcurvatridimensionalcoordenadaparametricaout()" value="Calcular"></td><td> <div class="cancelarcurvatridimensionalcoordenadaparametrica"></div></td></tr></table></td></tr></table>
+<br><br>
+Carregar arquivo .mrctcpar:
 <br>
+<form id="mrcctparmyform">
+	<p>
+	<input id="mrcctparmyfile" type="file" />
+	<br>
+	<table border="1" width="100%"><tr><td><textarea id="mrctcparuploadtext" style="width: 100%; overflow-y: scroll; resize: none" readonly rows="1"></textarea></td></tr></table>
+	</p>
+</form>
+<br><br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadocurvatridimensionalcoordenadaparametricaavisoanexo" id="resultadocurvatridimensionalcoordenadaparametricaavisoanexo" readonly rows="5"></textarea></td></tr></table>
 <br>
 <div id="dot-chart-curvatridimensionalcoordenadaparametrica"></div>
@@ -14576,8 +14586,39 @@ function downloadgifrotacaocurvatridimensionalcoordenadaparametricaout()
 	curvatridimensionalcoordenadaparametricaencoder.download("Mathematical Ramblings - ctpcpar - " + document.getElementsByName("entradacurvatridimensionalcoordenadaparametrica")[0].value.replaceAll(" ", "").replaceAll(";", "[pv]").replaceAll(",", "[v]").replaceAll(":", "[dp]").replaceAll("|", "[bv]").replaceAll("*", "[mult]").replaceAll("/", "[div]") + ".gif");
 	}
 
-</script>
+	document.forms['mrctcparmyform'].elements['mrctcparmyfile'].onchange = function(evt)
+	{
+	if(!window.FileReader)
+		{
+		document.forms['mrctcparmyform'].elements['mrctcparuploadtext'].value = "O navegador é incompatível.";
+		return;
+		}
 
+	var reader = new FileReader();
+
+	document.forms['mrctcparmyform'].elements['mrctcparuploadtext'].value = "Carregando. Favor aguardar...";
+
+	reader.onload = function(evt) {
+		if(evt.target.readyState != 2) return;
+		if(evt.target.error) {
+			document.forms['mrctcparmyform'].elements['mrctcparuploadtext'].value = "Erro ao carregar o arquivo.";
+			return;
+		}
+
+	document.forms['mrctcparmyform'].elements['mrctcparuploadtext'].value = "Sucesso ao carregar.";
+
+	var filecontent = evt.target.result.split("$$$");
+
+	document.getElementsByName('entradacurvatridimensionalcoordenadaparametrica')[0].value = filecontent[filecontent.length - 1];
+
+	processarcurvacoordenadaparametricaout();
+	}
+
+	reader.readAsText(evt.target.files[0]);
+	}
+
+</script>
+	
 <br><br>
 
 <h2>Calculadora: superfície tridimensional por coordenadas paramétricas.</h2>
