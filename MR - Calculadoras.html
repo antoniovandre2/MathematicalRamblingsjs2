@@ -8,7 +8,7 @@ Compilação das calculadoras JavaScript do Mathematical Ramblings.
 
 Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
-Última atualização: 11-05-2022.
+Última atualização: 12-05-2022.
 
 -->
 
@@ -34553,6 +34553,104 @@ function processarangulovetores()
 		document.getElementById('resultadoangulovetores').value = out
 	else
 		document.getElementById('resultadoangulovetores').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com os argumentos separados por duas barras verticais \"||\": primeiro: uma string separada por barra vertical \"|\" onde cada elemento é um ponto onde as coordenadas são separadas por ponto e vírgula \";\"; segundo \"r\" para radianos ou \"g\" para graus.";
+	}
+
+</script>
+
+<br><br>
+
+<h2>Calculadora: comprimento da projeção de um segmento em uma reta.</h2>
+
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: comprimento da projeção de um segmento em uma reta.
+
+Dependências: "MathematicalRamblings.js", MathJax.
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
+
+Entre com os argumentos separados por duas barras verticais "<span class="notranslate">||</span>": primeiro: separados por barra vertical "<span class="notranslate">|</span>", os pontos extremos do segmento com abscissas separadas das ordenadas por ponto e vírgula "<span class="notranslate">;</span>"; segundo: coeficientes $a$, $b$ e $c$, da reta $ax + by + c = 0$.
+<br><br>
+Exemplo:
+<br><br>
+Input: "<span class="notranslate">1; 2 | 3; 2 || 0; 1; 5</span>". Output: "<span class="notranslate">2</span>".
+<br><br>
+<table border="1" width="100%"><tr><td><input type="text" name="argumentoscomprimentoprojecaosegmentoreta" style="width : 100%"></td></tr></table>
+<br>
+<input type="button" onclick="processarcomprimentoprojecaosegmentoreta()" value="Calcular">
+<br><br>
+Comprimento da projeção do segmento na reta:
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadocomprimentoprojecaosegmentoreta" id="resultadocomprimentoprojecaosegmentoreta" readonly rows="3"></textarea></td></tr></table>
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadocomprimentoprojecaosegmentoretaavisoanexo" id="resultadocomprimentoprojecaosegmentoretaavisoanexo" readonly rows="5"></textarea></td></tr></table>
+
+<script>
+
+document.getElementById('resultadocomprimentoprojecaosegmentoretaavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
+
+function processarcomprimentoprojecaosegmentoreta()
+	{
+	var str = document.getElementsByName('argumentoscomprimentoprojecaosegmentoreta');
+	var out = antoniovandrecomprimentoprojecaosegmentoreta(str[0].value, 0);
+
+	if (out != "e")
+		document.getElementById('resultadocomprimentoprojecaosegmentoreta').value = out
+	else
+		document.getElementById('resultadocomprimentoprojecaosegmentoreta').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com os argumentos separado por duas barras verticais \"||\": primeiro: separados por barra vertical \"|\", os pontos extremos do segmento com abscissas separadas das ordenadas por ponto e vírgula \";\"; segundo: coeficientes \"a\", \"b\" e \"c\", da reta \"ax + by + c = 0\".";
+	}
+
+</script>
+
+<br><br>
+
+<h2>Calculadora: comprimento da projeção de um segmento em um plano.</h2>
+
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: comprimento da projeção de um segmento em um plano.
+
+Dependências: "MathematicalRamblings.js", MathJax.
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
+
+Entre com os argumentos separados por duas barras verticais "<span class="notranslate">||</span>": primeiro: separados por barra vertical "<span class="notranslate">|</span>", os pontos extremos do segmento com abscissas separadas das ordenadas por ponto e vírgula "<span class="notranslate">;</span>"; segundo: coeficientes $a$, $b$, $c$ e $d$, do plano $ax + by + cz + d = 0$.
+<br><br>
+Exemplo:
+<br><br>
+Input: "<span class="notranslate">1; 2; 3 | 3; 2; 3 || 0; 0; 1; 5</span>". Output: "<span class="notranslate">2</span>".
+<br><br>
+<table border="1" width="100%"><tr><td><input type="text" name="argumentoscomprimentoprojecaosegmentoplano" style="width : 100%"></td></tr></table>
+<br>
+<input type="button" onclick="processarcomprimentoprojecaosegmentoplano()" value="Calcular">
+<br><br>
+Comprimento da projeção do segmento no plano:
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadocomprimentoprojecaosegmentoplano" id="resultadocomprimentoprojecaosegmentoplano" readonly rows="3"></textarea></td></tr></table>
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadocomprimentoprojecaosegmentoplanoavisoanexo" id="resultadocomprimentoprojecaosegmentoplanoavisoanexo" readonly rows="5"></textarea></td></tr></table>
+
+<script>
+
+document.getElementById('resultadocomprimentoprojecaosegmentoplanoavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
+
+function processarcomprimentoprojecaosegmentoplano()
+	{
+	var str = document.getElementsByName('argumentoscomprimentoprojecaosegmentoplano');
+	var out = antoniovandrecomprimentoprojecaosegmentoplano(str[0].value, 0);
+
+	if (out != "e")
+		document.getElementById('resultadocomprimentoprojecaosegmentoplano').value = out
+	else
+		document.getElementById('resultadocomprimentoprojecaosegmentoplano').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com os argumentos separado por duas barras verticais \"||\": primeiro: separados por barra vertical \"|\", os pontos extremos do segmento com abscissas separadas das ordenadas por ponto e vírgula \";\"; segundo: coeficientes \"a\", \"b\" e \"c\", da reta \"ax + by + c = 0\".";
 	}
 
 </script>

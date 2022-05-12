@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 11-05-2022.
+Última atualização: 12-05-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9288,6 +9288,33 @@ Calculadora: ponto simétrico com relação a um plano.
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 11-05-2022 - 3.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: ângulo entre dois vetores.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 11-05-2022 - 3.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: comprimento da projeção de um segmento em uma reta.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 12-05-2022 - 1.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: comprimento da projeção de um segmento em um plano.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 12-05-2022 - 2.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
