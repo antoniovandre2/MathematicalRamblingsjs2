@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 12-05-2022. Não considerando alterações em macros.
+// Última atualização: 13-05-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "12-05-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "13-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -12117,6 +12117,8 @@ function antoniovandrecomprimentoprojecaosegmentoreta(str, retorno)
 				return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString();
 		case 1:
 			return antoniovandreformatarreal(antoniovandresqrt((ponto1[0] - ponto2[0]) * (ponto1[0] - ponto2[0]) + (ponto1[1] - ponto2[1]) * (ponto1[1] - ponto2[1])));
+		default:
+			return "e";
 		}
 	}
 
@@ -12172,6 +12174,87 @@ function antoniovandrecomprimentoprojecaosegmentoplano(str, retorno)
 				return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString();
 		case 1:
 			return antoniovandreformatarreal(antoniovandresqrt((ponto1[0] - ponto2[0]) * (ponto1[0] - ponto2[0]) + (ponto1[1] - ponto2[1]) * (ponto1[1] - ponto2[1]) + (ponto1[2] - ponto2[2]) * (ponto1[2] - ponto2[2])));
+		default:
+			return "e";
+		}
+	}
+
+// Área de um triângulo no espaço. Argumentos globais: primeiro: uma string separada por barra vertical "|" contendo os vértices do triângulo com abscissas, ordenadas e cotas separadas por ponto e vírgula ";"; segundo: 0 para retornar string, ou 1 para retornar real.
+
+function antoniovandreareatrianguloespaco(str, retorno)
+	{
+	var arr = str.split("|");
+
+	if (arr.length != 3) return "e";
+
+	var M = [];
+
+	for (var i = 0; i < arr.length; i++)
+		{
+		var ponto = arr[i].split(";");
+
+		if (ponto.length != 3) return "e";
+
+		if (antoniovandreexpressaofuncaovalida(ponto[0].trim()) == "e") return "e";
+
+		try
+			{
+			var a = eval(antoniovandretraduzirexpressaofuncional(ponto[0].trim(), 0));
+			}
+		catch (err)
+			{
+			return "e";
+			}
+
+		if (antoniovandremodulo(a) > antoniovandremaximovalorentrada(1))
+			return antoniovandremensagenserro(2);
+
+		if (antoniovandreexpressaofuncaovalida(ponto[1].trim()) == "e") return "e";
+
+		try
+			{
+			var b = eval(antoniovandretraduzirexpressaofuncional(ponto[1].trim(), 0));
+			}
+		catch (err)
+			{
+			return "e";
+			}
+
+		if (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1))
+			return antoniovandremensagenserro(2);
+
+		if (antoniovandreexpressaofuncaovalida(ponto[2].trim()) == "e") return "e";
+
+		try
+			{
+			var c = eval(antoniovandretraduzirexpressaofuncional(ponto[2].trim(), 0));
+			}
+		catch (err)
+			{
+			return "e";
+			}
+
+		if (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1))
+			return antoniovandremensagenserro(2);
+
+		M.push([a, b, c])
+		}
+
+	var A = antoniovandresqrt(((M[0][1] - M[1][1]) * (M[2][2] - M[1][2]) - (M[0][2] - M[1][2]) * (M[2][1] - M[1][1])) * ((M[0][1] - M[1][1]) * (M[2][2] - M[1][2]) - (M[0][2] - M[1][2]) * (M[2][1] - M[1][1]))+ ((M[0][2] - M[1][2]) * (M[2][0] - M[1][0]) - (M[0][0] - M[1][0]) * (M[2][2] - M[1][2])) * ((M[0][2] - M[1][2]) * (M[2][0] - M[1][0]) - (M[0][0] - M[1][0]) * (M[2][2] - M[1][2])) + ((M[0][0] - M[1][0]) * (M[2][1] - M[1][1]) - (M[0][1] - M[1][1]) * (M[2][0] - M[1][0])) * ((M[0][0] - M[1][0]) * (M[2][1] - M[1][1]) - (M[0][1] - M[1][1]) * (M[2][0] - M[1][0]))) / 2;
+
+	switch (retorno)
+		{
+		case 0:
+			var coef = antoniovandrefracaogeratriz(A, 1);
+
+			if (coef[1] == 1)
+				return antoniovandreformatarreal(coef[0]).toString()
+			else
+				return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString();
+		case 1:
+			return antoniovandreformatarreal(A);
+		default:
+			return "e";
 		}
 	}
 
