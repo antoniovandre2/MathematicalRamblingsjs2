@@ -6872,12 +6872,10 @@ function antoniovandretraduzirexpressaofuncional(str, verificacao)
 
 	try{retornoev = eval(retorno);} catch (e) {return "e";}
 
-	if (antoniovandrecompararstrings(typeof retornoev, "string") == 1)
+	if ((antoniovandrecompararstrings(typeof retornoev, "string") == 1) || (antoniovandrenumero(retornoev.toString()) != "e"))
 		return retorno
-	else if (antoniovandrenumero(retornoev.toString()) == "e")
-		return "e"
 	else
-		return retorno;
+		return "e"
 	}
 
 // Limite de uma função contínua. Argumentos: primeiro: uma string, separada por ponto e vírgula ";", onde há a expressão da função, que deve ser na variável "x", o ponto do domínio considerado, e o tipo de cálculo: "definicao" para limite; "esquerda" para limite lateral à esquerda, ou "direita" para limite lateral à direita; e, segundo, -1 para exibir o aviso anexo.
