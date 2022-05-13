@@ -4746,7 +4746,23 @@ function antoniovandrepotencia(a, b)
 
 			return antoniovandreexp(eval(b.toString()) * antoniovandreln(eval(a).toString()));*/
 
-			return antoniovandrepotencia(eval(a), eval(b));
+			var e = eval(a);
+			var e2 = eval(b);
+
+			if ((e == 0) && (e2 == 0)) return "0^0 não existe.";
+			if ((e == 0) && (e2 < 0)) return "Expoente negativo para 0.";
+
+			var r = antoniovandrepotencia(e, e2);
+
+			if (antoniovandrecompararstrings(typeof r, "string") == 1)
+				{
+				if (antoniovandrecompararstrings(r, "0^0 não existe.") == 1)
+					return "0^0 não existe.";
+
+				if (antoniovandrecompararstrings(r, "Expoente negativo para 0.") == 1)
+					return "Expoente negativo para 0.";
+				}
+			else return r;
 			}
 		else
 			{
@@ -4754,7 +4770,22 @@ function antoniovandrepotencia(a, b)
 
 			return antoniovandreexp(eval(b * antoniovandreln(eval(a).toString())));*/
 
-			return antoniovandrepotencia(eval(a), b);
+			var e = eval(a);
+
+			if ((e == 0) && (b == 0)) return "0^0 não existe.";
+			if ((e == 0) && (b < 0)) return "Expoente negativo para 0.";
+
+			var r = antoniovandrepotencia(e, b);
+
+			if (antoniovandrecompararstrings(typeof r, "string") == 1)
+				{
+				if (antoniovandrecompararstrings(r, "0^0 não existe.") == 1)
+					return "0^0 não existe.";
+
+				if (antoniovandrecompararstrings(r, "Expoente negativo para 0.") == 1)
+					return "Expoente negativo para 0.";
+				}
+			else return r;
 			}
 		}
 	else
@@ -4772,13 +4803,31 @@ function antoniovandrepotencia(a, b)
 
 				return antoniovandreexp(eval(b.toString()) * antoniovandreln(a));*/
 
-				return antoniovandrepotencia(a, eval(b));;
+				var e = eval(b);
+
+				if ((a == 0) && (e == 0)) return "0^0 não existe.";
+				if ((a == 0) && (e < 0)) return "Expoente negativo para 0.";
+
+				var r = antoniovandrepotencia(a, e);
+
+				if (antoniovandrecompararstrings(typeof r, "string") == 1)
+					{
+					if (antoniovandrecompararstrings(r, "0^0 não existe.") == 1)
+						return "0^0 não existe.";
+
+					if (antoniovandrecompararstrings(r, "Expoente negativo para 0.") == 1)
+						return "Expoente negativo para 0.";
+					}
+				else return r;
 				}
 			else
 				{
 /*				Se desejando uma implementação por aproximação por Taylor.
 
 				return antoniovandreexp(b * antoniovandreln(a));;*/
+
+				if ((a == 0) && (b == 0)) return "0^0 não existe.";
+				if ((a == 0) && (b < 0)) return "Expoente negativo para 0.";
 
 				return Math.pow(a, b);
 				}
@@ -4792,7 +4841,19 @@ function antoniovandrepotencia(a, b)
 
 				b = antoniovandretraduzirexpressaofuncional(b, 0)
 
-				return antoniovandrepotencia(a, eval(b));
+				var e = eval(b);
+
+				var r = antoniovandrepotencia(a, e);
+
+				if (antoniovandrecompararstrings(typeof r, "string") == 1)
+					{
+					if (antoniovandrecompararstrings(r, "0^0 não existe.") == 1)
+						return "0^0 não existe.";
+
+					if (antoniovandrecompararstrings(r, "Expoente negativo para 0.") == 1)
+						return "Expoente negativo para 0.";
+					}
+				else return r;
 				}
 			else
 				{
@@ -4804,6 +4865,9 @@ function antoniovandrepotencia(a, b)
 
 						return (-1) * antoniovandreexp(eval(eval(b) * antoniovandreln(antoniovandremodulo(a))))*/
 
+						if ((a == 0) && (b == 0)) return "0^0 não existe.";
+						if ((a == 0) && (b < 0)) return "Expoente negativo para 0.";
+
 						return (-1) * Math.pow(antoniovandremodulo(a), b);
 						}
 					else
@@ -4814,6 +4878,9 @@ function antoniovandrepotencia(a, b)
 /*					Se desejando uma implementação por aproximação por Taylor.
 
 					return antoniovandreexp(eval(b * antoniovandreln(a)))*/
+
+					if ((a == 0) && (b == 0)) return "0^0 não existe.";
+					if ((a == 0) && (b < 0)) return "Expoente negativo para 0.";
 
 					return Math.pow(a, b);
 					}
@@ -4843,10 +4910,18 @@ function antoniovandresqrtn(x, n)
 
 			n = antoniovandretraduzirexpressaofuncional(n, 0)
 
-			return antoniovandrepotencia(eval(x), 1 / eval(n));
+			var e = eval(n);
+
+			if (e == 0) return "O radicando não pode ser nulo.";
+
+			return antoniovandrepotencia(eval(x), 1 / e);
 			}
 		else
-			return antoniovandrepotencia(eval(x), 1 / n)
+			{
+			if (n == 0) return "O radicando não pode ser nulo.";
+
+			return antoniovandrepotencia(eval(x), 1 / n);
+			}
 		}
 	else
 		{
@@ -4857,10 +4932,18 @@ function antoniovandresqrtn(x, n)
 
 			n = antoniovandretraduzirexpressaofuncional(n, 0)
 
-			return antoniovandrepotencia(x, 1 / eval(n));
+			var e = eval(n);
+
+			if (e == 0) return "O radicando não pode ser nulo.";
+
+			return antoniovandrepotencia(x, 1 / e);
 			}
 		else
-			return antoniovandrepotencia(x, 1 / n)
+			{
+			if (n == 0) return "O radicando não pode ser nulo.";
+
+			return antoniovandrepotencia(x, 1 / n);
+			}
 		}
 	}
 
@@ -5092,7 +5175,11 @@ function antoniovandresqrt(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		var lx = antoniovandreln(eval(x));
+		var e = eval(x);
+
+		if (x == 0) return 0;
+
+		var lx = antoniovandreln(e);
 
 		if (antoniovandrenumeroreal(lx.toString()) == "e")
 			return "O radicando deve ser um número real não negativo."
@@ -5126,12 +5213,18 @@ function antoniovandresqrt3(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		return antoniovandresqrt3(eval(x));
+		var e = eval(x);
+
+		if (e == 0) return 0;
+
+		return antoniovandresqrt3(e);
 		}
 	else
 		{
 		if (! (antoniovandrenumerorealnaonegativo(x.toString()) == "e"))
 			{
+			if (x == 0) return 0;
+
 			var lx = antoniovandreln(x);
 
 			if (antoniovandrenumeroreal(lx.toString()) == "e")
@@ -6765,11 +6858,11 @@ function antoniovandretraduzirexpressaofuncional(str, verificacao)
 
 	switch (verificacao)
 		{
+		case 0:
+			break;
 		case 1:
 			if (antoniovandreexpressaofuncaovalida(str) == "e")
 				return "e";
-			break;
-		case 0:
 			break;
 		default:
 			return "e";
@@ -6779,10 +6872,12 @@ function antoniovandretraduzirexpressaofuncional(str, verificacao)
 
 	try{retornoev = eval(retorno);} catch (e) {return "e";}
 
-	if (antoniovandrenumero(retornoev.toString()) != "e")
+	if (antoniovandrecompararstrings(typeof retornoev, "string") == 1)
 		return retorno
+	else if (antoniovandrenumero(retornoev.toString()) == "e")
+		return "e"
 	else
-		return "e";
+		return retorno;
 	}
 
 // Limite de uma função contínua. Argumentos: primeiro: uma string, separada por ponto e vírgula ";", onde há a expressão da função, que deve ser na variável "x", o ponto do domínio considerado, e o tipo de cálculo: "definicao" para limite; "esquerda" para limite lateral à esquerda, ou "direita" para limite lateral à direita; e, segundo, -1 para exibir o aviso anexo.
