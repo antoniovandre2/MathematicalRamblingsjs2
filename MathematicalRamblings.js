@@ -5101,6 +5101,8 @@ function antoniovandresqrt(x)
 		}
 	else
 		{
+		if (x == 0) return 0;
+
 		var lx = antoniovandreln(x);
 
 		if (antoniovandrenumeroreal(lx.toString()) == "e")
@@ -6642,6 +6644,17 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 		return "e"
 	else
 		num = parseFloat(x);
+
+	if (num == 0)
+		switch (tiporetorno)
+		{
+		case 0:
+			return "0";
+		case 1:
+			return [0, 1];
+		default:
+			return "e";
+		}
 
 	if (antoniovandremodulo(num) > parseFloat(antoniovandremaximovalorentrada(1)))
 		return antoniovandremensagenserro(1);
