@@ -34622,7 +34622,7 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 -->
 
-Entre com os argumentos separados por duas barras verticais "<span class="notranslate">||</span>": primeiro: separados por barra vertical "<span class="notranslate">|</span>", os pontos extremos do segmento com abscissas separadas das ordenadas por ponto e vírgula "<span class="notranslate">;</span>"; segundo: coeficientes $a$, $b$, $c$ e $d$, do plano $ax + by + cz + d = 0$.
+Entre com os argumentos separados por duas barras verticais "<span class="notranslate">||</span>": primeiro: separados por barra vertical "<span class="notranslate">|</span>", os pontos extremos do segmento com abscissas, ordenadas e cotas separadas por ponto e vírgula "<span class="notranslate">;</span>"; segundo: coeficientes $a$, $b$, $c$ e $d$, do plano $ax + by + cz + d = 0$.
 <br><br>
 Exemplo:
 <br><br>
@@ -34650,7 +34650,7 @@ function processarcomprimentoprojecaosegmentoplano()
 	if (out != "e")
 		document.getElementById('resultadocomprimentoprojecaosegmentoplano').value = out
 	else
-		document.getElementById('resultadocomprimentoprojecaosegmentoplano').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com os argumentos separado por duas barras verticais \"||\": primeiro: separados por barra vertical \"|\", os pontos extremos do segmento com abscissas separadas das ordenadas por ponto e vírgula \";\"; segundo: coeficientes \"a\", \"b\" e \"c\", da reta \"ax + by + c = 0\".";
+		document.getElementById('resultadocomprimentoprojecaosegmentoplano').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com os argumentos separado por duas barras verticais \"||\": primeiro: separados por barra vertical \"|\", os pontos extremos do segmento com abscissas, ordenadas e cotas separadas por ponto e vírgula \";\"; segundo: coeficientes \"a\", \"b\" e \"c\", da reta \"ax + by + c = 0\".";
 	}
 
 </script>
@@ -34671,7 +34671,7 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 -->
 
-uma string separada por barra vertical "<span class="notranslate">|</span>" contendo os vértices do triângulo com abscissas, ordenadas e cotas separadas por ponto e vírgula "<span class="notranslate">;</span>".
+Entre com uma string separada por barra vertical "<span class="notranslate">|</span>" contendo os vértices do triângulo com abscissas, ordenadas e cotas separadas por ponto e vírgula "<span class="notranslate">;</span>".
 <br><br>
 Exemplo:
 <br><br>
@@ -34699,8 +34699,57 @@ function processarareatrianguloespaco()
 	if (out != "e")
 		document.getElementById('resultadoareatrianguloespaco').value = out
 	else
-		document.getElementById('resultadoareatrianguloespaco').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com os argumentos separados por duas barras verticais \"||\": primeiro: uma string separada por barra vertical \"|\" onde cada elemento é um ponto onde as coordenadas são separadas por ponto e vírgula \";\"; segundo \"r\" para radianos ou \"g\" para graus.";
+		document.getElementById('resultadoareatrianguloespaco').value = antoniovandreoperadoresfuncoesconstantes(4) + "Entre com uma string separada por barra vertical \"\" contendo os vértices do triângulo com abscissas, ordenadas e cotas separadas por ponto e vírgula \";\"."
 	}
+
+</script>
+
+<br><br>
+
+<h2>Calculadora: área da projeção de um triângulo em um plano.</h2>
+
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: área da projeção de um triângulo em um plano.
+
+Dependências: "MathematicalRamblings.js", MathJax.
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
+
+Área da projeção de um triângulo em um plano. Argumentos: primeiro global: separado por duas barras verticais "<span class="notranslate">||</span>": primeiro: separados por barra vertical "<span class="notranslate">|</span>", os vértices do triângulo com abscissas, ordenadas e cotas separadas por ponto e vírgula "<span class="notranslate">;</span>"; segundo: coeficientes $a$, $b$, $c$ e $d$, do plano $ax + by + cz + d = 0$.
+<br><br>
+Exemplo:
+<br><br>
+Input: "<span class="notranslate">2; pi; 1 | 2; 1; cos(3) | 2; 0; 0 || 3; 4; 5; log(3, 2)</span>". Output: aproximadamente "<span class="notranslate">0.8718951502761744</span>".
+<br><br>
+<table border="1" width="100%"><tr><td><input type="text" name="argumentosareaprojecaotrianguloplano" style="width : 100%"></td></tr></table>
+<br>
+<input type="button" onclick="processarareaprojecaotrianguloplano()" value="Calcular">
+<br><br>
+Área do triângulo projetado:
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadoareaprojecaotrianguloplano" id="resultadoareaprojecaotrianguloplano" readonly rows="3"></textarea></td></tr></table>
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadoareaprojecaotrianguloplanoavisoanexo" id="resultadoareaprojecaotrianguloplanoavisoanexo" readonly rows="5"></textarea></td></tr></table>
+
+<script>
+
+document.getElementById('resultadoareaprojecaotrianguloplanoavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
+
+function processarareaprojecaotrianguloplano()
+    {
+    var str = document.getElementsByName('argumentosareaprojecaotrianguloplano');
+    var out = antoniovandreareaprojecaotrianguloplano(str[0].value, 0);
+
+    if (out != "e")
+        document.getElementById('resultadoareaprojecaotrianguloplano').value = out
+    else
+        document.getElementById('resultadoareaprojecaotrianguloplano').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com, separado por duas barras verticais \"||\": primeiro: separados por barra vertical \"|\", os vértices do triângulo com abscissas, ordenadas e cotas separadas por ponto e vírgula \";\"; segundo: coeficientes \"a\", \"b\", \"c\" e \"d\", do plano \"ax + by + cz + d = 0\".";
+    }
 
 </script>
 

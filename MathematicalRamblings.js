@@ -12122,7 +12122,7 @@ function antoniovandrecomprimentoprojecaosegmentoreta(str, retorno)
 		}
 	}
 
-// Comprimento da projeção de um segmento em um plano. Argumentos: primeiro global: separado por duas barras verticais "||": primeiro: separados por barra vertical "|", os pontos extremos do segmento com abscissas separadas das ordenadas por ponto e vírgula ";"; segundo: coeficientes "a", "b", "c" e "d", do plano "ax + by + cz + d = 0"; segundo global: 0 para retornar string, ou 1 para retornar valor.
+// Comprimento da projeção de um segmento em um plano. Argumentos: primeiro global: separado por duas barras verticais "||": primeiro: separados por barra vertical "|", os pontos extremos do segmento com abscissas, ordenadas e cotas separadas por ponto e vírgula ";"; segundo: coeficientes "a", "b", "c" e "d", do plano "ax + by + cz + d = 0"; segundo global: 0 para retornar string, ou 1 para retornar valor.
 
 function antoniovandrecomprimentoprojecaosegmentoplano(str, retorno)
 	{
@@ -12242,6 +12242,9 @@ function antoniovandreareatrianguloespaco(str, retorno)
 
 	var A = antoniovandresqrt(((M[0][1] - M[1][1]) * (M[2][2] - M[1][2]) - (M[0][2] - M[1][2]) * (M[2][1] - M[1][1])) * ((M[0][1] - M[1][1]) * (M[2][2] - M[1][2]) - (M[0][2] - M[1][2]) * (M[2][1] - M[1][1]))+ ((M[0][2] - M[1][2]) * (M[2][0] - M[1][0]) - (M[0][0] - M[1][0]) * (M[2][2] - M[1][2])) * ((M[0][2] - M[1][2]) * (M[2][0] - M[1][0]) - (M[0][0] - M[1][0]) * (M[2][2] - M[1][2])) + ((M[0][0] - M[1][0]) * (M[2][1] - M[1][1]) - (M[0][1] - M[1][1]) * (M[2][0] - M[1][0])) * ((M[0][0] - M[1][0]) * (M[2][1] - M[1][1]) - (M[0][1] - M[1][1]) * (M[2][0] - M[1][0]))) / 2;
 
+	if (antoniovandremodulo(A) > antoniovandremaximovalorsaida(1))
+		return antoniovandremensagenserro(5);
+
 	switch (retorno)
 		{
 		case 0:
@@ -12253,6 +12256,81 @@ function antoniovandreareatrianguloespaco(str, retorno)
 				return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString();
 		case 1:
 			return antoniovandreformatarreal(A);
+		default:
+			return "e";
+		}
+	}
+
+// Área da projeção de um triângulo em um plano. Argumentos: primeiro global: separado por duas barras verticais "||": primeiro: separados por barra vertical "|", os vértices do triângulo com abscissas, ordenadas e cotas separadas por ponto e vírgula ";"; segundo: coeficientes "a", "b", "c" e "d", do plano "ax + by + cz + d = 0"; segundo global: 0 para retornar string, ou 1 para retornar valor.
+
+function antoniovandreareaprojecaotrianguloplano(str, retorno)
+	{
+	var argumentos = str.split("||");
+
+	if (argumentos.length != 2) return "e";
+
+	var arr = argumentos[0].split("|");
+
+	if (arr.length != 3) return "e";
+
+	var ponto1 = antoniovandreprojecaopontoplano(arr[0] + " | " + argumentos[1], 1);
+	var ponto2 = antoniovandreprojecaopontoplano(arr[1] + " | " + argumentos[1], 1);
+	var ponto3 = antoniovandreprojecaopontoplano(arr[2] + " | " + argumentos[1], 1);
+
+	if ((ponto1 == "e") || (ponto2 == "e") || (ponto3 == "e")) return "e";
+
+	if (antoniovandrecompararstrings(typeof ponto1, "string") == 1)
+		{
+		if (antoniovandrecompararstrings(ponto1, antoniovandremensagenserro(2)) == 1)
+			return antoniovandremensagenserro(2);
+
+		if (antoniovandrecompararstrings(ponto1, antoniovandremensagenserro(6)) == 1)
+			return antoniovandremensagenserro(6);
+
+		if (antoniovandrecompararstrings(ponto1, "Ao menos um coeficiente de variável deve ser não nulo.") == 1)
+			return "Ao menos um coeficiente de variável deve ser não nulo.";
+		}
+
+	if (antoniovandrecompararstrings(typeof ponto2, "string") == 1)
+		{
+		if (antoniovandrecompararstrings(ponto2, antoniovandremensagenserro(2)) == 1)
+			return antoniovandremensagenserro(2);
+
+		if (antoniovandrecompararstrings(ponto2, antoniovandremensagenserro(6)) == 1)
+			return antoniovandremensagenserro(6);
+
+		if (antoniovandrecompararstrings(ponto2, "Ao menos um coeficiente de variável deve ser não nulo.") == 1)
+			return "Ao menos um coeficiente de variável deve ser não nulo.";
+		}
+
+	if (antoniovandrecompararstrings(typeof ponto3, "string") == 1)
+		{
+		if (antoniovandrecompararstrings(ponto3, antoniovandremensagenserro(2)) == 1)
+			return antoniovandremensagenserro(2);
+
+		if (antoniovandrecompararstrings(ponto3, antoniovandremensagenserro(6)) == 1)
+			return antoniovandremensagenserro(6);
+
+		if (antoniovandrecompararstrings(ponto3, "Ao menos um coeficiente de variável deve ser não nulo.") == 1)
+			return "Ao menos um coeficiente de variável deve ser não nulo.";
+		}
+
+	var A = antoniovandreareatrianguloespaco(ponto1[0].toString() + "; " + ponto1[1].toString() + "; " + ponto1[2].toString() + " | " + ponto2[0].toString() + "; " + ponto2[1].toString() + "; " + ponto2[2].toString() + " | " + ponto3[0].toString() + "; " + ponto3[1].toString() + "; " + ponto3[2].toString(), 1);
+
+	if (antoniovandrecompararstrings(A, antoniovandremensagenserro(6)) == 1)
+		return antoniovandremensagenserro(6);
+
+	switch (retorno)
+		{
+		case 0:
+			var coef = antoniovandrefracaogeratriz(A, 1);
+
+			if (coef[1] == 1)
+				return antoniovandreformatarreal(coef[0]).toString()
+			else
+				return antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString();
+		case 1:
+			return antoniovandreformatarreal(antoniovandresqrt((ponto1[0] - ponto2[0]) * (ponto1[0] - ponto2[0]) + (ponto1[1] - ponto2[1]) * (ponto1[1] - ponto2[1]) + (ponto1[2] - ponto2[2]) * (ponto1[2] - ponto2[2])));
 		default:
 			return "e";
 		}
