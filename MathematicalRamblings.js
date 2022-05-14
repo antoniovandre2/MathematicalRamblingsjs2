@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 13-05-2022. Não considerando alterações em macros.
+// Última atualização: 14-05-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "13-05-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "14-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -4746,23 +4746,8 @@ function antoniovandrepotencia(a, b)
 
 			return antoniovandreexp(eval(b.toString()) * antoniovandreln(eval(a).toString()));*/
 
-			var e = eval(a);
-			var e2 = eval(b);
 
-			if ((e == 0) && (e2 == 0)) return "0^0 não existe.";
-			if ((e == 0) && (e2 < 0)) return "Expoente negativo para 0.";
-
-			var r = antoniovandrepotencia(e, e2);
-
-			if (antoniovandrecompararstrings(typeof r, "string") == 1)
-				{
-				if (antoniovandrecompararstrings(r, "0^0 não existe.") == 1)
-					return "0^0 não existe.";
-
-				if (antoniovandrecompararstrings(r, "Expoente negativo para 0.") == 1)
-					return "Expoente negativo para 0.";
-				}
-			else return r;
+			return antoniovandrepotencia(eval(a), eval(b));
 			}
 		else
 			{
@@ -4770,22 +4755,7 @@ function antoniovandrepotencia(a, b)
 
 			return antoniovandreexp(eval(b * antoniovandreln(eval(a).toString())));*/
 
-			var e = eval(a);
-
-			if ((e == 0) && (b == 0)) return "0^0 não existe.";
-			if ((e == 0) && (b < 0)) return "Expoente negativo para 0.";
-
-			var r = antoniovandrepotencia(e, b);
-
-			if (antoniovandrecompararstrings(typeof r, "string") == 1)
-				{
-				if (antoniovandrecompararstrings(r, "0^0 não existe.") == 1)
-					return "0^0 não existe.";
-
-				if (antoniovandrecompararstrings(r, "Expoente negativo para 0.") == 1)
-					return "Expoente negativo para 0.";
-				}
-			else return r;
+			return antoniovandrepotencia(eval(a), b);
 			}
 		}
 	else
@@ -4803,22 +4773,7 @@ function antoniovandrepotencia(a, b)
 
 				return antoniovandreexp(eval(b.toString()) * antoniovandreln(a));*/
 
-				var e = eval(b);
-
-				if ((a == 0) && (e == 0)) return "0^0 não existe.";
-				if ((a == 0) && (e < 0)) return "Expoente negativo para 0.";
-
-				var r = antoniovandrepotencia(a, e);
-
-				if (antoniovandrecompararstrings(typeof r, "string") == 1)
-					{
-					if (antoniovandrecompararstrings(r, "0^0 não existe.") == 1)
-						return "0^0 não existe.";
-
-					if (antoniovandrecompararstrings(r, "Expoente negativo para 0.") == 1)
-						return "Expoente negativo para 0.";
-					}
-				else return r;
+				return antoniovandrepotencia(a, eval(b));
 				}
 			else
 				{
@@ -4841,19 +4796,7 @@ function antoniovandrepotencia(a, b)
 
 				b = antoniovandretraduzirexpressaofuncional(b, 0)
 
-				var e = eval(b);
-
-				var r = antoniovandrepotencia(a, e);
-
-				if (antoniovandrecompararstrings(typeof r, "string") == 1)
-					{
-					if (antoniovandrecompararstrings(r, "0^0 não existe.") == 1)
-						return "0^0 não existe.";
-
-					if (antoniovandrecompararstrings(r, "Expoente negativo para 0.") == 1)
-						return "Expoente negativo para 0.";
-					}
-				else return r;
+				return antoniovandrepotencia(a, eval(b));
 				}
 			else
 				{
@@ -4865,9 +4808,6 @@ function antoniovandrepotencia(a, b)
 
 						return (-1) * antoniovandreexp(eval(eval(b) * antoniovandreln(antoniovandremodulo(a))))*/
 
-						if ((a == 0) && (b == 0)) return "0^0 não existe.";
-						if ((a == 0) && (b < 0)) return "Expoente negativo para 0.";
-
 						return (-1) * Math.pow(antoniovandremodulo(a), b);
 						}
 					else
@@ -4878,9 +4818,6 @@ function antoniovandrepotencia(a, b)
 /*					Se desejando uma implementação por aproximação por Taylor.
 
 					return antoniovandreexp(eval(b * antoniovandreln(a)))*/
-
-					if ((a == 0) && (b == 0)) return "0^0 não existe.";
-					if ((a == 0) && (b < 0)) return "Expoente negativo para 0.";
 
 					return Math.pow(a, b);
 					}
@@ -5213,11 +5150,7 @@ function antoniovandresqrt3(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		var e = eval(x);
-
-		if (e == 0) return 0;
-
-		return antoniovandresqrt3(e);
+		return antoniovandresqrt3(eval(x));
 		}
 	else
 		{
