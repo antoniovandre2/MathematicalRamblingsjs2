@@ -1,4 +1,4 @@
-Número de acertos: 1394. Número de erros: 4. MD5sum: 1c5473984bec6b43cd4155e61e13fe40.
+Número de acertos: 1407. Número de erros: 4. MD5sum: 1b0b82026613d5992cf4c8f97d664ef9.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -1397,3 +1397,16 @@ Quanto é 29 - 59? Resposta: -30. Acertou. Em 7/1/2022 @ 19:1:44.
 Quanto é 86 - 39? Resposta: 47. Acertou. Em 7/1/2022 @ 19:2:12.
 Quanto é 99 / 11? Resposta: 9. Acertou. Em 7/1/2022 @ 19:2:19.
 Quanto é 14 / 2? Resposta: 7. Acertou. Em 7/1/2022 @ 19:2:24.
+Quanto é 10 x 4? Resposta: 40. Acertou. Em 17/1/2022 @ 20:38:5.
+Quanto é 37 - 43? Resposta: -6. Acertou. Em 17/1/2022 @ 20:38:49.
+Quanto é 77 / 77? Resposta: 1. Acertou. Em 17/1/2022 @ 20:38:53.
+Quanto é 59 + 66? Resposta: 125. Acertou. Em 17/1/2022 @ 20:39:23.
+Quanto é 15 - 72? Resposta: -57. Acertou. Em 17/1/2022 @ 20:39:44.
+Quanto é 0 / 60? Resposta: 0. Acertou. Em 17/1/2022 @ 20:41:56.
+Quanto é 16 - 86? Resposta: -70. Acertou. Em 17/1/2022 @ 20:42:23.
+Quanto é 14 x 6? Resposta: 84. Acertou. Em 17/1/2022 @ 20:52:31.
+Quanto é 6 / 3? Resposta: 2. Acertou. Em 17/1/2022 @ 21:10:23.
+Quanto é 2^4? Resposta: 16. Acertou. Em 17/1/2022 @ 21:10:35.
+Quanto é 6 x 3? Resposta: 18. Acertou. Em 17/1/2022 @ 21:10:41.
+Quanto é 8 + 50? Resposta: 58. Acertou. Em 17/1/2022 @ 21:10:47.
+Quanto é 37 - 22? Resposta: 15. Acertou. Em 17/1/2022 @ 21:11:1.
