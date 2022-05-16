@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 14-05-2022. Não considerando alterações em macros.
+// Última atualização: 16-05-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "14-05-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "16-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -12374,6 +12374,131 @@ function antoniovandreareaprojecaotrianguloplano(str, retorno)
 			return "e";
 		}
 	}
+
+// Intersecção entre duas retas. Argumentos globais: primeiro: uma string contendo separadas por barra vertical "|", as retas na forma "ax + by + c = 0" com coeficientes "a", "b" e "c" separados por ponto e vírgula ";"; segundo: 0 para retornar string ou 1 para retornar vetor. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandreinterseccaoduasretas(str, retorno)
+	{
+	var arr = str[0].value.split("|");
+	var reta1;
+	var reta2;
+
+	if (arr.length != 2) return "e";
+
+		reta1 = arr[0].split(";");
+		reta2 = arr[1].split(";");
+
+		if ((reta1.length != 3) || (reta2.length != 3)) return "e";
+
+	if (antoniovandreexpressaofuncaovalida(reta1[0].trim()) == "e") return "e";
+
+	try
+		{
+		var a = eval(antoniovandretraduzirexpressaofuncional(reta1[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(reta1[1].trim()) == "e") return "e";
+
+	try
+		{
+		var b = eval(antoniovandretraduzirexpressaofuncional(reta1[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(reta1[2].trim()) == "e") return "e";
+
+	try
+		{
+		var c = eval(antoniovandretraduzirexpressaofuncional(reta1[2].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(reta2[0].trim()) == "e") return "e";
+
+	try
+		{
+		var d = eval(antoniovandretraduzirexpressaofuncional(reta2[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(reta2[1].trim()) == "e") return "e";
+
+	try
+		{
+		var e = eval(antoniovandretraduzirexpressaofuncional(reta2[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(reta2[2].trim()) == "e") return "e";
+
+	try
+		{
+		var f = eval(antoniovandretraduzirexpressaofuncional(reta2[2].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	var rarr = antoniovandreescalonarmatriz(a.toString() + ", " + b.toString() + ", " + (-c).toString() + "; " + d.toString() + ", " + e.toString() + ", " + (-f).toString() + " | r", 1);
+
+	if (antoniovandrecompararstrings(rarr, antoniovandremensagenserro(2)) == 1)
+		return antoniovandremensagenserro(2);
+
+	if (antoniovandrecompararstrings(rarr, antoniovandremensagenserro(6)) == 1)
+		return antoniovandremensagenserro(6);
+
+	if ((rarr[1][1] == 0) && (rarr[1][2] != 0))
+		return "As retas não se interceptam."
+	else if ((rarr[1][1] == 0) && (rarr[1][2] == 0))
+		return "Retas coincidentes."
+	else
+		{
+		switch (retorno)
+			{
+			case 0:
+			var coef1 = antoniovandrefracaogeratriz(rarr[0][2], 1);
+			var coef2 = antoniovandrefracaogeratriz(rarr[1][2], 1);
+
+			if (coef1[1] == 1)
+				{
+				if (coef2[1] == 1)
+					return antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+				else
+					return antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString()
+				}
+			else
+				{
+				if (coef2[1] == 1)
+					return antoniovandreformatarreal(coef1[0]).toString() + " / " + antoniovandreformatarreal(coef1[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+				else
+					return antoniovandreformatarreal(coef1[0]).toString() + " / " + antoniovandreformatarreal(coef1[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString()
+				}
+
+			case 1:
+				return [rarr[0][2], rarr[1][2]];
+
+			default:
+				return "e";
+			}
+		}
+	}	
 
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 

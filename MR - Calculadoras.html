@@ -8,7 +8,7 @@ Compilação das calculadoras JavaScript do Mathematical Ramblings.
 
 Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
-Última atualização: 13-05-2022.
+Última atualização: 16-05-2022.
 
 -->
 
@@ -34751,6 +34751,51 @@ function processarareaprojecaotrianguloplano()
         document.getElementById('resultadoareaprojecaotrianguloplano').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com, separado por duas barras verticais \"||\": primeiro: separados por barra vertical \"|\", os vértices do triângulo com abscissas, ordenadas e cotas separadas por ponto e vírgula \";\"; segundo: coeficientes \"a\", \"b\", \"c\" e \"d\", do plano \"ax + by + cz + d = 0\".";
     }
 
+</script>
+
+<br><br>
+
+<h2>Calculadora: intersecção entre duas retas.</h2>
+
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: intersecção entre duas retas.
+
+Dependências: "MathematicalRamblings.js", MathJax.
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
+
+Entre com, separadas por barra vertical "<span class="notranslate">|</span>", as retas na forma $ax + by + c = 0$ com coeficientes $a$, $b$ e $c$ separados por ponto e vírgula "<span class="notranslate">;</span>".
+<br><br>
+Exemplos:
+<br><br>
+Input: "<span class="notranslate">1; 1; 0 | -1; 1; 3". Output: "<span class="notranslate">3 / 2, -3 / 2</span>".
+<br><br>
+Input: "<span class="notranslate">pi; euler; 4 | 5; log(10, 2); 1</span>". Output: "<span class="notranslate">3.34977667, -5.342946278</span>".
+<br><br>
+
+<table border="1" width="100%"><tr><td><input type="text" name="argumentosinterseccaoduasretas" style="width : 100%"></td></tr></table>
+<br>
+<input type="button" onclick="processarinterseccaoduasretas()" value="Calcular">
+<br><br>
+Intersecção das retas:
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadointerseccaoduasretas" id="resultadointerseccaoduasretas" readonly rows="3"></textarea></td></tr></table>
+<script>
+function processarinterseccaoduasretas()
+	{
+	var str = document.getElementsByName('argumentosinterseccaoduasretas');
+    var out = antoniovandreinterseccaoduasretas(str, 0);
+
+	if (out != "e")
+		document.getElementById('resultadointerseccaoduasretas').value = out
+	else
+		document.getElementById('resultadointerseccaoduasretas').value = "Entre com, separadas por barra vertical \"|\", as retas na forma \"ax + by + c = 0\" com coeficientes \"a\", \"b\" e \"c\" separados por ponto e vírgula \";\".";
+	}
 </script>
 
 </body>
