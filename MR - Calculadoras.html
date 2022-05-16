@@ -34785,7 +34785,13 @@ Input: "<span class="notranslate">pi; euler; 4 | 5; log(10, 2); 1</span>". Outpu
 Intersecção das retas:
 <br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadointerseccaoduasretas" id="resultadointerseccaoduasretas" readonly rows="3"></textarea></td></tr></table>
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadointerseccaoduasretasavisoanexo" id="resultadointerseccaoduasretasavisoanexo" readonly rows="5"></textarea></td></tr></table>
+
 <script>
+
+document.getElementById('resultadointerseccaoduasretasavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
+
 function processarinterseccaoduasretas()
 	{
 	var str = document.getElementsByName('argumentosinterseccaoduasretas');
