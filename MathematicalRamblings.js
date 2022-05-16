@@ -12500,6 +12500,181 @@ function antoniovandreinterseccaoduasretas(str, retorno)
 		}
 	}	
 
+// Intersecções entre uma reta e uma circunferência. Argumentos globais: primeiro: uma string contendo separadas por barra vertical "|", a reta na forma "ax + by + c = 0" com coeficientes "a", "b" e "c" separados por ponto e vírgula ";" e a circunferência consistindo da abscissa de seu centro, a ordenada de seu centro, e o seu raio, separados por ponto e vírgula ";"; segundo: 0 para retornar string ou 1 para retornar vetor. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandreinterseccoesretacircunferencia(str, retorno)
+	{
+	var arr = str[0].value.split("|");
+	var reta;
+	var circ;
+
+	if (arr.length != 2) return "e";
+
+		reta = arr[0].split(";");
+		circ = arr[1].split(";");
+
+		if ((reta.length != 3) || (circ.length != 3)) return "e";
+
+	if (antoniovandreexpressaofuncaovalida(reta[0].trim()) == "e") return "e";
+
+	try
+		{
+		var a = eval(antoniovandretraduzirexpressaofuncional(reta[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(reta[1].trim()) == "e") return "e";
+
+	try
+		{
+		var b = eval(antoniovandretraduzirexpressaofuncional(reta[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(reta[2].trim()) == "e") return "e";
+
+	try
+		{
+		var c = eval(antoniovandretraduzirexpressaofuncional(reta[2].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(circ[0].trim()) == "e") return "e";
+
+	try
+		{
+		var xr = eval(antoniovandretraduzirexpressaofuncional(circ[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(circ[1].trim()) == "e") return "e";
+
+	try
+		{
+		var yr = eval(antoniovandretraduzirexpressaofuncional(circ[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(circ[2].trim()) == "e") return "e";
+
+	try
+		{
+		var r = eval(antoniovandretraduzirexpressaofuncional(circ[2].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (r <= 0) return "O raio deve ser um real positivo.";
+
+	var d = 2 * a * b * yr * yr + ((-2 * b * b - 2 * a * b) * xr + (2 * a * b + 2 * a * a) * c) * yr - a * a * xr * xr - 2 * a * b * c * xr + (b * b + a * a) * r * r - b * b * c * c;
+
+	if (d < 0)
+		return "A reta e a circunferência não se interceptam."
+	else
+		{
+		var r1 = -(b * antoniovandresqrt(d) + (b * b + a * b) * yr - b * b * xr + a * b * c) / (b * b + a * a);
+
+		var r2 = (b * antoniovandresqrt(d) + (-b * b - a * b) * yr + b * b * xr - a * b * c) / (b * b + a * a);
+
+		var coef1 = antoniovandrefracaogeratriz(r1, 1);
+		var coef2 = antoniovandrefracaogeratriz(-a / b * r1 - c, 1);
+		var coef3 = antoniovandrefracaogeratriz(r2, 1);
+		var coef4 = antoniovandrefracaogeratriz(-a / b * r2 - c, 1);
+
+		if (r1 == r2)
+			{
+			switch (retorno)
+				{
+				case 0:
+					if (coef1[1] == 1)
+						{
+						if (coef2[1] == 1)
+							return antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+						else
+							return antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+						}
+					else
+						{
+						if (coef2[1] == 1)
+							return antoniovandreformatarreal(coef1[0]).toString() + " / " + antoniovandreformatarreal(coef1[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+						else
+							return antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+						}
+
+				case 1:
+					return [r1, -a / b * r1 - c];
+
+				default:
+					return "e";
+				}
+			}
+		else
+			{
+			switch (retorno)
+				{
+				case 0:
+					var out = "";
+
+					if (coef1[1] == 1)
+						{
+						if (coef2[1] == 1)
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+						else
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+						}
+					else
+						{
+						if (coef2[1] == 1)
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + " / " + antoniovandreformatarreal(coef1[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+						else
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+						}
+
+					out = out + "\n\n";
+
+					if (coef3[1] == 1)
+						{
+						if (coef4[1] == 1)
+							out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
+						else
+							out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
+						}
+					else
+						{
+						if (coef4[1] == 1)
+							out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
+						else
+							out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
+						}
+
+					return out;
+				case 1:
+					return [[r1, -a / b * r1 - c], [r2, -a / b * r2 - c]];
+
+				default:
+					return "e";
+				}
+			}
+		}
+	}
+
 // Fim escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
 // Início escopos desenvolvidos por terceiros.

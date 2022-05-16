@@ -9346,3 +9346,12 @@ __
 
 Publicado em "mathematicalramblings.blogspot.com".
 _____
+
+Calculadora: intersecções entre uma reta e uma circunferência.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 16-05-2022 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____

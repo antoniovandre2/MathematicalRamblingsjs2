@@ -34773,7 +34773,7 @@ Entre com, separadas por barra vertical "<span class="notranslate">|</span>", as
 <br><br>
 Exemplos:
 <br><br>
-Input: "<span class="notranslate">1; 1; 0 | -1; 1; 3". Output: "<span class="notranslate">3 / 2, -3 / 2</span>".
+Input: "<span class="notranslate">1; 1; 0 | -1; 1; 3</span>". Output: "<span class="notranslate">3 / 2, -3 / 2</span>".
 <br><br>
 Input: "<span class="notranslate">pi; euler; 4 | 5; log(10, 2); 1</span>". Output: "<span class="notranslate">3.34977667, -5.342946278</span>".
 <br><br>
@@ -34801,6 +34801,68 @@ function processarinterseccaoduasretas()
 		document.getElementById('resultadointerseccaoduasretas').value = out
 	else
 		document.getElementById('resultadointerseccaoduasretas').value = "Entre com, separadas por barra vertical \"|\", as retas na forma \"ax + by + c = 0\" com coeficientes \"a\", \"b\" e \"c\" separados por ponto e vírgula \";\".";
+	}
+</script>
+
+<br><br>
+
+<h2>Calculadora: intersecções entre uma reta e uma circunferência.</h2>
+
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: intersecções entre uma reta e uma circunferência.
+
+Dependências: "MathematicalRamblings.js", MathJax.
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
+
+Entre com uma string contendo separadas por barra vertical "<span class="notranslate">|</span>", a reta na forma $ax + by + c = 0$ com coeficientes $a$, $b$ e $c$ separados por ponto e vírgula "<span class="notranslate">;</span>" e a circunferência consistindo da abscissa de seu centro, a ordenada de seu centro, e o seu raio, separados por ponto e vírgula "<span class="notranslate">;</span>".
+<br><br>
+Exemplo:
+<br><br>
+Input:
+<br><br>
+"<span class="notranslate">tg(2); fatorial(3); 3 | -log(10, 2); 2; 4</span>".
+<br><br>
+Output:
+<br><br>
+"
+<br>
+<span class="notranslate">
+-4.659751425365828, -4.696957102885669
+<br><br>
+-1.52247163510813, -3.554443535566035
+<br>
+</span>".
+<br><br>
+
+<table border="1" width="100%"><tr><td><input type="text" name="argumentosinterseccoesretacircunferencia" style="width : 100%"></td></tr></table>
+<br>
+<input type="button" onclick="processarinterseccoesretacircunferencia()" value="Calcular">
+<br><br>
+Intersecções entre a reta e a circunferência:
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadointerseccoesretacircunferencia" id="resultadointerseccoesretacircunferencia" readonly rows="3"></textarea></td></tr></table>
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadointerseccoesretacircunferenciaavisoanexo" id="resultadointerseccoesretacircunferenciaavisoanexo" readonly rows="5"></textarea></td></tr></table>
+
+<script>
+
+document.getElementById('resultadointerseccoesretacircunferenciaavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
+
+function processarinterseccoesretacircunferencia()
+	{
+	var str = document.getElementsByName('argumentosinterseccoesretacircunferencia');
+    var out = antoniovandreinterseccoesretacircunferencia(str, 0);
+
+	if (out != "e")
+		document.getElementById('resultadointerseccoesretacircunferencia').value = out
+	else
+		document.getElementById('resultadointerseccoesretacircunferencia').value = "Entre com, separadas por barra vertical \"|\", as retas na forma \"ax + by + c = 0\" com coeficientes \"a\", \"b\" e \"c\" separados por ponto e vírgula \";\".";
 	}
 </script>
 
