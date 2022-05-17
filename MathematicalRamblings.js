@@ -952,7 +952,7 @@ function antoniovandrenumerointeiro(arr)
 		if (antoniovandrenumeroreal(bufferverificacaonumerica[0]) == "e")
 			flag = 1
 		else
-			if ((! parseInt(bufferverificacaonumerica[0]) && parseInt(bufferverificacaonumerica[0]) != 0) || Math.trunc(antoniovandrenumeroreal(bufferverificacaonumerica[0])) != antoniovandrenumeroreal(bufferverificacaonumerica[0]))
+			if ((! parseInt(bufferverificacaonumerica[0]) && parseInt(bufferverificacaonumerica[0]) != 0) || antoniovandrepiso(antoniovandrenumeroreal(bufferverificacaonumerica[0])) != antoniovandrenumeroreal(bufferverificacaonumerica[0]))
 				flag = 1;
 
 	if (flag == 0)
@@ -1130,11 +1130,11 @@ function antoniovandrecnb(arr)
 		if (flag2 == 0)
 			{
 			var n2 = nb;
-			var q2 = Math.trunc(Math.log(nb) / Math.log(parseInt(nstr[2].trim()))) + 1;
+			var q2 = antoniovandrepiso(Math.log(nb) / Math.log(parseInt(nstr[2].trim()))) + 1;
 
 			for (var i = 0; i < q2; i++)
 				{
-				var c = Math.trunc(n2 / antoniovandrepotencia(parseInt(nstr[2].trim()), q2 - i - 1));
+				var c = antoniovandrepiso(n2 / antoniovandrepotencia(parseInt(nstr[2].trim()), q2 - i - 1));
 
 				s = s + antoniovandrenb(c.toString());
 
@@ -1912,18 +1912,18 @@ function antoniovandreformatarreal(r)
 	if (antoniovandrenumeroreal(r.toString()) == "e")
 		return "e";
 
-	var sft = Math.trunc(Math.log(antoniovandreprecisaoreal(1)) / Math.log(10)) * (-1);
+	var sft = antoniovandrepiso(Math.log(antoniovandreprecisaoreal(1)) / Math.log(10)) * (-1);
 
 	for (var i = 0; i < sft; i++)
 		{
-		if (antoniovandremodulo(Math.trunc(parseFloat(r) * antoniovandrepotencia(10, i)) - parseFloat(r) * antoniovandrepotencia(10, i)) < antoniovandreprecisaoreal(1) * antoniovandrepotencia(10, i))
-			return Math.trunc(parseFloat(r) * antoniovandrepotencia(10, i)) / antoniovandrepotencia(10, i);
+		if (antoniovandremodulo(antoniovandrepiso(parseFloat(r) * antoniovandrepotencia(10, i)) - parseFloat(r) * antoniovandrepotencia(10, i)) < antoniovandreprecisaoreal(1) * antoniovandrepotencia(10, i))
+			return antoniovandrepiso(parseFloat(r) * antoniovandrepotencia(10, i)) / antoniovandrepotencia(10, i);
 
-		if (antoniovandremodulo(Math.trunc(parseFloat(r) * antoniovandrepotencia(10, i) + 1) - parseFloat(r) * antoniovandrepotencia(10, i)) < antoniovandreprecisaoreal(1) * antoniovandrepotencia(10, i))
-			return Math.trunc(parseFloat(r) * antoniovandrepotencia(10, i) + 1) / antoniovandrepotencia(10, i);
+		if (antoniovandremodulo(antoniovandrepiso(parseFloat(r) * antoniovandrepotencia(10, i) + 1) - parseFloat(r) * antoniovandrepotencia(10, i)) < antoniovandreprecisaoreal(1) * antoniovandrepotencia(10, i))
+			return antoniovandrepiso(parseFloat(r) * antoniovandrepotencia(10, i) + 1) / antoniovandrepotencia(10, i);
 
-		if (antoniovandremodulo(Math.trunc(parseFloat(r) * antoniovandrepotencia(10, i) - 1) - parseFloat(r) * antoniovandrepotencia(10, i)) < antoniovandreprecisaoreal(1) * antoniovandrepotencia(10, i))
-			return Math.trunc(parseFloat(r) * antoniovandrepotencia(10, i) - 1) / antoniovandrepotencia(10, i);
+		if (antoniovandremodulo(antoniovandrepiso(parseFloat(r) * antoniovandrepotencia(10, i) - 1) - parseFloat(r) * antoniovandrepotencia(10, i)) < antoniovandreprecisaoreal(1) * antoniovandrepotencia(10, i))
+			return antoniovandrepiso(parseFloat(r) * antoniovandrepotencia(10, i) - 1) / antoniovandrepotencia(10, i);
 
 		if (i == sft - 1) return parseFloat(r);
 		}
@@ -2345,7 +2345,7 @@ function antoniovandrearrayindices(index, colunas, valorminimo, valormaximo)
 		for (var i = colunas - 1; i >= 0; i--)
 			{
 			r = n % antoniovandrepotencia(valormaximo - valorminimo, i);
-			n = Math.trunc(n / antoniovandrepotencia(valormaximo - valorminimo, i));
+			n = antoniovandrepiso(n / antoniovandrepotencia(valormaximo - valorminimo, i));
 			M.push(n);
 			n = r;
 			}
@@ -3048,9 +3048,9 @@ function antoniovandrenomesnumeros(str)
 		return "Números maiores que " + (antoniovandrepotencia(1000, mil + 1) - 1).toString() + " ainda não tem nome de acordo com a base de dados.";
 
 	if (n % 10 == 0)
-		mil2 = Math.trunc(Math.log(n) / Math.log(10)) + 2
+		mil2 = antoniovandrepiso(Math.log(n) / Math.log(10)) + 2
 	else
-		mil2 = Math.trunc(Math.log(n) / Math.log(10)) + 1;
+		mil2 = antoniovandrepiso(Math.log(n) / Math.log(10)) + 1;
 
 	mil3 = mil2;
 
@@ -3076,12 +3076,12 @@ function antoniovandrenomesnumeros(str)
 		flag6 = 0;
 		flag9 = 0;
 
-		n2 = Math.trunc(n / antoniovandrepotencia(1000, Math.trunc((mil2 - 1) / 3)));
+		n2 = antoniovandrepiso(n / antoniovandrepotencia(1000, antoniovandrepiso((mil2 - 1) / 3)));
 
 		n2 = n2 % 1000;
 
 		if (mil2 % 3 != 0)
-			mil4 = mil2 % (Math.trunc(mil2 / 3) * 3)
+			mil4 = mil2 % (antoniovandrepiso(mil2 / 3) * 3)
 		else
 			mil4 = 3;
 
@@ -3165,16 +3165,16 @@ function antoniovandrenomesnumeros(str)
 			if (i == 0)
 				if (flag2 == 1)
 					{
-					if (Math.trunc((mil2 - 1) / 3) > 0 && flag7 == 0)
+					if (antoniovandrepiso((mil2 - 1) / 3) > 0 && flag7 == 0)
 						{
 						outputstr = outputstr + " ";
 						flag5 = 1;
 						}
 
 					if (flag == 0)
-						outputstr = outputstr + antoniovandrenomenumeros(0, Math.trunc((mil2 - 1) / 3), 0, 0)[1][1]
+						outputstr = outputstr + antoniovandrenomenumeros(0, antoniovandrepiso((mil2 - 1) / 3), 0, 0)[1][1]
 					else
-						outputstr = outputstr + antoniovandrenomenumeros(0, Math.trunc((mil2 - 1) / 3), 0, 0)[1][0];
+						outputstr = outputstr + antoniovandrenomenumeros(0, antoniovandrepiso((mil2 - 1) / 3), 0, 0)[1][0];
 					}
 				else
 					if (flag5 == 1)
@@ -3185,7 +3185,7 @@ function antoniovandrenomesnumeros(str)
 			}
 
 		if (mil2 % 3 != 0)
-			mil2 -= mil2 % (Math.trunc(mil2 / 3) * 3)
+			mil2 -= mil2 % (antoniovandrepiso(mil2 / 3) * 3)
 		else
 			mil2 -= 3;
 		} while (mil2 > 0);
@@ -3204,7 +3204,7 @@ function antoniovandrevalorabsoluto(str, v, saida)
 	if (antoniovandrenumeroreal(str.toString()) == "e" || antoniovandrenumerointeiro(v.toString()) == "e")
 		return "e";
 
-	r = Math.trunc(parseFloat(str) / antoniovandrepotencia(10, parseInt(v)));
+	r = antoniovandrepiso(parseFloat(str) / antoniovandrepotencia(10, parseInt(v)));
 
 	r = r % 10;
 
@@ -3240,7 +3240,7 @@ function antoniovandreconversaoalgarismosromanos(str)
 	if (n > 1000000)
 		return "\\text{Os algarismos romanos escrevem números até o limite de 1000000.}";
 
-	int = Math.trunc(n, 1000000)
+	int = antoniovandrepiso(n, 1000000)
 	resto = n % 1000000;
 
 	if (int == 1)
@@ -3252,7 +3252,7 @@ function antoniovandreconversaoalgarismosromanos(str)
 
 	do
 		{
-		int = Math.trunc(n / antoniovandrepotencia(10, i));
+		int = antoniovandrepiso(n / antoniovandrepotencia(10, i));
 		resto = n % antoniovandrepotencia(10, i);
 
 		if (int == 9)
@@ -4596,7 +4596,7 @@ function antoniovandreaproximacaotaylor(str)
 
 	if (antoniovandrepolinomio(pol) != "e")
 		{
-		result = parseFloat(parseFloat(antoniovandrevalornumericopolinomio(pol + ", x = " + args[1].toString().trim()).replace(/ /g,'')).toFixed(Math.trunc(Math.log(antoniovandreprecisaoreal(1)) / Math.log(10)) * (-1)));
+		result = parseFloat(parseFloat(antoniovandrevalornumericopolinomio(pol + ", x = " + args[1].toString().trim()).replace(/ /g,'')).toFixed(antoniovandrepiso(Math.log(antoniovandreprecisaoreal(1)) / Math.log(10)) * (-1)));
 
 		if (antoniovandremodulo(result) > parseFloat(antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(5);
@@ -5679,28 +5679,6 @@ function antoniovandrecombinacoesescopofuncoes(x, y)
 		return antoniovandrecombinacoes(x, y);
 	}
 
-// Radianos para graus. Retorna a string "e" se um erro genérico ocorre.
-
-function antoniovandreradgrau(x)
-	{
-	if (arguments.length != 1)
-		return "e";
-
-	if (antoniovandrenumeroreal(x.toString()) == "e")
-		{
-		if (antoniovandreexpressaofuncaovalida(x) == "e")
-			return "e";
-
-		x = antoniovandretraduzirexpressaofuncional(x, 0)
-
-		return antoniovandreradgrau(eval(x));
-		}
-	else
-		{
-		return x * 180 / (antoniovandrepi());
-		}
-	}
-
 // Graus para radianos. Retorna a string "e" se um erro genérico ocorre.
 
 function antoniovandregraurad(x)
@@ -5723,6 +5701,28 @@ function antoniovandregraurad(x)
 		}
 	}
 
+// Radianos para graus. Retorna a string "e" se um erro genérico ocorre.
+
+function antoniovandreradgrau(x)
+	{
+	if (arguments.length != 1)
+		return "e";
+
+	if (antoniovandrenumeroreal(x.toString()) == "e")
+		{
+		if (antoniovandreexpressaofuncaovalida(x) == "e")
+			return "e";
+
+		x = antoniovandretraduzirexpressaofuncional(x, 0)
+
+		return antoniovandreradgrau(eval(x));
+		}
+	else
+		{
+		return x * 180 / (antoniovandrepi());
+		}
+	}
+
 // Graus para grados. Retorna a string "e" se um erro genérico ocorre.
 
 function antoniovandregraugrad(x)
@@ -5742,6 +5742,28 @@ function antoniovandregraugrad(x)
 	else
 		{
 		return x * 10 / 9;
+		}
+	}
+
+// Graus para grados. Retorna a string "e" se um erro genérico ocorre.
+
+function antoniovandregradgrau(x)
+	{
+	if (arguments.length != 1)
+		return "e";
+
+	if (antoniovandrenumeroreal(x.toString()) == "e")
+		{
+		if (antoniovandreexpressaofuncaovalida(x) == "e")
+			return "e";
+
+		x = antoniovandretraduzirexpressaofuncional(x, 0)
+
+		return antoniovandregradgrau(eval(x));
+		}
+	else
+		{
+		return x * 0.9;
 		}
 	}
 
@@ -5786,6 +5808,36 @@ function antoniovandregradrad(x)
 	else
 		{
 		return x * (antoniovandrepi()) / 200;
+		}
+	}
+
+// Arredondar. Retorna a string "e" se um erro genérico ocorre.
+
+function antoniovandrearredondar(x)
+	{
+	if (arguments.length != 1)
+		return "e";
+
+	if (antoniovandrenumeroreal(x.toString()) == "e")
+		{
+		if (antoniovandreexpressaofuncaovalida(x) == "e")
+			return "e";
+
+		x = antoniovandretraduzirexpressaofuncional(x, 0)
+
+		return antoniovandrearredondar(eval(x));
+		}
+	else
+		{
+		if (x >= 0)
+			return Math.round(x)
+		else
+			{
+			if ((x - antoniovandrepiso(x)) * 2 == 1)
+				return Math.round(x) - 1
+			else
+				return Math.round(x);
+			}
 		}
 	}
 
@@ -6425,11 +6477,11 @@ function antoniovandreoperadoresfuncoesconstantes(i)
 	switch (i)
 		{
 		case 1:
-			return "Relações, operadores, funções e constantes disponíveis na base de dados (última atualização: 17-05-2022):\n\n\">=\": relação maior ou igual;\n\"<=\": relação menor ou igual;\n\">\": relação maior;\n\"<\": relação menor;\n\"=\": relação igual;\n\"+\": operador soma;\n\"-\": operador subtração;\n\"*\": operador multiplicação;\n\"/\": operador divisão;\n\"exp()\": função exponencial base \"e\";\n\"potencia(a, b)\": função potência (\"a\" elevado a \"b\");\n\"modulo()\": função módulo;\n\"ln()\": função logaritmo natural;\n\"log10()\": função logaritmo de base 10;\n\"log2()\": função logaritmo de base 2;\n\"log(a, b)\": função logaritmo (logaritmo de \"a\" na base \"b\");\n\"sqrt()\": função raiz quadrada;\n\"sqrt3()\": função raiz cúbica;\n\"sqrtn(x, n)\": função raiz enésima de \"x\";\n\"sen()\": função seno;\n\"cos()\": função cosseno;\n\"tg()\": função tangente;\n\"cotg()\": função cotangente;\n\"sec()\": função secante;\n\"cossec()\": função cossecante;\n\"cord()\": função corda;\n\"arcsen()\": função arco-seno;\n\"arccos()\": função arco-cosseno;\n\"arctg()\": função arco-tangente;\n\"arccotg()\": função arco-cotangente;\n\"arcsec()\": função arco-secante;\n\"arccossec()\": função arco-cossecante;\n\"arccord()\": função arco-corda;\n\"senh()\": função seno hiperbólico;\n\"cosh()\": função cosseno hiperbólico;\n\"tgh()\": função tangente hiperbólica;\n\"cotgh()\": função cotangente hiperbólica;\n\"sech()\": função secante hiperbólica;\n\"cossech()\": função cossecante hiperbólica;\n\"fatorial()\": função fatorial;\n\"arranjos()\": função arranjos;\n\"combinacoes()\": função combinações;\n\"radgrau()\": função radianos para graus;\n\"graurad()\": função graus para radianos;\n\"graugrad()\": função graus para grados;\n\"gradgrau()\": função grados para graus;\n\"radgrad()\": função radianos para grados;\n\"gradrad()\": função grados para radianos;\n\"piso()\": função piso;\n\"teto()\": função teto;;\n\"pi\": constante \"pi\";\n\"T\": constante \"T\" (tal), o dobro de \"pi\";\n\"euler\": constante \"e\", base dos logaritmos naturais\;\n\"Ge11\": constante da gravitação universal de Newton, vezes 10^11, no SI;\n\"c\": velocidade da luz no vácuo, no SI;\n\"he34\": constante de Planck, vezes 10^34, no SI;\n\"TPe-32\": temperatura de Planck, vezes 10^(-32), no SI;\n\"tPe44\": tempo de Planck, vezes 10^44, no SI;\n\"mPe8\": massa de Planck, vezes 10^8, no SI;\n\"ke23\": constante de Boltzmann, vezes 10^23, no SI;\n\"se8\": constante de Stefan-Boltzmann, vezes 10^8, no SI;\n\"NAe-23\": número de Avogadro, vezes 10^(-23);\n\"mee31\": massa do elétron, vezes 10^31, no SI;\n\"mree31\": massa de repouso do elétron, vezes 10^31, no SI;\n\"mpe27\": massa do próton, vezes 10^27, no SI;\n\"qee19\": carga elementar, vezes 10^19, no SI;\n\"a0e11\": raio de Bohr, vezes 10^11, no SI;\n\"ree15\": raio clássico do elétron, vezes 10^15, no SI;\n\"z0\": impendância característica do vácuo, no SI;\n\"mBe24\": magnetão de Bohr, vezes 10^24, no SI;\n\"Re-7\": constante de Rydberg, vezes 10^(-7), no SI;\n\"alpha\": constante de estrutura fina, no SI;\n\"e0e12\": constante de permissividade do vácuo, vezes 10^12, no SI;\n\"K0e-9\": constante de Coulomb ou constante eletrostática no vácuo, vezes 10^(-9), no SI.\n\nDependendo das opções adotadas em MathematicalRamblings.js, as funções adotadas são as definidas por aproximação por Taylor, e estas funções podem retornar valores aproximados ou demasiadamente discrepantes, pois, em suas implementações, das funções elementares, aplica-se a fórmula de Taylor em apenas alguns pontos e com um limitado número de derivadas. Gradativamente vou as refinando as para que sejam mais precisas.\n\nEm calculadoras voltadas para Cálculo Diferencial, comumente utilizam-se aproximações, assim os resultados podem não ser precisos.";
+			return "Relações, operadores, funções e constantes disponíveis na base de dados (última atualização: 17-05-2022):\n\n\">=\": relação maior ou igual;\n\"<=\": relação menor ou igual;\n\">\": relação maior;\n\"<\": relação menor;\n\"=\": relação igual;\n\"+\": operador soma;\n\"-\": operador subtração;\n\"*\": operador multiplicação;\n\"/\": operador divisão;\n\"exp()\": função exponencial base \"e\";\n\"potencia(a, b)\": função potência (\"a\" elevado a \"b\");\n\"modulo()\": função módulo;\n\"ln()\": função logaritmo natural;\n\"log10()\": função logaritmo de base 10;\n\"log2()\": função logaritmo de base 2;\n\"log(a, b)\": função logaritmo (logaritmo de \"a\" na base \"b\");\n\"sqrt()\": função raiz quadrada;\n\"sqrt3()\": função raiz cúbica;\n\"sqrtn(x, n)\": função raiz enésima de \"x\";\n\"sen()\": função seno;\n\"cos()\": função cosseno;\n\"tg()\": função tangente;\n\"cotg()\": função cotangente;\n\"sec()\": função secante;\n\"cossec()\": função cossecante;\n\"cord()\": função corda;\n\"arcsen()\": função arco-seno;\n\"arccos()\": função arco-cosseno;\n\"arctg()\": função arco-tangente;\n\"arccotg()\": função arco-cotangente;\n\"arcsec()\": função arco-secante;\n\"arccossec()\": função arco-cossecante;\n\"arccord()\": função arco-corda;\n\"senh()\": função seno hiperbólico;\n\"cosh()\": função cosseno hiperbólico;\n\"tgh()\": função tangente hiperbólica;\n\"cotgh()\": função cotangente hiperbólica;\n\"sech()\": função secante hiperbólica;\n\"cossech()\": função cossecante hiperbólica;\n\"fatorial()\": função fatorial;\n\"arranjos()\": função arranjos;\n\"combinacoes()\": função combinações;\n\"graurad()\": função graus para radianos;\n\"radgrau()\": função radianos para graus;\n\"graugrad()\": função graus para grados;\n\"gradgrau()\": função grados para graus;\n\"gradrad()\": função grados para radianos;\n\"radgrad()\": função radianos para grados;\n\"arredondar()\": função arredondar para o inteiro mais próximo;\n\"piso()\": função piso;\n\"teto()\": função teto;;\n\"pi\": constante \"pi\";\n\"T\": constante \"T\" (tal), o dobro de \"pi\";\n\"euler\": constante \"e\", base dos logaritmos naturais\;\n\"Ge11\": constante da gravitação universal de Newton, vezes 10^11, no SI;\n\"c\": velocidade da luz no vácuo, no SI;\n\"he34\": constante de Planck, vezes 10^34, no SI;\n\"TPe-32\": temperatura de Planck, vezes 10^(-32), no SI;\n\"tPe44\": tempo de Planck, vezes 10^44, no SI;\n\"mPe8\": massa de Planck, vezes 10^8, no SI;\n\"ke23\": constante de Boltzmann, vezes 10^23, no SI;\n\"se8\": constante de Stefan-Boltzmann, vezes 10^8, no SI;\n\"NAe-23\": número de Avogadro, vezes 10^(-23);\n\"mee31\": massa do elétron, vezes 10^31, no SI;\n\"mree31\": massa de repouso do elétron, vezes 10^31, no SI;\n\"mpe27\": massa do próton, vezes 10^27, no SI;\n\"qee19\": carga elementar, vezes 10^19, no SI;\n\"a0e11\": raio de Bohr, vezes 10^11, no SI;\n\"ree15\": raio clássico do elétron, vezes 10^15, no SI;\n\"z0\": impendância característica do vácuo, no SI;\n\"mBe24\": magnetão de Bohr, vezes 10^24, no SI;\n\"Re-7\": constante de Rydberg, vezes 10^(-7), no SI;\n\"alpha\": constante de estrutura fina, no SI;\n\"e0e12\": constante de permissividade do vácuo, vezes 10^12, no SI;\n\"K0e-9\": constante de Coulomb ou constante eletrostática no vácuo, vezes 10^(-9), no SI.\n\nDependendo das opções adotadas em MathematicalRamblings.js, as funções adotadas são as definidas por aproximação por Taylor, e estas funções podem retornar valores aproximados ou demasiadamente discrepantes, pois, em suas implementações, das funções elementares, aplica-se a fórmula de Taylor em apenas alguns pontos e com um limitado número de derivadas. Gradativamente vou as refinando as para que sejam mais precisas.\n\nEm calculadoras voltadas para Cálculo Diferencial e algumas relacionadas, comumente utilizam-se aproximações, assim os resultados podem não ser precisos.";
 		case 2:
-			return "exp,potencia,modulo,ln,log10,log2,log,sqrt,sqrt3,sqrtn,sen,cos,tg,cotg,sec,cossec,cord,arcsen,arccos,arctg,arccotg,arcsec,arccossec,arccord,senh,cosh,tgh,cotgh,sech,cossech,fatorial,arranjos,combinacoes,graurad,radgrau,graugrad,gradgrau,gradrad,radgrad,piso,teto,antoniovandreexp,antoniovandrepotencia,antoniovandremodulo,antoniovandreln,antoniovandrelog10,antoniovandrelog2,antoniovandrelog,antoniovandresqrt,antoniovandresqrt3,antoniovandresqrtn,antoniovandresen,antoniovandrecos,antoniovandretg,antoniovandrecotg,antoniovandresec,antoniovandrecossec,antoniovandrecord,antoniovandrearcsen,antoniovandrearccos,antoniovandrearctg,antoniovandrearccotg,antoniovandrearcsec,antoniovandrearccossec,antoniovandrearccord,antoniovandresenh,antoniovandrecosh,antoniovandretgh,antoniovandrecotgh,antoniovandresech,antoniovandrecossech,antoniovandrefatorial,antoniovandrefatorialescopofuncoes,antoniovandrearranjos,antoniovandrearranjosescopofuncoes,antoniovandrecombinacoes,antoniovandregraurad,antoniovandreradgrau,antoniovandregraugrad,antoniovandregradgrau,antoniovandreradgrad,antoniovandregradrad,antoniovandrecombinacoesescopofuncoes,antoniovandrepiso,antoniovandreteto,pi,T,e,E,euler,Ge11,c,he34,TPe-32,tPe44,mPe8,ke23,se8,NAe-23,mee31,mree31,mpe27,qee19,a0e11,ree15,z0,mBe24,Re-7,alpha,e0e12,K0e-9";
+			return "exp,potencia,modulo,ln,log10,log2,log,sqrt,sqrt3,sqrtn,sen,cos,tg,cotg,sec,cossec,cord,arcsen,arccos,arctg,arccotg,arcsec,arccossec,arccord,senh,cosh,tgh,cotgh,sech,cossech,fatorial,arranjos,combinacoes,graurad,radgrau,graugrad,gradgrau,gradrad,radgrad,arredondar,piso,teto,antoniovandreexp,antoniovandrepotencia,antoniovandremodulo,antoniovandreln,antoniovandrelog10,antoniovandrelog2,antoniovandrelog,antoniovandresqrt,antoniovandresqrt3,antoniovandresqrtn,antoniovandresen,antoniovandrecos,antoniovandretg,antoniovandrecotg,antoniovandresec,antoniovandrecossec,antoniovandrecord,antoniovandrearcsen,antoniovandrearccos,antoniovandrearctg,antoniovandrearccotg,antoniovandrearcsec,antoniovandrearccossec,antoniovandrearccord,antoniovandresenh,antoniovandrecosh,antoniovandretgh,antoniovandrecotgh,antoniovandresech,antoniovandrecossech,antoniovandrefatorial,antoniovandrefatorialescopofuncoes,antoniovandrearranjos,antoniovandrearranjosescopofuncoes,antoniovandrecombinacoes,antoniovandregraurad,antoniovandreradgrau,antoniovandregraugrad,antoniovandregradgrau,antoniovandreradgrad,antoniovandregradrad,antoniovandrearredondar,antoniovandrecombinacoesescopofuncoes,antoniovandrepiso,antoniovandreteto,pi,T,e,E,euler,Ge11,c,he34,TPe-32,tPe44,mPe8,ke23,se8,NAe-23,mee31,mree31,mpe27,qee19,a0e11,ree15,z0,mBe24,Re-7,alpha,e0e12,K0e-9";
 		case 3:
-			return [[" ", ""], ["+", "-(-1)*"], ["-", "-"], ["pi", "(antoniovandrepi())"], ["T", "(2*(antoniovandrepi()))"], ["e", "e"], ["E", "E"], ["euler", "(antoniovandreeuler())"], ["Ge11", "6.674184"], ["c", "299792458"], ["he34", "6.62606957"], ["TPe-32", "1.41679"], ["tPe44", "5.391247"], ["mPe8", "2.176"], ["ke23", "1.3806488"], ["se8", "5.6704"], ["NAe-23", "6.022114129"], ["mee31", "9.10938291"], ["mree31", "9.10938356"], ["mpe27", "1.672621777"], ["qee19", "1.602176565"], ["a0e11", "5.2917721067"], ["ree15", "2.8179403227"], ["z0", "376.73031346177"], ["mBe24", "9.27400899"], ["Re-7", "1.0973731568508"], ["alpha", "0.007297352568"], ["e0e12", "8.85418782"], ["K0e-9", "8.9875"], ["exp", "antoniovandreexp"], ["potencia", "antoniovandrepotencia"], ["modulo", "antoniovandremodulo"], ["ln", "antoniovandreln"], ["log10", "antoniovandrelog10"], ["log2", "antoniovandrelog2"], ["log", "antoniovandrelog"], ["sqrt", "antoniovandresqrt"], ["sqrt3", "antoniovandresqrt3"], ["sqrtn", "antoniovandresqrtn"], ["sen", "antoniovandresen"], ["cos", "antoniovandrecos"], ["tg", "antoniovandretg"], ["cotg", "antoniovandrecotg"], ["sec", "antoniovandresec"], ["cossec", "antoniovandrecossec"], ["cord", "antoniovandrecord"], ["arcsen", "antoniovandrearcsen"], ["arccos", "antoniovandrearccos"], ["arctg", "antoniovandrearctg"], ["arccotg", "antoniovandrearccotg"], ["arcsec", "antoniovandrearcsec"], ["arccossec", "antoniovandrearccossec"], ["arccord", "antoniovandrearccord"], ["senh", "antoniovandresenh"], ["cosh", "antoniovandrecosh"], ["tgh", "antoniovandretgh"], ["cotgh", "antoniovandrecotgh"], ["sech", "antoniovandresech"], ["cossech", "antoniovandrecossech"], ["fatorial", "antoniovandrefatorialescopofuncoes"], ["arranjos", "antoniovandrearranjosescopofuncoes"], ["combinacoes", "antoniovandrecombinacoesescopofuncoes"], ["graurad", "antoniovandregraurad"], ["radgrau", "antoniovandreradgrau"], ["graugrad", "antoniovandregraugrad"], ["gradgrau", "antoniovandregradgrau"], ["gradrad", "antoniovandregradrad"], ["radgrad", "antoniovandreradgrad"], ["piso", "antoniovandrepiso"], ["teto", "antoniovandreteto"], ["antoniovandreexp", "antoniovandreexp"], ["antoniovandrepotencia", "antoniovandrepotencia"], ["antoniovandremodulo", "antoniovandremodulo"], ["antoniovandreln", "antoniovandreln"], ["antoniovandrelog10", "antoniovandrelog10"], ["antoniovandrelog2", "antoniovandrelog2"], ["antoniovandrelog", "antoniovandrelog"], ["antoniovandresqrt", "antoniovandresqrt"], ["antoniovandresqrt3", "antoniovandresqrt3"], ["antoniovandresqrtn", "antoniovandresqrtn"], ["antoniovandresen", "antoniovandresen"], ["antoniovandrecos", "antoniovandrecos"], ["antoniovandretg", "antoniovandretg"], ["antoniovandrecotg", "antoniovandrecotg"], ["antoniovandresec", "antoniovandresec"], ["antoniovandrecossec", "antoniovandrecossec"], ["antoniovandrecord", "antoniovandrecord"], ["antoniovandrearcsen", "antoniovandrearcsen"], ["antoniovandrearccos", "antoniovandrearccos"], ["antoniovandrearctg", "antoniovandrearctg"], ["antoniovandrearccotg", "antoniovandrearccotg"], ["antoniovandrearcsec", "antoniovandrearcsec"], ["antoniovandrearccossec", "antoniovandrearccossec"], ["antoniovandrearccord", "antoniovandrearccord"], ["antoniovandresenh", "antoniovandresenh"], ["antoniovandrecosh", "antoniovandrecosh"], ["antoniovandretgh", "antoniovandretgh"], ["antoniovandrecotgh", "antoniovandrecotgh"], ["antoniovandresech", "antoniovandresech"], ["antoniovandrecossech", "antoniovandrecossech"], ["antoniovandrefatorialescopofuncoes", "antoniovandrefatorialescopofuncoes"], ["antoniovandrepiso","antoniovandrepiso"], ["antoniovandreteto","antoniovandreteto"]];
+			return [[" ", ""], ["+", "-(-1)*"], ["-", "-"], ["pi", "(antoniovandrepi())"], ["T", "(2*(antoniovandrepi()))"], ["e", "e"], ["E", "E"], ["euler", "(antoniovandreeuler())"], ["Ge11", "6.674184"], ["c", "299792458"], ["he34", "6.62606957"], ["TPe-32", "1.41679"], ["tPe44", "5.391247"], ["mPe8", "2.176"], ["ke23", "1.3806488"], ["se8", "5.6704"], ["NAe-23", "6.022114129"], ["mee31", "9.10938291"], ["mree31", "9.10938356"], ["mpe27", "1.672621777"], ["qee19", "1.602176565"], ["a0e11", "5.2917721067"], ["ree15", "2.8179403227"], ["z0", "376.73031346177"], ["mBe24", "9.27400899"], ["Re-7", "1.0973731568508"], ["alpha", "0.007297352568"], ["e0e12", "8.85418782"], ["K0e-9", "8.9875"], ["exp", "antoniovandreexp"], ["potencia", "antoniovandrepotencia"], ["modulo", "antoniovandremodulo"], ["ln", "antoniovandreln"], ["log10", "antoniovandrelog10"], ["log2", "antoniovandrelog2"], ["log", "antoniovandrelog"], ["sqrt", "antoniovandresqrt"], ["sqrt3", "antoniovandresqrt3"], ["sqrtn", "antoniovandresqrtn"], ["sen", "antoniovandresen"], ["cos", "antoniovandrecos"], ["tg", "antoniovandretg"], ["cotg", "antoniovandrecotg"], ["sec", "antoniovandresec"], ["cossec", "antoniovandrecossec"], ["cord", "antoniovandrecord"], ["arcsen", "antoniovandrearcsen"], ["arccos", "antoniovandrearccos"], ["arctg", "antoniovandrearctg"], ["arccotg", "antoniovandrearccotg"], ["arcsec", "antoniovandrearcsec"], ["arccossec", "antoniovandrearccossec"], ["arccord", "antoniovandrearccord"], ["senh", "antoniovandresenh"], ["cosh", "antoniovandrecosh"], ["tgh", "antoniovandretgh"], ["cotgh", "antoniovandrecotgh"], ["sech", "antoniovandresech"], ["cossech", "antoniovandrecossech"], ["fatorial", "antoniovandrefatorialescopofuncoes"], ["arranjos", "antoniovandrearranjosescopofuncoes"], ["combinacoes", "antoniovandrecombinacoesescopofuncoes"], ["graurad", "antoniovandregraurad"], ["radgrau", "antoniovandreradgrau"], ["graugrad", "antoniovandregraugrad"], ["gradgrau", "antoniovandregradgrau"], ["gradrad", "antoniovandregradrad"], ["radgrad", "antoniovandreradgrad"], ["arredondar", "antoniovandrearredondar"], ["piso", "antoniovandrepiso"], ["teto", "antoniovandreteto"], ["antoniovandreexp", "antoniovandreexp"], ["antoniovandrepotencia", "antoniovandrepotencia"], ["antoniovandremodulo", "antoniovandremodulo"], ["antoniovandreln", "antoniovandreln"], ["antoniovandrelog10", "antoniovandrelog10"], ["antoniovandrelog2", "antoniovandrelog2"], ["antoniovandrelog", "antoniovandrelog"], ["antoniovandresqrt", "antoniovandresqrt"], ["antoniovandresqrt3", "antoniovandresqrt3"], ["antoniovandresqrtn", "antoniovandresqrtn"], ["antoniovandresen", "antoniovandresen"], ["antoniovandrecos", "antoniovandrecos"], ["antoniovandretg", "antoniovandretg"], ["antoniovandrecotg", "antoniovandrecotg"], ["antoniovandresec", "antoniovandresec"], ["antoniovandrecossec", "antoniovandrecossec"], ["antoniovandrecord", "antoniovandrecord"], ["antoniovandrearcsen", "antoniovandrearcsen"], ["antoniovandrearccos", "antoniovandrearccos"], ["antoniovandrearctg", "antoniovandrearctg"], ["antoniovandrearccotg", "antoniovandrearccotg"], ["antoniovandrearcsec", "antoniovandrearcsec"], ["antoniovandrearccossec", "antoniovandrearccossec"], ["antoniovandrearccord", "antoniovandrearccord"], ["antoniovandresenh", "antoniovandresenh"], ["antoniovandrecosh", "antoniovandrecosh"], ["antoniovandretgh", "antoniovandretgh"], ["antoniovandrecotgh", "antoniovandrecotgh"], ["antoniovandresech", "antoniovandresech"], ["antoniovandrecossech", "antoniovandrecossech"], ["antoniovandrefatorialescopofuncoes", "antoniovandrefatorialescopofuncoes"], ["antoniovandregraurad", "antoniovandregraurad"], ["antoniovandreradgrau", "antoniovandreradgrau"], ["antoniovandregraugrad", "antoniovandregraugrad"], ["antoniovandregradgrau", "antoniovandregradgrau"], ["antoniovandregradrad", "antoniovandregradrad"], ["antoniovandreradgrad", "antoniovandreradgrad"], ["antoniovandrearredondar", "antoniovandrearredondar"], ["antoniovandrepiso","antoniovandrepiso"], ["antoniovandreteto","antoniovandreteto"]];
 		case 4:
 			return "Erro do JavaScript (não meu) ou entrada inválida.";
 		case 5:
@@ -6829,7 +6881,7 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 	do
 		{
 		rnum = num * i++;
-		} while (rnum != Math.trunc(rnum) && i < lim);
+		} while (rnum != antoniovandrepiso(rnum) && i < lim);
 
 	if (i == lim)
 		switch (tiporetorno)
