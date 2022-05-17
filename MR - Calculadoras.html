@@ -1901,7 +1901,7 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 </style>
 
-Entre com uma string contendo, separados por ponto e vírgula: primeiro: a expressão da função da qual se deseja obter o valor da integral, deve ser uma função em "<span class="notranslate">x</span>"; segundo: um número real como valor inferior; terceiro: um número real como valor superior; quarto: o número de elementos da partição que será utilizada no cálculo, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.
+Entre com uma string contendo, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: a expressão da função da qual se deseja obter o valor da integral, deve ser uma função em "<span class="notranslate">x</span>"; segundo: um número real como valor inferior; terceiro: um número real como valor superior; quarto: o número de elementos da partição que será utilizada no cálculo, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.
 <br><br>
 Exemplos:
 <br><br>
@@ -1921,7 +1921,7 @@ Integral definida, aproximação por soma de Riemann:
 <br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadointegraldefinidaaproximacaosomariemann" id="resultadointegraldefinidaaproximacaosomariemann" readonly rows="5"></textarea></td></tr></table>
 <br>
-<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadointegraldefinidaaproximacaosomariemannavisoanexo" id="resultadointegraldefinidaaproximacaosomariemannavisoanexo" readonly rows="5"></textarea></td></tr></table>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadointegraldefinidaaproximacaosomariemannavisoanexo" id="resultadointegraldefinidaaproximacaosomariemannavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
 <div id="myProgressintegraldefinidaaproximacaosomariemann"><div id="myBarintegraldefinidaaproximacaosomariemann"></div></div>
 
@@ -2440,7 +2440,7 @@ function processarintegraldefinidaaproximacaosomariemann()
 	if (f != "e")
 		document.getElementById('resultadointegraldefinidaaproximacaosomariemann').value = f
 	else
-		document.getElementById('resultadointegraldefinidaaproximacaosomariemann').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula: primeiro: a expressão da função da qual se deseja obter o valor da integral, deve ser uma função em \"x\"; segundo: um número real como valor inferior; terceiro: um número real como valor superior; quarto: o número de elementos da partição que será utilizada no cálculo.";
+		document.getElementById('resultadointegraldefinidaaproximacaosomariemann').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: a expressão da função da qual se deseja obter o valor da integral, deve ser uma função em \"x\"; segundo: um número real como valor inferior; terceiro: um número real como valor superior; quarto: o número de elementos da partição que será utilizada no cálculo.";
 
 	lockcalc = 0;
 
@@ -2502,7 +2502,7 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 </style>
 
-Entre com uma string contendo, separados por ponto e vírgula: primeiro: a expressão do somatório, deve ser em função de "<span class="notranslate">n</span>"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior. Quanto maior a diferença entre o índice inferior e o superior, mas lentamente o resultado será obtido, além de exigir mais computação.
+Entre com uma string contendo, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: a expressão do somatório, deve ser em função de "<span class="notranslate">n</span>"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior. Quanto maior a diferença entre o índice inferior e o superior, mas lentamente o resultado será obtido, além de exigir mais computação.
 <br><br>
 Exemplos:
 <br><br>
@@ -2522,7 +2522,7 @@ Somatório:
 <br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosomatorio" id="resultadosomatorio" readonly rows="5"></textarea></td></tr></table>
 <br>
-<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosomatorioavisoanexo" id="resultadosomatorioavisoanexo" readonly rows="5"></textarea></td></tr></table>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosomatorioavisoanexo" id="resultadosomatorioavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
 <div id="myProgresssomatorio"><div id="myBarsomatorio"></div></div>
 
@@ -2925,7 +2925,7 @@ function processarsomatorio()
 	if (f != "e")
 		document.getElementById('resultadosomatorio').value = f
 	else
-		document.getElementById('resultadosomatorio').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula: primeiro: a expressão do somatório, deve ser em função de \"n\"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior.";
+		document.getElementById('resultadosomatorio').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: a expressão do somatório, deve ser em função de \"n\"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior.";
 
 	lockcalc = 0;
 
@@ -2987,7 +2987,7 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 </style>
 
-Entre com uma string contendo, separados por ponto e vírgula: primeiro: a expressão do produtório, deve ser em função de "<span class="notranslate">n</span>"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior. Quanto maior a diferença entre o índice inferior e o superior, mas lentamente o resultado será obtido, além de exigir mais computação.
+Entre com uma string contendo, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: a expressão do produtório, deve ser em função de "<span class="notranslate">n</span>"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior. Quanto maior a diferença entre o índice inferior e o superior, mas lentamente o resultado será obtido, além de exigir mais computação.
 <br><br>
 Exemplo:
 <br><br>
@@ -3424,7 +3424,7 @@ function produtoriomensagemerro()
 	elemprodutorio.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 	elemprodutorio.textContent = "Erro ao calcular."
 
-	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula: primeiro: a expressão do produtório, deve ser em função de \"n\"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior.";
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: a expressão do produtório, deve ser em função de \"n\"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior.";
 	}
 
 </script>
@@ -4556,15 +4556,15 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 </style>
 
-Entre com uma string dividida em duas partes por ponto e vírgula "<span class="notranslate">;</span>": primeiro: uma string com funções em "<span class="notranslate">x</span>" separadas por vírgula; segundo: os pontos, separados por vírgula, com abscissa e ordenada separadas por dois pontos "<span class="notranslate">:</span>".
+Entre com uma string dividida em duas partes por barra vertical "<span class="notranslate">|</span>": primeiro: uma string com funções em "<span class="notranslate">x</span>" separadas por ponto e vírgula "<span class="notranslate">;</span>"; segundo: os pontos, separados por ponto e vírgula "<span class="notranslate">;</span>", com abscissa e ordenada separadas por dois pontos "<span class="notranslate">:</span>".
 <br><br>
 Exemplos:
 <br><br>
-Input: "<span class="notranslate">x, ln(x), sen(x); 1 : 1, 2 : 2</span>". Output: "<span class="notranslate">x</span>".
+Input: "<span class="notranslate">x; ln(x); sen(x) | 1 : 1; 2 : 2</span>". Output: "<span class="notranslate">x</span>".
 <br><br>
-Input: "<span class="notranslate">x, ln(x), sen(x); 1 : 0, euler : 1</span>". Output: "<span class="notranslate">ln(x)</span>".
+Input: "<span class="notranslate">x; ln(x); sen(x) | 1 : 0; euler : 1</span>". Output: "<span class="notranslate">ln(x)</span>".
 <br><br>
-Input: "<span class="notranslate">x, ln(x), sen(x); pi : 0, pi/2 : 1</span>". Output: "<span class="notranslate">sen(x)</span>".
+Input: "<span class="notranslate">x; ln(x); sen(x) | pi : 0; pi/2 : 1</span>". Output: "<span class="notranslate">sen(x)</span>".
 <br><br>
 <table border="1" width="100%"><tr><td><input type="text" name="argumentosfuncaomaisproxima" style="width : 100%"></td></tr></table>
 <br>
@@ -4574,7 +4574,7 @@ Função mais próxima:
 <br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadofuncaomaisproxima" id="resultadofuncaomaisproxima" readonly rows="1"></textarea></td></tr></table>
 <br><br>
-<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="avisoanexofuncaomaisproxima" id="avisoanexofuncaomaisproxima" readonly rows="5"></textarea></td></tr></table>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="avisoanexofuncaomaisproxima" id="avisoanexofuncaomaisproxima" readonly rows="10"></textarea></td></tr></table>
 <br>
 <div id="myProgressfuncaomaisproxima"><div id="myBarfuncaomaisproxima"></div></div>
 
@@ -5020,11 +5020,11 @@ function funcaomaisproximamensagemerro()
 	elemfuncaomaisproxima.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 	elemfuncaomaisproxima.textContent = "Erro ao calcular."
 
-	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string dividida em duas partes por ponto e vírgula \";\": primeiro: uma string com funções em \"x\" separadas por vírgula; segundo: os pontos, separados por vírgula, com abscissa e ordenada separadas por dois pontos \":\".";
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string dividida em duas partes por barra vertical \"|\": primeiro: uma string com funções em \"x\" separadas por ponto e vírgula \";\"; segundo: os pontos, separados por ponto e vírgula ";", com abscissa e ordenada separadas por dois pontos \":\".";
 	}
 
 </script>
-
+	
 <br><br>
 
 <h2>Calculadora: função periódica mais próxima.</h2>

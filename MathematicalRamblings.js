@@ -6115,7 +6115,7 @@ function antoniovandrednapolipeptideo(str)
 	return output;
 	}
 
-// Integral definida, aproximação por soma de Riemann. Argumentos: primeiro: uma string contendo, separados por vírgula: primeiro: a expressão da função da qual se deseja obter o valor da integral, deve ser uma função em "x"; segundo: um número real como valor inferior; terceiro: um número real como valor superior; quarto: o número de elementos da partição que será utilizada no cálculo; segundo: "-1" para retornar o aviso anexo.
+// Integral definida, aproximação por soma de Riemann. Argumentos: primeiro: uma string contendo, separados por ponto e vírgula ";": primeiro: a expressão da função da qual se deseja obter o valor da integral, deve ser uma função em "x"; segundo: um número real como valor inferior; terceiro: um número real como valor superior; quarto: o número de elementos da partição que será utilizada no cálculo; segundo: "-1" para retornar o aviso anexo.
 
 function antoniovandreintegraldefinidaaproximacaosomariemann(str, avisoanexo)
 	{
@@ -6254,7 +6254,7 @@ function antoniovandreintegraldefinidaaproximacaosomariemann(str, avisoanexo)
 	return antoniovandreformatarreal(result);
 	}
 
-// Somatório. Argumentos: primeiro: uma string contendo, separados por vírgula: primeiro: a expressão do somatório, deve ser em função em "n"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior; segundo: "-1" para retornar o aviso anexo.
+// Somatório. Argumentos: primeiro: uma string contendo, separados por ponto e vírgula ";": primeiro: a expressão do somatório, deve ser em função em "n"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior; segundo: "-1" para retornar o aviso anexo.
 
 function antoniovandresomatorio(str, avisoanexo)
 	{
@@ -6355,7 +6355,7 @@ function antoniovandresomatorio(str, avisoanexo)
 	return antoniovandreformatarreal(result);
 	}
 
-// Produtório. Argumentos: primeiro: uma string contendo, separados por vírgula: primeiro: a expressão do produtório, deve ser em função em "n"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior; segundo: "-1" para retornar o aviso anexo.
+// Produtório. Argumentos: primeiro: uma string contendo, separados por ponto e vírgula ";": primeiro: a expressão do produtório, deve ser em função em "n"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior; segundo: "-1" para retornar o aviso anexo.
 
 function antoniovandreprodutorio(str, avisoanexo)
 	{
@@ -7882,12 +7882,12 @@ function antoniovandreposicaostring(args)
 		return contador;
 	}
 
-// Função mais próxima. Argumentos: primeiro global: uma string dividida em duas partes por ponto e vírgula ";": primeiro: uma string com funções em "x" separadas por vírgula; segundo: os pontos, separados por vírgula, com abscissa e ordenada separadas por dois pontos ":"; segundo global: -1 para exibir o aviso anexo.
+// Função mais próxima. Argumentos: primeiro global: uma string dividida em duas partes por barra vertical "|": primeiro: uma string com funções em "x" separadas por ponto e vírgula ";"; segundo: os pontos, separados por ponto e vírgula ";", com abscissa e ordenada separadas por dois pontos ":"; segundo global: -1 para exibir o aviso anexo.
 
 function antoniovandrefuncaomaisproxima(str, avisoanexo)
 	{
 	var arr = [];
-	var arr = str.split(";")
+	var arr = str.split("|")
 	var funcoes = [];
 	var pontos = [];
 	var result = [];
@@ -7897,8 +7897,8 @@ function antoniovandrefuncaomaisproxima(str, avisoanexo)
 
 	if (arr.length != 2) return "e";
 
-	funcoes = arr[0].split(",");
-	pontos = arr[1].split(",");
+	funcoes = arr[0].split(";");
+	pontos = arr[1].split(";");
 
 	for (var k = 0; k < funcoes.length; k++)
 		{
