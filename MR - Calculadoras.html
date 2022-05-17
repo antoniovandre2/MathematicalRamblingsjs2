@@ -8,7 +8,7 @@ Compilação das calculadoras JavaScript do Mathematical Ramblings.
 
 Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
-Última atualização: 16-05-2022.
+Última atualização: 17-05-2022.
 
 -->
 
@@ -6526,11 +6526,11 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 </style>
 
-Entre com uma string separada em três partes por ponto e vírgula "<span class="notranslate">;</span>", a primeira com uma função em "<span class="notranslate">x</span>", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira a precisão, um inteiro positivo, de busca.
+Entre com uma string separada em três partes por barra vertical "<span class="notranslate">|</span>", a primeira com uma função em "<span class="notranslate">x</span>", a segunda com o intervalo de pesquisa, o inferior e o superior separados por ponto e vírgula "<span class="notranslate">;</span>", a terceira a precisão, um inteiro positivo, de busca.
 <br><br>
 Exemplo:
 <br><br>
-Input: "<span class="notranslate">x - 1; 0, 5; 5</span>".
+Input: "<span class="notranslate">x - 1 | 0; 5 | 5</span>".
 <br><br>
 Output: dentre outros possíveis valores aproximados, "<span class="notranslate">1</span>".
 <br><br>
@@ -6602,7 +6602,7 @@ function cancelarpossiveisraizesout()
 
 function antoniovandrepossiveisraizesout(arr, retorno, avisoanexo)
 	{
-	var str = arr.split(";");
+	var str = arr.split("|");
 	list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
 	raizes = [];
 	flagrepeticaopossiveisraizes = 0;
@@ -6645,7 +6645,7 @@ function antoniovandrepossiveisraizesout(arr, retorno, avisoanexo)
 		return;
 		}
 
-	strt = str[1].split(",");
+	strt = str[1].split(";");
 
 	if (strt.length != 2)
 		{
@@ -7039,7 +7039,7 @@ function possiveisraizesmensagemerro()
 	elempossiveisraizes.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 	elempossiveisraizes.textContent = "Erro ao calcular."
 
-	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada em três partes por ponto e vírgula \";\", a primeira com uma função em \"x\", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira a precisão, um inteiro positivo, de busca.";
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada em três partes por barra vertical \"|\", a primeira com uma função em \"x\", a segunda com o intervalo de pesquisa, o inferior e o superior separados por ponto e vírgula \";\", a terceira a precisão, um inteiro positivo, de busca.";
 	}
 
 </script>
@@ -8797,11 +8797,11 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 </style>
 
-Entre com uma string separada em três partes por ponto e vírgula "<span class="notranslate">;</span>", a primeira com uma função em "<span class="notranslate">x</span>", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira a precisão, um inteiro positivo, de busca.
+Entre com uma string separada em três partes por barra vertical "<span class="notranslate">|</span>", a primeira com uma função em "<span class="notranslate">x</span>", a segunda com o intervalo de pesquisa, o inferior e o superior separados por ponto e vírgula "<span class="notranslate">;</span>", a terceira a precisão, um inteiro positivo, de busca.
 <br><br>
 Exemplo:
 <br><br>
-Input: "<span class="notranslate">x - 1; 0, 4; 500</span>".
+Input: "<span class="notranslate">x - 1 | 0; 4 | 500</span>".
 <br><br>
 Output: aproximadamente "<span class="notranslate">-,1,+</span>".
 <br><br>
@@ -8872,7 +8872,7 @@ function cancelarestudosinalfuncaoout()
 
 function antoniovandreestudosinalfuncaoout(arr, retorno, avisoanexo)
 	{
-	var str = arr.split(";");
+	var str = arr.split("|");
 	list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
 	flagrepeticaoestudosinalfuncao = 0;
 	flagrepeticaoestudosinalfuncaot = 0;
@@ -8915,7 +8915,7 @@ function antoniovandreestudosinalfuncaoout(arr, retorno, avisoanexo)
 		return;
 		}
 
-	strt = str[1].split(",");
+	strt = str[1].split(";");
 
 	if (strt.length != 2)
 		{
@@ -9314,11 +9314,11 @@ function estudosinalfuncaomensagemerro()
 	elemestudosinalfuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 	elemestudosinalfuncao.textContent = "Erro ao calcular."
 
-	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada em três partes por ponto e vírgula \";\", a primeira com uma função em \"x\", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira a precisão, um inteiro positivo, de busca.";
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada em três partes por ponto e vírgula \"|\", a primeira com uma função em \"x\", a segunda com o intervalo de pesquisa, o inferior e o superior separados por ponto e vírgula \";\", a terceira a precisão, um inteiro positivo, de busca.";
 	}
 
 </script>
-
+	
 <br><br>
 
 <h2>Calculadora: próximo termo de uma sequência.</h2>
