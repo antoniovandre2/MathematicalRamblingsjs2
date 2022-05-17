@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 16-05-2022.
+Última atualização: 17-05-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9360,6 +9360,15 @@ Sejam $U$ e $W$ subespaços de dimensões finitas de um espaço vetorial $V$, mo
 __
 
 Artigos/Mathematical Ramblings - 16-05-2022 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: Matemática sagrada.
+__
+
+Media/Memes/Mathematical Ramblings - 17-05-2022 - 1.png
 __
 
 Publicado em "mathematicalramblings.blogspot.com".

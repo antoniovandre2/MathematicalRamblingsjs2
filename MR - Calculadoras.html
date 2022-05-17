@@ -4640,7 +4640,7 @@ function cancelarfuncaomaisproximaout()
 function antoniovandrefuncaomaisproximaout(str, avisoanexo)
 	{
 	arr = [];
-	arr = str.split(";")
+	arr = str.split("|")
 	funcoes = [];
 	pontos = [];
 	result = [];
@@ -4667,8 +4667,8 @@ function antoniovandrefuncaomaisproximaout(str, avisoanexo)
 		return;
 		}
 
-	funcoes = arr[0].split(",");
-	pontos = arr[1].split(",");
+	funcoes = arr[0].split(";");
+	pontos = arr[1].split(";");
 
 	result.push(0);
 
@@ -5020,7 +5020,7 @@ function funcaomaisproximamensagemerro()
 	elemfuncaomaisproxima.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 	elemfuncaomaisproxima.textContent = "Erro ao calcular."
 
-	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string dividida em duas partes por barra vertical \"|\": primeiro: uma string com funções em \"x\" separadas por ponto e vírgula \";\"; segundo: os pontos, separados por ponto e vírgula ";", com abscissa e ordenada separadas por dois pontos \":\".";
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string dividida em duas partes por barra vertical \"|\": primeiro: uma string com funções em \"x\" separadas por ponto e vírgula \";\"; segundo: os pontos, separados por ponto e vírgula \";\", com abscissa e ordenada separadas por dois pontos \":\".";
 	}
 
 </script>
