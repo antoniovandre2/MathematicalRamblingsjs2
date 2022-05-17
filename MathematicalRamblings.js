@@ -20,6 +20,10 @@ function antoniovandremathematicalramblingsjsversao(){return "17-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
+// Flag se será utilizada ou não versões das funções implementadas por aproximação por Taylor.
+
+function antoniovandreaproximacaotaylorflag() {return false;}
+
 // Números primos. Argumento: número do índice da matriz de números primos, ou -1 para retornar o tamanho da matriz de números primos, ou -2 para retornar o maior primo contido na matriz. Matriz de uma única linha. A variável "antoniovandreprimos" deve conter os números primos menores que o maior valor a ela pertencente. Retorna a string "e" se um erro ocorre.
 
 function antoniovandreprimos(i)
@@ -4705,19 +4709,17 @@ function antoniovandreexp(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("exp, " + eval(x).toString());*/
-
-		return Math.exp(eval(x));
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("exp, " + eval(x).toString())
+		else
+			return Math.exp(eval(x));
 		}
 	else
 		{
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("exp, " + x.toString());*/
-
-		return Math.exp(x);
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("exp, " + x.toString())
+		else
+			return Math.exp(x);
 		}
 	}
 
@@ -4742,20 +4744,17 @@ function antoniovandrepotencia(a, b)
 
 			b = antoniovandretraduzirexpressaofuncional(b, 0)
 
-/*			Se desejando uma implementação por aproximação por Taylor.
-
-			return antoniovandreexp(eval(b.toString()) * antoniovandreln(eval(a).toString()));*/
-
-
-			return antoniovandrepotencia(eval(a), eval(b));
+			if (antoniovandreaproximacaotaylorflag())
+				return antoniovandreexp(eval(b.toString()) * antoniovandreln(eval(a).toString()))
+			else
+				return antoniovandrepotencia(eval(a), eval(b));
 			}
 		else
 			{
-/*			Se desejando uma implementação por aproximação por Taylor.
-
-			return antoniovandreexp(eval(b * antoniovandreln(eval(a).toString())));*/
-
-			return antoniovandrepotencia(eval(a), b);
+			if (antoniovandreaproximacaotaylorflag())
+				return antoniovandreexp(eval(b * antoniovandreln(eval(a).toString())))
+			else
+				return antoniovandrepotencia(eval(a), b);
 			}
 		}
 	else
@@ -4769,22 +4768,20 @@ function antoniovandrepotencia(a, b)
 
 				b = antoniovandretraduzirexpressaofuncional(b, 0)
 
-/*				Se desejando uma implementação por aproximação por Taylor.
-
-				return antoniovandreexp(eval(b.toString()) * antoniovandreln(a));*/
-
-				return antoniovandrepotencia(a, eval(b));
+				if (antoniovandreaproximacaotaylorflag())
+					return antoniovandreexp(eval(b.toString()) * antoniovandreln(a))
+				else
+					return antoniovandrepotencia(a, eval(b));
 				}
 			else
 				{
-/*				Se desejando uma implementação por aproximação por Taylor.
-
-				return antoniovandreexp(b * antoniovandreln(a));;*/
-
 				if ((a == 0) && (b == 0)) return "0^0 não existe.";
 				if ((a == 0) && (b < 0)) return "Expoente negativo para 0.";
 
-				return Math.pow(a, b);
+				if (antoniovandreaproximacaotaylorflag())
+					return antoniovandreexp(b * antoniovandreln(a))
+				else
+					return Math.pow(a, b);
 				}
 			}
 		else
@@ -4804,22 +4801,20 @@ function antoniovandrepotencia(a, b)
 					{
 					if (antoniovandrefracaogeratriz(b, 1)[1] % 2 == 1)
 						{
-/*						Se desejando uma implementação por aproximação por Taylor.
-
-						return (-1) * antoniovandreexp(eval(eval(b) * antoniovandreln(antoniovandremodulo(a))))*/
-
-						return (-1) * Math.pow(antoniovandremodulo(a), b);
+						if (antoniovandreaproximacaotaylorflag())
+							return (-1) * antoniovandreexp(eval(eval(b) * antoniovandreln(antoniovandremodulo(a))))
+						else
+							return (-1) * Math.pow(antoniovandremodulo(a), b);
 						}
 					else
 						return "O resultado da potência não é um número real.";
 					}
 				else
 					{
-/*					Se desejando uma implementação por aproximação por Taylor.
-
-					return antoniovandreexp(eval(b * antoniovandreln(a)))*/
-
-					return Math.pow(a, b);
+					if (antoniovandreaproximacaotaylorflag())
+						return antoniovandreexp(eval(b * antoniovandreln(a)))
+					else
+						return Math.pow(a, b);
 					}
 				}
 			}
@@ -4923,22 +4918,20 @@ function antoniovandreln(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("ln, " + eval(x).toString());*/
-
-		return Math.log(eval(x));
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("ln, " + eval(x).toString())
+		else
+			return Math.log(eval(x));
 		}
 	else
 		{
 		if (x <= 0)
 			return "O logaritimando deve ser um número real positivo.";
 
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("ln, " + x.toString());*/
-
-		return Math.log(x);
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("ln, " + x.toString())
+		else
+			return Math.log(x);
 		}
 	}
 
@@ -5191,32 +5184,32 @@ function antoniovandresen(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("sen, " + eval(x).toString());*/
-
-		return Math.sin(eval(x));
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("sen, " + eval(x).toString())
+		else
+			return Math.sin(eval(x));
 		}
 	else
 		{
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		var m = x;
-
-		if (x >= 0)
+		if (antoniovandreaproximacaotaylorflag())
 			{
-			while (m > 2 * (antoniovandrepi()))
-				m -= 2 * (antoniovandrepi());
+			var m = x;
+
+			if (x >= 0)
+				{
+				while (m > 2 * (antoniovandrepi()))
+					m -= 2 * (antoniovandrepi());
+				}
+			else
+				{
+				while (m < 0)
+					m += 2 * (antoniovandrepi());
+				}
+
+			return antoniovandreaproximacaotaylor("sen, " + m.toString());
 			}
 		else
-			{
-			while (m < 0)
-				m += 2 * (antoniovandrepi());
-			}
-
-		return antoniovandreaproximacaotaylor("sen, " + m.toString());*/
-
-		return Math.sin(x);
+			return Math.sin(x);
 		}
 	}
 
@@ -5234,31 +5227,32 @@ function antoniovandrecos(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("cos, " + eval(x).toString());*/
-
-		return Math.cos(eval(x));
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("cos, " + eval(x).toString())
+		else
+			return Math.cos(eval(x));
 		}
 	else
 		{
-/*		Se desejando uma implementação por aproximação por Taylor.
-		var m = x;
-
-		if (x >= 0)
+		if (antoniovandreaproximacaotaylorflag())
 			{
-			while (m > 2 * (antoniovandrepi()))
-				m -= 2 * (antoniovandrepi());
+			var m = x;
+
+			if (x >= 0)
+				{
+				while (m > 2 * (antoniovandrepi()))
+					m -= 2 * (antoniovandrepi());
+				}
+			else
+				{
+				while (m < 0)
+					m += 2 * (antoniovandrepi());
+				}
+
+			return antoniovandreaproximacaotaylor("cos, " + m.toString());
 			}
 		else
-			{
-			while (m < 0)
-				m += 2 * (antoniovandrepi());
-			}
-
-		return antoniovandreaproximacaotaylor("cos, " + m.toString());*/
-
-		return Math.cos(x);
+			return Math.cos(x);
 		}
 	}
 
@@ -5363,19 +5357,17 @@ function antoniovandrearcsen(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("arcsen, " + eval(x).toString());*/
-
-		return Math.asin(eval(x));
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("arcsen, " + eval(x).toString())
+		else
+			return Math.asin(eval(x));
 		}
 	else
 		{
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("arcsen, " + x.toString());*/
-
-		return Math.asin(x);
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("arcsen, " + x.toString())
+		else
+			return Math.asin(x);
 		}
 	}
 
@@ -5393,19 +5385,17 @@ function antoniovandrearccos(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("arccos, " + eval(x).toString());*/
-
-		return Math.acos(eval(x));
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("arccos, " + eval(x).toString())
+		else
+			return Math.acos(eval(x));
 		}
 	else
 		{
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("arccos, " + x.toString());*/
-
-		return Math.acos(x);
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("arccos, " + x.toString())
+		else
+			return Math.acos(x);
 		}
 	}
 
@@ -5423,19 +5413,17 @@ function antoniovandrearctg(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("arctg, " + eval(x).toString());*/
-
-		return Math.atan(eval(x));
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("arctg, " + eval(x).toString())
+		else
+			return Math.atan(eval(x));
 		}
 	else
 		{
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("arctg, " + x.toString());*/
-
-		return Math.atan(x);
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("arctg, " + x.toString())
+		else
+			return Math.atan(x);
 		}
 	}
 
@@ -5453,19 +5441,17 @@ function antoniovandrearccotg(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("arccotg, " + eval(x).toString());*/
-
-		return (antoniovandrepi()) / 2 - Math.atan(eval(x));
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("arccotg, " + eval(x).toString())
+		else
+			return (antoniovandrepi()) / 2 - Math.atan(eval(x));
 		}
 	else
 		{
-/*		Se desejando uma implementação por aproximação por Taylor.
-
-		return antoniovandreaproximacaotaylor("arccotg, " + x.toString());*/
-
-		return (antoniovandrepi()) / 2 - Math.atan(x);
+		if (antoniovandreaproximacaotaylorflag())
+			return antoniovandreaproximacaotaylor("arccotg, " + x.toString())
+		else
+			return (antoniovandrepi()) / 2 - Math.atan(x);
 		}
 	}
 
