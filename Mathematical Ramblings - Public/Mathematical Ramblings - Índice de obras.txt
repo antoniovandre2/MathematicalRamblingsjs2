@@ -9355,3 +9355,12 @@ __
 
 Publicado em "mathematicalramblings.blogspot.com".
 _____
+
+Sejam $U$ e $W$ subespaços de dimensões finitas de um espaço vetorial $V$, mostre que $dim\ (U + W)\ =\ dim\ U\ +\ dim\ W\ -\ dim\ (U \cap W)$.
+__
+
+Artigos/Mathematical Ramblings - 16-05-2022 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____

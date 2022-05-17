@@ -11638,7 +11638,7 @@ function antoniovandreprojecaopontoreta(str, retorno)
 		return "e";
 		}
 
-		try
+	try
 		{
 		var b = eval(antoniovandretraduzirexpressaofuncional(coeficientes[1].trim(), 0));
 		}
@@ -11655,6 +11655,9 @@ function antoniovandreprojecaopontoreta(str, retorno)
 		{
 		return "e";
 		}
+
+	if ((antoniovandrenumeroreal(abscissa.toString()) == "e") || (antoniovandrenumeroreal(ordenada.toString()) == "e") || (antoniovandrenumeroreal(a.toString()) == "e") || (antoniovandrenumeroreal(b.toString()) == "e") || (antoniovandrenumeroreal(c.toString()) == "e"))
+		return "e";
 
 	if ((antoniovandremodulo(abscissa) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(ordenada) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(a) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1)))
 		return antoniovandremensagenserro(2);
@@ -11790,6 +11793,9 @@ function antoniovandreprojecaopontoplano(str, retorno)
 		{
 		return "e";
 		}
+
+	if ((antoniovandrenumeroreal(abscissa.toString()) == "e") || (antoniovandrenumeroreal(ordenada.toString()) == "e") || (antoniovandrenumeroreal(cota.toString()) == "e") || (antoniovandrenumeroreal(a.toString()) == "e") || (antoniovandrenumeroreal(b.toString()) == "e") || (antoniovandrenumeroreal(c.toString()) == "e") || (antoniovandrenumeroreal(d.toString()) == "e"))
+		return "e";
 
 	if ((antoniovandremodulo(abscissa) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(ordenada) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(cota) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(a) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(d) > antoniovandremaximovalorentrada(1)))
 		return antoniovandremensagenserro(2);
@@ -11949,6 +11955,9 @@ function antoniovandrepontosimetricoplano(str, retorno)
 		return "e";
 		}
 
+	if ((antoniovandrenumeroreal(abscissa.toString()) == "e") || (antoniovandrenumeroreal(ordenada.toString()) == "e") || (antoniovandrenumeroreal(cota.toString()) == "e") || (antoniovandrenumeroreal(a.toString()) == "e") || (antoniovandrenumeroreal(b.toString()) == "e") || (antoniovandrenumeroreal(c.toString()) == "e") || (antoniovandrenumeroreal(d.toString()) == "e"))
+		return "e";
+
 	if ((antoniovandremodulo(abscissa) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(ordenada) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(cota) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(a) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(d) > antoniovandremaximovalorentrada(1)))
 		return antoniovandremensagenserro(2);
 
@@ -12069,6 +12078,8 @@ function antoniovandreangulovetores(str)
 				{
 				return "e";
 				}
+
+			if (antoniovandrenumeroreal(cord.toString()) == "e") return "e";
 
 			if (antoniovandremodulo(cord) > antoniovandremaximovalorentrada(1))
 				return antoniovandremensagenserro(2);
@@ -12245,9 +12256,6 @@ function antoniovandreareatrianguloespaco(str, retorno)
 			return "e";
 			}
 
-		if (antoniovandremodulo(a) > antoniovandremaximovalorentrada(1))
-			return antoniovandremensagenserro(2);
-
 		if (antoniovandreexpressaofuncaovalida(ponto[1].trim()) == "e") return "e";
 
 		try
@@ -12258,9 +12266,6 @@ function antoniovandreareatrianguloespaco(str, retorno)
 			{
 			return "e";
 			}
-
-		if (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1))
-			return antoniovandremensagenserro(2);
 
 		if (antoniovandreexpressaofuncaovalida(ponto[2].trim()) == "e") return "e";
 
@@ -12273,7 +12278,10 @@ function antoniovandreareatrianguloespaco(str, retorno)
 			return "e";
 			}
 
-		if (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1))
+		if ((antoniovandrenumeroreal(a.toString()) == "e") || (antoniovandrenumeroreal(b.toString()) == "e") || (antoniovandrenumeroreal(c.toString()) == "e"))
+			return "e";
+
+		if ((antoniovandremodulo(a) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1)))
 			return antoniovandremensagenserro(2);
 
 		M.push([a, b, c])
@@ -12456,6 +12464,12 @@ function antoniovandreinterseccaoduasretas(str, retorno)
 		return "e";
 		}
 
+	if ((antoniovandrenumeroreal(a.toString()) == "e") || (antoniovandrenumeroreal(b.toString()) == "e") || (antoniovandrenumeroreal(c.toString()) == "e") || (antoniovandrenumeroreal(d.toString()) == "e") || (antoniovandrenumeroreal(e.toString()) == "e") || (antoniovandrenumeroreal(f.toString()) == "e"))
+		return "e";
+
+	if ((antoniovandremodulo(a) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(d) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(e) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(f) > antoniovandremaximovalorentrada(1)))
+		return antoniovandremensagenserro(2);
+
 	var rarr = antoniovandreescalonarmatriz(a.toString() + ", " + b.toString() + ", " + (-c).toString() + "; " + d.toString() + ", " + e.toString() + ", " + (-f).toString() + " | r", 1);
 
 	if (antoniovandrecompararstrings(rarr, antoniovandremensagenserro(2)) == 1)
@@ -12581,6 +12595,12 @@ function antoniovandreinterseccoesretacircunferencia(str, retorno)
 		return "e";
 		}
 
+	if ((antoniovandrenumeroreal(a.toString()) == "e") || (antoniovandrenumeroreal(b.toString()) == "e") || (antoniovandrenumeroreal(c.toString()) == "e") || (antoniovandrenumeroreal(xr.toString()) == "e") || (antoniovandrenumeroreal(yr.toString()) == "e") || (antoniovandrenumeroreal(r.toString()) == "e"))
+		return "e";
+
+	if ((antoniovandremodulo(a) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(xr) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(yr) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(r) > antoniovandremaximovalorentrada(1)))
+		return antoniovandremensagenserro(2);
+
 	if (r <= 0) return "O raio deve ser um real positivo.";
 
 	var d = 2 * a * b * yr * yr + ((-2 * b * b - 2 * a * b) * xr + (2 * a * b + 2 * a * a) * c) * yr - a * a * xr * xr - 2 * a * b * c * xr + (b * b + a * a) * r * r - b * b * c * c;
@@ -12592,6 +12612,9 @@ function antoniovandreinterseccoesretacircunferencia(str, retorno)
 		var r1 = -(b * antoniovandresqrt(d) + (b * b + a * b) * yr - b * b * xr + a * b * c) / (b * b + a * a);
 
 		var r2 = (b * antoniovandresqrt(d) + (-b * b - a * b) * yr + b * b * xr - a * b * c) / (b * b + a * a);
+
+		if ((antoniovandremodulo(r1) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(r1) > antoniovandremaximovalorsaida(1)))
+			return antoniovandremensagenserro(4);
 
 		var coef1 = antoniovandrefracaogeratriz(r1, 1);
 		var coef2 = antoniovandrefracaogeratriz(-a / b * r1 - c, 1);
