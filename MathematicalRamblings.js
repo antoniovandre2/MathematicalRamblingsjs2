@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 17-05-2022. Não considerando alterações em macros.
+// Última atualização: 18-05-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "17-05-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "18-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -8440,11 +8440,11 @@ function antoniovandrepossiveisraizes(arr, retorno, avisoanexo)
 		}
 	}
 
-// Distância de um ponto a uma função. Argumentos: separados por ponto e vírgula ";", primeiro a função em "x", segundo o ponto onde a abscissa é separada da ordenada por vírgula ",", terceiro o intervalo de pesquisa separados por vírgula ",", e quarto um inteiro positivo como a resolução da varredura. Retorna a string "e" caso um erro ocorra.
+// Distância de um ponto a uma função. Argumentos: separados por barra vertical "|", primeiro a função em "x", segundo o ponto onde a abscissa é separada da ordenada por ponto e vírgula ";", terceiro o intervalo de pesquisa separados por ponto e vírgula ";", e quarto um inteiro positivo como a resolução da varredura. Retorna a string "e" caso um erro ocorra.
 
 function antoniovandredistanciapontofuncao (arr)
 	{
-	var str = arr.split(";");
+	var str = arr.split("|");
 	var strt;
 	var list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
 	var listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
@@ -8465,7 +8465,7 @@ function antoniovandredistanciapontofuncao (arr)
 	if (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(funcao, antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(funcao, antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e")
 		return "e";
 
-	strt = str[1].split(",");
+	strt = str[1].split(";");
 
 	if (strt.length != 2) return "e";
 
@@ -8493,7 +8493,7 @@ function antoniovandredistanciapontofuncao (arr)
 	if ((antoniovandrenumeroreal(abscissa.toString()) == "e") || (antoniovandrenumeroreal(ordenada.toString()) == "e"))
 		return "e";
 
-	strt = str[2].split(",");
+	strt = str[2].split(";");
 
 	if (strt.length != 2) return "e";
 		
@@ -8600,11 +8600,11 @@ function antoniovandredistanciapontofuncao (arr)
 		return "Distância não encontrada.";
 	}
 
-// Distância de uma função a uma outra função. Argumentos: separados por ponto e vírgula ";", primeiro a função em "x", segundo a outra função em "x", terceiro o intervalo de pesquisa separado por vírgula ",", e quarto um inteiro positivo como a resolução da varredura. Retorna a string "e" caso um erro ocorra.
+// Distância de uma função a uma outra função. Argumentos: separados por barra vertical "|", primeiro a função em "x", segundo a outra função em "x", terceiro o intervalo de pesquisa separado por ponto e vírgula ";", e quarto um inteiro positivo como a resolução da varredura. Retorna a string "e" caso um erro ocorra.
 
 function antoniovandredistanciafuncaofuncao (arr)
 	{
-	var str = arr.split(";");
+	var str = arr.split("|");
 	var strt;
 	var list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
 	var list2 = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
@@ -8624,7 +8624,7 @@ function antoniovandredistanciafuncaofuncao (arr)
 	if ((antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(funcao1, antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(funcao1, antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e") || (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(funcao2, antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(funcao2, antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e"))
 		return "e";
 
-	strt = str[2].split(",");
+	strt = str[2].split(";");
 
 	if (strt.length != 2) return "e";
 		
