@@ -2453,7 +2453,7 @@ function integraldefinidaaproximacaosomariemannmensagemerro()
 	elemintegraldefinidaaproximacaosomariemann.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 	elemintegraldefinidaaproximacaosomariemann.textContent = "Erro ao calcular."
 
-	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula: primeiro: a expressão da função da qual se deseja obter o valor da integral, deve ser uma função em \"x\"; segundo: um número real como valor inferior; terceiro: um número real como valor superior; quarto: o número de elementos da partição que será utilizada no cálculo.";
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: a expressão da função da qual se deseja obter o valor da integral, deve ser uma função em \"x\"; segundo: um número real como valor inferior; terceiro: um número real como valor superior; quarto: o número de elementos da partição que será utilizada no cálculo.";
 	}
 
 </script>
@@ -2938,7 +2938,7 @@ function somatoriomensagemerro()
 	elemsomatorio.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 	elemsomatorio.textContent = "Erro ao calcular."
 
-	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula: primeiro: a expressão do somatório, deve ser em função de \"n\"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior.";
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: a expressão do somatório, deve ser em função de \"n\"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior.";
 	}
 
 </script>
@@ -3411,7 +3411,7 @@ function processarprodutorio()
 	if (f != "e")
 		document.getElementById('resultadoprodutorio').value = f
 	else
-		document.getElementById('resultadoprodutorio').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula: primeiro: a expressão do produtório, deve ser em função de \"n\"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior.";
+		document.getElementById('resultadoprodutorio').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: a expressão do produtório, deve ser em função de \"n\"; segundo: um número natural como índice inferior; terceiro: um número inteiro como índice superior.";
 
 	lockcalc = 0;
 
@@ -5007,7 +5007,7 @@ function processarfuncaomaisproxima()
 	if (f != "e")
 		document.getElementById('resultadofuncaomaisproxima').value = f
 	else
-		document.getElementById('resultadofuncaomaisproxima').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string dividida em duas partes por ponto e vírgula \";\": primeiro: uma string com funções em \"x\" separadas por vírgula; segundo: os pontos, separados por vírgula, com abscissa e ordenada separadas por dois pontos \":\".";
+		document.getElementById('resultadofuncaomaisproxima').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string dividida em duas partes por barra vertical \"|\": primeiro: uma string com funções em \"x\" separadas por ponto e vírgula \";\"; segundo: os pontos, separados por ponto e vírgula \";\", com abscissa e ordenada separadas por dois pontos \":\".";
 
 	lockcalc = 0;
 
@@ -7026,7 +7026,7 @@ function processarpossiveisraizes()
 	if (f != "e")
 		document.getElementById('resultadopossiveisraizes').value = f
 	else
-		document.getElementById('resultadopossiveisraizes').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada em três partes por ponto e vírgula \";\", a primeira com uma função em \"x\", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira a precisão, um inteiro positivo, de busca.";
+		document.getElementById('resultadopossiveisraizes').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada em três partes por barra vertical \"|\", a primeira com uma função em \"x\", a segunda com o intervalo de pesquisa, o inferior e o superior separados por ponto e vírgula \";\", a terceira a precisão, um inteiro positivo, de busca.";
 
 	lockcalc = 0;
 
@@ -7619,7 +7619,7 @@ function processardistanciapontofuncao()
 	if (out != "e")
 		document.getElementById('resultadodistanciapontofuncao').value = out
 	else
-		document.getElementById('resultadodistanciapontofuncao').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string com os argumentos separados por ponto e vírgula \";\", primeiro a função em \"x\", segundo o ponto onde a abscissa é separada da ordenada por vírgula \",\", terceiro o intervalo de pesquisa com limites separados por vírgula \",\", e quarto um inteiro positivo como a resolução da varredura.";
+		document.getElementById('resultadodistanciapontofuncao').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string com os argumentos separados por barra vertical \"|\", primeiro a função em \"x\", segundo o ponto onde a abscissa é separada da ordenada por ponto e vírgula \";\", terceiro o intervalo de pesquisa com limites separados por ponto e vírgula \";\", e quarto um inteiro positivo como a resolução da varredura.";
 	}
 
 	function distanciapontofuncaomensagemerro()
@@ -7634,7 +7634,7 @@ function processardistanciapontofuncao()
 	}
 
 </script>
-	
+		
 <br><br>
 
 <h2>Calculadora: distância de uma função a uma outra função.</h2>
@@ -7676,14 +7676,14 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 	-o-border-radius: 5px;
 	border-radius: 5px;
 }
-    
+
 </style>
 
-Entre com uma string com os argumentos separados por ponto e vírgula "<span class="notranslate">;</span>", primeiro a função em "<span class="notranslate">x</span>", segundo outra função em "<span class="notranslate">x</span>", terceiro o intervalo de pesquisa com limites separados por vírgula "<span class="notranslate">,</span>", e quarto um inteiro positivo como a resolução da varredura:
+Entre com uma string com os argumentos separados por barra vertical "<span class="notranslate">|</span>", primeiro a função em "<span class="notranslate">x</span>", segundo outra função em "<span class="notranslate">x</span>", terceiro o intervalo de pesquisa com limites separados por ponto e vírgula "<span class="notranslate">;</span>", e quarto um inteiro positivo como a resolução da varredura:
 <br><br>
 Exemplo:
 <br><br>
-Input: "<span class="notranslate">x*x + 2; -1; -2, 2; 10</span>". Output: aproximadamente "<span class="notranslate">3</span>".
+Input: "<span class="notranslate">x*x + 2 | -1 | -2; 2 | 10</span>". Output: aproximadamente "<span class="notranslate">3</span>".
 <br><br>
 <table border="1" width="100%"><tr><td><input type="text" name="entradadistanciafuncaofuncao" style="width : 100%"></td></tr></table>
 <br>
@@ -7760,13 +7760,13 @@ function antoniovandredistanciafuncaofuncaoout(arr)
 	flagrepeticaodistanciafuncaofuncao = 0;
 	flagrepeticaodistanciafuncaofuncao2 = 0;
 	flagrepeticaodistanciafuncaofuncaot = 0;
-    str = arr.split(";");
-    list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
-    list2 = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
-    listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
-    distanciam = Number.MAX_VALUE;
-    contador = 0;
-    contador2 = 0;
+	str = arr.split("|");
+	list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
+	list2 = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
+	listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
+	distanciam = Number.MAX_VALUE;
+	contador = 0;
+	contador2 = 0;
 
 	if (str.length != 4)
 		{
@@ -7783,12 +7783,12 @@ function antoniovandredistanciafuncaofuncaoout(arr)
 		return;
 		}
 
-    funcao1 = str[0].trim();
-    funcao2 = str[1].trim();
+	funcao1 = str[0].trim();
+	funcao2 = str[1].trim();
 
-    if ((antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(funcao1, antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(funcao1, antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e") || (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(funcao2, antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(funcao2, antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e"))
-        {
-        document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
+	if ((antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(funcao1, antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(funcao1, antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e") || (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(funcao2, antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(funcao2, antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e"))
+		{
+		document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
 		elemdistanciafuncaofuncao.style.width = "100%";
 		elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 		elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
@@ -7799,13 +7799,13 @@ function antoniovandredistanciafuncaofuncaoout(arr)
 		lockcalc = 0;
 
 		return;
-        }
+		}
 
-	strt = str[2].split(",");
+	strt = str[2].split(";");
 
 	if (strt.length != 2)
-        {
-        document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
+		{
+		document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
 		elemdistanciafuncaofuncao.style.width = "100%";
 		elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 		elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
@@ -7827,7 +7827,7 @@ function antoniovandredistanciafuncaofuncaoout(arr)
 		}
 	catch (error)
 		{
-        document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
+		document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
 		elemdistanciafuncaofuncao.style.width = "100%";
 		elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 		elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
@@ -7846,7 +7846,7 @@ function antoniovandredistanciafuncaofuncaoout(arr)
 		}
 	catch (error)
 		{
-        document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
+		document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
 		elemdistanciafuncaofuncao.style.width = "100%";
 		elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 		elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
@@ -7859,9 +7859,9 @@ function antoniovandredistanciafuncaofuncaoout(arr)
 		return;
 		}
 
-    if ((antoniovandrenumeroreal(inf.toString()) == "e") || (antoniovandrenumeroreal(sup.toString()) == "e") || (antoniovandrenumeronaturalpositivo(str[3].trim()) == "e"))
-        {
-        document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
+	if ((antoniovandrenumeroreal(inf.toString()) == "e") || (antoniovandrenumeroreal(sup.toString()) == "e") || (antoniovandrenumeronaturalpositivo(str[3].trim()) == "e"))
+		{
+		document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
 		elemdistanciafuncaofuncao.style.width = "100%";
 		elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 		elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
@@ -7878,7 +7878,7 @@ function antoniovandredistanciafuncaofuncaoout(arr)
 
 	if ((antoniovandremodulo(inf) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(sup) > parseFloat(antoniovandremaximovalorentrada(1))) || (precisao > parseFloat(antoniovandremaximovalorentrada(1))))
 		{
-        document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandremensagenserro(2);
+		document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandremensagenserro(2);
 		elemdistanciafuncaofuncao.style.width = "100%";
 		elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 		elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
@@ -7897,8 +7897,8 @@ function antoniovandredistanciafuncaofuncaoout(arr)
 	for (var i = 0; i < listtam; i++)
 		list2.unshift(antoniovandreoperadoresfuncoesconstantes(3)[i]);
 
-    expressao1 = antoniovandresubstituirstrings(funcao1, list);
-    expressao2 = antoniovandresubstituirstrings(funcao2, list2);
+	expressao1 = antoniovandresubstituirstrings(funcao1, list);
+	expressao2 = antoniovandresubstituirstrings(funcao2, list2);
 
 	function escoporepeticao()
 		{
@@ -7911,178 +7911,178 @@ function antoniovandredistanciafuncaofuncaoout(arr)
 			elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(64, 64, 64, 1) 0%, rgba(64, 255, 64, 1) 100%)";
 			elemdistanciafuncaofuncao.textContent = percentualconclusaostr;
 
-            try
-                {
-                result1 = eval(antoniovandresubstituirstrings(expressao1, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + (inf + (sup - inf) * (contador / precisao)).toString() + ")"]]));
-                }
-            catch (error)
-                {
-                document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
-                elemdistanciafuncaofuncao.style.width = "100%";
-                elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-                elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
-                flagrepeticaodistanciafuncaofuncao2 = 1;
+			try
+				{
+				result1 = eval(antoniovandresubstituirstrings(expressao1, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + (inf + (sup - inf) * (contador / precisao)).toString() + ")"]]));
+				}
+			catch (error)
+				{
+				document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
+				elemdistanciafuncaofuncao.style.width = "100%";
+				elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+				elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
+				flagrepeticaodistanciafuncaofuncao2 = 1;
 
-                $(".cancelardistanciafuncaofuncao").empty();
+				$(".cancelardistanciafuncaofuncao").empty();
 
-                lockcalc = 0;
+				lockcalc = 0;
 
-                return;
-                }
+				return;
+				}
 
-            try
-                {
-                result2 = eval(antoniovandresubstituirstrings(expressao2, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + (inf + (sup - inf) * (contador2 / precisao)).toString() + ")"]]));
-                }
-            catch (error)
-                {
-                document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
-                elemdistanciafuncaofuncao.style.width = "100%";
-                elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-                elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
-                flagrepeticaodistanciafuncaofuncao2 = 1;
+			try
+				{
+				result2 = eval(antoniovandresubstituirstrings(expressao2, [[antoniovandreoperadoresfuncoesconstantes(5), "(" + (inf + (sup - inf) * (contador2 / precisao)).toString() + ")"]]));
+				}
+			catch (error)
+				{
+				document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
+				elemdistanciafuncaofuncao.style.width = "100%";
+				elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+				elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
+				flagrepeticaodistanciafuncaofuncao2 = 1;
 
-                $(".cancelardistanciafuncaofuncao").empty();
+				$(".cancelardistanciafuncaofuncao").empty();
 
-                lockcalc = 0;
+				lockcalc = 0;
 
-                return;
-                }
+				return;
+				}
 
-            if ((antoniovandrenumeroreal(result1.toString()) == "e") || (antoniovandrenumeroreal(result2.toString()) == "e"))
-                {
-                if ((antoniovandrecompararstrings(result1, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(result1, antoniovandremensagenserro(6)) == 1) || (antoniovandrecompararstrings(result2, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(result2, antoniovandremensagenserro(6)) == 1))
-                    {
-                    document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandremensagenserro(6);
-                    elemdistanciafuncaofuncao.style.width = "100%";
-                    elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-                    elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
-                    flagrepeticaodistanciafuncaofuncao2 = 1;
+			if ((antoniovandrenumeroreal(result1.toString()) == "e") || (antoniovandrenumeroreal(result2.toString()) == "e"))
+				{
+				if ((antoniovandrecompararstrings(result1, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(result1, antoniovandremensagenserro(6)) == 1) || (antoniovandrecompararstrings(result2, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(result2, antoniovandremensagenserro(6)) == 1))
+					{
+					document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandremensagenserro(6);
+					elemdistanciafuncaofuncao.style.width = "100%";
+					elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+					elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
+					flagrepeticaodistanciafuncaofuncao2 = 1;
 
-                    $(".cancelardistanciafuncaofuncao").empty();
+					$(".cancelardistanciafuncaofuncao").empty();
 
-                    lockcalc = 0;
+					lockcalc = 0;
 
-                    return;
-                    }
-                else
-                    {
-                    if ((antoniovandrecompararstrings(result1, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(result1, antoniovandremensagenserro(4)) == 1) || (antoniovandrecompararstrings(result2, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(result2, antoniovandremensagenserro(4)) == 1))
-                        {
-                        document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandremensagenserro(4);
-                        elemdistanciafuncaofuncao.style.width = "100%";
-                        elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-                        elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
-                        flagrepeticaodistanciafuncaofuncao2 = 1;
+					return;
+					}
+				else
+					{
+					if ((antoniovandrecompararstrings(result1, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(result1, antoniovandremensagenserro(4)) == 1) || (antoniovandrecompararstrings(result2, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(result2, antoniovandremensagenserro(4)) == 1))
+						{
+						document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandremensagenserro(4);
+						elemdistanciafuncaofuncao.style.width = "100%";
+						elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+						elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
+						flagrepeticaodistanciafuncaofuncao2 = 1;
 
-                        $(".cancelardistanciafuncaofuncao").empty();
+						$(".cancelardistanciafuncaofuncao").empty();
 
-                        lockcalc = 0;
+						lockcalc = 0;
 
-                        return;
-                        }
-                    else
-                        {
-                        if ((antoniovandrecompararstrings(result1, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(result1, antoniovandremensagenserro(2)) == 1) || (antoniovandrecompararstrings(result2, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(result2, antoniovandremensagenserro(2)) == 1))
-                            {
-                            document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandremensagenserro(2);
-                            elemdistanciafuncaofuncao.style.width = "100%";
-                            elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-                            elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
-                            flagrepeticaodistanciafuncaofuncao2 = 1;
+						return;
+						}
+					else
+						{
+						if ((antoniovandrecompararstrings(result1, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(result1, antoniovandremensagenserro(2)) == 1) || (antoniovandrecompararstrings(result2, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(result2, antoniovandremensagenserro(2)) == 1))
+							{
+							document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandremensagenserro(2);
+							elemdistanciafuncaofuncao.style.width = "100%";
+							elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+							elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
+							flagrepeticaodistanciafuncaofuncao2 = 1;
 
-                            $(".cancelardistanciafuncaofuncao").empty();
+							$(".cancelardistanciafuncaofuncao").empty();
 
-                            lockcalc = 0;
+							lockcalc = 0;
 
-                            return;
-                            }
-                        else
-                            {
-                            if (antoniovandrecompararstrings(typeof result1, "string") == 1)
-                                document.getElementById('resultadodistanciafuncaofuncao').value = result1
-                            else {if (antoniovandrecompararstrings(typeof result2, "string") == 1)
-                                document.getElementById('resultadodistanciafuncaofuncao').value = result2
-                            else
-                                document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();}
+							return;
+							}
+						else
+							{
+							if (antoniovandrecompararstrings(typeof result1, "string") == 1)
+								document.getElementById('resultadodistanciafuncaofuncao').value = result1
+							else {if (antoniovandrecompararstrings(typeof result2, "string") == 1)
+								document.getElementById('resultadodistanciafuncaofuncao').value = result2
+							else
+								document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();}
 
-                            elemdistanciafuncaofuncao.style.width = "100%";
-                            elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-                            elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
-                            flagrepeticaodistanciafuncaofuncao2 = 1;
+							elemdistanciafuncaofuncao.style.width = "100%";
+							elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+							elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
+							flagrepeticaodistanciafuncaofuncao2 = 1;
 
-                            $(".cancelardistanciafuncaofuncao").empty();
+							$(".cancelardistanciafuncaofuncao").empty();
 
-                            lockcalc = 0;
+							lockcalc = 0;
 
-                            return;
-                            }
-                        }
-                    }
-                }
-            else
-                {
-                if ((antoniovandremodulo(result1) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(result2) > parseFloat(antoniovandremaximovalorsaida(1))))
-                    {
-                    document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandremensagenserro(6);
-                    elemdistanciafuncaofuncao.style.width = "100%";
-                    elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-                    elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
-                    flagrepeticaodistanciafuncaofuncao2 = 1;
+							return;
+							}
+						}
+					}
+				}
+			else
+				{
+				if ((antoniovandremodulo(result1) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(result2) > parseFloat(antoniovandremaximovalorsaida(1))))
+					{
+					document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandremensagenserro(6);
+					elemdistanciafuncaofuncao.style.width = "100%";
+					elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+					elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
+					flagrepeticaodistanciafuncaofuncao2 = 1;
 
-                    $(".cancelardistanciafuncaofuncao").empty();
+					$(".cancelardistanciafuncaofuncao").empty();
 
-                    lockcalc = 0;
+					lockcalc = 0;
 
-                    return;
-                    }
-                else
-                    {
-                    try
-                        {
-                        distancia = antoniovandrepotencia((((inf + (sup - inf) * (contador2 / precisao))) - (inf + (sup - inf) * (contador / precisao))) * (((inf + (sup - inf) * (contador2 / precisao))) - (inf + (sup - inf) * (contador / precisao))) + (result2 - result1) * (result2 - result1), 0.5);
-                        }
-                    catch (error)
-                        {
-                        document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
-                        elemdistanciafuncaofuncao.style.width = "100%";
-                        elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-                        elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
-                        flagrepeticaodistanciafuncaofuncao2 = 1;
+					return;
+					}
+				else
+					{
+					try
+						{
+						distancia = antoniovandrepotencia((((inf + (sup - inf) * (contador2 / precisao))) - (inf + (sup - inf) * (contador / precisao))) * (((inf + (sup - inf) * (contador2 / precisao))) - (inf + (sup - inf) * (contador / precisao))) + (result2 - result1) * (result2 - result1), 0.5);
+						}
+					catch (error)
+						{
+						document.getElementById('resultadodistanciafuncaofuncao').value = distanciafuncaofuncaomensagemerro();
+						elemdistanciafuncaofuncao.style.width = "100%";
+						elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+						elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
+						flagrepeticaodistanciafuncaofuncao2 = 1;
 
-                        $(".cancelardistanciafuncaofuncao").empty();
+						$(".cancelardistanciafuncaofuncao").empty();
 
-                        lockcalc = 0;
+						lockcalc = 0;
 
-                        return;
-                        }
+						return;
+						}
 
 					if (distancia > parseFloat(antoniovandremaximovalorsaida(1)))
 						{
-   		                document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandremensagenserro(6);
-            		    elemdistanciafuncaofuncao.style.width = "100%";
-                    	elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-                    	elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
-                    	flagrepeticaodistanciafuncaofuncao2 = 1;
+							document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandremensagenserro(6);
+						elemdistanciafuncaofuncao.style.width = "100%";
+						elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+						elemdistanciafuncaofuncao.textContent = "Erro ao calcular."
+						flagrepeticaodistanciafuncaofuncao2 = 1;
 
-                    	$(".cancelardistanciafuncaofuncao").empty();
+						$(".cancelardistanciafuncaofuncao").empty();
 
-                    	lockcalc = 0;
+						lockcalc = 0;
 
-                    	return;
-                    	}
+						return;
+						}
 
-                    if (distancia < distanciam) distanciam = distancia;
-                    }
-                }
+					if (distancia < distanciam) distanciam = distancia;
+					}
+				}
 
-            if ((contador2 == precisao) || (flagrepeticaodistanciafuncaofuncao == 1))
-                {
-                flagrepeticaodistanciafuncaofuncao = 1;
-                return;
-                }
+			if ((contador2 == precisao) || (flagrepeticaodistanciafuncaofuncao == 1))
+				{
+				flagrepeticaodistanciafuncaofuncao = 1;
+				return;
+				}
 
-            if (contador == precisao) {contador2++; contador = 0;}
+			if (contador == precisao) {contador2++; contador = 0;}
 
 			contador++;
 			}
@@ -8168,10 +8168,10 @@ function processardistanciafuncaofuncao()
 	if (out != "e")
 		document.getElementById('resultadodistanciafuncaofuncao').value = out
 	else
-		document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string com os argumentos separados por ponto e vírgula \";\", primeiro a função em \"x\", segundo outra função em \"x\", terceiro o intervalo de pesquisa com limites separados por vírgula \",\", e quarto um inteiro positivo como a resolução da varredura.";
+		document.getElementById('resultadodistanciafuncaofuncao').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string com os argumentos separados por barra vertical \"|\", primeiro a função em \"x\", segundo outra função em \"x\", terceiro o intervalo de pesquisa com limites separados por ponto e vírgula \";\", e quarto um inteiro positivo como a resolução da varredura.";
 	}
 
-    function distanciafuncaofuncaomensagemerro()
+	function distanciafuncaofuncaomensagemerro()
 	{
 	elemdistanciafuncaofuncao.style.width = "100%";
 	elemdistanciafuncaofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
@@ -8179,11 +8179,11 @@ function processardistanciafuncaofuncao()
 
 	$(".cancelardistanciafuncaofuncao").empty();
 
-	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string com os argumentos separados por ponto e vírgula \";\", primeiro a função em \"x\", segundo outra função em \"x\", terceiro o intervalo de pesquisa com limites separados por vírgula \",\", e quarto um inteiro positivo como a resolução da varredura.";
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string com os argumentos separados por barra vertical \"|\", primeiro a função em \"x\", segundo outra função em \"x\", terceiro o intervalo de pesquisa com limites separados por ponto e vírgula \";\", e quarto um inteiro positivo como a resolução da varredura.";
 	}
 
 </script>
-
+	
 <br><br>
 
 <h2>Calculadora: triângulos pitagóricos.</h2>
@@ -9301,7 +9301,7 @@ function processarestudosinalfuncao()
 	if ((f != "e") && (antoniovandrecompararstrings(f, "") == "e"))
 		document.getElementById('resultadoestudosinalfuncao').value = f
 	else
-		document.getElementById('resultadoestudosinalfuncao').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada em três partes por ponto e vírgula \";\", a primeira com uma função em \"x\", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira a precisão, um inteiro positivo, de busca.";
+		document.getElementById('resultadoestudosinalfuncao').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada em três partes por ponto e vírgula \"|\", a primeira com uma função em \"x\", a segunda com o intervalo de pesquisa, o inferior e o superior separados por ponto e vírgula \";\", a terceira a precisão, um inteiro positivo, de busca.";
 
 	lockcalc = 0;
 
@@ -9363,11 +9363,11 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 </style>
 
-Entre com uma string separada por ponto e vírgula "<span class="notranslate">;</span>" contendo, primeiro, um conjunto de números reais separados por vírgula "<span class="notranslate">,</span>", e, segundo, o inteiro positivo inteligência.
+Entre com uma string separada por barra vertical "<span class="notranslate">|</span>" contendo, primeiro, um conjunto de números reais separados por ponto e vírgula "<span class="notranslate">;</span>", e, segundo, o inteiro positivo inteligência.
 <br><br>
 Exemplo:
 <br><br>
-Input: "<span class="notranslate">2, 4, 6; 1</span>". Output: aproximadamente "<span class="notranslate">8</span>".
+Input: "<span class="notranslate">2; 4; 6 | 1</span>". Output: aproximadamente "<span class="notranslate">8</span>".
 <br><br>
 <table border="1" width="100%"><tr><td><input type="text" name="argumentosproximotermosequencia" style="width : 100%"></td></tr></table>
 <br>
@@ -9377,7 +9377,7 @@ Próximo termo cogitado:
 <br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadoproximotermosequencia" id="resultadoproximotermosequencia" readonly rows="3"></textarea></td></tr></table>
 <br><br>
-<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="avisoanexoproximotermosequencia" id="avisoanexoproximotermosequencia" readonly rows="5"></textarea></td></tr></table>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="avisoanexoproximotermosequencia" id="avisoanexoproximotermosequencia" readonly rows="10"></textarea></td></tr></table>
 <br>
 <div id="myProgressproximotermosequencia"><div id="myBarproximotermosequencia"></div></div>
 
@@ -9437,7 +9437,7 @@ function cancelarproximotermosequenciaout()
 
 function antoniovandreproximotermosequenciaout(arr)
 	{
-	str = arr.split(";");
+	str = arr.split("|");
 	list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
 	flagrepeticaoproximotermosequencia = 0;
 	flagrepeticaoproximotermosequenciat = 0;
@@ -9462,7 +9462,7 @@ function antoniovandreproximotermosequenciaout(arr)
 		return;
 		}
 
-	pontos = str[0].split(",");
+	pontos = str[0].split(";");
 
 	if (antoniovandrenumeronaturalpositivo(str[1].trim()) == "e")
 		{
@@ -10040,7 +10040,7 @@ function processarproximotermosequencia()
 	if ((f != "e") && (antoniovandrecompararstrings(f, "") == "e"))
 		document.getElementById('resultadoproximotermosequencia').value = f
 	else
-		document.getElementById('resultadoproximotermosequencia').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada por ponto e vírgula \";\" contendo, primeiro, um conjunto de números reais separados por vírgula \",\", e, segundo, o inteiro positivo inteligência.";
+		document.getElementById('resultadoproximotermosequencia').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada por barra vertical \"|\" contendo, primeiro, um conjunto de números reais separados por ponto e vírgula \";\", e, segundo, o inteiro positivo inteligência.";
 
 	lockcalc = 0;
 
@@ -10053,11 +10053,11 @@ function proximotermosequenciamensagemerro()
 	elemproximotermosequencia.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 	elemproximotermosequencia.textContent = "Erro ao calcular."
 
-	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada por ponto e vírgula \";\" contendo, primeiro, um conjunto de números reais separados por vírgula \",\", e, segundo, o inteiro positivo inteligência.";
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada por barra vertical \"|\" contendo, primeiro, um conjunto de números reais separados por ponto e vírgula \";\", e, segundo, o inteiro positivo inteligência.";
 	}
 
 </script>
-
+	
 <br><br>
 
 <h2>Calculadora: código Morse.</h2>
@@ -20915,7 +20915,7 @@ function processarareapoligonoconvexo()
 	if (out != "e")
 		document.getElementById('resultadoareapoligonoconvexo').value = out
 	else
-		document.getElementById('resultadoareapoligonoconvexo').value = "Erro do JavaScript (não meu) ou entrada inválida. Entre com um número finito de pontos separados por ponto e vírgula \";\", a abscissa separada da ordenada por vírgula \",\".";
+		document.getElementById('resultadoareapoligonoconvexo').value = "Erro do JavaScript (não meu) ou entrada inválida. Entre com um número finito de pontos separados por barra vertical \"|\", a abscissa separada da ordenada por ponto e vírgula \";\".";
 	}
 </script>
 
