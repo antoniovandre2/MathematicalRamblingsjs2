@@ -9296,7 +9296,7 @@ _____
 Calculadora: ângulo entre dois vetores.
 __
 
-Softwares/JavaScripts/Mathematical Ramblings - 11-05-2022 - 3.txt
+Softwares/JavaScripts/Mathematical Ramblings - 11-05-2022 - 4.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
