@@ -19436,11 +19436,11 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 </style>
 
-Entre com uma string separada em quatro partes por ponto e vírgula "<span class="notranslate">;</span>", a primeira com uma função em "<span class="notranslate">x</span>", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira "m" se deseja o mínimo ou "M" se deseja o máximo, a quarta a precisão, um inteiro positivo, de busca.
+Entre com uma string separada em quatro partes por barra vertical "<span class="notranslate">|</span>", a primeira com uma função em "<span class="notranslate">x</span>", a segunda com o intervalo de pesquisa, o inferior e o superior separados por ponto e vírgula "<span class="notranslate">;</span>", a terceira "m" se deseja o mínimo ou "M" se deseja o máximo, a quarta a precisão, um inteiro positivo, de busca.
 <br><br>
 Exemplo:
 <br><br>
-Input: "<span class="notranslate">x*x; -2, 2; m; 20</span>".
+Input: "<span class="notranslate">x*x | -2; 2 | m | 20</span>".
 <br><br>
 Output: dentre outros possíveis valores aproximados, "<span class="notranslate">0</span>".
 <br><br>
@@ -19452,7 +19452,7 @@ Máximo ou mínimo (dependendo do que foi pedido):
 <br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadomaximominimofuncao" id="resultadomaximominimofuncao" readonly rows="5"></textarea></td></tr></table>
 <br><br>
-<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="avisoanexomaximominimofuncao" id="avisoanexomaximominimofuncao" readonly rows="5"></textarea></td></tr></table>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="avisoanexomaximominimofuncao" id="avisoanexomaximominimofuncao" readonly rows="10"></textarea></td></tr></table>
 <br>
 <div id="myProgressmaximominimofuncao"><div id="myBarmaximominimofuncao"></div></div>
 
@@ -19510,7 +19510,7 @@ function cancelarmaximominimofuncaoout()
 
 function antoniovandremaximominimofuncaoout(arr, avisoanexo)
 	{
-	var str = arr.split(";");
+	var str = arr.split("|");
 	list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
 	maximo = (-1) * Number.MAX_VALUE;
 	minimo = Number.MAX_VALUE;
@@ -19566,7 +19566,7 @@ function antoniovandremaximominimofuncaoout(arr, avisoanexo)
 		return;
 		}
 
-	strt = str[1].split(",");
+	strt = str[1].split(";");
 
 	if (strt.length != 2)
 		{
@@ -19842,7 +19842,7 @@ function processarmaximominimofuncao()
 	if (f != "e")
 		document.getElementById('resultadomaximominimofuncao').value = f
 	else
-		document.getElementById('resultadomaximominimofuncao').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada em quatro partes por ponto e vírgula \";\", a primeira com uma função em \"x\", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira \"m\" se deseja o mínimo ou \"M\" se deseja o máximo, a quarta a precisão, um inteiro positivo, de busca.";
+		document.getElementById('resultadomaximominimofuncao').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada em quatro partes por barra vertical \"|\", a primeira com uma função em \"x\", a segunda com o intervalo de pesquisa, o inferior e o superior separados por ponto e vírgula \";\", a terceira \"m\" se deseja o mínimo ou \"M\" se deseja o máximo, a quarta a precisão, um inteiro positivo, de busca.";
 
 	lockcalc = 0;
 
@@ -19855,11 +19855,11 @@ function maximominimofuncaomensagemerro()
 	elemmaximominimofuncao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 	elemmaximominimofuncao.textContent = "Erro ao calcular."
 
-	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada em quatro partes por ponto e vírgula \";\", a primeira com uma função em \"x\", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira \"m\" se deseja o mínimo ou \"M\" se deseja o máximo, a quarta a precisão, um inteiro positivo, de busca.";
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string separada em quatro partes por barra vertical \"|\", a primeira com uma função em \"x\", a segunda com o intervalo de pesquisa, o inferior e o superior separados por ponto e vírgula \";\", a terceira \"m\" se deseja o mínimo ou \"M\" se deseja o máximo, a quarta a precisão, um inteiro positivo, de busca.";
 	}
 
 </script>
-
+	
 <br><br>
 
 <h2>Calculadora: equação da reta tangente.</h2>
