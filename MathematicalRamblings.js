@@ -4744,18 +4744,10 @@ function antoniovandrepotencia(a, b)
 
 			b = antoniovandretraduzirexpressaofuncional(b, 0)
 
-			if (antoniovandreaproximacaotaylorflag())
-				return antoniovandreexp(eval(b.toString()) * antoniovandreln(eval(a).toString()))
-			else
-				return antoniovandrepotencia(eval(a), eval(b));
+			return antoniovandrepotencia(eval(a), eval(b));
 			}
 		else
-			{
-			if (antoniovandreaproximacaotaylorflag())
-				return antoniovandreexp(eval(b * antoniovandreln(eval(a).toString())))
-			else
-				return antoniovandrepotencia(eval(a), b);
-			}
+			return antoniovandrepotencia(eval(a), b);
 		}
 	else
 		{
@@ -4768,10 +4760,7 @@ function antoniovandrepotencia(a, b)
 
 				b = antoniovandretraduzirexpressaofuncional(b, 0)
 
-				if (antoniovandreaproximacaotaylorflag())
-					return antoniovandreexp(eval(b.toString()) * antoniovandreln(a))
-				else
-					return antoniovandrepotencia(a, eval(b));
+				return antoniovandrepotencia(a, eval(b));
 				}
 			else
 				{
@@ -4918,10 +4907,7 @@ function antoniovandreln(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		if (antoniovandreaproximacaotaylorflag())
-			return antoniovandreaproximacaotaylor("ln, " + eval(x).toString())
-		else
-			return Math.log(eval(x));
+		return antoniovandreln(eval(x));
 		}
 	else
 		{
@@ -5184,10 +5170,7 @@ function antoniovandresen(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		if (antoniovandreaproximacaotaylorflag())
-			return antoniovandreaproximacaotaylor("sen, " + eval(x).toString())
-		else
-			return Math.sin(eval(x));
+		return antoniovandresen(eval(x));
 		}
 	else
 		{
@@ -5227,10 +5210,7 @@ function antoniovandrecos(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		if (antoniovandreaproximacaotaylorflag())
-			return antoniovandreaproximacaotaylor("cos, " + eval(x).toString())
-		else
-			return Math.cos(eval(x));
+		return antoniovandrecos(eval(x));
 		}
 	else
 		{
@@ -5335,12 +5315,7 @@ function antoniovandrecord(x)
 	if (arguments.length != 1)
 		return "e";
 
-	var c = antoniovandresqrt("2 * (1 - antoniovandrecos(" + x + "))");
-
-	if (c == "e")
-		return "e";
-
-	return c;
+	return antoniovandresqrt("2 * (1 - antoniovandrecos(" + x + "))");
 	}
 
 // Arco-seno. Retorna a string "e" se um erro genérico ocorre.
@@ -5357,10 +5332,7 @@ function antoniovandrearcsen(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		if (antoniovandreaproximacaotaylorflag())
-			return antoniovandreaproximacaotaylor("arcsen, " + eval(x).toString())
-		else
-			return Math.asin(eval(x));
+		return antoniovandrearcsen(eval(x));
 		}
 	else
 		{
@@ -5385,10 +5357,7 @@ function antoniovandrearccos(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		if (antoniovandreaproximacaotaylorflag())
-			return antoniovandreaproximacaotaylor("arccos, " + eval(x).toString())
-		else
-			return Math.acos(eval(x));
+		return antoniovandrearccos(eval(x));
 		}
 	else
 		{
@@ -5413,10 +5382,7 @@ function antoniovandrearctg(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		if (antoniovandreaproximacaotaylorflag())
-			return antoniovandreaproximacaotaylor("arctg, " + eval(x).toString())
-		else
-			return Math.atan(eval(x));
+		return antoniovandrearctg(eval(x));
 		}
 	else
 		{
@@ -5441,10 +5407,7 @@ function antoniovandrearccotg(x)
 
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
-		if (antoniovandreaproximacaotaylorflag())
-			return antoniovandreaproximacaotaylor("arccotg, " + eval(x).toString())
-		else
-			return (antoniovandrepi()) / 2 - Math.atan(eval(x));
+		return antoniovandrearccotg(eval(x));
 		}
 	else
 		{
@@ -5484,15 +5447,7 @@ function antoniovandrearccord(x)
 	if (arguments.length != 1)
 		return "e";
 
-	var c = antoniovandrearccos("1 - (" + x + "*" + x + ") / 2");
-
-	if (antoniovandrestringpresente(c, "fora do domínio da função") == "0")
-		{
-		result = x + " fora do domínio da função arccord."
-		return result;
-		}
-
-	return c;
+	return c = antoniovandrearccos("1 - (" + x + "*" + x + ") / 2");
 	}
 
 // Seno hiperbólico. Retorna a string "e" se um erro genérico ocorre.
@@ -8312,11 +8267,11 @@ function antoniovandreanalisetexto(str, avisoanexo)
 	return outputstr;
 	}
 
-// Possíveis raízes de uma função. Argumentos: primeiro: uma string separada em três partes por ponto e vírgula ";", a primeira com uma função em "x", a segunda com o intervalo de pesquisa, o inferior e o superior separados por vírgula, a terceira a precisão, um inteiro positivo, de busca; segundo: 0 para retornar string ou 1 para retornar array; terceiro: -1 para exibir o aviso anexo.
+// Possíveis raízes de uma função. Argumentos: primeiro: uma string separada em três partes por barra vertical "|", a primeira com uma função em "x", a segunda com o intervalo de pesquisa, o inferior e o superior separados por ponto e vírgula ";", a terceira a precisão, um inteiro positivo, de busca; segundo: 0 para retornar string ou 1 para retornar array; terceiro: -1 para exibir o aviso anexo.
 
 function antoniovandrepossiveisraizes(arr, retorno, avisoanexo)
 	{
-	var str = arr.split(";");
+	var str = arr.split("|");
 	var funcao;
 	var strt;
 	var raizes = [];
@@ -8337,7 +8292,7 @@ function antoniovandrepossiveisraizes(arr, retorno, avisoanexo)
 	if (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(funcao, antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(funcao, antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e")
 		return "e";
 
-	strt = str[1].split(",");
+	strt = str[1].split(";");
 
 	if (strt.length != 2) return "e";
 
