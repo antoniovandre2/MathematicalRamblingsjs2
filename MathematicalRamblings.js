@@ -10779,11 +10779,11 @@ function antoniovandrevelocidadefuncionalantoniovandre(str, avisoanexo)
 		return result;
 	}
 
-// Área de um polígono convexo. Argumentos: um número finito de pontos separados por ponto e vírgula ";", a abscissa separada da ordenada por vírgula ",". Retorna a string "e" caso um erro genérico ocorra.
+// Área de um polígono convexo. Argumentos: um número finito de pontos separados por barra vertical "|", a abscissa separada da ordenada por ponto e vírgula ";". Retorna a string "e" caso um erro genérico ocorra.
 
 function antoniovandreareapoligonoconvexo(str)
 	{
-	var pontos = str.split(";");
+	var pontos = str.split("|");
 	var vertices = [];
 	var area = 0;
 
@@ -10791,7 +10791,7 @@ function antoniovandreareapoligonoconvexo(str)
 
 	for (var i = 0; i < pontos.length; i++)
 		{
-		var ponto = pontos[i].split(",");
+		var ponto = pontos[i].split(";");
 
 		if (ponto.length != 2) return "e";
 
@@ -10820,6 +10820,15 @@ function antoniovandreareapoligonoconvexo(str)
 				return "e";
 				}
 
+			if (antoniovandrenumeroreal(temp.toString()) == "e")
+				return temp;
+
+			if (antoniovandrenumeroreal(temp2.toString()) == "e")
+				return temp2;
+
+			if ((antoniovandremodulo(temp) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(temp2) > antoniovandremaximovalorentrada(1)))
+				return antoniovandremensagenserro(2);
+
 			vertices.push([temp, temp2]);
 			}
 		}
@@ -10837,6 +10846,9 @@ function antoniovandreareapoligonoconvexo(str)
 			if ((j != i - 1) && (j != i))
 				{
 				partarea = antoniovandredeterminante([[vertices[i - 1][0], vertices[i - 1][1], 1], [vertices[i][0], vertices[i][1], 1], [vertices[j][0], vertices[j][1], 1]]);
+
+				if (antoniovandrenumeroreal(partarea.toString()) == "e")
+					return partarea;
 
 				if (antoniovandremodulo(partarea) > antoniovandremaximovalorsaida(1))
 					return antoniovandremensagenserro(4);
