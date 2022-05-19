@@ -16901,10 +16901,10 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <br>
 <table><tr><td><table><tr><td><input type="button" onclick="processarcurvaregiaorelacaoout()" value="Calcular"></td><td> <div class="cancelarcurvaregiaorelacao"></div></td></tr></table></td></tr></table>
 <br>
-<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadocurvaregiaorelacaoavisoanexo" id="resultadocurvaregiaorelacaoavisoanexo" readonly rows="5"></textarea></td></tr></table>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadocurvaregiaorelacaoavisoanexo" id="resultadocurvaregiaorelacaoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
 <div id="dot-chart-curvaregiaorelacao"></div>
-<div id="dot-chart-curvaregiaorelacao-espera" class="dot-chart-curvaregiaorelacao-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-curvaregiaorelacao-espera" class="dot-chart-curvaregiaorelacao-espera"><img src="https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
 <br>
 Log:
 <br>
@@ -16992,7 +16992,7 @@ function processarcurvaregiaorelacaoout()
 	if (flagplotly == 1)
 		{
 		Plotly.purge("dot-chart-curvaregiaorelacao");
-		$("#dot-chart-curvaregiaorelacao-espera").html("<img src=\"Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
+		$("#dot-chart-curvaregiaorelacao-espera").html("<img src=\"https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
 		}
 
 	antoniovandrecurvaregiaorelacaoout(str[0].value, 0);
@@ -17124,6 +17124,12 @@ function antoniovandrecurvaregiaorelacaoout(str)
 			if (expressaopart[i][j] == "=")
 				{
 				relacao.push("=");
+				break;
+				}
+
+			if (antoniovandrecompararstrings(expressaopart[i][j] + expressaopart[i][j + 1], "!=") == 1)
+				{
+				relacao.push("!=");
 				break;
 				}
 			}
@@ -17974,6 +17980,13 @@ function antoniovandrecurvaregiaorelacaoout(str)
 							relacaop.push([5, indicefuncao]);
 							flagigualdadecurvaregiaorelacao = 1;
 							}
+
+						if ((relacao[indicefuncao] == "!=") && (resultpart1 != resultpart2))
+							{
+							xarr.push(x);
+							yarr.push(y2);
+							relacaop.push([6, -1]);
+							}
 						}
 					}
 				}
@@ -18195,10 +18208,10 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <br>
 <table><tr><td><table><tr><td><input type="button" onclick="processarsuperficieregiaorelacaoout()" value="Calcular"></td><td> <div class="cancelarsuperficieregiaorelacao"></div></td></tr></table></td></tr></table>
 <br>
-<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosuperficieregiaorelacaoavisoanexo" id="resultadosuperficieregiaorelacaoavisoanexo" readonly rows="5"></textarea></td></tr></table>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosuperficieregiaorelacaoavisoanexo" id="resultadosuperficieregiaorelacaoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
 <div id="dot-chart-superficieregiaorelacao"></div>
-<div id="dot-chart-superficieregiaorelacao-espera" class="dot-chart-superficieregiaorelacao-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-superficieregiaorelacao-espera" class="dot-chart-superficieregiaorelacao-espera"><img src="https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
 <span hidden>
 <img width=400 height=400 id="dot-chart-superficieregiaorelacao-esperagif"/>
 <canvas width=400 height=400 id="dot-chart-superficieregiaorelacao-esperacanvas"></canvas>
@@ -18302,7 +18315,7 @@ function processarsuperficieregiaorelacaoout()
 	if (flagplotly3Dsuperficieregiao == 1)
 		{
 		Plotly.purge("dot-chart-superficieregiaorelacao");
-		$("#dot-chart-superficieregiaorelacao-espera").html("<img src=\"Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
+		$("#dot-chart-superficieregiaorelacao-espera").html("<img src=\"https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
 		}
 
 	antoniovandresuperficieregiaorelacaoout(str[0].value, 0);
@@ -19124,6 +19137,32 @@ function antoniovandresuperficieregiaorelacaoout(str)
 						yarr.push(y);
 						zarr.push(z);
 						relacaop.push([5, indicefuncao]);
+
+						if (x > maxv)
+							maxv = x;
+
+						if (y > maxv)
+							maxv = y;
+
+						if (z > maxv)
+							maxv = z;
+
+						if (x < minv)
+							minv = x;
+
+						if (y < minv)
+							minv = y;
+
+						if (z < minv)
+							minv = z;
+						}
+
+					if ((antoniovandrecompararstrings(relacao[indicefuncao], "!=") == 1) && (resultpart1 != resultpart2))
+						{
+						xarr.push(x);
+						yarr.push(y);
+						zarr.push(z);
+						relacaop.push([6, -1]);
 
 						if (x > maxv)
 							maxv = x;
@@ -26365,7 +26404,7 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 <style>
 
-#myProgresssuperficiecurvaregiaorelacao {
+#myProgresssuperficieregiaorevolucaorelacao {
 	width: 100%;
 	background-image: linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%);
 	-webkit-border-radius: 5px;
@@ -26376,7 +26415,7 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 	height: 30px;
 }
 
-#myBarsuperficiecurvaregiaorelacao {
+#myBarsuperficieregiaorevolucaorelacao {
 	height: 20px;
 	text-align: center;
 	color: white;
@@ -26393,28 +26432,28 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 Entre com uma string contendo, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: as expressões das relações, separadas por dois pontos "<span class="notranslate">:</span>", das quais se deseja obter os gráficos, devem ser relações em "$x$" e "$y$"; segundo: um número real como valor inferior para "$x$"; terceiro: um número real como valor superior para "$x$"; quarto: um número real como valor inferior para "$y$"; quinto: um número real como valor superior para "$y$"; sexto: "<span class="notranslate">x</span>" para rotação com relação ao eixo $Ox$, ou "<span class="notranslate">y</span>" para rotação com relação ao eixo $Oy$; sétimo: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.
 <br><br>
-<table border="1" width="100%"><tr><td><input type="text" name="entradasuperficiecurvaregiaorelacao" style="width : 100%"></td></tr></table>
+<table border="1" width="100%"><tr><td><input type="text" name="entradasuperficieregiaorevolucaorelacao" style="width : 100%"></td></tr></table>
 <br>
-<table><tr><td><table><tr><td><input type="button" onclick="processarsuperficiecurvaregiaorelacaoout()" value="Calcular"></td><td> <div class="cancelarsuperficiecurvaregiaorelacao"></div></td></tr></table></td></tr></table>
+<table><tr><td><table><tr><td><input type="button" onclick="processarsuperficieregiaorevolucaorelacaoout()" value="Calcular"></td><td> <div class="cancelarsuperficieregiaorevolucaorelacao"></div></td></tr></table></td></tr></table>
 <br>
-<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosuperficiecurvaregiaorelacaoavisoanexo" id="resultadosuperficiecurvaregiaorelacaoavisoanexo" readonly rows="5"></textarea></td></tr></table>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosuperficieregiaorevolucaorelacaoavisoanexo" id="resultadosuperficieregiaorevolucaorelacaoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
-<div id="dot-chart-superficiecurvaregiaorelacao"></div>
-<div id="dot-chart-superficiecurvaregiaorelacao-espera" class="dot-chart-superficiecurvaregiaorelacao-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-superficieregiaorevolucaorelacao"></div>
+<div id="dot-chart-superficieregiaorevolucaorelacao-espera" class="dot-chart-superficieregiaorevolucaorelacao-espera"><img src="https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
 <span hidden>
-<img width=400 height=400 id="dot-chart-superficiecurvaregiaorelacao-esperagif"/>
-<canvas width=400 height=400 id="dot-chart-superficiecurvaregiaorelacao-esperacanvas"></canvas>
+<img width=400 height=400 id="dot-chart-superficieregiaorevolucaorelacao-esperagif"/>
+<canvas width=400 height=400 id="dot-chart-superficieregiaorevolucaorelacao-esperacanvas"></canvas>
 </span>
 <br>
-<table><tr><td><table><tr><td><div class="rotacaosuperficiecurvaregiaorelacao"></div></td><td> <div class="cancelarrotacaosuperficiecurvaregiaorelacao"></div></td><td> <div class="downloadgifrotacaosuperficiecurvaregiaorelacao"></div></td></tr></table></td></tr></table>
+<table><tr><td><table><tr><td><div class="rotacaosuperficieregiaorevolucaorelacao"></div></td><td> <div class="cancelarrotacaosuperficieregiaorevolucaorelacao"></div></td><td> <div class="downloadgifrotacaosuperficieregiaorevolucaorelacao"></div></td></tr></table></td></tr></table>
 <br>
 Log:
 <br>
-<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosuperficiecurvaregiaorelacao" id="resultadosuperficiecurvaregiaorelacao" readonly rows="3"></textarea></td></tr></table>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosuperficieregiaorevolucaorelacao" id="resultadosuperficieregiaorevolucaorelacao" readonly rows="3"></textarea></td></tr></table>
 
 <br>
 
-<div id="myProgresssuperficiecurvaregiaorelacao"><div id="myBarsuperficiecurvaregiaorelacao"></div></div>
+<div id="myProgresssuperficieregiaorevolucaorelacao"><div id="myBarsuperficieregiaorevolucaorelacao"></div></div>
 
 <script>
 
@@ -26451,69 +26490,69 @@ var yarr = [];
 var zarr = [];
 var maxv;
 var minv;
-var contadorsuperficiecurvaregiaorelacao = 0;
+var contadorsuperficieregiaorevolucaorelacao = 0;
 var indicefuncao = 0;
-var flagrepeticaosuperficiecurvaregiaorelacao = 0;
-var flagrepeticaosuperficiecurvaregiaorelacao2 = 0;
-var flagrepeticaosuperficiecurvaregiaorelacaot = 0;
-var flagplotlysuperficiecurvaregiaorelacao = 0;
-var trotsuperficiecurvaregiaorelacao = 0;
-var flaganimacaorotacaosuperficiecurvaregiaorelacao = 0;
-var flaggifsuperficiecurvaregiaorelacao = 0;
-var flaggifcontextsuperficiecurvaregiaorelacao = 0;
-var flagigualdadesuperficiecurvaregiaorelacao;
-var superficiecurvaregiaorelacaoencoder;
-var elemsuperficiecurvaregiaorelacao = document.getElementById('myBarsuperficiecurvaregiaorelacao');
+var flagrepeticaosuperficieregiaorevolucaorelacao = 0;
+var flagrepeticaosuperficieregiaorevolucaorelacao2 = 0;
+var flagrepeticaosuperficieregiaorevolucaorelacaot = 0;
+var flagplotlysuperficieregiaorevolucaorelacao = 0;
+var trotsuperficieregiaorevolucaorelacao = 0;
+var flaganimacaorotacaosuperficieregiaorevolucaorelacao = 0;
+var flaggifsuperficieregiaorevolucaorelacao = 0;
+var flaggifcontextsuperficieregiaorevolucaorelacao = 0;
+var flagigualdadesuperficieregiaorevolucaorelacao;
+var superficieregiaorevolucaorelacaoencoder;
+var elemsuperficieregiaorevolucaorelacao = document.getElementById('myBarsuperficieregiaorevolucaorelacao');
 
-elemsuperficiecurvaregiaorelacao.style.width = "100%";
-elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-elemsuperficiecurvaregiaorelacao.textContent = "Barra de progresso."
+elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+elemsuperficieregiaorevolucaorelacao.textContent = "Barra de progresso."
 
-var dotDivsuperficiecurvaregiaorelacao = document.getElementById("dot-chart-superficiecurvaregiaorelacao");
+var dotDivsuperficieregiaorevolucaorelacao = document.getElementById("dot-chart-superficieregiaorevolucaorelacao");
 
-document.getElementById('resultadosuperficiecurvaregiaorelacaoavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
+document.getElementById('resultadosuperficieregiaorevolucaorelacaoavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
 
-function processarsuperficiecurvaregiaorelacaoout()
+function processarsuperficieregiaorevolucaorelacaoout()
 	{
 	if (lockcalc == 1)
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = "Outra calculadora em execução.";
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = "Outra calculadora em execução.";
 		return;
 		}
 	else
 		lockcalc = 1;
 
-	var str = document.getElementsByName('entradasuperficiecurvaregiaorelacao');
+	var str = document.getElementsByName('entradasuperficieregiaorevolucaorelacao');
 
-	document.getElementById('resultadosuperficiecurvaregiaorelacao').value = "Calculando...";
+	document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = "Calculando...";
 
-	$(".rotacaosuperficiecurvaregiaorelacao").empty();
-	cancelarrotacaosuperficiecurvaregiaorelacaoout();
+	$(".rotacaosuperficieregiaorevolucaorelacao").empty();
+	cancelarrotacaosuperficieregiaorevolucaorelacaoout();
 
-	trotsuperficiecurvaregiaorelacao = 0;
-	flaganimacaorotacaosuperficiecurvaregiaorelacao = 0;
-	flaggifsuperficiecurvaregiaorelacao = 0;
-	flaggifcontextsuperficiecurvaregiaorelacao = 0;
-	flagigualdadesuperficiecurvaregiaorelacao = 0;
+	trotsuperficieregiaorevolucaorelacao = 0;
+	flaganimacaorotacaosuperficieregiaorevolucaorelacao = 0;
+	flaggifsuperficieregiaorevolucaorelacao = 0;
+	flaggifcontextsuperficieregiaorevolucaorelacao = 0;
+	flagigualdadesuperficieregiaorevolucaorelacao = 0;
 
-	$(".cancelarsuperficiecurvaregiaorelacao").append("<input type=\"button\" onclick=\"cancelarsuperficiecurvaregiaorelacaoout()\" value=\"Cancelar\">");
+	$(".cancelarsuperficieregiaorevolucaorelacao").append("<input type=\"button\" onclick=\"cancelarsuperficieregiaorevolucaorelacaoout()\" value=\"Cancelar\">");
 
-	if (flagplotlysuperficiecurvaregiaorelacao == 1)
+	if (flagplotlysuperficieregiaorevolucaorelacao == 1)
 		{
-		Plotly.purge("dot-chart-superficiecurvaregiaorelacao");
-		$("#dot-chart-superficiecurvaregiaorelacao-espera").html("<img src=\"Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
+		Plotly.purge("dot-chart-superficieregiaorevolucaorelacao");
+		$("#dot-chart-superficieregiaorevolucaorelacao-espera").html("<img src=\"https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
 		}
 
-	antoniovandresuperficiecurvaregiaorelacaoout(str[0].value, 0);
+	antoniovandresuperficieregiaorevolucaorelacaoout(str[0].value, 0);
 	}
 
-function cancelarsuperficiecurvaregiaorelacaoout()
+function cancelarsuperficieregiaorevolucaorelacaoout()
 	{
-	flagrepeticaosuperficiecurvaregiaorelacaot = 1;
+	flagrepeticaosuperficieregiaorevolucaorelacaot = 1;
 	return;
 	}
 
-function antoniovandresuperficiecurvaregiaorelacaoout(str)
+function antoniovandresuperficieregiaorevolucaorelacaoout(str)
 	{
 	argumentos = str.split(";");
 	expressao1 = [];
@@ -26525,21 +26564,21 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 	zarr = [];
 	maxv = -Number.MAX_VALUE;
 	minv = Number.MAX_VALUE;
-	contadorsuperficiecurvaregiaorelacao = 0;
+	contadorsuperficieregiaorevolucaorelacao = 0;
 	indicefuncao = 0;
-	flagrepeticaosuperficiecurvaregiaorelacao = 0;
-	flagrepeticaosuperficiecurvaregiaorelacao2 = 0;
-	flagrepeticaosuperficiecurvaregiaorelacaot = 0;
+	flagrepeticaosuperficieregiaorevolucaorelacao = 0;
+	flagrepeticaosuperficieregiaorevolucaorelacao2 = 0;
+	flagrepeticaosuperficieregiaorevolucaorelacaot = 0;
 
 	if (argumentos.length != 7)
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-		elemsuperficiecurvaregiaorelacao.style.width = "100%";
-		elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-		elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-		flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+		elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+		elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+		flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26556,13 +26595,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 	if (antoniovandrenumeronaturalpositivo(n) == "e")
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-		elemsuperficiecurvaregiaorelacao.style.width = "100%";
-		elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-		elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-		flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+		elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+		elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+		flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26571,13 +26610,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 	else
 		if (parseInt(n) == 1)
 			{
-			document.getElementById('resultadosuperficiecurvaregiaorelacao').value = "A resolução deve ser maior que 1.";
-			elemsuperficiecurvaregiaorelacao.style.width = "100%";
-			elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-			elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-			flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+			document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = "A resolução deve ser maior que 1.";
+			elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+			elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+			flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-			$(".cancelarsuperficiecurvaregiaorelacao").empty();
+			$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 			lockcalc = 0;
 
@@ -26586,13 +26625,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 	if (antoniovandremodulo(parseInt(n)) > antoniovandremaximovalorentrada(1))
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = antoniovandremensagenserro(2);
-		elemsuperficiecurvaregiaorelacao.style.width = "100%";
-		elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-		elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-		flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = antoniovandremensagenserro(2);
+		elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+		elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+		flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26636,13 +26675,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 		if (relacao.length < i + 1)
 			{
-			document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-			elemsuperficiecurvaregiaorelacao.style.width = "100%";
-			elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-			elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-			flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+			document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+			elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+			elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+			flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-			$(".cancelarsuperficiecurvaregiaorelacao").empty();
+			$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 			lockcalc = 0;
 
@@ -26655,13 +26694,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 		if ((expressaoparteq.length != 2) || (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopart1, antoniovandreoperadoresfuncoesconstantes(2) + ",x,y")), antoniovandreremoverstrings(expressaopart1, antoniovandreoperadoresfuncoesconstantes(2) + ",x,y")) == "e") || (expressaopart1.trim() == "") || (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopart2, antoniovandreoperadoresfuncoesconstantes(2) + ",x,y")), antoniovandreremoverstrings(expressaopart2, antoniovandreoperadoresfuncoesconstantes(2) + ",x,y")) == "e") || (expressaopart2.trim() == ""))
 			{
-			document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-			elemsuperficiecurvaregiaorelacao.style.width = "100%";
-			elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-			elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-			flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+			document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+			elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+			elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+			flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-			$(".cancelarsuperficiecurvaregiaorelacao").empty();
+			$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 			lockcalc = 0;
 
@@ -26671,13 +26710,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 	if (antoniovandreexpressaofuncaovalida(inf) == "e")
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-		elemsuperficiecurvaregiaorelacao.style.width = "100%";
-		elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-		elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-		flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+		elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+		elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+		flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26686,13 +26725,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 	if (antoniovandreexpressaofuncaovalida(sup) == "e")
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-		elemsuperficiecurvaregiaorelacao.style.width = "100%";
-		elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-		elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-		flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+		elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+		elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+		flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26705,13 +26744,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 			}
 		catch (error)
 			{
-			document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-			elemsuperficiecurvaregiaorelacao.style.width = "100%";
-			elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-			elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-			flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+			document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+			elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+			elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+			flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-			$(".cancelarsuperficiecurvaregiaorelacao").empty();
+			$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 			lockcalc = 0;
 
@@ -26724,13 +26763,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 			}
 		catch (error)
 			{
-			document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-			elemsuperficiecurvaregiaorelacao.style.width = "100%";
-			elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-			elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-			flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+			document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+			elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+			elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+			flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-			$(".cancelarsuperficiecurvaregiaorelacao").empty();
+			$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 			lockcalc = 0;
 
@@ -26739,13 +26778,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 	if (antoniovandreexpressaofuncaovalida(infy) == "e")
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-		elemsuperficiecurvaregiaorelacao.style.width = "100%";
-		elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-		elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-		flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+		elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+		elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+		flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26754,13 +26793,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 	if (antoniovandreexpressaofuncaovalida(supy) == "e")
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-		elemsuperficiecurvaregiaorelacao.style.width = "100%";
-		elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-		elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-		flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+		elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+		elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+		flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26773,13 +26812,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 		}
 	catch (error)
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-		elemsuperficiecurvaregiaorelacao.style.width = "100%";
-		elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-		elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-		flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+		elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+		elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+		flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26792,13 +26831,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 		}
 	catch (error)
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-		elemsuperficiecurvaregiaorelacao.style.width = "100%";
-		elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-		elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-		flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+		elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+		elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+		flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26807,13 +26846,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 	if (antoniovandrenumeroreal(inf2.toString()) == "e")
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-		elemsuperficiecurvaregiaorelacao.style.width = "100%";
-		elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-		elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-		flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+		elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+		elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+		flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26822,13 +26861,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 	else
 		if (antoniovandremodulo(inf2) > antoniovandremaximovalorentrada(1))
 			{
-			document.getElementById('resultadosuperficiecurvaregiaorelacao').value = antoniovandremensagenserro(2);
-			elemsuperficiecurvaregiaorelacao.style.width = "100%";
-			elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-			elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-			flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+			document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = antoniovandremensagenserro(2);
+			elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+			elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+			flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-			$(".cancelarsuperficiecurvaregiaorelacao").empty();
+			$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 			lockcalc = 0;
 
@@ -26837,13 +26876,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 	if (antoniovandrenumeroreal(sup2.toString()) == "e")
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-		elemsuperficiecurvaregiaorelacao.style.width = "100%";
-		elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-		elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-		flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+		elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+		elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+		flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26852,13 +26891,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 	else
 		if (antoniovandremodulo(sup2) > antoniovandremaximovalorentrada(1))
 			{
-			document.getElementById('resultadosuperficiecurvaregiaorelacao').value = antoniovandremensagenserro(2);
-			elemsuperficiecurvaregiaorelacao.style.width = "100%";
-			elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-			elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-			flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+			document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = antoniovandremensagenserro(2);
+			elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+			elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+			flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-			$(".cancelarsuperficiecurvaregiaorelacao").empty();
+			$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 			lockcalc = 0;
 
@@ -26867,13 +26906,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 	if (antoniovandrenumeroreal(inf2y.toString()) == "e")
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-		elemsuperficiecurvaregiaorelacao.style.width = "100%";
-		elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-		elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-		flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+		elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+		elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+		flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26882,13 +26921,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 	else
 		if (antoniovandremodulo(inf2y) > antoniovandremaximovalorentrada(1))
 			{
-			document.getElementById('resultadosuperficiecurvaregiaorelacao').value = antoniovandremensagenserro(2);
-			elemsuperficiecurvaregiaorelacao.style.width = "100%";
-			elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-			elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-			flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+			document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = antoniovandremensagenserro(2);
+			elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+			elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+			flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-			$(".cancelarsuperficiecurvaregiaorelacao").empty();
+			$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 			lockcalc = 0;
 
@@ -26897,13 +26936,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 	if (antoniovandrenumeroreal(sup2y.toString()) == "e")
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-		elemsuperficiecurvaregiaorelacao.style.width = "100%";
-		elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-		elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-		flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+		elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+		elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+		flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26912,13 +26951,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 	else
 		if (antoniovandremodulo(sup2y) > antoniovandremaximovalorentrada(1))
 			{
-			document.getElementById('resultadosuperficiecurvaregiaorelacao').value = antoniovandremensagenserro(2);
-			elemsuperficiecurvaregiaorelacao.style.width = "100%";
-			elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-			elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-			flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+			document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = antoniovandremensagenserro(2);
+			elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+			elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+			flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-			$(".cancelarsuperficiecurvaregiaorelacao").empty();
+			$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 			lockcalc = 0;
 
@@ -26927,13 +26966,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 	if ((axisr.trim() != "x") && (axisr.trim() != "y"))
 		{
-		document.getElementById('resultadosuperficiecurvaregiaorelacao').value = "O eixo de rotação deve ser \"x\" ou \"y\".";
+		document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = "O eixo de rotação deve ser \"x\" ou \"y\".";
 		elemsuperficiecurvacoordenadaparametrica.style.width = "100%";
 		elemsuperficiecurvacoordenadaparametrica.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 		elemsuperficiecurvacoordenadaparametrica.textContent = "Erro ao calcular."
 		flagrepeticaosuperficiecurvacoordenadaparametrica2 = 1;
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		lockcalc = 0;
 
@@ -26965,26 +27004,26 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 	function escoporepeticao()
 		{
-		if (flagrepeticaosuperficiecurvaregiaorelacao2 == 0)
+		if (flagrepeticaosuperficieregiaorevolucaorelacao2 == 0)
 			{
-			var percentualconclusao = Math.trunc(100 * contadorsuperficiecurvaregiaorelacao / (n2 * n2 * expressaopart.length));
+			var percentualconclusao = Math.trunc(100 * contadorsuperficieregiaorevolucaorelacao / (n2 * n2 * expressaopart.length));
 			var percentualconclusaostr = percentualconclusao.toString() + "%";
 
-			elemsuperficiecurvaregiaorelacao.style.width = percentualconclusaostr;
-			elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(64, 64, 64, 1) 0%, rgba(64, 255, 64, 1) 100%)";
-			elemsuperficiecurvaregiaorelacao.textContent = percentualconclusaostr;
+			elemsuperficieregiaorevolucaorelacao.style.width = percentualconclusaostr;
+			elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(64, 64, 64, 1) 0%, rgba(64, 255, 64, 1) 100%)";
+			elemsuperficieregiaorevolucaorelacao.textContent = percentualconclusaostr;
 
-			if ((indicefuncao == expressaopart.length) || (flagrepeticaosuperficiecurvaregiaorelacao == 1))
+			if ((indicefuncao == expressaopart.length) || (flagrepeticaosuperficieregiaorevolucaorelacao == 1))
 				{
-				document.getElementById('resultadosuperficiecurvaregiaorelacao').value = "Finalizando. Favor aguardar...";
+				document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = "Finalizando. Favor aguardar...";
 
-				flagrepeticaosuperficiecurvaregiaorelacao = 1;
+				flagrepeticaosuperficieregiaorevolucaorelacao = 1;
 				return;
 				}
 
-			x = inf2 + (parcela / 2) + ((contadorsuperficiecurvaregiaorelacao % n2) * parcela);
+			x = inf2 + (parcela / 2) + ((contadorsuperficieregiaorevolucaorelacao % n2) * parcela);
 
-			if (contadorsuperficiecurvaregiaorelacao % n2 == 0) y += parcelay;
+			if (contadorsuperficieregiaorevolucaorelacao % n2 == 0) y += parcelay;
 
 			try
 				{
@@ -26992,13 +27031,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 				}
 			catch (error)
 				{
-				document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-				elemsuperficiecurvaregiaorelacao.style.width = "100%";
-				elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-				elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-				flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+				document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+				elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+				elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+				elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+				flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-				$(".cancelarsuperficiecurvaregiaorelacao").empty();
+				$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 				lockcalc = 0;
 
@@ -27011,13 +27050,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 				}
 			catch (error)
 				{
-				document.getElementById('resultadosuperficiecurvaregiaorelacao').value = superficiecurvaregiaorelacaomensagemerro();
-				elemsuperficiecurvaregiaorelacao.style.width = "100%";
-				elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-				elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-				flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+				document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = superficieregiaorevolucaorelacaomensagemerro();
+				elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+				elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+				elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+				flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-				$(".cancelarsuperficiecurvaregiaorelacao").empty();
+				$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 				lockcalc = 0;
 
@@ -27028,13 +27067,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 				{
 				if ((antoniovandrecompararstrings(resultpart1, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpart1, antoniovandremensagenserro(6)) == 1) || (antoniovandrecompararstrings(resultpart2, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpart2, antoniovandremensagenserro(6)) == 1))
 					{
-					document.getElementById('resultadosuperficiecurvaregiaorelacao').value = antoniovandremensagenserro(6);
-					elemsuperficiecurvaregiaorelacao.style.width = "100%";
-					elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-					elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-					flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+					document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = antoniovandremensagenserro(6);
+					elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+					elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+					elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+					flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-					$(".cancelarsuperficiecurvaregiaorelacao").empty();
+					$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 					lockcalc = 0;
 
@@ -27044,13 +27083,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 					{
 					if ((antoniovandrecompararstrings(resultpart1, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpart1, antoniovandremensagenserro(4)) == 1) || (antoniovandrecompararstrings(resultpart2, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpart2, antoniovandremensagenserro(4)) == 1))
 						{
-						document.getElementById('resultadosuperficiecurvaregiaorelacao').value = antoniovandremensagenserro(4);
-						elemsuperficiecurvaregiaorelacao.style.width = "100%";
-						elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-						elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-						flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+						document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = antoniovandremensagenserro(4);
+						elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+						elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+						elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+						flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-						$(".cancelarsuperficiecurvaregiaorelacao").empty();
+						$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 						lockcalc = 0;
 
@@ -27060,13 +27099,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 						{
 						if ((antoniovandrecompararstrings(resultpart1, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpart1, antoniovandremensagenserro(2)) == 1) || (antoniovandrecompararstrings(resultpart2, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpart2, antoniovandremensagenserro(2)) == 1))
 							{
-							document.getElementById('resultadosuperficiecurvaregiaorelacao').value = antoniovandremensagenserro(2);
-							elemsuperficiecurvaregiaorelacao.style.width = "100%";
-							elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-							elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-							flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+							document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = antoniovandremensagenserro(2);
+							elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+							elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+							elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+							flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-							$(".cancelarsuperficiecurvaregiaorelacao").empty();
+							$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 							lockcalc = 0;
 
@@ -27079,13 +27118,13 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 				{
 				if ((antoniovandremodulo(resultpart1) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(resultpart2) > parseFloat(antoniovandremaximovalorsaida(1))))
 					{
-					document.getElementById('resultadosuperficiecurvaregiaorelacao').value = antoniovandremensagenserro(6);
-					elemsuperficiecurvaregiaorelacao.style.width = "100%";
-					elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-					elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
-					flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+					document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = antoniovandremensagenserro(6);
+					elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+					elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+					elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
+					flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 
-					$(".cancelarsuperficiecurvaregiaorelacao").empty();
+					$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 					lockcalc = 0;
 
@@ -27339,7 +27378,7 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 					if ((relacao[indicefuncao] == "=") && (antoniovandremodulo(resultpart2 - resultpart1) < 1000000 * antoniovandreprecisaoreal(4)))
 						{
-						flagigualdadesuperficiecurvaregiaorelacao = 1;
+						flagigualdadesuperficieregiaorevolucaorelacao = 1;
 
 						if (axisr.trim() == "x")
 							{
@@ -27399,12 +27438,73 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 								}
 							}
 						}
+
+					if ((antoniovandrecompararstrings(relacao[indicefuncao], "!=") == 1) && (resultpart1 != resultpart2))
+						{
+						if (axisr.trim() == "x")
+							{
+							for (var k = 0; k < n2; k++)
+								{
+								xarr.push(x);
+								yarr.push(y * antoniovandrecos(2 * Math.PI * k / n2));
+								zarr.push(y * antoniovandresen(2 * Math.PI * k / n2));
+								relacaop.push([6, -1]);
+
+								if (y * antoniovandrecos(2 * Math.PI * k / n2) > maxv)
+									maxv = y * antoniovandrecos(2 * Math.PI * k / n2);
+
+								if (x > maxv)
+									maxv = x;
+
+								if (y * antoniovandresen(2 * Math.PI * k / n2) > maxv)
+									maxv = y * antoniovandresen(2 * Math.PI * k / n2);
+
+								if (y * antoniovandrecos(2 * Math.PI * k / n2) < minv)
+									minv = y * antoniovandrecos(2 * Math.PI * k / n2);
+
+								if (x < minv)
+									minv = x;
+
+								if (y * antoniovandresen(2 * Math.PI * k / n2) < minv)
+									minv = y * antoniovandresen(2 * Math.PI * k / n2);
+								}
+							}
+
+						if (axisr.trim() == "y")
+							{
+							for (var k = 0; k < n2; k++)
+								{
+								xarr.push(x * antoniovandrecos(2 * Math.PI * k / n2));
+								yarr.push(y);
+								zarr.push(x * antoniovandresen(2 * Math.PI * k / n2));
+								relacaop.push([6, -1]);
+
+								if (x * antoniovandrecos(2 * Math.PI * k / n2) > maxv)
+									maxv = x * antoniovandrecos(2 * Math.PI * k / n2);
+
+								if (y > maxv)
+									maxv = y;
+
+								if (x * antoniovandresen(2 * Math.PI * k / n2) > maxv)
+									maxv = x * antoniovandresen(2 * Math.PI * k / n2);
+
+								if (x * antoniovandrecos(2 * Math.PI * k / n2) < minv)
+									minv = x * antoniovandrecos(2 * Math.PI * k / n2);
+
+								if (y < minv)
+									minv = y;
+
+								if (x * antoniovandresen(2 * Math.PI * k / n2) < minv)
+									minv = x * antoniovandresen(2 * Math.PI * k / n2);
+								}
+							}
+						}
 					}
 				}
 
-			contadorsuperficiecurvaregiaorelacao++;
+			contadorsuperficieregiaorevolucaorelacao++;
 
-			if (contadorsuperficiecurvaregiaorelacao % (n2 * n2) == 0)
+			if (contadorsuperficieregiaorevolucaorelacao % (n2 * n2) == 0)
 				{
 				indicefuncao++;
 				y = inf2y;
@@ -27414,25 +27514,25 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 
 	function escoporepeticao2()
 		{
-		if (flagrepeticaosuperficiecurvaregiaorelacao2 == 0)
+		if (flagrepeticaosuperficieregiaorevolucaorelacao2 == 0)
 			{
-			if (flagrepeticaosuperficiecurvaregiaorelacao == 1)
+			if (flagrepeticaosuperficieregiaorevolucaorelacao == 1)
 				{
-				$(".cancelarsuperficiecurvaregiaorelacao").empty();
+				$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 				if (xarr.length == 0)
 					{
-					document.getElementById('resultadosuperficiecurvaregiaorelacao').value = "Nenhum ponto encontrado ou expressão inválida.";
+					document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = "Nenhum ponto encontrado ou expressão inválida.";
 
 					lockcalc = 0;
 
-					flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+					flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 					return;
 					}
 				else
-					document.getElementById('resultadosuperficiecurvaregiaorelacao').value = "Sucesso.";
+					document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = "Sucesso.";
 
-				$(".dot-chart-superficiecurvaregiaorelacao-espera").empty();
+				$(".dot-chart-superficieregiaorevolucaorelacao-espera").empty();
 
 				var trace1 = {
 					x: xarr, y: yarr, z: zarr,
@@ -27476,26 +27576,26 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 					width: 800
 				};
 
-				$(".dot-chart-superficiecurvaregiaorelacao-espera").empty();
-				Plotly.newPlot('dot-chart-superficiecurvaregiaorelacao-espera', data, layout);
+				$(".dot-chart-superficieregiaorevolucaorelacao-espera").empty();
+				Plotly.newPlot('dot-chart-superficieregiaorevolucaorelacao-espera', data, layout);
 
-				$(".rotacaosuperficiecurvaregiaorelacao").append("<input type=\"button\" onclick=\"rotacaosuperficiecurvaregiaorelacaoout()\" value=\"Rotação automática\">");
+				$(".rotacaosuperficieregiaorevolucaorelacao").append("<input type=\"button\" onclick=\"rotacaosuperficieregiaorevolucaorelacaoout()\" value=\"Rotação automática\">");
 
-				flagplotlysuperficiecurvaregiaorelacao = 1;
+				flagplotlysuperficieregiaorevolucaorelacao = 1;
 
 				lockcalc = 0;
 
-				flagrepeticaosuperficiecurvaregiaorelacao2 = 1;
+				flagrepeticaosuperficieregiaorevolucaorelacao2 = 1;
 				}
 			}
 		}
 
 	var rep = setInterval(escoporepeticao, 10);
 	var rep2 = setInterval(escoporepeticao2, 10);
-	var rep3 = setInterval(function(){if (flagrepeticaosuperficiecurvaregiaorelacaot == 1) {flagrepeticaosuperficiecurvaregiaorelacao2 = 1; try{clearInterval(igualdadexinterval); clearInterval(igualdadeyinterval); clearInterval(igualdadezinterval); clearInterval(plotinterval);}catch(e){}; document.getElementById('resultadosuperficiecurvaregiaorelacao').value = "Cálculo cancelado."; elemsuperficiecurvaregiaorelacao.style.width = "100%"; elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)"; elemsuperficiecurvaregiaorelacao.textContent = "Cálculo cancelado."; $(".cancelarsuperficiecurvaregiaorelacao").empty(); flagrepeticaosuperficiecurvaregiaorelacaot = 0; lockcalc = 0; return;}}, 10);
+	var rep3 = setInterval(function(){if (flagrepeticaosuperficieregiaorevolucaorelacaot == 1) {flagrepeticaosuperficieregiaorevolucaorelacao2 = 1; try{clearInterval(igualdadexinterval); clearInterval(igualdadeyinterval); clearInterval(igualdadezinterval); clearInterval(plotinterval);}catch(e){}; document.getElementById('resultadosuperficieregiaorevolucaorelacao').value = "Cálculo cancelado."; elemsuperficieregiaorevolucaorelacao.style.width = "100%"; elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)"; elemsuperficieregiaorevolucaorelacao.textContent = "Cálculo cancelado."; $(".cancelarsuperficieregiaorevolucaorelacao").empty(); flagrepeticaosuperficieregiaorevolucaorelacaot = 0; lockcalc = 0; return;}}, 10);
 	var antoniovandrelimparrepeticoes = setInterval(function(){if (lockcalc == 0){try{clearInterval(rep); clearInterval(rep2); clearInterval(rep3);} catch (e){}}; return;}, 60000);
 
-	if (flagrepeticaosuperficiecurvaregiaorelacao2 == 1)
+	if (flagrepeticaosuperficieregiaorevolucaorelacao2 == 1)
 		{
 		try {
 		clearInterval(rep);
@@ -27508,141 +27608,141 @@ function antoniovandresuperficiecurvaregiaorelacaoout(str)
 		yarrn = [];
 		} catch (e){};
 
-		$(".cancelarsuperficiecurvaregiaorelacao").empty();
+		$(".cancelarsuperficieregiaorevolucaorelacao").empty();
 
 		return;
 		}
 	}
 
-function superficiecurvaregiaorelacaomensagemerro()
+function superficieregiaorevolucaorelacaomensagemerro()
 	{
-	elemsuperficiecurvaregiaorelacao.style.width = "100%";
-	elemsuperficiecurvaregiaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-	elemsuperficiecurvaregiaorelacao.textContent = "Erro ao calcular."
+	elemsuperficieregiaorevolucaorelacao.style.width = "100%";
+	elemsuperficieregiaorevolucaorelacao.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+	elemsuperficieregiaorevolucaorelacao.textContent = "Erro ao calcular."
 
 	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: as expressões das relações, separadas por dois pontos \":\", das quais se deseja obter os gráficos, devem ser relações em \"x\" e \"y\"; segundo: um número real como valor inferior para \"x\"; terceiro: um número real como valor superior para \"x\"; quarto: um número real como valor inferior para \"y\"; quinto: um número real como valor superior para \"y\"; sexto: a abscissa do centro de expansão radial; sétimo: a ordenada do centro de expansão radial; oitavo: o raio de expansão radial; nono: a rotação do eixo \"Ox\"; décimo: a rotação do eixo \"Oy\"; décimo primeiro: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.";
 	}
 
-function animacaorotacaosuperficiecurvaregiaorelacao()
+function animacaorotacaosuperficieregiaorevolucaorelacao()
 	{
-	Plotly.relayout('dot-chart-superficiecurvaregiaorelacao-espera', {"scene.camera.eye": {x: 1.5 * antoniovandrecos(trotsuperficiecurvaregiaorelacao), y: 1.5 * antoniovandresen(trotsuperficiecurvaregiaorelacao), z: 1.5}, "dragMode": false, "scrollZoom": false, "displayModeBar": false}).then(function(gd){
-		if (flaganimacaorotacaosuperficiecurvaregiaorelacao == 1)
+	Plotly.relayout('dot-chart-superficieregiaorevolucaorelacao-espera', {"scene.camera.eye": {x: 1.5 * antoniovandrecos(trotsuperficieregiaorevolucaorelacao), y: 1.5 * antoniovandresen(trotsuperficieregiaorevolucaorelacao), z: 1.5}, "dragMode": false, "scrollZoom": false, "displayModeBar": false}).then(function(gd){
+		if (flaganimacaorotacaosuperficieregiaorevolucaorelacao == 1)
 			{
 			setTimeout(function() {
-				if (flaggifsuperficiecurvaregiaorelacao == 1)
+				if (flaggifsuperficieregiaorevolucaorelacao == 1)
 					{
-					Plotly.toImage(gd,{format:'png', width: document.getElementById('dot-chart-superficiecurvaregiaorelacao-esperagif').width, height: document.getElementById('dot-chart-superficiecurvaregiaorelacao-esperagif').height}).then(function(url) {
-						document.getElementById('dot-chart-superficiecurvaregiaorelacao-esperagif').src = url;
+					Plotly.toImage(gd,{format:'png', width: document.getElementById('dot-chart-superficieregiaorevolucaorelacao-esperagif').width, height: document.getElementById('dot-chart-superficieregiaorevolucaorelacao-esperagif').height}).then(function(url) {
+						document.getElementById('dot-chart-superficieregiaorevolucaorelacao-esperagif').src = url;
 						
-						if (flaggifcontextsuperficiecurvaregiaorelacao == 0)
+						if (flaggifcontextsuperficieregiaorevolucaorelacao == 0)
 							{
 								try {
-								superficiecurvaregiaorelacaocontext = document.getElementById('dot-chart-superficiecurvaregiaorelacao-esperacanvas').getContext("2d");
-								superficiecurvaregiaorelacaoencoder = new GIFEncoder();
-								superficiecurvaregiaorelacaoencoder.setRepeat(0);
-								superficiecurvaregiaorelacaoencoder.setDelay(40);
-								superficiecurvaregiaorelacaoencoder.start();
+								superficieregiaorevolucaorelacaocontext = document.getElementById('dot-chart-superficieregiaorevolucaorelacao-esperacanvas').getContext("2d");
+								superficieregiaorevolucaorelacaoencoder = new GIFEncoder();
+								superficieregiaorevolucaorelacaoencoder.setRepeat(0);
+								superficieregiaorevolucaorelacaoencoder.setDelay(40);
+								superficieregiaorevolucaorelacaoencoder.start();
 								} catch (e){};
 
-							flaggifcontextsuperficiecurvaregiaorelacao = 1;
+							flaggifcontextsuperficieregiaorevolucaorelacao = 1;
 							}
 
-					superficiecurvaregiaorelacaocontext.drawImage(document.getElementById('dot-chart-superficiecurvaregiaorelacao-esperagif'), 0, 0);
-					try {superficiecurvaregiaorelacaoencoder.addFrame(superficiecurvaregiaorelacaocontext);} catch (e){};
+					superficieregiaorevolucaorelacaocontext.drawImage(document.getElementById('dot-chart-superficieregiaorevolucaorelacao-esperagif'), 0, 0);
+					try {superficieregiaorevolucaorelacaoencoder.addFrame(superficieregiaorevolucaorelacaocontext);} catch (e){};
 					});
 					}
 
-				requestAnimationFrame(animacaorotacaosuperficiecurvaregiaorelacao);
+				requestAnimationFrame(animacaorotacaosuperficieregiaorevolucaorelacao);
 			}, 10);
 
-			flaganimacaorotacaosuperficiecurvaregiaorelacao = 1;
+			flaganimacaorotacaosuperficieregiaorevolucaorelacao = 1;
 			}
-		else if (flaganimacaorotacaosuperficiecurvaregiaorelacao == 2)
+		else if (flaganimacaorotacaosuperficieregiaorevolucaorelacao == 2)
 			{
-			cancelAnimationFrame(animacaorotacaosuperficiecurvaregiaorelacao);
-			flaganimacaorotacaosuperficiecurvaregiaorelacao = 0;
+			cancelAnimationFrame(animacaorotacaosuperficieregiaorevolucaorelacao);
+			flaganimacaorotacaosuperficieregiaorevolucaorelacao = 0;
 			}
 
 	var divisorframe;
 
-	if (flaggifsuperficiecurvaregiaorelacao == 1)
+	if (flaggifsuperficieregiaorevolucaorelacao == 1)
 		divisorframe = 100
 	else
 		divisorframe = 400;
 		
-	if (trotsuperficiecurvaregiaorelacao >= 2 * Math.PI - 2 * Math.PI / divisorframe)
+	if (trotsuperficieregiaorevolucaorelacao >= 2 * Math.PI - 2 * Math.PI / divisorframe)
 		{
-		if (flaggifsuperficiecurvaregiaorelacao == 1)
+		if (flaggifsuperficieregiaorevolucaorelacao == 1)
 			{
-			try {superficiecurvaregiaorelacaoencoder.finish();} catch (e){};
+			try {superficieregiaorevolucaorelacaoencoder.finish();} catch (e){};
 
-			$(".downloadgifrotacaosuperficiecurvaregiaorelacao").empty();
-			$(".downloadgifrotacaosuperficiecurvaregiaorelacao").append("<input type=\"button\" onclick=\"downloadgifrotacaosuperficiecurvaregiaorelacaoout()\" value=\"Download gif animado\">");
+			$(".downloadgifrotacaosuperficieregiaorevolucaorelacao").empty();
+			$(".downloadgifrotacaosuperficieregiaorevolucaorelacao").append("<input type=\"button\" onclick=\"downloadgifrotacaosuperficieregiaorevolucaorelacaoout()\" value=\"Download gif animado\">");
 
-			flaggifsuperficiecurvaregiaorelacao = 0;
+			flaggifsuperficieregiaorevolucaorelacao = 0;
 			}
 
-		Plotly.relayout('dot-chart-superficiecurvaregiaorelacao-espera', {"scene.camera.eye": {x: 1.5 * antoniovandrecos(trotsuperficiecurvaregiaorelacao), y: 1.5 * antoniovandresen(trotsuperficiecurvaregiaorelacao), z: 1.5}});
+		Plotly.relayout('dot-chart-superficieregiaorevolucaorelacao-espera', {"scene.camera.eye": {x: 1.5 * antoniovandrecos(trotsuperficieregiaorevolucaorelacao), y: 1.5 * antoniovandresen(trotsuperficieregiaorevolucaorelacao), z: 1.5}});
 
-		trotsuperficiecurvaregiaorelacao = 0;
+		trotsuperficieregiaorevolucaorelacao = 0;
 		}
 	else
 		{
-		if (flaggifsuperficiecurvaregiaorelacao == 1)
-			trotsuperficiecurvaregiaorelacao += (2 * Math.PI) / divisorframe
+		if (flaggifsuperficieregiaorevolucaorelacao == 1)
+			trotsuperficieregiaorevolucaorelacao += (2 * Math.PI) / divisorframe
 		else
-			trotsuperficiecurvaregiaorelacao += (2 * Math.PI) / divisorframe;
+			trotsuperficieregiaorevolucaorelacao += (2 * Math.PI) / divisorframe;
 		}
 	});
 	}
 
-function cancelarrotacaosuperficiecurvaregiaorelacaoout()
+function cancelarrotacaosuperficieregiaorevolucaorelacaoout()
 	{
-	flaganimacaorotacaosuperficiecurvaregiaorelacao = 2;
+	flaganimacaorotacaosuperficieregiaorevolucaorelacao = 2;
 
-	if (flaggifsuperficiecurvaregiaorelacao == 1)
+	if (flaggifsuperficieregiaorevolucaorelacao == 1)
 		{
-		try {superficiecurvaregiaorelacaoencoder.finish();} catch (e){};
+		try {superficieregiaorevolucaorelacaoencoder.finish();} catch (e){};
 
-		Plotly.relayout('dot-chart-superficiecurvaregiaorelacao-espera', {"scene.camera.eye": {x: 1.5 * antoniovandrecos(trotsuperficiecurvaregiaorelacao), y: 1.5 * antoniovandresen(trotsuperficiecurvaregiaorelacao), z: 1.5}});
+		Plotly.relayout('dot-chart-superficieregiaorevolucaorelacao-espera', {"scene.camera.eye": {x: 1.5 * antoniovandrecos(trotsuperficieregiaorevolucaorelacao), y: 1.5 * antoniovandresen(trotsuperficieregiaorevolucaorelacao), z: 1.5}});
 
-		flaggifsuperficiecurvaregiaorelacao = 0;
+		flaggifsuperficieregiaorevolucaorelacao = 0;
 		}
 
-	$(".downloadgifrotacaosuperficiecurvaregiaorelacao").empty();
-	$(".cancelarrotacaosuperficiecurvaregiaorelacao").empty();
+	$(".downloadgifrotacaosuperficieregiaorevolucaorelacao").empty();
+	$(".cancelarrotacaosuperficieregiaorevolucaorelacao").empty();
 	}
 
-function rotacaosuperficiecurvaregiaorelacaoout()
+function rotacaosuperficieregiaorevolucaorelacaoout()
 	{
-	if (flaganimacaorotacaosuperficiecurvaregiaorelacao == 0)
+	if (flaganimacaorotacaosuperficieregiaorevolucaorelacao == 0)
 		{
-		$(".cancelarrotacaosuperficiecurvaregiaorelacao").append("<input type=\"button\" onclick=\"cancelarrotacaosuperficiecurvaregiaorelacaoout()\" value=\"Cancelar rotação automática\">");
+		$(".cancelarrotacaosuperficieregiaorevolucaorelacao").append("<input type=\"button\" onclick=\"cancelarrotacaosuperficieregiaorevolucaorelacaoout()\" value=\"Cancelar rotação automática\">");
 
-		animacaorotacaosuperficiecurvaregiaorelacao();
+		animacaorotacaosuperficieregiaorevolucaorelacao();
 
-		if (flaggifsuperficiecurvaregiaorelacao == 0)
+		if (flaggifsuperficieregiaorevolucaorelacao == 0)
 			{
-			$(".downloadgifrotacaosuperficiecurvaregiaorelacao").empty();
-			$(".downloadgifrotacaosuperficiecurvaregiaorelacao").append("<input type=\"button\" onclick=\"rotacaocapturargifsuperficiecurvaregiaorelacaoout()\" value=\"Capturar gif animado\">");
+			$(".downloadgifrotacaosuperficieregiaorevolucaorelacao").empty();
+			$(".downloadgifrotacaosuperficieregiaorevolucaorelacao").append("<input type=\"button\" onclick=\"rotacaocapturargifsuperficieregiaorevolucaorelacaoout()\" value=\"Capturar gif animado\">");
 			}
 
-		flaganimacaorotacaosuperficiecurvaregiaorelacao = 1;
+		flaganimacaorotacaosuperficieregiaorevolucaorelacao = 1;
 		}
 	}
 
-function rotacaocapturargifsuperficiecurvaregiaorelacaoout()
+function rotacaocapturargifsuperficieregiaorevolucaorelacaoout()
 	{
-	$(".downloadgifrotacaosuperficiecurvaregiaorelacao").empty();
-	$(".downloadgifrotacaosuperficiecurvaregiaorelacao").append("Capturando gif animado...");
+	$(".downloadgifrotacaosuperficieregiaorevolucaorelacao").empty();
+	$(".downloadgifrotacaosuperficieregiaorevolucaorelacao").append("Capturando gif animado...");
 
-	trotsuperficiecurvaregiaorelacao = 0;
-	flaggifsuperficiecurvaregiaorelacao = 1;
+	trotsuperficieregiaorevolucaorelacao = 0;
+	flaggifsuperficieregiaorevolucaorelacao = 1;
 	}
 
-function downloadgifrotacaosuperficiecurvaregiaorelacaoout()
+function downloadgifrotacaosuperficieregiaorevolucaorelacaoout()
 	{
-	superficiecurvaregiaorelacaoencoder.download("Mathematical Ramblings - sordrpgducorpur - " + document.getElementsByName("entradasuperficiecurvaregiaorelacao")[0].value.replaceAll(" ", "").replaceAll(";", "[pv]").replaceAll(",", "[v]").replaceAll(":", "[dp]").replaceAll("|", "[bv]").replaceAll("*", "[mult]").replaceAll("/", "[div]") + ".gif");
+	superficieregiaorevolucaorelacaoencoder.download("Mathematical Ramblings - sordrpgducorpur - " + document.getElementsByName("entradasuperficieregiaorevolucaorelacao")[0].value.replaceAll(" ", "").replaceAll(";", "[pv]").replaceAll(",", "[v]").replaceAll(":", "[dp]").replaceAll("|", "[bv]").replaceAll("*", "[mult]").replaceAll("/", "[div]") + ".gif");
 	}
 
 </script>
