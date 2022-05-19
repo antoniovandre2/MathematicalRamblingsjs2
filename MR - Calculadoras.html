@@ -16904,7 +16904,7 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadocurvaregiaorelacaoavisoanexo" id="resultadocurvaregiaorelacaoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
 <div id="dot-chart-curvaregiaorelacao"></div>
-<div id="dot-chart-curvaregiaorelacao-espera" class="dot-chart-curvaregiaorelacao-espera"><img src="https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-curvaregiaorelacao-espera" class="dot-chart-curvaregiaorelacao-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
 <br>
 Log:
 <br>
@@ -16992,7 +16992,7 @@ function processarcurvaregiaorelacaoout()
 	if (flagplotly == 1)
 		{
 		Plotly.purge("dot-chart-curvaregiaorelacao");
-		$("#dot-chart-curvaregiaorelacao-espera").html("<img src=\"https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
+		$("#dot-chart-curvaregiaorelacao-espera").html("<img src=\"Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
 		}
 
 	antoniovandrecurvaregiaorelacaoout(str[0].value, 0);
@@ -17981,7 +17981,7 @@ function antoniovandrecurvaregiaorelacaoout(str)
 							flagigualdadecurvaregiaorelacao = 1;
 							}
 
-						if ((relacao[indicefuncao] == "!=") && (resultpart1 != resultpart2))
+						if ((antoniovandrecompararstrings(relacao[indicefuncao], "!=") == 1) && (antoniovandremodulo(resultpart2 - resultpart1) > 1000000 * antoniovandreprecisaoreal(4)))
 							{
 							xarr.push(x);
 							yarr.push(y2);
@@ -18211,7 +18211,7 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosuperficieregiaorelacaoavisoanexo" id="resultadosuperficieregiaorelacaoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
 <div id="dot-chart-superficieregiaorelacao"></div>
-<div id="dot-chart-superficieregiaorelacao-espera" class="dot-chart-superficieregiaorelacao-espera"><img src="https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-superficieregiaorelacao-espera" class="dot-chart-superficieregiaorelacao-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
 <span hidden>
 <img width=400 height=400 id="dot-chart-superficieregiaorelacao-esperagif"/>
 <canvas width=400 height=400 id="dot-chart-superficieregiaorelacao-esperacanvas"></canvas>
@@ -18315,7 +18315,7 @@ function processarsuperficieregiaorelacaoout()
 	if (flagplotly3Dsuperficieregiao == 1)
 		{
 		Plotly.purge("dot-chart-superficieregiaorelacao");
-		$("#dot-chart-superficieregiaorelacao-espera").html("<img src=\"https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
+		$("#dot-chart-superficieregiaorelacao-espera").html("<img src=\"Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
 		}
 
 	antoniovandresuperficieregiaorelacaoout(str[0].value, 0);
@@ -19157,7 +19157,7 @@ function antoniovandresuperficieregiaorelacaoout(str)
 							minv = z;
 						}
 
-					if ((antoniovandrecompararstrings(relacao[indicefuncao], "!=") == 1) && (resultpart1 != resultpart2))
+					if ((antoniovandrecompararstrings(relacao[indicefuncao], "!=") == 1) && (antoniovandremodulo(resultpart2 - resultpart1) > 1000000 * antoniovandreprecisaoreal(4)))
 						{
 						xarr.push(x);
 						yarr.push(y);
@@ -26439,7 +26439,7 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosuperficieregiaorevolucaorelacaoavisoanexo" id="resultadosuperficieregiaorevolucaorelacaoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
 <div id="dot-chart-superficieregiaorevolucaorelacao"></div>
-<div id="dot-chart-superficieregiaorevolucaorelacao-espera" class="dot-chart-superficieregiaorevolucaorelacao-espera"><img src="https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-superficieregiaorevolucaorelacao-espera" class="dot-chart-superficieregiaorevolucaorelacao-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
 <span hidden>
 <img width=400 height=400 id="dot-chart-superficieregiaorevolucaorelacao-esperagif"/>
 <canvas width=400 height=400 id="dot-chart-superficieregiaorevolucaorelacao-esperacanvas"></canvas>
@@ -26540,7 +26540,7 @@ function processarsuperficieregiaorevolucaorelacaoout()
 	if (flagplotlysuperficieregiaorevolucaorelacao == 1)
 		{
 		Plotly.purge("dot-chart-superficieregiaorevolucaorelacao");
-		$("#dot-chart-superficieregiaorevolucaorelacao-espera").html("<img src=\"https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
+		$("#dot-chart-superficieregiaorevolucaorelacao-espera").html("<img src=\"Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
 		}
 
 	antoniovandresuperficieregiaorevolucaorelacaoout(str[0].value, 0);
@@ -27439,7 +27439,7 @@ function antoniovandresuperficieregiaorevolucaorelacaoout(str)
 							}
 						}
 
-					if ((antoniovandrecompararstrings(relacao[indicefuncao], "!=") == 1) && (resultpart1 != resultpart2))
+					if ((antoniovandrecompararstrings(relacao[indicefuncao], "!=") == 1) && (antoniovandremodulo(resultpart2 - resultpart1) > 1000000 * antoniovandreprecisaoreal(4)))
 						{
 						if (axisr.trim() == "x")
 							{
