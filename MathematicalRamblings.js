@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 20-05-2022. Não considerando alterações em macros.
+// Última atualização: 21-05-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "20-05-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "21-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -6261,9 +6261,33 @@ function antoniovandrese(condicao, expressao1, expressao2)
 		return "e";
 
 	if (antoniovandrecompararstrings(condicao, "verdade") == 1)
-		return eval(expressao1)
+		{
+		if (antoniovandrenumeroreal(expressao1.toString()) == "e")
+			{
+			if (antoniovandreexpressaofuncaovalida(expressao1) == "e")
+				return "e";
+	
+			expressao1 = antoniovandretraduzirexpressaofuncional(expressao1, 0);
+
+			return eval(expressao1);
+			}
+		else
+			return expressao1;
+		}
 	else if (antoniovandrecompararstrings(condicao, "falsidade") == 1)
-		return eval(expressao2)
+		{
+		if (antoniovandrenumeroreal(expressao2.toString()) == "e")
+			{
+			if (antoniovandreexpressaofuncaovalida(expressao2) == "e")
+				return "e";
+	
+			expressao2 = antoniovandretraduzirexpressaofuncional(expressao2, 0);
+
+			return eval(expressao1);
+			}
+		else
+			return expressao2;
+		}
 	else
 		return "e";
 	}
