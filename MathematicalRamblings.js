@@ -6283,7 +6283,7 @@ function antoniovandrese(condicao, expressao1, expressao2)
 	
 			expressao2 = antoniovandretraduzirexpressaofuncional(expressao2, 0);
 
-			return eval(expressao1);
+			return eval(expressao2);
 			}
 		else
 			return expressao2;
