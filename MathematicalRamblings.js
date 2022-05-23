@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 21-05-2022. Não considerando alterações em macros.
+// Última atualização: 23-05-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "21-05-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "23-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1940,7 +1940,7 @@ function antoniovandreprecisaoreal(i)
 	switch (i)
 		{
 		case 1:
-			return 0.0000000001; // Utilizada na formatação de números reais no JavaScript. Valor padrão de Antonio Vandré: 0.0000000001.
+			return 0.0000001; // Utilizada na formatação de números reais no JavaScript. Valor padrão de Antonio Vandré: 0.0000001.
 		case 2:
 			return 0.000015; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca precisão.
 		case 3:
@@ -6289,7 +6289,43 @@ function antoniovandrese(condicao, expressao1, expressao2)
 			return expressao2;
 		}
 	else
+		return "A condição deve ter como valor \"verdade\" ou \"falsidade\"";
+	}
+
+// Função lógica "conjuncao". Argumentos: duas proposições. Retorna a string "e" se um erro genérico ocorre.
+
+function antoniovandreconjuncao(p1, p2)
+	{
+	if (arguments.length != 2) return "e";
+
+	if ((compararstrings(typeof p1, "string") == "e") || (compararstrings(typeof p2, "string") == "e"))
 		return "e";
+
+	if ((! ((antoniovandrecompararstrings(p1, "verdade") == "1") || (antoniovandrecompararstrings(p1, "falsidade") == "1"))) || (! ((antoniovandrecompararstrings(p2, "verdade") == "1") || (antoniovandrecompararstrings(p2, "falsidade") == "1"))))
+		return "As proposições devem ter como valor \"verdade\" ou \"falsidade\"";
+
+	if ((antoniovandrecompararstrings(p1, "falsidade") == 1) || (antoniovandrecompararstrings(p2, "falsidade") == 1))
+		return "falsidade"
+	else
+		return "verdade";
+	}
+
+// Função lógica "conjuncao". Argumentos: duas proposições. Retorna a string "e" se um erro genérico ocorre.
+
+function antoniovandredisjuncao(p1, p2)
+	{
+	if (arguments.length != 2) return "e";
+
+	if ((compararstrings(typeof p1, "string") == "e") || (compararstrings(typeof p2, "string") == "e"))
+		return "e";
+
+	if ((! ((antoniovandrecompararstrings(p1, "verdade") == "1") || (antoniovandrecompararstrings(p1, "falsidade") == "1"))) || (! ((antoniovandrecompararstrings(p2, "verdade") == "1") || (antoniovandrecompararstrings(p2, "falsidade") == "1"))))
+		return "As proposições devem ter como valor \"verdade\" ou \"falsidade\"";
+
+	if ((antoniovandrecompararstrings(p1, "verdade") == 1) || (antoniovandrecompararstrings(p2, "verdade") == 1))
+		return "verdade"
+	else
+		return "falsidade";
 	}
 
 // Calcular uma expressão composta de funções. Argumentos: primeiro: string contendo a expressão a ser calculada; segundo: -1 se deseja retornar o aviso anexo, outro valor qualquer para não. Retorna a string "e" se um erro genérico ocorre.
@@ -6928,11 +6964,11 @@ function antoniovandreoperadoresfuncoesconstantes(i)
 	switch (i)
 		{
 		case 1:
-			return "Relações, operadores, funções e constantes disponíveis na base de dados (última atualização: 20-05-2022):\n\n\">=\": relação maior ou igual (leia observação 1);\n\"<=\": relação menor ou igual (leia observação 1);\n\">\": relação maior (leia observação 1);\n\"<\": relação menor (leia observação 1);\n\"=\": relação igual (leia observação 1);\n\"!=\": relação diferente (leia observação 1);\n\n\"+\": operador soma;\n\"-\": operador subtração;\n\"*\": operador multiplicação;\n\"/\": operador divisão;\n\n\"exp()\": função exponencial base \"e\";\n\"potencia(a, b)\": função potência (\"a\" elevado a \"b\");\n\"modulo()\": função módulo;\n\"ln()\": função logaritmo natural;\n\"log10()\": função logaritmo de base 10;\n\"log2()\": função logaritmo de base 2;\n\"log(a, b)\": função logaritmo (logaritmo de \"a\" na base \"b\");\n\"sqrt()\": função raiz quadrada;\n\"sqrt3()\": função raiz cúbica;\n\"sqrtn(x, n)\": função raiz enésima de \"x\";\n\"sen()\": função seno;\n\"cos()\": função cosseno;\n\"tg()\": função tangente;\n\"cotg()\": função cotangente;\n\"sec()\": função secante;\n\"cossec()\": função cossecante;\n\"cord()\": função corda;\n\"arcsen()\": função arco-seno;\n\"arccos()\": função arco-cosseno;\n\"arctg()\": função arco-tangente;\n\"arccotg()\": função arco-cotangente;\n\"arcsec()\": função arco-secante;\n\"arccossec()\": função arco-cossecante;\n\"arccord()\": função arco-corda;\n\"senh()\": função seno hiperbólico;\n\"cosh()\": função cosseno hiperbólico;\n\"tgh()\": função tangente hiperbólica;\n\"cotgh()\": função cotangente hiperbólica;\n\"sech()\": função secante hiperbólica;\n\"cossech()\": função cossecante hiperbólica;\n\"fatorial()\": função fatorial;\n\"arranjos()\": função arranjos;\n\"combinacoes()\": função combinações;\n\"graurad()\": função graus para radianos;\n\"radgrau()\": função radianos para graus;\n\"graugrad()\": função graus para grados;\n\"gradgrau()\": função grados para graus;\n\"gradrad()\": função grados para radianos;\n\"radgrad()\": função radianos para grados;\n\"restodivisao(x, y)\": função resto da divisão de x por y;\n\"arredondar()\": função arredondar para o inteiro mais próximo;\n\"arredondarordemgrandeza(x, n)\": função arredondar x para a ordem de grandeza 10^n;\n\"piso()\": função piso;\n\"teto()\": função teto;\n\"maior(x, y)\": função retornar o maior valor dentre x e y;\n\"menor(x, y)\": função retornar o menor valor dentre x e y;\n\"se(condição, expressão1, expressão2)\": função \"se\": retornar a expressão1 se a condição é satisfeita, ou a expressão2 se não satisfeita (leia observação 1);\n\n\"pi\": constante \"pi\" ou constante de Arquimedes ou número de Ludoph;\n\"T\": constante \"T\" (tau), o dobro de \"pi\";\n\"euler\": constante \"e\", base dos logaritmos naturais;\n\"r2\": raiz quadrada de 2 ou constante de Pitágoras;\n\"EM\": constante de Euler-Mascheroni;\n\"ouro\": número de ouro ou razão áurea;\n\"ET\": constante de Embree-Trefethen;\n\"feigenbaum1\": primeira constante de Feigenbaum;\n\"feigenbaum2\": segunda constante de Feigenbaum;\n\"primosgemeos\": constante dos primos gêmeos;\n\"MM\": constante de Meissel-Mertens;\n\"brun2\": constante de Brun para primos gêmeos;\n\"brun4\": constante de Brun para primos quádruplos;\n\"BNe9\": constante de Bruijn-Newman, vezes 10^9;\n\"catalan\": constante de Catalan;\n\"LR\": constante de Landau-Ramanujan;\n\"viswanath\": constante de Viswanath;\n\"legendre\": constante de Legendre;\n\"RS\": constante de Ramanujan-Soldner;\n\"EB\": constante de Erdös-Borwein;\n\"liouville\": constante de Liouville;\n\"Ge11\": constante da gravitação universal de Newton, vezes 10^11, no SI;\n\"c\": velocidade da luz no vácuo, no SI;\n\"he34\": constante de Planck, vezes 10^34, no SI;\n\"TPe-32\": temperatura de Planck, vezes 10^(-32), no SI;\n\"tPe44\": tempo de Planck, vezes 10^44, no SI;\n\"mPe8\": massa de Planck, vezes 10^8, no SI;\n\"ke23\": constante de Boltzmann, vezes 10^23, no SI;\n\"se8\": constante de Stefan-Boltzmann, vezes 10^8, no SI;\n\"NAe-23\": número de Avogadro, vezes 10^(-23);\n\"mee31\": massa do elétron, vezes 10^31, no SI;\n\"mree31\": massa de repouso do elétron, vezes 10^31, no SI;\n\"mpe27\": massa do próton, vezes 10^27, no SI;\n\"qee19\": carga elementar, vezes 10^19, no SI;\n\"a0e11\": raio de Bohr, vezes 10^11, no SI;\n\"ree15\": raio clássico do elétron, vezes 10^15, no SI;\n\"z0\": impendância característica do vácuo, no SI;\n\"mBe24\": magnetão de Bohr, vezes 10^24, no SI;\n\"Re-7\": constante de Rydberg, vezes 10^(-7), no SI;\n\"alpha\": constante de estrutura fina, no SI;\n\"e0e12\": constante de permissividade do vácuo, vezes 10^12, no SI;\n\"K0e-9\": constante de Coulomb ou constante eletrostática no vácuo, vezes 10^(-9), no SI.\n____________________\n\nObservação 1:\n\nNa função \"se()\":\n\nPara \">=\" utilize a função \"maiorouiguala(x, y)\" que retorna \"verdade\" se x maior ou igual a y ou \"falsidade\" caso contrário;\n\nPara \"<=\" utilize a função \"menorouiguala(x, y)\" que retorna \"verdade\" se x menor ou igual y ou \"falsidade\" caso contrário;\n\nPara \">\" utilize a função \"maiorque(x, y)\" que retorna \"verdade\" se x maior que y ou \"falsidade\" caso contrário;\n\nPara \"<\" utilize a função \"menorque()\";\n\npara \"=\" utilize a função \"iguala()\";\n\nPara \"!=\" utilize a função \"diferente()\" que retorna \"verdade\" se x diferente de y ou \"falsidade\" caso contrário.\n_____\n\nConstantes lógicas:\n\n\"verdade\": constante verdade;\n\"falsidade\": constante falsidade.\n_____\n\nAs funções \"maiorouiguala()\", \"menorouiguala()\", \"maiorque()\", \"menorque()\", \"iguala()\" e \"diferente()\" e as constantes \"verdade\" e \"falsidade\" também podem ser utilizadas fora do escopo da função se().\n____________________\n\nObservação 2:\n\nDependendo das opções adotadas em MathematicalRamblings.js, as funções adotadas são as definidas por aproximação por Taylor, e estas funções podem retornar valores aproximados ou demasiadamente discrepantes, pois, em suas implementações, das funções elementares, aplica-se a fórmula de Taylor em apenas alguns pontos e com um limitado número de derivadas. Gradativamente vou as refinando as para que sejam mais precisas.\n____________________\n\nObservação 3:\n\nEm calculadoras voltadas para Cálculo Diferencial e algumas relacionadas, comumente utilizam-se aproximações, assim os resultados podem não ser precisos.";
+			return "Relações, operadores, funções e constantes disponíveis na base de dados (última atualização: 23-05-2022):\n\n\">=\": relação maior ou igual (leia observação 1);\n\"<=\": relação menor ou igual (leia observação 1);\n\">\": relação maior (leia observação 1);\n\"<\": relação menor (leia observação 1);\n\"=\": relação igual (leia observação 1);\n\"!=\": relação diferente (leia observação 1);\n\n\"+\": operador soma;\n\"-\": operador subtração;\n\"*\": operador multiplicação;\n\"/\": operador divisão;\n\n\"exp()\": função exponencial base \"e\";\n\"potencia(a, b)\": função potência (\"a\" elevado a \"b\");\n\"modulo()\": função módulo;\n\"ln()\": função logaritmo natural;\n\"log10()\": função logaritmo de base 10;\n\"log2()\": função logaritmo de base 2;\n\"log(a, b)\": função logaritmo (logaritmo de \"a\" na base \"b\");\n\"sqrt()\": função raiz quadrada;\n\"sqrt3()\": função raiz cúbica;\n\"sqrtn(x, n)\": função raiz enésima de \"x\";\n\"sen()\": função seno;\n\"cos()\": função cosseno;\n\"tg()\": função tangente;\n\"cotg()\": função cotangente;\n\"sec()\": função secante;\n\"cossec()\": função cossecante;\n\"cord()\": função corda;\n\"arcsen()\": função arco-seno;\n\"arccos()\": função arco-cosseno;\n\"arctg()\": função arco-tangente;\n\"arccotg()\": função arco-cotangente;\n\"arcsec()\": função arco-secante;\n\"arccossec()\": função arco-cossecante;\n\"arccord()\": função arco-corda;\n\"senh()\": função seno hiperbólico;\n\"cosh()\": função cosseno hiperbólico;\n\"tgh()\": função tangente hiperbólica;\n\"cotgh()\": função cotangente hiperbólica;\n\"sech()\": função secante hiperbólica;\n\"cossech()\": função cossecante hiperbólica;\n\"fatorial()\": função fatorial;\n\"arranjos()\": função arranjos;\n\"combinacoes()\": função combinações;\n\"graurad()\": função graus para radianos;\n\"radgrau()\": função radianos para graus;\n\"graugrad()\": função graus para grados;\n\"gradgrau()\": função grados para graus;\n\"gradrad()\": função grados para radianos;\n\"radgrad()\": função radianos para grados;\n\"restodivisao(x, y)\": função resto da divisão de x por y;\n\"arredondar()\": função arredondar para o inteiro mais próximo;\n\"arredondarordemgrandeza(x, n)\": função arredondar x para a ordem de grandeza 10^n;\n\"piso()\": função piso;\n\"teto()\": função teto;\n\"maior(x, y)\": função retornar o maior valor dentre x e y;\n\"menor(x, y)\": função retornar o menor valor dentre x e y;\n\"se(condição, expressão1, expressão2)\": função \"se\": retornar a expressão1 se a condição é satisfeita, ou a expressão2 se não satisfeita (leia observação 1);\n\n\"pi\": constante \"pi\" ou constante de Arquimedes ou número de Ludoph;\n\"T\": constante \"T\" (tau), o dobro de \"pi\";\n\"euler\": constante \"e\", base dos logaritmos naturais;\n\"r2\": raiz quadrada de 2 ou constante de Pitágoras;\n\"EM\": constante de Euler-Mascheroni;\n\"ouro\": número de ouro ou razão áurea;\n\"ET\": constante de Embree-Trefethen;\n\"feigenbaum1\": primeira constante de Feigenbaum;\n\"feigenbaum2\": segunda constante de Feigenbaum;\n\"primosgemeos\": constante dos primos gêmeos;\n\"MM\": constante de Meissel-Mertens;\n\"brun2\": constante de Brun para primos gêmeos;\n\"brun4\": constante de Brun para primos quádruplos;\n\"BNe9\": constante de Bruijn-Newman, vezes 10^9;\n\"catalan\": constante de Catalan;\n\"LR\": constante de Landau-Ramanujan;\n\"viswanath\": constante de Viswanath;\n\"legendre\": constante de Legendre;\n\"RS\": constante de Ramanujan-Soldner;\n\"EB\": constante de Erdös-Borwein;\n\"liouville\": constante de Liouville;\n\"Ge11\": constante da gravitação universal de Newton, vezes 10^11, no SI;\n\"c\": velocidade da luz no vácuo, no SI;\n\"he34\": constante de Planck, vezes 10^34, no SI;\n\"TPe-32\": temperatura de Planck, vezes 10^(-32), no SI;\n\"tPe44\": tempo de Planck, vezes 10^44, no SI;\n\"mPe8\": massa de Planck, vezes 10^8, no SI;\n\"ke23\": constante de Boltzmann, vezes 10^23, no SI;\n\"se8\": constante de Stefan-Boltzmann, vezes 10^8, no SI;\n\"NAe-23\": número de Avogadro, vezes 10^(-23);\n\"mee31\": massa do elétron, vezes 10^31, no SI;\n\"mree31\": massa de repouso do elétron, vezes 10^31, no SI;\n\"mpe27\": massa do próton, vezes 10^27, no SI;\n\"qee19\": carga elementar, vezes 10^19, no SI;\n\"a0e11\": raio de Bohr, vezes 10^11, no SI;\n\"ree15\": raio clássico do elétron, vezes 10^15, no SI;\n\"z0\": impendância característica do vácuo, no SI;\n\"mBe24\": magnetão de Bohr, vezes 10^24, no SI;\n\"Re-7\": constante de Rydberg, vezes 10^(-7), no SI;\n\"alpha\": constante de estrutura fina, no SI;\n\"e0e12\": constante de permissividade do vácuo, vezes 10^12, no SI;\n\"K0e-9\": constante de Coulomb ou constante eletrostática no vácuo, vezes 10^(-9), no SI.\n____________________\n\nObservação 1:\n\nNa função \"se()\":\n\nPara \">=\" utilize a função \"maiorouiguala(x, y)\" que retorna \"verdade\" se x maior ou igual a y ou \"falsidade\" caso contrário;\n\nPara \"<=\" utilize a função \"menorouiguala(x, y)\" que retorna \"verdade\" se x menor ou igual y ou \"falsidade\" caso contrário;\n\nPara \">\" utilize a função \"maiorque(x, y)\" que retorna \"verdade\" se x maior que y ou \"falsidade\" caso contrário;\n\nPara \"<\" utilize a função \"menorque()\";\n\npara \"=\" utilize a função \"iguala()\";\n\nPara \"!=\" utilize a função \"diferente()\" que retorna \"verdade\" se x diferente de y ou \"falsidade\" caso contrário.\n_____\n\nFunções lógicas:\n\n\"conjuncao(p, q)\": retorna \"verdade\" se p e q, ou \"falsidade\" caso contrário;\n\"disjuncao(p, q)\": retorna \"verdade\" se p ou q, ou \"falsidade\" caso contrário.\n_____\n\nConstantes lógicas:\n\n\"verdade\": constante verdade;\n\"falsidade\": constante falsidade.\n_____\n\nAs funções e constantes lógicas também podem ser utilizadas fora do escopo da função se().\n____________________\n\nObservação 2:\n\nDependendo das opções adotadas em MathematicalRamblings.js, as funções adotadas são as definidas por aproximação por Taylor, e estas funções podem retornar valores aproximados ou demasiadamente discrepantes, pois, em suas implementações, das funções elementares, aplica-se a fórmula de Taylor em apenas alguns pontos e com um limitado número de derivadas. Gradativamente vou as refinando as para que sejam mais precisas.\n____________________\n\nObservação 3:\n\nEm calculadoras voltadas para Cálculo Diferencial e algumas relacionadas, comumente utilizam-se aproximações, assim os resultados podem não ser precisos.";
 		case 2:
-			return "exp,potencia,modulo,ln,log10,log2,log,sqrt,sqrt3,sqrtn,sen,cos,tg,cotg,sec,cossec,cord,arcsen,arccos,arctg,arccotg,arcsec,arccossec,arccord,senh,cosh,tgh,cotgh,sech,cossech,fatorial,arranjos,combinacoes,graurad,radgrau,graugrad,gradgrau,gradrad,radgrad,restodivisao,arredondarordemgrandeza,arredondar,piso,teto,maior,menor,iguala,maiorouiguala,menorouiguala,maiorque,menorque,diferente,se,antoniovandreexp,antoniovandrepotencia,antoniovandremodulo,antoniovandreln,antoniovandrelog10,antoniovandrelog2,antoniovandrelog,antoniovandresqrt,antoniovandresqrt3,antoniovandresqrtn,antoniovandresen,antoniovandrecos,antoniovandretg,antoniovandrecotg,antoniovandresec,antoniovandrecossec,antoniovandrecord,antoniovandrearcsen,antoniovandrearccos,antoniovandrearctg,antoniovandrearccotg,antoniovandrearcsec,antoniovandrearccossec,antoniovandrearccord,antoniovandresenh,antoniovandrecosh,antoniovandretgh,antoniovandrecotgh,antoniovandresech,antoniovandrecossech,antoniovandrefatorial,antoniovandrefatorialescopofuncoes,antoniovandrearranjos,antoniovandrearranjosescopofuncoes,antoniovandrecombinacoes,antoniovandregraurad,antoniovandreradgrau,antoniovandregraugrad,antoniovandregradgrau,antoniovandreradgrad,antoniovandregradrad,antoniovandrerestodivisao,antoniovandrearredondarordemgrandeza,antoniovandrearredondar,antoniovandrecombinacoesescopofuncoes,antoniovandrepiso,antoniovandreteto,antoniovandremaior,antoniovandremenor,antoniovandreiguala,antoniovandremaiorouiguala,antoniovandremenorouiguala,antoniovandremaiorque,antoniovandremenorque,antoniovandrediferente,antoniovandrese,verdade,falsidade,pi,T,e,E,euler,r2,EM,ouro,ET,feigenbaum1,feigenbaum2,primosgemeos,MM,brun2,brun4,BNe9,catalan,LR,viswanath,legendre,RS,EB,liouville,Ge11,c,he34,TPe-32,tPe44,mPe8,ke23,se8,NAe-23,mee31,mree31,mpe27,qee19,a0e11,ree15,z0,mBe24,Re-7,alpha,e0e12,K0e-9";
+			return "exp,potencia,modulo,ln,log10,log2,log,sqrt,sqrt3,sqrtn,sen,cos,tg,cotg,sec,cossec,cord,arcsen,arccos,arctg,arccotg,arcsec,arccossec,arccord,senh,cosh,tgh,cotgh,sech,cossech,fatorial,arranjos,combinacoes,graurad,radgrau,graugrad,gradgrau,gradrad,radgrad,restodivisao,arredondarordemgrandeza,arredondar,piso,teto,maior,menor,iguala,maiorouiguala,menorouiguala,maiorque,menorque,diferente,se,conjucao,disjucao,antoniovandreexp,antoniovandrepotencia,antoniovandremodulo,antoniovandreln,antoniovandrelog10,antoniovandrelog2,antoniovandrelog,antoniovandresqrt,antoniovandresqrt3,antoniovandresqrtn,antoniovandresen,antoniovandrecos,antoniovandretg,antoniovandrecotg,antoniovandresec,antoniovandrecossec,antoniovandrecord,antoniovandrearcsen,antoniovandrearccos,antoniovandrearctg,antoniovandrearccotg,antoniovandrearcsec,antoniovandrearccossec,antoniovandrearccord,antoniovandresenh,antoniovandrecosh,antoniovandretgh,antoniovandrecotgh,antoniovandresech,antoniovandrecossech,antoniovandrefatorial,antoniovandrefatorialescopofuncoes,antoniovandrearranjos,antoniovandrearranjosescopofuncoes,antoniovandrecombinacoes,antoniovandregraurad,antoniovandreradgrau,antoniovandregraugrad,antoniovandregradgrau,antoniovandreradgrad,antoniovandregradrad,antoniovandrerestodivisao,antoniovandrearredondarordemgrandeza,antoniovandrearredondar,antoniovandrecombinacoesescopofuncoes,antoniovandrepiso,antoniovandreteto,antoniovandremaior,antoniovandremenor,antoniovandreiguala,antoniovandremaiorouiguala,antoniovandremenorouiguala,antoniovandremaiorque,antoniovandremenorque,antoniovandrediferente,antoniovandrese,antoniovandreconjucao,antoniovandredisjucao,verdade,falsidade,pi,T,e,E,euler,r2,EM,ouro,ET,feigenbaum1,feigenbaum2,primosgemeos,MM,brun2,brun4,BNe9,catalan,LR,viswanath,legendre,RS,EB,liouville,Ge11,c,he34,TPe-32,tPe44,mPe8,ke23,se8,NAe-23,mee31,mree31,mpe27,qee19,a0e11,ree15,z0,mBe24,Re-7,alpha,e0e12,K0e-9";
 		case 3:
-			return [[" ", ""], ["=", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["!", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["**", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["++", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["--", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["//", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["%", "(antoniovandreoperadoresfuncoesconstantes(10))"], [">", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["<", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["+", "-(-1)*"], ["-", "-"], ["pi", "(antoniovandrepi())"], ["T", "(2*(antoniovandrepi()))"], ["e", "e"], ["E", "E"], ["euler", "(antoniovandreeuler())"], ["r2", "(1.41421356237309504880168872420969807)"], ["EM", "(0.57721566490153286060651209008240243)"], ["ouro", "(1.61803398874989484820458683436563811)"], ["ET", "(0.70258 )"], ["feigenbaum1", "(4.66920160910299067185320382046620161)"], ["feigenbaum2", "(2.50290787509589282228390287321821578)"], ["primosgemeos", "(0.66016181584686957392781211001455577)"], ["MM", "(0.26149721284764278375542683860869585)"], ["brun2", "(1.9021605823)"], ["brun4", "(0.87058838)"], ["BNe9", "(-2.7)"], ["catalan", "(0.91596559417721901505460351493238411)"], ["LR", "(0.76422365358922066)"], ["viswanath", "(1.13198824)"], ["legendre", "(1.08366)"], ["RS", "(1.451369234883381050283968485892027)"], ["EB", "(1.606695152415291763)"], ["liouville", "(0.110001000000000000000001)"], ["Ge11", "(6.674184)"], ["c", "(299792458)"], ["he34", "(6.62606957)"], ["TPe-32", "(1.41679)"], ["tPe44", "(5.391247)"], ["mPe8", "(2.176)"], ["ke23", "(1.3806488)"], ["se8", "(5.6704)"], ["NAe-23", "(6.022114129)"], ["mee31", "(9.10938291)"], ["mree31", "(9.10938356)"], ["mpe27", "(1.672621777)"], ["qee19", "(1.602176565)"], ["a0e11", "(5.2917721067)"], ["ree15", "(2.8179403227)"], ["z0", "(376.73031346177)"], ["mBe24", "(9.27400899)"], ["Re-7", "(1.0973731568508)"], ["alpha", "(0.007297352568)"], ["e0e12", "(8.85418782)"], ["K0e-9", "(8.9875)"], ["exp", "antoniovandreexp"], ["potencia", "antoniovandrepotencia"], ["modulo", "antoniovandremodulo"], ["ln", "antoniovandreln"], ["log10", "antoniovandrelog10"], ["log2", "antoniovandrelog2"], ["log", "antoniovandrelog"], ["sqrt", "antoniovandresqrt"], ["sqrt3", "antoniovandresqrt3"], ["sqrtn", "antoniovandresqrtn"], ["sen", "antoniovandresen"], ["cos", "antoniovandrecos"], ["tg", "antoniovandretg"], ["cotg", "antoniovandrecotg"], ["sec", "antoniovandresec"], ["cossec", "antoniovandrecossec"], ["cord", "antoniovandrecord"], ["arcsen", "antoniovandrearcsen"], ["arccos", "antoniovandrearccos"], ["arctg", "antoniovandrearctg"], ["arccotg", "antoniovandrearccotg"], ["arcsec", "antoniovandrearcsec"], ["arccossec", "antoniovandrearccossec"], ["arccord", "antoniovandrearccord"], ["senh", "antoniovandresenh"], ["cosh", "antoniovandrecosh"], ["tgh", "antoniovandretgh"], ["cotgh", "antoniovandrecotgh"], ["sech", "antoniovandresech"], ["cossech", "antoniovandrecossech"], ["fatorial", "antoniovandrefatorialescopofuncoes"], ["arranjos", "antoniovandrearranjosescopofuncoes"], ["combinacoes", "antoniovandrecombinacoesescopofuncoes"], ["graurad", "antoniovandregraurad"], ["radgrau", "antoniovandreradgrau"], ["graugrad", "antoniovandregraugrad"], ["gradgrau", "antoniovandregradgrau"], ["gradrad", "antoniovandregradrad"], ["radgrad", "antoniovandreradgrad"], ["restodivisao", "antoniovandrerestodivisao"], ["arredondarordemgrandeza", "antoniovandrearredondarordemgrandeza"], ["arredondar", "antoniovandrearredondar"], ["piso", "antoniovandrepiso"], ["teto", "antoniovandreteto"], ["maior", "antoniovandremaior"], ["menor", "antoniovandremenor"], ["iguala", "antoniovandreiguala"], ["maiorouiguala", "antoniovandremaiorouiguala"], ["menorouiguala", "antoniovandremenorouiguala"], ["maiorque", "antoniovandremaiorque"], ["menorque", "antoniovandremenorque"], ["diferente", "antoniovandrediferente"], ["se", "antoniovandrese"], ["antoniovandreexp", "antoniovandreexp"], ["antoniovandrepotencia", "antoniovandrepotencia"], ["antoniovandremodulo", "antoniovandremodulo"], ["antoniovandreln", "antoniovandreln"], ["antoniovandrelog10", "antoniovandrelog10"], ["antoniovandrelog2", "antoniovandrelog2"], ["antoniovandrelog", "antoniovandrelog"], ["antoniovandresqrt", "antoniovandresqrt"], ["antoniovandresqrt3", "antoniovandresqrt3"], ["antoniovandresqrtn", "antoniovandresqrtn"], ["antoniovandresen", "antoniovandresen"], ["antoniovandrecos", "antoniovandrecos"], ["antoniovandretg", "antoniovandretg"], ["antoniovandrecotg", "antoniovandrecotg"], ["antoniovandresec", "antoniovandresec"], ["antoniovandrecossec", "antoniovandrecossec"], ["antoniovandrecord", "antoniovandrecord"], ["antoniovandrearcsen", "antoniovandrearcsen"], ["antoniovandrearccos", "antoniovandrearccos"], ["antoniovandrearctg", "antoniovandrearctg"], ["antoniovandrearccotg", "antoniovandrearccotg"], ["antoniovandrearcsec", "antoniovandrearcsec"], ["antoniovandrearccossec", "antoniovandrearccossec"], ["antoniovandrearccord", "antoniovandrearccord"], ["antoniovandresenh", "antoniovandresenh"], ["antoniovandrecosh", "antoniovandrecosh"], ["antoniovandretgh", "antoniovandretgh"], ["antoniovandrecotgh", "antoniovandrecotgh"], ["antoniovandresech", "antoniovandresech"], ["antoniovandrecossech", "antoniovandrecossech"], ["antoniovandrefatorialescopofuncoes", "antoniovandrefatorialescopofuncoes"], ["antoniovandregraurad", "antoniovandregraurad"], ["antoniovandreradgrau", "antoniovandreradgrau"], ["antoniovandregraugrad", "antoniovandregraugrad"], ["antoniovandregradgrau", "antoniovandregradgrau"], ["antoniovandregradrad", "antoniovandregradrad"], ["antoniovandreradgrad", "antoniovandreradgrad"], ["antoniovandrerestodivisao", "antoniovandrerestodivisao"], ["antoniovandrearredondarordemgrandeza", "antoniovandrearredondarordemgrandeza"], ["antoniovandrearredondar", "antoniovandrearredondar"], ["antoniovandrepiso","antoniovandrepiso"], ["antoniovandreteto", "antoniovandreteto"], ["antoniovandremaior", "antoniovandremaior"], ["antoniovandremenor", "antoniovandremenor"], ["antoniovandreiguala", "antoniovandreiguala"], ["antoniovandremaiorouiguala", "antoniovandremaiorouiguala"], ["antoniovandremenorouiguala", "antoniovandremenorouiguala"], ["antoniovandremaiorque", "antoniovandremaiorque"], ["antoniovandremenorque", "antoniovandremenorque"], ["antoniovandrediferente", "antoniovandrediferente"], ["antoniovandrese", "antoniovandrese"], ["verdade", "\"verdade\""], ["falsidade", "\"falsidade\""]];
+			return [[" ", ""], ["=", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["!", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["**", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["++", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["--", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["//", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["%", "(antoniovandreoperadoresfuncoesconstantes(10))"], [">", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["<", "(antoniovandreoperadoresfuncoesconstantes(10))"], ["+", "-(-1)*"], ["-", "-"], ["pi", "(antoniovandrepi())"], ["T", "(2*(antoniovandrepi()))"], ["e", "e"], ["E", "E"], ["euler", "(antoniovandreeuler())"], ["r2", "(1.41421356237309504880168872420969807)"], ["EM", "(0.57721566490153286060651209008240243)"], ["ouro", "(1.61803398874989484820458683436563811)"], ["ET", "(0.70258 )"], ["feigenbaum1", "(4.66920160910299067185320382046620161)"], ["feigenbaum2", "(2.50290787509589282228390287321821578)"], ["primosgemeos", "(0.66016181584686957392781211001455577)"], ["MM", "(0.26149721284764278375542683860869585)"], ["brun2", "(1.9021605823)"], ["brun4", "(0.87058838)"], ["BNe9", "(-2.7)"], ["catalan", "(0.91596559417721901505460351493238411)"], ["LR", "(0.76422365358922066)"], ["viswanath", "(1.13198824)"], ["legendre", "(1.08366)"], ["RS", "(1.451369234883381050283968485892027)"], ["EB", "(1.606695152415291763)"], ["liouville", "(0.110001000000000000000001)"], ["Ge11", "(6.674184)"], ["c", "(299792458)"], ["he34", "(6.62606957)"], ["TPe-32", "(1.41679)"], ["tPe44", "(5.391247)"], ["mPe8", "(2.176)"], ["ke23", "(1.3806488)"], ["se8", "(5.6704)"], ["NAe-23", "(6.022114129)"], ["mee31", "(9.10938291)"], ["mree31", "(9.10938356)"], ["mpe27", "(1.672621777)"], ["qee19", "(1.602176565)"], ["a0e11", "(5.2917721067)"], ["ree15", "(2.8179403227)"], ["z0", "(376.73031346177)"], ["mBe24", "(9.27400899)"], ["Re-7", "(1.0973731568508)"], ["alpha", "(0.007297352568)"], ["e0e12", "(8.85418782)"], ["K0e-9", "(8.9875)"], ["exp", "antoniovandreexp"], ["potencia", "antoniovandrepotencia"], ["modulo", "antoniovandremodulo"], ["ln", "antoniovandreln"], ["log10", "antoniovandrelog10"], ["log2", "antoniovandrelog2"], ["log", "antoniovandrelog"], ["sqrt", "antoniovandresqrt"], ["sqrt3", "antoniovandresqrt3"], ["sqrtn", "antoniovandresqrtn"], ["sen", "antoniovandresen"], ["cos", "antoniovandrecos"], ["tg", "antoniovandretg"], ["cotg", "antoniovandrecotg"], ["sec", "antoniovandresec"], ["cossec", "antoniovandrecossec"], ["cord", "antoniovandrecord"], ["arcsen", "antoniovandrearcsen"], ["arccos", "antoniovandrearccos"], ["arctg", "antoniovandrearctg"], ["arccotg", "antoniovandrearccotg"], ["arcsec", "antoniovandrearcsec"], ["arccossec", "antoniovandrearccossec"], ["arccord", "antoniovandrearccord"], ["senh", "antoniovandresenh"], ["cosh", "antoniovandrecosh"], ["tgh", "antoniovandretgh"], ["cotgh", "antoniovandrecotgh"], ["sech", "antoniovandresech"], ["cossech", "antoniovandrecossech"], ["fatorial", "antoniovandrefatorialescopofuncoes"], ["arranjos", "antoniovandrearranjosescopofuncoes"], ["combinacoes", "antoniovandrecombinacoesescopofuncoes"], ["graurad", "antoniovandregraurad"], ["radgrau", "antoniovandreradgrau"], ["graugrad", "antoniovandregraugrad"], ["gradgrau", "antoniovandregradgrau"], ["gradrad", "antoniovandregradrad"], ["radgrad", "antoniovandreradgrad"], ["restodivisao", "antoniovandrerestodivisao"], ["arredondarordemgrandeza", "antoniovandrearredondarordemgrandeza"], ["arredondar", "antoniovandrearredondar"], ["piso", "antoniovandrepiso"], ["teto", "antoniovandreteto"], ["maior", "antoniovandremaior"], ["menor", "antoniovandremenor"], ["iguala", "antoniovandreiguala"], ["maiorouiguala", "antoniovandremaiorouiguala"], ["menorouiguala", "antoniovandremenorouiguala"], ["maiorque", "antoniovandremaiorque"], ["menorque", "antoniovandremenorque"], ["diferente", "antoniovandrediferente"], ["se", "antoniovandrese"], ["conjuncao", "antoniovandreconjuncao"], ["disjucao", "antoniovandredisjuncao"], ["antoniovandreexp", "antoniovandreexp"], ["antoniovandrepotencia", "antoniovandrepotencia"], ["antoniovandremodulo", "antoniovandremodulo"], ["antoniovandreln", "antoniovandreln"], ["antoniovandrelog10", "antoniovandrelog10"], ["antoniovandrelog2", "antoniovandrelog2"], ["antoniovandrelog", "antoniovandrelog"], ["antoniovandresqrt", "antoniovandresqrt"], ["antoniovandresqrt3", "antoniovandresqrt3"], ["antoniovandresqrtn", "antoniovandresqrtn"], ["antoniovandresen", "antoniovandresen"], ["antoniovandrecos", "antoniovandrecos"], ["antoniovandretg", "antoniovandretg"], ["antoniovandrecotg", "antoniovandrecotg"], ["antoniovandresec", "antoniovandresec"], ["antoniovandrecossec", "antoniovandrecossec"], ["antoniovandrecord", "antoniovandrecord"], ["antoniovandrearcsen", "antoniovandrearcsen"], ["antoniovandrearccos", "antoniovandrearccos"], ["antoniovandrearctg", "antoniovandrearctg"], ["antoniovandrearccotg", "antoniovandrearccotg"], ["antoniovandrearcsec", "antoniovandrearcsec"], ["antoniovandrearccossec", "antoniovandrearccossec"], ["antoniovandrearccord", "antoniovandrearccord"], ["antoniovandresenh", "antoniovandresenh"], ["antoniovandrecosh", "antoniovandrecosh"], ["antoniovandretgh", "antoniovandretgh"], ["antoniovandrecotgh", "antoniovandrecotgh"], ["antoniovandresech", "antoniovandresech"], ["antoniovandrecossech", "antoniovandrecossech"], ["antoniovandrefatorialescopofuncoes", "antoniovandrefatorialescopofuncoes"], ["antoniovandregraurad", "antoniovandregraurad"], ["antoniovandreradgrau", "antoniovandreradgrau"], ["antoniovandregraugrad", "antoniovandregraugrad"], ["antoniovandregradgrau", "antoniovandregradgrau"], ["antoniovandregradrad", "antoniovandregradrad"], ["antoniovandreradgrad", "antoniovandreradgrad"], ["antoniovandrerestodivisao", "antoniovandrerestodivisao"], ["antoniovandrearredondarordemgrandeza", "antoniovandrearredondarordemgrandeza"], ["antoniovandrearredondar", "antoniovandrearredondar"], ["antoniovandrepiso","antoniovandrepiso"], ["antoniovandreteto", "antoniovandreteto"], ["antoniovandremaior", "antoniovandremaior"], ["antoniovandremenor", "antoniovandremenor"], ["antoniovandreiguala", "antoniovandreiguala"], ["antoniovandremaiorouiguala", "antoniovandremaiorouiguala"], ["antoniovandremenorouiguala", "antoniovandremenorouiguala"], ["antoniovandremaiorque", "antoniovandremaiorque"], ["antoniovandremenorque", "antoniovandremenorque"], ["antoniovandrediferente", "antoniovandrediferente"], ["antoniovandrese", "antoniovandrese"], ["antoniovandreconjuncao", "antoniovandreconjuncao"], ["antoniovandredisjuncao", "antoniovandredisjuncao"], ["verdade", "\"verdade\""], ["falsidade", "\"falsidade\""]];
 		case 4:
 			return "Erro do JavaScript (não meu) ou entrada inválida.";
 		case 5:
@@ -13236,11 +13272,19 @@ function antoniovandreinterseccoesretacircunferencia(str, retorno)
 		return "A reta e a circunferência não se interceptam."
 	else
 		{
-		var r1 = -(b * antoniovandresqrt(d) + (b * b + a * b) * yr - b * b * xr + a * b * c) / (b * b + a * a);
+		d2 = antoniovandresqrt(d);
 
-		var r2 = (b * antoniovandresqrt(d) + (-b * b - a * b) * yr + b * b * xr - a * b * c) / (b * b + a * a);
+		if (antoniovandrenumeroreal(d2.toString()) == "e")
+			if (antoniovandrecompararstrings(typeof d2, "string") == 1)
+				return d2
+			else
+				return "e";
 
-		if ((antoniovandremodulo(r1) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(r1) > antoniovandremaximovalorsaida(1)))
+		var r1 = -(b * d2 + (b * b + a * b) * yr - b * b * xr + a * b * c) / (b * b + a * a);
+
+		var r2 = (b * d2 + (-b * b - a * b) * yr + b * b * xr - a * b * c) / (b * b + a * a);
+
+		if ((antoniovandremodulo(r1) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(r2) > antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(4);
 
 		var coef1 = antoniovandrefracaogeratriz(r1, 1);
@@ -13265,7 +13309,7 @@ function antoniovandreinterseccoesretacircunferencia(str, retorno)
 						if (coef2[1] == 1)
 							return antoniovandreformatarreal(coef1[0]).toString() + " / " + antoniovandreformatarreal(coef1[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
 						else
-							return antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+							return antoniovandreformatarreal(coef1[0]).toString() + " / " + antoniovandreformatarreal(coef1[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
 						}
 
 				case 1:
@@ -13294,7 +13338,7 @@ function antoniovandreinterseccoesretacircunferencia(str, retorno)
 						if (coef2[1] == 1)
 							out = out + antoniovandreformatarreal(coef1[0]).toString() + " / " + antoniovandreformatarreal(coef1[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
 						else
-							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + " / " + antoniovandreformatarreal(coef1[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
 						}
 
 					out = out + "\n\n";
@@ -13321,6 +13365,340 @@ function antoniovandreinterseccoesretacircunferencia(str, retorno)
 				default:
 					return "e";
 				}
+			}
+		}
+	}
+
+// Intersecções entre uma reta e uma circunferência. Argumentos globais: primeiro: uma string contendo separadas por barra vertical "|", as circunferências consistindo da abscissa de seu centro, a ordenada de seu centro, e o seu raio, separados por ponto e vírgula ";"; segundo: 0 para retornar string ou 1 para retornar vetor. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandreinterseccoesduascircunferencias(str, retorno)
+	{
+	var arr = str[0].value.split("|");
+	var circ1;
+	var circ2;
+
+	if (arr.length != 2) return "e";
+
+		circ1 = arr[0].split(";");
+		circ2 = arr[1].split(";");
+
+		if ((circ1.length != 3) || (circ2.length != 3)) return "e";
+
+	if (antoniovandreexpressaofuncaovalida(circ1[0].trim()) == "e") return "e";
+
+	try
+		{
+		var a = eval(antoniovandretraduzirexpressaofuncional(circ1[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(circ1[1].trim()) == "e") return "e";
+
+	try
+		{
+		var b = eval(antoniovandretraduzirexpressaofuncional(circ1[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(circ1[2].trim()) == "e") return "e";
+
+	try
+		{
+		var c = eval(antoniovandretraduzirexpressaofuncional(circ1[2].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(circ2[0].trim()) == "e") return "e";
+
+	try
+		{
+		var d = eval(antoniovandretraduzirexpressaofuncional(circ2[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(circ2[1].trim()) == "e") return "e";
+
+	try
+		{
+		var e = eval(antoniovandretraduzirexpressaofuncional(circ2[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(circ2[2].trim()) == "e") return "e";
+
+	try
+		{
+		var f = eval(antoniovandretraduzirexpressaofuncional(circ2[2].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if ((antoniovandrenumeroreal(a.toString()) == "e") || (antoniovandrenumeroreal(b.toString()) == "e") || (antoniovandrenumeroreal(c.toString()) == "e") || (antoniovandrenumeroreal(d.toString()) == "e") || (antoniovandrenumeroreal(e.toString()) == "e") || (antoniovandrenumeroreal(f.toString()) == "e"))
+		return "e";
+
+	if ((antoniovandremodulo(a) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(d) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(e) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(f) > antoniovandremaximovalorentrada(1)))
+		return antoniovandremensagenserro(2);
+
+	if ((c <= 0) || (f <= 0)) return "O raio deve ser um real positivo.";
+	if ((a == d) && (b == e) && (c == f)) return "As circunferências são coincidentes";
+
+	var D = (-4*a*a*a + 4*a*a*d - 4*a*b*b + 8*a*b*e + 4*a*c*c + 4*a*d*d - 4*a*e*e - 4*a*f*f - 4*b*b*d + 8*b*d*e - 4*c*c*d - 4*d*d*d - 4*d*e*e + 4*d*f*f) * (-4*a*a*a + 4*a*a*d - 4*a*b*b + 8*a*b*e + 4*a*c*c + 4*a*d*d - 4*a*e*e - 4*a*f*f - 4*b*b*d + 8*b*d*e - 4*c*c*d - 4*d*d*d - 4*d*e*e + 4*d*f*f) - 4*(4*a*a - 8*a*d + 4*b*b - 8*b*e + 4*d*d + 4*e*e) * (a*a*a*a + 2*a*a*b*b - 4*a*a*b*e - 2*a*a*c*c - 2*a*a*d*d + 2*a*a*e*e + 2*a*a*f*f + b*b*b*b - 4*b*b*b*e - 2*b*b*c*c + 2*b*b*d*d + 6*b*b*e*e - 2*b*b*f*f + 4*b*c*c*e - 4*b*d*d*e - 4*b*e*e*e + 4*b*e*f*f + c*c*c*c + 2*c*c*d*d - 2*c*c*e*e - 2*c*c*f*f + d*d*d*d + 2*d*d*e*e - 2*d*d*f*f + e*e*e*e - 2*e*e*f*f + f*f*f*f);
+
+	if (D < 0)
+		return "As circunferências não se interceptam."
+	else
+		{
+		var D2 = antoniovandresqrt(D);
+		var D3 = (2 * (4*a*a - 8*a*d + 4*b*b - 8*b*e + 4*d*d + 4*e*e));
+
+		if (D3 == 0) return "As circunferências não se interceptam.";
+
+		if (antoniovandrenumeroreal(D2.toString()) == "e")
+			if (antoniovandrecompararstrings(typeof D2, "string") == 1)
+				return D2
+			else
+				return "e";
+
+		var r1 = (4*a*a*a - 4*a*a*d + D2 + 4*a*b*b - 8*a*b*e - 4*a*c*c - 4*a*d*d + 4*a*e*e + 4*a*f*f + 4*b*b*d - 8*d*b*e + 4*c*c*d + 4*d*d*d + 4*d*e*e - 4*d*f*f) / D3;
+
+		var r2 = (4*a*a*a - 4*a*a*d - D2 + 4*a*b*b - 8*a*b*e - 4*a*c*c - 4*a*d*d + 4*a*e*e + 4*a*f*f + 4*b*b*d - 8*d*b*e + 4*c*c*d + 4*d*d*d + 4*d*e*e - 4*d*f*f) / D3;
+
+		var rad1 = c*c - (r1 - a) * (r1 - a);
+		var rad2 = f*f - (r2 - d) * (r2 - d);
+
+		if ((rad1 < 0) && (rad2 < 0))
+			return "As circunferências não se interceptam.";
+
+		var ra1 = antoniovandresqrt(rad1);
+		var ra2 = antoniovandresqrt(rad2);
+		var cm1 = 1;
+		var cm2 = 1;
+		var flag1 = 0;
+		var flag2 = 0;
+
+		if ((antoniovandremodulo(r1) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(r2) > antoniovandremaximovalorsaida(1)))
+			return antoniovandremensagenserro(4);
+
+		if ((antoniovandremodulo((r1 - a) * (r1 - a) + (ra1) * (ra1) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r1 - d) * (r1 - d) + (ra1 + b - e) * (ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r1 - a) * (r1 - a) + (-ra1) * (-ra1) - c*c) <= antoniovandreprecisaoreal(4)) && antoniovandremodulo((r1 - d) * (r1 - d) + (-ra1 + b - e) * (-ra1 + b - e) - f*f <= antoniovandreprecisaoreal(4)))
+			flag1 = 1
+		if ((antoniovandremodulo((r1 - a) * (r1 - a) + (ra1) * (ra1) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r1 - d) * (r1 - d) + (ra1 + b - e) * (ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(4)))
+			cm1 = 1
+		else if ((antoniovandremodulo((r1 - a) * (r1 - a) + (-ra1) * (-ra1) - c*c) <= antoniovandreprecisaoreal(4)) && antoniovandremodulo((r1 - d) * (r1 - d) + (-ra1 + b - e) * (-ra1 + b - e) - f*f <= antoniovandreprecisaoreal(4)))
+			cm1 = -1
+		else
+			flag1 = 2;
+
+		if ((antoniovandremodulo((r2 - a) * (r2 - a) + (ra2 + e - b) * (ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r2 - d) * (r2 - d) + (ra2) * (ra2) - f*f) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r2 - a) * (r2 - a) + (-ra2 + e - b) * (-ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4)) && antoniovandremodulo((r2 - d) * (r2 - d) + (-ra2) * (-ra2) - f*f <= antoniovandreprecisaoreal(4)))
+			flag2 = 1
+		else if ((antoniovandremodulo((r2 - a) * (r2 - a) + (ra2 + e - b) * (ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r2 - d) * (r2 - d) + (ra2) * (ra2) - f*f) <= antoniovandreprecisaoreal(4)))
+			cm2 = 1
+		else if ((antoniovandremodulo((r2 - a) * (r2 - a) + (-ra2 + e - b) * (-ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4)) && antoniovandremodulo((r2 - d) * (r2 - d) + (-ra2) * (-ra2) - f*f <= antoniovandreprecisaoreal(4)))
+			cm2 = -1
+		else
+			flag2 = 2;
+
+		if ((flag1 == 2) && (flag2 == 2))
+			return "As circunferências não se interceptam.";
+
+		var coef1 = antoniovandrefracaogeratriz(r1, 1);
+
+		var coef2;
+
+		if (rad1 >= 0) coef2 = antoniovandrefracaogeratriz(cm1 * ra1 + b, 1);
+
+		var coef3 = antoniovandrefracaogeratriz(r2, 1);
+
+		var coef4;
+
+		if (rad2 >= 0) coef4 = antoniovandrefracaogeratriz(cm2 * ra2 + e, 1);
+
+		if (flag1 == 1)
+			{
+			coef3 = antoniovandrefracaogeratriz(r1, 1);
+			coef4 = antoniovandrefracaogeratriz(-cm1 * ra1 + b, 1);
+
+			switch (retorno)
+				{
+				case 0:
+					var out = "";
+
+						if (coef1[1] == 1)
+							{
+							if (coef2[1] == 1)
+								out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+							else
+								out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+							}
+						else
+							{
+							if (coef2[1] == 1)
+								out = out + antoniovandreformatarreal(coef1[0]).toString() + " / " + antoniovandreformatarreal(coef1[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+							else
+								out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+							}
+
+						if (cm1 * ra1 + b != 0)
+							{
+							out = out + "\n\n";
+
+							if (coef3[1] == 1)
+								{
+								if (coef4[1] == 1)
+									out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
+								else
+									out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
+								}
+							else
+								{
+								if (coef4[1] == 1)
+									out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
+								else
+									out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
+								}
+							}
+
+					return out;
+				case 1:
+					if (cm1 * ra1 + b != 0)
+						return [[r1, cm1 * ra1 + b], [r1, -cm1 * ra1 + b]]
+					else
+						return [r1, cm1 * ra1 + b];
+				default:
+					return "e";
+				}
+			}
+
+		if (flag2 == 1)
+			{
+			coef1 = antoniovandrefracaogeratriz(r2, 1);
+			coef2 = antoniovandrefracaogeratriz(-cm2 * ra2 + e, 1);
+
+			switch (retorno)
+				{
+				case 0:
+					var out = "";
+
+					if (coef1[1] == 1)
+						{
+						if (coef2[1] == 1)
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+						else
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+						}
+					else
+						{
+						if (coef2[1] == 1)
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + " / " + antoniovandreformatarreal(coef1[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+						else
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+						}
+
+					if (cm2 * ra2 + e != 0)
+						{
+						out = out + "\n\n";
+
+						if (coef3[1] == 1)
+							{
+							if (coef4[1] == 1)
+								out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
+							else
+								out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
+							}
+						else
+							{
+							if (coef4[1] == 1)
+								out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
+							else
+								out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
+							}
+						}
+
+					return out;
+				case 1:
+					if (cm2 * ra2 + e != 0)
+						return [[r2, cm2 * ra2 + e], [r2, -cm2 * ra2 + e]]
+					else
+						return [r2, cm2 * ra2 + e];
+				default:
+					return "e";
+				}
+			}
+
+		switch (retorno)
+			{
+			case 0:
+				var out = "";
+
+				if (rad1 >= 0)
+					{
+					if (coef1[1] == 1)
+						{
+						if (coef2[1] == 1)
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+						else
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+						}
+					else
+						{
+						if (coef2[1] == 1)
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + " / " + antoniovandreformatarreal(coef1[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+						else
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+						}
+					}
+
+				if ((rad2 >= 0) && ((r1 != r2) || (cm1 * ra1 + b != cm2 * ra2 + e)))
+					{
+					out = out + "\n\n";
+
+					if (coef3[1] == 1)
+						{
+						if (coef4[1] == 1)
+							out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
+						else
+							out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
+						}
+					else
+						{
+						if (coef4[1] == 1)
+							out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
+						else
+							out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
+						}
+					}
+
+				if (out == "")
+					return "As circunferências não se interceptam."
+				else
+					return out;
+			case 1:
+				if ((rad1 >= 0) && (rad2 >= 0)  && ((r1 != r2) || (cm1 * ra1 + b != cm2 * ra2 + e)))
+					return [[r1, cm1 * ra1 + b], [r2, cm2 * ra2 + e]]
+				else if (rad1 >= 0)
+					return [r1, cm1 * ra1 + b]
+				else if (rad2 >= 0)
+					return [r2, cm2 * ra2 + b]
+				else
+					return "As circunferências não se interceptam.";
+			default:
+				return "e";
 			}
 		}
 	}
