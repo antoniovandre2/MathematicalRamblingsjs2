@@ -1957,6 +1957,8 @@ function antoniovandreprecisaoreal(i)
 			return 0.000000000005; // Precisão no cálculo de termos de uma PG.
 		case 9:
 			return 0.3; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca pouca pouca precisão.
+		case 10:
+			return 0; // Margem de erro para a intersecção entre circunferências.
 		default:
 			return "e";
 		}
@@ -13496,20 +13498,20 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 		if ((antoniovandremodulo(r1) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(r2) > antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(4);
 
-		if ((ra1 != 0) && ((antoniovandremodulo((r1 - a) * (r1 - a) + (ra1) * (ra1) - c*c) <= antoniovandreprecisaoreal(4) / 100) && (antoniovandremodulo((r1 - d) * (r1 - d) + (ra1 + b - e) * (ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(4) / 100) && (antoniovandremodulo((r1 - a) * (r1 - a) + (-ra1) * (-ra1) - c*c) <= antoniovandreprecisaoreal(4) / 100) && antoniovandremodulo((r1 - d) * (r1 - d) + (-ra1 + b - e) * (-ra1 + b - e) - f*f <= antoniovandreprecisaoreal(4) / 100)))
+		if ((ra1 != 0) && ((antoniovandremodulo((r1 - a) * (r1 - a) + (ra1) * (ra1) - c*c) <= antoniovandreprecisaoreal(10)) && (antoniovandremodulo((r1 - d) * (r1 - d) + (ra1 + b - e) * (ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(10)) && (antoniovandremodulo((r1 - a) * (r1 - a) + (-ra1) * (-ra1) - c*c) <= antoniovandreprecisaoreal(10)) && antoniovandremodulo((r1 - d) * (r1 - d) + (-ra1 + b - e) * (-ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(10)))
 			flag1 = 1
-		if ((antoniovandremodulo((r1 - a) * (r1 - a) + (ra1) * (ra1) - c*c) <= antoniovandreprecisaoreal(4) / 100) && (antoniovandremodulo((r1 - d) * (r1 - d) + (ra1 + b - e) * (ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(4) / 100))
+		if ((antoniovandremodulo((r1 - a) * (r1 - a) + (ra1) * (ra1) - c*c) <= antoniovandreprecisaoreal(10)) && (antoniovandremodulo((r1 - d) * (r1 - d) + (ra1 + b - e) * (ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(10)))
 			cm1 = 1
-		else if ((antoniovandremodulo((r1 - a) * (r1 - a) + (-ra1) * (-ra1) - c*c) <= antoniovandreprecisaoreal(4) / 100) && antoniovandremodulo((r1 - d) * (r1 - d) + (-ra1 + b - e) * (-ra1 + b - e) - f*f <= antoniovandreprecisaoreal(4) / 100))
+		else if ((antoniovandremodulo((r1 - a) * (r1 - a) + (-ra1) * (-ra1) - c*c) <= antoniovandreprecisaoreal(10)) && antoniovandremodulo((r1 - d) * (r1 - d) + (-ra1 + b - e) * (-ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(10))
 			cm1 = -1
 		else
 			flag1 = 2;
 
-		if ((ra2 != 0) && ((antoniovandremodulo((r2 - a) * (r2 - a) + (ra2 + e - b) * (ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4) / 100) && (antoniovandremodulo((r2 - d) * (r2 - d) + (ra2) * (ra2) - f*f) <= antoniovandreprecisaoreal(4) / 100) && (antoniovandremodulo((r2 - a) * (r2 - a) + (-ra2 + e - b) * (-ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4) / 100) && antoniovandremodulo((r2 - d) * (r2 - d) + (-ra2) * (-ra2) - f*f <= antoniovandreprecisaoreal(4) / 100)))
+		if ((ra2 != 0) && ((antoniovandremodulo((r2 - a) * (r2 - a) + (ra2 + e - b) * (ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(10)) && (antoniovandremodulo((r2 - d) * (r2 - d) + (ra2) * (ra2) - f*f) <= antoniovandreprecisaoreal(10)) && (antoniovandremodulo((r2 - a) * (r2 - a) + (-ra2 + e - b) * (-ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(10)) && antoniovandremodulo((r2 - d) * (r2 - d) + (-ra2) * (-ra2) - f*f) <= antoniovandreprecisaoreal(10)))
 			flag2 = 1
-		else if ((antoniovandremodulo((r2 - a) * (r2 - a) + (ra2 + e - b) * (ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4) / 100) && (antoniovandremodulo((r2 - d) * (r2 - d) + (ra2) * (ra2) - f*f) <= antoniovandreprecisaoreal(4) / 100))
+		else if ((antoniovandremodulo((r2 - a) * (r2 - a) + (ra2 + e - b) * (ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(10)) && (antoniovandremodulo((r2 - d) * (r2 - d) + (ra2) * (ra2) - f*f) <= antoniovandreprecisaoreal(10)))
 			cm2 = 1
-		else if ((antoniovandremodulo((r2 - a) * (r2 - a) + (-ra2 + e - b) * (-ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4) / 100) && antoniovandremodulo((r2 - d) * (r2 - d) + (-ra2) * (-ra2) - f*f <= antoniovandreprecisaoreal(4) / 100))
+		else if ((antoniovandremodulo((r2 - a) * (r2 - a) + (-ra2 + e - b) * (-ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(10)) && antoniovandremodulo((r2 - d) * (r2 - d) + (-ra2) * (-ra2) - f*f) <= antoniovandreprecisaoreal(10))
 			cm2 = -1
 		else
 			flag2 = 2;
