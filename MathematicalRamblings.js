@@ -1958,7 +1958,7 @@ function antoniovandreprecisaoreal(i)
 		case 9:
 			return 0.3; // A variação no domínio das funções para o cálculo de limites e derivadas. Pouca pouca pouca precisão.
 		case 10:
-			return 0; // Margem de erro para a intersecção entre circunferências.
+			return antoniovandreprecisaoreal(4); // Margem de erro para a intersecção entre circunferências.
 		default:
 			return "e";
 		}
