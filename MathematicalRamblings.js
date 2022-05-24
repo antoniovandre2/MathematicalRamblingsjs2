@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 23-05-2022. Não considerando alterações em macros.
+// Última atualização: 24-05-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "23-05-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "24-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -13496,20 +13496,20 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 		if ((antoniovandremodulo(r1) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(r2) > antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(4);
 
-		if ((ra1 != 0) && ((antoniovandremodulo((r1 - a) * (r1 - a) + (ra1) * (ra1) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r1 - d) * (r1 - d) + (ra1 + b - e) * (ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r1 - a) * (r1 - a) + (-ra1) * (-ra1) - c*c) <= antoniovandreprecisaoreal(4)) && antoniovandremodulo((r1 - d) * (r1 - d) + (-ra1 + b - e) * (-ra1 + b - e) - f*f <= antoniovandreprecisaoreal(4))))
+		if ((ra1 != 0) && ((antoniovandremodulo((r1 - a) * (r1 - a) + (ra1) * (ra1) - c*c) <= antoniovandreprecisaoreal(4) / 100) && (antoniovandremodulo((r1 - d) * (r1 - d) + (ra1 + b - e) * (ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(4) / 100) && (antoniovandremodulo((r1 - a) * (r1 - a) + (-ra1) * (-ra1) - c*c) <= antoniovandreprecisaoreal(4) / 100) && antoniovandremodulo((r1 - d) * (r1 - d) + (-ra1 + b - e) * (-ra1 + b - e) - f*f <= antoniovandreprecisaoreal(4) / 100)))
 			flag1 = 1
-		if ((antoniovandremodulo((r1 - a) * (r1 - a) + (ra1) * (ra1) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r1 - d) * (r1 - d) + (ra1 + b - e) * (ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(4)))
+		if ((antoniovandremodulo((r1 - a) * (r1 - a) + (ra1) * (ra1) - c*c) <= antoniovandreprecisaoreal(4) / 100) && (antoniovandremodulo((r1 - d) * (r1 - d) + (ra1 + b - e) * (ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(4) / 100))
 			cm1 = 1
-		else if ((antoniovandremodulo((r1 - a) * (r1 - a) + (-ra1) * (-ra1) - c*c) <= antoniovandreprecisaoreal(4)) && antoniovandremodulo((r1 - d) * (r1 - d) + (-ra1 + b - e) * (-ra1 + b - e) - f*f <= antoniovandreprecisaoreal(4)))
+		else if ((antoniovandremodulo((r1 - a) * (r1 - a) + (-ra1) * (-ra1) - c*c) <= antoniovandreprecisaoreal(4) / 100) && antoniovandremodulo((r1 - d) * (r1 - d) + (-ra1 + b - e) * (-ra1 + b - e) - f*f <= antoniovandreprecisaoreal(4) / 100))
 			cm1 = -1
 		else
 			flag1 = 2;
 
-		if ((ra2 != 0) && ((antoniovandremodulo((r2 - a) * (r2 - a) + (ra2 + e - b) * (ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r2 - d) * (r2 - d) + (ra2) * (ra2) - f*f) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r2 - a) * (r2 - a) + (-ra2 + e - b) * (-ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4)) && antoniovandremodulo((r2 - d) * (r2 - d) + (-ra2) * (-ra2) - f*f <= antoniovandreprecisaoreal(4))))
+		if ((ra2 != 0) && ((antoniovandremodulo((r2 - a) * (r2 - a) + (ra2 + e - b) * (ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4) / 100) && (antoniovandremodulo((r2 - d) * (r2 - d) + (ra2) * (ra2) - f*f) <= antoniovandreprecisaoreal(4) / 100) && (antoniovandremodulo((r2 - a) * (r2 - a) + (-ra2 + e - b) * (-ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4) / 100) && antoniovandremodulo((r2 - d) * (r2 - d) + (-ra2) * (-ra2) - f*f <= antoniovandreprecisaoreal(4) / 100)))
 			flag2 = 1
-		else if ((antoniovandremodulo((r2 - a) * (r2 - a) + (ra2 + e - b) * (ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r2 - d) * (r2 - d) + (ra2) * (ra2) - f*f) <= antoniovandreprecisaoreal(4)))
+		else if ((antoniovandremodulo((r2 - a) * (r2 - a) + (ra2 + e - b) * (ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4) / 100) && (antoniovandremodulo((r2 - d) * (r2 - d) + (ra2) * (ra2) - f*f) <= antoniovandreprecisaoreal(4) / 100))
 			cm2 = 1
-		else if ((antoniovandremodulo((r2 - a) * (r2 - a) + (-ra2 + e - b) * (-ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4)) && antoniovandremodulo((r2 - d) * (r2 - d) + (-ra2) * (-ra2) - f*f <= antoniovandreprecisaoreal(4)))
+		else if ((antoniovandremodulo((r2 - a) * (r2 - a) + (-ra2 + e - b) * (-ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4) / 100) && antoniovandremodulo((r2 - d) * (r2 - d) + (-ra2) * (-ra2) - f*f <= antoniovandreprecisaoreal(4) / 100))
 			cm2 = -1
 		else
 			flag2 = 2;
