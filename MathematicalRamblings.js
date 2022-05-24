@@ -13496,7 +13496,7 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 		if ((antoniovandremodulo(r1) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(r2) > antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(4);
 
-		if ((antoniovandremodulo((r1 - a) * (r1 - a) + (ra1) * (ra1) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r1 - d) * (r1 - d) + (ra1 + b - e) * (ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r1 - a) * (r1 - a) + (-ra1) * (-ra1) - c*c) <= antoniovandreprecisaoreal(4)) && antoniovandremodulo((r1 - d) * (r1 - d) + (-ra1 + b - e) * (-ra1 + b - e) - f*f <= antoniovandreprecisaoreal(4)))
+		if ((ra1 != 0) && ((antoniovandremodulo((r1 - a) * (r1 - a) + (ra1) * (ra1) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r1 - d) * (r1 - d) + (ra1 + b - e) * (ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r1 - a) * (r1 - a) + (-ra1) * (-ra1) - c*c) <= antoniovandreprecisaoreal(4)) && antoniovandremodulo((r1 - d) * (r1 - d) + (-ra1 + b - e) * (-ra1 + b - e) - f*f <= antoniovandreprecisaoreal(4))))
 			flag1 = 1
 		if ((antoniovandremodulo((r1 - a) * (r1 - a) + (ra1) * (ra1) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r1 - d) * (r1 - d) + (ra1 + b - e) * (ra1 + b - e) - f*f) <= antoniovandreprecisaoreal(4)))
 			cm1 = 1
@@ -13505,7 +13505,7 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 		else
 			flag1 = 2;
 
-		if ((antoniovandremodulo((r2 - a) * (r2 - a) + (ra2 + e - b) * (ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r2 - d) * (r2 - d) + (ra2) * (ra2) - f*f) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r2 - a) * (r2 - a) + (-ra2 + e - b) * (-ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4)) && antoniovandremodulo((r2 - d) * (r2 - d) + (-ra2) * (-ra2) - f*f <= antoniovandreprecisaoreal(4)))
+		if ((ra2 != 0) && ((antoniovandremodulo((r2 - a) * (r2 - a) + (ra2 + e - b) * (ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r2 - d) * (r2 - d) + (ra2) * (ra2) - f*f) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r2 - a) * (r2 - a) + (-ra2 + e - b) * (-ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4)) && antoniovandremodulo((r2 - d) * (r2 - d) + (-ra2) * (-ra2) - f*f <= antoniovandreprecisaoreal(4))))
 			flag2 = 1
 		else if ((antoniovandremodulo((r2 - a) * (r2 - a) + (ra2 + e - b) * (ra2 + e - b) - c*c) <= antoniovandreprecisaoreal(4)) && (antoniovandremodulo((r2 - d) * (r2 - d) + (ra2) * (ra2) - f*f) <= antoniovandreprecisaoreal(4)))
 			cm2 = 1
@@ -13539,47 +13539,41 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 				case 0:
 					var out = "";
 
-						if (coef1[1] == 1)
+					if (coef1[1] == 1)
+						{
+						if (coef2[1] == 1)
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+						else
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+						}
+					else
+						{
+						if (coef2[1] == 1)
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + " / " + antoniovandreformatarreal(coef1[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+						else
+							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+						}
+
+						out = out + "\n\n";
+
+						if (coef3[1] == 1)
 							{
-							if (coef2[1] == 1)
-								out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+							if (coef4[1] == 1)
+								out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
 							else
-								out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
+								out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
 							}
 						else
 							{
-							if (coef2[1] == 1)
-								out = out + antoniovandreformatarreal(coef1[0]).toString() + " / " + antoniovandreformatarreal(coef1[1]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString()
+							if (coef4[1] == 1)
+								out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
 							else
-								out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
-							}
-
-						if (cm1 * ra1 + b != 0)
-							{
-							out = out + "\n\n";
-
-							if (coef3[1] == 1)
-								{
-								if (coef4[1] == 1)
-									out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
-								else
-									out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
-								}
-							else
-								{
-								if (coef4[1] == 1)
-									out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
-								else
-									out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
-								}
+								out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
 							}
 
 					return out;
 				case 1:
-					if (cm1 * ra1 + b != 0)
-						return [[r1, cm1 * ra1 + b], [r1, -cm1 * ra1 + b]]
-					else
-						return [r1, cm1 * ra1 + b];
+					return [[r1, cm1 * ra1 + b], [r1, -cm1 * ra1 + b]]
 				default:
 					return "e";
 				}
@@ -13610,32 +13604,26 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 							out = out + antoniovandreformatarreal(coef1[0]).toString() + ", " + antoniovandreformatarreal(coef2[0]).toString() + " / " + antoniovandreformatarreal(coef2[1]).toString();
 						}
 
-					if (cm2 * ra2 + e != 0)
-						{
-						out = out + "\n\n";
+					out = out + "\n\n";
 
-						if (coef3[1] == 1)
-							{
-							if (coef4[1] == 1)
-								out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
-							else
-								out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
-							}
+					if (coef3[1] == 1)
+						{
+						if (coef4[1] == 1)
+							out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
 						else
-							{
-							if (coef4[1] == 1)
-								out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
-							else
-								out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
-							}
+							out = out + antoniovandreformatarreal(coef3[0]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
+						}
+					else
+						{
+						if (coef4[1] == 1)
+							out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString()
+						else
+							out = out + antoniovandreformatarreal(coef3[0]).toString() + " / " + antoniovandreformatarreal(coef3[1]).toString() + ", " + antoniovandreformatarreal(coef4[0]).toString() + " / " + antoniovandreformatarreal(coef4[1]).toString();
 						}
 
 					return out;
 				case 1:
-					if (cm2 * ra2 + e != 0)
-						return [[r2, cm2 * ra2 + e], [r2, -cm2 * ra2 + e]]
-					else
-						return [r2, cm2 * ra2 + e];
+					return [[r2, cm2 * ra2 + e], [r2, -cm2 * ra2 + e]]
 				default:
 					return "e";
 				}
@@ -13664,7 +13652,7 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 						}
 					}
 
-				if ((rad2 >= 0) && ((r1 != r2) || (cm1 * ra1 + b != cm2 * ra2 + e)))
+				if ((rad2 >= 0) && (r1 != r2))
 					{
 					out = out + "\n\n";
 
@@ -13689,7 +13677,7 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 				else
 					return out;
 			case 1:
-				if ((rad1 >= 0) && (rad2 >= 0)  && ((r1 != r2) || (cm1 * ra1 + b != cm2 * ra2 + e)))
+				if ((rad1 >= 0) && (rad2 >= 0)  && (r1 != r2))
 					return [[r1, cm1 * ra1 + b], [r2, cm2 * ra2 + e]]
 				else if (rad1 >= 0)
 					return [r1, cm1 * ra1 + b]
