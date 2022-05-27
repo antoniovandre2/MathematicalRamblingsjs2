@@ -8,7 +8,7 @@ Compilação das calculadoras JavaScript do Mathematical Ramblings.
 
 Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
-Última atualização: 23-05-2022.
+Última atualização: 27-05-2022.
 
 -->
 
@@ -29447,13 +29447,13 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 -->
 
-Entre com, separados por ponto e vírgula "<span class="notranslate">;</span>", o ponto do qual se deseja conhecer o simétrico, e o ponto de referência. Abscissas separadas das ordenadas por vírgula "<span class="notranslate">,</span>".
+Entre com, separados por barra vertical "<span class="notranslate">|</span>", o ponto do qual se deseja conhecer o simétrico, e o ponto de referência. Abscissas separadas das ordenadas por ponto e vírgula "<span class="notranslate">;</span>".
 <br><br>
 Exemplos:
 <br><br>
-Input: "<span class="notranslate">2, 3; 1, 1</span>"". Output: "<span class="notranslate">0, -1</span>".
+Input: "<span class="notranslate">2; 3 | 1; 1</span>"". Output: "<span class="notranslate">0, -1</span>".
 <br><br>
-Input: "<span class="notranslate">5, 4, -2; 0, 0, 0</span>". Output: "<span class="notranslate">-5, -4, 2</span>".
+Input: "<span class="notranslate">5; 4; -2 | 0; 0; 0</span>". Output: "<span class="notranslate">-5, -4, 2</span>".
 <br><br>
 <table border="1" width="100%"><tr><td><input type="text" name="argumentospontosimetrico" style="width : 100%"></td></tr></table>
 <br>
@@ -29463,18 +29463,21 @@ Ponto simétrico:
 <br>
 <table border="1" width="100%" height="60px"><tr><td><textarea style="width: 100%;" name="resultadopontosimetrico" id="resultadopontosimetrico" readonly rows="3"></textarea></td></tr></table>
 <br>
+<table border="1" width="100%" height="60px"><tr><td><textarea style="width: 100%;" name="pontosimetricoavisoanexo" id="pontosimetricoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 
 <script>
+
+document.getElementById('pontosimetricoavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
 
 function processarpontosimetrico()
 	{
 	var str = document.getElementsByName('argumentospontosimetrico');
-    var out = antoniovandrepontosimetrico(str[0].value);
+    var out = antoniovandrepontosimetrico(str[0].value, 0);
 
     if (out != "e")
         document.getElementById('resultadopontosimetrico').value = out
     else
-        document.getElementById('resultadopontosimetrico').value = "Erro do JavaScript, não meu, ou entrada inválida. Entre com, separados por ponto e vírgula \";\", o ponto do qual se deseja conhecer o simétrico, e o ponto de referência. Abscissas separadas das ordenadas por vírgula \",\"."
+        document.getElementById('resultadopontosimetrico').value = "Erro do JavaScript, não meu, ou entrada inválida. Entre com, separados por barra vertical \"|\", o ponto do qual se deseja conhecer o simétrico, e o ponto de referência. Abscissas separadas das ordenadas por ponto e vírgula \";\"."
 	}
 </script>
 
@@ -35014,6 +35017,1111 @@ function processarinterseccoesduascircunferencias()
 	else
 		document.getElementById('resultadointerseccoesduascircunferencias').value = antoniovandreoperadoresfuncoesconstantes(4) + " Entre com, separadas por barra vertical \"|\", as retas na forma \"ax + by + c = 0\" com coeficientes \"a\", \"b\" e \"c\" separados por ponto e vírgula \";\".";
 	}
+</script>
+
+<br></br>
+
+<h2>Calculadora: gráfico simétrico de uma função com relação a um ponto.</h2>
+
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: gráfico simétrico de uma função com relação a um ponto.
+
+Dependências: "MathematicalRamblings.js", "jQuery.js", "Plotly.js".
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
+
+<style>
+
+#myProgressgraficosimetricofuncaoponto {
+	width: 100%;
+	background-image: linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	height: 30px;
+}
+
+#myBargraficosimetricofuncaoponto {
+	height: 20px;
+	text-align: center;
+	color: white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#line-chart {
+	margin: 0 auto;
+}
+
+</style>
+
+Entre com uma string contendo, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: as expressões das funções, separadas por dois pontos "<span class="notranslate">:</span>", das quais se deseja obter os gráficos, devem ser funções em "$x$"; segundo: a abscissa do ponto de referência; terceiro: a ordenada do ponto de referência; quarto: um número real como valor inferior; quinto: um número real como valor superior; sexto: a abscissa do centro de expansão radial; sétimo: a ordenada do centro de expansão radial; oitavo: o raio de expansão radial; nono: a rotação do eixo $Ox$; décimo: a rotação do eixo $Oy$; décimo primeiro: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.
+<br><br>
+<table border="1" width="100%"><tr><td><input type="text" name="entradagraficosimetricofuncaoponto" style="width : 100%"></td></tr></table>
+<br>
+<table><tr><td><table><tr><td><input type="button" onclick="processargraficosimetricofuncaopontoout()" value="Calcular"></td><td> <div class="cancelargraficosimetricofuncaoponto"></div></td></tr></table></td></tr></table>
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadograficosimetricofuncaopontoavisoanexo" id="resultadograficosimetricofuncaopontoavisoanexo" readonly rows="10"></textarea></td></tr></table>
+<br>
+<div id="dot-chart-graficosimetricofuncaoponto"></div>
+<div id="dot-chart-graficosimetricofuncaoponto-espera" class="dot-chart-graficosimetricofuncaoponto-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<br>
+Log:
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadograficosimetricofuncaoponto" id="resultadograficosimetricofuncaoponto" readonly rows="3"></textarea></td></tr></table>
+
+<br>
+
+<div id="myProgressgraficosimetricofuncaoponto"><div id="myBargraficosimetricofuncaoponto"></div></div>
+
+<script>
+
+var lockcalc = 0;
+
+var expressao = [];
+var expressaopart;
+var ap;
+var op;
+var ap2;
+var op2;
+var inf;
+var sup;
+var n;
+var resultpart;
+var parcela;
+var n2;
+var inf2;
+var sup2;
+var cexprx;
+var cexpry;
+var rexpr;
+var rotx;
+var roty;
+var cexprx2;
+var cexpry2;
+var rexpr2;
+var rotx2;
+var roty2;
+var list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
+var listtam;
+var xarr = [];
+var yarr = [];
+var contadorgraficosimetricofuncaoponto = 0;
+var indicefuncao = 0;
+var flagrepeticaograficosimetricofuncaoponto = 0;
+var flagrepeticaograficosimetricofuncaoponto2 = 0;
+var flagrepeticaograficosimetricofuncaopontot = 0;
+var flagplotly = 0;
+
+var elemgraficosimetricofuncaoponto = document.getElementById('myBargraficosimetricofuncaoponto');
+
+elemgraficosimetricofuncaoponto.style.width = "100%";
+elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+elemgraficosimetricofuncaoponto.textContent = "Barra de progresso."
+
+var dotDivgraficosimetricofuncaoponto = document.getElementById("dot-chart-graficosimetricofuncaoponto");
+
+document.getElementById('resultadograficosimetricofuncaopontoavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
+
+function processargraficosimetricofuncaopontoout()
+	{
+	if (lockcalc == 1)
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = "Outra calculadora em execução.";
+		return;
+		}
+	else
+		lockcalc = 1;
+
+	var str = document.getElementsByName('entradagraficosimetricofuncaoponto');
+
+	document.getElementById('resultadograficosimetricofuncaoponto').value = "Calculando...";
+
+	$(".cancelargraficosimetricofuncaoponto").append("<input type=\"button\" onclick=\"cancelargraficosimetricofuncaopontoout()\" value=\"Cancelar\">");
+
+	if (flagplotly == 1)
+		{
+		Plotly.purge("dot-chart-graficosimetricofuncaoponto");
+		$("#dot-chart-graficosimetricofuncaoponto-espera").html("<img src=\"https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
+		}
+
+	antoniovandregraficosimetricofuncaopontoout(str[0].value, 0);
+	}
+
+function cancelargraficosimetricofuncaopontoout()
+	{
+	if (flagrepeticaograficosimetricofuncaoponto == 0) flagrepeticaograficosimetricofuncaopontot = 1;
+	return;
+	}
+
+function antoniovandregraficosimetricofuncaopontoout(str)
+	{
+	argumentos = str.split(";");
+	expressao = [];
+	xarr = [];
+	yarr = [];
+	contadorgraficosimetricofuncaoponto = 0;
+	indicefuncao = 0;
+	flagrepeticaograficosimetricofuncaoponto = 0;
+	flagrepeticaograficosimetricofuncaoponto2 = 0;
+	flagrepeticaograficosimetricofuncaopontot = 0;
+
+	if (argumentos.length != 11)
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	expressaopart = argumentos[0].split(":");
+    ap = argumentos[1].trim();
+    op = argumentos[2].trim();
+	inf = argumentos[3].trim();
+	sup = argumentos[4].trim();
+	cexprx = argumentos[5].trim();
+	cexpry = argumentos[6].trim();
+	rexpr = argumentos[7].trim();
+	rotx = argumentos[8].trim();
+	roty = argumentos[9].trim();
+	n = argumentos[10].trim();
+
+	if (antoniovandrenumeronaturalpositivo(n) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (parseInt(n) == 1)
+			{
+			document.getElementById('resultadograficosimetricofuncaoponto').value = "A resolução deve ser maior que 1.";
+			elemgraficosimetricofuncaoponto.style.width = "100%";
+			elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+			flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+			$(".cancelargraficosimetricofuncaoponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandremodulo(parseInt(n)) > antoniovandremaximovalorentrada(1))
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = antoniovandremensagenserro(2);
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	for (var i = 0; i < expressaopart.length; i++)
+	if ((antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopart[i], antoniovandreoperadoresfuncoesconstantes(2) + ",x")), antoniovandreremoverstrings(expressaopart[i], antoniovandreoperadoresfuncoesconstantes(2) + ",x")) == "e") || (expressaopart[i].trim() == ""))
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+
+    if (antoniovandreexpressaofuncaovalida(ap) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(op) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		ap2 = eval(antoniovandretraduzirexpressaofuncional(ap, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		op2 = eval(antoniovandretraduzirexpressaofuncional(op, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandrenumeroreal(ap2.toString()) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(ap2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadograficosimetricofuncaoponto').value = antoniovandremensagenserro(2);
+			elemgraficosimetricofuncaoponto.style.width = "100%";
+			elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+			flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+			$(".cancelargraficosimetricofuncaoponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(op2.toString()) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(op2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadograficosimetricofuncaoponto').value = antoniovandremensagenserro(2);
+			elemgraficosimetricofuncaoponto.style.width = "100%";
+			elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+			flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+			$(".cancelargraficosimetricofuncaoponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandreexpressaofuncaovalida(inf) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(sup) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		inf2 = eval(antoniovandretraduzirexpressaofuncional(inf, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		sup2 = eval(antoniovandretraduzirexpressaofuncional(sup, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandrenumeroreal(inf2.toString()) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(inf2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadograficosimetricofuncaoponto').value = antoniovandremensagenserro(2);
+			elemgraficosimetricofuncaoponto.style.width = "100%";
+			elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+			flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+			$(".cancelargraficosimetricofuncaoponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(sup2.toString()) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(sup2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadograficosimetricofuncaoponto').value = antoniovandremensagenserro(2);
+			elemgraficosimetricofuncaoponto.style.width = "100%";
+			elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+			flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+			$(".cancelargraficosimetricofuncaoponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandreexpressaofuncaovalida(cexprx) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(cexpry) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(rexpr) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		cexprx2 = eval(antoniovandretraduzirexpressaofuncional(cexprx, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		return;
+		}
+
+	try
+		{
+		cexpry2 = eval(antoniovandretraduzirexpressaofuncional(cexpry, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		rexpr2 = eval(antoniovandretraduzirexpressaofuncional(rexpr, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandrenumeroreal(cexprx2.toString()) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(cexprx2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+			elemgraficosimetricofuncaoponto.style.width = "100%";
+			elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+			flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+			$(".cancelargraficosimetricofuncaoponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(cexpry2.toString()) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(cexpry2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+			elemgraficosimetricofuncaoponto.style.width = "100%";
+			elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+			flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+			$(".cancelargraficosimetricofuncaoponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(rexpr2.toString()) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(rexpr2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+			elemgraficosimetricofuncaoponto.style.width = "100%";
+			elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+			flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+			$(".cancelargraficosimetricofuncaoponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandreexpressaofuncaovalida(rotx) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(roty) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		rotx2 = eval(antoniovandretraduzirexpressaofuncional(rotx, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		roty2 = eval(antoniovandretraduzirexpressaofuncional(roty, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandrenumeroreal(rotx2.toString()) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(rotx2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadograficosimetricofuncaoponto').value = antoniovandremensagenserro(2);
+			elemgraficosimetricofuncaoponto.style.width = "100%";
+			elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+			flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+			$(".cancelargraficosimetricofuncaoponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(roty2.toString()) == "e")
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(roty2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadograficosimetricofuncaoponto').value = antoniovandremensagenserro(2);
+			elemgraficosimetricofuncaoponto.style.width = "100%";
+			elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+			flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+			$(".cancelargraficosimetricofuncaoponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	n2 = parseInt(n) - 1;
+	parcela = (sup2 - inf2) / n2;
+
+	listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
+
+	for (var i = 0; i < expressaopart.length; i++)
+		{
+		list = [["x", antoniovandreoperadoresfuncoesconstantes(5)]];
+
+		for (var j = 0; j < listtam; j++)
+			list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[j]);
+
+		expressao.push(antoniovandresubstituirstrings(expressaopart[i], list));
+		}
+
+	function escoporepeticao()
+		{
+		if (flagrepeticaograficosimetricofuncaoponto2 == 0)
+			{
+			var percentualconclusao = Math.trunc(100 * contadorgraficosimetricofuncaoponto / (n2 * expressaopart.length));
+			var percentualconclusaostr = percentualconclusao.toString() + "%";
+
+			elemgraficosimetricofuncaoponto.style.width = percentualconclusaostr;
+			elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(64, 64, 64, 1) 0%, rgba(64, 255, 64, 1) 100%)";
+			elemgraficosimetricofuncaoponto.textContent = percentualconclusaostr;
+
+			if ((indicefuncao == expressaopart.length) || (flagrepeticaograficosimetricofuncaoponto == 1))
+				{
+				flagrepeticaograficosimetricofuncaoponto = 1;
+				return;
+				}
+
+			var x = inf2 + (parcela / 2) + ((contadorgraficosimetricofuncaoponto % n2) * parcela);
+
+			try
+				{
+				resultpart = eval(antoniovandresubstituirstrings(expressao[indicefuncao], [[antoniovandreoperadoresfuncoesconstantes(5), "(" + x.toString() + ")"]]));
+				}
+			catch (error)
+				{
+				document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+				elemgraficosimetricofuncaoponto.style.width = "100%";
+				elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+				elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+				flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+				$(".cancelargraficosimetricofuncaoponto").empty();
+
+				lockcalc = 0;
+
+				return;
+				}
+
+			if (antoniovandrenumeroreal(resultpart.toString()) == "e")
+				{
+				if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(6)) == 1))
+					{
+					document.getElementById('resultadograficosimetricofuncaoponto').value = antoniovandremensagenserro(6);
+					elemgraficosimetricofuncaoponto.style.width = "100%";
+					elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+					elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+					flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+					$(".cancelargraficosimetricofuncaoponto").empty();
+
+					lockcalc = 0;
+
+					return;
+					}
+				else
+					{
+					if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(4)) == 1))
+						{
+						document.getElementById('resultadograficosimetricofuncaoponto').value = antoniovandremensagenserro(4);
+						elemgraficosimetricofuncaoponto.style.width = "100%";
+						elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+						elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+						flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+						$(".cancelargraficosimetricofuncaoponto").empty();
+
+						lockcalc = 0;
+
+						return;
+						}
+					else
+						{
+						if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(2)) == 1))
+							{
+							document.getElementById('resultadograficosimetricofuncaoponto').value = antoniovandremensagenserro(2);
+							elemgraficosimetricofuncaoponto.style.width = "100%";
+							elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+							elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+							flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+							$(".cancelargraficosimetricofuncaoponto").empty();
+
+							lockcalc = 0;
+
+							return;
+							}
+						else
+							{
+							if (antoniovandrecompararstrings(typeof resultpart, "string") == 1)
+								{
+								if (antoniovandrecompararstrings(resultpart, "e") == "e")
+									document.getElementById('resultadograficosimetricofuncaoponto').value = resultpart
+								else
+									document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+								}
+							else
+								document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+
+							elemgraficosimetricofuncaoponto.style.width = "100%";
+							elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+							elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+							flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+							$(".cancelargraficosimetricofuncaoponto").empty();
+
+							lockcalc = 0;
+
+							return;
+							}
+						}
+					}
+				}
+			else
+				{
+				var outsim = antoniovandrepontosimetrico(x.toString() + "; " + resultpart.toString() + " | " + ap2.toString() + "; " + op2.toString(), 1)
+
+                x = outsim[0];
+                resultpart = outsim[1];
+
+                if ((x == cexprx2) && (resultpart == cexpry2)) {} else
+					{
+					if (resultpart == cexpry2)
+						{
+						if (x > cexprx2)
+							x += rexpr2
+						else
+							x -= rexpr2;
+						}
+					else
+						{
+						var xtemp = x;
+
+						if (x > cexprx2)
+							x += rexpr2 * antoniovandrecos(antoniovandrearctg(antoniovandremodulo((resultpart - cexpry2) / (xtemp - cexprx2))))
+						else if (x < cexprx2)
+							x -= rexpr2 * antoniovandrecos(antoniovandrearctg(antoniovandremodulo((resultpart - cexpry2) / (xtemp - cexprx2))));
+
+						if (resultpart > cexpry2)
+							resultpart += rexpr2 * antoniovandresen(antoniovandrearctg(antoniovandremodulo((resultpart - cexpry2) / (xtemp - cexprx2))))
+						else if (resultpart < cexpry2)
+							resultpart -= rexpr2 * antoniovandresen(antoniovandrearctg(antoniovandremodulo((resultpart - cexpry2) / (xtemp - cexprx2))));
+						}
+					}
+
+				x = x * antoniovandrecos(rotx2 - roty2) * antoniovandrecos(roty2) - (resultpart + x * antoniovandrecos(rotx2 - roty2) * Math.tan(rotx2 - roty2)) * antoniovandresen(roty2);
+
+				resultpart = (resultpart + x * antoniovandrecos(rotx2 - roty2) * Math.tan(rotx2 + roty2)) * antoniovandrecos(roty2) + x * antoniovandrecos(rotx2 - roty2) * antoniovandresen(roty2);
+
+				if ((antoniovandremodulo(resultpart) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(resultpart) > parseFloat(antoniovandremaximovalorsaida(1))))
+					{
+					document.getElementById('resultadograficosimetricofuncaoponto').value = antoniovandremensagenserro(6);
+					elemgraficosimetricofuncaoponto.style.width = "100%";
+					elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+					elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+					flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+					$(".cancelargraficosimetricofuncaoponto").empty();
+
+					lockcalc = 0;
+
+					return;
+					}
+				else
+					{
+					xarr.push(x);
+					yarr.push(resultpart);
+					}
+				}
+
+			contadorgraficosimetricofuncaoponto++;
+
+			if (contadorgraficosimetricofuncaoponto % n2 == 0) indicefuncao++;
+			}
+		}
+
+	function escoporepeticao2()
+		{
+		if (flagrepeticaograficosimetricofuncaoponto2 == 0)
+			{
+			if (flagrepeticaograficosimetricofuncaoponto == 1)
+				{
+				document.getElementById('resultadograficosimetricofuncaoponto').value = "Sucesso.";
+
+				$(".cancelargraficosimetricofuncaoponto").empty();
+
+				var traceA = {
+					type: "scatter",
+					mode: "markers",
+					x: xarr,
+					y: yarr,
+					marker: {
+					color: 'rgba(0, 0, 0, 0.5)',
+					line: {
+						color: 'rgba(0, 0, 0, 0.5)',
+						width: 1,
+					},
+					symbol: 'circle',
+					size: 1
+					},
+					hoverlabel: {
+						bgcolor: 'black',
+					}
+				};
+
+				var data = [traceA];
+
+				var layout = {
+					xaxis: {
+						showgrid: true,
+						showline: false,
+						linecolor: 'rgba(0, 0, 0, 0.5)',
+						ticks: 'inside',
+						tickcolor: 'rgba(0, 0, 0, 0.5)',
+						tickwidth: 1
+					},
+					yaxis: {
+						scaleanchor: "x",
+						scaleratio: 1
+					},
+					paper_bgcolor: 'rgb(255, 255, 255)',
+					plot_bgcolor: 'rgb(255, 255, 255)',
+					height: 800,
+					width: 800
+					};
+
+				var data = [traceA];
+
+				$(".dot-chart-graficosimetricofuncaoponto-espera").empty();
+				Plotly.plot(dotDivgraficosimetricofuncaoponto, data, layout);
+
+				flagplotly = 1;
+
+				lockcalc = 0;
+
+				flagrepeticaograficosimetricofuncaoponto2 = 1;
+				return;
+				}
+			}
+		}
+
+	var rep = setInterval(escoporepeticao, 10);
+	var rep2 = setInterval(escoporepeticao2, 10);
+	var rep3 = setInterval(function(){if (flagrepeticaograficosimetricofuncaopontot == 1) {flagrepeticaograficosimetricofuncaoponto2 = 1; document.getElementById('resultadograficosimetricofuncaoponto').value = "Cálculo cancelado."; elemgraficosimetricofuncaoponto.style.width = "100%"; elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)"; elemgraficosimetricofuncaoponto.textContent = "Cálculo cancelado."; $(".cancelargraficosimetricofuncaoponto").empty(); flagrepeticaograficosimetricofuncaopontot = 0; lockcalc = 0; return;}}, 10);
+	var antoniovandrelimparrepeticoes = setInterval(function(){if (lockcalc == 0){clearInterval(rep); clearInterval(rep2); clearInterval(rep3);}; return;}, 60000);
+
+	if (flagrepeticaograficosimetricofuncaoponto2 == 1)
+		{
+		clearInterval(rep);
+		clearInterval(rep2);
+		clearInterval(rep3);
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		return;
+		}
+	}
+
+function graficosimetricofuncaopontomensagemerro()
+	{
+	elemgraficosimetricofuncaoponto.style.width = "100%";
+	elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+	elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: as expressões das funções, separadas por dois pontos \":\", das quais se deseja obter os gráficos, devem ser funções em \"x\"; segundo: a abscissa do ponto de referência; terceiro: a ordenada do ponto de referência; quarto: um número real como valor inferior; quinto: um número real como valor superior; sexto: a abscissa do centro de expansão radial; sétimo: a ordenada do centro de expansão radial; oitavo: o raio de expansão radial; nono: a rotação do eixo \"Ox\"; décimo: a rotação do eixo \"Oy\"; décimo primeiro: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.";
+	}
+
 </script>
 
 </body>

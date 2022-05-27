@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 24-05-2022. Não considerando alterações em macros.
+// Última atualização: 27-05-2022. Não considerando alterações em macros.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "24-05-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "27-05-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -11621,20 +11621,24 @@ function antoniovandrebinascii(str, avisoanexo)
 	return strout;
 	}
 
-// Ponto simétrico. Argumentos: uma string de dois pontos separados por ponto e vírgula ";", retorna o simétrico do primeiro ponto com relação ao segundo; coordenadas separadas por vírgula ",". Retorna a string "e" caso um erro genérico ocorra.
+// Ponto simétrico. Argumentos globais: primeiro global: uma string de dois pontos separados por barra vertical "|", retorna o simétrico do primeiro ponto com relação ao segundo; coordenadas separadas por ponto e vírgula ";"; segundo global: 0 para retornar string, ou 1 para retornar array. Retorna a string "e" caso um erro genérico ocorra.
 
-function antoniovandrepontosimetrico(str)
+function antoniovandrepontosimetrico(str, retorno)
 	{
-    var pontos = str.split(";");
+    var pontos = str.split("|");
     var out = "";
 	var outt = "";
+	var result;
+	var outarr = [];
     var flag = 0;
 
     if (pontos.length != 2)
-        out = "e"
+        return "e";
 
-	var coordenadas = pontos[0].split(",");
-	var coordenadasr = pontos[1].split(",");
+	var coordenadas = pontos[0].split(";");
+	var coordenadasr = pontos[1].split(";");
+	var coordenadas2;
+	var coordenadasr2;
 
 	if (coordenadas.length != coordenadasr.length)
 		{
@@ -11649,37 +11653,91 @@ function antoniovandrepontosimetrico(str)
 			out = "e";
 			break;
 			}
-		else if (antoniovandremodulo(parseFloat(coordenadas[i].trim())) > antoniovandremaximovalorentrada(1))
+
+	if (out != "e")
+		{
+		if (antoniovandreexpressaofuncaovalida(coordenadas[i].trim()) == "e")
+		return "e";
+
+		try
+			{
+			coordenadas2 = eval(antoniovandretraduzirexpressaofuncional(coordenadas[i], 0));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+		if (antoniovandreexpressaofuncaovalida(coordenadasr[i].trim()) == "e")
+			return "e";
+	
+		try
+			{
+			coordenadasr2 = eval(antoniovandretraduzirexpressaofuncional(coordenadasr[i], 0));
+			}
+		catch (error)
+			{
+			return "e";
+			}
+
+		if (antoniovandremodulo(coordenadasr2) > antoniovandremaximovalorentrada(1))
 			{
 			out = "e";
 			flag = 2;
 			break;
 			}
-		else
+		}
+
+		if (out != "e")
 			{
-			var coef = antoniovandrefracaogeratriz(2 * parseFloat(coordenadasr[i].trim()) - coordenadas[i], 1);
+			result = 2 * coordenadasr2 - coordenadas2;
 
-			if (coef[1] == 1)
-				outt = outt + antoniovandreformatarreal(coef[0]).toString()
+			if (retorno == 1)
+				outarr.push(result)
 			else
-				outt = outt + antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString();
+				{
+				var coef = antoniovandrefracaogeratriz(result, 1);
 
-			if (i < coordenadas.length - 1)
-				outt = outt + ", "
-			else
-				out = outt;
+				if (coef[1] == 1)
+					outt = outt + antoniovandreformatarreal(coef[0]).toString()
+				else
+					outt = outt + antoniovandreformatarreal(coef[0]).toString() + " / " + antoniovandreformatarreal(coef[1]).toString();
+
+				if (i < coordenadas.length - 1)
+					outt = outt + ", "
+				else
+					out = outt;
+				}
 			}
 		}
 
-	if (out != "e")
-		return out;
-	else
+	switch (retorno)
 		{
-		if (flag == 1)
-			return "Os pontos devem ter o mesmo número de coordenadas."
-		else if (flag == 2)
-			return antoniovandremensagenserro(1)
-		else
+		case 0:
+			if (out != "e")
+				return out;
+			else
+				{
+				if (flag == 1)
+					return "Os pontos devem ter o mesmo número de coordenadas."
+				else if (flag == 2)
+					return antoniovandremensagenserro(1)
+				else
+					return "e";
+				}
+		case 1:
+			if (out != "e")
+				return outarr
+			else
+				{
+				if (flag == 1)
+					return "Os pontos devem ter o mesmo número de coordenadas."
+				else if (flag == 2)
+					return antoniovandremensagenserro(1)
+				else
+					return "e";
+				}
+		default:
 			return "e";
 		}
 	}
