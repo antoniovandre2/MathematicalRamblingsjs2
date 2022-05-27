@@ -35034,6 +35034,17 @@ Dependências: "MathematicalRamblings.js", "jQuery.js", "Plotly.js".
 Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 -->
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: gráfico simétrico de uma função com relação a um ponto.
+
+Dependências: "MathematicalRamblings.js", "jQuery.js", "Plotly.js".
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
 
 <style>
 
@@ -35067,7 +35078,7 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 </style>
 
-Entre com uma string contendo, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: as expressões das funções, separadas por dois pontos "<span class="notranslate">:</span>", das quais se deseja obter os gráficos, devem ser funções em "$x$"; segundo: a abscissa do ponto de referência; terceiro: a ordenada do ponto de referência; quarto: um número real como valor inferior; quinto: um número real como valor superior; sexto: a abscissa do centro de expansão radial; sétimo: a ordenada do centro de expansão radial; oitavo: o raio de expansão radial; nono: a rotação do eixo $Ox$; décimo: a rotação do eixo $Oy$; décimo primeiro: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.
+Entre com uma string contendo, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: as expressões das funções, separadas por dois pontos "<span class="notranslate">:</span>", das quais se deseja obter os gráficos, devem ser funções em "$x$"; segundo: a abscissa do ponto de referência; terceiro: a ordenada do ponto de referência; quarto: 0 para não mostrar o gráfico origem ou 1 para mostrar; quinto: um número real como valor inferior; sexto: um número real como valor superior; sétimo: a abscissa do centro de expansão radial; oitavo: a ordenada do centro de expansão radial; nono: o raio de expansão radial; décimo: a rotação do eixo $Ox$; décimo primeiro: a rotação do eixo $Oy$; décimo segundo: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.
 <br><br>
 <table border="1" width="100%"><tr><td><input type="text" name="entradagraficosimetricofuncaoponto" style="width : 100%"></td></tr></table>
 <br>
@@ -35076,7 +35087,7 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadograficosimetricofuncaopontoavisoanexo" id="resultadograficosimetricofuncaopontoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
 <div id="dot-chart-graficosimetricofuncaoponto"></div>
-<div id="dot-chart-graficosimetricofuncaoponto-espera" class="dot-chart-graficosimetricofuncaoponto-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-graficosimetricofuncaoponto-espera" class="dot-chart-graficosimetricofuncaoponto-espera"><img src="https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
 <br>
 Log:
 <br>
@@ -35096,6 +35107,8 @@ var ap;
 var op;
 var ap2;
 var op2;
+var mostrar;
+var mostrar2;
 var inf;
 var sup;
 var n;
@@ -35178,7 +35191,7 @@ function antoniovandregraficosimetricofuncaopontoout(str)
 	flagrepeticaograficosimetricofuncaoponto2 = 0;
 	flagrepeticaograficosimetricofuncaopontot = 0;
 
-	if (argumentos.length != 11)
+	if (argumentos.length != 12)
 		{
 		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
 		elemgraficosimetricofuncaoponto.style.width = "100%";
@@ -35194,17 +35207,35 @@ function antoniovandregraficosimetricofuncaopontoout(str)
 		}
 
 	expressaopart = argumentos[0].split(":");
-    ap = argumentos[1].trim();
-    op = argumentos[2].trim();
-	inf = argumentos[3].trim();
-	sup = argumentos[4].trim();
-	cexprx = argumentos[5].trim();
-	cexpry = argumentos[6].trim();
-	rexpr = argumentos[7].trim();
-	rotx = argumentos[8].trim();
-	roty = argumentos[9].trim();
-	n = argumentos[10].trim();
+	ap = argumentos[1].trim();
+	op = argumentos[2].trim();
+	mostrar = argumentos[3].trim();
+	inf = argumentos[4].trim();
+	sup = argumentos[5].trim();
+	cexprx = argumentos[6].trim();
+	cexpry = argumentos[7].trim();
+	rexpr = argumentos[8].trim();
+	rotx = argumentos[9].trim();
+	roty = argumentos[10].trim();
+	n = argumentos[11].trim();
 
+	mostrar2 = parseInt(mostrar.trim());
+
+	if (! ((mostrar2 == 0) || (mostrar2 == 1)))
+		{
+		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
+		elemgraficosimetricofuncaoponto.style.width = "100%";
+		elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoponto2 = 1;
+
+		$(".cancelargraficosimetricofuncaoponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	
 	if (antoniovandrenumeronaturalpositivo(n) == "e")
 		{
 		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
@@ -35267,7 +35298,7 @@ function antoniovandregraficosimetricofuncaopontoout(str)
 		}
 
 
-    if (antoniovandreexpressaofuncaovalida(ap) == "e")
+	if (antoniovandreexpressaofuncaovalida(ap) == "e")
 		{
 		document.getElementById('resultadograficosimetricofuncaoponto').value = graficosimetricofuncaopontomensagemerro();
 		elemgraficosimetricofuncaoponto.style.width = "100%";
@@ -35970,12 +36001,15 @@ function antoniovandregraficosimetricofuncaopontoout(str)
 				}
 			else
 				{
+				var xp = x;
+				var yp = resultpart;
+
 				var outsim = antoniovandrepontosimetrico(x.toString() + "; " + resultpart.toString() + " | " + ap2.toString() + "; " + op2.toString(), 1)
 
-                x = outsim[0];
-                resultpart = outsim[1];
+				x = outsim[0];
+				resultpart = outsim[1];
 
-                if ((x == cexprx2) && (resultpart == cexpry2)) {} else
+				if ((x == cexprx2) && (resultpart == cexpry2)) {} else
 					{
 					if (resultpart == cexpry2)
 						{
@@ -36022,6 +36056,12 @@ function antoniovandregraficosimetricofuncaopontoout(str)
 					{
 					xarr.push(x);
 					yarr.push(resultpart);
+
+					if (mostrar2 == 1)
+						{
+						xarr.push(xp);
+						yarr.push(yp);
+						}
 					}
 				}
 
@@ -36119,7 +36159,7 @@ function graficosimetricofuncaopontomensagemerro()
 	elemgraficosimetricofuncaoponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 	elemgraficosimetricofuncaoponto.textContent = "Erro ao calcular."
 
-	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: as expressões das funções, separadas por dois pontos \":\", das quais se deseja obter os gráficos, devem ser funções em \"x\"; segundo: a abscissa do ponto de referência; terceiro: a ordenada do ponto de referência; quarto: um número real como valor inferior; quinto: um número real como valor superior; sexto: a abscissa do centro de expansão radial; sétimo: a ordenada do centro de expansão radial; oitavo: o raio de expansão radial; nono: a rotação do eixo \"Ox\"; décimo: a rotação do eixo \"Oy\"; décimo primeiro: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.";
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: as expressões das funções, separadas por dois pontos \":\", das quais se deseja obter os gráficos, devem ser funções em \"x\"; segundo: a abscissa do ponto de referência; terceiro: a ordenada do ponto de referência; quarto: 0 para não mostrar o gráfico origem ou 1 para mostrar; quinto: um número real como valor inferior; sexto: um número real como valor superior; sétimo: a abscissa do centro de expansão radial; oitavo: a ordenada do centro de expansão radial; nono: o raio de expansão radial; décimo: a rotação do eixo \"Ox\"; décimo primeiro: a rotação do eixo \"Oy\"; décimo segundo: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.";
 	}
 
 </script>
@@ -36172,7 +36212,7 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 </style>
 
-Entre com uma string contendo, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: as expressões das funções, separadas por dois pontos "<span class="notranslate">:</span>", das quais se deseja obter os gráficos, devem ser funções em "$x$"; segundo: o coeficiente de "$x$" na reta de referência; terceiro: o coeficiente de "$y$" na reta de referência; quarto: o coeficiente independente na reta de referência; a reta de referência é da forma "$ax + by + c = 0$"; quinto: um número real como valor inferior; sexto: um número real como valor superior; sétimo: a abscissa do centro de expansão radial; oitavo: a ordenada do centro de expansão radial; nono: o raio de expansão radial; décimo: a rotação do eixo $Ox$; décimo primeiro: a rotação do eixo $Oy$; décimo segundo: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.
+Entre com uma string contendo, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: as expressões das funções, separadas por dois pontos "<span class="notranslate">:</span>", das quais se deseja obter os gráficos, devem ser funções em "$x$"; segundo: o coeficiente de "$x$" na reta de referência; terceiro: o coeficiente de "$y$" na reta de referência; quarto: o coeficiente independente na reta de referência; a reta de referência é da forma "$ax + by + c = 0$"; quinto: 0 para não mostrar o gráfico origem, ou 1 para mostrar; sexto: um número real como valor inferior; sétimo: um número real como valor superior; oitavo: a abscissa do centro de expansão radial; nono: a ordenada do centro de expansão radial; décimo: o raio de expansão radial; décimo primeiro: a rotação do eixo $Ox$; décimo segundo: a rotação do eixo $Oy$; décimo terceiro: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.
 <br><br>
 <table border="1" width="100%"><tr><td><input type="text" name="entradagraficosimetricofuncaoreta" style="width : 100%"></td></tr></table>
 <br>
@@ -36203,6 +36243,8 @@ var cr;
 var ar2;
 var br2
 var cr2;
+var mostrar;
+var mostrar2;
 var inf;
 var sup;
 var n;
@@ -36261,7 +36303,7 @@ function processargraficosimetricofuncaoretaout()
 	if (flagplotly == 1)
 		{
 		Plotly.purge("dot-chart-graficosimetricofuncaoreta");
-		$("#dot-chart-graficosimetricofuncaoreta-espera").html("<img src=\"https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
+		$("#dot-chart-graficosimetricofuncaoreta-espera").html("<img src=\"Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
 		}
 
 	antoniovandregraficosimetricofuncaoretaout(str[0].value, 0);
@@ -36285,7 +36327,7 @@ function antoniovandregraficosimetricofuncaoretaout(str)
 	flagrepeticaograficosimetricofuncaoreta2 = 0;
 	flagrepeticaograficosimetricofuncaoretat = 0;
 
-	if (argumentos.length != 12)
+	if (argumentos.length != 13)
 		{
 		document.getElementById('resultadograficosimetricofuncaoreta').value = graficosimetricofuncaoretamensagemerro();
 		elemgraficosimetricofuncaoreta.style.width = "100%";
@@ -36301,17 +36343,35 @@ function antoniovandregraficosimetricofuncaoretaout(str)
 		}
 
 	expressaopart = argumentos[0].split(":");
-    ar = argumentos[1].trim();
-    br = argumentos[2].trim();
-    cr = argumentos[3].trim();
-	inf = argumentos[4].trim();
-	sup = argumentos[5].trim();
-	cexprx = argumentos[6].trim();
-	cexpry = argumentos[7].trim();
-	rexpr = argumentos[8].trim();
-	rotx = argumentos[9].trim();
-	roty = argumentos[10].trim();
-	n = argumentos[11].trim();
+	ar = argumentos[1].trim();
+	br = argumentos[2].trim();
+	cr = argumentos[3].trim();
+	mostrar = argumentos[4].trim();
+	inf = argumentos[5].trim();
+	sup = argumentos[6].trim();
+	cexprx = argumentos[7].trim();
+	cexpry = argumentos[8].trim();
+	rexpr = argumentos[9].trim();
+	rotx = argumentos[10].trim();
+	roty = argumentos[11].trim();
+	n = argumentos[12].trim();
+
+	mostrar2 = parseInt(mostrar.trim());
+
+	if (! ((mostrar2 == 0) || (mostrar2 == 1)))
+		{
+		document.getElementById('resultadograficosimetricofuncaoreta').value = graficosimetricofuncaoretamensagemerro();
+		elemgraficosimetricofuncaoreta.style.width = "100%";
+		elemgraficosimetricofuncaoreta.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemgraficosimetricofuncaoreta.textContent = "Erro ao calcular."
+		flagrepeticaograficosimetricofuncaoreta2 = 1;
+
+		$(".cancelargraficosimetricofuncaoreta").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
 
 	if (antoniovandrenumeronaturalpositivo(n) == "e")
 		{
@@ -36375,7 +36435,7 @@ function antoniovandregraficosimetricofuncaoretaout(str)
 		}
 
 
-    if (antoniovandreexpressaofuncaovalida(ar) == "e")
+	if (antoniovandreexpressaofuncaovalida(ar) == "e")
 		{
 		document.getElementById('resultadograficosimetricofuncaoreta').value = graficosimetricofuncaoretamensagemerro();
 		elemgraficosimetricofuncaoreta.style.width = "100%";
@@ -36405,7 +36465,7 @@ function antoniovandregraficosimetricofuncaoretaout(str)
 		return;
 		}
 
-    if (antoniovandreexpressaofuncaovalida(cr) == "e")
+	if (antoniovandreexpressaofuncaovalida(cr) == "e")
 		{
 		document.getElementById('resultadograficosimetricofuncaoreta').value = graficosimetricofuncaoretamensagemerro();
 		elemgraficosimetricofuncaoreta.style.width = "100%";
@@ -36458,7 +36518,7 @@ function antoniovandregraficosimetricofuncaoretaout(str)
 		return;
 		}
 
-    try
+	try
 		{
 		cr2 = eval(antoniovandretraduzirexpressaofuncional(cr, 0));
 		}
@@ -36537,36 +36597,36 @@ function antoniovandregraficosimetricofuncaoretaout(str)
 			return;
 			}
 
-        if (antoniovandrenumeroreal(cr2.toString()) == "e")
-            {
-            document.getElementById('resultadograficosimetricofuncaoreta').value = graficosimetricofuncaoretamensagemerro();
-            elemgraficosimetricofuncaoreta.style.width = "100%";
-            elemgraficosimetricofuncaoreta.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-            elemgraficosimetricofuncaoreta.textContent = "Erro ao calcular."
-            flagrepeticaograficosimetricofuncaoreta2 = 1;
-    
-            $(".cancelargraficosimetricofuncaoreta").empty();
-    
-            lockcalc = 0;
-    
-            return;
-            }
-        else
-            if (antoniovandremodulo(cr2) > antoniovandremaximovalorentrada(1))
-                {
-                document.getElementById('resultadograficosimetricofuncaoreta').value = antoniovandremensagenserro(2);
-                elemgraficosimetricofuncaoreta.style.width = "100%";
-                elemgraficosimetricofuncaoreta.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
-                elemgraficosimetricofuncaoreta.textContent = "Erro ao calcular."
-                flagrepeticaograficosimetricofuncaoreta2 = 1;
-    
-                $(".cancelargraficosimetricofuncaoreta").empty();
-    
-                lockcalc = 0;
-    
-                return;
-                }
-    
+		if (antoniovandrenumeroreal(cr2.toString()) == "e")
+			{
+			document.getElementById('resultadograficosimetricofuncaoreta').value = graficosimetricofuncaoretamensagemerro();
+			elemgraficosimetricofuncaoreta.style.width = "100%";
+			elemgraficosimetricofuncaoreta.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemgraficosimetricofuncaoreta.textContent = "Erro ao calcular."
+			flagrepeticaograficosimetricofuncaoreta2 = 1;
+	
+			$(".cancelargraficosimetricofuncaoreta").empty();
+	
+			lockcalc = 0;
+	
+			return;
+			}
+		else
+			if (antoniovandremodulo(cr2) > antoniovandremaximovalorentrada(1))
+				{
+				document.getElementById('resultadograficosimetricofuncaoreta').value = antoniovandremensagenserro(2);
+				elemgraficosimetricofuncaoreta.style.width = "100%";
+				elemgraficosimetricofuncaoreta.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+				elemgraficosimetricofuncaoreta.textContent = "Erro ao calcular."
+				flagrepeticaograficosimetricofuncaoreta2 = 1;
+	
+				$(".cancelargraficosimetricofuncaoreta").empty();
+	
+				lockcalc = 0;
+	
+				return;
+				}
+	
 	if (antoniovandreexpressaofuncaovalida(inf) == "e")
 		{
 		document.getElementById('resultadograficosimetricofuncaoreta').value = graficosimetricofuncaoretamensagemerro();
@@ -37142,12 +37202,15 @@ function antoniovandregraficosimetricofuncaoretaout(str)
 				}
 			else
 				{
+				var xp = x;
+				var yp = resultpart;
+
 				var outsim = antoniovandrepontosimetricoreta(x.toString() + "; " + resultpart.toString() + " | " + ar2.toString() + "; " + br2.toString() + "; " + cr2.toString(), 1)
 
-                x = outsim[0];
-                resultpart = outsim[1];
+				x = outsim[0];
+				resultpart = outsim[1];
 
-                if ((x == cexprx2) && (resultpart == cexpry2)) {} else
+				if ((x == cexprx2) && (resultpart == cexpry2)) {} else
 					{
 					if (resultpart == cexpry2)
 						{
@@ -37194,6 +37257,12 @@ function antoniovandregraficosimetricofuncaoretaout(str)
 					{
 					xarr.push(x);
 					yarr.push(resultpart);
+
+					if (mostrar == 1)
+						{
+						xarr.push(xp);
+						yarr.push(yp);
+						}
 					}
 				}
 
@@ -37291,7 +37360,7 @@ function graficosimetricofuncaoretamensagemerro()
 	elemgraficosimetricofuncaoreta.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 	elemgraficosimetricofuncaoreta.textContent = "Erro ao calcular."
 
-	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: as expressões das funções, separadas por dois pontos \":\", das quais se deseja obter os gráficos, devem ser funções em \"x\"; segundo: o coeficiente de \"x\" na reta de referência; terceiro: o coeficiente de \"y\" na reta de referência; quarto: o coeficiente independente na reta de referência; a reta de referência é da forma \"ax + by + c = 0\"; quinto: um número real como valor inferior; sexto: um número real como valor superior; sétimo: a abscissa do centro de expansão radial; oitavo: a ordenada do centro de expansão radial; nono: o raio de expansão radial; décimo: a rotação do eixo \"Ox\"; décimo primeiro: a rotação do eixo \"Oy\"; décimo segundo: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.";
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: as expressões das funções, separadas por dois pontos \":\", das quais se deseja obter os gráficos, devem ser funções em \"x\"; segundo: o coeficiente de \"x\" na reta de referência; terceiro: o coeficiente de \"y\" na reta de referência; quarto: o coeficiente independente na reta de referência; a reta de referência é da forma \"ax + by + c = 0\"; quinto: 0 para não mostrar o gráfico origem, ou 1 para mostrar; sexto: um número real como valor inferior; sétimo: um número real como valor superior; oitavo: a abscissa do centro de expansão radial; nono: a ordenada do centro de expansão radial; décimo: o raio de expansão radial; décimo primeiro: a rotação do eixo \"Ox\"; décimo segundo: a rotação do eixo \"Oy\"; décimo terceiro: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.";
 	}
 
 </script>

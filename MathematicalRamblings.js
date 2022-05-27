@@ -11494,36 +11494,8 @@ function antoniovandrepontosimetricoreta(str, retorno)
 	if ((antoniovandremodulo(abscissa) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(ordenada) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(a) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c) > antoniovandremaximovalorentrada(1)))
 		return antoniovandremensagenserro(2);
 
-	var abscissaimg;
-	var ordenadaimg;
-
-	if ((a == 0) && (b == 0))
-		return "Ao menos um coeficiente de variável deve ser não nulo."
-	else if (b == 0)
-		{
-		abscissaimg = 2 * (-1) * c / a - abscissa;
-		ordenadaimg = ordenada;
-		}
-	else if (a == 0)
-		{
-		abscissaimg = abscissa;
-		ordenadaimg = 2 * (-1) * c / b - ordenada;
-		}
-	else if (a == (-1) * b)
-		{
-		abscissaimg = ordenada + c / b;
-		ordenadaimg = abscissa - c / b;
-		}
-	else if (a == b)
-		{
-		abscissaimg = (-1) * ordenada - c / b;
-		ordenadaimg = (-1) * abscissa - c / b;
-		}
-	else
-		{
-		abscissaimg = (2 * (ordenada + c / b) * (-1) * a / b) / (a / b * a / b + 1) - abscissa;
-		ordenadaimg = (2 * (ordenada + c / b) * a / b * a / b) / (a / b * a / b + 1) - 2 * c / b - ordenada;
-		}
+	var abscissaimg = abscissa - 2 * a * (a * abscissa + b * ordenada + c) / (a*a + b*b);
+	var ordenadaimg = ordenada - 2 * b * (a * abscissa + b * ordenada + c) / (a*a + b*b);
 
 	if ((antoniovandremodulo(abscissaimg) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(ordenadaimg) > antoniovandremaximovalorsaida(1)))
 		return antoniovandremensagenserro(6);
