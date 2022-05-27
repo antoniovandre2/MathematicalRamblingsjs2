@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 23-05-2022.
+Última atualização: 27-05-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9378,6 +9378,24 @@ Calculadora: intersecções entre duas circunferências.
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 23-05-2022 - 1.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: gráfico simétrico de uma função com relação a um ponto.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 27-05-2022 - 1.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: gráfico simétrico de uma função com relação a uma reta.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 27-05-2022 - 2.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
