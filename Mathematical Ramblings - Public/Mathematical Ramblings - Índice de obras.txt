@@ -9400,3 +9400,12 @@ __
 
 Publicado em "mathematicalramblings.blogspot.com".
 _____
+
+Calculadora: simétrica de uma curva por coordenadas paramétricas com relação a um ponto.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 27-05-2022 - 3.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
