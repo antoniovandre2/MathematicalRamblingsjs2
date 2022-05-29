@@ -38664,7 +38664,7 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosimetricacurvaretaavisoanexo" id="resultadosimetricacurvaretaavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
 <div id="dot-chart-simetricacurvareta"></div>
-<div id="dot-chart-simetricacurvareta-espera" class="dot-chart-simetricacurvareta-espera"><img src="https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-simetricacurvareta-espera" class="dot-chart-simetricacurvareta-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
 <br>
 Log:
 <br>
@@ -38755,7 +38755,7 @@ function processarsimetricacurvaretaout()
 	if (flagplotlysimetricacurvareta == 1)
 		{
 		Plotly.purge("dot-chart-simetricacurvareta");
-		$("#dot-chart-simetricacurvareta-espera").html("<img src=\"https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
+		$("#dot-chart-simetricacurvareta-espera").html("<img src=\"Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
 		}
 
 	antoniovandresimetricacurvaretaout(str[0].value, 0);
@@ -40031,7 +40031,7 @@ elemsimetricacurvacoordenadaspolaresponto.style.width = "100%";
 elemsimetricacurvacoordenadaspolaresponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 elemsimetricacurvacoordenadaspolaresponto.textContent = "Barra de progresso."
 
-var dotDivcoordenadaspolares = document.getElementById("dot-chart-simetricacurvacoordenadaspolaresponto");
+var dotDivcoordenadaspolaresponto = document.getElementById("dot-chart-simetricacurvacoordenadaspolaresponto");
 
 document.getElementById('resultadosimetricacurvacoordenadaspolarespontoavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
 
@@ -40657,7 +40657,7 @@ function antoniovandresimetricacurvacoordenadaspolarespontoout(str)
 					};
 
 				$(".dot-chart-simetricacurvacoordenadaspolaresponto-espera").empty();
-				Plotly.plot(dotDivcoordenadaspolares, data, layout);
+				Plotly.plot(dotDivcoordenadaspolaresponto, data, layout);
 
 				flagplotlycoordenadaspolares = 1;
 
@@ -40745,7 +40745,7 @@ Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
 </style>
 
-Entre com uma string contendo, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: as expressões das funções, separadas por dois pontos "<span class="notranslate">:</span>", das quais se deseja obter as curvas simétricas, devem ser funções em "<span class="notranslate">teta</span>"; segundo: o coeficiente de $x$ da reta de referência; terceiro: o coeficiente de $y$ da reta de referência; quarto: o coeficiente independente da reta de referência; a reta é da forma $ax + by + c = 0$; quinto: "<span class="notranslate">1</span>" para mostrar a curva original ou "<span class="notranslate">0</span>" para não mostrar; sexto: um número real como valor inferior; sétimo: um número real como valor superior; oitavo: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.
+Entre com uma string contendo, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: as expressões das funções, separadas por dois pontos "<span class="notranslate">:</span>", das quais se deseja obter as curvas simétricas, devem ser funções em "<span class="notranslate">teta</span>"; segundo: o coeficiente de $x$ da reta de referência; terceiro: o coeficiente de $y$ da reta de referência; quarto: o coeficiente independente da reta de referência; a reta é da forma $ax + by + c = 0$; quinto: "<span class="notranslate">1</span>" para mostrar a reta de referência e a curva original ou "<span class="notranslate">0</span>" para não mostrar; sexto: um número real como valor inferior; sétimo: um número real como valor superior; oitavo: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.
 <br><br>
 <table border="1" width="100%"><tr><td><input type="text" name="entradasimetricacurvacoordenadaspolaresreta" style="width : 100%"></td></tr></table>
 <br>
@@ -40809,7 +40809,7 @@ elemsimetricacurvacoordenadaspolaresreta.style.width = "100%";
 elemsimetricacurvacoordenadaspolaresreta.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
 elemsimetricacurvacoordenadaspolaresreta.textContent = "Barra de progresso."
 
-var dotDivcoordenadaspolares = document.getElementById("dot-chart-simetricacurvacoordenadaspolaresreta");
+var dotDivcoordenadaspolaresreta = document.getElementById("dot-chart-simetricacurvacoordenadaspolaresreta");
 
 document.getElementById('resultadosimetricacurvacoordenadaspolaresretaavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
 
@@ -41541,7 +41541,7 @@ function antoniovandresimetricacurvacoordenadaspolaresretaout(str)
 					};
 
 				$(".dot-chart-simetricacurvacoordenadaspolaresreta-espera").empty();
-				Plotly.plot(dotDivcoordenadaspolares, data, layout);
+				Plotly.plot(dotDivcoordenadaspolaresreta, data, layout);
 
 				flagplotlycoordenadaspolares = 1;
 
