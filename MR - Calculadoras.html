@@ -43272,7 +43272,7 @@ function antoniovandresimetricasuperficiecurvacoordenadaparametricaplanoout(str)
 		return;
 		}
 
-	if ((ar2 == 0) && (br2 == 0) && (cr2 == 0))
+	if (((ar2 == 0) && (br2 == 0) && (cr2 == 0)) || ((ar2 == 0) && (br2 != 0) && (cr2 != 0)) || ((ar2 != 0) && (br2 == 0) && (cr2 != 0)) || ((ar2 != 0) && (br2 != 0) && (cr2 == 0)))
 		{
 		document.getElementById('resultadosimetricasuperficiecurvacoordenadaparametricaplano').value = "O eixo de rotação deve ser \"x\" ou \"y\".";
 		elemsimetricasuperficiecurvacoordenadaparametricaplano.style.width = "100%";
@@ -43337,26 +43337,6 @@ function antoniovandresimetricasuperficiecurvacoordenadaparametricaplanoout(str)
 								zarr.push((-dr2 - ar2 * minx - br2 * miny) / cr2 + (-dr2 - ar2 * maxx - br2 * maxy) / cr2 * j / n2 + (dr2 + ar2 * minx + br2 * miny) / cr2 * i / n2);
 								}
 						}
-					else if ((ar2 != 0) && (br2 == 0) && (cr2 != 0))
-						{
-						for (var i = 0; i <= n2; i++)
-							for (var j = 0; j <= n2; j++)
-								{
-								xarr.push(minx + (maxx - minx) * i / n2);
-								yarr.push(0);
-								zarr.push(minz + (maxz - minz) * j / n2);
-								}
-						}
-					else if ((ar2 == 0) && (br2 != 0) && (cr2 != 0))
-						{
-						for (var i = 0; i <= n2; i++)
-							for (var j = 0; j <= n2; j++)
-								{
-								xarr.push(0);
-								yarr.push(miny + (maxy - miny) * i / n2);
-								zarr.push(minz + (maxz - minz) * j / n2);
-								}
-						}
 					else if ((ar2 == 0) && (br2 == 0) && (cr2 != 0))
 						{
 						for (var i = 0; i <= n2; i++)
@@ -43365,16 +43345,6 @@ function antoniovandresimetricasuperficiecurvacoordenadaparametricaplanoout(str)
 								xarr.push(minz + (maxz - minz) * i / n2);
 								yarr.push(minz + (maxz - minz) * j / n2);
 								zarr.push(-dr2 / cr2);
-								}
-						}
-					else if ((ar2 != 0) && (br2 != 0) && (cr2 == 0))
-						{
-						for (var i = 0; i <= n2; i++)
-							for (var j = 0; j <= n2; j++)
-								{
-								xarr.push(minx + (maxx - minx) * i / n2);
-								yarr.push(miny + (maxy - miny) * j / n2);
-								zarr.push(0);
 								}
 						}
 					else if ((ar2 != 0) && (br2 == 0) && (cr2 == 0))
