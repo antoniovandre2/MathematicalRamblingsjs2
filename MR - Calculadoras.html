@@ -42318,11 +42318,9 @@ function antoniovandresimetricasuperficiecurvacoordenadaparametricapontoout(str)
                             var yp = resultparty * antoniovandrecos(2 * Math.PI * k / n2);
                             var zp = resultparty * antoniovandresen(2 * Math.PI * k / n2);
             
-                            var outsim = antoniovandrepontosimetrico(xp.toString() + "; " + yp.toString() + "; " + zp.toString() + " | " + ap2.toString() + "; " + op2.toString() + "; " + cp2.toString(), 1);
-
-                            var x = outsim[0];
-                            var y = outsim[1];
-                            var z = outsim[2];
+                            var x = 2 * ap2 - xp;
+                            var y = 2 * op2 - yp;
+                            var z = 2 * cp2 - zp;
 
                             xarr.push(x);
 							yarr.push(y);
@@ -42378,11 +42376,9 @@ function antoniovandresimetricasuperficiecurvacoordenadaparametricapontoout(str)
 							yarr.push(yp);
 							zarr.push(zp);
 
-                            var outsim = antoniovandrepontosimetrico(xp.toString() + "; " + yp.toString() + "; " + zp.toString() + " | " + ap2.toString() + "; " + op2.toString() + "; " + cp2.toString(), 1);
-
-                            var x = outsim[0];
-                            var y = outsim[1];
-                            var z = outsim[2];
+                            var x = 2 * ap2 - xp;
+                            var y = 2 * op2 - yp;
+                            var z = 2 * cp2 - zp;
 
                             xarr.push(x);
 							yarr.push(y);
