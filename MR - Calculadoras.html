@@ -43272,6 +43272,21 @@ function antoniovandresimetricasuperficiecurvacoordenadaparametricaplanoout(str)
 		return;
 		}
 
+	if ((ar2 == 0) && (br2 == 0) && (cr2 == 0))
+		{
+		document.getElementById('resultadosimetricasuperficiecurvacoordenadaparametricaplano').value = "O eixo de rotação deve ser \"x\" ou \"y\".";
+		elemsimetricasuperficiecurvacoordenadaparametricaplano.style.width = "100%";
+		elemsimetricasuperficiecurvacoordenadaparametricaplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficiecurvacoordenadaparametricaplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficiecurvacoordenadaparametricaplano2 = 1;
+
+		$(".cancelarsimetricasuperficiecurvacoordenadaparametricaplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
 	n2 = parseInt(n) - 1;
 	parcela = (sup2 - inf2) / n2;
 
@@ -43322,33 +43337,65 @@ function antoniovandresimetricasuperficiecurvacoordenadaparametricaplanoout(str)
 								zarr.push((-dr2 - ar2 * minx - br2 * miny) / cr2 + (-dr2 - ar2 * maxx - br2 * maxy) / cr2 * j / n2 + (dr2 + ar2 * minx + br2 * miny) / cr2 * i / n2);
 								}
 						}
-					else if ((ar2 != 0) && (br2 != 0))
+					else if ((ar2 != 0) && (br2 == 0) && (cr2 != 0))
+						{
+						for (var i = 0; i <= n2; i++)
+							for (var j = 0; j <= n2; j++)
+								{
+								xarr.push(minx + (maxx - minx) * i / n2);
+								yarr.push(0);
+								zarr.push(minz + (maxz - minz) * j / n2);
+								}
+						}
+					else if ((ar2 == 0) && (br2 != 0) && (cr2 != 0))
+						{
+						for (var i = 0; i <= n2; i++)
+							for (var j = 0; j <= n2; j++)
+								{
+								xarr.push(0);
+								yarr.push(miny + (maxy - miny) * i / n2);
+								zarr.push(minz + (maxz - minz) * j / n2);
+								}
+						}
+					else if ((ar2 == 0) && (br2 == 0) && (cr2 != 0))
+						{
+						for (var i = 0; i <= n2; i++)
+							for (var j = 0; j <= n2; j++)
+								{
+								xarr.push(minz + (maxz - minz) * i / n2);
+								yarr.push(minz + (maxz - minz) * j / n2);
+								zarr.push(-dr2 / cr2);
+								}
+						}
+					else if ((ar2 != 0) && (br2 != 0) && (cr2 == 0))
 						{
 						for (var i = 0; i <= n2; i++)
 							for (var j = 0; j <= n2; j++)
 								{
 								xarr.push(minx + (maxx - minx) * i / n2);
 								yarr.push(miny + (maxy - miny) * j / n2);
-								zarr.push(zp);
+								zarr.push(0);
 								}
 						}
-					else if (ar2 != 0)
+					else if ((ar2 != 0) && (br2 == 0) && (cr2 == 0))
 						{
 						for (var i = 0; i <= n2; i++)
-							{
-							xarr.push(minx + (maxx - minx) * i / n2);
-							yarr.push(yp);
-							zarr.push(zp);
-							}
+							for (var j = 0; j <= n2; j++)
+								{
+								xarr.push(-dr2 / ar2);
+								yarr.push(minx + (maxx - minx) * i / n2);
+								zarr.push(minx + (maxx - minx) * j / n2);
+								}
 						}
-					else
+					else if ((ar2 == 0) && (br2 != 0) && (cr2 == 0))
 						{
 						for (var i = 0; i <= n2; i++)
-							{
-							xarr.push(xp);
-							yarr.push(miny + (maxy - miny) * i / n2);
-							zarr.push(zp);
-							}
+							for (var j = 0; j <= n2; j++)
+								{
+								xarr.push(miny + (maxy - miny) * i / n2);
+								yarr.push(-dr2 / br2);
+								zarr.push(miny + (maxy - miny) * j / n2);
+								}
 						}
 					}
 
@@ -43524,9 +43571,9 @@ function antoniovandresimetricasuperficiecurvacoordenadaparametricaplanoout(str)
 								if (maxy < yp) maxy = yp;
 								if (maxy < y) maxy = y;
 								if (maxz < zp) maxz = zp;
-								if (maxz < z) maxx = z;
+								if (maxz < z) maxz = z;
 
-								if (minx > xp) minx = x;
+								if (minx > xp) minx = xp;
 								if (minx > x) minx = x;
 								if (miny > yp) miny = yp;
 								if (miny > y) miny = y;
@@ -43569,17 +43616,15 @@ function antoniovandresimetricasuperficiecurvacoordenadaparametricaplanoout(str)
 						{
 						for (var k = 0; k < n2; k++)
 							{
-							var xp = resultpart * antoniovandrecos(2 * Math.PI * k / n2);
-							var yp = resultparty;
-							var zp = resultpart * antoniovandresen(2 * Math.PI * k / n2);
+							xp = resultpart * antoniovandrecos(2 * Math.PI * k / n2);
+							yp = resultparty;
+							zp = resultpart * antoniovandresen(2 * Math.PI * k / n2);
 
-							xarr.push(xp);
-							yarr.push(yp);
-							zarr.push(zp);
+							var x = xp - 2 * ar2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
 
-							var x = 2 * ap2 - xp;
-							var y = 2 * op2 - yp;
-							var z = 2 * cp2 - zp;
+							var y = yp - 2 * br2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+							var z = zp - 2 * cr2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
 
 							xarr.push(x);
 							yarr.push(y);
@@ -43590,6 +43635,20 @@ function antoniovandresimetricasuperficiecurvacoordenadaparametricaplanoout(str)
 								xarr.push(xp);
 								yarr.push(yp);
 								zarr.push(zp);
+
+								if (maxx < xp) maxx = xp;
+								if (maxx < x) maxx = x;
+								if (maxy < yp) maxy = yp;
+								if (maxy < y) maxy = y;
+								if (maxz < zp) maxz = zp;
+								if (maxz < z) maxz = z;
+
+								if (minx > xp) minx = xp;
+								if (minx > x) minx = x;
+								if (miny > yp) miny = yp;
+								if (miny > y) miny = y;
+								if (minz > zp) minz = zp;
+								if (minz > z) minz = z;
 								}
 
 							if (x > maxv)
