@@ -3,6 +3,12 @@ Proprietário: Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_leg
 Arquivo de anotações públicas #5.
 ____________________
 
+30-05-2022
+__
+
+Em meus softwares há pontuais fugas de padrões, mas que sejam poucas.
+_____
+
 29-05-2022
 __
 
