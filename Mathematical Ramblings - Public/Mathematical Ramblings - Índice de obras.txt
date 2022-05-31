@@ -9454,3 +9454,12 @@ __
 
 Publicado em "mathematicalramblings.blogspot.com".
 _____
+
+Calculadora: simétrica de uma curva tridimensional por coordenadas paramétricas com relação a um ponto.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 30-05-2022 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____

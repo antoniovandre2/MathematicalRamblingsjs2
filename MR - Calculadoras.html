@@ -1802,11 +1802,19 @@ function processarexpressaofuncoes()
 	var out = antoniovandreexpressaofuncoes(str[0].value, 0);
 
 	if (antoniovandrecompararstrings(out, "e") == "e")
-		document.getElementById('resultadoexpressaofuncoes').value = out
+		{
+		var coefs = antoniovandrefracaogeratriz(out, 1);
+
+		if (coefs[1] == 1)
+			document.getElementById('resultadoexpressaofuncoes').value = out
+		else
+			document.getElementById('resultadoexpressaofuncoes').value = coefs[0].toString() + " / " + coefs[1].toString();
+		}
 	else
 		document.getElementById('resultadoexpressaofuncoes').value = antoniovandreoperadoresfuncoesconstantes(4);
 	}
 </script>
+
 
 <br><br>
 
@@ -43874,6 +43882,1165 @@ function rotacaocapturargifsimetricasuperficiecurvacoordenadaparametricaplanoout
 function downloadgifrotacaosimetricasuperficiecurvacoordenadaparametricaplanoout()
 	{
 	simetricasuperficiecurvacoordenadaparametricaplanoencoder.download("Mathematical Ramblings - ssdrgpucpcparpl - " + document.getElementsByName("entradasimetricasuperficiecurvacoordenadaparametricaplano")[0].value.replaceAll(" ", "").replaceAll(";", "[pv]").replaceAll(",", "[v]").replaceAll(":", "[dp]").replaceAll("|", "[bv]").replaceAll("*", "[mult]").replaceAll("/", "[div]").replaceAll(">=", "[mai]").replaceAll("<=", "[mei]").replaceAll("!=", "[dif]").replaceAll(">", "[ma]").replaceAll("<", "[me]").replaceAll("=", "[ig]") + ".gif");
+	}
+
+</script>
+
+<br><br>
+
+<h2>Calculadora: simétrica de uma curva tridimensional por coordenadas paramétricas com relação a um ponto.</h2>
+
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: simétrica de uma curva tridimensional por coordenadas paramétricas com relação a um ponto.
+
+Dependências: "MathematicalRamblings.js", "jQuery.js", "Plotly.js", "GIFEncoder.js", MathJax.
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
+
+<style>
+
+#myProgresssimetricacurvatridimensionalcoordenadaparametricaponto {
+	width: 100%;
+	background-image: linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	height: 30px;
+}
+
+#myBarsimetricacurvatridimensionalcoordenadaparametricaponto {
+	height: 20px;
+	text-align: center;
+	color: white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+}
+
+</style>
+
+Entre com uma string contendo, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: as expressões das funções para $x$, separadas por dois pontos "<span class="notranslate">:</span>", das quais se deseja obter as curvas simétricas, devem ser funções em $t$; segundo: as expressões das funções para $y$, separadas por dois pontos "<span class="notranslate">:</span>", das quais se deseja obter as curvas simétricas, devem ser funções em $t$; terceiro: as expressões das funções para $z$, separadas por dois pontos "<span class="notranslate">:</span>", das quais se deseja obter as curvas simétricas, devem ser funções em $t$; quarto: a abscissa do ponto de referência; quinto: a ordenada do ponto de referência; sexto: a cota do ponto de referência; sétimo: "<span class="notranslate">0</span>" para não mostrar as curvas originais, ou "<span class="notranslate">1</span>" para mostrar; oitavo: um número real como valor inferior; nono: um número real como valor superior; décimo: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.
+<br><br>
+<table border="1" width="100%"><tr><td><input type="text" name="entradasimetricacurvatridimensionalcoordenadaparametricaponto" style="width : 100%"></td></tr></table>
+<br>
+<table><tr><td><table><tr><td><input type="button" onclick="processarsimetricacurvatridimensionalcoordenadaparametricapontoout()" value="Calcular"></td><td> <div class="cancelarsimetricacurvatridimensionalcoordenadaparametricaponto"></div></td></tr></table></td></tr></table>
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosimetricacurvatridimensionalcoordenadaparametricapontoavisoanexo" id="resultadosimetricacurvatridimensionalcoordenadaparametricapontoavisoanexo" readonly rows="10"></textarea></td></tr></table>
+<br>
+<div id="dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto"></div>
+<div id="dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-espera" class="dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<span hidden>
+<img width=400 height=400 id="dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-esperagif"/>
+<canvas width=400 height=400 id="dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-esperacanvas"></canvas>
+</span>
+<br>
+<table><tr><td><table><tr><td><div class="rotacaosimetricacurvatridimensionalcoordenadaparametricaponto"></div></td><td> <div class="cancelarrotacaosimetricacurvatridimensionalcoordenadaparametricaponto"></div></td><td> <div class="downloadgifrotacaosimetricacurvatridimensionalcoordenadaparametricaponto"></div></td></tr></table></td></tr></table>
+<br>
+Log:
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosimetricacurvatridimensionalcoordenadaparametricaponto" id="resultadosimetricacurvatridimensionalcoordenadaparametricaponto" readonly rows="3"></textarea></td></tr></table>
+
+<br>
+
+<div id="myProgresssimetricacurvatridimensionalcoordenadaparametricaponto"><div id="myBarsimetricacurvatridimensionalcoordenadaparametricaponto"></div></div>
+
+<script>
+
+var lockcalc = 0;
+
+var expressao = [];
+var expressaoy = [];
+var expressaoz = [];
+var expressaopart;
+var expressaoparty;
+var expressaopartz;
+var ap;
+var op;
+var cp;
+var ap2;
+var op2;
+var cp2;
+var mostrar;
+var mostrar2;
+var inf;
+var sup;
+var n;
+var resultpart;
+var resultparty;
+var resultpartz;
+var parcela;
+var n2;
+var inf2;
+var sup2;
+var list = [["t", antoniovandreoperadoresfuncoesconstantes(5)]];
+var listtam;
+var xarr = [];
+var yarr = [];
+var zarr = [];
+var maxv;
+var minv;
+var contadorsimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+var indicefuncao = 0;
+var flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+var flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 0;
+var flagrepeticaosimetricacurvatridimensionalcoordenadaparametricapontot = 0;
+var flagplotlysimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+var trotsimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+var flaganimacaorotacaosimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+var flaggifsimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+var flaggifcontextsimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+var simetricacurvatridimensionalcoordenadaparametricapontoencoder;
+
+var elemsimetricacurvatridimensionalcoordenadaparametricaponto = document.getElementById('myBarsimetricacurvatridimensionalcoordenadaparametricaponto');
+
+elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Barra de progresso."
+
+document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricapontoavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
+
+function processarsimetricacurvatridimensionalcoordenadaparametricapontoout()
+	{
+	if (lockcalc == 1)
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = "Outra calculadora em execução.";
+		return;
+		}
+	else
+		lockcalc = 1;
+
+	var str = document.getElementsByName('entradasimetricacurvatridimensionalcoordenadaparametricaponto');
+
+	document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = "Calculando...";
+
+	$(".rotacaosimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+	cancelarrotacaosimetricacurvatridimensionalcoordenadaparametricapontoout();
+
+	trotsimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+	flaganimacaorotacaosimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+	flaggifsimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+	flaggifcontextsimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+
+	$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").append("<input type=\"button\" onclick=\"cancelarsimetricacurvatridimensionalcoordenadaparametricapontoout()\" value=\"Cancelar\">");
+
+	if (flagplotlysimetricacurvatridimensionalcoordenadaparametricaponto == 1)
+		{
+		Plotly.purge("dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto");
+		$("#dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-espera").html("<img src=\"Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
+		}
+
+	antoniovandresimetricacurvatridimensionalcoordenadaparametricapontoout(str[0].value, 0);
+	}
+
+function cancelarsimetricacurvatridimensionalcoordenadaparametricapontoout()
+	{
+	if (flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto == 0) flagrepeticaosimetricacurvatridimensionalcoordenadaparametricapontot = 1;
+	return;
+	}
+
+function antoniovandresimetricacurvatridimensionalcoordenadaparametricapontoout(str)
+	{
+	argumentos = str.split(";");
+	expressao = [];
+	expressaoy = [];
+	expressaoz = [];
+	xarr = [];
+	yarr = [];
+	zarr = [];
+	maxv = -Number.MAX_VALUE;
+	minv = Number.MAX_VALUE;
+	contadorsimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+	indicefuncao = 0;
+	flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+	flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 0;
+	flagrepeticaosimetricacurvatridimensionalcoordenadaparametricapontot = 0;
+
+	if (argumentos.length != 10)
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	expressaopart = argumentos[0].split(":");
+	expressaoparty = argumentos[1].split(":");
+	expressaopartz = argumentos[2].split(":");
+
+	if ((expressaopart.length != expressaoparty.length) || (expressaopart.length != expressaopartz.length) || (expressaoparty.length != expressaopartz.length))
+		{
+		document.getElementById('resultadocurvacoordenadaparametrica').value = curvacoordenadaparametricamensagemerro();
+		elemcurvacoordenadaparametrica.style.width = "100%";
+		elemcurvacoordenadaparametrica.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemcurvacoordenadaparametrica.textContent = "Erro ao calcular."
+		flagrepeticaocurvacoordenadaparametrica2 = 1;
+
+		$(".cancelarcurvacoordenadaparametrica").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+    ap = argumentos[3].trim();
+    op = argumentos[4].trim();
+    cp = argumentos[5].trim();
+    mostrar = argumentos[6].trim();
+	inf = argumentos[7].trim();
+	sup = argumentos[8].trim();
+	n = argumentos[9].trim();
+
+    mostrar2 = parseInt(mostrar);
+
+	if (! ((mostrar2 == 0) || (mostrar2 == 1)))
+		{
+        document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+        elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+        elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+        elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+        flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+        $(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+        lockcalc = 0;
+
+        return;
+        }
+    
+	if (antoniovandrenumeronaturalpositivo(n) == "e")
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (parseInt(n) == 1)
+			{
+			document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = "A resolução deve ser maior que 1.";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+			flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+			$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandremodulo(parseInt(n)) > antoniovandremaximovalorentrada(1))
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = antoniovandremensagenserro(2);
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	for (var i = 0; i < expressaopart.length; i++)
+	if ((antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopart[i], antoniovandreoperadoresfuncoesconstantes(2) + ",t")), antoniovandreremoverstrings(expressaopart[i], antoniovandreoperadoresfuncoesconstantes(2) + ",t")) == "e") || (expressaopart[i].trim() == ""))
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	for (var i = 0; i < expressaoparty.length; i++)
+	if ((antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaoparty[i], antoniovandreoperadoresfuncoesconstantes(2) + ",t")), antoniovandreremoverstrings(expressaoparty[i], antoniovandreoperadoresfuncoesconstantes(2) + ",t")) == "e") || (expressaoparty[i].trim() == ""))
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	for (var i = 0; i < expressaoparty.length; i++)
+	if ((antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopartz[i], antoniovandreoperadoresfuncoesconstantes(2) + ",t")), antoniovandreremoverstrings(expressaopartz[i], antoniovandreoperadoresfuncoesconstantes(2) + ",t")) == "e") || (expressaopartz[i].trim() == ""))
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+    if (antoniovandreexpressaofuncaovalida(ap) == "e")
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(op) == "e")
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+    if (antoniovandreexpressaofuncaovalida(cp) == "e")
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(inf) == "e")
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(sup) == "e")
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+		try
+			{
+			ap2 = eval(antoniovandretraduzirexpressaofuncional(ap, 0));
+			}
+		catch (error)
+			{
+			document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+			flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+			$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+		try
+			{
+			op2 = eval(antoniovandretraduzirexpressaofuncional(op, 0));
+			}
+		catch (error)
+			{
+			document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+			flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+			$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+        try
+			{
+			cp2 = eval(antoniovandretraduzirexpressaofuncional(cp, 0));
+			}
+		catch (error)
+			{
+			document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+			flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+			$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+		try
+			{
+			inf2 = eval(antoniovandretraduzirexpressaofuncional(inf, 0));
+			}
+		catch (error)
+			{
+			document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+			flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+			$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+		try
+			{
+			sup2 = eval(antoniovandretraduzirexpressaofuncional(sup, 0));
+			}
+		catch (error)
+			{
+			document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+			flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+			$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	n2 = parseInt(n) - 1;
+
+	if (antoniovandrenumeroreal(ap2.toString()) == "e")
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(ap2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = antoniovandremensagenserro(2);
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+			flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+			$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+    if (antoniovandrenumeroreal(op2.toString()) == "e")
+        {
+        document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+        elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+        elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+        elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+        flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+        $(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+        lockcalc = 0;
+
+        return;
+        }
+    else
+        if (antoniovandremodulo(op2) > antoniovandremaximovalorentrada(1))
+            {
+            document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = antoniovandremensagenserro(2);
+            elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+            elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+            elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+            flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+            $(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+            lockcalc = 0;
+
+            return;
+            }
+
+    if (antoniovandrenumeroreal(cp2.toString()) == "e")
+        {
+        document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+        elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+        elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+        elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+        flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+        $(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+        lockcalc = 0;
+
+        return;
+        }
+    else
+        if (antoniovandremodulo(cp2) > antoniovandremaximovalorentrada(1))
+            {
+            document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = antoniovandremensagenserro(2);
+            elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+            elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+            elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+            flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+            $(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+            lockcalc = 0;
+
+            return;
+            }
+    
+	if (antoniovandrenumeroreal(inf2.toString()) == "e")
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(inf2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = antoniovandremensagenserro(2);
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+			flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+			$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(sup2.toString()) == "e")
+		{
+		document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+		flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(sup2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = antoniovandremensagenserro(2);
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+			flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+			$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	parcela = (sup2 - inf2) / n2;
+
+	listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
+
+	for (var i = 0; i < expressaopart.length; i++)
+		{
+		list = [["t", antoniovandreoperadoresfuncoesconstantes(5)]];
+
+		for (var j = 0; j < listtam; j++)
+			list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[j]);
+
+		expressao.push(antoniovandresubstituirstrings(expressaopart[i], list));
+		}
+
+	for (var i = 0; i < expressaoparty.length; i++)
+		{
+		list = [["t", antoniovandreoperadoresfuncoesconstantes(5)]];
+
+		for (var j = 0; j < listtam; j++)
+			list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[j]);
+
+		expressaoy.push(antoniovandresubstituirstrings(expressaoparty[i], list));
+		}
+
+	for (var i = 0; i < expressaoparty.length; i++)
+		{
+		list = [["t", antoniovandreoperadoresfuncoesconstantes(5)]];
+
+		for (var j = 0; j < listtam; j++)
+			list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[j]);
+
+		expressaoz.push(antoniovandresubstituirstrings(expressaopartz[i], list));
+		}
+
+	function escoporepeticao()
+		{
+		if (flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 == 0)
+			{
+			var percentualconclusao = Math.trunc(100 * contadorsimetricacurvatridimensionalcoordenadaparametricaponto / (n2 * expressaopart.length));
+			var percentualconclusaostr = percentualconclusao.toString() + "%";
+
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = percentualconclusaostr;
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(64, 64, 64, 1) 0%, rgba(64, 255, 64, 1) 100%)";
+			elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = percentualconclusaostr;
+
+			if ((indicefuncao == expressaopart.length) || (flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto == 1))
+				{
+				flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto = 1;
+				return;
+				}
+
+			var t = inf2 + (parcela / 2) + ((contadorsimetricacurvatridimensionalcoordenadaparametricaponto % n2) * parcela);
+
+			try
+				{
+				resultpart = eval(antoniovandresubstituirstrings(expressao[indicefuncao], [[antoniovandreoperadoresfuncoesconstantes(5), "(" + t.toString() + ")"]]));
+				}
+			catch (error)
+				{
+				document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+				elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+				elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+				elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+				flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+				$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+				lockcalc = 0;
+
+				return;
+				}
+
+			try
+				{
+				resultparty = eval(antoniovandresubstituirstrings(expressaoy[indicefuncao], [[antoniovandreoperadoresfuncoesconstantes(5), "(" + t.toString() + ")"]]));
+				}
+			catch (error)
+				{
+				document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+				elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+				elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+				elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+				flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+				$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+				lockcalc = 0;
+
+				return;
+				}
+
+			try
+				{
+				resultpartz = eval(antoniovandresubstituirstrings(expressaoz[indicefuncao], [[antoniovandreoperadoresfuncoesconstantes(5), "(" + t.toString() + ")"]]));
+				}
+			catch (error)
+				{
+				document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+				elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+				elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+				elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+				flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+				$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+				lockcalc = 0;
+
+				return;
+				}
+
+			if ((antoniovandrenumeroreal(resultpart.toString()) == "e") || (antoniovandrenumeroreal(resultparty.toString()) == "e") || (antoniovandrenumeroreal(resultpartz.toString()) == "e"))
+				{
+				if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(6)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(6)) == 1) || (antoniovandrecompararstrings(resultpartz, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpartz, antoniovandremensagenserro(6)) == 1))
+					{
+					document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = antoniovandremensagenserro(6);
+					elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+					elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+					elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+					flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+					$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+					lockcalc = 0;
+
+					return;
+					}
+				else
+					{
+					if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(4)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(4)) == 1) || (antoniovandrecompararstrings(resultpartz, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpartz, antoniovandremensagenserro(4)) == 1))
+						{
+						document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = antoniovandremensagenserro(4);
+						elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+						elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+						elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+						flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+						$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+						lockcalc = 0;
+
+						return;
+						}
+					else
+						{
+						if ((antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpart, antoniovandremensagenserro(2)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultparty, antoniovandremensagenserro(2)) == 1) || (antoniovandrecompararstrings(resultpartz, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpartz, antoniovandremensagenserro(2)) == 1))
+							{
+							document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = antoniovandremensagenserro(2);
+							elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+							elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+							elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+							flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+							$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+							lockcalc = 0;
+
+							return;
+							}
+						else
+							{
+							if (antoniovandrecompararstrings(typeof resultpart, "string") == 1)
+								{
+								if (antoniovandrecompararstrings(resultpart, "e") == "e")
+									document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = resultpart
+								else
+									document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+								}
+							else if (antoniovandrecompararstrings(typeof resultparty, "string") == 1)
+								{
+								if (antoniovandrecompararstrings(resultparty, "e") == "e")
+									document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = resultparty
+								else
+									document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+								}
+							else if (antoniovandrecompararstrings(typeof resultpartz, "string") == 1)
+								{
+								if (antoniovandrecompararstrings(resultpartz, "e") == "e")
+									document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = resultpartz
+								else
+									document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+								}
+							else
+								document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = simetricacurvatridimensionalcoordenadaparametricapontomensagemerro();
+
+							elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+							elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+							elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+							flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+							$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+							lockcalc = 0;
+
+							return;
+							}
+						}
+					}
+				}
+			else
+				{
+				if ((antoniovandremodulo(resultpart) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(resultparty) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(resultpartz) > parseFloat(antoniovandremaximovalorsaida(1))))
+					{
+					document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = antoniovandremensagenserro(6);
+					elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+					elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+					elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+					flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+
+					$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+					lockcalc = 0;
+
+					return;
+					}
+				else
+					{
+                    var xp = resultpart;
+                    var yp = resultparty;
+                    var zp = resultpartz;
+
+                    var x = 2 * ap2 - xp;
+                    var y = 2 * op2 - yp;
+                    var z = 2 * cp2 - zp;
+
+                    xarr.push(x);
+					yarr.push(y);
+					zarr.push(z);
+
+					if (xp > maxv)
+						maxv = xp;
+
+                    if (x > maxv)
+						maxv = x;
+
+                    if (yp > maxv)
+						maxv = yp;
+
+                    if (y > maxv)
+						maxv = y;
+
+					if (zp > maxv)
+						maxv = zp;
+
+                    if (z > maxv)
+						maxv = z;
+
+					if (xp < minv)
+						minv = xp;
+
+					if (x < minv)
+						minv = x;
+
+					if (yp < minv)
+						minv = yp;
+
+                    if (y < minv)
+						minv = y;
+
+                    if (zp < minv)
+						minv = zp;
+
+                    if (z < minv)
+						minv = z;
+
+                    if (mostrar2 == 1)
+						{
+						xarr.push(xp);
+						yarr.push(yp);
+                        zarr.push(zp);
+						}
+                    }
+				}
+
+			contadorsimetricacurvatridimensionalcoordenadaparametricaponto++;
+
+			if (contadorsimetricacurvatridimensionalcoordenadaparametricaponto % n2 == 0) indicefuncao++;
+			}
+		}
+
+	function escoporepeticao2()
+		{
+		if (flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 == 0)
+			{
+			if (flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto == 1)
+				{
+				if ((antoniovandremodulo(resultpart) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(resultparty) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(resultpartz) > parseFloat(antoniovandremaximovalorsaida(1))))
+					{
+					document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = antoniovandremensagenserro(5);
+
+					$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+					lockcalc = 0;
+					}
+
+				document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = "Sucesso.";
+
+				$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+				var trace1 = {
+					x: xarr, y: yarr, z: zarr,
+					mode: 'markers',
+					marker: {
+						size: 1,
+						color: "rgba(0, 0, 0, 0.5)"},
+					type: 'scatter3d'
+				};
+
+				var maxa = [maxv];
+
+				var trace2 = {
+					x: maxa, y: maxa, z: maxa,
+					mode: 'markers',
+					marker: {
+						color: "rgba(255, 255, 255, 0)"},
+					type: 'scatter3d'
+				};
+
+				var mina = [minv];
+
+				var trace3 = {
+					x: mina, y: mina, z: mina,
+					mode: 'markers',
+					marker: {
+						color: "rgba(255, 255, 255, 0)"},
+					type: 'scatter3d'
+				};
+
+				var data = [trace1, trace2, trace3];
+
+				var layout = {margin: {
+						l: 0,
+						r: 0,
+						b: 0,
+						t: 0
+					},
+					showlegend: false,
+					height: 800,
+					width: 800
+				};
+
+				$(".dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-espera").empty();
+				Plotly.newPlot('dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-espera', data, layout);
+
+				$(".rotacaosimetricacurvatridimensionalcoordenadaparametricaponto").append("<input type=\"button\" onclick=\"rotacaosimetricacurvatridimensionalcoordenadaparametricapontoout()\" value=\"Rotação automática\">");
+
+				flagplotlysimetricacurvatridimensionalcoordenadaparametricaponto = 1;
+
+				lockcalc = 0;
+
+				flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1;
+				return;
+				}
+			}
+		}
+
+	var rep = setInterval(escoporepeticao, 10);
+	var rep2 = setInterval(escoporepeticao2, 10);
+	var rep3 = setInterval(function(){if (flagrepeticaosimetricacurvatridimensionalcoordenadaparametricapontot == 1) {flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 = 1; document.getElementById('resultadosimetricacurvatridimensionalcoordenadaparametricaponto').value = "Cálculo cancelado."; elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%"; elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)"; elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Cálculo cancelado."; $(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty(); flagrepeticaosimetricacurvatridimensionalcoordenadaparametricapontot = 0; lockcalc = 0; return;}}, 10);
+	var antoniovandrelimparrepeticoes = setInterval(function(){if (lockcalc == 0){clearInterval(rep); clearInterval(rep2); clearInterval(rep3);}; return;}, 60000);
+
+	if (flagrepeticaosimetricacurvatridimensionalcoordenadaparametricaponto2 == 1)
+		{
+		clearInterval(rep);
+		clearInterval(rep2);
+		clearInterval(rep3);
+
+		$(".cancelarsimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+
+		return;
+		}
+	}
+
+function simetricacurvatridimensionalcoordenadaparametricapontomensagemerro()
+	{
+	elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.width = "100%";
+	elemsimetricacurvatridimensionalcoordenadaparametricaponto.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+	elemsimetricacurvatridimensionalcoordenadaparametricaponto.textContent = "Erro ao calcular."
+
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: as expressões das funções para \"x\", separadas por dois pontos \":\", das quais se deseja obter as curvas simétricas, devem ser funções em \"t\"; segundo: as expressões das funções para \"y\", separadas por dois pontos \":\", das quais se deseja obter as curvas simétricas, devem ser funções em \"t\"; terceiro: as expressões das funções para \"z\", separadas por dois pontos \":\", das quais se deseja obter as curvas simétricas, devem ser funções em \"t\"; quarto: a abscissa do ponto de referência; quinto: a ordenada do ponto de referência; sexto: a cota do ponto de referência; sétimo: \"0\" para não mostrar as curvas originais, ou \"1\" para mostrar; oitavo: um número real como valor inferior; nono: um número real como valor superior; décimo: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.";
+	}
+
+function animacaorotacaosimetricacurvatridimensionalcoordenadaparametricaponto()
+	{
+	Plotly.relayout('dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-espera', {"scene.camera.eye": {x: 1.5 * antoniovandrecos(trotsimetricacurvatridimensionalcoordenadaparametricaponto), y: 1.5 * antoniovandresen(trotsimetricacurvatridimensionalcoordenadaparametricaponto), z: 1.5}, "dragMode": false, "scrollZoom": false, "displayModeBar": false}).then(function(gd){
+		if (flaganimacaorotacaosimetricacurvatridimensionalcoordenadaparametricaponto == 1)
+			{
+			setTimeout(function() {
+				if (flaggifsimetricacurvatridimensionalcoordenadaparametricaponto == 1)
+					{
+					Plotly.toImage(gd,{format:'png', width: document.getElementById('dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-esperagif').width, height: document.getElementById('dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-esperagif').height}).then(function(url) {
+						document.getElementById('dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-esperagif').src = url;
+						
+						if (flaggifcontextsimetricacurvatridimensionalcoordenadaparametricaponto == 0)
+							{
+								try {
+								simetricacurvatridimensionalcoordenadaparametricapontocontext = document.getElementById('dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-esperacanvas').getContext("2d");
+								simetricacurvatridimensionalcoordenadaparametricapontoencoder = new GIFEncoder();
+								simetricacurvatridimensionalcoordenadaparametricapontoencoder.setRepeat(0);
+								simetricacurvatridimensionalcoordenadaparametricapontoencoder.setDelay(40);
+								simetricacurvatridimensionalcoordenadaparametricapontoencoder.start();
+								} catch (e){};
+
+							flaggifcontextsimetricacurvatridimensionalcoordenadaparametricaponto = 1;
+							}
+
+					simetricacurvatridimensionalcoordenadaparametricapontocontext.drawImage(document.getElementById('dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-esperagif'), 0, 0);
+					try {simetricacurvatridimensionalcoordenadaparametricapontoencoder.addFrame(simetricacurvatridimensionalcoordenadaparametricapontocontext);} catch (e){};
+					});
+					}
+
+				requestAnimationFrame(animacaorotacaosimetricacurvatridimensionalcoordenadaparametricaponto);
+			}, 10);
+
+			flaganimacaorotacaosimetricacurvatridimensionalcoordenadaparametricaponto = 1;
+			}
+		else if (flaganimacaorotacaosimetricacurvatridimensionalcoordenadaparametricaponto == 2)
+			{
+			cancelAnimationFrame(animacaorotacaosimetricacurvatridimensionalcoordenadaparametricaponto);
+			flaganimacaorotacaosimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+			}
+
+	var divisorframe;
+
+	if (flaggifsimetricacurvatridimensionalcoordenadaparametricaponto == 1)
+		divisorframe = 100
+	else
+		divisorframe = 400;
+		
+	if (trotsimetricacurvatridimensionalcoordenadaparametricaponto >= 2 * Math.PI - 2 * Math.PI / divisorframe)
+		{
+		if (flaggifsimetricacurvatridimensionalcoordenadaparametricaponto == 1)
+			{
+			try {simetricacurvatridimensionalcoordenadaparametricapontoencoder.finish();} catch (e){};
+
+			$(".downloadgifrotacaosimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+			$(".downloadgifrotacaosimetricacurvatridimensionalcoordenadaparametricaponto").append("<input type=\"button\" onclick=\"downloadgifrotacaosimetricacurvatridimensionalcoordenadaparametricapontoout()\" value=\"Download gif animado\">");
+
+			flaggifsimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+			}
+
+		Plotly.relayout('dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-espera', {"scene.camera.eye": {x: 1.5 * antoniovandrecos(trotsimetricacurvatridimensionalcoordenadaparametricaponto), y: 1.5 * antoniovandresen(trotsimetricacurvatridimensionalcoordenadaparametricaponto), z: 1.5}});
+
+		trotsimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+		}
+	else
+		{
+		if (flaggifsimetricacurvatridimensionalcoordenadaparametricaponto == 1)
+			trotsimetricacurvatridimensionalcoordenadaparametricaponto += (2 * Math.PI) / divisorframe
+		else
+			trotsimetricacurvatridimensionalcoordenadaparametricaponto += (2 * Math.PI) / divisorframe;
+		}
+	});
+	}
+
+function cancelarrotacaosimetricacurvatridimensionalcoordenadaparametricapontoout()
+	{
+	flaganimacaorotacaosimetricacurvatridimensionalcoordenadaparametricaponto = 2;
+
+	if (flaggifsimetricacurvatridimensionalcoordenadaparametricaponto == 1)
+		{
+		try {simetricacurvatridimensionalcoordenadaparametricapontoencoder.finish();} catch (e){};
+
+		Plotly.relayout('dot-chart-simetricacurvatridimensionalcoordenadaparametricaponto-espera', {"scene.camera.eye": {x: 1.5 * antoniovandrecos(trotsimetricacurvatridimensionalcoordenadaparametricaponto), y: 1.5 * antoniovandresen(trotsimetricacurvatridimensionalcoordenadaparametricaponto), z: 1.5}});
+
+		flaggifsimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+		}
+
+	$(".downloadgifrotacaosimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+	$(".cancelarrotacaosimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+	}
+
+function rotacaosimetricacurvatridimensionalcoordenadaparametricapontoout()
+	{
+	if (flaganimacaorotacaosimetricacurvatridimensionalcoordenadaparametricaponto == 0)
+		{
+		$(".cancelarrotacaosimetricacurvatridimensionalcoordenadaparametricaponto").append("<input type=\"button\" onclick=\"cancelarrotacaosimetricacurvatridimensionalcoordenadaparametricapontoout()\" value=\"Cancelar rotação automática\">");
+
+		animacaorotacaosimetricacurvatridimensionalcoordenadaparametricaponto();
+
+		if (flaggifsimetricacurvatridimensionalcoordenadaparametricaponto == 0)
+			{
+			$(".downloadgifrotacaosimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+			$(".downloadgifrotacaosimetricacurvatridimensionalcoordenadaparametricaponto").append("<input type=\"button\" onclick=\"rotacaocapturargifsimetricacurvatridimensionalcoordenadaparametricapontoout()\" value=\"Capturar gif animado\">");
+			}
+
+		flaganimacaorotacaosimetricacurvatridimensionalcoordenadaparametricaponto = 1;
+		}
+	}
+
+function rotacaocapturargifsimetricacurvatridimensionalcoordenadaparametricapontoout()
+	{
+	$(".downloadgifrotacaosimetricacurvatridimensionalcoordenadaparametricaponto").empty();
+	$(".downloadgifrotacaosimetricacurvatridimensionalcoordenadaparametricaponto").append("Capturando gif animado...");
+
+	trotsimetricacurvatridimensionalcoordenadaparametricaponto = 0;
+	flaggifsimetricacurvatridimensionalcoordenadaparametricaponto = 1;
+	}
+
+function downloadgifrotacaosimetricacurvatridimensionalcoordenadaparametricapontoout()
+	{
+	simetricacurvatridimensionalcoordenadaparametricapontoencoder.download("Mathematical Ramblings - sctpcparpt - " + document.getElementsByName("entradasimetricacurvatridimensionalcoordenadaparametricaponto")[0].value.replaceAll(" ", "").replaceAll(";", "[pv]").replaceAll(",", "[v]").replaceAll(":", "[dp]").replaceAll("|", "[bv]").replaceAll("*", "[mult]").replaceAll("/", "[div]").replaceAll(">=", "[mai]").replaceAll("<=", "[mei]").replaceAll("!=", "[dif]").replaceAll(">", "[ma]").replaceAll("<", "[me]").replaceAll("=", "[ig]") + ".gif");
 	}
 
 </script>
