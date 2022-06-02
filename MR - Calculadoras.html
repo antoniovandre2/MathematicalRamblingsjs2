@@ -21416,36 +21416,173 @@ function processarresolucaoequacaosegundograupassopasso()
         var c = argumentos[2].trim();
         var a2;
         var b2;
+        var flaga2 = 0;
 
-        if (parseFloat(a) == 1) {a2 = "";} else if (parseFloat(a) == -1) {a2 = "-";} else {a2 = a;}
-        if (parseFloat(b) == 1) {b2 = "";} else if (parseFloat(b) == -1) {b2 = "- ";} else {b2 = b.replace("-", "- ");}
+        if (parseFloat(a) == 1) {a2 = "x^2";} else if (parseFloat(a) == -1) {a2 = "-x^2";} else
+            {
+            var coefs = antoniovandrefracaogeratriz(parseFloat(a), 1);
+
+            if (coefs[1] == 1)
+                a2 = coefs[0].toString() + "x^2"
+            else
+                {
+                if (coefs[0] == 1)
+                    {
+                    a2 = "\\dfrac{x^2}{" + coefs[1].toString() + "}";
+                    flaga2 = 1;
+                    }
+                else
+                    a2 = "\\dfrac{" + coefs[0].toString() + "x^2}{" + coefs[1].toString() + "}";
+                }
+            }
+
+        if (parseFloat(b) == 1) {b2 = "";} else if (parseFloat(b) == -1) {b2 = "- ";} else
+            {
+            var coefs = antoniovandrefracaogeratriz(parseFloat(b), 1);
+
+            if (coefs[1] == 1)
+                b2 = coefs[0].toString().replace("-", "- ") + "x"
+            else
+                {
+                if (coefs[0] == 1)
+                    b2 = "\\dfrac{x}{" + coefs[1].toString() + "}"
+                else if (coefs[0] == -1)
+                    b2 = "- \\dfrac{x}{" + coefs[1].toString() + "}"
+                else
+                    b2 = "\\dfrac{" + coefs[0].toString().replace("-", "- ") + "x}{" + coefs[1].toString() + "}"
+                }
+            }
 
         if ((parseFloat(b) == 0) && (parseFloat(c) == 0))
-            out = a2 + "x^2 = 0\\\\ x^2 = \\dfrac{0}{a}\\\\ x^2 = 0\\\\ x = \\pm\\sqrt{0}\\\\ x = 0"
+            out = a2 + " = 0\\\\ x^2 = \\dfrac{0}{a}\\\\ x^2 = 0\\\\ x = \\pm\\sqrt{0}\\\\ x = 0"
         else if (parseFloat(c) == 0)
             {
             if (parseFloat(b) > 0)
-                out = a2 + "x^2 + " + b2 + "x = 0\\\\ x(" + a2 + "x + " + b + ") = 0\\\\ x = 0\\ \\vee\\ " + a2 + "x + " + b + "= 0\\\\ x = 0\\ \\vee\\ " + a2 + "x = -" + b + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{-" + b + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = " + antoniovandreformatarreal(-parseFloat(b) / parseFloat(a)).toString()
+                {
+                var coefs = antoniovandrefracaogeratriz(parseFloat(b), 1);
+
+                if (coefs[1] == 1)
+                    {
+                    var coefs2 = antoniovandreformatarreal(-parseFloat(b) / parseFloat(a));
+
+                    if (coefs2[1] == 1)
+                        {
+                        if (flaga2 == 0)
+                            out = a2 + " + " + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "") + "x + " + coefs[0].toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2 + " + " + coefs[0].toString() + " = 0\\\\ x = 0\\ \\vee\\ " + a2 + " = -" + coefs[0].toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = " + coefs2[0].toString()
+                        else
+                            out = a2 + " + " + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "1") + "x + " + coefs[0].toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2 + " + " + coefs[0].toString() + " = 0\\\\ x = 0\\ \\vee\\ " + a2 + " = -" + coefs[0].toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = " + coefs2[0].toString();
+                        }
+                    else
+                        {
+                        if (flaga2 == 0)
+                            out = a2 + " + " + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "") + "x + " + coefs[0].toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2 + " + " + coefs[0].toString() + " = 0\\\\ x = 0\\ \\vee\\ " + a2 + " = -" + coefs[0].toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}"
+                        else
+                            out = a2 + " + " + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "1") + "x + " + coefs[0].toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2 + " + " + coefs[0].toString() + " = 0\\\\ x = 0\\ \\vee\\ " + a2 + " = -" + coefs[0].toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}"
+                        }
+                    }
+                else
+                    {
+                    var coefs2 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) / parseFloat(a)), 1);
+
+                    if (coefs2[1] == 1)
+                        out = a2 + " + " + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "") + "x + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2 + " + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ x = 0\\ \\vee\\ " + a2 + " = -" + b + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{-\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}}{" + a + "}\\\\ x = 0\\ \\vee\\ x = " + coefs2[0].toString()
+                    else
+                        out = a2 + " + " + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "") + "x + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2 + " + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ x = 0\\ \\vee\\ " + a2 + " = -" + b + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{-\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}}{" + a + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}";
+                    }
+                }
             else
-                out = a2 + "x^2" + b2 + "x = 0\\\\ x(" + a2 + "x -" + antoniovandreformatarreal(antoniovandremodulo(parseFloat(b))).toString() + ") = 0\\\\ x = 0\\ \\vee\\ " + a2 + "x -" + antoniovandreformatarreal(antoniovandremodulo(parseFloat(b))).toString() + "= 0\\\\ x = 0\\ \\vee\\ " + a2 + "x = " + antoniovandreformatarreal(antoniovandremodulo(parseFloat(b))).toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(antoniovandremodulo(parseFloat(b))).toString() + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = " + antoniovandreformatarreal(-parseFloat(b) / parseFloat(a)).toString();
+                {
+                var coefs = antoniovandrefracaogeratriz(antoniovandreformatarreal(antoniovandremodulo(parseFloat(b))), 1);
+
+                if (coefs[1] == 1)
+                    {
+                    var coefs2 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) / parseFloat(a)), 1);
+
+                    if (coefs2[1] == 1)
+                        out = a2 + " " + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "") + "x -" + coefs[0].toString().toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2 + " -" + coefs[0].toString().toString() + "= 0\\\\ x = 0\\ \\vee\\ " + a2 + " = " + coefs[0].toString().toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs[0].toString() + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = " + coefs2[0].toString()
+                    else
+                        out = a2 + " " + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "") + "x -" + coefs[0].toString().toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2 + " -" + coefs[0].toString().toString() + "= 0\\\\ x = 0\\ \\vee\\ " + a2 + " = " + coefs[0].toString().toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs[0].toString() + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}";
+                    }
+                else
+                    {
+                    var coefs2 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) / parseFloat(a)), 1);
+
+                    if (coefs2[1] == 1)
+                        out = a2 + " " + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "") + "x -" + coefs[0].toString().toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2 + " -" + coefs[0].toString().toString() + "= 0\\\\ x = 0\\ \\vee\\ " + a2 + " = " + coefs[0].toString().toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs[0].toString() + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = " + coefs2[0].toString()
+                    else
+                        out = a2 + " " + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "") + "x -" + coefs[0].toString().toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2 + " -" + coefs[0].toString().toString() + "= 0\\\\ x = 0\\ \\vee\\ " + a2 + " = " + coefs[0].toString().toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs[0].toString() + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}";
+                    }
+                }
             }
         else if (parseFloat(b) == 0)
             {
             if (parseFloat(c) > 0)
                 {
-                out = a2 + "x^2 + " + c + " = 0\\\\ " + a2 + "x^2 = -" + c + "\\\\ x^2 = \\dfrac{-" + c + "}{" + a + "}\\\\ x = \\pm\\sqrt{" + antoniovandreformatarreal(-parseFloat(c) / parseFloat(a)).toString() + "}";
+                var coefs = antoniovandrefracaogeratriz(parseFloat(c), 1);
+
+                if (coefs[1] == 1)
+                    {
+                    var coefs2 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(c) / parseFloat(a)), 1);
+
+                    if (coefs2[1] == 1)
+                        out = a2 + " + " + coefs[0].toString() + " = 0\\\\ " + a2 + " = -" + coefs[0].toString() + "\\\\ x^2 = \\dfrac{-" + c + "}{" + a + "}\\\\ x = \\pm\\sqrt{" + coefs2[0].toString() + "}"
+                    else
+                        out = a2 + " + " + coefs[0].toString() + " = 0\\\\ " + a2 + " = -" + coefs[0].toString() + "\\\\ x^2 = \\dfrac{-" + c + "}{" + a + "}\\\\ x = \\pm\\sqrt{\\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}";
+                    }
+                else
+                    {
+                    var coefs2 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(c) / parseFloat(a)), 1);
+
+                    if (coefs2[1] == 1)
+                        out = a2 + " + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ " + a2 + " = -\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString()+ "}\\\\ x^2 = \\dfrac{-\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString()+ "}}{" + a + "}\\\\ x = \\pm\\sqrt{" + coefs2[0].toString() + "}"
+                    else
+                        out = a2 + " + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ " + a2 + " = -\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString()+ "}\\\\ x^2 = \\dfrac{-\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString()+ "}}{" + a + "}\\\\ x = \\pm\\sqrt{\\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}";
+                    }
 
                 if (-parseFloat(c) / parseFloat(a) > 0)
-                    out = out + "\\\\ x = " + antoniovandreformatarreal(antoniovandresqrt(-parseFloat(c) / parseFloat(a))).toString() + "\\ \\vee\\ x = -" + antoniovandreformatarreal(antoniovandresqrt(-parseFloat(c) / parseFloat(a))).toString()
+                    {
+                    var coefs = antoniovandrefracaogeratriz(antoniovandreformatarreal(antoniovandresqrt(-parseFloat(c) / parseFloat(a))), 1);
+
+                    if (coefs[1] == 1)
+                        out = out + "\\\\ x = " + coefs[0].toString() + "\\ \\vee\\ x = -" + (- coefs[0]).toString()
+                    else
+                        out = out + "\\\\ x = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString()+ "}\\ \\vee\\ x = -\\dfrac{" + (- coefs[0]).toString() + "}{" + coefs[1].toString() + "}";
+                    }
                 else
                     out = out + "\\\\ \\text{A equação não possui soluções reais.}";
                 }
             else
                 {
-                out = a2 + "x^2 - " + antoniovandreformatarreal(antoniovandremodulo(parseFloat(c))).toString() + " = 0\\\\ " + a2 + "x^2 = " + antoniovandreformatarreal(antoniovandremodulo(parseFloat(c))).toString() + "\\\\ x^2 = \\dfrac{" + antoniovandreformatarreal(antoniovandremodulo(parseFloat(c))).toString() + "}{" + a + "}\\\\ x = \\pm\\sqrt{" + antoniovandreformatarreal(-parseFloat(c) / parseFloat(a)).toString() + "}";
+                var coefs = antoniovandreformatarreal(antoniovandremodulo(parseFloat(c)));
+
+                if (coefs[1] == 1)
+                    {
+                    var coefs2 = antoniovandreformatarreal(-parseFloat(c) / parseFloat(a));
+
+                    if (coefs2[1] == 1)
+                        out = a2 + " - " + coefs[0].toString() + " = 0\\\\ " + a2 + " = " + coefs[0].toString() + "\\\\ x^2 = \\dfrac{" + coefs[0].toString() + "}{" + a + "}\\\\ x = \\pm\\sqrt{" + coefs2[0].toString() + "}"
+                    else
+                        out = a2 + " - " + coefs[0].toString() + " = 0\\\\ " + a2 + " = " + coefs[0].toString() + "\\\\ x^2 = \\dfrac{" + coefs[0].toString() + "}{" + a + "}\\\\ x = \\pm\\sqrt{\\dfrac{" + coefs2[0].toString() + "}{" + coefs[1].toString() + "}}";
+                    }
+                else
+                    {
+                    var coefs2 = antoniovandreformatarreal(-parseFloat(c) / parseFloat(a));
+
+                    if (coefs2[1] == 1)
+                        out = a2 + " - \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ " + a2 + " = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\\\ x^2 = \\dfrac{\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}}{" + a + "}\\\\ x = \\pm\\sqrt{" + coefs2[0].toString() + "}"
+                    else
+                        out = a2 + " - \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ " + a2 + " = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\\\ x^2 = \\dfrac{\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}}{" + a + "}\\\\ x = \\pm\\sqrt{\\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}";
+                    }
 
                 if (-parseFloat(c) / parseFloat(a) > 0)
-                    out = out + "\\\\ x = " + antoniovandreformatarreal((antoniovandresqrt(-parseFloat(c) / parseFloat(a)))).toString() + "\\ \\vee\\ x = -" + antoniovandreformatarreal((antoniovandresqrt(-parseFloat(c) / parseFloat(a)))).toString()
+                    {
+                    var coefs = antoniovandreformatarreal((antoniovandresqrt(-parseFloat(c) / parseFloat(a))));
+
+                    if (coefs[1] == 1)
+                        out = out + "\\\\ x = " + coefs[0].toString() + "\\ \\vee\\ x = -" + coefs[0].toString()
+                    else
+                        out = out + "\\\\ x = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\ \\vee\\ x = -\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}";
+                    }
                 else
                     out = out + "\\\\ \\text{A equação não possui soluções reais.}";
                 }
@@ -21456,7 +21593,19 @@ function processarresolucaoequacaosegundograupassopasso()
                 {
                 if ((parseFloat(b) > 0) && (parseFloat(c) > 0))
                     {
-                    out = a2 + "x^2 + " + b2 + "x + " + c + "= 0\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + b + "^2 - 4 \\cdot " + a + " \\cdot " + c + "}}{2 \\cdot " + a + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " - " + antoniovandreformatarreal(4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}";
+                    var coefs = antoniovandrefracaogeratriz(parseFloat(b), 1);
+
+                    if (coefs[1] == 1)
+                        {
+                        var coefs2 = antoniovandrefracaogeratriz(parseFloat(c), 1);
+
+                        if (coefs2[1] == 1)
+                            out = a2 + " + " + b2 + " + " + coefs2[0].toString() + "= 0\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm\\sqrt{" + coefs[0].toString() + "^2 - 4 \\cdot " + a + " \\cdot " + coefs2[0].toString() + "}}{2 \\cdot " + a + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " - " + antoniovandreformatarreal(4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}"
+                        else
+                            out = a2 + " + " + b2 + " + \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "} = 0\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm\\sqrt{" + coefs[0].toString() + "^2 - 4 \\cdot " + a + " \\cdot \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}}{2 \\cdot " + a + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " - " + antoniovandreformatarreal(4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}"
+                        }
+                    else
+                        out = a2 + " + " + b2 + " + " + c + "= 0\\\\ x = \\dfrac{-\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\pm\\sqrt{\\left(\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\right)^2 - 4 \\cdot " + a + " \\cdot " + c + "}}{2 \\cdot " + a + "}\\\\ x = \\dfrac{-\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " - " + antoniovandreformatarreal(4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}"
 
                     if (parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c) > 0)
                         out = out + "\\\\ x = \\dfrac{-" + b + "\\pm" + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-" + b + " + " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{-" + b + " - " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
@@ -21465,7 +21614,7 @@ function processarresolucaoequacaosegundograupassopasso()
                     }
                 else if ((parseFloat(b) > 0) && (parseFloat(c) < 0))
                     {
-                    out = a2 + "x^2 + " + b2 + "x - " + antoniovandreformatarreal(antoniovandremodulo(parseFloat(c))).toString() + "= 0\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + b + "^2 + 4 \\cdot " + a + " \\cdot " + antoniovandreformatarreal(antoniovandremodulo(parseFloat(c))).toString() + "}}{2 \\cdot " + a + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " + " + antoniovandreformatarreal(-4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}";
+                    out = a2 + " + " + b2 + " - " + antoniovandreformatarreal(antoniovandremodulo(parseFloat(c))).toString() + "= 0\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + b + "^2 + 4 \\cdot " + a + " \\cdot " + antoniovandreformatarreal(antoniovandremodulo(parseFloat(c))).toString() + "}}{2 \\cdot " + a + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " + " + antoniovandreformatarreal(-4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}";
 
                     if (parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c) > 0)
                         out = out + "\\\\ x = \\dfrac{-" + b + "\\pm" + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-" + b + " + " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{-" + b + " - " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
@@ -21474,7 +21623,7 @@ function processarresolucaoequacaosegundograupassopasso()
                     }
                 else if ((parseFloat(b) < 0) && (parseFloat(c) > 0))
                     {
-                    out = a2 + "x^2" + b2 + "x + " + c + "= 0\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{(" + b + ")^2 - 4 \\cdot " + a + " \\cdot " + c + "}}{2 \\cdot " + a + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " - " + antoniovandreformatarreal(4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + (2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}";
+                    out = a2 + " " + b2 + " + " + c + "= 0\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{(" + b + ")^2 - 4 \\cdot " + a + " \\cdot " + c + "}}{2 \\cdot " + a + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " - " + antoniovandreformatarreal(4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + (2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}";
 
                     if (parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c) > 0)
                         out = out + "\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm" + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + " + " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + " - " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
@@ -21483,7 +21632,7 @@ function processarresolucaoequacaosegundograupassopasso()
                     }
                 else if ((parseFloat(b) < 0) && (parseFloat(c) < 0))
                     {
-                    out = a2 + "x^2 " + b2 + "x - " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(c)))).toString() + "= 0\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{(" + b + ")^2 + 4 \\cdot " + a + " \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(c)))).toString() + "}}{2 \\cdot " + a + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " + " + antoniovandreformatarreal(-4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + (2 * parseFloat(a)).toString() + "}";
+                    out = a2 + " " + b2 + " - " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(c)))).toString() + "= 0\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{(" + b + ")^2 + 4 \\cdot " + a + " \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(c)))).toString() + "}}{2 \\cdot " + a + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " + " + antoniovandreformatarreal(-4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + (2 * parseFloat(a)).toString() + "}";
 
                     if (parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c) > 0)
                         out = out + "\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm" + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + " + " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + " - " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
@@ -21496,7 +21645,7 @@ function processarresolucaoequacaosegundograupassopasso()
                 {
                 if ((parseFloat(b) > 0) && (parseFloat(c) > 0))
                     {
-                    out = a2 + "x^2 + " + b2 + "x + " + c + "= 0\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + b + "^2 + 4 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + " \\cdot " + c + "}}{-2 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " + " + antoniovandreformatarreal(-4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}";
+                    out = a2 + " + " + b2 + " + " + c + "= 0\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + b + "^2 + 4 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + " \\cdot " + c + "}}{-2 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " + " + antoniovandreformatarreal(-4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}";
 
                     if (parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c) > 0)
                         out = out + "\\\\ x = \\dfrac{-" + b + "\\pm" + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-" + b + " + " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{-" + b + " - " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = " + (antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + (antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
@@ -21505,7 +21654,7 @@ function processarresolucaoequacaosegundograupassopasso()
                     }
                 else if ((parseFloat(b) > 0) && (parseFloat(c) < 0))
                     {
-                    out = a2 + "x^2 + " + b2 + "x - " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(c)))).toString() + "= 0\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + b + "^2 + 4 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + " \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(c)))).toString() + "}}{-2 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " - " + antoniovandreformatarreal(4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}";
+                    out = a2 + " + " + b2 + " - " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(c)))).toString() + "= 0\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + b + "^2 + 4 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + " \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(c)))).toString() + "}}{-2 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " - " + antoniovandreformatarreal(4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-" + b + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}";
 
                     if (parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c) > 0)
                         out = out + "\\\\ x = \\dfrac{-" + b + "\\pm" + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{-" + b + " + " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{-" + b + " - " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = " + (antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + (antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
@@ -21514,7 +21663,7 @@ function processarresolucaoequacaosegundograupassopasso()
                     }
                 else if ((parseFloat(b) < 0) && (parseFloat(c) > 0))
                     {
-                    out = a2 + "x^2 " + b2 + "x + " + c + "= 0\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{(" + b + ")^2 + 4 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + " \\cdot " + c + "}}{-2 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " + " + antoniovandreformatarreal(-4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}";
+                    out = a2 + " " + b2 + " + " + c + "= 0\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{(" + b + ")^2 + 4 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + " \\cdot " + c + "}}{-2 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " + " + antoniovandreformatarreal(-4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}";
 
                     if (parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c) > 0)
                         out = out + "\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm" + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + " + " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + " - " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = " + (antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + (antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
@@ -21523,7 +21672,7 @@ function processarresolucaoequacaosegundograupassopasso()
                     }
                 else if ((parseFloat(b) < 0) && (parseFloat(c) < 0))
                     {
-                    out = a2 + "x^2 " + b2 + "x - " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(c)))).toString() + "= 0\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{(" + b + ")^2 - 4 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + " \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(c)))).toString() + "}}{-2 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " - " + antoniovandreformatarreal(4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}";
+                    out = a2 + " " + b2 + " - " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(c)))).toString() + "= 0\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{(" + b + ")^2 - 4 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + " \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(c)))).toString() + "}}{-2 \\cdot " + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(a)))).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b)).toString() + " - " + antoniovandreformatarreal(4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm\\sqrt{" + antoniovandreformatarreal(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c)).toString() + "}}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}";
 
                     if (parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c) > 0)
                         out = out + "\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + "\\pm" + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + " + " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{" + (antoniovandreformatarreal(antoniovandremodulo(parseFloat(b)))).toString() + " - " + antoniovandreformatarreal(antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + antoniovandreformatarreal(2 * parseFloat(a)).toString() + "}\\\\ x = " + (antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + (antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
