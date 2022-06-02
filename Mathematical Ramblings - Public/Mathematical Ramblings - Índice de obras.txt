@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 31-05-2022.
+Última atualização: 02-06-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9486,6 +9486,24 @@ Calculadora: simétrica de uma superfície tridimensional por coordenadas param�
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 31-05-2022 - 3.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: simétrica de uma curva ou região por uma relação com relação a um ponto.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 02-06-2022 - 1.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: simétrica de uma curva ou região por uma relação com relação a uma reta.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 02-06-2022 - 2.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
