@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 02-06-2022.
+Última atualização: 04-06-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9504,6 +9504,15 @@ Calculadora: simétrica de uma curva ou região por uma relação com relação 
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 02-06-2022 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: base 2.
+__
+
+Media/Memes/Mathematical Ramblings - 04-06-2022 - 1.png
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
