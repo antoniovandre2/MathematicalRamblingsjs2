@@ -6,6 +6,12 @@ ____________________
 04-06-2022
 __
 
+Se há bugs, dou um commit com as correções imediatamente; deixo as atualizações para depois somente quando tratam-se de melhorias.
+_____
+
+04-06-2022
+__
+
 Aos poucos terminando de escrever um software; de tão extenso, pode tomar alguns dias, fazendo pouco a pouco a cada dia.
 
 Enquanto isto, posso, se desejar, paralelamente, criar outros novos.
