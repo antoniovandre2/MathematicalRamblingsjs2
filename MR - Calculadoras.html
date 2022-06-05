@@ -43773,6 +43773,12 @@ function antoniovandresimetricasuperficiecurvacoordenadaparametricaplanoout(str)
 	xarr = [];
 	yarr = [];
 	zarr = [];
+    maxx = -Number.MAX_VALUE;
+    maxy = -Number.MAX_VALUE;
+    maxz = -Number.MAX_VALUE;
+    minx = Number.MAX_VALUE;
+    miny = Number.MAX_VALUE;
+    minz = Number.MAX_VALUE;
 	maxv = -Number.MAX_VALUE;
 	minv = Number.MAX_VALUE;
 	contadorsimetricasuperficiecurvacoordenadaparametricaplano = 0;
@@ -46175,6 +46181,12 @@ function antoniovandresimetricacurvatridimensionalcoordenadaparametricaplanoout(
 	xarr = [];
 	yarr = [];
 	zarr = [];
+    maxx = -Number.MAX_VALUE;
+    maxy = -Number.MAX_VALUE;
+    maxz = -Number.MAX_VALUE;
+    minx = Number.MAX_VALUE;
+    miny = Number.MAX_VALUE;
+    minz = Number.MAX_VALUE;
 	maxv = -Number.MAX_VALUE;
 	minv = Number.MAX_VALUE;
 	contadorsimetricacurvatridimensionalcoordenadaparametricaplano = 0;
@@ -48801,6 +48813,12 @@ function antoniovandresimetricasuperficietridimensionalcoordenadasparametricaspl
 	xarr = [];
 	yarr = [];
 	zarr = [];
+    maxx = -Number.MAX_VALUE;
+    maxy = -Number.MAX_VALUE;
+    maxz = -Number.MAX_VALUE;
+    minx = Number.MAX_VALUE;
+    miny = Number.MAX_VALUE;
+    minz = Number.MAX_VALUE;
 	maxv = -Number.MAX_VALUE;
 	minv = Number.MAX_VALUE;
 	contadorsimetricasuperficietridimensionalcoordenadasparametricasplano = 0;
@@ -53166,6 +53184,12 @@ function antoniovandresimetricasuperficieregiaorelacaopontoout(str)
 	xarr = [];
 	yarr = [];
 	zarr = [];
+    maxx = -Number.MAX_VALUE;
+    maxy = -Number.MAX_VALUE;
+    maxz = -Number.MAX_VALUE;
+    minx = Number.MAX_VALUE;
+    miny = Number.MAX_VALUE;
+    minz = Number.MAX_VALUE;
 	maxv = -Number.MAX_VALUE;
 	minv = Number.MAX_VALUE;
 	contadorsimetricasuperficieregiaorelacaoponto = 0;
@@ -54649,6 +54673,1956 @@ function rotacaocapturargifsimetricasuperficieregiaorelacaopontoout()
 function downloadgifrotacaosimetricasuperficieregiaorelacaopontoout()
 	{
 	simetricasuperficieregiaorelacaopontoencoder.download("Mathematical Ramblings - gsdusortpurpt - " + document.getElementsByName("entradasimetricasuperficieregiaorelacaoponto")[0].value.replaceAll(" ", "").replaceAll(";", "[pv]").replaceAll(",", "[v]").replaceAll(":", "[dp]").replaceAll("|", "[bv]").replaceAll("*", "[mult]").replaceAll("/", "[div]").replaceAll(">=", "[mai]").replaceAll("<=", "[mei]").replaceAll("!=", "[dif]").replaceAll(">", "[ma]").replaceAll("<", "[me]").replaceAll("=", "[ig]") + ".gif");
+	}
+
+</script>
+
+<br><br>
+
+<h2>Calculadora: gráfico simétrico de uma superfície ou região tridimensional por uma relação com relação a um plano.</h2>
+
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: gráfico simétrico de uma superfície ou região tridimensional por uma relação com relação a um plano.
+
+Dependências: "MathematicalRamblings.js", "jQuery.js", "Plotly.js", "GIFEncoder.js", MathJax.
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
+
+<style>
+
+#myProgresssimetricasuperficieregiaorelacaoplano {
+	width: 100%;
+	background-image: linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	height: 30px;
+}
+
+#myBarsimetricasuperficieregiaorelacaoplano {
+	height: 20px;
+	text-align: center;
+	color: white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+}
+
+</style>
+
+Entre com uma string contendo, separados por ponto e vírgula "<span class="notranslate">;</span>": primeiro: as expressões das relações, separadas por dois pontos "<span class="notranslate">:</span>", das quais se deseja obter os gráficos simétricos, devem ser relações em $x$, $y$ e $z$; segundo: o coeficiente de $x$ do plano de referência; terceiro: o coeficiente de $y$ do plano de referência; quarto: o coeficiente de $z$ do plano de referência; quinto: o coeficiente independente do plano de referência; o plano de referência é da forma $ax + by + cz + d = 0$; sexto: "<span class="notranslate">0</span>" para não mostrar o plano de simetria e os gráficos originais, ou "<span class="notranslate">1</span>" para mostrar; sétimo: um número real como valor inferior para $x$; oitavo: um número real como valor superior para $x$; nono: um número real como valor inferior para $y$; décimo: um número real como valor superior para $y$; décimo primeiro: um número real como valor inferior para $z$; décimo segundo: um número real como valor superior para $z$; décimo terceiro: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.
+<br><br>
+<table border="1" width="100%"><tr><td><input type="text" name="entradasimetricasuperficieregiaorelacaoplano" style="width : 100%"></td></tr></table>
+<br>
+<table><tr><td><table><tr><td><input type="button" onclick="processarsimetricasuperficieregiaorelacaoplanoout()" value="Calcular"></td><td> <div class="cancelarsimetricasuperficieregiaorelacaoplano"></div></td></tr></table></td></tr></table>
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosimetricasuperficieregiaorelacaoplanoavisoanexo" id="resultadosimetricasuperficieregiaorelacaoplanoavisoanexo" readonly rows="10"></textarea></td></tr></table>
+<br>
+<div id="dot-chart-simetricasuperficieregiaorelacaoplano"></div>
+<div id="dot-chart-simetricasuperficieregiaorelacaoplano-espera" class="dot-chart-simetricasuperficieregiaorelacaoplano-espera"><img src="https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<span hidden>
+<img width=400 height=400 id="dot-chart-simetricasuperficieregiaorelacaoplano-esperagif"/>
+<canvas width=400 height=400 id="dot-chart-simetricasuperficieregiaorelacaoplano-esperacanvas"></canvas>
+</span>
+<br>
+<table><tr><td><table><tr><td><div class="rotacaosimetricasuperficieregiaorelacaoplano"></div></td><td> <div class="cancelarrotacaosimetricasuperficieregiaorelacaoplano"></div></td><td> <div class="downloadgifrotacaosimetricasuperficieregiaorelacaoplano"></div></td></tr></table></td></tr></table>
+<br>
+Log:
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosimetricasuperficieregiaorelacaoplano" id="resultadosimetricasuperficieregiaorelacaoplano" readonly rows="3"></textarea></td></tr></table>
+
+<br>
+
+<div id="myProgresssimetricasuperficieregiaorelacaoplano"><div id="myBarsimetricasuperficieregiaorelacaoplano"></div></div>
+
+<script>
+
+var lockcalc = 0;
+
+var expressao1 = [];
+var expressao2 = [];
+var expressaoeq = [];
+var expressaopart;
+var expressaopart1;
+var expressaopart2;
+var relacao = [];
+var relacaop = [];
+var ar;
+var br;
+var cr;
+var dr;
+var ar2;
+var br2;
+var cr2;
+var dr2;
+var mostrar;
+var mostrar2;
+var maxx = -Number.MAX_VALUE;
+var maxy = -Number.MAX_VALUE;
+var maxz = -Number.MAX_VALUE;
+var minx = Number.MAX_VALUE;
+var miny = Number.MAX_VALUE;
+var minz = Number.MAX_VALUE;
+var xp;
+var yp;
+var zp;
+var inf;
+var sup;
+var infy;
+var supy;
+var infz;
+var supz;
+var n;
+var resultpart1;
+var resultpart2;
+var parcela;
+var parcelay;
+var parcelaz;
+var n2;
+var inf2;
+var sup2;
+var inf2y;
+var sup2y;
+var inf2z;
+var sup2z;
+var list = [["x", antoniovandreoperadoresfuncoesconstantes(5)], ["y", antoniovandreoperadoresfuncoesconstantes(7)], ["z", antoniovandreoperadoresfuncoesconstantes(8)]];
+var listtam;
+var xarr = [];
+var yarr = [];
+var zarr = [];
+var maxv;
+var minv;
+var contadorsimetricasuperficieregiaorelacaoplano = 0;
+var indicefuncao = 0;
+var flagrepeticaosimetricasuperficieregiaorelacaoplano = 0;
+var flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 0;
+var flagrepeticaosimetricasuperficieregiaorelacaoplanot = 0;
+var flagplotly3Dsimetricasuperficieregiaoplano = 0;
+var trotsimetricasuperficieregiaorelacaoplano = 0;
+var flaganimacaorotacaosimetricasuperficieregiaorelacaoplano = 0;
+var flaggifsimetricasuperficieregiaorelacaoplano = 0;
+var flaggifcontextsimetricasuperficieregiaorelacaoplano = 0;
+var flagigualdadesimetricasuperficieregiaorelacaoplano;
+var simetricasuperficieregiaorelacaoplanoencoder;
+
+var elemsimetricasuperficieregiaorelacaoplano = document.getElementById('myBarsimetricasuperficieregiaorelacaoplano');
+
+elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+elemsimetricasuperficieregiaorelacaoplano.textContent = "Barra de progresso."
+
+var dotDivsimetricasuperficieregiaorelacaoplano = document.getElementById("dot-chart-simetricasuperficieregiaorelacaoplano");
+
+document.getElementById('resultadosimetricasuperficieregiaorelacaoplanoavisoanexo').value = antoniovandreoperadoresfuncoesconstantes(1);
+
+function processarsimetricasuperficieregiaorelacaoplanoout()
+	{
+	if (lockcalc == 1)
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = "Outra calculadora em execução.";
+		return;
+		}
+	else
+		lockcalc = 1;
+
+	var str = document.getElementsByName('entradasimetricasuperficieregiaorelacaoplano');
+
+	document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = "Calculando...";
+
+	$(".rotacaosimetricasuperficieregiaorelacaoplano").empty();
+	cancelarrotacaosimetricasuperficieregiaorelacaoplanoout();
+
+	trotsimetricasuperficieregiaorelacaoplano = 0;
+	flaganimacaorotacaosimetricasuperficieregiaorelacaoplano = 0;
+	flaggifsimetricasuperficieregiaorelacaoplano = 0;
+	flaggifcontextsimetricasuperficieregiaorelacaoplano = 0;
+
+	$(".cancelarsimetricasuperficieregiaorelacaoplano").append("<input type=\"button\" onclick=\"cancelarsimetricasuperficieregiaorelacaoplanoout()\" value=\"Cancelar\">");
+
+	if (flagplotly3Dsimetricasuperficieregiaoplano == 1)
+		{
+		Plotly.purge("dot-chart-simetricasuperficieregiaorelacaoplano");
+		$("#dot-chart-simetricasuperficieregiaorelacaoplano-espera").html("<img src=\"https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
+		}
+
+	antoniovandresimetricasuperficieregiaorelacaoplanoout(str[0].value, 0);
+	}
+
+function cancelarsimetricasuperficieregiaorelacaoplanoout()
+	{
+	flagrepeticaosimetricasuperficieregiaorelacaoplanot = 1;
+	return;
+	}
+
+function antoniovandresimetricasuperficieregiaorelacaoplanoout(str)
+	{
+	argumentos = str.split(";");
+	expressao1 = [];
+	expressao2 = [];
+	expressaoeq = [];
+	relacao = [];
+	xarr = [];
+	yarr = [];
+	zarr = [];
+	maxx = -Number.MAX_VALUE;
+	maxy = -Number.MAX_VALUE;
+	maxz = -Number.MAX_VALUE;
+	minx = Number.MAX_VALUE;
+	miny = Number.MAX_VALUE;
+	minz = Number.MAX_VALUE;
+	maxv = -Number.MAX_VALUE;
+	minv = Number.MAX_VALUE;
+	contadorsimetricasuperficieregiaorelacaoplano = 0;
+	indicefuncao = 0;
+	flagrepeticaosimetricasuperficieregiaorelacaoplano = 0;
+	flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 0;
+	flagrepeticaosimetricasuperficieregiaorelacaoplanot = 0;
+	flagigualdadesimetricasuperficieregiaorelacaoplano = 0;
+
+	if (argumentos.length != 13)
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	expressaopart = argumentos[0].split(":");
+	ar = argumentos[1].trim();
+	br = argumentos[2].trim();
+	cr = argumentos[3].trim();
+	dr = argumentos[4].trim();
+	mostrar = argumentos[5].trim();
+	inf = argumentos[6].trim();
+	sup = argumentos[7].trim();
+	infy = argumentos[8].trim();
+	supy = argumentos[9].trim();
+	infz = argumentos[10].trim();
+	supz = argumentos[11].trim();
+	n = argumentos[12].trim();
+
+	mostrar2 = parseInt(mostrar);
+
+	if (! ((mostrar2 == 0) || (mostrar2 == 1)))
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	
+	if (antoniovandrenumeronaturalpositivo(n) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (parseInt(n) == 1)
+			{
+			document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = "A resolução deve ser maior que 1.";
+			elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+			flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+			$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandremodulo(parseInt(n)) > antoniovandremaximovalorentrada(1))
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(2);
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	for (var i = 0; i < expressaopart.length; i++)
+		{
+		for (var j = 0; j < expressaopart[i].length - 1; j++)
+			{
+			if (antoniovandrecompararstrings(expressaopart[i][j] + expressaopart[i][j + 1], ">=") == 1)
+				{
+				relacao.push(">=");
+				break;
+				}
+
+			if (antoniovandrecompararstrings(expressaopart[i][j] + expressaopart[i][j + 1], "<=") == 1)
+				{
+				relacao.push("<=");
+				break;
+				}
+
+			if (antoniovandrecompararstrings(expressaopart[i][j] + expressaopart[i][j + 1], "!=") == 1)
+				{
+				relacao.push("!=");
+				break;
+				}
+
+			if (expressaopart[i][j] == ">")
+				{
+				relacao.push(">");
+				break;
+				}
+
+			if (expressaopart[i][j] == "<")
+				{
+				relacao.push("<");
+				break;
+				}
+
+			if (expressaopart[i][j] == "=")
+				{
+				relacao.push("=");
+				break;
+				}
+			}
+
+		if (relacao.length < i + 1)
+			{
+			document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+			elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+			flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+			$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+		expressaoparteq = expressaopart[i].split(relacao[i]);
+		expressaopart1 = expressaoparteq[0];
+		expressaopart2 = expressaoparteq[1];
+
+		if ((expressaoparteq.length != 2) || (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopart1, antoniovandreoperadoresfuncoesconstantes(2) + ",x,y,z")), antoniovandreremoverstrings(expressaopart1, antoniovandreoperadoresfuncoesconstantes(2) + ",x,y,z")) == "e") || (expressaopart1.trim() == "") || (antoniovandrecompararstrings(antoniovandreremoverletrasstring(antoniovandreremoverstrings(expressaopart2, antoniovandreoperadoresfuncoesconstantes(2) + ",x,y,z")), antoniovandreremoverstrings(expressaopart2, antoniovandreoperadoresfuncoesconstantes(2) + ",x,y,z")) == "e") || (expressaopart2.trim() == ""))
+			{
+			document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+			elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+			flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+			$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+		}
+
+	if (antoniovandreexpressaofuncaovalida(ar) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(br) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(cr) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(dr) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(inf) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(sup) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		ar2 = eval(antoniovandretraduzirexpressaofuncional(ar, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		br2 = eval(antoniovandretraduzirexpressaofuncional(br, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		cr2 = eval(antoniovandretraduzirexpressaofuncional(cr, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		dr2 = eval(antoniovandretraduzirexpressaofuncional(dr, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		inf2 = eval(antoniovandretraduzirexpressaofuncional(inf, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		sup2 = eval(antoniovandretraduzirexpressaofuncional(sup, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(infy) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(supy) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		inf2y = eval(antoniovandretraduzirexpressaofuncional(infy, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		sup2y = eval(antoniovandretraduzirexpressaofuncional(supy, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(infz) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	if (antoniovandreexpressaofuncaovalida(supz) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		inf2z = eval(antoniovandretraduzirexpressaofuncional(infz, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	try
+		{
+		sup2z = eval(antoniovandretraduzirexpressaofuncional(supz, 0));
+		}
+	catch (error)
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+
+	n2 = parseInt(n) - 1;
+
+	if (antoniovandrenumeroreal(ar2.toString()) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(ar2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(2);
+			elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+			flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+			$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(br2.toString()) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(br2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(2);
+			elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+			flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+			$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(cr2.toString()) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(cr2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(2);
+			elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+			flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+			$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(dr2.toString()) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(dr2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(2);
+			elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+			flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+			$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+	
+	if (antoniovandrenumeroreal(inf2.toString()) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(inf2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(2);
+			elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+			flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+			$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(sup2.toString()) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(sup2) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(2);
+			elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+			flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+			$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(inf2y.toString()) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(inf2y) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(2);
+			elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+			flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+			$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(sup2y.toString()) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(sup2y) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(2);
+			elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+			flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+			$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(inf2z.toString()) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(inf2z) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(2);
+			elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+			flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+			$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+
+	if (antoniovandrenumeroreal(sup2z.toString()) == "e")
+		{
+		document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+		elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+		elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+		elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+		flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		lockcalc = 0;
+
+		return;
+		}
+	else
+		if (antoniovandremodulo(sup2z) > antoniovandremaximovalorentrada(1))
+			{
+			document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(2);
+			elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+			flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+			$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+			lockcalc = 0;
+
+			return;
+			}
+	var x;
+	var y = inf2y;
+	var z = inf2z;
+
+	parcela = (sup2 - inf2) / n2;
+	parcelay = (sup2y - inf2y) / n2;
+	parcelaz = (sup2z - inf2z) / n2;
+
+	listtam = antoniovandreoperadoresfuncoesconstantes(3).length;
+
+	for (var i = 0; i < expressaopart.length; i++)
+		{
+		expressaoparteq = expressaopart[i].split(relacao[i]);
+		expressaopart1 = expressaoparteq[0];
+		expressaopart2 = expressaoparteq[1];
+
+		list = [["x", antoniovandreoperadoresfuncoesconstantes(5)], ["y", antoniovandreoperadoresfuncoesconstantes(7)], ["z", antoniovandreoperadoresfuncoesconstantes(8)]];
+
+		for (var j = 0; j < listtam; j++) list.unshift(antoniovandreoperadoresfuncoesconstantes(3)[j]);
+
+		expressao1.push(antoniovandresubstituirstrings(expressaopart1, list));
+		expressao2.push(antoniovandresubstituirstrings(expressaopart2, list));
+		}
+
+	function escoporepeticao()
+		{
+		if (flagrepeticaosimetricasuperficieregiaorelacaoplano2 == 0)
+			{
+			var percentualconclusao = Math.trunc(100 * contadorsimetricasuperficieregiaorelacaoplano / (n2 * n2 * n2 * expressaopart.length));
+			var percentualconclusaostr = percentualconclusao.toString() + "%";
+
+			elemsimetricasuperficieregiaorelacaoplano.style.width = percentualconclusaostr;
+			elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(64, 64, 64, 1) 0%, rgba(64, 255, 64, 1) 100%)";
+			elemsimetricasuperficieregiaorelacaoplano.textContent = percentualconclusaostr;
+
+			if ((indicefuncao == expressaopart.length) || (flagrepeticaosimetricasuperficieregiaorelacaoplano == 1))
+				{
+				if (mostrar2 == 1)
+					{
+					if ((ar2 != 0) && (br2 != 0) && (cr2 != 0))
+						{
+						for (var i = 0; i <= n2; i++)
+							for (var j = 0; j <= n2; j++)
+								{
+								xarr.push(minx + (maxx - minx) * i / n2);
+								yarr.push(miny + (maxy - miny) * j / n2);
+								zarr.push((-dr2 - ar2 * minx - br2 * miny) / cr2 + (-dr2 - ar2 * maxx - br2 * maxy) / cr2 * j / n2 + (dr2 + ar2 * minx + br2 * miny) / cr2 * i / n2);
+								}
+						}
+					else if ((ar2 != 0) && (br2 == 0) && (cr2 != 0))
+						{
+						for (var i = 0; i <= n2; i++)
+							for (var j = 0; j <= n2; j++)
+								{
+								xarr.push(minx + (maxx - minx) * i / n2);
+								yarr.push(miny + (maxy - miny) * j / n2);
+								zarr.push((-dr2 - cr2 * minz) / ar2 + cr2 * (minz - maxz) / ar2 * i / n2);
+								}
+						}
+					else if ((ar2 == 0) && (br2 != 0) && (cr2 != 0))
+						{
+						for (var i = 0; i <= n2; i++)
+							for (var j = 0; j <= n2; j++)
+								{
+								xarr.push(minx + (maxx - minx) * j / n2);
+								yarr.push(miny + (maxy - miny) * i / n2);
+								zarr.push((-dr2 - br2 * miny) / cr2 + br2 * (miny - maxy) / cr2 * i / n2);
+								}
+						}
+					else if ((ar2 != 0) && (br2 != 0) && (cr2 == 0))
+						{
+						for (var i = 0; i <= n2; i++)
+							for (var j = 0; j <= n2; j++)
+								{
+								xarr.push(minx + (maxx - minx) * i / n2);
+								yarr.push((-dr2 - ar2 * minx) / br2 + ar2 * (minx - maxx) / br2 * i / n2);
+								zarr.push(minz + (maxz - minz) * j / n2);
+								}
+						}
+					else if ((ar2 == 0) && (br2 == 0) && (cr2 != 0))
+						{
+						for (var i = 0; i <= n2; i++)
+							for (var j = 0; j <= n2; j++)
+								{
+								xarr.push(minz + (maxz - minz) * i / n2);
+								yarr.push(minz + (maxz - minz) * j / n2);
+								zarr.push(-dr2 / cr2);
+								}
+						}
+					else if ((ar2 != 0) && (br2 == 0) && (cr2 == 0))
+						{
+						for (var i = 0; i <= n2; i++)
+							for (var j = 0; j <= n2; j++)
+								{
+								xarr.push(-dr2 / ar2);
+								yarr.push(minx + (maxx - minx) * i / n2);
+								zarr.push(minx + (maxx - minx) * j / n2);
+								}
+						}
+					else if ((ar2 == 0) && (br2 != 0) && (cr2 == 0))
+						{
+						for (var i = 0; i <= n2; i++)
+							for (var j = 0; j <= n2; j++)
+								{
+								xarr.push(miny + (maxy - miny) * i / n2);
+								yarr.push(-dr2 / br2);
+								zarr.push(miny + (maxy - miny) * j / n2);
+								}
+						}
+					}
+
+				document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = "Finalizando. Favor aguardar...";
+
+				flagrepeticaosimetricasuperficieregiaorelacaoplano = 1;
+				return;
+				}
+
+			x = inf2 + (parcela / 2) + ((contadorsimetricasuperficieregiaorelacaoplano % n2) * parcela);
+
+			if (contadorsimetricasuperficieregiaorelacaoplano % n2 == 0) y += parcelay;
+			if (contadorsimetricasuperficieregiaorelacaoplano % (n2 *n2) == 0) z += parcelaz;
+
+			try
+				{
+				resultpart1 = eval(antoniovandresubstituirstrings(expressao1[indicefuncao], [[antoniovandreoperadoresfuncoesconstantes(5), "(" + x.toString() + ")"], [antoniovandreoperadoresfuncoesconstantes(7), "(" + y.toString() + ")"], [antoniovandreoperadoresfuncoesconstantes(8), "(" + z.toString() + ")"]]));
+				}
+			catch (error)
+				{
+				document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+				elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+				elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+				elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+				flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+				$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+				lockcalc = 0;
+
+				return;
+				}
+
+			try
+				{
+				resultpart2 = eval(antoniovandresubstituirstrings(expressao2[indicefuncao], [[antoniovandreoperadoresfuncoesconstantes(5), "(" + x.toString() + ")"], [antoniovandreoperadoresfuncoesconstantes(7), "(" + y.toString() + ")"], [antoniovandreoperadoresfuncoesconstantes(8), "(" + z.toString() + ")"]]));
+				}
+			catch (error)
+				{
+				document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = simetricasuperficieregiaorelacaoplanomensagemerro();
+				elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+				elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+				elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+				flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+				$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+				lockcalc = 0;
+
+				return;
+				}
+
+			if ((antoniovandrenumeroreal(resultpart1.toString()) == "e") || (antoniovandrenumeroreal(resultpart2.toString()) == "e"))
+				{
+				if ((antoniovandrecompararstrings(resultpart1, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpart1, antoniovandremensagenserro(6)) == 1) || (antoniovandrecompararstrings(resultpart2, antoniovandremensagenserro(5)) == 1) || (antoniovandrecompararstrings(resultpart2, antoniovandremensagenserro(6)) == 1))
+					{
+					document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(6);
+					elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+					elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+					elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+					flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+					$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+					lockcalc = 0;
+
+					return;
+					}
+				else
+					{
+					if ((antoniovandrecompararstrings(resultpart1, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpart1, antoniovandremensagenserro(4)) == 1) || (antoniovandrecompararstrings(resultpart2, antoniovandremensagenserro(3)) == 1) || (antoniovandrecompararstrings(resultpart2, antoniovandremensagenserro(4)) == 1))
+						{
+						document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(4);
+						elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+						elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+						elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+						flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+						$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+						lockcalc = 0;
+
+						return;
+						}
+					else
+						{
+						if ((antoniovandrecompararstrings(resultpart1, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpart1, antoniovandremensagenserro(2)) == 1) || (antoniovandrecompararstrings(resultpart2, antoniovandremensagenserro(1)) == 1) || (antoniovandrecompararstrings(resultpart2, antoniovandremensagenserro(2)) == 1))
+							{
+							document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(2);
+							elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+							elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+							elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+							flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+							$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+							lockcalc = 0;
+
+							return;
+							}
+						}
+					}
+				}
+			else
+				{
+				if ((antoniovandremodulo(resultpart1) > parseFloat(antoniovandremaximovalorsaida(1))) || (antoniovandremodulo(resultpart2) > parseFloat(antoniovandremaximovalorsaida(1))))
+					{
+					document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = antoniovandremensagenserro(6);
+					elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+					elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+					elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+					flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+
+					$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+					lockcalc = 0;
+
+					return;
+					}
+				else
+					{
+					if ((antoniovandrecompararstrings(relacao[indicefuncao], ">=") == 1) && (resultpart1 >= resultpart2))
+						{
+						xp = x;
+						yp = y;
+						zp = z;
+
+						var xt = xp - 2 * ar2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						var yt = yp - 2 * br2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						var zt = zp - 2 * cr2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						xarr.push(xt);
+						yarr.push(yt);
+						zarr.push(zt);
+						relacaop.push([1, -1]);
+
+						if (mostrar2 == 1)
+							{
+							xarr.push(xp);
+							yarr.push(yp);
+							zarr.push(zp);
+
+							if (maxx < xp) maxx = xp;
+							if (maxx < xt) maxx = xt;
+							if (maxy < yp) maxy = yp;
+							if (maxy < yt) maxy = yt;
+							if (maxz < zp) maxz = zp;
+							if (maxz < zt) maxz = zt;
+
+							if (minx > xp) minx = xp;
+							if (minx > xt) minx = xt;
+							if (miny > yp) miny = yp;
+							if (miny > yt) miny = yt;
+							if (minz > zp) minz = zp;
+							if (minz > zt) minz = zt;
+							}
+
+						if (xt > maxv)
+							maxv = xt;
+
+						if (xp > maxv)
+							maxv = xp;
+
+						if (yt > maxv)
+							maxv = yt;
+
+						if (yp > maxv)
+							maxv = yp;
+
+						if (zt > maxv)
+							maxv = zt;
+
+						if (zp > maxv)
+							maxv = zp;
+
+						if (xt < minv)
+							minv = xt;
+
+						if (xp < minv)
+							minv = xp;
+
+						if (yt < minv)
+							minv = yt;
+
+						if (yp < minv)
+							minv = yp;
+
+						if (zt < minv)
+							minv = zt;
+
+						if (zp < minv)
+							minv = zp;
+						}
+
+					if ((antoniovandrecompararstrings(relacao[indicefuncao], "<=") == 1) && (resultpart1 <= resultpart2))
+						{
+						xp = x;
+						yp = y;
+						zp = z;
+
+						var xt = xp - 2 * ar2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						var yt = yp - 2 * br2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						var zt = zp - 2 * cr2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						xarr.push(xt);
+						yarr.push(yt);
+						zarr.push(zt);
+						relacaop.push([1, -1]);
+
+						if (mostrar2 == 1)
+							{
+							xarr.push(xp);
+							yarr.push(yp);
+							zarr.push(zp);
+
+							if (maxx < xp) maxx = xp;
+							if (maxx < xt) maxx = xt;
+							if (maxy < yp) maxy = yp;
+							if (maxy < yt) maxy = yt;
+							if (maxz < zp) maxz = zp;
+							if (maxz < zt) maxz = zt;
+
+							if (minx > xp) minx = xp;
+							if (minx > xt) minx = xt;
+							if (miny > yp) miny = yp;
+							if (miny > yt) miny = yt;
+							if (minz > zp) minz = zp;
+							if (minz > zt) minz = zt;
+							}
+
+						if (xt > maxv)
+							maxv = xt;
+
+						if (xp > maxv)
+							maxv = xp;
+
+						if (yt > maxv)
+							maxv = yt;
+
+						if (yp > maxv)
+							maxv = yp;
+
+						if (zt > maxv)
+							maxv = zt;
+
+						if (zp > maxv)
+							maxv = zp;
+
+						if (xt < minv)
+							minv = xt;
+
+						if (xp < minv)
+							minv = xp;
+
+						if (yt < minv)
+							minv = yt;
+
+						if (yp < minv)
+							minv = yp;
+
+						if (zt < minv)
+							minv = zt;
+
+						if (zp < minv)
+							minv = zp;
+						}
+
+					if ((relacao[indicefuncao] == ">") && (resultpart1 > resultpart2))
+						{
+						xp = x;
+						yp = y;
+						zp = z;
+
+						var xt = xp - 2 * ar2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						var yt = yp - 2 * br2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						var zt = zp - 2 * cr2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						xarr.push(xt);
+						yarr.push(yt);
+						zarr.push(zt);
+						relacaop.push([1, -1]);
+
+						if (mostrar2 == 1)
+							{
+							xarr.push(xp);
+							yarr.push(yp);
+							zarr.push(zp);
+
+							if (maxx < xp) maxx = xp;
+							if (maxx < xt) maxx = xt;
+							if (maxy < yp) maxy = yp;
+							if (maxy < yt) maxy = yt;
+							if (maxz < zp) maxz = zp;
+							if (maxz < zt) maxz = zt;
+
+							if (minx > xp) minx = xp;
+							if (minx > xt) minx = xt;
+							if (miny > yp) miny = yp;
+							if (miny > yt) miny = yt;
+							if (minz > zp) minz = zp;
+							if (minz > zt) minz = zt;
+							}
+
+						if (xt > maxv)
+							maxv = xt;
+
+						if (xp > maxv)
+							maxv = xp;
+
+						if (yt > maxv)
+							maxv = yt;
+
+						if (yp > maxv)
+							maxv = yp;
+
+						if (zt > maxv)
+							maxv = zt;
+
+						if (zp > maxv)
+							maxv = zp;
+
+						if (xt < minv)
+							minv = xt;
+
+						if (xp < minv)
+							minv = xp;
+
+						if (yt < minv)
+							minv = yt;
+
+						if (yp < minv)
+							minv = yp;
+
+						if (zt < minv)
+							minv = zt;
+
+						if (zp < minv)
+							minv = zp;
+						}
+
+					if ((relacao[indicefuncao] == "<") && (resultpart1 < resultpart2))
+						{
+						xp = x;
+						yp = y;
+						zp = z;
+
+						var xt = xp - 2 * ar2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						var yt = yp - 2 * br2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						var zt = zp - 2 * cr2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						xarr.push(xt);
+						yarr.push(yt);
+						zarr.push(zt);
+						relacaop.push([1, -1]);
+
+						if (mostrar2 == 1)
+							{
+							xarr.push(xp);
+							yarr.push(yp);
+							zarr.push(zp);
+
+							if (maxx < xp) maxx = xp;
+							if (maxx < xt) maxx = xt;
+							if (maxy < yp) maxy = yp;
+							if (maxy < yt) maxy = yt;
+							if (maxz < zp) maxz = zp;
+							if (maxz < zt) maxz = zt;
+
+							if (minx > xp) minx = xp;
+							if (minx > xt) minx = xt;
+							if (miny > yp) miny = yp;
+							if (miny > yt) miny = yt;
+							if (minz > zp) minz = zp;
+							if (minz > zt) minz = zt;
+							}
+
+						if (xt > maxv)
+							maxv = xt;
+
+						if (xp > maxv)
+							maxv = xp;
+
+						if (yt > maxv)
+							maxv = yt;
+
+						if (yp > maxv)
+							maxv = yp;
+
+						if (zt > maxv)
+							maxv = zt;
+
+						if (zp > maxv)
+							maxv = zp;
+
+						if (xt < minv)
+							minv = xt;
+
+						if (xp < minv)
+							minv = xp;
+
+						if (yt < minv)
+							minv = yt;
+
+						if (yp < minv)
+							minv = yp;
+
+						if (zt < minv)
+							minv = zt;
+
+						if (zp < minv)
+							minv = zp;
+						}
+
+					if ((relacao[indicefuncao] == "=") && (antoniovandremodulo(resultpart2 - resultpart1) < 1000000 * antoniovandreprecisaoreal(4)))
+						{
+						flagigualdadesimetricasuperficieregiaorelacaoplano = 1;
+
+						xp = x;
+						yp = y;
+						zp = z;
+
+						var xt = xp - 2 * ar2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						var yt = yp - 2 * br2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						var zt = zp - 2 * cr2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						xarr.push(xt);
+						yarr.push(yt);
+						zarr.push(zt);
+						relacaop.push([1, -1]);
+
+						if (mostrar2 == 1)
+							{
+							xarr.push(xp);
+							yarr.push(yp);
+							zarr.push(zp);
+
+							if (maxx < xp) maxx = xp;
+							if (maxx < xt) maxx = xt;
+							if (maxy < yp) maxy = yp;
+							if (maxy < yt) maxy = yt;
+							if (maxz < zp) maxz = zp;
+							if (maxz < zt) maxz = zt;
+
+							if (minx > xp) minx = xp;
+							if (minx > xt) minx = xt;
+							if (miny > yp) miny = yp;
+							if (miny > yt) miny = yt;
+							if (minz > zp) minz = zp;
+							if (minz > zt) minz = zt;
+							}
+
+						if (xt > maxv)
+							maxv = xt;
+
+						if (xp > maxv)
+							maxv = xp;
+
+						if (yt > maxv)
+							maxv = yt;
+
+						if (yp > maxv)
+							maxv = yp;
+
+						if (zt > maxv)
+							maxv = zt;
+
+						if (zp > maxv)
+							maxv = zp;
+
+						if (xt < minv)
+							minv = xt;
+
+						if (xp < minv)
+							minv = xp;
+
+						if (yt < minv)
+							minv = yt;
+
+						if (yp < minv)
+							minv = yp;
+
+						if (zt < minv)
+							minv = zt;
+
+						if (zp < minv)
+							minv = zp;
+						}
+
+					if ((antoniovandrecompararstrings(relacao[indicefuncao], "!=") == 1) && (antoniovandremodulo(resultpart2 - resultpart1) > 1000000 * antoniovandreprecisaoreal(4)))
+						{
+						xp = x;
+						yp = y;
+						zp = z;
+
+						var xt = xp - 2 * ar2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						var yt = yp - 2 * br2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						var zt = zp - 2 * cr2 * (dr2 + ar2 * xp + br2 * yp + cr2 * zp) / (ar2 * ar2 + br2 * br2 + cr2 * cr2);
+
+						xarr.push(xt);
+						yarr.push(yt);
+						zarr.push(zt);
+						relacaop.push([1, -1]);
+
+						if (mostrar2 == 1)
+							{
+							xarr.push(xp);
+							yarr.push(yp);
+							zarr.push(zp);
+
+							if (maxx < xp) maxx = xp;
+							if (maxx < xt) maxx = xt;
+							if (maxy < yp) maxy = yp;
+							if (maxy < yt) maxy = yt;
+							if (maxz < zp) maxz = zp;
+							if (maxz < zt) maxz = zt;
+
+							if (minx > xp) minx = xp;
+							if (minx > xt) minx = xt;
+							if (miny > yp) miny = yp;
+							if (miny > yt) miny = yt;
+							if (minz > zp) minz = zp;
+							if (minz > zt) minz = zt;
+							}
+
+						if (xt > maxv)
+							maxv = xt;
+
+						if (xp > maxv)
+							maxv = xp;
+
+						if (yt > maxv)
+							maxv = yt;
+
+						if (yp > maxv)
+							maxv = yp;
+
+						if (zt > maxv)
+							maxv = zt;
+
+						if (zp > maxv)
+							maxv = zp;
+
+						if (xt < minv)
+							minv = xt;
+
+						if (xp < minv)
+							minv = xp;
+
+						if (yt < minv)
+							minv = yt;
+
+						if (yp < minv)
+							minv = yp;
+
+						if (zt < minv)
+							minv = zt;
+
+						if (zp < minv)
+							minv = zp;
+						}
+					}
+				}
+
+			contadorsimetricasuperficieregiaorelacaoplano++;
+
+			if (contadorsimetricasuperficieregiaorelacaoplano % (n2 * n2) == 0) y = inf2y;
+
+			if (contadorsimetricasuperficieregiaorelacaoplano % (n2 * n2 * n2) == 0)
+				{
+				indicefuncao++;
+				y = inf2y;
+				z = inf2z;
+				}
+			}
+		}
+
+	function escoporepeticao2()
+		{
+		if (flagrepeticaosimetricasuperficieregiaorelacaoplano2 == 0)
+			{
+			if (flagrepeticaosimetricasuperficieregiaorelacaoplano == 1)
+				{
+				$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+				if (xarr.length == 0)
+					{
+					document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = "Nenhum ponto encontrado ou expressão inválida.";
+
+					lockcalc = 0;
+
+					flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+					return;
+					}
+				else
+					document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = "Sucesso.";
+
+				$(".dot-chart-simetricasuperficieregiaorelacaoplano-espera").empty();
+
+				var trace1 = {
+					x: xarr, y: yarr, z: zarr,
+					mode: 'markers',
+					marker: {
+						size: 1,
+						color: "rgba(0, 0, 0, 1)"},
+					type: 'scatter3d'
+				};
+
+				var maxa = [maxv];
+
+				var trace2 = {
+					x: maxa, y: maxa, z: maxa,
+					mode: 'markers',
+					marker: {
+						color: "rgba(255, 255, 255, 0)"},
+					type: 'scatter3d'
+				};
+
+				var mina = [minv];
+
+				var trace3 = {
+					x: mina, y: mina, z: mina,
+					mode: 'markers',
+					marker: {
+						color: "rgba(255, 255, 255, 0)"},
+					type: 'scatter3d'
+				};
+
+				var data = [trace1, trace2, trace3];
+
+				var layout = {margin: {
+						l: 0,
+						r: 0,
+						b: 0,
+						t: 0
+					},
+					showlegend: false,
+					height: 800,
+					width: 800
+				};
+
+				$(".dot-chart-simetricasuperficieregiaorelacaoplano-espera").empty();
+				Plotly.newPlot('dot-chart-simetricasuperficieregiaorelacaoplano-espera', data, layout);
+
+				$(".rotacaosimetricasuperficieregiaorelacaoplano").append("<input type=\"button\" onclick=\"rotacaosimetricasuperficieregiaorelacaoplanoout()\" value=\"Rotação automática\">");
+
+				flagplotly3Dsimetricasuperficieregiaoplano = 1;
+
+				lockcalc = 0;
+
+				flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1;
+				}
+			}
+		}
+
+	var rep = setInterval(escoporepeticao, 10);
+	var rep2 = setInterval(escoporepeticao2, 10);
+	var rep3 = setInterval(function(){if (flagrepeticaosimetricasuperficieregiaorelacaoplanot == 1) {flagrepeticaosimetricasuperficieregiaorelacaoplano2 = 1; document.getElementById('resultadosimetricasuperficieregiaorelacaoplano').value = "Cálculo cancelado."; elemsimetricasuperficieregiaorelacaoplano.style.width = "100%"; elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)"; elemsimetricasuperficieregiaorelacaoplano.textContent = "Cálculo cancelado."; $(".cancelarsimetricasuperficieregiaorelacaoplano").empty(); flagrepeticaosimetricasuperficieregiaorelacaoplanot = 0; lockcalc = 0; return;}}, 10);
+	var antoniovandrelimparrepeticoes = setInterval(function(){if (lockcalc == 0){try{clearInterval(rep); clearInterval(rep2); clearInterval(rep3);} catch (e){}}; return;}, 60000);
+
+	if (flagrepeticaosimetricasuperficieregiaorelacaoplano2 == 1)
+		{
+		try {
+		clearInterval(rep);
+		clearInterval(rep2);
+		clearInterval(rep3);
+		xarr = [];
+		yarr = [];
+		zarr = [];
+		} catch (e){}
+
+		$(".cancelarsimetricasuperficieregiaorelacaoplano").empty();
+
+		return;
+		}
+	}
+
+function simetricasuperficieregiaorelacaoplanomensagemerro()
+	{
+	elemsimetricasuperficieregiaorelacaoplano.style.width = "100%";
+	elemsimetricasuperficieregiaorelacaoplano.style.backgroundImage = "linear-gradient(to right, rgba(128, 128, 128, 0.9) 0%, rgba(64, 64, 64, 0.9) 100%)";
+	elemsimetricasuperficieregiaorelacaoplano.textContent = "Erro ao calcular."
+
+	return antoniovandreoperadoresfuncoesconstantes(4) + " Entre com uma string contendo, separados por ponto e vírgula \";\": primeiro: as expressões das relações, separadas por dois pontos \":\", das quais se deseja obter os gráficos simétricos, devem ser relações em \"x\", \"y\" e \"z\"; segundo: o coeficiente de \"x\" do plano de referência; terceiro: o coeficiente de \"y\" do plano de referência; quarto: o coeficiente de \"z\" do plano de referência; quinto: o coeficiente independente do plano de referência; o plano de referência é da forma \"ax + by + cz + d = 0\"; sexto: \"0\" para não mostrar o plano de simetria e os gráficos originais, ou \"1\" para mostrar; sétimo: um número real como valor inferior para \"x\"; oitavo: um número real como valor superior para \"x\"; nono: um número real como valor inferior para \"y\"; décimo: um número real como valor superior para \"y\"; décimo primeiro: um número real como valor inferior para \"z\"; décimo segundo: um número real como valor superior para \"z\"; décimo terceiro: a resolução, quanto maior, mais preciso, porém mais demorado e computacionalmente mais exigente.";
+	}
+
+function animacaorotacaosimetricasuperficieregiaorelacaoplano()
+	{
+	Plotly.relayout('dot-chart-simetricasuperficieregiaorelacaoplano-espera', {"scene.camera.eye": {x: 1.5 * antoniovandrecos(trotsimetricasuperficieregiaorelacaoplano), y: 1.5 * antoniovandresen(trotsimetricasuperficieregiaorelacaoplano), z: 1.5}, "dragMode": false, "scrollZoom": false, "displayModeBar": false}).then(function(gd){
+		if (flaganimacaorotacaosimetricasuperficieregiaorelacaoplano == 1)
+			{
+			setTimeout(function() {
+				if (flaggifsimetricasuperficieregiaorelacaoplano == 1)
+					{
+					Plotly.toImage(gd,{format:'png', width: document.getElementById('dot-chart-simetricasuperficieregiaorelacaoplano-esperagif').width, height: document.getElementById('dot-chart-simetricasuperficieregiaorelacaoplano-esperagif').height}).then(function(url) {
+						document.getElementById('dot-chart-simetricasuperficieregiaorelacaoplano-esperagif').src = url;
+						
+						if (flaggifcontextsimetricasuperficieregiaorelacaoplano == 0)
+							{
+								try {
+								simetricasuperficieregiaorelacaoplanocontext = document.getElementById('dot-chart-simetricasuperficieregiaorelacaoplano-esperacanvas').getContext("2d");
+								simetricasuperficieregiaorelacaoplanoencoder = new GIFEncoder();
+								simetricasuperficieregiaorelacaoplanoencoder.setRepeat(0);
+								simetricasuperficieregiaorelacaoplanoencoder.setDelay(40);
+								simetricasuperficieregiaorelacaoplanoencoder.start();
+								} catch (e){};
+
+							flaggifcontextsimetricasuperficieregiaorelacaoplano = 1;
+							}
+
+					simetricasuperficieregiaorelacaoplanocontext.drawImage(document.getElementById('dot-chart-simetricasuperficieregiaorelacaoplano-esperagif'), 0, 0);
+					try {simetricasuperficieregiaorelacaoplanoencoder.addFrame(simetricasuperficieregiaorelacaoplanocontext);} catch (e){};
+					});
+					}
+
+				requestAnimationFrame(animacaorotacaosimetricasuperficieregiaorelacaoplano);
+			}, 10);
+
+			flaganimacaorotacaosimetricasuperficieregiaorelacaoplano = 1;
+			}
+		else if (flaganimacaorotacaosimetricasuperficieregiaorelacaoplano == 2)
+			{
+			cancelAnimationFrame(animacaorotacaosimetricasuperficieregiaorelacaoplano);
+			flaganimacaorotacaosimetricasuperficieregiaorelacaoplano = 0;
+			}
+
+	var divisorframe;
+
+	if (flaggifsimetricasuperficieregiaorelacaoplano == 1)
+		divisorframe = 100
+	else
+		divisorframe = 400;
+		
+	if (trotsimetricasuperficieregiaorelacaoplano >= 2 * Math.PI - 2 * Math.PI / divisorframe)
+		{
+		if (flaggifsimetricasuperficieregiaorelacaoplano == 1)
+			{
+			try {simetricasuperficieregiaorelacaoplanoencoder.finish();} catch (e){};
+
+			$(".downloadgifrotacaosimetricasuperficieregiaorelacaoplano").empty();
+			$(".downloadgifrotacaosimetricasuperficieregiaorelacaoplano").append("<input type=\"button\" onclick=\"downloadgifrotacaosimetricasuperficieregiaorelacaoplanoout()\" value=\"Download gif animado\">");
+
+			flaggifsimetricasuperficieregiaorelacaoplano = 0;
+			}
+
+		Plotly.relayout('dot-chart-simetricasuperficieregiaorelacaoplano-espera', {"scene.camera.eye": {x: 1.5 * antoniovandrecos(trotsimetricasuperficieregiaorelacaoplano), y: 1.5 * antoniovandresen(trotsimetricasuperficieregiaorelacaoplano), z: 1.5}});
+
+		trotsimetricasuperficieregiaorelacaoplano = 0;
+		}
+	else
+		{
+		if (flaggifsimetricasuperficieregiaorelacaoplano == 1)
+			trotsimetricasuperficieregiaorelacaoplano += (2 * Math.PI) / divisorframe
+		else
+			trotsimetricasuperficieregiaorelacaoplano += (2 * Math.PI) / divisorframe;
+		}
+	});
+	}
+
+function cancelarrotacaosimetricasuperficieregiaorelacaoplanoout()
+	{
+	flaganimacaorotacaosimetricasuperficieregiaorelacaoplano = 2;
+
+	if (flaggifsimetricasuperficieregiaorelacaoplano == 1)
+		{
+		try {simetricasuperficieregiaorelacaoplanoencoder.finish();} catch (e){};
+
+		Plotly.relayout('dot-chart-simetricasuperficieregiaorelacaoplano-espera', {"scene.camera.eye": {x: 1.5 * antoniovandrecos(trotsimetricasuperficieregiaorelacaoplano), y: 1.5 * antoniovandresen(trotsimetricasuperficieregiaorelacaoplano), z: 1.5}});
+
+		flaggifsimetricasuperficieregiaorelacaoplano = 0;
+		}
+
+	$(".downloadgifrotacaosimetricasuperficieregiaorelacaoplano").empty();
+	$(".cancelarrotacaosimetricasuperficieregiaorelacaoplano").empty();
+	}
+
+function rotacaosimetricasuperficieregiaorelacaoplanoout()
+	{
+	if (flaganimacaorotacaosimetricasuperficieregiaorelacaoplano == 0)
+		{
+		$(".cancelarrotacaosimetricasuperficieregiaorelacaoplano").append("<input type=\"button\" onclick=\"cancelarrotacaosimetricasuperficieregiaorelacaoplanoout()\" value=\"Cancelar rotação automática\">");
+
+		animacaorotacaosimetricasuperficieregiaorelacaoplano();
+
+		if (flaggifsimetricasuperficieregiaorelacaoplano == 0)
+			{
+			$(".downloadgifrotacaosimetricasuperficieregiaorelacaoplano").empty();
+			$(".downloadgifrotacaosimetricasuperficieregiaorelacaoplano").append("<input type=\"button\" onclick=\"rotacaocapturargifsimetricasuperficieregiaorelacaoplanoout()\" value=\"Capturar gif animado\">");
+			}
+
+		flaganimacaorotacaosimetricasuperficieregiaorelacaoplano = 1;
+		}
+	}
+
+function rotacaocapturargifsimetricasuperficieregiaorelacaoplanoout()
+	{
+	$(".downloadgifrotacaosimetricasuperficieregiaorelacaoplano").empty();
+	$(".downloadgifrotacaosimetricasuperficieregiaorelacaoplano").append("Capturando gif animado...");
+
+	trotsimetricasuperficieregiaorelacaoplano = 0;
+	flaggifsimetricasuperficieregiaorelacaoplano = 1;
+	}
+
+function downloadgifrotacaosimetricasuperficieregiaorelacaoplanoout()
+	{
+	simetricasuperficieregiaorelacaoplanoencoder.download("Mathematical Ramblings - gsdusortpurpl - " + document.getElementsByName("entradasimetricasuperficieregiaorelacaoplano")[0].value.replaceAll(" ", "").replaceAll(";", "[pv]").replaceAll(",", "[v]").replaceAll(":", "[dp]").replaceAll("|", "[bv]").replaceAll("*", "[mult]").replaceAll("/", "[div]").replaceAll(">=", "[mai]").replaceAll("<=", "[mei]").replaceAll("!=", "[dif]").replaceAll(">", "[ma]").replaceAll("<", "[me]").replaceAll("=", "[ig]") + ".gif");
 	}
 
 </script>
