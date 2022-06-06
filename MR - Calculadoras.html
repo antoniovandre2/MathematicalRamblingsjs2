@@ -8,7 +8,7 @@ Compilação das calculadoras JavaScript do Mathematical Ramblings.
 
 Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
-Última atualização: 05-06-2022.
+Última atualização: 06-06-2022.
 
 -->
 
@@ -22267,21 +22267,49 @@ function processarresolucaoequacaosegundograupassopasso()
 
                                 if (coefs3[1] == 1)
                                     {
-                                    var coefs4 = antoniovandrefracaogeratriz(antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))), 1);
+                                    var coefs4 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))), 1);
 
                                     if (coefs4[1] == 1)
-                                        out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm" + coefs3[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + " + coefs3[0].toString() + "}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - " + coefs3[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{" + coefs4[0].toString() + "}{" + coefs2[0].toString() + "}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + coefs2[0].toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
+                                        {
+                                        var coefs5 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))), 1);
+
+                                        if (coefs5[1] == 1)
+                                            out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm" + coefs3[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + " + coefs3[0].toString() + "}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - " + coefs3[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{" + coefs4[0].toString() + "}{" + coefs2[0].toString() + "}\\ \\vee\\ x = \\dfrac{" + coefs5[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
+                                        else
+                                            out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm" + coefs3[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + " + coefs3[0].toString() + "}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - " + coefs3[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{" + coefs4[0].toString() + "}{" + coefs2[0].toString() + "}\\ \\vee\\ x = \\dfrac{\\dfrac{" + coefs5[0].toString() + "}{" + coefs5[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString();
+                                        }
                                     else
-                                        out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm" + coefs3[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + " + coefs3[0].toString() + "}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - " + coefs3[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{\\dfrac{" + coefs4[0].toString() + "}{" + coefs4[1].toString() + "}}{" + coefs2[0].toString() + "}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + coefs2[0].toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString();
+                                        {
+                                        var coefs5 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))), 1);
+
+                                        if (coefs5[1] == 1)
+                                            out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm" + coefs3[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + " + coefs3[0].toString() + "}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - " + coefs3[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{\\dfrac{" + coefs4[0].toString() + "}{" + coefs4[1].toString() + "}}{" + coefs2[0].toString() + "}\\ \\vee\\ x = \\dfrac{" + coefs5[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
+                                        else
+                                            out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm" + coefs3[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + " + coefs3[0].toString() + "}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - " + coefs3[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{\\dfrac{" + coefs4[0].toString() + "}{" + coefs4[1].toString() + "}}{" + coefs2[0].toString() + "}\\ \\vee\\ x = \\dfrac{\\dfrac{" + coefs5[0].toString() + "}{" + coefs5[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString();
+                                        }
                                     }
                                 else
                                     {
-                                    var coefs4 = antoniovandrefracaogeratriz(antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))), 1);
+                                    var coefs4 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))), 1);
 
                                     if (coefs4[1] == 1)
-                                        out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm\\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{" + coefs4[0].toString() + "}{" + coefs2[0].toString() + "}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + coefs2[0].toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
+                                        {
+                                        var coefs5 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))), 1);
+
+                                        if (coefs5[1] == 1)
+                                            out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm\\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{" + coefs4[0].toString() + "}{" + coefs2[0].toString() + "}\\ \\vee\\ x = \\dfrac{" + coefs5[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
+                                        else
+                                            out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm\\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{" + coefs4[0].toString() + "}{" + coefs2[0].toString() + "}\\ \\vee\\ x = \\dfrac{\\dfrac{" + coefs5[0].toString() + "}{" + coefs5[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString();
+                                        }
                                     else
-                                        out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm\\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{\\dfrac{" + coefs4[0].toString() + "}{" + coefs4[1].toString() + "}}{" + coefs2[0].toString() + "}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{" + coefs2[0].toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString();
+                                        {
+                                        var coefs5 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))), 1);
+
+                                        if (coefs5[1] == 1)
+                                            out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm\\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{\\dfrac{" + coefs4[0].toString() + "}{" + coefs4[1].toString() + "}}{" + coefs2[0].toString() + "}\\ \\vee\\ x = \\dfrac{" + coefs5[0].toString() + "}{" + coefs2[0].toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
+                                        else
+                                            out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm\\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = \\dfrac{\\dfrac{" + coefs4[0].toString() + "}{" + coefs4[1].toString() + "}}{" + coefs2[0].toString() + "}\\ \\vee\\ x = \\dfrac{\\dfrac{" + coefs5[0].toString() + "}{" + coefs5[1].toString() + "}}{" + coefs2[0].toString() + "}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString();
+                                        }
                                     }
                                 }
                             else
@@ -22290,7 +22318,7 @@ function processarresolucaoequacaosegundograupassopasso()
 
                                 if (coefs3[1] == 1)
                                     {
-                                    var coefs4 = antoniovandrefracaogeratriz(antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))), 1);
+                                    var coefs4 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))), 1);
 
                                     if (coefs4[1] == 1)
                                         out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm" + coefs3[0].toString() + "}{\\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + " + coefs3[0].toString() + "}{\\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - " + coefs3[0].toString() + "}{\\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}\\\\ x = \\dfrac{" + coefs4[0].toString() + "}{\\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{\\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
@@ -22299,7 +22327,7 @@ function processarresolucaoequacaosegundograupassopasso()
                                     }
                                 else
                                     {
-                                    var coefs4 = antoniovandrefracaogeratriz(antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))), 1);
+                                    var coefs4 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))), 1);
 
                                     if (coefs4[1] == 1)
                                         out = out + "\\\\ x = \\dfrac{-" + coefs[0].toString() + "\\pm\\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{\\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}\\\\ x = \\dfrac{-" + coefs[0].toString() + " + \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{\\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}\\ \\vee\\ x = \\dfrac{-" + coefs[0].toString() + " - \\dfrac{" + coefs3[0].toString() + "}{" + coefs3[1].toString() + "}}{\\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}\\\\ x = \\dfrac{" + coefs4[0].toString() + "}{\\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}\\ \\vee\\ x = \\dfrac{" + antoniovandreformatarreal(-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))).toString() + "}{\\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}}\\\\ x = " + antoniovandreformatarreal((-parseFloat(b) + antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString() + "\\ \\vee\\ x = " + antoniovandreformatarreal((-parseFloat(b) - antoniovandresqrt(parseFloat(b) * parseFloat(b) - 4 * parseFloat(a) * parseFloat(c))) / (2 * parseFloat(a))).toString()
@@ -42562,8 +42590,8 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosimetricasuperficiecurvacoordenadaparametricapontoavisoanexo" id="resultadosimetricasuperficiecurvacoordenadaparametricapontoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
-<div id="dot-chart-simetricasuperficiecurvacoordenadaparametricaponto"></div>
-<div id="dot-chart-simetricasuperficiecurvacoordenadaparametricaponto-espera" class="dot-chart-simetricasuperficiecurvacoordenadaparametricaponto-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-simetricasuperficiecurvacoordenadaparametricaponto">
+<div id="dot-chart-simetricasuperficiecurvacoordenadaparametricaponto-espera" class="dot-chart-simetricasuperficiecurvacoordenadaparametricaponto-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div></div>
 <span hidden>
 <img width=400 height=400 id="dot-chart-simetricasuperficiecurvacoordenadaparametricaponto-esperagif"/>
 <canvas width=400 height=400 id="dot-chart-simetricasuperficiecurvacoordenadaparametricaponto-esperacanvas"></canvas>
@@ -43644,8 +43672,8 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosimetricasuperficiecurvacoordenadaparametricaplanoavisoanexo" id="resultadosimetricasuperficiecurvacoordenadaparametricaplanoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
-<div id="dot-chart-simetricasuperficiecurvacoordenadaparametricaplano"></div>
-<div id="dot-chart-simetricasuperficiecurvacoordenadaparametricaplano-espera" class="dot-chart-simetricasuperficiecurvacoordenadaparametricaplano-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-simetricasuperficiecurvacoordenadaparametricaplano">
+<div id="dot-chart-simetricasuperficiecurvacoordenadaparametricaplano-espera" class="dot-chart-simetricasuperficiecurvacoordenadaparametricaplano-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div></div>
 <span hidden>
 <img width=400 height=400 id="dot-chart-simetricasuperficiecurvacoordenadaparametricaplano-esperagif"/>
 <canvas width=400 height=400 id="dot-chart-simetricasuperficiecurvacoordenadaparametricaplano-esperacanvas"></canvas>
@@ -47375,8 +47403,8 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosimetricasuperficietridimensionalcoordenadasparametricaspontoavisoanexo" id="resultadosimetricasuperficietridimensionalcoordenadasparametricaspontoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
-<div id="dot-chart-3d-simetricasuperficietridimensionalcoordenadasparametricasponto"></div>
-<div id="dot-chart-3d-simetricasuperficietridimensionalcoordenadasparametricasponto-espera" class="dot-chart-3d-simetricasuperficietridimensionalcoordenadasparametricasponto-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-3d-simetricasuperficietridimensionalcoordenadasparametricasponto">
+<div id="dot-chart-3d-simetricasuperficietridimensionalcoordenadasparametricasponto-espera" class="dot-chart-3d-simetricasuperficietridimensionalcoordenadasparametricasponto-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div></div>
 <span hidden>
 <img width=400 height=400 id="dot-chart-simetricasuperficietridimensionalcoordenadasparametricasponto-esperagif"/>
 <canvas width=400 height=400 id="dot-chart-simetricasuperficietridimensionalcoordenadasparametricasponto-esperacanvas"></canvas>
@@ -48678,8 +48706,8 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosimetricasuperficietridimensionalcoordenadasparametricasplanoavisoanexo" id="resultadosimetricasuperficietridimensionalcoordenadasparametricasplanoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
-<div id="dot-chart-3d-simetricasuperficietridimensionalcoordenadasparametricasplano"></div>
-<div id="dot-chart-3d-simetricasuperficietridimensionalcoordenadasparametricasplano-espera" class="dot-chart-3d-simetricasuperficietridimensionalcoordenadasparametricasplano-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-3d-simetricasuperficietridimensionalcoordenadasparametricasplano">
+<div id="dot-chart-3d-simetricasuperficietridimensionalcoordenadasparametricasplano-espera" class="dot-chart-3d-simetricasuperficietridimensionalcoordenadasparametricasplano-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div></div>
 <span hidden>
 <img width=400 height=400 id="dot-chart-simetricasuperficietridimensionalcoordenadasparametricasplano-esperagif"/>
 <canvas width=400 height=400 id="dot-chart-simetricasuperficietridimensionalcoordenadasparametricasplano-esperacanvas"></canvas>
@@ -50144,8 +50172,8 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosimetricacurvaregiaorelacaopontoavisoanexo" id="resultadosimetricacurvaregiaorelacaopontoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
-<div id="dot-chart-simetricacurvaregiaorelacaoponto"></div>
-<div id="dot-chart-simetricacurvaregiaorelacaoponto-espera" class="dot-chart-simetricacurvaregiaorelacaoponto-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-simetricacurvaregiaorelacaoponto">
+<div id="dot-chart-simetricacurvaregiaorelacaoponto-espera" class="dot-chart-simetricacurvaregiaorelacaoponto-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div></div>
 <br>
 Log:
 <br>
@@ -51538,8 +51566,8 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <br>
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosimetricacurvaregiaorelacaoretaavisoanexo" id="resultadosimetricacurvaregiaorelacaoretaavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
-<div id="dot-chart-simetricacurvaregiaorelacaoreta"></div>
-<div id="dot-chart-simetricacurvaregiaorelacaoreta-espera" class="dot-chart-simetricacurvaregiaorelacaoreta-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-simetricacurvaregiaorelacaoreta">
+<div id="dot-chart-simetricacurvaregiaorelacaoreta-espera" class="dot-chart-simetricacurvaregiaorelacaoreta-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div></div>
 <br>
 Log:
 <br>
@@ -54730,7 +54758,7 @@ Entre com uma string contendo, separados por ponto e vírgula "<span class="notr
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadosimetricasuperficieregiaorelacaoplanoavisoanexo" id="resultadosimetricasuperficieregiaorelacaoplanoavisoanexo" readonly rows="10"></textarea></td></tr></table>
 <br>
 <div id="dot-chart-simetricasuperficieregiaorelacaoplano"></div>
-<div id="dot-chart-simetricasuperficieregiaorelacaoplano-espera" class="dot-chart-simetricasuperficieregiaorelacaoplano-espera"><img src="https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
+<div id="dot-chart-simetricasuperficieregiaorelacaoplano-espera" class="dot-chart-simetricasuperficieregiaorelacaoplano-espera"><img src="Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png"></div>
 <span hidden>
 <img width=400 height=400 id="dot-chart-simetricasuperficieregiaorelacaoplano-esperagif"/>
 <canvas width=400 height=400 id="dot-chart-simetricasuperficieregiaorelacaoplano-esperacanvas"></canvas>
@@ -54853,7 +54881,7 @@ function processarsimetricasuperficieregiaorelacaoplanoout()
 	if (flagplotly3Dsimetricasuperficieregiaoplano == 1)
 		{
 		Plotly.purge("dot-chart-simetricasuperficieregiaorelacaoplano");
-		$("#dot-chart-simetricasuperficieregiaorelacaoplano-espera").html("<img src=\"https://dl.dropbox.com/s/1do5c6yjez8ejdv/Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
+		$("#dot-chart-simetricasuperficieregiaorelacaoplano-espera").html("<img src=\"Calculadora%20-%20Gr%C3%A1fico%20de%20uma%20fun%C3%A7%C3%A3o%20-%20%C3%81rea%20do%20gr%C3%A1fico.png\">")
 		}
 
 	antoniovandresimetricasuperficieregiaorelacaoplanoout(str[0].value, 0);
