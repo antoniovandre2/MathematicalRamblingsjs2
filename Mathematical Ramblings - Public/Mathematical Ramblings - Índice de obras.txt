@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 05-06-2022.
+Última atualização: 08-06-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9531,6 +9531,15 @@ Calculadora: gráfico simétrico de uma superfície ou região tridimensional po
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 05-06-2022 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+A função $y = Axe^x$ é solução da equação diferencial $y^{(4)} + 2y''' - 2y' - y = 10e^x$. Determine a contante $A$.
+__
+
+Artigos/Mathematical Ramblings - 08-06-2022 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
