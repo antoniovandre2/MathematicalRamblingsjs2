@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 08-06-2022.
+Última atualização: 09-06-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -7580,7 +7580,7 @@ __
 Publicado em "mathematicalramblings.blogspot.com".
 _____
 
-Calculadora: resolução de uma equação polinomial do segundo grau passo a passo.
+[Em desenvolvimento] Calculadora: resolução de uma equação polinomial do segundo grau passo a passo.
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 15-02-2022 - 1.txt
