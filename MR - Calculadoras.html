@@ -21441,13 +21441,13 @@ function processarresolucaoequacaosegundograupassopasso()
 			if (coefs[0] == 1)
 				a2 = "\\dfrac{x^2}{" + coefs[1].toString() + "}"
 			else if (coefs[0] == -1)
-				a2 = "-\\dfrac{- x^2}{" + coefs[1].toString() + "}"
+				a2 = "- \\dfrac{- x^2}{" + coefs[1].toString() + "}"
 			else
 				{
 				if (coefs[0] >= 0)
 					a2 = "\\dfrac{" + coefs[0].toString() + "x^2}{" + coefs[1].toString() + "}"
 				else
-					a2 = "-\\dfrac{" + antoniovandremodulo(coefs[0]).toString() + "x^2}{" + coefs[1].toString() + "}";
+					a2 = "- \\dfrac{" + antoniovandremodulo(coefs[0]).toString() + "x^2}{" + coefs[1].toString() + "}";
 				}
 			}
 
@@ -21492,18 +21492,18 @@ function processarresolucaoequacaosegundograupassopasso()
                     var coefs2 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) / parseFloat(a)), 1);
 
                     if (coefs2[1] == 1)
-                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " + " + coefs[0].toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " + " + coefs[0].toString() + " = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " = -" + coefs[0].toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + b2.replace("x", "").replace("- ", "").replace("+", "-").replace("- ", "").replace("+", "-") + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = " + coefs2[0].toString()
+                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x").replace("+ ", "") + " + " + coefs[0].toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " + " + coefs[0].toString() + " = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " = -" + coefs[0].toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + b2.replace("x", "").replace("- ", "").replace("+", "-") + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = " + coefs2[0].toString()
                     else
-                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " + " + coefs[0].toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " + " + coefs[0].toString() + " = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " = -" + coefs[0].toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + b2.replace("x", "").replace("- ", "").replace("+", "-").replace("- ", "").replace("+", "-") + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}";
+                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x") + " + " + coefs[0].toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " + " + coefs[0].toString() + " = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " = -" + coefs[0].toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + b2.replace("x", "").replace("- ", "").replace("+", "-") + "}{" + a + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}";
                     }
                 else
                     {
                     var coefs2 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) / parseFloat(a)), 1);
 
                     if (coefs2[1] == 1)
-                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + b2.replace("x", "").replace("- ", "").replace("+", "-") + "}{" + a2.replace("x^2", "").replace("+ ", "").replace("- ", "") + "}\\\\ x = 0\\ \\vee\\ x = " + coefs2[0].toString()
+                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x") + " + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + b2.replace("x", "").replace("- ", "").replace("+", "-") + "}{" + a2.replace("x^2", "") + "}\\\\ x = 0\\ \\vee\\ x = " + coefs2[0].toString()
                     else
-                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + b2.replace("x", "").replace("- ", "").replace("+", "-") + "}{" + a2.replace("x^2", "").replace("+ ", "").replace("- ", "") + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}";
+                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x") + " + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " + \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + b2.replace("x", "").replace("- ", "").replace("+", "-") + "}{" + a2.replace("x^2", "") + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}";
                     }
                 }
             else
@@ -21515,18 +21515,18 @@ function processarresolucaoequacaosegundograupassopasso()
                     var coefs2 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) / parseFloat(a)), 1);
 
                     if (coefs2[1] == 1)
-                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " - " + coefs[0].toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " - " + coefs[0].toString() + " = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " = " + coefs[0].toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs[0].toString() + "}{" + a2.replace("x^2", "").replace("+ ", "").replace("- ", "") + "}\\\\ x = 0\\ \\vee\\ x = " + coefs2[0].toString()
+                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x") + " - " + coefs[0].toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " - " + coefs[0].toString() + " = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " = " + coefs[0].toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs[0].toString() + "}{" + a2.replace("x^2", "") + "}\\\\ x = 0\\ \\vee\\ x = " + coefs2[0].toString()
                     else
-                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " - " + coefs[0].toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " - " + coefs[0].toString() + " = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " = " + coefs[0].toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs[0].toString() + "}{" + a2.replace("x^2", "").replace("+ ", "").replace("- ", "") + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}";
+                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x") + " - " + coefs[0].toString() + "\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " - " + coefs[0].toString() + " = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " = " + coefs[0].toString() + "\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs[0].toString() + "}{" + a2.replace("x^2", "") + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}";
                     }
                 else
                     {
                     var coefs2 = antoniovandrefracaogeratriz(antoniovandreformatarreal(-parseFloat(b) / parseFloat(a)), 1);
 
                     if (coefs2[1] == 1)
-                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " - \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " - \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}}{" + a2.replace("x^2", "").replace("+ ", "").replace("- ", "") + "}\\\\ x = 0\\ \\vee\\ x = " + coefs2[0].toString()
+                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x") + " - \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " - \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}}{" + a2.replace("x^2", "") + "}\\\\ x = 0\\ \\vee\\ x = " + coefs2[0].toString()
                     else
-                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " - \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " - \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x").replace("+ ", "").replace("- ", "") + " = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}}{" + a2.replace("x^2", "").replace("+ ", "").replace("- ", "") + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}";
+                        out = a2 + b2 + " = 0\\\\ x\\left(" + a2.replace("x^2", "x") + " - \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\right) = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " - \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "} = 0\\\\ x = 0\\ \\vee\\ " + a2.replace("x^2", "x") + " = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{\\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString() + "}}{" + a2.replace("x^2", "") + "}\\\\ x = 0\\ \\vee\\ x = \\dfrac{" + coefs2[0].toString() + "}{" + coefs2[1].toString() + "}";
                     }
                 }
             }
@@ -21560,9 +21560,9 @@ function processarresolucaoequacaosegundograupassopasso()
                     var coefs = antoniovandrefracaogeratriz(antoniovandreformatarreal(antoniovandresqrt(-parseFloat(c) / parseFloat(a))), 1);
 
                     if (coefs[1] == 1)
-                        out = out + "\\\\ x = " + coefs[0].toString() + "\\ \\vee\\ x = -" + (- coefs[0]).toString()
+                        out = out + "\\\\ x = " + coefs[0].toString() + "\\ \\vee\\ x = " + (- coefs[0]).toString()
                     else
-                        out = out + "\\\\ x = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString()+ "}\\ \\vee\\ x = -\\dfrac{" + (- coefs[0]).toString() + "}{" + coefs[1].toString() + "}";
+                        out = out + "\\\\ x = \\dfrac{" + coefs[0].toString() + "}{" + coefs[1].toString()+ "}\\ \\vee\\ x = \\dfrac{" + (- coefs[0]).toString() + "}{" + coefs[1].toString() + "}";
                     }
                 else
                     out = out + "\\\\ \\text{A equação não possui soluções reais.}";
