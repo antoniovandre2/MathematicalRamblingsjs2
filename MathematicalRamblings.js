@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 27-05-2022. Não considerando alterações em macros.
+// Última atualização: 15-06-2022. Não considerando alterações em macros e variáveis globais.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "27-05-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "15-06-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -11734,42 +11734,25 @@ function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
 
 	if (antoniovandrenumeronatural(args[1].trim()) == "e") return "e"
 
-	if (args2.length == 2)
+	if ((antoniovandremodulo(parseFloat(args2[0].trim())) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(parseFloat(args2[1].trim())) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(parseFloat(args[1].trim())) > antoniovandremaximovalorentrada(1)))
+		return antoniovandremensagenserro(2)
+
+	var sinal = antoniovandremodulo(parseFloat(args[0])) / parseFloat(args[0]);
+	var denominador = "";
+
+	for (var i = 0; i < args[1].length; i++) denominador = denominador + "9";
+
+	for (var i = 0; i < args2[1].length; i++) denominador = denominador + "0";
+
+	switch (tiporetorno)
 		{
-		if ((antoniovandremodulo(parseFloat(args2[0].trim())) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(parseFloat(args2[1].trim())) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(parseFloat(args[1].trim())) > antoniovandremaximovalorentrada(1)))
-			return antoniovandremensagenserro(2)
-
-		var denominador = "";
-
-		for (var i = 0; i < args[1].length; i++) denominador = denominador + "9";
-		for (var i = 0; i < args2[1].length; i++) denominador = denominador + "0";
-
-		if (parseInt(args2[0]) >= 0)
-			{
-			switch (tiporetorno)
-				{
-				case 0:
-					return (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 3)[1]), 3)[0]).toString() + " / " + (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 3)[1]), 3)[1]).toString();
-				case 1:
-					return [antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 1)[1]), 3)[0], antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(args[0], 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(args[0], 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(args[0], 3)[1]), 3)[1]];
-				default:
-					return "e";
-				}
-			}
-		else
-			{
-			switch (tiporetorno)
-				{
-				case 0:
-					return ((-1) * antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 3)[0]).toString() + " / " + (antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[1]), 3)[1]).toString();
-				case 1:
-					return [(-1) * antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 1)[1]), 3)[0], antoniovandrefracaogeratriz((antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[0] * parseInt(denominador) + parseInt(args[1]) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[1]) / (parseInt(denominador) * antoniovandrefracaogeratriz(antoniovandremodulo(args[0]), 3)[1]), 3)[1]];
-				default:
-					return "e";
-				}
-			}
+		case 0:
+			return (sinal * (antoniovandrefracaogeratriz(sinal * parseFloat(args[0]) + parseFloat(args[1]) / parseInt(denominador), 3)[0])).toString() + " / " + (antoniovandrefracaogeratriz(sinal * parseFloat(args[0]) + parseFloat(args[1]) / parseInt(denominador), 3)[1]).toString();
+		case 1:
+			return [sinal * (antoniovandrefracaogeratriz(sinal * parseFloat(args[0]) + parseFloat(args[1]) / parseInt(denominador), 3)[0]), antoniovandrefracaogeratriz(sinal * parseFloat(args[0]) + parseFloat(args[1]) / parseInt(denominador), 3)[1]];
+		default:
+			return "e";
 		}
-	else return "e";
 	}
 
 // Comprimento do gráfico de uma função em coordenadas polares. Argumentos: primeiro: uma string contendo, separados por ponto e vírgula: primeiro: a expressão da função da qual se deseja obter o valor do comprimento, deve ser uma função em "teta"; segundo: um número real como valor inferior; terceiro: um número real como valor superior; quarto: a resolução que será utilizada no cálculo; segundo: "-1" para retornar o aviso anexo. Retorna a string "e" caso um erro genérico ocorra.
