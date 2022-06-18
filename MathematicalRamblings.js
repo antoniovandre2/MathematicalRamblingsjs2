@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 16-06-2022. Não considerando alterações em macros e variáveis globais.
+// Última atualização: 18-06-2022. Não considerando alterações em macros e variáveis globais.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "16-06-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "18-06-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -7288,7 +7288,7 @@ function antoniovandrederivadaemumponto(str, retorno, avisoanexo)
 		}
 	}
 
-// Constantes utilizadas na obtenção de frações geratrizes. Argumentos: 0 para retornar a quantidade de números repetidos em casas decimais de um número real para seja considerada uma dízima periódica; 1 para retornar a posição, a partir do separador da parte inteira e decimal a se considerar a contagem de números repetidos. Retorna "e" caso um erro genérico ocorra.
+// Constantes utilizadas na obtenção de frações geratrizes. Argumentos: 0 para retornar a quantidade de números repetidos em casas decimais de um número real para seja considerada uma dízima periódica; 1 para retornar a posição, a partir do separador da parte inteira e decimal a se considerar a contagem de números repetidos; 2 para retornar o fator redutor na busca de números primos pré-compilados. Retorna "e" caso um erro genérico ocorra.
 
 function antoniovandrefracaogeratrizconstantes(i)
 	{
@@ -7297,6 +7297,8 @@ function antoniovandrefracaogeratrizconstantes(i)
 		case 0:
 			return 4;
 		case 1:
+			return 4;
+		case 2:
 			return 4;
 		default:
 			return "e";
@@ -7309,7 +7311,7 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 	{
 	var rnum;
 	var num;
-	var lim = antoniovandreprimos(-2) + 1;
+	var lim = antoniovandrepiso((antoniovandreprimos(-2) + 1) / antoniovandrefracaogeratrizconstantes(2));
 	var i = 1;
 	var i2;
 	var flag = 0;
