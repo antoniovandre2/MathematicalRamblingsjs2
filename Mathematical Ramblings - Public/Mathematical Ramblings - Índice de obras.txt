@@ -9553,3 +9553,12 @@ __
 
 Publicado em "mathematicalramblings.blogspot.com".
 _____
+
+Calculadora: simétrico do gráfico tridimensional de uma função de duas variáveis com relação a um plano.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 23-06-2022 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
