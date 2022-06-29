@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 23-06-2022.
+Última atualização: 29-06-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9558,6 +9558,15 @@ Calculadora: simétrico do gráfico tridimensional de uma função de duas vari�
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 23-06-2022 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: intersecção entre dois planos.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 29-06-2022 - 1.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".

@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 18-06-2022. Não considerando alterações em macros e variáveis globais.
+// Última atualização: 29-06-2022. Não considerando alterações em macros e variáveis globais.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "18-06-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "29-06-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -13705,6 +13705,259 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 			default:
 				return "e";
 			}
+		}
+	}
+
+// Intersecção entre dois planos. Argumentos globais: primeiro: os planos separados por barra vertical "|", cada plano consistindo, nesta ordem, nos coeficientes de "x", de "y", de "z", e o coeficiente independente. Segundo: 0 para retornar string ou 1 para retornar array. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandreinterseccaoplanos(str, retorno)
+	{
+	var args = str.split("|");
+
+	if (args.length != 2) return "e";
+
+	var coefs1 = args[0].split(";");
+	var coefs2 = args[1].split(";");
+
+	if (coefs1.length != 4) return "e";
+	if (coefs2.length != 4) return "e";
+
+	if (antoniovandreexpressaofuncaovalida(coefs1[0].trim()) == "e") return "e";
+
+	var ixs = "0";
+	var dxs = "";
+	var xi = 0;
+	var xd = 0;
+	var iys = "";
+	var dys = "t";
+	var yi = 0;
+	var yd = 1;
+	var izs = "t";
+	var zi = 0;
+	var zd = 1;
+
+	try
+		{
+		var a1 = eval(antoniovandretraduzirexpressaofuncional(coefs1[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(coefs1[1].trim()) == "e") return "e";
+
+	try
+		{
+		var b1 = eval(antoniovandretraduzirexpressaofuncional(coefs1[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(coefs1[2].trim()) == "e") return "e";
+
+	try
+		{
+		var c1 = eval(antoniovandretraduzirexpressaofuncional(coefs1[2].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(coefs1[3].trim()) == "e") return "e";
+
+	try
+		{
+		var d1 = eval(antoniovandretraduzirexpressaofuncional(coefs1[3].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(coefs2[0].trim()) == "e") return "e";
+
+	try
+		{
+		var a2 = eval(antoniovandretraduzirexpressaofuncional(coefs2[0].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(coefs2[1].trim()) == "e") return "e";
+
+	try
+		{
+		var b2 = eval(antoniovandretraduzirexpressaofuncional(coefs2[1].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(coefs2[2].trim()) == "e") return "e";
+
+	try
+		{
+		var c2 = eval(antoniovandretraduzirexpressaofuncional(coefs2[2].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if (antoniovandreexpressaofuncaovalida(coefs2[3].trim()) == "e") return "e";
+
+	try
+		{
+		var d2 = eval(antoniovandretraduzirexpressaofuncional(coefs2[3].trim(), 0));
+		}
+	catch (err)
+		{
+		return "e";
+		}
+
+	if ((antoniovandremodulo(a1) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b1) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c1) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(d1) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(a2) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b2) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c2) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(d2) > antoniovandremaximovalorentrada(1)))
+		return antoniovandremensagenserro(2);
+
+	var M = antoniovandreescalonarmatriz(a1.toString() + ", " + b1.toString() + ", " + c1.toString() + ", " + (-d1).toString() + "; " + a2.toString() + ", " + b2.toString() + ", " + c2.toString() + ", " + (-d2).toString() + " | r", 1);
+
+	if (antoniovandrecompararstrings(typeof M, "string") == 1)
+		if (antoniovandrecompararstrings(M, antoniovandremensagenserro(6)) == 1)
+			return antoniovandremensagenserro(6);
+
+	if ((M[1][0] == 0) && (M[1][1] == 0) && (M[1][2] == 0) && (M[1][3] != 0))
+		return "Os planos não se interceptam.";
+
+	if ((M[1][0] == 0) && (M[1][1] == 0) && (M[1][2] == 0) && (M[1][3] == 0))
+		return "Os planos são coincidentes.";
+
+	if (M[0][0] != 0)
+		{
+		if (M[0][3] != 0)
+			{
+			var ix = antoniovandrefracaogeratriz(M[0][3], 1);
+
+			if (ix[1] != 1)
+				ixs = ix[0].toString() + " / " + ix[1].toString()
+			else
+				ixs = ix[0].toString();
+
+			xi = M[0][3];
+			}
+
+		if (M[0][1] != 0)
+			{
+			var dx = antoniovandrefracaogeratriz(antoniovandremodulo(M[0][1]), 1);
+
+			if (M[0][1] >= 0) {dxs = " - ";} else {dxs = " + ";}
+
+			if (dx[1] != 1)
+				{
+				if (dx[0] == 1)
+					dxs = dxs + "t / " + dx[1].toString()
+				else
+					dxs = dxs + dx[0].toString() + "t / " + dx[1].toString();
+				}
+			else
+				{
+				if (dx[0] == 1)
+					dxs = dxs + "t"
+				else
+					dxs = dxs + dx[0].toString() + "t";
+				}
+
+			xd = -M[0][1];
+			}
+		else if (M[0][2] != 0)
+			{
+			var dx = antoniovandrefracaogeratriz(antoniovandremodulo(M[0][2]), 1);
+
+			if (M[0][2] >= 0) {dxs = " - ";} else {dxs = " + ";}
+
+			if (dx[1] != 1)
+				{
+				if (dx[0] == 1)
+					dxs = dxs + "t / " + dx[1].toString()
+				else
+					dxs = dxs + dx[0].toString() + "t / " + dx[1].toString();
+				}
+			else
+				{
+				if (dx[0] == 1)
+					dxs = dxs + "t"
+				else
+					dxs = dxs + dx[0].toString() + "t";
+				}
+
+			xd = -M[0][2];
+			}
+		}
+
+	if (M[1][1] != 0)
+		{
+		var iy = antoniovandrefracaogeratriz(M[1][3], 1);
+		var iys;
+
+		if (iy[1] != 1)
+			iys = iy[0].toString() + " / " + iy[1].toString()
+		else
+			iys = iy[0].toString();
+
+		yi = M[1][3];
+
+		var dy = antoniovandrefracaogeratriz(antoniovandremodulo(M[1][2]), 1);
+		var dys = "";
+
+		if (M[1][2] != 0)
+			{
+			if (M[1][2] >= 0) {dys = " - ";} else {dys = " + ";}
+
+			if (dy[1] != 1)
+				{
+				if (dy[0] == 1)
+					dys = dys + "t / " + dy[1].toString()
+				else
+					dys = dys + dy[0].toString() + "t / " + dy[1].toString();
+				}
+			else
+				{
+				if (dy[0] == 1)
+					dys = dys + "t"
+				else
+					dys = dys + dy[0].toString() + "t";
+				}
+
+			yd = -M[1][2];
+			}
+		}
+
+	if ((M[1][0] == 0) && (M[1][1] == 0) && (M[1][2] != 0))
+		{
+		var iz = antoniovandrefracaogeratriz(M[1][3], 1);
+
+		if (iz[1] != 1)
+			izs = iz[0].toString() + " / " + iz[1].toString()
+		else
+			izs = iz[0].toString();
+
+		zi = M[1][3];
+		zd = 0;
+		}
+
+	switch (retorno)
+		{
+		case 0:
+			return "x = " + ixs + dxs + "\ny = " + iys + dys + "\nz = " + izs + "\n\nt real."
+		case 1:
+			return [[xi, xd], [yi, yd], [zi, zd]];
+		default:
+			return "e";
 		}
 	}
 
