@@ -13822,6 +13822,9 @@ function antoniovandreinterseccaoplanos(str, retorno)
 		return "e";
 		}
 
+	if (((a1 == 0) && (b1 == 0) && (c1 == 0)) || ((a2 == 0) && (b2 == 0) && (c2 == 0)))
+		return "Ao menos um coeficiente de um termo dependente deve ser não nulo.";
+
 	if ((antoniovandremodulo(a1) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b1) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c1) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(d1) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(a2) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(b2) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(c2) > antoniovandremaximovalorentrada(1)) || (antoniovandremodulo(d2) > antoniovandremaximovalorentrada(1)))
 		return antoniovandremensagenserro(2);
 
