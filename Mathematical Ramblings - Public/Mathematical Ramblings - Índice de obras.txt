@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 29-06-2022.
+Última atualização: 30-06-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9567,6 +9567,15 @@ Calculadora: intersecção entre dois planos.
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 29-06-2022 - 1.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: intersecção entre uma reta e uma esfera.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 30-06-2022 - 1.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
