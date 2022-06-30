@@ -13964,9 +13964,9 @@ function antoniovandreinterseccaoplanos(str, retorno)
 		}
 	}
 
-// Intersecção entre uma reta e uma esfera. Argumentos globais: primeiro: uma string contendo, separados por ponto e vírgula \";\", primeiro: a abscissa de um ponto da reta; segundo: a ordenada de um ponto da reta; terceiro: a cota de um ponto da reta; quarto: a primeira componente do vetor diretor da reta; quinto: a segunda componente do vetor diretor da reta; sexto: a terceira componente do vetor diretor da reta; sétimo: a abscissa do centro da esfera; oitavo: a ordenada do centro da esfera; nono: a cota do centro da esfera; e, décimo: o raio da esfera. Segundo: 0 para retornar string ou 1 para retornar array. Retorna a string "e" caso um erro genérico ocorra.
+// Intersecções entre uma reta e uma esfera. Argumentos globais: primeiro: uma string contendo, separados por ponto e vírgula \";\", primeiro: a abscissa de um ponto da reta; segundo: a ordenada de um ponto da reta; terceiro: a cota de um ponto da reta; quarto: a primeira componente do vetor diretor da reta; quinto: a segunda componente do vetor diretor da reta; sexto: a terceira componente do vetor diretor da reta; sétimo: a abscissa do centro da esfera; oitavo: a ordenada do centro da esfera; nono: a cota do centro da esfera; e, décimo: o raio da esfera. Segundo: 0 para retornar string ou 1 para retornar array. Retorna a string "e" caso um erro genérico ocorra.
 
-function antoniovandreinterseccaoretaesfera(str, retorno)
+function antoniovandreinterseccoesretaesfera(str, retorno)
 	{
 	var arr = str.split(";");
 

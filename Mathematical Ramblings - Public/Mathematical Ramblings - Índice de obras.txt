@@ -9572,7 +9572,7 @@ __
 Publicado em "mathematicalramblings.blogspot.com".
 _____
 
-Calculadora: intersecção entre uma reta e uma esfera.
+Calculadora: intersecções entre uma reta e uma esfera.
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 30-06-2022 - 1.txt
