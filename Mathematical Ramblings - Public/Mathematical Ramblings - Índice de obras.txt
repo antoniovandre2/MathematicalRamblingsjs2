@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 01-07-2022.
+Última atualização: 02-07-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9630,6 +9630,24 @@ Obter a derivada de $f(x) = \dfrac{1}{x}$ no ponto $x_0 = 5$.
 __
 
 Artigos/Mathematical Ramblings - 01-07-2022 - 6.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: distância percorrida pela projeção de um ponto em uma circunferência.
+__
+
+Artigos/Mathematical Ramblings - 02-07-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: resistência equivalente de resistores em paralelo.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 02-07-2022 - 2.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
