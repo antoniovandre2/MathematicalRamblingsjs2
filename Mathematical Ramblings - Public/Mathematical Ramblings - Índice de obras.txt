@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 04-07-2022.
+Última atualização: 06-07-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9693,6 +9693,33 @@ Demonstração da regra do produto para derivadas.
 __
 
 Artigos/Mathematical Ramblings - 04-07-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: arrecadamento diário com desconto em preço unitário.
+__
+
+Artigos/Mathematical Ramblings - 05-07-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Demonstração da regra do quociente para derivadas.
+__
+
+Artigos/Mathematical Ramblings - 05-07-2022 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Obter a derivada de $f(x) = e^x + 3^x$.
+__
+
+Artigos/Mathematical Ramblings - 06-07-2022 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
