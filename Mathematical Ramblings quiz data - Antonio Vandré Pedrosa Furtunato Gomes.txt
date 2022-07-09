@@ -1,4 +1,4 @@
-Número de acertos: 1407. Número de erros: 4. MD5sum: 1b0b82026613d5992cf4c8f97d664ef9.
+Número de acertos: 1412. Número de erros: 4. MD5sum: a3427ce4e02987b77604ef66cfa667ff.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -1410,3 +1410,8 @@ Quanto é 2^4? Resposta: 16. Acertou. Em 17/1/2022 @ 21:10:35.
 Quanto é 6 x 3? Resposta: 18. Acertou. Em 17/1/2022 @ 21:10:41.
 Quanto é 8 + 50? Resposta: 58. Acertou. Em 17/1/2022 @ 21:10:47.
 Quanto é 37 - 22? Resposta: 15. Acertou. Em 17/1/2022 @ 21:11:1.
+Quanto é 9 x 3? Resposta: 27. Acertou. Em 4/7/2022 @ 14:16:27.
+Quanto é 147 / 49? Resposta: 3. Acertou. Em 4/7/2022 @ 14:16:55.
+Quanto é 30 + 26? Resposta: 56. Acertou. Em 4/7/2022 @ 14:17:5.
+Quanto é 79 - 40? Resposta: 39. Acertou. Em 4/7/2022 @ 14:17:16.
+Quanto é 68 - 57? Resposta: 11. Acertou. Em 4/7/2022 @ 14:17:47.
