@@ -1,4 +1,4 @@
-Número de acertos: 1412. Número de erros: 4. MD5sum: a3427ce4e02987b77604ef66cfa667ff.
+Número de acertos: 1433. Número de erros: 4. MD5sum: a8fdb55bd27758158415784940e25eaa.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -1415,3 +1415,24 @@ Quanto é 147 / 49? Resposta: 3. Acertou. Em 4/7/2022 @ 14:16:55.
 Quanto é 30 + 26? Resposta: 56. Acertou. Em 4/7/2022 @ 14:17:5.
 Quanto é 79 - 40? Resposta: 39. Acertou. Em 4/7/2022 @ 14:17:16.
 Quanto é 68 - 57? Resposta: 11. Acertou. Em 4/7/2022 @ 14:17:47.
+Quanto é 66 - 42? Resposta: 24. Acertou. Em 14/7/2022 @ 12:47:0.
+Quanto é 144 / 18? Resposta: 8. Acertou. Em 14/7/2022 @ 12:49:26.
+Quanto é 196 / 1? Resposta: 196. Acertou. Em 14/7/2022 @ 12:49:34.
+Quanto é 108 / 6? Resposta: 18. Acertou. Em 14/7/2022 @ 12:57:9.
+Quanto é 15 + 33? Resposta: 48. Acertou. Em 14/7/2022 @ 13:27:59.
+Quanto é 189 / 3? Resposta: 63. Acertou. Em 14/7/2022 @ 13:28:20.
+Quanto é 45 - 14? Resposta: 31. Acertou. Em 14/7/2022 @ 13:28:34.
+Quanto é 18 / 18? Resposta: 1. Acertou. Em 14/7/2022 @ 13:33:8.
+Quanto é 53 + 72? Resposta: 125. Acertou. Em 14/7/2022 @ 13:33:21.
+Quanto é 50 - 7? Resposta: 43. Acertou. Em 14/7/2022 @ 13:33:30.
+Quanto é 89 + 72? Resposta: 161. Acertou. Em 14/7/2022 @ 13:39:20.
+Quanto é 74 + 19? Resposta: 93. Acertou. Em 14/7/2022 @ 13:39:35.
+Quanto é 0^9? Resposta: 0. Acertou. Em 14/7/2022 @ 13:39:42.
+Quanto é 9 x 7? Resposta: 63. Acertou. Em 14/7/2022 @ 13:39:51.
+Quanto é 196 / 49? Resposta: 4. Acertou. Em 14/7/2022 @ 13:50:32.
+Quanto é 4^0? Resposta: 1. Acertou. Em 14/7/2022 @ 13:50:38.
+Quanto é 8 x 7? Resposta: 56. Acertou. Em 14/7/2022 @ 13:50:44.
+Quanto é 5 x 9? Resposta: 45. Acertou. Em 14/7/2022 @ 13:50:50.
+Quanto é 41 + 28? Resposta: 69. Acertou. Em 14/7/2022 @ 15:34:40.
+Quanto é 176 / 16? Resposta: 11. Acertou. Em 14/7/2022 @ 15:35:4.
+Quanto é 31 - 33? Resposta: -2. Acertou. Em 14/7/2022 @ 15:35:13.
