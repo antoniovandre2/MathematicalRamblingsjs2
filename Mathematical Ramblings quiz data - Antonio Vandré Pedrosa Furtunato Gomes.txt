@@ -1,4 +1,4 @@
-Número de acertos: 1433. Número de erros: 4. MD5sum: a8fdb55bd27758158415784940e25eaa.
+Número de acertos: 1452. Número de erros: 4. MD5sum: 429bfeb7dfa9f250bcd662dddbcc6a15.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -1436,3 +1436,22 @@ Quanto é 5 x 9? Resposta: 45. Acertou. Em 14/7/2022 @ 13:50:50.
 Quanto é 41 + 28? Resposta: 69. Acertou. Em 14/7/2022 @ 15:34:40.
 Quanto é 176 / 16? Resposta: 11. Acertou. Em 14/7/2022 @ 15:35:4.
 Quanto é 31 - 33? Resposta: -2. Acertou. Em 14/7/2022 @ 15:35:13.
+Quanto é 0^4? Resposta: 0. Acertou. Em 14/7/2022 @ 17:51:37.
+Quanto é 42 - 37? Resposta: 5. Acertou. Em 14/7/2022 @ 17:52:3.
+Quanto é 168 / 42? Resposta: 4. Acertou. Em 14/7/2022 @ 22:36:31.
+Quanto é 93 - 15? Resposta: 78. Acertou. Em 14/7/2022 @ 22:36:45.
+Quanto é 14 x 7? Resposta: 98. Acertou. Em 14/7/2022 @ 22:36:59.
+Quanto é 91 + 59? Resposta: 150. Acertou. Em 15/7/2022 @ 12:49:13.
+Quanto é 7^3? Resposta: 343. Acertou. Em 15/7/2022 @ 12:49:54.
+Quanto é 1^3? Resposta: 1. Acertou. Em 15/7/2022 @ 12:49:59.
+Quanto é 9^0? Resposta: 1. Acertou. Em 15/7/2022 @ 12:50:5.
+Quanto é 171 / 19? Resposta: 9. Acertou. Em 15/7/2022 @ 12:50:34.
+Quanto é 13^1? Resposta: 13. Acertou. Em 15/7/2022 @ 13:25:8.
+Quanto é 135 / 1? Resposta: 135. Acertou. Em 15/7/2022 @ 13:25:15.
+Quanto é 6 x 11? Resposta: 66. Acertou. Em 15/7/2022 @ 13:25:20.
+Quanto é 30 - 24? Resposta: 6. Acertou. Em 15/7/2022 @ 13:25:27.
+Quanto é 54 / 1? Resposta: 54. Acertou. Em 15/7/2022 @ 13:25:34.
+Quanto é 59 / 59? Resposta: 1. Acertou. Em 15/7/2022 @ 13:25:39.
+Quanto é 1 x 13? Resposta: 13. Acertou. Em 15/7/2022 @ 13:25:44.
+Quanto é 13^0? Resposta: 1. Acertou. Em 15/7/2022 @ 13:25:48.
+Quanto é 8^1? Resposta: 8. Acertou. Em 15/7/2022 @ 13:25:53.
