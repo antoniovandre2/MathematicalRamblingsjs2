@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 06-07-2022.
+Última atualização: 03-08-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9720,6 +9720,96 @@ Obter a derivada de $f(x) = e^x + 3^x$.
 __
 
 Artigos/Mathematical Ramblings - 06-07-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Fórmula da integração por partes.
+__
+
+Artigos/Mathematical Ramblings - 07-07-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: tempo de percurso de um ônibus em um bairro.
+__
+
+Artigos/Mathematical Ramblings - 07-07-2022 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: percentual limite para um terreno quadrangular.
+__
+
+Artigos/Mathematical Ramblings - 08-07-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Dada a função custo $C(x) = 50x + 10000$, obtenha o custo marginal e interprete o resultado.
+__
+
+Artigos/Mathematical Ramblings - 09-07-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: meus softwares e os computadores da atualidade.
+__
+
+Media/Memes/Mathematical Ramblings - 09-07-2022 - 2.png
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: um método de estudos.
+__
+
+Media/Memes/Mathematical Ramblings - 09-07-2022 - 3.mp4
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Pensamento: orgulhosamente fanático por Matemática.
+__
+
+Media/Mathematical Ramblings - 26-07-2022 - 1.png
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: tranquilo manter a rotina de estudos.
+__
+
+Media/Memes/Mathematical Ramblings - 27-07-2022 - 1.mp4
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Equação de uma parábola dadas a reta geratriz e o foco.
+__
+
+Artigos/Mathematical Ramblings - 03-08-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: equação cartesiana de uma parábola dados a reta geratriz e o foco.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 03-08-2022 - 2.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
