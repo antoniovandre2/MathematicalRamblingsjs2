@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 03-08-2022.
+Última atualização: 04-08-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
