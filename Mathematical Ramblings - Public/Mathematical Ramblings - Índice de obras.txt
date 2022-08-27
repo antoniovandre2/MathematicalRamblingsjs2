@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 11-08-2022.
+Última atualização: 27-08-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9846,6 +9846,87 @@ Pensamento: Amar cada detalhe da Matemática. Amar para viver...
 __
 
 Media/Mathematical Ramblings - 11-08-2022 - 1.png
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Um truque para encontrar quadrados de inteiros "terminados" em $5$.
+__
+
+Artigos/Mathematical Ramblings - 26-08-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Racionalizar o denominador de $\dfrac{15}{\sqrt[3]{49} - 2\sqrt[3]{7} + 4}$.
+__
+
+Artigos/Mathematical Ramblings - 26-08-2022 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Racionalizar o denominador de $\dfrac{2}{\sqrt{3} + 1 + \sqrt{2}}$.
+__
+
+Artigos/Mathematical Ramblings - 26-08-2022 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Se $2^x + 2^{-x} = n$, encontrar, em função de $n$, $16^x + 16^{-x}$.
+__
+
+Artigos/Mathematical Ramblings - 26-08-2022 - 4.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+O número $7941063852325$ é quadrado perfeito?
+__
+
+Artigos/Mathematical Ramblings - 26-08-2022 - 5.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+M.m.c, m.d.c e produtos de dois números.
+__
+
+Artigos/Mathematical Ramblings - 26-08-2022 - 6.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Qual o algarismo das unidades de $3^{1999}$?
+__
+
+Artigos/Mathematical Ramblings - 26-08-2022 - 7.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Quantos divisores positivos possui o inteiro $300$?
+__
+
+Artigos/Mathematical Ramblings - 26-08-2022 - 8.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: eu sou a Matemática, precisa me amar.
+__
+
+Media/Memes/Mathematical Ramblings - 27-08-2022 - 1.png
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
