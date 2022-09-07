@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 01-09-2022.
+Última atualização: 06-09-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9963,6 +9963,15 @@ Obter a equação da reta tangente ao gráfico de $f(x)=\dfrac{x-1}{x+3}$ em $x_
 __
 
 Artigos/Mathematical Ramblings - 01-09-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calcular as três primeiras derivadas de $f(x)=\log -x$.
+__
+
+Artigos/Mathematical Ramblings - 06-09-2022 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
