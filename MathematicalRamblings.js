@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 30-06-2022. Não considerando alterações em macros e variáveis globais.
+// Última atualização: 12-09-2022. Não considerando alterações em macros, variáveis globais e comentários.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "30-06-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "12-09-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -24,7 +24,7 @@ function antoniovandremathematicalramblingsjsversao(){return "30-06-2022";}
 
 function antoniovandreaproximacaotaylorflag() {return false;}
 
-// Números primos. Argumento: número do índice da matriz de números primos, ou -1 para retornar o tamanho da matriz de números primos, ou -2 para retornar o maior primo contido na matriz. Matriz de uma única linha. A variável "antoniovandreprimos" deve conter os números primos menores que o maior valor a ela pertencente. Retorna a string "e" se um erro ocorre.
+// Números primos. Argumento: número do índice da matriz de números primos, ou -1 para retornar o tamanho da matriz de números primos, ou -2 para retornar o maior primo contido na matriz. Matriz de uma única linha. Buscando rapidez e otimização dos cálculos, a matriz deve conter os elementos em ordem crescente. A variável "antoniovandreprimos" deve conter os números primos menores que o maior valor a ela pertencente. Retorna a string "e" se um erro ocorre.
 
 function antoniovandreprimos(i)
 	{
