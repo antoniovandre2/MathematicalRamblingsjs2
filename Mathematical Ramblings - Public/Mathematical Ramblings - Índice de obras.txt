@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 11-09-2022.
+Última atualização: 12-09-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -9981,6 +9981,15 @@ Calculadora: equação cartesiana de uma hipérbole dados os focos e a diferenç
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 11-09-2022 - 1.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: decomposição em fatores primos passo a passo.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 12-09-2022 - 1.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
