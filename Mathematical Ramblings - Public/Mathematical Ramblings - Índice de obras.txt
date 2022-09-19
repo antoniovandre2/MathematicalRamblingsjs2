@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 18-09-2022.
+Última atualização: 19-09-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10008,6 +10008,15 @@ Equação reduzida de Antonio Vandré da reta.
 __
 
 Artigos/Mathematical Ramblings - 18-09-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Coordenadas angulares de Antonio Vandré.
+__
+
+Artigos/Mathematical Ramblings - 19-09-2022 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
