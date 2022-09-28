@@ -7288,7 +7288,7 @@ function antoniovandrederivadaemumponto(str, retorno, avisoanexo)
 		}
 	}
 
-// Constantes utilizadas na obtenção de frações geratrizes. Argumentos: 0 para retornar a quantidade de números repetidos em casas decimais de um número real para seja considerada uma dízima periódica; 1 para retornar a posição, a partir do separador da parte inteira e decimal a se considerar a contagem de números repetidos; 2 para retornar o fator redutor na busca de números primos pré-compilados; 3 para retornar desabilitar o fator redutor na busca de números primos pré-compilados. Retorna "e" caso um erro genérico ocorra.
+// Constantes utilizadas na obtenção de frações geratrizes. Argumentos: 0 para retornar a quantidade de números repetidos em casas decimais de um número real para seja considerada uma dízima periódica; 1 para retornar a posição, a partir do separador da parte inteira e decimal a se considerar a contagem de números repetidos; 2 para retornar o fator redutor na busca de números primos pré-compilados. Retorna "e" caso um erro genérico ocorra.
 
 function antoniovandrefracaogeratrizconstantes(i)
 	{
@@ -7300,8 +7300,6 @@ function antoniovandrefracaogeratrizconstantes(i)
 			return 4;
 		case 2:
 			return 4;
-		case 3:
-			return 1;
 		default:
 			return "e";
 		}
@@ -7351,7 +7349,7 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 			lim = antoniovandrepiso((antoniovandreprimos(-2) + 1) / antoniovandrefracaogeratrizconstantes(2));
 			break;
 		case 3:
-			lim = antoniovandrepiso((antoniovandreprimos(-2) + 1) / antoniovandrefracaogeratrizconstantes(3));
+			lim = antoniovandrepiso((antoniovandreprimos(-2) + 1));
 			break;
 		default:
 			return "e";
