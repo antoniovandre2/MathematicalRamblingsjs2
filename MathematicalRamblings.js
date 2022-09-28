@@ -11767,12 +11767,20 @@ function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
 
 	while (antoniovandrenumerointeiro((shiftretorno * retorno[1] * parseFloat(args[0])).toString()) == "e") shiftretorno *= 10;
 
+	var numerador = antoniovandreformatarreal(shiftretorno * (retorno[1] * parseFloat(args[0]) + sinal * retorno[0]));
+
+	var shiftretorno2 = 1;
+
+	while (antoniovandrenumerointeiro((numerador / shiftretorno2).toString()) != "e") shiftretorno2 *= 10;
+
+	shiftretorno2 /= 10;
+
 	switch (tiporetorno)
 		{
 		case 0:
-			return (antoniovandreformatarreal(shiftretorno * (retorno[1] * parseFloat(args[0]) + sinal * retorno[0]))).toString() + " / " + antoniovandreformatarreal(shiftretorno * retorno[1]).toString();
+			return (numerador / shiftretorno2).toString() + " / " + antoniovandreformatarreal(shiftretorno * retorno[1] / shiftretorno2).toString();
 		case 1:
-			return [antoniovandreformatarreal(shiftretorno * (retorno[1] * parseFloat(args[0]) + sinal * retorno[0])), antoniovandreformatarreal(shiftretorno * retorno[1])];
+			return [numerador / shiftretorno2, antoniovandreformatarreal(shiftretorno * retorno[1] / shiftretorno2)];
 		default:
 			return "e";
 		}
