@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 12-09-2022. Não considerando alterações em macros, variáveis globais e comentários.
+// Última atualização: 28-09-2022. Não considerando alterações em macros, variáveis globais e comentários.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "12-09-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "28-09-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -7288,7 +7288,7 @@ function antoniovandrederivadaemumponto(str, retorno, avisoanexo)
 		}
 	}
 
-// Constantes utilizadas na obtenção de frações geratrizes. Argumentos: 0 para retornar a quantidade de números repetidos em casas decimais de um número real para seja considerada uma dízima periódica; 1 para retornar a posição, a partir do separador da parte inteira e decimal a se considerar a contagem de números repetidos; 2 para retornar o fator redutor na busca de números primos pré-compilados. Retorna "e" caso um erro genérico ocorra.
+// Constantes utilizadas na obtenção de frações geratrizes. Argumentos: 0 para retornar a quantidade de números repetidos em casas decimais de um número real para seja considerada uma dízima periódica; 1 para retornar a posição, a partir do separador da parte inteira e decimal a se considerar a contagem de números repetidos; 2 para retornar o fator redutor na busca de números primos pré-compilados; 3 para retornar desabilitar o fator redutor na busca de números primos pré-compilados. Retorna "e" caso um erro genérico ocorra.
 
 function antoniovandrefracaogeratrizconstantes(i)
 	{
@@ -7300,6 +7300,8 @@ function antoniovandrefracaogeratrizconstantes(i)
 			return 4;
 		case 2:
 			return 4;
+		case 3:
+			return 1;
 		default:
 			return "e";
 		}
@@ -7311,7 +7313,7 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 	{
 	var rnum;
 	var num;
-	var lim = antoniovandrepiso((antoniovandreprimos(-2) + 1) / antoniovandrefracaogeratrizconstantes(2));
+	var lim;
 	var i = 1;
 	var i2;
 	var flag = 0;
@@ -7339,6 +7341,21 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 
 	if (antoniovandremodulo(num) > parseFloat(antoniovandremaximovalorentrada(1)))
 		return antoniovandremensagenserro(1);
+
+	switch (tiporetorno)
+		{
+		case 0:
+			lim = antoniovandrepiso((antoniovandreprimos(-2) + 1) / antoniovandrefracaogeratrizconstantes(2));
+			break;
+		case 1:
+			lim = antoniovandrepiso((antoniovandreprimos(-2) + 1) / antoniovandrefracaogeratrizconstantes(2));
+			break;
+		case 3:
+			lim = antoniovandrepiso((antoniovandreprimos(-2) + 1) / antoniovandrefracaogeratrizconstantes(3));
+			break;
+		default:
+			return "e";
+		}
 
 	dizima = x.toString();
 	ppos = dizima.length - 1;
@@ -11746,12 +11763,18 @@ function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
 
 	for (var i = 0; i < args2[1].length; i++) denominador = denominador + "0";
 
+	var retorno = antoniovandrefracaogeratriz(parseFloat(args[1]) / parseInt(denominador), 3);
+
+	var shiftretorno = 1;
+
+	while (antoniovandrenumerointeiro((shiftretorno * retorno[1] * parseFloat(args[0])).toString()) == "e") shiftretorno *= 10;
+
 	switch (tiporetorno)
 		{
 		case 0:
-			return (sinal * (antoniovandrefracaogeratriz(sinal * parseFloat(args[0]) + parseFloat(args[1]) / parseInt(denominador), 3)[0])).toString() + " / " + (antoniovandrefracaogeratriz(sinal * parseFloat(args[0]) + parseFloat(args[1]) / parseInt(denominador), 3)[1]).toString();
+			return (antoniovandreformatarreal(shiftretorno * (retorno[1] * parseFloat(args[0]) + sinal * retorno[0]))).toString() + " / " + antoniovandreformatarreal(shiftretorno * retorno[1]).toString();
 		case 1:
-			return [sinal * (antoniovandrefracaogeratriz(sinal * parseFloat(args[0]) + parseFloat(args[1]) / parseInt(denominador), 3)[0]), antoniovandrefracaogeratriz(sinal * parseFloat(args[0]) + parseFloat(args[1]) / parseInt(denominador), 3)[1]];
+			return [antoniovandreformatarreal(shiftretorno * (retorno[1] * parseFloat(args[0]) + sinal * retorno[0])), antoniovandreformatarreal(shiftretorno * retorno[1])];
 		default:
 			return "e";
 		}
