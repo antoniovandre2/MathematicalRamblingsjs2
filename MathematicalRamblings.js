@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 28-09-2022. Não considerando alterações em macros, variáveis globais e comentários.
+// Última atualização: 29-09-2022. Não considerando alterações em macros, variáveis globais e comentários.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "28-09-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "29-09-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -11771,7 +11771,7 @@ function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
 
 	var shiftretorno2 = 1;
 
-	while (antoniovandrenumerointeiro((numerador / shiftretorno2).toString()) != "e") shiftretorno2 *= 10;
+	do {shiftretorno2 *= 10;} while ((antoniovandrenumerointeiro((numerador / shiftretorno2).toString()) != "e") && (antoniovandrenumerointeiro((shiftretorno * retorno[1] / shiftretorno2).toString()) != "e"))
 
 	shiftretorno2 /= 10;
 
