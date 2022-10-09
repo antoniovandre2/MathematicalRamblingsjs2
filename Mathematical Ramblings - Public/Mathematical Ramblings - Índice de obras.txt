@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 08-10-2022.
+Última atualização: 09-10-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10062,6 +10062,24 @@ Qual é o algarismo das unidades do menor inteiro positivo par cuja soma dos seu
 __
 
 Artigos/Mathematical Ramblings - 08-10-2022 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Maior parcela inteira de certa soma.
+__
+
+Artigos/Mathematical Ramblings - 08-10-2022 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: aumento percentual do preço do grama de chocolate.
+__
+
+Artigos/Mathematical Ramblings - 09-10-2022 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
