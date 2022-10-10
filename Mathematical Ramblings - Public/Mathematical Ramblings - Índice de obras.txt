@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 09-10-2022.
+Última atualização: 10-10-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10089,6 +10089,42 @@ Exercício: número de alunos de um professor de educação física.
 __
 
 Artigos/Mathematical Ramblings - 09-10-2022 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: reajuste da media com a correção de uma nota.
+__
+
+Artigos/Mathematical Ramblings - 09-10-2022 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: suficiente de partidas para encerrar um jogo.
+__
+
+Artigos/Mathematical Ramblings - 09-10-2022 - 4.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Sejam $z, w \in \mathbb{C}$, mostre que $|zw| = |z||w|$.
+__
+
+Artigos/Mathematical Ramblings - 10-10-2022 - 4.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: Coordenadas cartesianas para coordenadas angulares de Antonio Vandré.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 10-10-2022 - 2.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
