@@ -10115,7 +10115,7 @@ _____
 Sejam $z, w \in \mathbb{C}$, mostre que $|zw| = |z||w|$.
 __
 
-Artigos/Mathematical Ramblings - 10-10-2022 - 4.pdf
+Artigos/Mathematical Ramblings - 10-10-2022 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
@@ -10134,6 +10134,24 @@ Calculadora: Coordenadas angulares de Antonio Vandré para coordenadas cartesian
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 10-10-2022 - 3.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: software sobre a própria criação matemática.
+__
+
+Media/Memes/Mathematical Ramblings - 10-10-2022 - 4.png
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: área restante de um retângulo após dobras.
+__
+
+Artigos/Mathematical Ramblings - 10-10-2022 - 5.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
