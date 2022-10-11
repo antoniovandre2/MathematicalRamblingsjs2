@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 29-09-2022. Não considerando alterações em macros, variáveis globais e comentários.
+// Última atualização: 11-10-2022. Não considerando alterações em macros, variáveis globais e comentários.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "29-09-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "11-10-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -3219,7 +3219,7 @@ function antoniovandrevalorabsoluto(str, v, saida)
 		case 0:
 			return r.toString();
 		case 1:
-			return r;
+			return antoniovandreformatarreal(r);
 		default:
 			return "e";
 		}
@@ -7638,9 +7638,9 @@ function antoniovandrelimitefuncaocontinua(str, avisoanexo)
 				if (antoniovandremodulo(result1 - result3) < antoniovandrecoeficientes(1) * antoniovandreprecisaoreal(3))
 					{
 					if (flag == 0)
-						return result
+						return antoniovandreformatarreal(result)
 					else
-						return result1
+						return antoniovandreformatarreal(result1);
 					}
 				else
 					{
@@ -7659,9 +7659,9 @@ function antoniovandrelimitefuncaocontinua(str, avisoanexo)
 				if (antoniovandremodulo(result2 - result4) < antoniovandrecoeficientes(1) * antoniovandreprecisaoreal(3))
 					{
 					if (flag == 0)
-						return result
+						return antoniovandreformatarreal(result)
 					else
-						return result2
+						return antoniovandreformatarreal(result2);
 					}
 				else
 					{
@@ -7680,9 +7680,9 @@ function antoniovandrelimitefuncaocontinua(str, avisoanexo)
 				if (antoniovandremodulo(result1 - result2) < antoniovandrecoeficientes(1) * antoniovandreprecisaoreal(3))
 					{
 					if (flag == 0)
-						return result
+						return antoniovandreformatarreal(result)
 					else
-						return result2;
+						return antoniovandreformatarreal(result2);
 					}
 				else
 					return "O limite no ponto " + ponto + " não existe.";
@@ -9412,9 +9412,9 @@ function antoniovandreareatriangulolados(arr, saida)
 	switch (saida)
 		{
 		case 0:
-			return result;
+			return antoniovandreformatarreal(result);
 		case 1:
-			return result.toString();
+			return antoniovandreformatarreal(result).toString();
 		default:
 			return "e";
 		}
@@ -13215,7 +13215,7 @@ function antoniovandreinterseccaoduasretas(str, retorno)
 				}
 
 			case 1:
-				return [rarr[0][2], rarr[1][2]];
+				return [antoniovandreformatarreal(rarr[0][2]), antoniovandreformatarreal(rarr[1][2])];
 
 			default:
 				return "e";
@@ -13312,7 +13312,7 @@ function antoniovandreinterseccoesretacircunferencia(str, retorno)
 
 	if (r <= 0) return "O raio deve ser um real positivo.";
 
-	var d = 2 * a * b * yr * yr + ((-2 * b * b - 2 * a * b) * xr + (2 * a * b + 2 * a * a) * c) * yr - a * a * xr * xr - 2 * a * b * c * xr + (b * b + a * a) * r * r - b * b * c * c;
+	var d = antoniovandreformatarreal(2 * a * b * yr * yr + ((-2 * b * b - 2 * a * b) * xr + (2 * a * b + 2 * a * a) * c) * yr - a * a * xr * xr - 2 * a * b * c * xr + (b * b + a * a) * r * r - b * b * c * c);
 
 	if (d < 0)
 		return "A reta e a circunferência não se interceptam."
@@ -13326,9 +13326,9 @@ function antoniovandreinterseccoesretacircunferencia(str, retorno)
 			else
 				return "e";
 
-		var r1 = -(b * d2 + (b * b + a * b) * yr - b * b * xr + a * b * c) / (b * b + a * a);
+		var r1 = antoniovandreformatarreal(-(b * d2 + (b * b + a * b) * yr - b * b * xr + a * b * c) / (b * b + a * a));
 
-		var r2 = (b * d2 + (-b * b - a * b) * yr + b * b * xr - a * b * c) / (b * b + a * a);
+		var r2 = antoniovandreformatarreal((b * d2 + (-b * b - a * b) * yr + b * b * xr - a * b * c) / (b * b + a * a));
 
 		if ((antoniovandremodulo(r1) > antoniovandremaximovalorsaida(1)) || (antoniovandremodulo(r2) > antoniovandremaximovalorsaida(1)))
 			return antoniovandremensagenserro(4);
@@ -13359,7 +13359,7 @@ function antoniovandreinterseccoesretacircunferencia(str, retorno)
 						}
 
 				case 1:
-					return [r1, -a / b * r1 - c];
+					return [antoniovandreformatarreal(r1), antoniovandreformatarreal(-a / b * r1 - c)];
 
 				default:
 					return "e";
@@ -13406,7 +13406,7 @@ function antoniovandreinterseccoesretacircunferencia(str, retorno)
 
 					return out;
 				case 1:
-					return [[r1, -a / b * r1 - c], [r2, -a / b * r2 - c]];
+					return [[antoniovandreformatarreal(r1), antoniovandreformatarreal(-a / b * r1 - c)], [antoniovandreformatarreal(r2), antoniovandreformatarreal(-a / b * r2 - c)]];
 
 				default:
 					return "e";
@@ -13415,11 +13415,11 @@ function antoniovandreinterseccoesretacircunferencia(str, retorno)
 		}
 	}
 
-// Intersecções entre uma reta e uma circunferência. Argumentos globais: primeiro: uma string contendo separadas por barra vertical "|", as circunferências consistindo da abscissa de seu centro, a ordenada de seu centro, e o seu raio, separados por ponto e vírgula ";"; segundo: 0 para retornar string ou 1 para retornar vetor. Retorna a string "e" caso um erro genérico ocorra.
+// Intersecções entre duas circunferências. Argumentos globais: primeiro: uma string contendo separadas por barra vertical "|", as circunferências consistindo da abscissa de seu centro, a ordenada de seu centro, e o seu raio, separados por ponto e vírgula ";"; segundo: 0 para retornar string ou 1 para retornar vetor. Retorna a string "e" caso um erro genérico ocorra.
 
 function antoniovandreinterseccoesduascircunferencias(str, retorno)
 	{
-	var arr = str[0].value.split("|");
+	var arr = str.split("|");
 	var circ1;
 	var circ2;
 
@@ -13503,18 +13503,18 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 		return antoniovandremensagenserro(2);
 
 	if ((c <= 0) || (f <= 0)) return "O raio deve ser um real positivo.";
-	if ((a == d) && (b == e) && (c == f)) return "As circunferências são coincidentes";
+	if ((a == d) && (b == e) && (c == f)) return "As circunferências são coincidentes.";
 
-	var D = (-4*a*a*a + 4*a*a*d - 4*a*b*b + 8*a*b*e + 4*a*c*c + 4*a*d*d - 4*a*e*e - 4*a*f*f - 4*b*b*d + 8*b*d*e - 4*c*c*d - 4*d*d*d - 4*d*e*e + 4*d*f*f) * (-4*a*a*a + 4*a*a*d - 4*a*b*b + 8*a*b*e + 4*a*c*c + 4*a*d*d - 4*a*e*e - 4*a*f*f - 4*b*b*d + 8*b*d*e - 4*c*c*d - 4*d*d*d - 4*d*e*e + 4*d*f*f) - 4*(4*a*a - 8*a*d + 4*b*b - 8*b*e + 4*d*d + 4*e*e) * (a*a*a*a + 2*a*a*b*b - 4*a*a*b*e - 2*a*a*c*c - 2*a*a*d*d + 2*a*a*e*e + 2*a*a*f*f + b*b*b*b - 4*b*b*b*e - 2*b*b*c*c + 2*b*b*d*d + 6*b*b*e*e - 2*b*b*f*f + 4*b*c*c*e - 4*b*d*d*e - 4*b*e*e*e + 4*b*e*f*f + c*c*c*c + 2*c*c*d*d - 2*c*c*e*e - 2*c*c*f*f + d*d*d*d + 2*d*d*e*e - 2*d*d*f*f + e*e*e*e - 2*e*e*f*f + f*f*f*f);
+	var D = antoniovandreformatarreal((-4*a*a*a + 4*a*a*d - 4*a*b*b + 8*a*b*e + 4*a*c*c + 4*a*d*d - 4*a*e*e - 4*a*f*f - 4*b*b*d + 8*b*d*e - 4*c*c*d - 4*d*d*d - 4*d*e*e + 4*d*f*f) * (-4*a*a*a + 4*a*a*d - 4*a*b*b + 8*a*b*e + 4*a*c*c + 4*a*d*d - 4*a*e*e - 4*a*f*f - 4*b*b*d + 8*b*d*e - 4*c*c*d - 4*d*d*d - 4*d*e*e + 4*d*f*f) - 4*(4*a*a - 8*a*d + 4*b*b - 8*b*e + 4*d*d + 4*e*e) * (a*a*a*a + 2*a*a*b*b - 4*a*a*b*e - 2*a*a*c*c - 2*a*a*d*d + 2*a*a*e*e + 2*a*a*f*f + b*b*b*b - 4*b*b*b*e - 2*b*b*c*c + 2*b*b*d*d + 6*b*b*e*e - 2*b*b*f*f + 4*b*c*c*e - 4*b*d*d*e - 4*b*e*e*e + 4*b*e*f*f + c*c*c*c + 2*c*c*d*d - 2*c*c*e*e - 2*c*c*f*f + d*d*d*d + 2*d*d*e*e - 2*d*d*f*f + e*e*e*e - 2*e*e*f*f + f*f*f*f));
 
 	if (D < 0)
 		return "As circunferências não se interceptam."
 	else
 		{
 		var D2 = antoniovandresqrt(D);
-		var D3 = (2 * (4*a*a - 8*a*d + 4*b*b - 8*b*e + 4*d*d + 4*e*e));
+		var D3 = antoniovandreformatarreal(2 * (4*a*a - 8*a*d + 4*b*b - 8*b*e + 4*d*d + 4*e*e));
 
-		if (D3 == 0) return "As circunferências não se interceptam.";
+		if (antoniovandremodulo(D3) <= antoniovandreprecisaoreal(10)) return "As circunferências não se interceptam.";
 
 		if (antoniovandrenumeroreal(D2.toString()) == "e")
 			if (antoniovandrecompararstrings(typeof D2, "string") == 1)
@@ -13522,12 +13522,12 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 			else
 				return "e";
 
-		var r1 = (4*a*a*a - 4*a*a*d + D2 + 4*a*b*b - 8*a*b*e - 4*a*c*c - 4*a*d*d + 4*a*e*e + 4*a*f*f + 4*b*b*d - 8*d*b*e + 4*c*c*d + 4*d*d*d + 4*d*e*e - 4*d*f*f) / D3;
+		var r1 = antoniovandreformatarreal((4*a*a*a - 4*a*a*d + D2 + 4*a*b*b - 8*a*b*e - 4*a*c*c - 4*a*d*d + 4*a*e*e + 4*a*f*f + 4*b*b*d - 8*d*b*e + 4*c*c*d + 4*d*d*d + 4*d*e*e - 4*d*f*f) / D3);
 
-		var r2 = (4*a*a*a - 4*a*a*d - D2 + 4*a*b*b - 8*a*b*e - 4*a*c*c - 4*a*d*d + 4*a*e*e + 4*a*f*f + 4*b*b*d - 8*d*b*e + 4*c*c*d + 4*d*d*d + 4*d*e*e - 4*d*f*f) / D3;
+		var r2 = antoniovandreformatarreal((4*a*a*a - 4*a*a*d - D2 + 4*a*b*b - 8*a*b*e - 4*a*c*c - 4*a*d*d + 4*a*e*e + 4*a*f*f + 4*b*b*d - 8*d*b*e + 4*c*c*d + 4*d*d*d + 4*d*e*e - 4*d*f*f) / D3);
 
-		var rad1 = c*c - (r1 - a) * (r1 - a);
-		var rad2 = f*f - (r2 - d) * (r2 - d);
+		var rad1 = antoniovandreformatarreal(c*c - (r1 - a) * (r1 - a));
+		var rad2 = antoniovandreformatarreal(f*f - (r2 - d) * (r2 - d));
 
 		if ((rad1 < 0) && (rad2 < 0))
 			return "As circunferências não se interceptam.";
@@ -13619,7 +13619,7 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 
 					return out;
 				case 1:
-					return [[r1, cm1 * ra1 + b], [r1, -cm1 * ra1 + b]]
+					return [[antoniovandreformatarreal(r1), antoniovandreformatarreal(cm1 * ra1 + b)], [antoniovandreformatarreal(r1), antoniovandreformatarreal(-cm1 * ra1 + b)]]
 				default:
 					return "e";
 				}
@@ -13669,7 +13669,7 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 
 					return out;
 				case 1:
-					return [[r2, cm2 * ra2 + e], [r2, -cm2 * ra2 + e]]
+					return [[antoniovandreformatarreal(r2), antoniovandreformatarreal(cm2 * ra2 + e)], [antoniovandreformatarreal(r2), antoniovandreformatarreal(-cm2 * ra2 + e)]]
 				default:
 					return "e";
 				}
@@ -13724,11 +13724,11 @@ function antoniovandreinterseccoesduascircunferencias(str, retorno)
 					return out;
 			case 1:
 				if ((rad1 >= 0) && (rad2 >= 0)  && (r1 != r2))
-					return [[r1, cm1 * ra1 + b], [r2, cm2 * ra2 + e]]
+					return [[antoniovandreformatarreal(r1), antoniovandreformatarreal(cm1 * ra1 + b)], [antoniovandreformatarreal(r2), antoniovandreformatarreal(cm2 * ra2 + e)]]
 				else if (rad1 >= 0)
-					return [r1, cm1 * ra1 + b]
+					return [antoniovandreformatarreal(r1), antoniovandreformatarreal(cm1 * ra1 + b)]
 				else if (rad2 >= 0)
-					return [r2, cm2 * ra2 + b]
+					return [antoniovandreformatarreal(r2), antoniovandreformatarreal(cm2 * ra2 + b)]
 				else
 					return "As circunferências não se interceptam.";
 			default:
@@ -13987,7 +13987,7 @@ function antoniovandreinterseccaoplanos(str, retorno)
 		case 0:
 			return "x = " + ixs + dxs + "\ny = " + iys + dys + "\nz = " + izs + "\n\nt real."
 		case 1:
-			return [[xi, xd], [yi, yd], [zi, zd]];
+			return [[antoniovandreformatarreal(xi), antoniovandreformatarreal(xd)], [antoniovandreformatarreal(yi), antoniovandreformatarreal(yd)], [antoniovandreformatarreal(zi), antoniovandreformatarreal(zd)]];
 		default:
 			return "e";
 		}
@@ -14158,7 +14158,7 @@ function antoniovandreinterseccoesretaesfera(str, retorno)
 				return out;
 	
 			case 1:
-				return [x0 + vx * ((- vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx)), y0 + vy * ((- vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx)), z0 + vz * ((- vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx))];
+				return [antoniovandreformatarreal(x0 + vx * ((- vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx)), y0 + vy * ((- vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx)), z0 + vz * ((- vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx)))];
 
 			default:
 				return "e";
@@ -14228,7 +14228,7 @@ function antoniovandreinterseccoesretaesfera(str, retorno)
 			return out;
 
 		case 1:
-			return [[x0 + vx * ((antoniovandresqrt(D) - vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx)), y0 + vy * ((antoniovandresqrt(D) - vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx)), z0 + vz * ((antoniovandresqrt(D) - vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx))], [x0 + vx * ((- antoniovandresqrt(D) - vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx)), y0 + vy * ((- antoniovandresqrt(D) - vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx)), z0 + vz * ((- antoniovandresqrt(D) - vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx))]];
+			return [[antoniovandreformatarreal(x0 + vx * ((antoniovandresqrt(D) - vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx))), antoniovandreformatarreal(y0 + vy * ((antoniovandresqrt(D) - vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx))), antoniovandreformatarreal(z0 + vz * ((antoniovandresqrt(D) - vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx)))], [antoniovandreformatarreal(x0 + vx * ((- antoniovandresqrt(D) - vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx))), antoniovandreformatarreal(y0 + vy * ((- antoniovandresqrt(D) - vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx))), antoniovandreformatarreal(z0 + vz * ((- antoniovandresqrt(D) - vz * z0 - vy * y0 - vx * x0 + c * vz + b * vy + a * vx) / (vz * vz + vy * vy + vx * vx)))]];
 
 		default:
 			return "e";
