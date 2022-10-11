@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 10-10-2022.
+Última atualização: 11-10-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10152,6 +10152,24 @@ Exercício: área restante de um retângulo após dobras.
 __
 
 Artigos/Mathematical Ramblings - 10-10-2022 - 5.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Coordenadas 2P de distância de Antonio Vandré.
+__
+
+Artigos/Mathematical Ramblings - 11-10-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Coordenadas de distância de Antonio Vandré.
+__
+
+Artigos/Mathematical Ramblings - 11-10-2022 - 2.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
