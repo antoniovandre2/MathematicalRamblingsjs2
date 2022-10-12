@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 11-10-2022. Não considerando alterações em macros, variáveis globais e comentários.
+// Última atualização: 12-10-2022. Não considerando alterações em macros, variáveis globais e comentários.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "11-10-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "12-10-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -903,6 +903,8 @@ function antoniovandrenumeroreal(arr)
 
 function antoniovandrenumerorealnaonegativo(arr)
 	{
+	if (antoniovandrecompararstrings(typeof arr, "string") == "e") return "e";
+
 	var bufferverificacaonumerica = arr.trim().split(/\s+/);
 	var flag = 0;
 
@@ -925,6 +927,8 @@ function antoniovandrenumerorealnaonegativo(arr)
 
 function antoniovandrenumerorealpositivo(arr)
 	{
+	if (antoniovandrecompararstrings(typeof arr, "string") == "e") return "e";
+
 	var bufferverificacaonumerica = arr.trim().split(/\s+/);
 	var flag = 0;
 
@@ -947,6 +951,8 @@ function antoniovandrenumerorealpositivo(arr)
 
 function antoniovandrenumerointeiro(arr)
 	{
+	if (antoniovandrecompararstrings(typeof arr, "string") == "e") return "e";
+
 	var bufferverificacaonumerica = arr.trim().split(/\s+/);
 	var flag = 0;
 
@@ -969,6 +975,8 @@ function antoniovandrenumerointeiro(arr)
 
 function antoniovandrenumeronatural(arr)
 	{
+	if (antoniovandrecompararstrings(typeof arr, "string") == "e") return "e";
+
 	var bufferverificacaonumerica = arr.trim().split(/\s+/);
 	var flag = 0;
 
@@ -994,6 +1002,8 @@ function antoniovandrenumeronatural(arr)
 
 function antoniovandrenumeronaturalpositivo(arr)
 	{
+	if (antoniovandrecompararstrings(typeof arr, "string") == "e") return "e";
+
 	var bufferverificacaonumerica = arr.trim().split(/\s+/);
 	var flag = 0;
 
@@ -6985,6 +6995,8 @@ function antoniovandreoperadoresfuncoesconstantes(i)
 			return "AVREFERENCEVARIABLE";
 		case 10:
 			return "stringerrointencional";
+		case 11:
+			return "Por limitações do JavaScript diante de complexos cálculos, esta calculadora pode aprensentar falhas.\n\nRepito: a programação está perfeita, mas a ferramente JavaScript pode apresentar falhas.";
 		default:
 		}
 	}
@@ -7711,6 +7723,8 @@ function antoniovandrecoeficientes(i)
 
 function antoniovandrenumerocomplexo(arr)
 	{
+	if (antoniovandrecompararstrings(typeof arr, "string") == "e") return "e";
+
 	var bufferverificacaonumerica = arr.trim().split(",");
 	var tam = bufferverificacaonumerica.length;
 
