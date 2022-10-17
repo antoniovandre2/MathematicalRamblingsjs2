@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 14-10-2022.
+Última atualização: 16-10-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10197,6 +10197,33 @@ Coordenadas logarítmicas de Antonio Vandré.
 __
 
 Artigos/Mathematical Ramblings - 13-10-2022 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Sejam $p$ e $q$ reais positivos, mostre a média harmônica é menor ou igual à média geométrica.
+__
+
+Artigos/Mathematical Ramblings - 16-10-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Coordenadas hiperbólicas de Antonio Vandré.
+__
+
+Artigos/Mathematical Ramblings - 16-10-2022 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Coordenadas elípticas de Antonio Vandré.
+__
+
+Artigos/Mathematical Ramblings - 16-10-2022 - 3.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
