@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 14-10-2022.
+// Última atualização: 17-10-2022.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -14033,6 +14033,150 @@ function antoniovandreinterseccoesretaesfera(str, retorno)
 
 		default:
 			return "e";
+		}
+	}
+
+// Ponto reflexo de Antonio Vandré. Argumentos: primeiro: uma string separada por ponto e vírgula ";", tendo como primeira parte uma função em "x", a segunda parte a terceira a abscissa do ponto a encontrar a imagem, a terceira a ordenada do ponto a encontrar a imagem, e a quarta o ponto de referência na função; segundo: -1 para exibir o aviso anexo, 0 para retornar string, 1 para retornar vetor, ou 2 para retornar string formatada para LaTeX. Retorna a string "e" caso ocorra um erro.
+
+function antoniovandrepontoreflexo(str, retorno)
+	{
+	var argumentos = str.split(";");
+	var derivadazero;
+	var primeiraderivada;
+	var referencia;
+	var abscissa;
+	var ordenada;
+	var resultx;
+	var resulty;
+
+	if (retorno == -1) return antoniovandreoperadoresfuncoesconstantes(1);
+
+	if (argumentos.length != 4) return "e";
+
+	if (argumentos[0].trim() == "") return "e";
+
+	if ((antoniovandreexpressaofuncaovalida(argumentos[1].trim()) == "e") || (antoniovandreexpressaofuncaovalida(argumentos[2].trim()) == "e") || (antoniovandreexpressaofuncaovalida(argumentos[3].trim()) == "e"))
+		return "e";
+
+	try
+		{
+		abscissa = eval(antoniovandretraduzirexpressaofuncional(argumentos[1], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if (antoniovandrenumeroreal(abscissa.toString()) == "e")
+		return "e";
+
+	try
+		{
+		ordenada = eval(antoniovandretraduzirexpressaofuncional(argumentos[2], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if (antoniovandrenumeroreal(ordenada.toString()) == "e")
+		return "e";
+
+	try
+		{
+		referencia = eval(antoniovandretraduzirexpressaofuncional(argumentos[3], 0));
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if (antoniovandrenumeroreal(referencia.toString()) == "e")
+		return "e";
+
+	if ((antoniovandremodulo(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(referencia) > parseFloat(antoniovandremaximovalorentrada(1))))
+		return antoniovandremensagenserro(2);
+
+	derivadazero = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[3].trim() + "+" + antoniovandreprecisaoreal(6).toString() + ";0", 1, 0);
+
+	if (antoniovandrenumeroreal(derivadazero.toString()) == "e") return derivadazero;
+
+	primeiraderivada = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[3].trim() + "+" + antoniovandreprecisaoreal(6).toString() + ";1", 1, 0);
+
+	if (antoniovandrenumeroreal(primeiraderivada.toString()) == "e") return primeiraderivada;
+
+	try
+		{
+		resultx = 2 * (primeiraderivada * (derivadazero - ordenada) + referencia + primeiraderivada * primeiraderivada * abscissa) / (primeiraderivada * primeiraderivada + 1) - abscissa;
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if ((antoniovandrenumeroreal(resultx.toString()) == "e") || (resultx == null) || (resultx == undefined) || (isNaN(resultx))) return "e";
+
+	if (antoniovandremodulo(resultx) > antoniovandremaximovalorsaida(1))
+		return antoniovandremensagenserro(5)
+
+	try
+		{
+		resulty = 2 * (ordenada + primeiraderivada * referencia - primeiraderivada * abscissa + derivadazero * primeiraderivada * primeiraderivada) / (primeiraderivada * primeiraderivada + 1) - ordenada;
+		}
+	catch (error)
+		{
+		return "e";
+		}
+
+	if ((antoniovandrenumeroreal(resulty.toString()) == "e") || (resulty == null) || (resulty == undefined) || (isNaN(resulty))) return "e";
+
+	if (antoniovandremodulo(resulty) > antoniovandremaximovalorsaida(1))
+		return antoniovandremensagenserro(5)
+
+	resultx = antoniovandreformatarreal(resultx);
+	resulty = antoniovandreformatarreal(resulty);
+
+	switch (retorno)
+		{
+		case 0:
+			var resultstr = "";
+			var coef = antoniovandrefracaogeratriz(resultx, 1)
+			var coef2 = antoniovandrefracaogeratriz(resulty, 1)
+
+			if (coef[1] != 1)
+				resultstr = resultstr + coef[0].toString() + " / " + coef[1].toString()
+			else
+				resultstr = resultstr + coef[0].toString();
+
+			resultstr = resultstr + " , ";
+	
+			if (coef2[1] != 1)
+				resultstr = resultstr + coef2[0].toString() + " / " + coef2[1].toString()
+			else
+				resultstr = resultstr + coef2[0].toString();
+
+			return resultstr;
+		case 1:
+			return [resultx, resulty];
+		case 2:
+			var resultstr = "\\left(";
+			var coef = antoniovandrefracaogeratriz(resultx, 1)
+			var coef2 = antoniovandrefracaogeratriz(resulty, 1)
+
+			if (coef[1] != 1)
+				resultstr = resultstr + "\\dfrac{" + coef[0].toString() + "}{" + coef[1].toString() + "}"
+			else
+				resultstr = resultstr + coef[0].toString();
+
+			resultstr = resultstr + ", ";
+	
+			if (coef2[1] != 1)
+				resultstr = resultstr + "\\dfrac{" + coef2[0].toString() + "}{" + coef2[1].toString() + "}"
+			else
+				resultstr = resultstr + coef2[0].toString();
+
+			return resultstr + "\\right)";
+		default:
 		}
 	}
 

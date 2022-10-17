@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 16-10-2022.
+Última atualização: 17-10-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10224,6 +10224,33 @@ Coordenadas elípticas de Antonio Vandré.
 __
 
 Artigos/Mathematical Ramblings - 16-10-2022 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Ponto reflexo de Antonio Vandré.
+__
+
+Artigos/Mathematical Ramblings - 17-10-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: depois que você aprende Cálculo.
+__
+
+Media/Memes/Mathematical Ramblings - 17-10-2022 - 2.png
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: ponto reflexo de Antonio Vandré.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 17-10-2022 - 3.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
