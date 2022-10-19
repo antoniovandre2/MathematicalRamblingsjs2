@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 17-10-2022.
+Última atualização: 19-10-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10251,6 +10251,15 @@ Calculadora: ponto reflexo de Antonio Vandré.
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 17-10-2022 - 3.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Taxa de variação da área de um triângulo dada a taxa de variação de um dos lados.
+__
+
+Artigos/Mathematical Ramblings - 19-10-2022 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
