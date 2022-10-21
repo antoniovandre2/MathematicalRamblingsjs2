@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 17-10-2022.
+// Última atualização: 21-10-2022.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -14095,7 +14095,12 @@ function antoniovandrepontoreflexo(str, retorno)
 		return "e";
 
 	if ((antoniovandremodulo(abscissa) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(ordenada) > parseFloat(antoniovandremaximovalorentrada(1))) || (antoniovandremodulo(referencia) > parseFloat(antoniovandremaximovalorentrada(1))))
-		return antoniovandremensagenserro(2);
+		{
+		if (retorno == 2)
+			return "\\text{" + antoniovandremensagenserro(2) + "}"
+		else
+			return antoniovandremensagenserro(2);
+		}
 
 	derivadazero = antoniovandrederivadaemumponto(argumentos[0].trim() + ";" + argumentos[3].trim() + "+" + antoniovandreprecisaoreal(6).toString() + ";0", 1, 0);
 
@@ -14117,7 +14122,12 @@ function antoniovandrepontoreflexo(str, retorno)
 	if ((antoniovandrenumeroreal(resultx.toString()) == "e") || (resultx == null) || (resultx == undefined) || (isNaN(resultx))) return "e";
 
 	if (antoniovandremodulo(resultx) > antoniovandremaximovalorsaida(1))
-		return antoniovandremensagenserro(5)
+		{
+		if (retorno == 2)
+			return "\\text{" + antoniovandremensagenserro(5) + "}"
+		else
+			return antoniovandremensagenserro(5);
+		}
 
 	try
 		{
@@ -14131,7 +14141,12 @@ function antoniovandrepontoreflexo(str, retorno)
 	if ((antoniovandrenumeroreal(resulty.toString()) == "e") || (resulty == null) || (resulty == undefined) || (isNaN(resulty))) return "e";
 
 	if (antoniovandremodulo(resulty) > antoniovandremaximovalorsaida(1))
-		return antoniovandremensagenserro(5)
+		{
+		if (retorno == 2)
+			return "\\text{" + antoniovandremensagenserro(5) + "}"
+		else
+			return antoniovandremensagenserro(5);
+		}
 
 	resultx = antoniovandreformatarreal(resultx);
 	resulty = antoniovandreformatarreal(resulty);

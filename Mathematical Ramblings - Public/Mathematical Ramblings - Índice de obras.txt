@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 19-10-2022.
+Última atualização: 21-10-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10260,6 +10260,51 @@ Taxa de variação da área de um triângulo dada a taxa de variação de um dos
 __
 
 Artigos/Mathematical Ramblings - 19-10-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Um gráfico curioso. $\rho = \dfrac{1}{\theta} + 1$.
+__
+
+Artigos/Mathematical Ramblings - 21-10-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Coordenadas condensadas retangulares de Antonio Vandré.
+__
+
+Artigos/Mathematical Ramblings - 21-10-2022 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Coordenadas condensadas circulares de Antonio Vandré.
+__
+
+Artigos/Mathematical Ramblings - 21-10-2022 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: coordenadas cartesianas para coordenadas condensadas retangulares de Antonio Vandré.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 21-10-2022 - 4.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: coordenadas condensadas retangulares de Antonio Vandré para coordenadas cartesianas.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 21-10-2022 - 5.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
