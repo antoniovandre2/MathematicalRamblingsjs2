@@ -10309,3 +10309,21 @@ __
 
 Publicado em "mathematicalramblings.blogspot.com".
 _____
+
+Calculadora: coordenadas cartesianas para coordenadas condensadas circulares de Antonio Vandré.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 21-10-2022 - 6.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: coordenadas condensadas circulares de Antonio Vandré para coordenadas cartesianas.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 21-10-2022 - 7.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
