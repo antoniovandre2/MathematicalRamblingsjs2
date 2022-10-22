@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 21-10-2022.
+Última atualização: 22-10-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10323,6 +10323,33 @@ Calculadora: coordenadas condensadas circulares de Antonio Vandré para coordena
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 21-10-2022 - 7.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Notações. Limites superior e inferior de uma integral.
+__
+
+Artigos/Mathematical Ramblings - 22-10-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Posição real dada latência na transmissão da informação.
+__
+
+Artigos/Mathematical Ramblings - 22-10-2022 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Igualdade conjunta de Antonio Vandré.
+__
+
+Artigos/Mathematical Ramblings - 22-10-2022 - 3.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
