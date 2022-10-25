@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 22-10-2022.
+Última atualização: 24-10-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10350,6 +10350,15 @@ Igualdade conjunta de Antonio Vandré.
 __
 
 Artigos/Mathematical Ramblings - 22-10-2022 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: acomodando uma família nas vagas disponíveis de um avião.
+__
+
+Artigos/Mathematical Ramblings - 24-10-2022 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
