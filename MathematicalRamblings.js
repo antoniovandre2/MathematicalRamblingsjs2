@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 21-10-2022.
+// Última atualização: 08-11-2022.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -4731,7 +4731,14 @@ function antoniovandreexp(x)
 		if (antoniovandreaproximacaotaylorflag())
 			return antoniovandreaproximacaotaylor("exp, " + x.toString())
 		else
-			return Math.exp(x);
+			{
+			var antoniovandreexpresult = Math.exp(x);
+
+			if (antoniovandremodulo(antoniovandreexpresult) > antoniovandremaximovalorsaida(1))
+				return antoniovandremensagenserro(5)
+			else
+				return antoniovandreexpresult;
+			}
 		}
 	}
 
@@ -4782,7 +4789,14 @@ function antoniovandrepotencia(a, b)
 				if (antoniovandreaproximacaotaylorflag())
 					return antoniovandreexp(b * antoniovandreln(a))
 				else
-					return Math.pow(a, b);
+					{
+					var antoniovandrepotenciaresult = Math.pow(a, b);
+
+					if (antoniovandremodulo(antoniovandrepotenciaresult) > antoniovandremaximovalorsaida(1))
+						return antoniovandremensagenserro(5)
+					else
+						return antoniovandrepotenciaresult;
+					}
 				}
 			}
 		else
@@ -4805,7 +4819,14 @@ function antoniovandrepotencia(a, b)
 						if (antoniovandreaproximacaotaylorflag())
 							return (-1) * antoniovandreexp(eval(eval(b) * antoniovandreln(antoniovandremodulo(a))))
 						else
-							return (-1) * Math.pow(antoniovandremodulo(a), b);
+							{
+							var antoniovandrepotenciaresult = (-1) * Math.pow(antoniovandremodulo(a), b);
+
+							if (antoniovandremodulo(antoniovandrepotenciaresult) > antoniovandremaximovalorsaida(1))
+								return antoniovandremensagenserro(5)
+							else
+								return antoniovandrepotenciaresult;
+							}
 						}
 					else
 						return "O resultado da potência não é um número real.";
@@ -4815,7 +4836,14 @@ function antoniovandrepotencia(a, b)
 					if (antoniovandreaproximacaotaylorflag())
 						return antoniovandreexp(eval(b * antoniovandreln(a)))
 					else
-						return Math.pow(a, b);
+						{
+						var antoniovandrepotenciaresult = Math.pow(a, b);
+
+						if (antoniovandremodulo(antoniovandrepotenciaresult) > antoniovandremaximovalorsaida(1))
+							return antoniovandremensagenserro(5)
+						else
+							return antoniovandrepotenciaresult;
+						}
 					}
 				}
 			}
@@ -4929,7 +4957,14 @@ function antoniovandreln(x)
 		if (antoniovandreaproximacaotaylorflag())
 			return antoniovandreaproximacaotaylor("ln, " + x.toString())
 		else
-			return Math.log(x);
+			{
+			var antoniovandrelnresult = Math.log(x);
+
+			if (antoniovandremodulo(antoniovandrelnresult) > antoniovandremaximovalorsaida(1))
+				return antoniovandremensagenserro(5)
+			else
+				return antoniovandrelnresult;
+			}
 		}
 	}
 
@@ -4948,6 +4983,9 @@ function antoniovandrelog10(x)
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
 		var n = antoniovandreln(eval(x));
+
+		if (antoniovandrecompararstrings(n, antoniovandremensagenserro(5)) == 1)
+			return antoniovandremensagenserro(5);
 
 		if (antoniovandrecompararstrings(n, "O logaritimando deve ser um número real positivo.") == 1)
 			return "O logaritimando deve ser um número real positivo.";
@@ -4983,6 +5021,9 @@ function antoniovandrelog2(x)
 		x = antoniovandretraduzirexpressaofuncional(x, 0)
 
 		var n = antoniovandreln(eval(x));
+
+		if (antoniovandrecompararstrings(n, antoniovandremensagenserro(5)) == 1)
+			return antoniovandremensagenserro(5);
 
 		if (antoniovandrecompararstrings(n, "O logaritimando deve ser um número real positivo.") == 1)
 			return "O logaritimando deve ser um número real positivo.";
@@ -5261,7 +5302,14 @@ function antoniovandretg(x)
 		return "e";
 
 	if (antoniovandremodulo(c) > antoniovandreprecisaoreal(4))
-		return antoniovandresen(x) / c
+		{
+		var antoniovandretgresult = antoniovandresen(x) / c;
+
+		if (antoniovandremodulo(antoniovandretgresult) > antoniovandremaximovalorsaida(1))
+			return antoniovandremensagenserro(5)
+		else
+			return antoniovandretgresult;
+		}
 	else
 		return "O argumento da tangente deve ser diferente de pi/2 + k*pi, com k inteiro.";
 	}
@@ -5279,7 +5327,14 @@ function antoniovandrecotg(x)
 		return "e";
 
 	if (antoniovandremodulo(s) > antoniovandreprecisaoreal(4))
-		return antoniovandrecos(x) / s
+		{
+		var antoniovandrecotgresult = antoniovandrecos(x) / s;
+
+		if (antoniovandremodulo(antoniovandrecotgresult) > antoniovandremaximovalorsaida(1))
+			return antoniovandremensagenserro(5)
+		else
+			return antoniovandrecotgresult;
+		}
 	else
 		return "O argumento da cotangente deve ser diferente de k*pi, com k inteiro.";
 	}
@@ -5478,7 +5533,12 @@ function antoniovandresenh(x)
 	if (antoniovandrenumeroreal(exn.toString()) == "e")
 		return exn;
 
-	return (ex - exn) / 2;
+	var antoniovandresenhresult = (ex - exn) / 2;
+
+	if (antoniovandremodulo(antoniovandresenhresult) > antoniovandremaximovalorsaida(1))
+		return antoniovandremensagenserro(5)
+	else
+		return antoniovandresenhresult;
 	}
 
 // Cosseno hiperbólico. Retorna a string "e" se um erro genérico ocorre.
@@ -5497,7 +5557,12 @@ function antoniovandrecosh(x)
 	if (antoniovandrenumeroreal(exn.toString()) == "e")
 		return exn;
 
-	return (ex + exn) / 2;
+	var antoniovandrecoshresult = (ex + exn) / 2;
+
+	if (antoniovandremodulo(antoniovandrecoshresult) > antoniovandremaximovalorsaida(1))
+		return antoniovandremensagenserro(5)
+	else
+		return antoniovandrecoshresult;
 	}
 
 // Tangente hiperbólica. Retorna a string "e" se um erro genérico ocorre.
@@ -5516,7 +5581,12 @@ function antoniovandretgh(x)
 	if (antoniovandrenumeroreal(chx.toString()) == "e")
 		return chx;
 
-	return shx / chx;
+	var antoniovandretghresult = shx / chx;
+
+	if (antoniovandremodulo(antoniovandretghresult) > antoniovandremaximovalorsaida(1))
+		return antoniovandremensagenserro(5)
+	else
+		return antoniovandretghresult;
 	}
 
 // Cotangente hiperbólica. Retorna a string "e" se um erro genérico ocorre.
@@ -5532,7 +5602,14 @@ function antoniovandrecotgh(x)
 		return sh;
 
 	if (antoniovandremodulo(sh) > antoniovandreprecisaoreal(4))
-		return antoniovandrecosh(x) / sh;
+		{
+		var antoniovandrecotghresult = antoniovandrecosh(x) / sh;
+
+		if (antoniovandremodulo(antoniovandrecotghresult) > antoniovandremaximovalorsaida(1))
+			return antoniovandremensagenserro(5)
+		else
+			return antoniovandrecotghresult;
+		}
 	else
 		return "O argumento da cotangente hiperbólica deve ser diferente de 0.";
 	}
@@ -5549,7 +5626,12 @@ function antoniovandresech(x)
 	if (antoniovandrenumeroreal(ch.toString()) == "e")
 		return ch;
 
-	return 1 / ch;
+	var antoniovandresechresult = 1 / ch;
+
+	if (antoniovandremodulo(antoniovandresechresult) > antoniovandremaximovalorsaida(1))
+		return antoniovandremensagenserro(5)
+	else
+		return antoniovandresechresult;
 	}
 
 // Cossecante hiperbólica. Retorna a string "e" se um erro genérico ocorre.
@@ -5565,7 +5647,14 @@ function antoniovandrecossech(x)
 		return sh;
 
 	if (antoniovandremodulo(sh) > antoniovandreprecisaoreal(4))
-		return 1 / sh;
+		{
+		var antoniovandrecossechresult = 1 / sh;
+
+		if (antoniovandremodulo(antoniovandrecossechresult) > antoniovandremaximovalorsaida(1))
+			return antoniovandremensagenserro(5)
+		else
+			return antoniovandrecossechresult;
+		}
 	else
 		return "O argumento da cossecante hiperbólica deve ser diferente de 0.";
 	}
@@ -5587,7 +5676,14 @@ function antoniovandrefatorialescopofuncoes(x)
 		return antoniovandrefatorialescopofuncoes(eval(x));
 		}
 	else
-		return antoniovandrefatorial(x);
+		{
+		var antoniovandrefatorialescopofuncoesresult = antoniovandrefatorial(x);
+
+		if (antoniovandremodulo(antoniovandrefatorialescopofuncoesresult) > antoniovandremaximovalorsaida(1))
+			return antoniovandremensagenserro(5)
+		else
+			return antoniovandrefatorialescopofuncoesresult;
+		}
 	}
 
 // Arranjos, escopo funções. Retorna a string "e" se um erro genérico ocorre.
@@ -5608,7 +5704,14 @@ function antoniovandrearranjosescopofuncoes(x, y)
 		return antoniovandrearranjosescopofuncoes(eval(x), eval(y));
 		}
 	else
-		return antoniovandrearranjos(x, y);
+		{
+		var antoniovandrearranjosescopofuncoesresult = antoniovandrearranjos(x, y);
+
+		if (antoniovandremodulo(antoniovandrearranjosescopofuncoesresult) > antoniovandremaximovalorsaida(1))
+			return antoniovandremensagenserro(5)
+		else
+			return antoniovandrearranjosescopofuncoesresult;
+		}
 	}
 
 // Combinações, escopo funções. Retorna a string "e" se um erro genérico ocorre.
@@ -5629,7 +5732,14 @@ function antoniovandrecombinacoesescopofuncoes(x, y)
 		return antoniovandrecombinacoesescopofuncoes(eval(x), eval(y));
 		}
 	else
-		return antoniovandrecombinacoes(x, y);
+		{
+		var antoniovandrecombinacoesescopofuncoesresult = antoniovandrecombinacoes(x, y);
+
+		if (antoniovandremodulo(antoniovandrecombinacoesescopofuncoesresult) > antoniovandremaximovalorsaida(1))
+			return antoniovandremensagenserro(5)
+		else
+			return antoniovandrecombinacoesescopofuncoesresult;
+		}
 	}
 
 // Graus para radianos. Retorna a string "e" se um erro genérico ocorre.
