@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 08-11-2022.
+// Última atualização: 09-11-2022.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "08-11-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "09-11-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -5352,7 +5352,14 @@ function antoniovandresec(x)
 		return "e";
 
 	if (antoniovandremodulo(c) > antoniovandreprecisaoreal(4))
-		return 1 / c
+		{
+		var antoniovandresecresult = 1 / c;
+
+		if (antoniovandremodulo(antoniovandresecresult) > antoniovandremaximovalorsaida(1))
+			return antoniovandremensagenserro(5)
+		else
+			return antoniovandresecresult;
+		}
 	else
 		return "O argumento da secante deve ser diferente de pi/2 + k*pi, com k inteiro.";
 	}
@@ -5370,7 +5377,14 @@ function antoniovandrecossec(x)
 		return "e";
 
 	if (antoniovandremodulo(s) > antoniovandreprecisaoreal(4))
-		return 1 / s
+		{
+		var antoniovandrecossecresult = 1 / s;
+
+		if (antoniovandremodulo(antoniovandrecossecresult) > antoniovandremaximovalorsaida(1))
+			return antoniovandremensagenserro(5)
+		else
+			return antoniovandrecossecresult;
+		}
 	else
 		return "O argumento da cossecante deve ser diferente de k*pi, com k inteiro.";
 	}
