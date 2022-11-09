@@ -10372,3 +10372,12 @@ __
 
 Publicado em "mathematicalramblings.blogspot.com".
 _____
+
+Calculadora: gráfico simétrico de superfície tridimensional por coordenadas polares com relação a um plano.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 09-11-2022 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
