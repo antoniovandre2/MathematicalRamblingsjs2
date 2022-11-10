@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 09-11-2022.
+Última atualização: 10-11-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10377,6 +10377,15 @@ Calculadora: gráfico simétrico de superfície tridimensional por coordenadas p
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 09-11-2022 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: formas distintas de pintar círculos.
+__
+
+Artigos/Mathematical Ramblings - 10-11-2022 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
