@@ -10390,3 +10390,21 @@ __
 
 Publicado em "mathematicalramblings.blogspot.com".
 _____
+
+Calculadora: simétrica de uma superfície de revolução gerada por gráfico em coordenadas polares com relação a um ponto.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 10-11-2022 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: simétrica de uma superfície de revolução gerada por gráfico em coordenadas polares com relação a um plano.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 10-11-2022 - 3.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
