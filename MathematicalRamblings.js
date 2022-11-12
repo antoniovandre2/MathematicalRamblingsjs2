@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 09-11-2022.
+// Última atualização: 12-11-2022.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "09-11-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "12-11-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1926,7 +1926,7 @@ function antoniovandreformatarreal(r)
 	if (antoniovandrenumeroreal(r.toString()) == "e")
 		return "e";
 
-	var sft = antoniovandrepiso(Math.log(antoniovandreprecisaoreal(1)) / Math.log(10)) * (-1);
+	var sft = antoniovandrepiso(antoniovandrelog10(antoniovandreprecisaoreal(1))) * (-1);
 
 	for (var i = 0; i < sft; i++)
 		{
