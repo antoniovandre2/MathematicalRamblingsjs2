@@ -10453,3 +10453,12 @@ __
 
 Publicado em "mathematicalramblings.blogspot.com".
 _____
+
+Calculadora: simétrica de uma superfície de revolução gerada por gráfico de uma função com relação a um plano.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 17-11-2022 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
