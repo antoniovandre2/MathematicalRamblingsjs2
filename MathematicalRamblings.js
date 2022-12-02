@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 12-11-2022.
+// Última atualização: 02-12-2022.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "12-11-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "02-12-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -11656,6 +11656,20 @@ function antoniovandrepontosimetrico(str, retorno)
 		}
 	}
 
+// Constantes para a função antoniovandrefracaogeratrizdizimaperiodica(). Argumentos: 0 para retornar o limite superior de pesquisa na matriz de números primos. Retorna a string "e" caso um erro genérico ocorra.
+
+function antoniovandrefracaogeratrizdizimaperiodicaconstantes(i)
+	{
+	switch (i)
+		{
+		case 0:
+			return 500;
+			break;
+		default:
+			return "e";
+		}
+	}
+
 // Fração geratriz de uma dízima periódica. Argumentos: primeiro: uma string do tipo "m.npo" onde "m", "n" e "o" são números inteiros, "p" é um marcador do início da periodicidade, "n" e "o" positivos, "n" pode ser omitido; segundo: o tipo de retorno, 0 para string ou 1 para matriz. Retorna a string "e" caso um erro genérico ocorra.
 
 function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
@@ -11700,12 +11714,24 @@ function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
 
 	shiftretorno2 /= 10;
 
+	numerador /= shiftretorno2;
+	var denominadorn = antoniovandreformatarreal(shiftretorno * retorno[1] / shiftretorno2);
+
+	var tam = antoniovandreprimos(-1);
+
+	if (tam > antoniovandrefracaogeratrizdizimaperiodicaconstantes(0))
+		tam = antoniovandrefracaogeratrizdizimaperiodicaconstantes(0);
+
+	for (var i = 0; i < tam; i++)
+		if ((numerador % antoniovandreprimos(i) == 0) && (denominadorn % antoniovandreprimos(i) == 0))
+			{numerador /= antoniovandreprimos(i); denominadorn /= antoniovandreprimos(i);}
+
 	switch (tiporetorno)
 		{
 		case 0:
-			return (numerador / shiftretorno2).toString() + " / " + antoniovandreformatarreal(shiftretorno * retorno[1] / shiftretorno2).toString();
+			return numerador.toString() + " / " + denominadorn.toString();
 		case 1:
-			return [numerador / shiftretorno2, antoniovandreformatarreal(shiftretorno * retorno[1] / shiftretorno2)];
+			return [numerador, denominadorn];
 		default:
 			return "e";
 		}
