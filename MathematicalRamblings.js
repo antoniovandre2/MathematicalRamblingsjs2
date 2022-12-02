@@ -11664,7 +11664,6 @@ function antoniovandrefracaogeratrizdizimaperiodicaconstantes(i)
 		{
 		case 0:
 			return 500;
-			break;
 		default:
 			return "e";
 		}
