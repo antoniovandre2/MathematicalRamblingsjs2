@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 02-12-2022.
+// Última atualização: 03-12-2022.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "02-12-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "03-12-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -11722,7 +11722,7 @@ function antoniovandrefracaogeratrizdizimaperiodica(x, tiporetorno)
 		tam = antoniovandrefracaogeratrizdizimaperiodicaconstantes(0);
 
 	for (var i = 0; i < tam; i++)
-		if ((numerador % antoniovandreprimos(i) == 0) && (denominadorn % antoniovandreprimos(i) == 0))
+		while ((numerador % antoniovandreprimos(i) == 0) && (denominadorn % antoniovandreprimos(i) == 0))
 			{numerador /= antoniovandreprimos(i); denominadorn /= antoniovandreprimos(i);}
 
 	switch (tiporetorno)
