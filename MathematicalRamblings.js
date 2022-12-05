@@ -4842,7 +4842,26 @@ function antoniovandrepotencia(a, b)
 							}
 						}
 					else
-						return "O resultado da potência não é um número real.";
+						{
+						var denominador = antoniovandrefracaogeratriz(b, 1)[1];
+
+						if (denominador % 2 != 0)
+							{
+							if (antoniovandreaproximacaotaylorflag())
+								return (-1) * antoniovandreexp(eval(eval(b) * antoniovandreln(antoniovandremodulo(a))))
+							else
+								{
+								var antoniovandrepotenciaresult = (-1) * Math.pow(antoniovandremodulo(a), b);
+	
+								if (antoniovandremodulo(antoniovandrepotenciaresult) > antoniovandremaximovalorsaida(1))
+									return antoniovandremensagenserro(5)
+								else
+									return antoniovandrepotenciaresult;
+								}
+							}
+						else
+							return "O resultado da potência não é um número real.";
+						}
 					}
 				else
 					{
