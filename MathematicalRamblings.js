@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 03-12-2022.
+// Última atualização: 05-12-2022.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "03-12-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "05-12-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1971,6 +1971,19 @@ function antoniovandreprecisaoreal(i)
 			return antoniovandreprecisaoreal(4); // Margem de erro para a intersecção entre circunferências.
 		default:
 			return "e";
+		}
+	}
+
+// Constantes utilizadas.
+
+function antoniovandreconstantes(i)
+	{
+	switch (i)
+		{
+		case 0:
+			return 1048576; // Maior número potência de 2 utilizado.
+		default:
+			return "e"
 		}
 	}
 
@@ -4814,7 +4827,7 @@ function antoniovandrepotencia(a, b)
 				{
 				if (antoniovandrenumerointeiro(b.toString()) == "e")
 					{
-					if (antoniovandrefracaogeratriz(b, 1)[1] % 2 == 1)
+					if (antoniovandrenumerointeiro((b * antoniovandreconstantes(0)).toString()) == "e")
 						{
 						if (antoniovandreaproximacaotaylorflag())
 							return (-1) * antoniovandreexp(eval(eval(b) * antoniovandreln(antoniovandremodulo(a))))

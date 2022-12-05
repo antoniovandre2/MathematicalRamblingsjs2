@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 17-11-2022.
+Última atualização: 05-12-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10458,6 +10458,24 @@ Calculadora: simétrica de uma superfície de revolução gerada por gráfico de
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 17-11-2022 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Sejam $x$ um racional e $y$ um irracional, não nulos, mostre que $xy$ é irracional.
+__
+
+Artigos/Mathematical Ramblings - 05-12-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: modelos distintos de um brinquedo caminhão-cegonha.
+__
+
+Artigos/Mathematical Ramblings - 05-12-2022 - 2.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
