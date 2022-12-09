@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 05-12-2022.
+// Última atualização: 09-12-2022.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "05-12-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "09-12-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -24,7 +24,7 @@ function antoniovandremathematicalramblingsjsversao(){return "05-12-2022";}
 
 function antoniovandreaproximacaotaylorflag() {return false;}
 
-// Números primos. Argumento: número do índice da matriz de números primos, ou -1 para retornar o tamanho da matriz de números primos, ou -2 para retornar o maior primo contido na matriz. Matriz de uma única linha. Buscando rapidez e otimização dos cálculos, a matriz deve conter os elementos em ordem crescente. A variável "antoniovandreprimos" deve conter os números primos menores que o maior valor a ela pertencente. Retorna a string "e" se um erro ocorre.
+// Números primos. Argumento: número do índice da matriz de números primos, ou -1 para retornar o tamanho da matriz de números primos, -2 para retornar o maior primo contido na matriz, -3 para retornar o tamanho limitado afim de mais rapidamente cálculos serem realizados. Matriz de uma única linha. Buscando rapidez e otimização dos cálculos, a matriz deve conter os elementos em ordem crescente. A variável "antoniovandreprimos" deve conter os números primos menores que o maior valor a ela pertencente. Retorna a string "e" se um erro ocorre.
 
 function antoniovandreprimos(i)
 	{
@@ -41,11 +41,12 @@ function antoniovandreprimos(i)
 
 		return max;
 		}
-	else
-		if (i < antoniovandreprimosarr.length)
+	else if (i == -3)
+		return antoniovandrepiso(antoniovandreprimos(-1) / 64)
+	else if (i < antoniovandreprimosarr.length)
 			return antoniovandreprimosarr[i]
-		else
-			return "e";
+	else
+		return "e";
 	}
 
 // Retorna o valor adotado para a constante matemática "pi", a razão entre o comprimento e o diâmetro de uma circunferência.
@@ -72,7 +73,7 @@ function antoniovandredecomporfatoresprimos(n, saida)
 	var flag2 = 0;
 	var i;
 	var antoniovandreprimosarr = [];
-	var antoniovandreprimoslength = antoniovandreprimos(-1);
+	var antoniovandreprimoslength = antoniovandreprimos(-3);
 	var max = 1;
 
 	if (antoniovandrenumeronaturalpositivo(n.toString()) == "e")
@@ -85,7 +86,9 @@ function antoniovandredecomporfatoresprimos(n, saida)
 			if (antoniovandremodulo(n) > antoniovandremaximovalorentrada(3))
 				return antoniovandremensagenserro(3);
 
-		for (i = 0; i < antoniovandreprimoslength; i++) antoniovandreprimosarr.push(antoniovandreprimos(i));
+		var lim = antoniovandreprimos(-3);
+
+		for (i = 0; i < lim ; i++) antoniovandreprimosarr.push(antoniovandreprimos(i));
 
 		if (n2 == 1)
 			output.push([1, 1])
@@ -103,10 +106,10 @@ function antoniovandredecomporfatoresprimos(n, saida)
 							n2 = n2 / antoniovandreprimosarr[i];
 							}
 						if (i == antoniovandreprimoslength - 1) flag2 = 1;
-						if (max < antoniovandreprimosarr[i]) max = antoniovandreprimosarr[i];
+//						if (max < antoniovandreprimosarr[i]) max = antoniovandreprimosarr[i];
 						}
 
-			i = max + 1;
+/*			i = max + 1;
 			while (n2 != 1)
 				if (n2 % i == 0)
 					{
@@ -115,7 +118,7 @@ function antoniovandredecomporfatoresprimos(n, saida)
 					}
 				else
 					i++;
-
+*/
 			for (i = 0; i < buffer.length; i++) if (buffer[i][1] != 0) output.push([buffer[i][0], buffer[i][1]]);
 			}
 
@@ -145,7 +148,7 @@ function antoniovandredecomporfatoresprimos(n, saida)
 				return "e";
 			}
 	else
-		return "e";
+		return antoniovandremensagenserro(8);
 	}
 
 // Fatorial. Argumento: número natural. Retorna a string "e" se ocorre erro.
@@ -1361,6 +1364,8 @@ function antoniovandremensagenserro(i)
 			return "Um dos resultados de módulo grande demais para ser corretamente exibido no JavaScript nativo.";
 		case 7:
 			return "\\text{Número de módulo grande demais para}\\\\ \\text{ser trabalhado no JavaScript nativo.}";
+		case 8:
+			return "Limite de computação atingido."
 		default:
 			return "Erro.";
 		}
