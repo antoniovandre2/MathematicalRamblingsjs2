@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 09-12-2022.
+// Última atualização: 11-12-2022.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "09-12-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "11-12-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1716,15 +1716,19 @@ function antoniovandreescalonarmatriz(M, saida)
 					}
 				}
 
-			if (reduzidalinhas == 1) for (var k = 0; k < i; k++)
+			while ((parseFloat(Mep[i][l2]) == 0) || (parseFloat(Mep[i][l2]) == 1))
 				{
-				while ((parseFloat(Mep[i][l2]) == 0) || (parseFloat(Mep[i][l2]) == 1))
-					{
-					if (l2 == nc) break;
-					if (parseFloat(Mep[i][l2]) == 1) break;
-					l2++;
-					}
+				if (l2 == nc) break;
+				if (parseFloat(Mep[i][l2]) == 1) break;
+				l2++;
+				}
 
+			var iv;
+
+			if (reduzidalinhas == 1) {iv = 0;} else {iv = l2;}
+
+			for (var k = iv; k < i; k++)
+				{
 				if (l2 == nc) continue;
 
 				var f = parseFloat(Mep[k][l2]);
@@ -1743,7 +1747,7 @@ function antoniovandreescalonarmatriz(M, saida)
 					else
 						Mep[k][j] = antoniovandreformatarreal(parseFloat(Mep[k][j]) - parseFloat(Mep[i][j]) * f);
 
-				for (var l = 0; l < nl; l++)
+				for (var l = iv; l < nl; l++)
 					{
 					for (var m = 0; m < nc; m++)
 						{

@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 10-12-2022.
+Última atualização: 11-12-2022.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10485,6 +10485,15 @@ $\displaystyle\int (\tan^7 x)(\sec^5 x)\ dx$
 __
 
 Artigos/Mathematical Ramblings - 10-12-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Determine os extremos absolutos, caso existam, da função $f(t) = t + \cot \left(\dfrac{t}{2}\right)$ no intervalo $\left[\dfrac{\pi}{4}, \dfrac{7\pi}{4}\right]$.
+__
+
+Artigos/Mathematical Ramblings - 11-12-2022 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
