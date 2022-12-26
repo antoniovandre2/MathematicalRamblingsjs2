@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 11-12-2022.
+// Última atualização: 26-12-2022.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "11-12-2022";}
+function antoniovandremathematicalramblingsjsversao(){return "26-12-2022";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -10067,6 +10067,9 @@ function antoniovandrecodigomorse(entradaraw, avisoanexo)
 	var antoniovandrecodigomorsearr = [["A", ".-"], ["B", "-..."], ["C", "-.-."], ["D", "-.."], ["E", "."], ["F", "..-."], ["G", "--."], ["H", "...."], ["I", ".."], ["J", ".---"], ["K", "-.-"], ["L", ".-.."], ["M","--"], ["N", "-."], ["O", "---"], ["P", ".--."], ["Q", "--.-"], ["R", ".-."], ["S", "..."], ["T", "-"], ["U", "..-"], ["V", "...-"], ["W", ".--"], ["X", "-..-"], ["Y", "-.--"], ["Z", "--.."], ["1", ".----"], ["2", "..---"], ["3", "...--"], ["4", "....-"], ["5", "....."], ["6", "-...."], ["7", "--..."], ["8", "---.."], ["9", "----."], ["0", "-----"], [".", ".-.-.-"], [",", "--..--"], ["?", "..--.."], ["\'", ".----."], ["!", "-.-.--"], ["/", "-..-."], ["(", "-.--."], [")", "-.--.-"], ["&", ".-..."], [":", "---..."], [";", "-.-.-."], ["=", "-...-"], ["-", "-....-"], ["_", "..--.-"], ["\"", ".-..-."], ["$", "...-..-"], ["@", ".--.-."], ["Ä", ".-.-"], ["À", ".--.-"], ["Ç", "-.-.."], ["ð", "..--."], ["È", ".-..-"], ["É", "..-.."], ["Ĝ", "--.-."], ["Ĥ", "-.--."], ["Ĵ", ".---."], ["Ñ", "--.--"], ["Ö", "---."], ["Ŝ", "...-."], ["þ", ".--.."], ["Ü", "..--"], [" ", "  "], ["\n", "   "]];
 	var resultstr = "";
 	var entradarawt = entradaraw.split("\\");
+
+	if (entradarawt.length != 2) return "\\"
+
 	var entrada = entradarawt[0];
 	var codigo = entradarawt[1].trim();
 
