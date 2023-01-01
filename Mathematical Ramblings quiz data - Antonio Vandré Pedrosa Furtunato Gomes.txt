@@ -1,4 +1,4 @@
-Número de acertos: 1602. Número de erros: 6. MD5sum: 54805f95c9cc75b81b19ef90e7c62a57.
+Número de acertos: 1647. Número de erros: 6. MD5sum: 666130b5ca7e01688dd67feeff17a00b.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -1607,3 +1607,48 @@ Quanto é 47 + 37? Resposta: 84. Acertou. Em 9/10/2022 @ 19:0:12.
 Quanto é 90 / 5? Resposta: 18. Acertou. Em 9/10/2022 @ 19:0:19.
 Quanto é 14^1? Resposta: 14. Acertou. Em 9/10/2022 @ 19:0:24.
 Quanto é 13 x 14? Resposta: 182. Acertou. Em 9/10/2022 @ 19:0:44.
+Quanto é 4 x 2? Resposta: 8. Acertou. Em 9/10/2022 @ 20:25:46.
+Quanto é 78 - 60? Resposta: 18. Acertou. Em 9/10/2022 @ 20:25:55.
+Quanto é 2 x 14? Resposta: 28. Acertou. Em 1/1/2023 @ 12:59:2.
+Quanto é 60 + 81? Resposta: 141. Acertou. Em 1/1/2023 @ 12:59:17.
+Quanto é 1 x 9? Resposta: 9. Acertou. Em 1/1/2023 @ 12:59:22.
+Quanto é 1^4? Resposta: 1. Acertou. Em 1/1/2023 @ 12:59:27.
+Quanto é 13 x 3? Resposta: 39. Acertou. Em 1/1/2023 @ 12:59:35.
+Quanto é 44 + 78? Resposta: 122. Acertou. Em 1/1/2023 @ 13:0:18.
+Quanto é 25 - 77? Resposta: -52. Acertou. Em 1/1/2023 @ 13:0:59.
+Quanto é 0^3? Resposta: 0. Acertou. Em 1/1/2023 @ 13:18:9.
+Quanto é 24 + 73? Resposta: 97. Acertou. Em 1/1/2023 @ 13:19:14.
+Quanto é 0^1? Resposta: 0. Acertou. Em 1/1/2023 @ 13:20:24.
+Quanto é 6 x 4? Resposta: 24. Acertou. Em 1/1/2023 @ 13:20:29.
+Quanto é 4 x 1? Resposta: 4. Acertou. Em 1/1/2023 @ 13:20:35.
+Quanto é 12^0? Resposta: 1. Acertou. Em 1/1/2023 @ 13:20:39.
+Quanto é 10^2? Resposta: 100. Acertou. Em 1/1/2023 @ 13:20:48.
+Quanto é 113 / 1? Resposta: 113. Acertou. Em 1/1/2023 @ 13:21:6.
+Quanto é 67 - 4? Resposta: 63. Acertou. Em 1/1/2023 @ 13:35:23.
+Quanto é 119 / 1? Resposta: 119. Acertou. Em 1/1/2023 @ 14:6:53.
+Quanto é 29 + 33? Resposta: 62. Acertou. Em 1/1/2023 @ 14:7:4.
+Quanto é 4 - 67? Resposta: -63. Acertou. Em 1/1/2023 @ 17:18:34.
+Quanto é 69 - 83? Resposta: -14. Acertou. Em 1/1/2023 @ 17:21:52.
+Quanto é 72 - 23? Resposta: 49. Acertou. Em 1/1/2023 @ 17:23:9.
+Quanto é 30 / 5? Resposta: 6. Acertou. Em 1/1/2023 @ 17:23:20.
+Quanto é 5 x 1? Resposta: 5. Acertou. Em 1/1/2023 @ 17:23:28.
+Quanto é 30 - 5? Resposta: 25. Acertou. Em 1/1/2023 @ 17:23:41.
+Quanto é 12 x 13? Resposta: 156. Acertou. Em 1/1/2023 @ 17:25:8.
+Quanto é 36 - 66? Resposta: -30. Acertou. Em 1/1/2023 @ 17:25:21.
+Quanto é 73 - 69? Resposta: 4. Acertou. Em 1/1/2023 @ 17:33:4.
+Quanto é 14 x 12? Resposta: 168. Acertou. Em 1/1/2023 @ 17:33:32.
+Quanto é 23 + 57? Resposta: 80. Acertou. Em 1/1/2023 @ 17:35:28.
+Quanto é 5^2? Resposta: 25. Acertou. Em 1/1/2023 @ 17:35:35.
+Quanto é 78 / 2? Resposta: 39. Acertou. Em 1/1/2023 @ 17:35:47.
+Quanto é 63 - 65? Resposta: -2. Acertou. Em 1/1/2023 @ 17:35:58.
+Quanto é 38 + 48? Resposta: 86. Acertou. Em 1/1/2023 @ 17:36:23.
+Quanto é 87 + 34? Resposta: 121. Acertou. Em 1/1/2023 @ 17:43:31.
+Quanto é 0 / 80? Resposta: 0. Acertou. Em 1/1/2023 @ 17:43:37.
+Quanto é 88 - 30? Resposta: 58. Acertou. Em 1/1/2023 @ 17:44:1.
+Quanto é 20 - 39? Resposta: -19. Acertou. Em 1/1/2023 @ 17:44:13.
+Quanto é 15 + 66? Resposta: 81. Acertou. Em 1/1/2023 @ 17:44:30.
+Quanto é 47 - 88? Resposta: -41. Acertou. Em 1/1/2023 @ 18:1:35.
+Quanto é 88 / 88? Resposta: 1. Acertou. Em 1/1/2023 @ 18:1:39.
+Quanto é 1^4? Resposta: 1. Acertou. Em 1/1/2023 @ 18:1:44.
+Quanto é 82 + 77? Resposta: 159. Acertou. Em 1/1/2023 @ 18:1:58.
+Quanto é 5 x 9? Resposta: 45. Acertou. Em 1/1/2023 @ 18:2:6.

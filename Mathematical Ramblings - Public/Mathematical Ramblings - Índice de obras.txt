@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 11-12-2022.
+Última atualização: 01-01-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10494,6 +10494,15 @@ Determine os extremos absolutos, caso existam, da função $f(t) = t + \cot \lef
 __
 
 Artigos/Mathematical Ramblings - 11-12-2022 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Coordenadas cúbicas de Antonio Vandré.
+__
+
+Artigos/Mathematical Ramblings - 01-01-2023 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
