@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 01-01-2023.
+Última atualização: 03-01-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10503,6 +10503,24 @@ Coordenadas cúbicas de Antonio Vandré.
 __
 
 Artigos/Mathematical Ramblings - 01-01-2023 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calcular $(\sqrt{50} - 7)^{475} \cdot (\sqrt{50} + 7)^{475}$.
+__
+
+Artigos/Mathematical Ramblings - 03-01-2023 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Se $x$ é o mínimo múltiplo comum de $60$ e $80$, e $y$ é o máximo divisor comum de $48$ e $56$, qual o valor de $x - y$?
+__
+
+Artigos/Mathematical Ramblings - 03-01-2023 - 2.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
