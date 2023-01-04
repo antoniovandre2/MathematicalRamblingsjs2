@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 03-01-2023.
+Última atualização: 04-01-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10521,6 +10521,60 @@ Se $x$ é o mínimo múltiplo comum de $60$ e $80$, e $y$ é o máximo divisor c
 __
 
 Artigos/Mathematical Ramblings - 03-01-2023 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Em $U = \mathbb{Z}$, resolver $5x - 3(x + 6) = x - 14$.
+__
+
+Artigos/Mathematical Ramblings - 03-01-2023 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Em $U = \mathbb{R}$, resolver $3^{x + 2} + 9^x = 9 + 27^x$.
+__
+
+Artigos/Mathematical Ramblings - 04-01-2023 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Que valor deve ser acrescentado ao numerador e ao denominador da fração $\dfrac{2}{3}$ para que essa fração tenha um aumento de $25 \%$?
+__
+
+Artigos/Mathematical Ramblings - 04-01-2023 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Qual a maior raiz da equação $x^2 - (2,333\dots)x + (1,333\dots) = 0$?
+__
+
+Artigos/Mathematical Ramblings - 04-01-2023 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Sendo $m$ um real positivo, reduir $E = \sqrt[5]{m^4\sqrt[3]{m^2\sqrt{m\sqrt[4]{m^3}}}}$ a um único radical.
+__
+
+Artigos/Mathematical Ramblings - 04-01-2023 - 4.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: pintores trabalhando em conjunto.
+__
+
+Artigos/Mathematical Ramblings - 04-01-2023 - 5.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
