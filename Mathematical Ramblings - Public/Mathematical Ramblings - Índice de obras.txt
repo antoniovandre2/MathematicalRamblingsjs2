@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 04-01-2023.
+Última atualização: 05-01-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10575,6 +10575,15 @@ Exercício: pintores trabalhando em conjunto.
 __
 
 Artigos/Mathematical Ramblings - 04-01-2023 - 5.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Encontre os valores inteiros de $x$ e $y$, que satisfazem a igualdade $(x + 3)(y - 7) = 21$.
+__
+
+Artigos/Mathematical Ramblings - 05-01-2023 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
