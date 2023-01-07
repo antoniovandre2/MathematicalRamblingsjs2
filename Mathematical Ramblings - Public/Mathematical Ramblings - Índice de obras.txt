@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 05-01-2023.
+Última atualização: 07-01-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10584,6 +10584,33 @@ Encontre os valores inteiros de $x$ e $y$, que satisfazem a igualdade $(x + 3)(y
 __
 
 Artigos/Mathematical Ramblings - 05-01-2023 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Encontrar o máximo de $|z + 7 + i|$, sabendo que $|z - 5 - 4i| = 2$.
+__
+
+Artigos/Mathematical Ramblings - 06-01-2023 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Se $\log 2 = 0,3$ e $\log 36 = 1,6$, quanto é $\log 3$?
+__
+
+Artigos/Mathematical Ramblings - 06-01-2023 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Sabendo que a área do paralelogramo é $24$, encontrar a área da região hachurada.
+__
+
+Artigos/Mathematical Ramblings - 07-01-2023 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
