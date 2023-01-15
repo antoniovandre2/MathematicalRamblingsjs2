@@ -1,4 +1,4 @@
-Número de acertos: 1705. Número de erros: 6. MD5sum: ea237bcbe90f84134217208bf7babfe0.
+Número de acertos: 1710. Número de erros: 6. MD5sum: 2a9ad3e4b1b2f4ed2b2af3e37098a67c.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -1710,3 +1710,8 @@ Quanto é 17 - 0? Resposta: 17. Acertou. Em 14/1/2023 @ 15:59:35.
 Quanto é 80 / 8? Resposta: 10. Acertou. Em 14/1/2023 @ 15:59:41.
 Quanto é 21 + 55? Resposta: 76. Acertou. Em 14/1/2023 @ 15:59:49.
 Quanto é 162 / 3? Resposta: 54. Acertou. Em 14/1/2023 @ 16:4:41.
+Quanto é 2^4? Resposta: 16. Acertou. Em 14/1/2023 @ 20:21:3.
+Quanto é 13 - 64? Resposta: -51. Acertou. Em 14/1/2023 @ 20:21:19.
+Quanto é 13 - 39? Resposta: -26. Acertou. Em 14/1/2023 @ 20:21:34.
+Quanto é 6 - 23? Resposta: -17. Acertou. Em 14/1/2023 @ 20:21:46.
+Quanto é 83 + 1? Resposta: 84. Acertou. Em 14/1/2023 @ 20:21:54.
