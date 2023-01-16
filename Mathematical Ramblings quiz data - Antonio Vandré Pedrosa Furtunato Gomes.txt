@@ -1,4 +1,4 @@
-Número de acertos: 1786. Número de erros: 6. MD5sum: 4e9a0f8b105a131348d8fbaef306abf6.
+Número de acertos: 1816. Número de erros: 6. MD5sum: bf366151b4ba7bbc0b076abef335c9b3.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -1791,3 +1791,33 @@ Quanto é 3^8? Resposta: 6561. Acertou. Em 15/1/2023 @ 19:14:11.
 Quanto é 41 + 4? Resposta: 45. Acertou. Em 15/1/2023 @ 19:14:20.
 Quanto é 3 x 5? Resposta: 15. Acertou. Em 15/1/2023 @ 19:14:25.
 Quanto é 69 - 13? Resposta: 56. Acertou. Em 15/1/2023 @ 19:15:32.
+Quanto é 97 - 68? Resposta: 29. Acertou. Em 16/1/2023 @ 11:6:7.
+Quanto é 7 x 3? Resposta: 21. Acertou. Em 16/1/2023 @ 11:6:12.
+Quanto é 12 x 14? Resposta: 168. Acertou. Em 16/1/2023 @ 11:6:39.
+Quanto é 68 + 91? Resposta: 159. Acertou. Em 16/1/2023 @ 11:7:11.
+Quanto é 61 + 5? Resposta: 66. Acertou. Em 16/1/2023 @ 11:7:18.
+Quanto é 8^2? Resposta: 64. Acertou. Em 16/1/2023 @ 11:7:27.
+Quanto é 3^5? Resposta: 243. Acertou. Em 16/1/2023 @ 11:7:38.
+Quanto é 13 x 8? Resposta: 104. Acertou. Em 16/1/2023 @ 11:13:48.
+Quanto é 58 - 33? Resposta: 25. Acertou. Em 16/1/2023 @ 11:14:14.
+Quanto é 72 / 9? Resposta: 8. Acertou. Em 16/1/2023 @ 11:14:21.
+Quanto é 19 + 33? Resposta: 52. Acertou. Em 16/1/2023 @ 11:14:41.
+Quanto é 11 x 11? Resposta: 121. Acertou. Em 16/1/2023 @ 11:14:45.
+Quanto é 4 - 56? Resposta: -52. Acertou. Em 16/1/2023 @ 11:14:52.
+Quanto é 14^2? Resposta: 196. Acertou. Em 16/1/2023 @ 11:15:0.
+Quanto é 10 x 5? Resposta: 50. Acertou. Em 16/1/2023 @ 11:16:50.
+Quanto é 73 + 86? Resposta: 159. Acertou. Em 16/1/2023 @ 11:17:4.
+Quanto é 9 x 12? Resposta: 108. Acertou. Em 16/1/2023 @ 11:17:17.
+Quanto é 72 - 65? Resposta: 7. Acertou. Em 16/1/2023 @ 11:17:31.
+Quanto é 14 x 2? Resposta: 28. Acertou. Em 16/1/2023 @ 11:24:37.
+Quanto é 13 + 55? Resposta: 68. Acertou. Em 16/1/2023 @ 11:25:3.
+Quanto é 3^4? Resposta: 81. Acertou. Em 16/1/2023 @ 11:25:8.
+Quanto é 3 - 12? Resposta: -9. Acertou. Em 16/1/2023 @ 11:25:20.
+Quanto é 14 x 6? Resposta: 84. Acertou. Em 16/1/2023 @ 11:25:30.
+Quanto é 33 + 19? Resposta: 52. Acertou. Em 16/1/2023 @ 11:25:45.
+Quanto é 41 - 99? Resposta: -58. Acertou. Em 16/1/2023 @ 11:25:58.
+Quanto é 7 + 0? Resposta: 7. Acertou. Em 16/1/2023 @ 11:36:0.
+Quanto é 14 x 14? Resposta: 196. Acertou. Em 16/1/2023 @ 11:36:8.
+Quanto é 4 - 65? Resposta: -61. Acertou. Em 16/1/2023 @ 11:36:18.
+Quanto é 75 / 15? Resposta: 5. Acertou. Em 16/1/2023 @ 11:36:39.
+Quanto é 3^8? Resposta: 6561. Acertou. Em 16/1/2023 @ 11:37:4.
