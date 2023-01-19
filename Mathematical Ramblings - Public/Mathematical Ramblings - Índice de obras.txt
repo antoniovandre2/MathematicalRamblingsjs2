@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 17-01-2023.
+Última atualização: 19-01-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10625,10 +10625,19 @@ __
 Publicado em "mathematicalramblings.blogspot.com".
 _____
 
-Calculadora: curva tridimensional por coordenadas paramétrico-polares.
+Sejam $z$ e $w$ escalares. Se $zw = 0$, então $z = 0$ ou $w = 0$.
 __
 
-Softwares/JavaScripts/Mathematical Ramblings - 17-01-2023 - 1.txt
+Artigos/Mathematical Ramblings - 18-01-2023 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício área de um quadrado subtraído um triângulo equilátero.
+__
+
+Artigos/Mathematical Ramblings - 19-01-2023 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
