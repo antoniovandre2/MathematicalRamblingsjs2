@@ -10642,3 +10642,12 @@ __
 
 Publicado em "mathematicalramblings.blogspot.com".
 _____
+
+Calculadora: simétrica de uma curva por coordenadas paramétrico-polares com relação a um ponto.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 19-01-2023 - 1.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
