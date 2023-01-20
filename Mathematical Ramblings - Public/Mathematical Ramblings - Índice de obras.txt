@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 19-01-2023.
+Última atualização: 20-01-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10647,6 +10647,15 @@ Calculadora: simétrica de uma curva por coordenadas paramétrico-polares com re
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 19-01-2023 - 1.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: simétrica de uma curva por coordenadas paramétrico-polares com relação a uma reta.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 20-01-2023 - 1.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
