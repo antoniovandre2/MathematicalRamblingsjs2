@@ -1,4 +1,4 @@
-Número de acertos: 1921. Número de erros: 8. MD5sum: 7318ab21a1b79542115479e091fc0135.
+Número de acertos: 1950. Número de erros: 8. MD5sum: c840e7ceda2d851151e5736751a1d3b5.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -1928,3 +1928,32 @@ Quanto é 5 x 5? Resposta: 25. Acertou. Em 17/1/2023 @ 13:23:14.
 Quanto é 30 - 55? Resposta: -25. Acertou. Em 17/1/2023 @ 13:23:57.
 Quanto é 8 x 10? Resposta: 80. Acertou. Em 17/1/2023 @ 13:24:9.
 Quanto é 190 / 19? Resposta: 10. Acertou. Em 17/1/2023 @ 13:24:21.
+Quanto é 11 x 4? Resposta: 44. Acertou. Em 25/1/2023 @ 10:14:32.
+Quanto é 70 - 46? Resposta: 24. Acertou. Em 25/1/2023 @ 10:15:1.
+Quanto é 40 / 8? Resposta: 5. Acertou. Em 25/1/2023 @ 10:15:32.
+Quanto é 82 - 93? Resposta: -11. Acertou. Em 25/1/2023 @ 10:18:18.
+Quanto é 8^3? Resposta: 512. Acertou. Em 25/1/2023 @ 10:18:44.
+Quanto é 25 - 1? Resposta: 24. Acertou. Em 25/1/2023 @ 10:18:55.
+Quanto é 4^8? Resposta: 65536. Acertou. Em 25/1/2023 @ 10:24:35.
+Quanto é 3^7? Resposta: 2187. Acertou. Em 25/1/2023 @ 10:29:25.
+Quanto é 3^8? Resposta: 6561. Acertou. Em 25/1/2023 @ 10:32:29.
+Quanto é 188 / 47? Resposta: 4. Acertou. Em 25/1/2023 @ 10:33:3.
+Quanto é 65 + 25? Resposta: 90. Acertou. Em 25/1/2023 @ 10:33:36.
+Quanto é 186 / 3? Resposta: 62. Acertou. Em 25/1/2023 @ 12:19:43.
+Quanto é 28 - 98? Resposta: -70. Acertou. Em 25/1/2023 @ 12:22:20.
+Quanto é 70 + 51? Resposta: 121. Acertou. Em 25/1/2023 @ 12:22:45.
+Quanto é 27 - 68? Resposta: -41. Acertou. Em 25/1/2023 @ 12:31:31.
+Quanto é 52 - 41? Resposta: 11. Acertou. Em 25/1/2023 @ 12:31:47.
+Quanto é 12 x 4? Resposta: 48. Acertou. Em 25/1/2023 @ 12:31:57.
+Quanto é 9 - 12? Resposta: -3. Acertou. Em 25/1/2023 @ 12:32:5.
+Quanto é 2^4? Resposta: 16. Acertou. Em 25/1/2023 @ 12:32:12.
+Quanto é 19 + 24? Resposta: 43. Acertou. Em 25/1/2023 @ 12:44:59.
+Quanto é 37 - 62? Resposta: -25. Acertou. Em 25/1/2023 @ 12:48:52.
+Quanto é 7^3? Resposta: 343. Acertou. Em 25/1/2023 @ 12:49:42.
+Quanto é 99 - 51? Resposta: 48. Acertou. Em 25/1/2023 @ 12:50:15.
+Quanto é 180 / 20? Resposta: 9. Acertou. Em 25/1/2023 @ 12:50:24.
+Quanto é 5^3? Resposta: 125. Acertou. Em 25/1/2023 @ 13:3:57.
+Quanto é 75 - 41? Resposta: 34. Acertou. Em 25/1/2023 @ 13:4:10.
+Quanto é 13 x 6? Resposta: 78. Acertou. Em 25/1/2023 @ 13:4:31.
+Quanto é 13 + 78? Resposta: 91. Acertou. Em 25/1/2023 @ 13:4:59.
+Quanto é 144 / 2? Resposta: 72. Acertou. Em 25/1/2023 @ 13:5:6.
