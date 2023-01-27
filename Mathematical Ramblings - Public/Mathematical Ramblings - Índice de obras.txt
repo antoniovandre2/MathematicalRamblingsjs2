@@ -10705,3 +10705,21 @@ __
 
 Publicado em "mathematicalramblings.blogspot.com".
 _____
+
+Exercício: determinando uma variável para que uma sequência seja uma PG.
+__
+
+Artigos/Mathematical Ramblings - 27-01-2023 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: idade verdadeira dada uma omissão fracionária.
+__
+
+Artigos/Mathematical Ramblings - 27-01-2023 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
