@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 26-01-2023.
+Última atualização: 27-01-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10692,6 +10692,15 @@ Três lados de um triângulo retângulo estão em PG. Qual a razão?
 __
 
 Artigos/Mathematical Ramblings - 26-01-2023 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: soma de somas de termos de PGs.
+__
+
+Artigos/Mathematical Ramblings - 27-01-2023 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
