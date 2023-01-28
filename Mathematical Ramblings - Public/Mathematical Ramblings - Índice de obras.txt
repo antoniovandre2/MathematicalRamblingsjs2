@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 27-01-2023.
+Última atualização: 28-01-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10719,6 +10719,15 @@ Exercício: idade verdadeira dada uma omissão fracionária.
 __
 
 Artigos/Mathematical Ramblings - 27-01-2023 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Encontrar $L = \displaystyle\lim_{x \rightarrow \infty} \left(\sqrt{x^6 + 5x^3} - x^3\right)$.
+__
+
+Artigos/Mathematical Ramblings - 28-01-2023 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
