@@ -10732,3 +10732,12 @@ __
 
 Publicado em "mathematicalramblings.blogspot.com".
 _____
+
+Calculadora: superfície de revolução gerada por curva por coordenadas paramétrico-polares.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 28-01-2023 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
