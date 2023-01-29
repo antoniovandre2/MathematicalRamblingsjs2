@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 28-01-2023.
+Última atualização: 29-01-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10737,6 +10737,15 @@ Calculadora: superfície de revolução gerada por curva por coordenadas paramé
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 28-01-2023 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: curva por coordenadas n-paramétrico-polares.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 29-01-2023 - 1.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
