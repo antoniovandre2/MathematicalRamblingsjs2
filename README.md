@@ -19,5 +19,5 @@ Calculadoras: "https://mathematicalramblings.blogspot.com/search/label/calculado
 <br><br>
 GitHub page: "https://antoniovandre2.github.io/MathematicalRamblingsjs2/".
 <br><br>
-GitHub descontinuado / Discontinued GitHub: "https://github.com/antoniovandre/MathematicalRamblingsjs".
+Repositório descontinuado: "https://github.com/antoniovandre/MathematicalRamblingsjs".
 </span>
