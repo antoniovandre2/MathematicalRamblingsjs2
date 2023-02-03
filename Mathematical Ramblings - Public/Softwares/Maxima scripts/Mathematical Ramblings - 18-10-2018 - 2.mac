@@ -1,10 +1,10 @@
 /*
-Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
 
 Script Maxima de cálculo do determinante de uma matriz 2x2.
 */
 
-print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+print ("Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).");
 
 print ("Script Maxima de cálculo do determinante de uma matriz 2x2.");
 

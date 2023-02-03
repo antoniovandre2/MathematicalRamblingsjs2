@@ -1,12 +1,12 @@
 /*
-Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
 
 Script Maxima área de um polígono regular de n lados de comprimento l.
 
 Comunicar erro: "a.vandre.g@gmail.com".
 */
 
-print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+print ("Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).");
 
 print ("Script Maxima área de um polígono regular de n lados de comprimento l.");
 

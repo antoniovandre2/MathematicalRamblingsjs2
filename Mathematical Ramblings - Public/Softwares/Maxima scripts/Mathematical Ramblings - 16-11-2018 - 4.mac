@@ -1,12 +1,12 @@
 /*
-Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
 
 Script Maxima função que melhor descreve amostras.
 
 Comunicar erro: "a.vandre.g@gmail.com".
 */
 
-print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+print ("Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).");
 
 print ("Script Maxima função que melhor descreve amostras.");
 

@@ -1,10 +1,10 @@
 /*
-Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
 
 Script Maxima de conversão de um complexo na forma algébrica para trigonométrica.
 */
 
-print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+print ("Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).");
 
 print ("Script Maxima de conversão de um complexo na forma algébrica para trigonométrica.");
 

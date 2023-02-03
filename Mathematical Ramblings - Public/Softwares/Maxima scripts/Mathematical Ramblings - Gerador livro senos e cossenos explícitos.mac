@@ -1,11 +1,11 @@
 /*
-Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
 
 Script Maxima gerador de livro de senos e cossenos explícitos segundo as funções antoniovandre_sin_divneav e antoniovandre_cos_divneav.
 
 Utilizada a versão Maxima on Android 3.2.1.
 
-Requer Antonio Vandré Pedrosa Furtunato Gomes - Maxima API.
+Requer Antonio Vandré Pedrosa Furtunato Gomes - Maxima tools.
 
 Pode ser necessário um pós-processamento de texto.
 

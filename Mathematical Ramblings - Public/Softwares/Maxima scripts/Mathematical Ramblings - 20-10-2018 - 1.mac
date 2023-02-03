@@ -1,10 +1,10 @@
 /*
-Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
 
 Script Maxima para cálculo da hipotenusa de um triângulo retângulo.
 */
 
-print ("Projeto Mathematical Ramblings (http://bit.ly/mathematicalramblings).");
+print ("Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).");
 
 print ("Script Maxima para cálculo da hipotenusa de um triângulo retângulo.");
 
