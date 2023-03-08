@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 03-02-2023.
+Última atualização: 02-03-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10773,6 +10773,15 @@ Calculadora: simétrica de uma superfície de revolução gerada por curva por c
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 31-01-2023 - 2.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Seja $x_n = 9 + \dfrac{(-1)^{n+1}}{5n^2}$, demonstre que $\lim x_n = 9$.
+__
+
+Artigos/Mathematical Ramblings - 02-03-2023 - 1.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".

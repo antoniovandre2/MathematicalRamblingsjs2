@@ -1,4 +1,4 @@
-Número de acertos: 2001. Número de erros: 8. MD5sum: a21f5dde73dd8e05ac35fd893b39e193.
+Número de acertos: 2008. Número de erros: 8. MD5sum: 2ef487468680c48dd9566d14faa8f8aa.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -2008,3 +2008,10 @@ Quanto é 3^9? Resposta: 19683. Acertou. Em 26/1/2023 @ 13:9:11.
 Quanto é 97 + 49? Resposta: 146. Acertou. Em 26/1/2023 @ 13:10:25.
 Quanto é 45 + 49? Resposta: 94. Acertou. Em 26/1/2023 @ 13:10:45.
 Quanto é 52 - 76? Resposta: -24. Acertou. Em 26/1/2023 @ 13:11:45.
+Quanto é 110 / 22? Resposta: 5. Acertou. Em 27/2/2023 @ 8:37:12.
+Quanto é 37 - 73? Resposta: -36. Acertou. Em 27/2/2023 @ 8:39:0.
+Quanto é 3^6? Resposta: 729. Acertou. Em 28/2/2023 @ 11:28:21.
+Quanto é 86 / 43? Resposta: 2. Acertou. Em 28/2/2023 @ 11:28:52.
+Quanto é 17 + 76? Resposta: 93. Acertou. Em 28/2/2023 @ 11:30:32.
+Quanto é 18 - 70? Resposta: -52. Acertou. Em 28/2/2023 @ 11:31:13.
+Quanto é 56 / 4? Resposta: 14. Acertou. Em 28/2/2023 @ 11:31:37.
