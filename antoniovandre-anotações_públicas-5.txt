@@ -6,6 +6,18 @@ ____________________
 11-03-2023
 __
 
+Em meu game AV3DSpaceCatch, optei por por com alvo um áster, assim não preciso por limites para Phi temendo distorções.
+_____
+
+11-03-2023
+__
+
+Orgulhar-se com cuidados para não sofrer de orgulho ferido...
+_____
+
+11-03-2023
+__
+
 Em minha engine 3D, os principais problemas são as distorções para Phi próximo de pi/2 ou -pi/2, mas como há muitos games que poem limites para Phi, acho que posso sim ser orgulhoso quanto à minha engine, orgulhoso porque programação não é o meu foco, entretanto cheguei onde muitos programadores chegaram.
 _____
 
