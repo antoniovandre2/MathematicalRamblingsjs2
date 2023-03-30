@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 02-03-2023.
+Última atualização: 30-03-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10782,6 +10782,24 @@ Seja $x_n = 9 + \dfrac{(-1)^{n+1}}{5n^2}$, demonstre que $\lim x_n = 9$.
 __
 
 Artigos/Mathematical Ramblings - 02-03-2023 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: se não me quis assim, não me procure quando eu estiver assim.
+__
+
+Media/Memes/Mathematical Ramblings - 24-03-2023 - 1.png
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Pensamento: Lançai sobre mim toda a vossa ansiedade...
+__
+
+Media/Mathematical Ramblings - 30-03-2023 - 1.png
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
