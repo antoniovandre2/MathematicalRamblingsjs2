@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 30-03-2023.
+Última atualização: 11-04-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10800,6 +10800,24 @@ Pensamento: Lançai sobre mim toda a vossa ansiedade...
 __
 
 Media/Mathematical Ramblings - 30-03-2023 - 1.png
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Resolver a equação $4^x + 6^x = 2 \cdot 9^x$.
+__
+
+Artigos/Mathematical Ramblings - 11-04-2023 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Resolver a inequação $\left(\dfrac{1}{3}\right)^{2k + 1} > 3$.
+__
+
+Artigos/Mathematical Ramblings - 11-04-2023 - 2.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
