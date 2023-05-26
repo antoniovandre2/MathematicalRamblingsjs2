@@ -1367,7 +1367,7 @@ function antoniovandremensagenserro(i)
 		case 8:
 			return "Limite de computação atingido.";
 		case 9:
-			return "Número comprido demais para ser corretamente trabalhado no JavaScript.";
+			return "Um número comprido demais para ser corretamente trabalhado no JavaScript nativo.";
 	
 		default:
 			return "Erro.";
