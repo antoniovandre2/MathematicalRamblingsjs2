@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 29-01-2023.
+// Última atualização: 26-05-2023.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -1365,7 +1365,10 @@ function antoniovandremensagenserro(i)
 		case 7:
 			return "\\text{Número de módulo grande demais para}\\\\ \\text{ser trabalhado no JavaScript nativo.}";
 		case 8:
-			return "Limite de computação atingido."
+			return "Limite de computação atingido.";
+		case 9:
+			return "Número comprido demais para ser corretamente trabalhado no JavaScript.";
+	
 		default:
 			return "Erro.";
 		}
@@ -7502,6 +7505,9 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 		return "e"
 	else
 		num = parseFloat(x);
+
+	if (x.toString().length > antoniovandremaximovalorentrada(1).toString().length - 1)
+		return antoniovandremensagemerro(9);
 
 	if (num == 0)
 		switch (tiporetorno)
