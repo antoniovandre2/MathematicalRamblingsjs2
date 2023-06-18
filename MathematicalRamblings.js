@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 17-06-2023.
+// Última atualização: 18-06-2023.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "17-06-2023";}
+function antoniovandremathematicalramblingsjsversao(){return "18-06-2023";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1222,7 +1222,7 @@ function antoniovandrenb(n)
 		return "e_";
 	}
 
-// Valores máximos de entrada. Argumento: "1" para procedimentos sem muito crescimento, "2" para procedimentos de muito crescimento, e "3" para procedimentos de muito processamento. Função necessária pois o JavaScript nativo tem limitações de memória. Retorna a string "e" se um erro ocorre.
+// Valores máximos de entrada. Argumento: "1" para procedimentos sem muito crescimento, "2" para procedimentos de muito crescimento, e "3" para procedimentos de muito processamento, "4" para o máximo tamanho de um número para processamento de frações geratrizes. Função necessária pois o JavaScript nativo tem limitações de memória. Retorna a string "e" se um erro ocorre.
 
 function antoniovandremaximovalorentrada(i)
 	{
@@ -1234,6 +1234,8 @@ function antoniovandremaximovalorentrada(i)
 			return 20;
 		case 3:
 			return 700000;
+		case 4:
+			return 20;
 		default:
 			return "e";
 		}
@@ -7510,7 +7512,7 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 	else
 		num = parseFloat(x);
 
-	if (antoniovandreformatarreal(x.toString()).length > antoniovandremaximovalorentrada(1).toString().length - 1)
+	if (x.toString().length > antoniovandremaximovalorentrada(4))
 		return antoniovandremensagemerro(9);
 
 	if (num == 0)
