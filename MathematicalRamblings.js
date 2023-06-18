@@ -7510,7 +7510,7 @@ function antoniovandrefracaogeratriz(x, tiporetorno)
 	else
 		num = parseFloat(x);
 
-	if (x.toString().length > antoniovandremaximovalorentrada(1).toString().length - 1)
+	if (antoniovandreformatarreal(x.toString()).length > antoniovandremaximovalorentrada(1).toString().length - 1)
 		return antoniovandremensagemerro(9);
 
 	if (num == 0)
