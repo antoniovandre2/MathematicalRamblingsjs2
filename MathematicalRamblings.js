@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 26-05-2023.
+// Última atualização: 17-06-2023.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "26-05-2023";}
+function antoniovandremathematicalramblingsjsversao(){return "17-06-2023";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1646,10 +1646,12 @@ function antoniovandreescalonarmatriz(M, saida)
 			{
 			for (var m = 0; m < nc; m++)
 				{
-				if (antoniovandrenumerointeiro(antoniovandreformatarreal(Mep[l][m].toString()).toString()) == "e")
-					outputstr = outputstr + antoniovandrefracaogeratriz(antoniovandreformatarreal(Mep[l][m].toString()), 0).replaceAll(" ", "")
+				var coefs = antoniovandrefracaogeratriz(antoniovandreformatarreal(Mep[l][m].toString()), 1)
+	
+				if (coefs[1] != 1)
+					resultstr = resultstr + coefs[0].toString() + "/" + coefs[1].toString()
 				else
-					outputstr = outputstr + antoniovandreformatarreal(Mep[l][m].toString());
+					outputstr = outputstr + coefs[0].toString();
 
 				if (m < nc - 1)
 					outputstr = outputstr + " ";
@@ -1882,10 +1884,12 @@ function antoniovandreescalonarmatriz(M, saida)
 				{
 				for (var m = 0; m < nc; m++)
 					{
-					if (antoniovandrenumerointeiro(antoniovandreformatarreal(Mep2[l][m].toString().toString())) == "e")
-						outputstr = outputstr + antoniovandrefracaogeratriz(antoniovandreformatarreal(Mep2[l][m].toString()), 0).replaceAll(" ", "")
+					var coefs = antoniovandrefracaogeratriz(antoniovandreformatarreal(Mep2[l][m].toString()), 1)
+		
+					if (coefs[1] != 1)
+						resultstr = resultstr + coefs[0].toString() + "/" + coefs[1].toString()
 					else
-						outputstr = outputstr + antoniovandreformatarreal(Mep2[l][m].toString()).toString();
+						outputstr = outputstr + coefs[0].toString();
 
 					if (m < nc - 1)
 						outputstr = outputstr + " ";
