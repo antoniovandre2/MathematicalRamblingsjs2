@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 02-05-2023.
+Última atualização: 04-07-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10833,4 +10833,10 @@ Meme: utilizando minha própria calculadora nos estudos.
 __
 
 Media/Memes/Mathematical Ramblings - 02-05-2023 - 1.png
+__
+
+Meme: por que Matemática pode ser religião?
+__
+
+Media/Memes/Mathematical Ramblings - 04-07-2023 - 1.png
 __
