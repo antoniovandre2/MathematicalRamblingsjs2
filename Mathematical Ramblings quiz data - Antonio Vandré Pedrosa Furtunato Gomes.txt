@@ -1,4 +1,4 @@
-Número de acertos: 2009. Número de erros: 8. MD5sum: e5301cd66534f9c1a801e794474f3889.
+Número de acertos: 2043. Número de erros: 8. MD5sum: 6343248ab27f9f6dfc31ee3ccffd8745.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -2016,3 +2016,37 @@ Quanto é 17 + 76? Resposta: 93. Acertou. Em 28/2/2023 @ 11:30:32.
 Quanto é 18 - 70? Resposta: -52. Acertou. Em 28/2/2023 @ 11:31:13.
 Quanto é 56 / 4? Resposta: 14. Acertou. Em 28/2/2023 @ 11:31:37.
 Quanto é 6^3? Resposta: 216. Acertou. Em 11/4/2023 @ 14:25:3.
+Quanto é 12^2? Resposta: 144. Acertou. Em 19/7/2023 @ 7:51:32.
+Quanto é 2 x 14? Resposta: 28. Acertou. Em 19/7/2023 @ 7:51:39.
+Quanto é 3^8? Resposta: 6561. Acertou. Em 19/7/2023 @ 7:54:47.
+Quanto é 21 - 12? Resposta: 9. Acertou. Em 19/7/2023 @ 7:55:21.
+Quanto é 34 + 17? Resposta: 51. Acertou. Em 19/7/2023 @ 7:55:39.
+Quanto é 121 / 11? Resposta: 11. Acertou. Em 19/7/2023 @ 7:57:43.
+Quanto é 7^3? Resposta: 343. Acertou. Em 19/7/2023 @ 7:58:45.
+Quanto é 120 / 4? Resposta: 30. Acertou. Em 19/7/2023 @ 7:58:52.
+Quanto é 62 - 55? Resposta: 7. Acertou. Em 19/7/2023 @ 8:3:36.
+Quanto é 14 x 12? Resposta: 168. Acertou. Em 19/7/2023 @ 8:4:20.
+Quanto é 55 - 40? Resposta: 15. Acertou. Em 19/7/2023 @ 8:4:27.
+Quanto é 7 x 11? Resposta: 77. Acertou. Em 19/7/2023 @ 8:4:31.
+Quanto é 5 x 8? Resposta: 40. Acertou. Em 19/7/2023 @ 8:8:21.
+Quanto é 45 + 79? Resposta: 124. Acertou. Em 19/7/2023 @ 8:9:42.
+Quanto é 3^4? Resposta: 81. Acertou. Em 19/7/2023 @ 8:9:50.
+Quanto é 29 + 26? Resposta: 55. Acertou. Em 19/7/2023 @ 8:10:3.
+Quanto é 166 / 2? Resposta: 83. Acertou. Em 19/7/2023 @ 8:11:30.
+Quanto é 3 x 11? Resposta: 33. Acertou. Em 19/7/2023 @ 8:11:37.
+Quanto é 87 - 98? Resposta: -11. Acertou. Em 19/7/2023 @ 8:14:24.
+Quanto é 3^8? Resposta: 6561. Acertou. Em 19/7/2023 @ 8:15:20.
+Quanto é 8 x 2? Resposta: 16. Acertou. Em 19/7/2023 @ 8:15:27.
+Quanto é 74 - 78? Resposta: -4. Acertou. Em 19/7/2023 @ 8:15:43.
+Quanto é 14 x 4? Resposta: 56. Acertou. Em 19/7/2023 @ 8:15:57.
+Quanto é 28 + 61? Resposta: 89. Acertou. Em 19/7/2023 @ 8:20:10.
+Quanto é 67 - 60? Resposta: 7. Acertou. Em 19/7/2023 @ 8:20:18.
+Quanto é 7^3? Resposta: 343. Acertou. Em 19/7/2023 @ 8:21:1.
+Quanto é 7 x 4? Resposta: 28. Acertou. Em 19/7/2023 @ 8:21:9.
+Quanto é 88 / 4? Resposta: 22. Acertou. Em 19/7/2023 @ 8:24:30.
+Quanto é 3^3? Resposta: 27. Acertou. Em 19/7/2023 @ 8:24:37.
+Quanto é 6 x 12? Resposta: 72. Acertou. Em 19/7/2023 @ 8:24:46.
+Quanto é 105 / 21? Resposta: 5. Acertou. Em 19/7/2023 @ 8:25:0.
+Quanto é 10 - 81? Resposta: -71. Acertou. Em 19/7/2023 @ 8:25:12.
+Quanto é 3^7? Resposta: 2187. Acertou. Em 19/7/2023 @ 8:25:56.
+Quanto é 64 + 54? Resposta: 118. Acertou. Em 19/7/2023 @ 8:26:26.

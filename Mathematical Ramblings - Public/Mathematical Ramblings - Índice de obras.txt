@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 04-07-2023.
+Última atualização: 19-07-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10840,3 +10840,66 @@ __
 
 Media/Memes/Mathematical Ramblings - 04-07-2023 - 1.png
 __
+
+Resolver em $U = \mathbb{R}$: $\log_3 (2x + 1) - \log_3 (5x - 3) = -1$.
+__
+
+Artigos/Mathematical Ramblings - 19-07-2023 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Numa PG, o quarto termo é $20\%$ do terceiro termo. Sabendo que $a_1 = 2000$, qual o valor de $a_5$?
+__
+
+Artigos/Mathematical Ramblings - 19-07-2023 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: razão entre homens e mulheres dadas as médias das idades.
+__
+
+Artigos/Mathematical Ramblings - 19-07-2023 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: jogo de idades.
+__
+
+Artigos/Mathematical Ramblings - 19-07-2023 - 4.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: saldos em dois bancos.
+__
+
+Artigos/Mathematical Ramblings - 19-07-2023 - 5.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: elementos não pertencentes à união.
+__
+
+Artigos/Mathematical Ramblings - 19-07-2023 - 6.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Exercício: tempo de impressão.
+__
+
+Artigos/Mathematical Ramblings - 19-07-2023 - 7.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
