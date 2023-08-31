@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 19-07-2023.
+Última atualização: 31-08-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10829,17 +10829,26 @@ __
 Media/Memes/Mathematical Ramblings - 30-04-2023 - 1.png
 __
 
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
 Meme: utilizando minha própria calculadora nos estudos.
 __
 
 Media/Memes/Mathematical Ramblings - 02-05-2023 - 1.png
 __
 
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
 Meme: por que Matemática pode ser religião?
 __
 
 Media/Memes/Mathematical Ramblings - 04-07-2023 - 1.png
 __
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
 
 Resolver em $U = \mathbb{R}$: $\log_3 (2x + 1) - \log_3 (5x - 3) = -1$.
 __
@@ -10917,6 +10926,15 @@ Exercício: velocidade média em ida e volta.
 __
 
 Artigos/Mathematical Ramblings - 19-07-2023 - 9.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: Matemática, Física e vida...
+__
+
+Media/Memes/Mathematical Ramblings - 31-08-2023 - 1.png
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
