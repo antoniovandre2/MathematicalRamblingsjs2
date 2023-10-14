@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 18-09-2023.
+Última atualização: 14-10-2023.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10971,6 +10971,24 @@ Meme: Eu, Professor de Matemática, comentando sobre outros temas.
 __
 
 Media/Memes/Mathematical Ramblings - 18-09-2023 - 1.png
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: deslocamento lateral de um raio incidente refratado em uma lâmina de faces paralelas.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 13-10-2023 - 1.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Calculadora: imagem conjugada por um espelho esférico gaussiano.
+__
+
+Softwares/JavaScripts/Mathematical Ramblings - 14-10-2023 - 1.txt
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
