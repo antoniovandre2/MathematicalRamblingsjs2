@@ -1,4 +1,4 @@
-Número de acertos: 2490. Número de erros: 12. MD5sum: a8d80698de246c641c79a95b8e59df6f.
+Número de acertos: 2493. Número de erros: 12. MD5sum: 68bad954a3826a984f3a8382d8192d28.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -2501,3 +2501,6 @@ Quanto é 4^9? Resposta: 262144. Acertou. Em 2/9/2023 @ 23:15:38.
 Quanto é 77 + 26? Resposta: 103. Acertou. Em 2/9/2023 @ 23:16:5.
 Quanto é 39 / 39? Resposta: 1. Acertou. Em 2/9/2023 @ 23:16:8.
 Quanto é 4^6? Resposta: 4096. Acertou. Em 2/9/2023 @ 23:16:22.
+Quanto é 93 + 72? Resposta: 165. Acertou. Em 8/9/2023 @ 19:44:18.
+Quanto é 29 / 29? Resposta: 1. Acertou. Em 8/9/2023 @ 19:44:23.
+Quanto é 186 / 31? Resposta: 6. Acertou. Em 8/9/2023 @ 19:44:29.
