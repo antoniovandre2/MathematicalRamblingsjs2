@@ -1,4 +1,4 @@
-Número de acertos: 2641. Número de erros: 12. MD5sum: 02d5054ebaa7b2d49706c8f12f02ca9e.
+Número de acertos: 2662. Número de erros: 13. MD5sum: d864e02ee9d605d00a24e2a4eea8d225.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -2652,3 +2652,25 @@ Quanto é 21 / 7? Resposta: 3. Acertou. Em 4/11/2023 @ 19:21:23.
 Quanto é 5 x 8? Resposta: 40. Acertou. Em 4/11/2023 @ 19:21:28.
 Quanto é 78 / 39? Resposta: 2. Acertou. Em 4/11/2023 @ 19:21:35.
 Quanto é 6 x 14? Resposta: 84. Acertou. Em 4/11/2023 @ 19:56:41.
+Quanto é 136 / 8? Resposta: 17. Acertou. Em 4/11/2023 @ 20:8:17.
+Quanto é 63 + 79? Resposta: 142. Acertou. Em 4/11/2023 @ 20:9:15.
+Quanto é 82 + 96? Resposta: 178. Acertou. Em 4/11/2023 @ 20:14:51.
+Quanto é 2^2? Resposta: 4. Acertou. Em 4/11/2023 @ 20:14:56.
+Quanto é 45 - 16? Resposta: 29. Acertou. Em 4/11/2023 @ 20:15:15.
+Quanto é 4 x 4? Resposta: 16. Acertou. Em 4/11/2023 @ 20:15:23.
+Quanto é 7 x 13? Resposta: 91. Acertou. Em 4/11/2023 @ 20:15:45.
+Quanto é 4^2? Resposta: 16. Acertou. Em 4/11/2023 @ 20:15:52.
+Quanto é 15 + 16? Resposta: 31. Acertou. Em 4/11/2023 @ 20:29:0.
+Quanto é 39 + 42? Resposta: 81. Acertou. Em 4/11/2023 @ 20:29:34.
+Quanto é 47 - 30? Resposta: 17. Acertou. Em 4/11/2023 @ 20:29:42.
+Quanto é 168 / 4? Resposta: 42. Acertou. Em 4/11/2023 @ 20:29:55.
+Quanto é 56 + 86? Resposta: 142. Acertou. Em 4/11/2023 @ 20:30:11.
+Quanto é 10 x 11? Resposta: 110. Acertou. Em 4/11/2023 @ 20:30:19.
+Quanto é 2 x 2? Resposta: 4. Acertou. Em 4/11/2023 @ 20:45:39.
+Quanto é 58 / 2? Resposta: 29. Acertou. Em 4/11/2023 @ 20:45:46.
+Quanto é 6 x 14? Resposta: 84. Acertou. Em 4/11/2023 @ 20:45:54.
+Quanto é 82 + 67? Resposta: 149. Acertou. Em 4/11/2023 @ 20:46:14.
+Quanto é 71 - 89? Resposta: -28. Errou. Em 4/11/2023 @ 20:57:6.
+Quanto é 71 - 89? Resposta: -18. Acertou. Em 4/11/2023 @ 20:57:27.
+Quanto é 11^2? Resposta: 121. Acertou. Em 4/11/2023 @ 20:57:33.
+Quanto é 18 / 6? Resposta: 3. Acertou. Em 4/11/2023 @ 20:57:44.
