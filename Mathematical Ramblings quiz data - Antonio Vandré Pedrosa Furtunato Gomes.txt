@@ -1,4 +1,4 @@
-Número de acertos: 2662. Número de erros: 13. MD5sum: d864e02ee9d605d00a24e2a4eea8d225.
+Número de acertos: 2752. Número de erros: 14. MD5sum: 3d4d68383d3da6ac025e5f69df8c0642.
 Quanto é 26 + 28? Resposta: 54. Acertou. Em 17/10/2021 @ 19:45:22.
 Quanto é 39 - 66? Resposta: -27. Acertou. Em 17/10/2021 @ 19:45:36.
 Quanto é 44 - 11? Resposta: 33. Acertou. Em 17/10/2021 @ 21:44:6.
@@ -2674,3 +2674,94 @@ Quanto é 71 - 89? Resposta: -28. Errou. Em 4/11/2023 @ 20:57:6.
 Quanto é 71 - 89? Resposta: -18. Acertou. Em 4/11/2023 @ 20:57:27.
 Quanto é 11^2? Resposta: 121. Acertou. Em 4/11/2023 @ 20:57:33.
 Quanto é 18 / 6? Resposta: 3. Acertou. Em 4/11/2023 @ 20:57:44.
+Quanto é 14 x 3? Resposta: 42. Acertou. Em 5/11/2023 @ 10:48:53.
+Quanto é 2^4? Resposta: 16. Acertou. Em 5/11/2023 @ 10:48:58.
+Quanto é 2 - 9? Resposta: -7. Acertou. Em 5/11/2023 @ 10:49:4.
+Quanto é 3^5? Resposta: 243. Acertou. Em 5/11/2023 @ 10:49:21.
+Quanto é 2 x 6? Resposta: 12. Acertou. Em 5/11/2023 @ 10:49:32.
+Quanto é 38 + 85? Resposta: 123. Acertou. Em 5/11/2023 @ 10:55:48.
+Quanto é 40 + 4? Resposta: 44. Acertou. Em 5/11/2023 @ 10:55:52.
+Quanto é 10 x 6? Resposta: 60. Acertou. Em 5/11/2023 @ 10:56:1.
+Quanto é 3^7? Resposta: 2187. Acertou. Em 5/11/2023 @ 10:57:13.
+Quanto é 5 x 8? Resposta: 40. Acertou. Em 5/11/2023 @ 10:57:23.
+Quanto é 49 + 68? Resposta: 117. Acertou. Em 5/11/2023 @ 10:58:16.
+Quanto é 78 + 95? Resposta: 173. Acertou. Em 5/11/2023 @ 11:4:57.
+Quanto é 60 / 5? Resposta: 12. Acertou. Em 5/11/2023 @ 11:5:3.
+Quanto é 3 - 2? Resposta: 1. Acertou. Em 5/11/2023 @ 11:5:8.
+Quanto é 4 x 5? Resposta: 20. Acertou. Em 5/11/2023 @ 11:5:13.
+Quanto é 11 + 96? Resposta: 107. Acertou. Em 5/11/2023 @ 11:5:27.
+Quanto é 60 / 6? Resposta: 10. Acertou. Em 5/11/2023 @ 11:5:32.
+Quanto é 3^2? Resposta: 9. Acertou. Em 5/11/2023 @ 11:5:45.
+Quanto é 14 / 14? Resposta: 1. Acertou. Em 5/11/2023 @ 11:5:50.
+Quanto é 72 / 2? Resposta: 36. Acertou. Em 5/11/2023 @ 11:6:0.
+Quanto é 73 + 17? Resposta: 90. Acertou. Em 5/11/2023 @ 11:6:16.
+Quanto é 37 + 18? Resposta: 55. Acertou. Em 5/11/2023 @ 11:6:40.
+Quanto é 27 - 85? Resposta: -58. Acertou. Em 5/11/2023 @ 11:7:35.
+Quanto é 61 - 59? Resposta: 2. Acertou. Em 5/11/2023 @ 11:7:46.
+Quanto é 4^8? Resposta: 65536. Acertou. Em 5/11/2023 @ 11:9:46.
+Quanto é 95 + 58? Resposta: 153. Acertou. Em 5/11/2023 @ 11:11:30.
+Quanto é 24 - 98? Resposta: -74. Acertou. Em 5/11/2023 @ 11:11:42.
+Quanto é 10 x 2? Resposta: 20. Acertou. Em 5/11/2023 @ 11:32:47.
+Quanto é 9 + 17? Resposta: 26. Acertou. Em 5/11/2023 @ 11:36:4.
+Quanto é 175 / 5? Resposta: 35. Acertou. Em 5/11/2023 @ 11:36:16.
+Quanto é 8^2? Resposta: 64. Acertou. Em 5/11/2023 @ 11:36:22.
+Quanto é 13 x 6? Resposta: 78. Acertou. Em 5/11/2023 @ 11:36:35.
+Quanto é 198 / 66? Resposta: 3. Acertou. Em 5/11/2023 @ 11:42:12.
+Quanto é 5 x 11? Resposta: 55. Acertou. Em 5/11/2023 @ 11:42:17.
+Quanto é 54 + 65? Resposta: 119. Acertou. Em 5/11/2023 @ 11:42:51.
+Quanto é 190 / 2? Resposta: 95. Acertou. Em 5/11/2023 @ 11:43:7.
+Quanto é 10 x 13? Resposta: 130. Acertou. Em 5/11/2023 @ 11:43:14.
+Quanto é 4^7? Resposta: 16384. Acertou. Em 5/11/2023 @ 11:43:51.
+Quanto é 11 x 11? Resposta: 121. Acertou. Em 5/11/2023 @ 11:43:56.
+Quanto é 98 + 75? Resposta: 173. Acertou. Em 5/11/2023 @ 11:45:52.
+Quanto é 20 - 23? Resposta: -3. Acertou. Em 5/11/2023 @ 11:57:42.
+Quanto é 85 - 83? Resposta: 2. Acertou. Em 5/11/2023 @ 11:57:47.
+Quanto é 7^3? Resposta: 343. Acertou. Em 5/11/2023 @ 11:57:53.
+Quanto é 58 + 71? Resposta: 129. Acertou. Em 5/11/2023 @ 11:58:2.
+Quanto é 3^3? Resposta: 27. Acertou. Em 5/11/2023 @ 11:58:10.
+Quanto é 143 / 13? Resposta: 11. Acertou. Em 5/11/2023 @ 11:58:24.
+Quanto é 61 + 65? Resposta: 126. Acertou. Em 5/11/2023 @ 11:58:48.
+Quanto é 63 / 63? Resposta: 1. Acertou. Em 5/11/2023 @ 11:58:57.
+Quanto é 53 / 53? Resposta: 1. Acertou. Em 5/11/2023 @ 11:59:1.
+Quanto é 29 + 81? Resposta: 110. Acertou. Em 5/11/2023 @ 11:59:16.
+Quanto é 14 x 14? Resposta: 196. Acertou. Em 5/11/2023 @ 12:4:42.
+Quanto é 77 + 80? Resposta: 157. Acertou. Em 5/11/2023 @ 12:4:54.
+Quanto é 85 - 54? Resposta: 139. Errou. Em 5/11/2023 @ 12:5:20.
+Quanto é 85 - 54? Resposta: 31. Acertou. Em 5/11/2023 @ 12:5:59.
+Quanto é 81 - 52? Resposta: 29. Acertou. Em 5/11/2023 @ 12:6:13.
+Quanto é 98 - 31? Resposta: 67. Acertou. Em 5/11/2023 @ 12:6:40.
+Quanto é 6^3? Resposta: 216. Acertou. Em 5/11/2023 @ 12:6:48.
+Quanto é 35 + 13? Resposta: 48. Acertou. Em 5/11/2023 @ 12:7:5.
+Quanto é 80 / 16? Resposta: 5. Acertou. Em 5/11/2023 @ 12:7:13.
+Quanto é 61 + 3? Resposta: 64. Acertou. Em 5/11/2023 @ 12:25:1.
+Quanto é 2^8? Resposta: 256. Acertou. Em 5/11/2023 @ 12:25:10.
+Quanto é 12 x 13? Resposta: 156. Acertou. Em 5/11/2023 @ 12:25:25.
+Quanto é 2^4? Resposta: 16. Acertou. Em 5/11/2023 @ 12:25:34.
+Quanto é 27 / 9? Resposta: 3. Acertou. Em 5/11/2023 @ 12:25:40.
+Quanto é 93 + 71? Resposta: 164. Acertou. Em 5/11/2023 @ 12:26:11.
+Quanto é 4^2? Resposta: 16. Acertou. Em 5/11/2023 @ 12:26:16.
+Quanto é 3 - 86? Resposta: -83. Acertou. Em 5/11/2023 @ 12:26:24.
+Quanto é 12 x 6? Resposta: 72. Acertou. Em 5/11/2023 @ 12:26:35.
+Quanto é 73 - 73? Resposta: 0. Acertou. Em 5/11/2023 @ 12:38:58.
+Quanto é 13 x 12? Resposta: 156. Acertou. Em 5/11/2023 @ 12:39:14.
+Quanto é 62 - 63? Resposta: -1. Acertou. Em 5/11/2023 @ 12:39:20.
+Quanto é 4 x 7? Resposta: 28. Acertou. Em 5/11/2023 @ 12:39:27.
+Quanto é 15 - 69? Resposta: -54. Acertou. Em 5/11/2023 @ 12:40:25.
+Quanto é 13^2? Resposta: 169. Acertou. Em 5/11/2023 @ 12:40:32.
+Quanto é 8 + 55? Resposta: 63. Acertou. Em 5/11/2023 @ 12:40:42.
+Quanto é 12 x 5? Resposta: 60. Acertou. Em 5/11/2023 @ 12:40:49.
+Quanto é 94 + 57? Resposta: 151. Acertou. Em 5/11/2023 @ 12:41:20.
+Quanto é 75 + 20? Resposta: 95. Acertou. Em 5/11/2023 @ 12:46:34.
+Quanto é 30 - 33? Resposta: -3. Acertou. Em 5/11/2023 @ 12:46:41.
+Quanto é 83 - 21? Resposta: 62. Acertou. Em 5/11/2023 @ 12:46:55.
+Quanto é 60 / 5? Resposta: 12. Acertou. Em 5/11/2023 @ 12:47:11.
+Quanto é 54 + 21? Resposta: 75. Acertou. Em 5/11/2023 @ 12:58:53.
+Quanto é 2^6? Resposta: 64. Acertou. Em 5/11/2023 @ 12:59:1.
+Quanto é 10 + 56? Resposta: 66. Acertou. Em 5/11/2023 @ 12:59:11.
+Quanto é 38 - 25? Resposta: 13. Acertou. Em 5/11/2023 @ 13:0:2.
+Quanto é 3^4? Resposta: 81. Acertou. Em 5/11/2023 @ 13:0:8.
+Quanto é 68 - 35? Resposta: 33. Acertou. Em 5/11/2023 @ 13:0:22.
+Quanto é 3^8? Resposta: 6561. Acertou. Em 5/11/2023 @ 13:1:36.
+Quanto é 56 - 92? Resposta: -36. Acertou. Em 5/11/2023 @ 13:2:58.
+Quanto é 9 x 9? Resposta: 81. Acertou. Em 5/11/2023 @ 13:3:5.
+Quanto é 12 x 11? Resposta: 132. Acertou. Em 5/11/2023 @ 13:3:15.
