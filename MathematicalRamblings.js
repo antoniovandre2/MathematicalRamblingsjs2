@@ -6,7 +6,7 @@
 
 // Sugestão ou comunicar erro: "a.vandre.g@gmail.com".
 
-// Última atualização: 14-11-2023.
+// Última atualização: 08-06-2024.
 
 // Início escopo desenvolvido por Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
 
@@ -16,7 +16,7 @@ console.log("                                                  \n          .\',;
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
-function antoniovandremathematicalramblingsjsversao(){return "14-11-2023";}
+function antoniovandremathematicalramblingsjsversao(){return "08-06-2024";}
 
 // Fim mensagem de inicialização no console.log.
 
@@ -1101,10 +1101,13 @@ function antoniovandreremovernumerosstring(str)
 	return buffer;
 	}
 
-// Conversão de números naturais de uma base de sistema de numeração para outra. Argumento: string de valores separados por vírgula, o primeiro valor é o número a ser convertido, o segundo valor é a base do sistema de numeração em que está escrito, e o terceiro valor é a base do sistema de numeração para a qual se deseja converter o número. Retorna a string "e" se um erro ocorre.
+// Conversão de números naturais de uma base de sistema de numeração para outra. Primeiro argumento; string de valores separados por vírgula, o primeiro valor é o número a ser convertido, o segundo valor é a base do sistema de numeração em que está escrito, e o terceiro valor é a base do sistema de numeração para a qual se deseja converter o número. Segundo argumento: -1 para retornar aviso anexo. Retorna a string "e" se um erro ocorre.
 
-function antoniovandrecnb(arr)
+function antoniovandrecnb(arr, avisoanexo)
 	{
+	if (avisoanexo == -1)
+		return "Símbolos disponíveis em ordem crescente de valor:\n\n0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z.";
+
 	var nstr = arr.split(",");
 	var nb = 0;
 	var s = "";
