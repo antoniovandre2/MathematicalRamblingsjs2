@@ -42,7 +42,7 @@ function antoniovandreprimos(i)
 		return max;
 		}
 	else if (i == -3)
-		return antoniovandrepiso(antoniovandreprimos(-1) / 64)
+		return antoniovandrepiso(Math.min(5000, antoniovandreprimos(-1)))
 	else if (i < antoniovandreprimosarr.length)
 			return antoniovandreprimosarr[i]
 	else
