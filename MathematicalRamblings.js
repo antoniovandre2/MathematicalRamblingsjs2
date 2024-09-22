@@ -81,10 +81,12 @@ function antoniovandredecomporfatoresprimos(n, saida)
 							n2 = n2 / antoniovandreprimosarr[i];
 							}
 						if (i == antoniovandreprimoslength - 1) flag2 = 1;
-//						if (max < antoniovandreprimosarr[i]) max = antoniovandreprimosarr[i];
+						// if (max < antoniovandreprimosarr[i]) max = antoniovandreprimosarr[i];
 						}
 
-/*			i = max + 1;
+			/*
+
+			i = max + 1;
 			while (n2 != 1)
 				if (n2 % i == 0)
 					{
@@ -93,7 +95,8 @@ function antoniovandredecomporfatoresprimos(n, saida)
 					}
 				else
 					i++;
-*/
+			*/
+
 			for (i = 0; i < buffer.length; i++) if (buffer[i][1] != 0) output.push([buffer[i][0], buffer[i][1]]);
 			}
 
@@ -158,29 +161,29 @@ function antoniovandrefatorial(n)
 // Arranjos. Argumentos: dois números naturais. Retorna a string "e" se ocorre erro.
 
 function antoniovandrearranjos(n, p)
-{
-var a = 1;
-
-if ((antoniovandrenumeronatural(n.toString()) == "e") || (antoniovandrenumeronatural(p.toString()) == "e"))
-	return "e"
-else
 	{
-	if ((antoniovandremodulo(n) > antoniovandremaximovalorentrada(2)) || (antoniovandremodulo(p) > antoniovandremaximovalorentrada(2)))
-		return antoniovandremensagenserro(1)
+	var a = 1;
+
+	if ((antoniovandrenumeronatural(n.toString()) == "e") || (antoniovandrenumeronatural(p.toString()) == "e"))
+		return "e"
 	else
 		{
-		if (p > n)
-			return "O numerador deve ser menor ou igual ao denominador."
+		if ((antoniovandremodulo(n) > antoniovandremaximovalorentrada(2)) || (antoniovandremodulo(p) > antoniovandremaximovalorentrada(2)))
+			return antoniovandremensagenserro(1)
 		else
-			for (var i = n; i >= n - p + 1; i--) a *= i;
+			{
+			if (p > n)
+				return "O numerador deve ser menor ou igual ao denominador."
+			else
+				for (var i = n; i >= n - p + 1; i--) a *= i;
 
-		if (antoniovandremodulo(a) > parseFloat(antoniovandremaximovalorsaida(1)))
-			return antoniovandremensagenserro(5);
+			if (antoniovandremodulo(a) > parseFloat(antoniovandremaximovalorsaida(1)))
+				return antoniovandremensagenserro(5);
 
-		return a;
+			return a;
+			}
 		}
 	}
-}
 
 // Combinações. Argumentos: dois números naturais. Retorna a string "e" se ocorre erro.
 
