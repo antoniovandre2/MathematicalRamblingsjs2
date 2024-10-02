@@ -1,0 +1,60 @@
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Calculadora: expressão de funções.
+
+Dependências: "MathematicalRamblings.js".
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+-->
+
+<script onerror='let MathematicalRamblingsscript = document.createElement(&quot;script&quot;); MathematicalRamblingsscript.setAttribute(&quot;src&quot;, &quot;https://antoniovandre2.github.io/MathematicalRamblingsjs2/MathematicalRamblings.js&quot;); document.body.appendChild(MathematicalRamblingsscript);' src='https://dl.dropboxusercontent.com/s/8tu34kcvoxqcwvb/MathematicalRamblings.js' type='text/javascript'/>
+
+Calculadora: expressão de funções.
+<br><br>
+Entre com a expressão a ser calculada:
+<br><br>
+Exemplo:
+<br><br>
+Input: "<span class="notranslate">(2 + sqrt(4)) * 3</span>".
+<br>
+Output: aproximadamente "<span class="notranslate">12</span>".
+<br><br>
+<table border="1" width="100%"><tr><td><input type="text" name="expressaofuncoes" style="width : 100%"></td></tr></table>
+<br>
+<input type="button" onclick="processarexpressaofuncoes()" value="Calcular">
+<br><br>
+Resultado:
+<br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="resultadoexpressaofuncoes" id="resultadoexpressaofuncoes" readonly rows="5"></textarea></td></tr></table>
+<br><br>
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;overflow-y: scroll;resize: none" name="expressaofuncoesavisoanexo" id="expressaofuncoesavisoanexo" readonly rows="10"></textarea></td></tr></table>
+
+<script>
+document.getElementById('expressaofuncoesavisoanexo').value = antoniovandreexpressaofuncoes("0", -1);
+
+function processarexpressaofuncoes()
+	{
+	var str = document.getElementsByName('expressaofuncoes');
+	var out = antoniovandreexpressaofuncoes(str[0].value, 0);
+
+	if (antoniovandrecompararstrings(out, "e") == "e")
+		{
+		if (antoniovandrenumeroreal(out.toString()) == "e")
+			document.getElementById('resultadoexpressaofuncoes').value = out
+		else
+			{
+			var coefs = antoniovandrefracaogeratriz(out, 1);
+
+			if (coefs[1] == 1)
+				document.getElementById('resultadoexpressaofuncoes').value = out
+			else
+				document.getElementById('resultadoexpressaofuncoes').value = coefs[0].toString() + " / " + coefs[1].toString();
+			}
+		}
+	else
+		document.getElementById('resultadoexpressaofuncoes').value = antoniovandreoperadoresfuncoesconstantes(4);
+	}
+</script>
