@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 10-11-2023.
+Última atualização: 20-10-2024.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -10998,6 +10998,186 @@ Calculadora: desvio angular de um raio incidente refratado em um prisma de secç
 __
 
 Softwares/JavaScripts/Mathematical Ramblings - 10-11-2023 - 1.txt
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Resolver a inequação $\dfrac{3x - 1}{2 - x} > -10$.
+__
+
+Artigos/Mathematical Ramblings - 19-05-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Resolver a inequação $\dfrac{1}{x} > -1$.
+__
+
+Artigos/Mathematical Ramblings - 19-05-2024 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: Louco, porém bom em Matemática.
+__
+
+Media/Memes/Mathematical Ramblings - 20-05-2024 - 1.png
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Pensamento: Knowledge isn't free. You have to pay attention.
+__
+
+Média/Mathematical Ramblings - 23-05-2024 - 1.png
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Seja $r \in \mathbb{R}$, demonstrar que $|r| = |-r|$.
+__
+
+Artigos/Mathematical Ramblings - 01-06-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Comprimento de uma curva tridimensional em coordenadas paramétricas.
+__
+
+Artigos/Mathematical Ramblings - 05-06-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Temperatura de Antonio Vandré.
+__
+
+Artigos/Mathematical Ramblings - 05-06-2024 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+De quantas formas podemos expressar $257$ como uma soma de dois números primos?
+__
+
+Artigos/Mathematical Ramblings - 13-06-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Unicidade do vetor nulo.
+__
+
+Artigos/Mathematical Ramblings - 28-09-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Seja $K$ um corpo e $k \in K$, mostrar que $kO = O$.
+__
+
+Artigos/Mathematical Ramblings - 29-09-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+$ku = O\ \Rightarrow\ k = 0\ \vee\ u = O$
+__
+
+Artigos/Mathematical Ramblings - 02-10-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Equivalência de condições para a validação de um subespaço vetorial.
+__
+
+Artigos/Mathematical Ramblings - 03-10-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Espaço das soluções de um sistema linear homogêneo
+__
+
+Artigos/Mathematical Ramblings - 03-10-2024 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Sejam $U$ e $W$ subespaços de $V$ tais que $U \cup W$ também é subespaço, mostrar que $U \subset W\ \vee\ W \subset U$.
+__
+
+Artigos/Mathematical Ramblings - 12-10-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Sejam $A$ e $B$ matrizes para as quais $AB$ está definido, mostrar que o espaço das colunas de $AB$ está contido no espaço das colunas de $A$.
+__
+
+Artigos/Mathematical Ramblings - 13-10-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+$S = \{u_i\}$ é linearmente dependente se, e somente se, um vetor é combinação linear dos demais.
+__
+
+Artigos/Mathematical Ramblings - 19-10-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Seja $V$ o espaço vetorial de todas as funções de um corpo $K$ em um corpo $K$; seja $U$ o subespaço das funções pares e $W$ o subespaço das funções ímpares. Mostrar que $V = U \oplus W$.
+__
+
+Artigos/Mathematical Ramblings - 19-10-2024 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: Matemática no topo.
+__
+
+Media/Memes/Mathematical Ramblings - 20-10-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Encontrar $x = 145^2 - 143^2$.
+__
+
+Artigos/Mathematical Ramblings - 20-10-2024 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Seja $V$ o espaço vetorial das funções reais, mostrar que o subconjunto $\{e^{2t}, t^2, t\}$ é linearmente independente.
+__
+
+Artigos/Mathematical Ramblings - 20-10-2024 - 3.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
