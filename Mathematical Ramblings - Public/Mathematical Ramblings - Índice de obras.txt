@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 20-10-2024.
+Última atualização: 16-11-2024.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -11178,6 +11178,33 @@ Seja $V$ o espaço vetorial das funções reais, mostrar que o subconjunto $\{e^
 __
 
 Artigos/Mathematical Ramblings - 20-10-2024 - 3.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Seja o espaço vetorial das matrizes $2$ x $2$, mostrar que o subespaço $V$ das matrizes simétricas é $3$.
+__
+
+Artigos/Mathematical Ramblings - 01-11-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: cientistas, religiosos e Matemáticos.
+__
+
+Media/Memes/Mathematical Ramblings - 11-11-2024 - 1.png
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: pensamentos matemáticos em uma festa.
+__
+
+Media/Memes/Mathematical Ramblings - 16-11-2024 - 1.png
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
