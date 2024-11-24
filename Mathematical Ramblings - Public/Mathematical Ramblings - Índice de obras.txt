@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 16-11-2024.
+Última atualização: 24-11-2024.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -11202,6 +11202,33 @@ Publicado em "mathematicalramblings.blogspot.com".
 _____
 
 Meme: pensamentos matemáticos em uma festa.
+__
+
+Media/Memes/Mathematical Ramblings - 16-11-2024 - 1.png
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Sejam $f:\ A\ \rightarrow\ B$ e $g:\ B\ \rightarrow\ C$ transformações. Mostre que se $f$ e $g$ são injetoras, então $g \circ f$ também o é.
+__
+
+Artigos/Mathematical Ramblings - 23-11-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Sejam $f:\ A\ \rightarrow\ B$ e $g:\ B\ \rightarrow\ C$ transformações. Mostre que se $g \circ f$ é injetora, então $f$ também o é.
+__
+
+Artigos/Mathematical Ramblings - 23-11-2024 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: transformações lineares, homomorfismo, isomorfismo.
 __
 
 Media/Memes/Mathematical Ramblings - 16-11-2024 - 1.png
