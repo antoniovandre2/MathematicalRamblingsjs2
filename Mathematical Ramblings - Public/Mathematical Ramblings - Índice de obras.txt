@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 24-11-2024.
+Última atualização: 26-11-2024.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -11232,6 +11232,24 @@ Meme: transformações lineares, homomorfismo, isomorfismo.
 __
 
 Media/Memes/Mathematical Ramblings - 16-11-2024 - 1.png
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Imagens linearmente independentes de uma transformação linear.
+__
+
+Artigos/Mathematical Ramblings - 26-11-2024 - 1.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Seja $F: V \rightarrow U$ uma transformação linear bijetora, e $F^{-1}: U \rightarrow V$ sua inversa. Mostre que $F^{-1}$ também é linear.
+__
+
+Artigos/Mathematical Ramblings - 26-11-2024 - 2.pdf
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
