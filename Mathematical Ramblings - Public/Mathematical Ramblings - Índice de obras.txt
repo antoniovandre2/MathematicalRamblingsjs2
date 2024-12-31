@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings (https://bit.ly/mathematicalramblings).
 
 Índice de obras.
 
-Última atualização: 26-11-2024.
+Última atualização: 31-12-2024.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -11250,6 +11250,15 @@ Seja $F: V \rightarrow U$ uma transformação linear bijetora, e $F^{-1}: U \rig
 __
 
 Artigos/Mathematical Ramblings - 26-11-2024 - 2.pdf
+__
+
+Publicado em "mathematicalramblings.blogspot.com".
+_____
+
+Meme: I love linear aplications. Me too.
+__
+
+Media/Memes/Mathematical Ramblings - 31-12-2024 - 1.png
 __
 
 Publicado em "mathematicalramblings.blogspot.com".
