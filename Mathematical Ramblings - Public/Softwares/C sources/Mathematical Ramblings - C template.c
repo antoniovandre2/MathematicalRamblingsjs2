@@ -1,5 +1,4 @@
-// Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
-
+// 
 // C source...
 
 // Comunicar erro: "a.vandre.g@gmail.com". 
