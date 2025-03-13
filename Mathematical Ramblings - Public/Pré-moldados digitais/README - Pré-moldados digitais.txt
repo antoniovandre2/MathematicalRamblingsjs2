@@ -1,7 +1,3 @@
-Proprietário: Antonio Vandré Pedrosa Furtunato Gomes (bit.ly/antoniovandre_legadoontologico).
-
-Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
-
 Arquivo README.txt para pré-moldados digitais.
 
 Última atualização do documento: 08-03-2022.
