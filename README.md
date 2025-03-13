@@ -13,11 +13,7 @@ README.md do MathematicalRamblingsjs2.
 <span style="font-family: 'Courier';">
 Biblioteca de funções, procedimentos e constantes JavaScript do projeto Mathematical Ramblings.
 <br><br>
-Blogger: "https://mathematicalramblings.blogspot.com/".
-<br><br>
-Calculadoras: "https://mathematicalramblings.blogspot.com/search/label/calculadoras".
+Calculadoras: "https://antoniovandre2.github.io/MathematicalRamblingsjs2/MR%20-%20Calculadoras.html".
 <br><br>
 GitHub page: "https://antoniovandre2.github.io/MathematicalRamblingsjs2/".
-<br><br>
-Repositório descontinuado: "https://github.com/antoniovandre/MathematicalRamblingsjs".
 </span>

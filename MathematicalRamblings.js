@@ -1,4 +1,4 @@
-// Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+// Projeto Mathematical Ramblings.
 
 // Biblioteca de funções, procedimentos e constantes JavaScript do projeto Mathematical Ramblings.
 
@@ -12,7 +12,7 @@
 
 // Início mensagem de inicialização no console.log.
 
-console.log("                                                  \n          .\',;;;,\'.        ..,;;;,..              \n       \':oddolloxxdl,.  .;codollodxo;.            \n     \'lxo:\'.   .\'lxkxo;cxkd:.  .,oxkxc.           \n   .cxd;.        \'dkkkkxo:\'   .lxkkkkd\'           \n  .lxo.          \'dkkkko\'     :xkkkkkl.           \n .lko.           :xkkkx:      \'oxxxd:.        ....\n .;:.           .okkkko.       .....  ......\'\'\'\'\'\'\n                :xkkkx;           ...\'\'\'\'\'\'\'\'\'\'\'\'\'\n               .okkkko.       ...\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n               ;xkkkx:      ..\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n              .okkkko.  ...\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n   ....       ;xkkkx:...\'\'\'\'\'\'\'\'\',cl:,\'\'\'\'\'\'\'\'\'\'\'\'\n .codxd:.    .okkkkd,.\'\'\'\'\'\'\'\'\'\',lxxl,\'\'\'\'\'\'\'\'\'\'\'\'\n\'dkkkkkd\'   .cxkkkko,\'\'\'\'\'\'\'\'\'\',cxxl;\'\'\'\'\'\'\'\'\'\'\'\'\'\n:xkkkkd:.  .:xkkkkkl,\'\'\'\'\'\'\'\',:oxxl,\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n,dkkdc.  .\'lxd:lxkkdc,\'\'\'\',;:oxxo:,\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n ,lxxolccoxo;. .:oxxxdoooodxxdl:,\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n   .,;:::,..  ..\',;:cllllllc;,\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n              .\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n             .\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n            ..\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n            .\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n           ..\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n           .\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n\nProjeto Mathematical Ramblings. Organização sem fins lucrativos voltada para a pesquisa e educação em Matemática.\n\nmathematicalramblings.blogspot.com\n\nLicença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).\n\nSugestão ou comunicar erro: \"a.vandre.g@gmail.com\".\n\nVersão:", antoniovandremathematicalramblingsjsversao(), ".\n\n____________________");
+console.log("                                                  \n          .\',;;;,\'.        ..,;;;,..              \n       \':oddolloxxdl,.  .;codollodxo;.            \n     \'lxo:\'.   .\'lxkxo;cxkd:.  .,oxkxc.           \n   .cxd;.        \'dkkkkxo:\'   .lxkkkkd\'           \n  .lxo.          \'dkkkko\'     :xkkkkkl.           \n .lko.           :xkkkx:      \'oxxxd:.        ....\n .;:.           .okkkko.       .....  ......\'\'\'\'\'\'\n                :xkkkx;           ...\'\'\'\'\'\'\'\'\'\'\'\'\'\n               .okkkko.       ...\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n               ;xkkkx:      ..\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n              .okkkko.  ...\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n   ....       ;xkkkx:...\'\'\'\'\'\'\'\'\',cl:,\'\'\'\'\'\'\'\'\'\'\'\'\n .codxd:.    .okkkkd,.\'\'\'\'\'\'\'\'\'\',lxxl,\'\'\'\'\'\'\'\'\'\'\'\'\n\'dkkkkkd\'   .cxkkkko,\'\'\'\'\'\'\'\'\'\',cxxl;\'\'\'\'\'\'\'\'\'\'\'\'\'\n:xkkkkd:.  .:xkkkkkl,\'\'\'\'\'\'\'\',:oxxl,\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n,dkkdc.  .\'lxd:lxkkdc,\'\'\'\',;:oxxo:,\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n ,lxxolccoxo;. .:oxxxdoooodxxdl:,\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n   .,;:::,..  ..\',;:cllllllc;,\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n              .\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n             .\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n            ..\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n            .\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n           ..\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n           .\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\n\nProjeto Mathematical Ramblings. Organização sem fins lucrativos voltada para a pesquisa e educação em Matemática.\n\nLicença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).\n\nSugestão ou comunicar erro: \"a.vandre.g@gmail.com\".\n\nVersão:", antoniovandremathematicalramblingsjsversao(), ".\n\n____________________");
 
 // Versão do MathematicalRamblings.js. Não considerando alterações em macros.
 
@@ -81,12 +81,10 @@ function antoniovandredecomporfatoresprimos(n, saida)
 							n2 = n2 / antoniovandreprimosarr[i];
 							}
 						if (i == antoniovandreprimoslength - 1) flag2 = 1;
-						// if (max < antoniovandreprimosarr[i]) max = antoniovandreprimosarr[i];
+//						if (max < antoniovandreprimosarr[i]) max = antoniovandreprimosarr[i];
 						}
 
-			/*
-
-			i = max + 1;
+/*			i = max + 1;
 			while (n2 != 1)
 				if (n2 % i == 0)
 					{
@@ -95,8 +93,7 @@ function antoniovandredecomporfatoresprimos(n, saida)
 					}
 				else
 					i++;
-			*/
-
+*/
 			for (i = 0; i < buffer.length; i++) if (buffer[i][1] != 0) output.push([buffer[i][0], buffer[i][1]]);
 			}
 
@@ -161,29 +158,29 @@ function antoniovandrefatorial(n)
 // Arranjos. Argumentos: dois números naturais. Retorna a string "e" se ocorre erro.
 
 function antoniovandrearranjos(n, p)
-	{
-	var a = 1;
+{
+var a = 1;
 
-	if ((antoniovandrenumeronatural(n.toString()) == "e") || (antoniovandrenumeronatural(p.toString()) == "e"))
-		return "e"
+if ((antoniovandrenumeronatural(n.toString()) == "e") || (antoniovandrenumeronatural(p.toString()) == "e"))
+	return "e"
+else
+	{
+	if ((antoniovandremodulo(n) > antoniovandremaximovalorentrada(2)) || (antoniovandremodulo(p) > antoniovandremaximovalorentrada(2)))
+		return antoniovandremensagenserro(1)
 	else
 		{
-		if ((antoniovandremodulo(n) > antoniovandremaximovalorentrada(2)) || (antoniovandremodulo(p) > antoniovandremaximovalorentrada(2)))
-			return antoniovandremensagenserro(1)
+		if (p > n)
+			return "O numerador deve ser menor ou igual ao denominador."
 		else
-			{
-			if (p > n)
-				return "O numerador deve ser menor ou igual ao denominador."
-			else
-				for (var i = n; i >= n - p + 1; i--) a *= i;
+			for (var i = n; i >= n - p + 1; i--) a *= i;
 
-			if (antoniovandremodulo(a) > parseFloat(antoniovandremaximovalorsaida(1)))
-				return antoniovandremensagenserro(5);
+		if (antoniovandremodulo(a) > parseFloat(antoniovandremaximovalorsaida(1)))
+			return antoniovandremensagenserro(5);
 
-			return a;
-			}
+		return a;
 		}
 	}
+}
 
 // Combinações. Argumentos: dois números naturais. Retorna a string "e" se ocorre erro.
 
