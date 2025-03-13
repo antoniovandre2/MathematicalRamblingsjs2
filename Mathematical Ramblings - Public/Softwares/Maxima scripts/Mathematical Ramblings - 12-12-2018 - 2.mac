@@ -1,5 +1,5 @@
 /*
-Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
 
 Script Maxima raízes enésimas de um complexo.
 
@@ -10,7 +10,7 @@ Requer Antonio Vandré Pedrosa Furtunato Gomes - Maxima tools.
 Comunicar erro: "a.vandre.g@gmail.com".
 */
 
-print ("Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).");
+print ("");
 
 print ("Script Maxima raízes enésimas de um complexo.");
 

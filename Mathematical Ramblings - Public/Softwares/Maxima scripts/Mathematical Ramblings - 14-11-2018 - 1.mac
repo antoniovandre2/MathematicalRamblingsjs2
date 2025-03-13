@@ -1,5 +1,5 @@
 /*
-Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
 
 Script Maxima conversão para número na base n.
 
@@ -10,7 +10,7 @@ Utilizada a versão MaximaOnAdroid 3.2.1.
 Comunicar erro: "a.vandre.g@gmail.com".
 */
 
-print ("Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).");
+print ("");
 
 print ("Script Maxima conversão para número na base n.");
 
