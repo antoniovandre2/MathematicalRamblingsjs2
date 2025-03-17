@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings.
 
 Índice de obras.
 
-Última atualização: 31-12-2024.
+Última atualização: 17-03-2025.
 
 As sessões são separadas por "_____", as subseções por "__".
 
@@ -102,6 +102,8 @@ Uma identidade financeira.
 _____
 
 Função trigonométrica corda.
+
+Artigos/Mathematical Ramblings - 17-03-2025 - 1.pdf
 _____
 
 Velocidade de queda com resistência do ar.
