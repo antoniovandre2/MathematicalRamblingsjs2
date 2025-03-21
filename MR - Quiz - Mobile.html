@@ -1,0 +1,1353 @@
+<!doctype html>
+<head><meta charset="utf-8"/></head>
+
+<!--
+
+Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
+
+Código HTML do widget Quiz.
+
+Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
+
+Útima atualização: 21-03-2025. Otimizado para mobiles.
+-->
+
+<script src="MathematicalRamblings.js"></script>
+<script src="jquery-3.7.1.js"></script>
+<script src="md5.js"></script>
+<script src="moment.js"></script>
+
+<link href='Orbitron.css' rel='stylesheet' type='text/css'>
+
+<style>
+
+html {
+  font-family: "Courier New";
+  background: url(Mathematical%20Ramblings%20logo%20-%20White.png) repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+color: rgba(0, 0, 0, 0.8);
+}
+
+img {
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+border-radius: 5px;
+opacity: 0.9;
+}
+
+h1 {
+width: 90%;
+text-align: center;
+border: 0px solid;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+border-radius: 5px;
+background-color: rgba(255, 255, 255, 0);
+background: linear-gradient(to right, rgba(192, 192, 192, 0.9) 0%, rgba(128, 128, 128, 0.9) 100%);
+background: -moz-linear-gradient(right, rgba(192, 192, 192, 0.9) 0%, rgba(128, 128, 128, 0.9) 100%);
+background: -webkit-linear-gradient(right, rgba(192, 192, 192, 0.9) 0%, rgba(128, 128, 128, 0.9) 100%);
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(192, 192, 192, 0.9)), color-stop(100%,rgba(128, 128, 128, 0.9)));
+background: -o-linear-gradient(right, rgba(192, 192, 192, 0.9) 0%, rgba(128, 128, 128, 0.9) 100%);
+}
+
+h2 {
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+border-radius: 5px;
+background-color: rgba(255, 255, 255, 0);
+background: linear-gradient(to right, rgba(192, 192, 192, 0.9) 0%, rgba(128, 128, 128, 0.9) 100%);
+background: -moz-linear-gradient(right, rgba(192, 192, 192, 0.9) 0%, rgba(128, 128, 128, 0.9) 100%);
+background: -webkit-linear-gradient(right, rgba(192, 192, 192, 0.9) 0%, rgba(128, 128, 128, 0.9) 100%);
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(192, 192, 192, 0.9)), color-stop(100%,rgba(128, 128, 128, 0.9)));
+background: -o-linear-gradient(right, rgba(192, 192, 192, 0.9) 0%, rgba(128, 128, 128, 0.9) 100%);
+}
+
+table {
+border-collapse: separate;
+border: 0px solid;
+-webkit-border-radius: 5px !important;
+-moz-border-radius: 5px !important;
+-ms-border-radius: 5px !important;
+-o-border-radius: 5px !important;
+border-radius: 5px !important;
+padding-top: 0px;
+padding-right: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+}
+
+table tr {
+-webkit-border-radius: 5px !important;
+-moz-border-radius: 5px !important;
+-ms-border-radius: 5px !important;
+-o-border-radius: 5px !important;
+border-radius: 5px !important;
+}
+
+table td {
+border: 0px solid;
+-webkit-border-radius: 5px !important;
+-moz-border-radius: 5px !important;
+-ms-border-radius: 5px !important;
+-o-border-radius: 5px !important;
+border-radius: 5px !important;
+}
+
+textarea {
+border: 1px solid;
+box-sizing: border-box;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+border-radius: 5px;
+}
+
+input {
+border: 0px solid;
+box-sizing: border-box;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+border-radius: 5px;
+}
+
+a:link {
+color: black;
+}
+
+a:visited {
+color: black;
+}
+
+a:hover {
+color: black;
+font-weight: bold;
+}
+
+a:active {
+color: black;
+font-weight: bold;
+}
+
+</style>
+  
+Pergunta:
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;resize: none" name="quiz_pergunta" id="quiz_pergunta" readonly rows="1"></textarea></td></tr></table>
+<br>
+Sua resposta:
+<table border="1" width="100%"><tr><td><textarea style="width: 100%;resize: none" name="quiz_resposta" id="quiz_resposta" rows="1"></textarea></td></tr></table>
+<br><br>
+<input type="button" onclick="processarquiz()" value="Responder"> <input type="button" onclick="quiznovo()" value="Nova pergunta"> 
+<br><br>
+Resultado:
+<table border="1" width="100%"><tr><td><textarea style="width: 100%; resize: none" name="quiz_resultado" id="quiz_resultado" readonly rows="3"></textarea></td></tr></table>
+<!--
+<br>
+<div name="quizestatdiv" id="quizestatdiv" class="quizestatdiv" style="border-radius: 5px;"> <br></div>
+-->
+<br>
+<div name="quiznacertosdiv" id="quiznacertosdiv" class="quiznacertosdiv" style="font-family: 'Orbitron', sans-serif; color: rgb(0, 128, 0); border-radius: 5px;"></div>
+<br>
+<div name="quiznerrosdiv" id="quiznerrosdiv" class="quiznerrosdiv" style="font-family: 'Orbitron', sans-serif; color: rgb(128, 0, 0); border-radius: 5px;"></div>
+<br><br>
+Frequência horária de uso:
+<br><br>
+<div style="font-family: 'Orbitron', sans-serif; color: rgb(0, 0, 0); border-radius: 20px; background-image: linear-gradient(to right bottom, #bbbbbb, #eeeeee); position: relative;">
+<div id="quizloadinghorariogif" style="position: absolute; top: 5px; left: 5px; z-index: 1"></div>
+<div id="quizgraficohorariodinamicodiv" style="position: absolute; top: 5px; right: 5px; z-index: 1; font-size: 10px"><input type="checkbox" id="quizgraficohorariodinamicocheck" name="quizgraficohorariodinamicocheck" onclick="quizgraficohorariodinamicochecked *= (-1);" checked><label for="scales">Dinâmica</label></div>
+<center>0%</center><br>
+<center><table style="border-collapse: collapse;"><tr><td style="width: 50px; text-align: left; vertical-align: center;">00h</td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora0barc" style="width: 5px;"><div id="quizhora0bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora1barc" style="width: 5px;"><div id="quizhora1bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora2barc" style="width: 5px;"><div id="quizhora2bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora3barc" style="width: 5px;"><div id="quizhora3bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora4barc" style="width: 5px;"><div id="quizhora4bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora5barc" style="width: 5px;"><div id="quizhora5bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora6barc" style="width: 5px;"><div id="quizhora6bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora7barc" style="width: 5px;"><div id="quizhora7bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora8barc" style="width: 5px;"><div id="quizhora8bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora9barc" style="width: 5px;"><div id="quizhora9bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora10barc" style="width: 5px;"><div id="quizhora10bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora11barc" style="width: 5px;"><div id="quizhora11bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora12barc" style="width: 5px;"><div id="quizhora12bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora13barc" style="width: 5px;"><div id="quizhora13bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora14barc" style="width: 5px;"><div id="quizhora14bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora15barc" style="width: 5px;"><div id="quizhora15bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora16barc" style="width: 5px;"><div id="quizhora16bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora17barc" style="width: 5px;"><div id="quizhora17bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora18barc" style="width: 5px;"><div id="quizhora18bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora19barc" style="width: 5px;"><div id="quizhora19bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora20barc" style="width: 5px;"><div id="quizhora20bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora21barc" style="width: 5px;"><div id="quizhora21bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora22barc" style="width: 5px;"><div id="quizhora22bar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizhora23barc" style="width: 5px;"><div id="quizhora23bar"></div></div></td><td style="width: 50px; text-align: right; vertical-align: center;">23h</td></tr></table></center>
+<br><center>100%</center>
+</div>
+<br><br>
+Frequência diária semanal:
+<br><br>
+<div style="font-family: 'Orbitron', sans-serif; color: rgb(0, 0, 0); border-radius: 20px; background-image: linear-gradient(to right bottom, #bbbbbb, #eeeeee); position: relative;">
+<div id="quizloadingdiariogif" style="position: absolute; top: 5px; left: 5px; z-index: 1"></div>
+<div id="quizgraficodiariodinamicodiv" style="position: absolute; top: 5px; right: 5px; z-index: 1; font-size: 10px;"><input type="checkbox" id="quizgraficodiariodinamicocheck" name="quizgraficodiariodinamicocheck" onclick="quizgraficodiariodinamicochecked *= (-1);" checked><label for="scales">Dinâmica</label></div>
+<center>0%</center><br>
+<center><table style="border-collapse: collapse;"><tr><td style="width: 100px; text-align: left; vertical-align: center;">Segunda</td><td style="border: 1px solid black; vertical-align: top;"><div id="quizdiasegbarc" style="width: 5px;"><div id="quizdiasegbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizdiaterbarc" style="width: 5px;"><div id="quizdiaterbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizdiaquabarc" style="width: 5px;"><div id="quizdiaquabar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizdiaquibarc" style="width: 5px;"><div id="quizdiaquibar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizdiasexbarc" style="width: 5px;"><div id="quizdiasexbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizdiasabbarc" style="width: 5px;"><div id="quizdiasabbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizdiadombarc" style="width: 5px;"><div id="quizdiadombar"></div></div></td><td style="width: 100px; text-align: right; vertical-align: center;">Domingo</td></tr></table></center>
+<br><center>100%</center>
+</div>
+<br><br>
+Frequência mensal:
+<br><br>
+<div style="background-image: linear-gradient(to right bottom, #bbbbbb, #eeeeee); border-radius: 20px; color: black; font-family: 'Orbitron', sans-serif; position: relative;">
+<div id="quizloadingmensalgif" style="left: 5px; position: absolute; top: 5px; z-index: 1;"></div>
+<div id="quizgraficomensaldinamicodiv" style="font-size: 10px; position: absolute; right: 5px; top: 5px; z-index: 1;"><input type="checkbox" id="quizgraficomensaldinamicocheck" name="quizgraficomensaldinamicocheck" onclick="quizgraficomensaldinamicochecked *= (-1);" checked><label for="scales">Dinâmica</label></div>
+<center>0%</center><br>
+<center><table style="border-collapse: collapse;"><tr><td style="text-align: left; vertical-align: center; width: 100px;">Janeiro</td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesjanbarc" style="width: 5px;"><div id="quizmesjanbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesfevbarc" style="width: 5px;"><div id="quizmesfevbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesmarbarc" style="width: 5px;"><div id="quizmesmarbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesabrbarc" style="width: 5px;"><div id="quizmesabrbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesmaibarc" style="width: 5px;"><div id="quizmesmaibar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesjunbarc" style="width: 5px;"><div id="quizmesjunbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesjulbarc" style="width: 5px;"><div id="quizmesjulbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesagobarc" style="width: 5px;"><div id="quizmesagobar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmessetbarc" style="width: 5px;"><div id="quizmessetbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesoutbarc" style="width: 5px;"><div id="quizmesoutbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesnovbarc" style="width: 5px;"><div id="quizmesnovbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesdezbarc" style="width: 5px;"><div id="quizmesdezbar"></div></div></td><td style="text-align: right; vertical-align: center; width: 100px;">Dezembro</td></tr></table></center>
+<br><center>100%</center>
+</div>
+<br><br>
+<div id="quiz_mes_text" name="quiz_mes_text" style="background: #000000; border-radius: 10px; color: white; font-family: Courier New; font-size: 12px; margin: auto; padding: 10px; text-aligh: left; width: 90%;"></div>
+</div>
+<br><br>
+Dificuldade:
+<table border="1" width="100%"><tr><td><textarea style="width: 100%; overflow-y: scroll; resize: none" name="quiz_dificuldade" id="quiz_dificuldade" rows="1">1</textarea></td></tr></table>
+<br><br>
+<input type="button" id="dwn-btn" value="Download dos resultados">
+<br><br>
+Upload dos seus resultados:
+<br>
+<form id="quizmyform">
+  <p>
+    <input id="quizmyfile" type="file" />
+    <br>
+    <table border="1" width="100%"><tr><td><textarea id="quizuploadtext" style="width: 100%; overflow-y: scroll; resize: none" readonly rows="1"></textarea></td></tr></table>
+  </p>
+</form>
+
+<script>
+var strdivquiz = document.getElementsByName('quiz_dificuldade');
+var quiz_argumento_1;
+var quiz_argumento_2;
+var quiz_operador;
+var quiz_dificuldade;
+var csad;
+var quiznacertos = 0;
+var quiznerros = 0;
+var quiznacertosp = -1;
+var quiznerrosp = -1;
+var quizstracertos = "0 acertos.";
+var quizstrerros = "0 erros.";
+var quiziacertos = 0;
+var quizierros = 0;
+var quizacertosElement = document.getElementById("quiznacertosdiv");
+var quizerrosElement = document.getElementById("quiznerrosdiv");
+var quizestatElement = document.getElementById("quizestatdiv");
+var quiziacertosdivbg = 0;
+var quizierrosdivbg = 50;
+var quiziacertosfatorbg = 1;
+var quizierrosfatorbg = 1;
+var quiziflash = 101;
+var quiziflashv = 801;
+var quizacertosflag = 0;
+var quizerrosflag = 0;
+var quizwarnflag = 0;
+var flagquiz;
+var quizflagupload = 0;
+var quizhistorico = "";
+var flagquizgraficohorarioquizhistorico = 0;
+var quizgraficohorariodinamicochecked = 1;
+var flagquizgraficodiarioquizhistorico = 0;
+var quizgraficodiariodinamicochecked = 1;
+var flagquizgraficomensalquizhistorico = 0;
+var quizgraficomensaldinamicochecked = 1;
+
+const quizgraficohorarioheight = 50;
+const quizgraficodiarioheight = 50;
+const quizgraficomensalheight = 50;
+
+// Barras de frequência horária de uso.
+
+var elemtquizhora0 = document.getElementById('quizhora0bar');
+var elemtquizhora0c = document.getElementById('quizhora0barc');
+elemtquizhora0.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora0c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora1 = document.getElementById('quizhora1bar');
+var elemtquizhora1c = document.getElementById('quizhora1barc');
+elemtquizhora1.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora1c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora2 = document.getElementById('quizhora2bar');
+var elemtquizhora2c = document.getElementById('quizhora2barc');
+elemtquizhora2.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora2c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora3 = document.getElementById('quizhora3bar');
+var elemtquizhora3c = document.getElementById('quizhora3barc');
+elemtquizhora3.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora3c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora4 = document.getElementById('quizhora4bar');
+var elemtquizhora4c = document.getElementById('quizhora4barc');
+elemtquizhora4.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora4c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora5 = document.getElementById('quizhora5bar');
+var elemtquizhora5c = document.getElementById('quizhora5barc');
+elemtquizhora5.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora5c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora6 = document.getElementById('quizhora6bar');
+var elemtquizhora6c = document.getElementById('quizhora6barc');
+elemtquizhora6.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora6c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora7 = document.getElementById('quizhora7bar');
+var elemtquizhora7c = document.getElementById('quizhora7barc');
+elemtquizhora7.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora7c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora8 = document.getElementById('quizhora8bar');
+var elemtquizhora8c = document.getElementById('quizhora8barc');
+elemtquizhora8.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora8c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora9 = document.getElementById('quizhora9bar');
+var elemtquizhora9c = document.getElementById('quizhora9barc');
+elemtquizhora9.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora9c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora10 = document.getElementById('quizhora10bar');
+var elemtquizhora10c = document.getElementById('quizhora10barc');
+elemtquizhora10.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora10c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora11 = document.getElementById('quizhora11bar');
+var elemtquizhora11c = document.getElementById('quizhora11barc');
+elemtquizhora11.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora11c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora12 = document.getElementById('quizhora12bar');
+var elemtquizhora12c = document.getElementById('quizhora12barc');
+elemtquizhora12.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora12c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora13 = document.getElementById('quizhora13bar');
+var elemtquizhora13c = document.getElementById('quizhora13barc');
+elemtquizhora13.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora13c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora14 = document.getElementById('quizhora14bar');
+var elemtquizhora14c = document.getElementById('quizhora14barc');
+elemtquizhora14.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora14c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora15 = document.getElementById('quizhora15bar');
+var elemtquizhora15c = document.getElementById('quizhora15barc');
+elemtquizhora15.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora15c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora16 = document.getElementById('quizhora16bar');
+var elemtquizhora16c = document.getElementById('quizhora16barc');
+elemtquizhora16.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora16c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora17 = document.getElementById('quizhora17bar');
+var elemtquizhora17c = document.getElementById('quizhora17barc');
+elemtquizhora17.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora17c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora18 = document.getElementById('quizhora18bar');
+var elemtquizhora18c = document.getElementById('quizhora18barc');
+elemtquizhora18.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora18c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora19 = document.getElementById('quizhora19bar');
+var elemtquizhora19c = document.getElementById('quizhora19barc');
+elemtquizhora19.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora19c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora20 = document.getElementById('quizhora20bar');
+var elemtquizhora20c = document.getElementById('quizhora20barc');
+elemtquizhora20.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora20c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora21 = document.getElementById('quizhora21bar');
+var elemtquizhora21c = document.getElementById('quizhora21barc');
+elemtquizhora21.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora21c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora22 = document.getElementById('quizhora22bar');
+var elemtquizhora22c = document.getElementById('quizhora22barc');
+elemtquizhora22.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora22c.style.height = quizgraficohorarioheight.toString() + "px";
+
+var elemtquizhora23 = document.getElementById('quizhora23bar');
+var elemtquizhora23c = document.getElementById('quizhora23barc');
+elemtquizhora23.style.height = quizgraficohorarioheight.toString() + "px";
+elemtquizhora23c.style.height = quizgraficohorarioheight.toString() + "px";
+
+// Barras de frequência diária semanal.
+
+var elemtquizdiaseg = document.getElementById('quizdiasegbar');
+var elemtquizdiasegc = document.getElementById('quizdiasegbarc');
+elemtquizdiaseg.style.height = quizgraficodiarioheight.toString() + "px";
+elemtquizdiasegc.style.height = quizgraficodiarioheight.toString() + "px";
+
+var elemtquizdiater = document.getElementById('quizdiaterbar');
+var elemtquizdiaterc = document.getElementById('quizdiaterbarc');
+elemtquizdiater.style.height = quizgraficodiarioheight.toString() + "px";
+elemtquizdiaterc.style.height = quizgraficodiarioheight.toString() + "px";
+
+var elemtquizdiaqua = document.getElementById('quizdiaquabar');
+var elemtquizdiaquac = document.getElementById('quizdiaquabarc');
+elemtquizdiaqua.style.height = quizgraficodiarioheight.toString() + "px";
+elemtquizdiaquac.style.height = quizgraficodiarioheight.toString() + "px";
+
+var elemtquizdiaqui = document.getElementById('quizdiaquibar');
+var elemtquizdiaquic = document.getElementById('quizdiaquibarc');
+elemtquizdiaqui.style.height = quizgraficodiarioheight.toString() + "px";
+elemtquizdiaquic.style.height = quizgraficodiarioheight.toString() + "px";
+
+var elemtquizdiasex = document.getElementById('quizdiasexbar');
+var elemtquizdiasexc = document.getElementById('quizdiasexbarc');
+elemtquizdiasex.style.height = quizgraficodiarioheight.toString() + "px";
+elemtquizdiasexc.style.height = quizgraficodiarioheight.toString() + "px";
+
+var elemtquizdiasab = document.getElementById('quizdiasabbar');
+var elemtquizdiasabc = document.getElementById('quizdiasabbarc');
+elemtquizdiasab.style.height = quizgraficodiarioheight.toString() + "px";
+elemtquizdiasabc.style.height = quizgraficodiarioheight.toString() + "px";
+
+var elemtquizdiadom = document.getElementById('quizdiadombar');
+var elemtquizdiadomc = document.getElementById('quizdiadombarc');
+elemtquizdiadom.style.height = quizgraficodiarioheight.toString() + "px";
+elemtquizdiadomc.style.height = quizgraficodiarioheight.toString() + "px";
+
+// Barras de frequência mensal.
+
+var elemtquizmesjan = document.getElementById('quizmesjanbar');
+var elemtquizmesjanc = document.getElementById('quizmesjanbarc');
+elemtquizmesjan.style.height = quizgraficomensalheight.toString() + "px";
+elemtquizmesjanc.style.height = quizgraficomensalheight.toString() + "px";
+
+var elemtquizmesfev = document.getElementById('quizmesfevbar');
+var elemtquizmesfevc = document.getElementById('quizmesfevbarc');
+elemtquizmesfev.style.height = quizgraficomensalheight.toString() + "px";
+elemtquizmesfevc.style.height = quizgraficomensalheight.toString() + "px";
+
+var elemtquizmesmar = document.getElementById('quizmesmarbar');
+var elemtquizmesmarc = document.getElementById('quizmesmarbarc');
+elemtquizmesmar.style.height = quizgraficomensalheight.toString() + "px";
+elemtquizmesmarc.style.height = quizgraficomensalheight.toString() + "px";
+
+var elemtquizmesabr = document.getElementById('quizmesabrbar');
+var elemtquizmesabrc = document.getElementById('quizmesabrbarc');
+elemtquizmesabr.style.height = quizgraficomensalheight.toString() + "px";
+elemtquizmesabrc.style.height = quizgraficomensalheight.toString() + "px";
+
+var elemtquizmesmai = document.getElementById('quizmesmaibar');
+var elemtquizmesmaic = document.getElementById('quizmesmaibarc');
+elemtquizmesmai.style.height = quizgraficomensalheight.toString() + "px";
+elemtquizmesmaic.style.height = quizgraficomensalheight.toString() + "px";
+
+var elemtquizmesjun = document.getElementById('quizmesjunbar');
+var elemtquizmesjunc = document.getElementById('quizmesjunbarc');
+elemtquizmesjun.style.height = quizgraficomensalheight.toString() + "px";
+elemtquizmesjunc.style.height = quizgraficomensalheight.toString() + "px";
+
+var elemtquizmesjul = document.getElementById('quizmesjulbar');
+var elemtquizmesjulc = document.getElementById('quizmesjulbarc');
+elemtquizmesjul.style.height = quizgraficomensalheight.toString() + "px";
+elemtquizmesjulc.style.height = quizgraficomensalheight.toString() + "px";
+
+var elemtquizmesago = document.getElementById('quizmesagobar');
+var elemtquizmesagoc = document.getElementById('quizmesagobarc');
+elemtquizmesago.style.height = quizgraficomensalheight.toString() + "px";
+elemtquizmesagoc.style.height = quizgraficomensalheight.toString() + "px";
+
+var elemtquizmesset = document.getElementById('quizmessetbar');
+var elemtquizmessetc = document.getElementById('quizmessetbarc');
+elemtquizmesset.style.height = quizgraficomensalheight.toString() + "px";
+elemtquizmessetc.style.height = quizgraficomensalheight.toString() + "px";
+
+var elemtquizmesout = document.getElementById('quizmesoutbar');
+var elemtquizmesoutc = document.getElementById('quizmesoutbarc');
+elemtquizmesout.style.height = quizgraficomensalheight.toString() + "px";
+elemtquizmesoutc.style.height = quizgraficomensalheight.toString() + "px";
+
+var elemtquizmesnov = document.getElementById('quizmesnovbar');
+var elemtquizmesnovc = document.getElementById('quizmesnovbarc');
+elemtquizmesnov.style.height = quizgraficomensalheight.toString() + "px";
+elemtquizmesnovc.style.height = quizgraficomensalheight.toString() + "px";
+
+var elemtquizmesdez = document.getElementById('quizmesdezbar');
+var elemtquizmesdezc = document.getElementById('quizmesdezbarc');
+elemtquizmesdez.style.height = quizgraficomensalheight.toString() + "px";
+elemtquizmesdezc.style.height = quizgraficomensalheight.toString() + "px";
+
+// var intervalacertosbg = setInterval(function() {quizacertosElement.style.backgroundImage = "linear-gradient(to right, #77ff77, #ffffff " + (quiziacertosdivbg).toString() + "%, #77ff77)"; if (quiziacertosdivbg == 0) quiziacertosfatorbg = 1; if (quiziacertosdivbg == 100) quiziacertosfatorbg = -1; quiziacertosdivbg += quiziacertosfatorbg;}, 30);
+
+quizacertosElement.style.backgroundImage = "linear-gradient(to right, #77ff77, #ffffff 0%, #77ff77)";
+
+// var intervalerrosbg = setInterval(function() {quizerrosElement.style.backgroundImage = "linear-gradient(to right, #ff7777, #ffffff " + (quizierrosdivbg).toString() + "%, #ff7777)"; if (quizierrosdivbg == 0) quizierrosfatorbg = 1; if (quizierrosdivbg == 100) quizierrosfatorbg = -1; quizierrosdivbg += quizierrosfatorbg;}, 30);
+
+quizerrosElement.style.backgroundImage = "linear-gradient(to right, #ff7777, #ffffff 0%, #ff7777)";
+
+// var intervalacertos = setInterval(function() {if (quiznacertos != quiznacertosp) {if (quiziacertos == 0) $(".quiznacertosdiv").empty(); if (quiziacertos < quizstracertos.length) {$(".quiznacertosdiv").append(quizstracertos[quiziacertos]); quiziacertos++} else {quiznacertosp = quiznacertos;}} else {quiziacertos = 0;}}, 50);
+
+// var intervalerros = setInterval(function() {if (quiznerros != quiznerrosp) {if (quizierros == 0) $(".quiznerrosdiv").empty(); if (quizierros < quizstrerros.length) {$(".quiznerrosdiv").append(quizstrerros[quizierros]); quizierros++} else {quiznerrosp = quiznerros;}} else {quizierros = 0;}}, 50);
+
+function atualizar_score() {$(".quiznacertosdiv").empty(); $(".quiznacertosdiv").append(quizstracertos);
+
+$(".quiznerrosdiv").empty(); $(".quiznerrosdiv").append(quizstrerros);}
+
+atualizar_score();
+
+// var intervalflash = setInterval(function() {if (quiziflash <= 100) {quizestatElement.style.backgroundImage = ""; if (quizacertosflag == 1) quizestatElement.style.backgroundColor = "rgba(0, 255, 0, " + (1 - quiziflash / 100).toString() + ")"; if (quizerrosflag == 1) quizestatElement.style.backgroundColor = "rgba(255, 0, 0, " + (1 - quiziflash / 100).toString() + ")"; if (quizwarnflag == 1) quizestatElement.style.backgroundColor = "rgba(255, 255, 0, " + (1 - quiziflash / 100).toString() + ")"; quiziflash++;};}, 30);
+
+// var intervalflashv = setInterval(function() {if (quiziflashv <= 800) {quizestatElement.style.backgroundColor = ""; if (quizacertosflag == 1) quizestatElement.style.backgroundImage = "linear-gradient(to bottom, #00ff00, #ffffff " + quiziflashv.toString() + "%, #ffffff)"; if (quizerrosflag == 1) quizestatElement.style.backgroundImage = "linear-gradient(to bottom, #ff0000, #ffffff " + quiziflashv.toString() + "%, #ffffff)"; if (quizwarnflag == 1) quizestatElement.style.backgroundImage = "linear-gradient(to bottom, #ffff00, #ffffff " + quiziflashv.toString() + "%, #ffffff)"; quiziflashv += 50; if (quiziflashv > 800) quiziflash = 0;};}, 30);
+
+function quiznovo()
+  {
+  quiz_operador = Math.floor(Math.random() * 5); if (quiz_operador == 5) quiz_operador = 0;
+  strdivquiz = document.getElementsByName('quiz_dificuldade');
+
+  if (antoniovandrenumeronaturalpositivo(strdivquiz[0].value) == "e")
+    {
+    document.getElementById('quiz_resultado').value = "A dificuldade deve ser um inteiro positivo.";
+    return;
+    }
+  else
+    document.getElementById('quiz_resultado').value = "Esperando você responder...";
+
+  quiz_dificuldade = parseInt(strdivquiz[0].value);
+
+  switch (quiz_operador)
+    {
+    case (0):
+      do
+        {
+        quiz_argumento_1 = Math.floor(Math.random() * 100 * quiz_dificuldade);
+        quiz_argumento_2 = Math.floor(Math.random() * 100 * quiz_dificuldade);
+         } while ((quiz_argumento_1 == 0) || (quiz_argumento_2 == 0));
+      document.getElementById('quiz_pergunta').value = "Quanto é " + quiz_argumento_1.toString() + " + " + quiz_argumento_2.toString() + "?";
+      break;
+    case (1):
+       do
+        {
+        quiz_argumento_1 = Math.floor(Math.random() * 100 * quiz_dificuldade);
+        quiz_argumento_2 = Math.floor(Math.random() * 100 * quiz_dificuldade);
+        } while ((quiz_argumento_1 == 0) || (quiz_argumento_2 == 0));
+      document.getElementById('quiz_pergunta').value = "Quanto é " + quiz_argumento_1.toString() + " - " + quiz_argumento_2.toString() + "?";
+      break;
+    case (2):
+      do
+        {
+        quiz_argumento_1 = Math.floor(Math.random() * 15 * quiz_dificuldade);
+        quiz_argumento_2 = Math.floor(Math.random() * 15 * quiz_dificuldade);
+        } while ((quiz_argumento_1 <= 1) || (quiz_argumento_2 <= 1));
+      document.getElementById('quiz_pergunta').value = "Quanto é " + quiz_argumento_1.toString() + " x " + quiz_argumento_2.toString() + "?";
+      break;
+    case (3):
+      do
+        {
+        quiz_argumento_1 = Math.floor(Math.random() * 200 * quiz_dificuldade);
+         csad = 0;
+         do
+          {
+           quiz_argumento_2 = Math.floor(Math.random() * 100 * quiz_dificuldade);
+           if (quiz_argumento_2 == 0) continue;
+          csad++;
+          } while ((quiz_argumento_1 / quiz_argumento_2 != parseInt(quiz_argumento_1 / quiz_argumento_2)) && (csad < 200));
+        } while ((quiz_argumento_1 <= 1) || (quiz_argumento_2 <= 1) || (quiz_argumento_1 / quiz_argumento_2 != parseInt(quiz_argumento_1 / quiz_argumento_2)));
+      document.getElementById('quiz_pergunta').value = "Quanto é " + quiz_argumento_1.toString() + " / " + quiz_argumento_2.toString() + "?";
+      break;
+    case (4):
+      do
+        {
+        quiz_argumento_1 = Math.floor(Math.random() * 15 * quiz_dificuldade);
+        quiz_argumento_2 = Math.floor(Math.random() * 10 * quiz_dificuldade);
+        } while ((quiz_argumento_1 <= 1) || (quiz_argumento_2 <= 1) || ((quiz_argumento_1 >= 9 * quiz_dificuldade) && (quiz_argumento_2 >= 3 * quiz_dificuldade)) || ((quiz_argumento_1 < 9 * quiz_dificuldade) && (quiz_argumento_2 >= 4 * quiz_dificuldade)));
+      document.getElementById('quiz_pergunta').value = "Quanto é " + quiz_argumento_1.toString() + "^" + quiz_argumento_2.toString() + "?";
+      break;
+    }
+
+  document.getElementById('quiz_resposta').value = "";
+  document.getElementById("quizmyform").reset();
+  document.getElementById('quizuploadtext').value = "Nenhum carregado.";
+  flagquiz = 0;
+  }
+
+quiznovo();
+
+function processargraficohorarioquizhistorico()
+  {
+  flagquizgraficohorarioquizhistorico = 1;
+
+  $('#quizloadinghorariogif').html("<img src=\"MR%20loading.gif\" width=\"50px\">");
+
+  var quizhorasuso = [];
+
+  for(var i = 0; i < quizhistorico.length; i++)
+    if (quizhistorico[i] == "@")
+      {
+      if (quizhistorico[i + 3] == ":") {quizhorasuso.push(quizhistorico[i + 2]);} else {quizhorasuso.push(quizhistorico[i + 2] + quizhistorico[i + 3]);}
+      }
+
+  var quizhora0 = 0;
+  var quizhora1 = 0;
+  var quizhora2 = 0;
+  var quizhora3 = 0;
+  var quizhora4 = 0;
+  var quizhora5 = 0;
+  var quizhora6 = 0;
+  var quizhora7 = 0;
+  var quizhora8 = 0;
+  var quizhora9 = 0;
+  var quizhora10 = 0;
+  var quizhora11 = 0;
+  var quizhora12 = 0;
+  var quizhora13 = 0;
+  var quizhora14 = 0;
+  var quizhora15 = 0;
+  var quizhora16 = 0;
+  var quizhora17 = 0;
+  var quizhora18 = 0;
+  var quizhora19 = 0;
+  var quizhora20 = 0;
+  var quizhora21 = 0;
+  var quizhora22 = 0;
+  var quizhora23 = 0;
+
+  for (var i = 0; i < quizhorasuso.length; i++)
+    switch (quizhorasuso[i])
+      {
+      case "0":
+        quizhora0++;
+        break;
+      case "1":
+        quizhora1++;
+        break;
+      case "2":
+        quizhora2++;
+        break;
+      case "3":
+        quizhora3++;
+        break;
+      case "4":
+        quizhora4++;
+        break;
+      case "5":
+        quizhora5++;
+        break;
+      case "6":
+        quizhora6++;
+        break;
+      case "7":
+        quizhora7++;
+        break;
+      case "8":
+        quizhora8++;
+        break;
+      case "9":
+        quizhora9++;
+        break;
+      case "10":
+        quizhora10++;
+        break;
+      case "11":
+        quizhora11++;
+        break;
+      case "12":
+        quizhora12++;
+        break;
+      case "13":
+        quizhora13++;
+        break;
+      case "14":
+        quizhora14++;
+        break;
+      case "15":
+        quizhora15++;
+        break;
+      case "16":
+        quizhora16++;
+        break;
+      case "17":
+        quizhora17++;
+        break;
+      case "18":
+        quizhora18++;
+        break;
+      case "19":
+        quizhora19++;
+        break;
+      case "20":
+        quizhora20++;
+        break;
+      case "21":
+        quizhora21++;
+        break;
+      case "22":
+        quizhora22++;
+        break;
+      case "23":
+        quizhora23++;
+        break;
+      default:
+      }
+
+	elemtquizhora0.style.height = (Math.floor((quizhora0 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora0.style.backgroundColor = "green";
+
+	elemtquizhora1.style.height = (Math.floor((quizhora1 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora1.style.backgroundColor = "green";
+
+	elemtquizhora2.style.height = (Math.floor((quizhora2 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora2.style.backgroundColor = "green";
+
+	elemtquizhora3.style.height = (Math.floor((quizhora3 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora3.style.backgroundColor = "green";
+
+	elemtquizhora4.style.height = (Math.floor((quizhora4 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora4.style.backgroundColor = "green";
+
+	elemtquizhora5.style.height = (Math.floor((quizhora5 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora5.style.backgroundColor = "green";
+
+	elemtquizhora6.style.height = (Math.floor((quizhora6 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora6.style.backgroundColor = "green";
+
+	elemtquizhora7.style.height = (Math.floor((quizhora7 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora7.style.backgroundColor = "green";
+
+	elemtquizhora8.style.height = (Math.floor((quizhora8 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora8.style.backgroundColor = "green";
+
+	elemtquizhora9.style.height = (Math.floor((quizhora9 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora9.style.backgroundColor = "green";
+
+	elemtquizhora10.style.height = (Math.floor((quizhora10 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora10.style.backgroundColor = "green";
+
+	elemtquizhora11.style.height = (Math.floor((quizhora11 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora11.style.backgroundColor = "green";
+
+	elemtquizhora12.style.height = (Math.floor((quizhora12 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora12.style.backgroundColor = "green";
+
+	elemtquizhora13.style.height = (Math.floor((quizhora13 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora13.style.backgroundColor = "green";
+
+	elemtquizhora14.style.height = (Math.floor((quizhora14 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora14.style.backgroundColor = "green";
+
+	elemtquizhora15.style.height = (Math.floor((quizhora15 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora15.style.backgroundColor = "green";
+
+	elemtquizhora16.style.height = (Math.floor((quizhora16 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora16.style.backgroundColor = "green";
+
+	elemtquizhora17.style.height = (Math.floor((quizhora17 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora17.style.backgroundColor = "green";
+
+	elemtquizhora18.style.height = (Math.floor((quizhora18 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora18.style.backgroundColor = "green";
+
+	elemtquizhora19.style.height = (Math.floor((quizhora19 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora19.style.backgroundColor = "green";
+
+	elemtquizhora20.style.height = (Math.floor((quizhora20 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora20.style.backgroundColor = "green";
+
+	elemtquizhora21.style.height = (Math.floor((quizhora21 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora21.style.backgroundColor = "green";
+
+	elemtquizhora22.style.height = (Math.floor((quizhora22 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora22.style.backgroundColor = "green";
+
+	elemtquizhora23.style.height = (Math.floor((quizhora23 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
+	elemtquizhora23.style.backgroundColor = "green";
+
+  $('#quizloadinghorariogif').empty();
+
+  flagquizgraficohorarioquizhistorico = 0;
+  }
+
+function processargraficodiarioquizhistorico()
+  {
+  flagquizgraficodiarioquizhistorico = 1;
+
+  $('#quizloadingdiariogif').html("<img src=\"MR%20loading.gif\" width=\"50px\">");
+
+  var quizdiasuso = [];
+
+  for(var i = 0; i < quizhistorico.length; i++)
+    if (quizhistorico[i] == "@")
+      {
+      var stringano = "";
+      for (var j = -5; j <= -1; j++)
+        stringano = stringano + quizhistorico[i + j];
+
+      var stringmes = "";
+      if (quizhistorico[i - 8] == "/")
+        stringmes = "0" + quizhistorico [i - 7]
+      else
+        for (var j = -8; j <= -7; j++)
+          stringmes = stringmes + quizhistorico[i + j];
+
+      var stringdia = "";
+      if (quizhistorico[i - 8] == "/")
+        {
+        if (quizhistorico[i - 10] == " ")
+          stringdia = quizhistorico [i - 9]
+        else
+          for (var j = -10; j <= -9; j++)
+            stringdia = stringdia + quizhistorico[i + j];
+        }
+      else
+        for (var j = -11; j <= -10; j++)
+          stringdia = stringdia + quizhistorico[i + j];
+
+      quizdiasuso.push(moment(stringano + stringmes + stringdia, "YYYYMMDD").format('dddd'));
+      }
+
+  var quizdiaseg = 0;
+  var quizdiater = 0;
+  var quizdiaqua = 0;
+  var quizdiaqui = 0;
+  var quizdiasex = 0;
+  var quizdiasab = 0;
+  var quizdiadom = 0;
+
+  for (var i = 0; i < quizdiasuso.length; i++)
+    switch (quizdiasuso[i])
+      {
+      case "Monday":
+        quizdiaseg++;
+        break;
+      case "Tuesday":
+        quizdiater++;
+        break;
+      case "Wednesday":
+        quizdiaqua++;
+        break;
+      case "Thursday":
+        quizdiaqui++;
+        break;
+      case "Friday":
+        quizdiasex++;
+        break;
+      case "Saturday":
+        quizdiasab++;
+        break;
+      case "Sunday":
+        quizdiadom++;
+        break;
+      default:
+      }
+
+	elemtquizdiaseg.style.height = (Math.floor((quizdiaseg / quizdiasuso.length) * quizgraficodiarioheight)).toString() + "px";
+	elemtquizdiaseg.style.backgroundColor = "green";
+
+	elemtquizdiater.style.height = (Math.floor((quizdiater / quizdiasuso.length) * quizgraficodiarioheight)).toString() + "px";
+	elemtquizdiater.style.backgroundColor = "green";
+
+	elemtquizdiaqua.style.height = (Math.floor((quizdiaqua / quizdiasuso.length) * quizgraficodiarioheight)).toString() + "px";
+	elemtquizdiaqua.style.backgroundColor = "green";
+
+	elemtquizdiaqui.style.height = (Math.floor((quizdiaqui / quizdiasuso.length) * quizgraficodiarioheight)).toString() + "px";
+	elemtquizdiaqui.style.backgroundColor = "green";
+
+	elemtquizdiasex.style.height = (Math.floor((quizdiasex / quizdiasuso.length) * quizgraficodiarioheight)).toString() + "px";
+	elemtquizdiasex.style.backgroundColor = "green";
+
+	elemtquizdiasab.style.height = (Math.floor((quizdiasab / quizdiasuso.length) * quizgraficodiarioheight)).toString() + "px";
+	elemtquizdiasab.style.backgroundColor = "green";
+
+	elemtquizdiadom.style.height = (Math.floor((quizdiadom / quizdiasuso.length) * quizgraficodiarioheight)).toString() + "px";
+	elemtquizdiadom.style.backgroundColor = "green";
+
+  $('#quizloadingdiariogif').empty();
+
+  flagquizgraficodiarioquizhistorico = 0;
+  }
+
+function processargraficomensalquizhistorico()
+  {
+  flagquizgraficomensalquizhistorico = 1;
+
+  $('#quizloadingmensalgif').html("<img src=\"MR%20loading.gif\" width=\"50px\">");
+
+  var quizmesesuso = [];
+
+  for(var i = 0; i < quizhistorico.length; i++)
+    if (quizhistorico[i] == "@")
+      {
+      var stringano = "";
+      for (var j = -5; j <= -1; j++)
+        stringano = stringano + quizhistorico[i + j];
+
+      var stringmes = "";
+      if (quizhistorico[i - 8] == "/")
+        stringmes = "0" + quizhistorico [i - 7]
+      else
+        for (var j = -8; j <= -7; j++)
+          stringmes = stringmes + quizhistorico[i + j];
+
+      var stringdia = "";
+      if (quizhistorico[i - 8] == "/")
+        {
+        if (quizhistorico[i - 10] == " ")
+          stringdia = "0" + quizhistorico [i - 9]
+        else
+          for (var j = -10; j <= -9; j++)
+            stringdia = stringdia + quizhistorico[i + j];
+        }
+      else
+        for (var j = -11; j <= -10; j++)
+          stringdia = stringdia + quizhistorico[i + j];
+
+      quizmesesuso.push(moment(stringano + stringmes + stringdia, "YYYYMMDD").format('MMM'));
+      }
+
+  var quizmesesusolength = quizmesesuso.length;
+  var quizmesjan = 0;
+  var quizmesfev = 0;
+  var quizmesmar = 0;
+  var quizmesabr = 0;
+  var quizmesmai = 0;
+  var quizmesjun = 0;
+  var quizmesjul = 0;
+  var quizmesago = 0;
+  var quizmesset = 0;
+  var quizmesout = 0;
+  var quizmesnov = 0;
+  var quizmesdez = 0;
+
+  for (var i = 0; i < quizmesesusolength; i++)
+    switch (quizmesesuso[i])
+      {
+      case "Jan":
+        quizmesjan++;
+        break;
+      case "Feb":
+        quizmesfev++;
+        break;
+      case "Mar":
+        quizmesmar++;
+        break;
+      case "Apr":
+        quizmesabr++;
+        break;
+      case "May":
+        quizmesmai++;
+        break;
+      case "Jun":
+        quizmesjun++;
+        break;
+      case "Jul":
+        quizmesjul++;
+        break;
+      case "Aug":
+        quizmesago++;
+        break;
+      case "Sep":
+        quizmesset++;
+        break;
+      case "Oct":
+        quizmesout++;
+        break;
+      case "Nov":
+        quizmesnov++;
+        break;
+      case "Dec":
+        quizmesdez++;
+        break;
+      default:
+      }
+
+	elemtquizmesjan.style.height = (Math.ceil((quizmesjan / quizmesesuso.length) * quizgraficomensalheight)).toString() + "px";
+	elemtquizmesjan.style.backgroundColor = "green";
+
+	elemtquizmesfev.style.height = (Math.ceil((quizmesfev / quizmesesuso.length) * quizgraficomensalheight)).toString() + "px";
+	elemtquizmesfev.style.backgroundColor = "green";
+
+	elemtquizmesmar.style.height = (Math.ceil((quizmesmar / quizmesesuso.length) * quizgraficomensalheight)).toString() + "px";
+	elemtquizmesmar.style.backgroundColor = "green";
+
+	elemtquizmesabr.style.height = (Math.ceil((quizmesabr / quizmesesuso.length) * quizgraficomensalheight)).toString() + "px";
+	elemtquizmesabr.style.backgroundColor = "green";
+
+	elemtquizmesmai.style.height = (Math.ceil((quizmesmai / quizmesesuso.length) * quizgraficomensalheight)).toString() + "px";
+	elemtquizmesmai.style.backgroundColor = "green";
+
+	elemtquizmesjun.style.height = (Math.ceil((quizmesjun / quizmesesuso.length) * quizgraficomensalheight)).toString() + "px";
+	elemtquizmesjun.style.backgroundColor = "green";
+
+	elemtquizmesjul.style.height = (Math.ceil((quizmesjul / quizmesesuso.length) * quizgraficomensalheight)).toString() + "px";
+	elemtquizmesjul.style.backgroundColor = "green";
+
+	elemtquizmesago.style.height = (Math.ceil((quizmesago / quizmesesuso.length) * quizgraficomensalheight)).toString() + "px";
+	elemtquizmesago.style.backgroundColor = "green";
+
+	elemtquizmesset.style.height = (Math.ceil((quizmesset / quizmesesuso.length) * quizgraficomensalheight)).toString() + "px";
+	elemtquizmesset.style.backgroundColor = "green";
+
+	elemtquizmesout.style.height = (Math.ceil((quizmesout / quizmesesuso.length) * quizgraficomensalheight)).toString() + "px";
+	elemtquizmesout.style.backgroundColor = "green";
+
+	elemtquizmesnov.style.height = (Math.ceil((quizmesnov / quizmesesuso.length) * quizgraficomensalheight)).toString() + "px";
+	elemtquizmesnov.style.backgroundColor = "green";
+
+	elemtquizmesdez.style.height = (Math.ceil((quizmesdez / quizmesesuso.length) * quizgraficomensalheight)).toString() + "px";
+	elemtquizmesdez.style.backgroundColor = "green";
+
+	$('#quiz_mes_text').html("Janeiro: [ <font color=#00ff00>" + quizmesjan.toString() + "</font> | <font color=#00ff00>" + (quizmesjan / quizmesesusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Fevereiro: [ <font color=#00ff00>" + quizmesfev.toString() + "</font> | <font color=#00ff00>" + (quizmesfev / quizmesesusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Março: [ <font color=#00ff00>" + quizmesmar.toString() + "</font> | <font color=#00ff00>" + (quizmesmar / quizmesesusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Abril: [ <font color=#00ff00>" + quizmesabr.toString() + "</font> | <font color=#00ff00>" + (quizmesabr / quizmesesusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Maio: [ <font color=#00ff00>" + quizmesmai.toString() + "</font> | <font color=#00ff00>" + (quizmesmai / quizmesesusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Junho: [ <font color=#00ff00>" + quizmesjun.toString() + "</font> | <font color=#00ff00>" + (quizmesjun / quizmesesusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Julho: [ <font color=#00ff00>" + quizmesjul.toString() + "</font> | <font color=#00ff00>" + (quizmesjul / quizmesesusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Agosto: [ <font color=#00ff00>" + quizmesago.toString() + "</font> | <font color=#00ff00>" + (quizmesago / quizmesesusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Setembro: [ <font color=#00ff00>" + quizmesset.toString() + "</font> | <font color=#00ff00>" + (quizmesset / quizmesesusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Outubro: [ <font color=#00ff00>" + quizmesout.toString() + "</font> | <font color=#00ff00>" + (quizmesout / quizmesesusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Novembro: [ <font color=#00ff00>" + quizmesnov.toString() + "</font> | <font color=#00ff00>" + (quizmesnov / quizmesesusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Dezembro: [ <font color=#00ff00>" + quizmesdez.toString() + "</font> | <font color=#00ff00>" + (quizmesdez / quizmesesusolength * 100).toFixed(3).toString() + " %</font> ]");
+
+  $('#quizloadingmensalgif').empty();
+
+  flagquizgraficomensalquizhistorico = 0;
+  }
+
+function processarquiz()
+  {
+  var strquiz = document.getElementsByName('quiz_resposta');
+  var resposta;
+
+  if (quizflagupload == 1)
+    {
+    document.getElementById('quiz_resultado').value = "Por favor, espere o upload do arquivo de resultados ser concluído...";
+    quizacertosflag = 0;
+    quizerrosflag = 0;
+    quizwarnflag = 1;
+    quiziflashv = 0;
+    quiziflash = 101;
+    return;
+    }
+
+  if (flagquizgraficohorarioquizhistorico == 1)
+    {
+    document.getElementById('quiz_resultado').value = "Por favor, espere o processamento do gráfico horário ser concluído...";
+    quizacertosflag = 0;
+    quizerrosflag = 0;
+    quizwarnflag = 1;
+    quiziflashv = 0;
+    quiziflash = 101;
+    return;
+    }
+
+  if (flagquizgraficodiarioquizhistorico == 1)
+    {
+    document.getElementById('quiz_resultado').value = "Por favor, espere o processamento do gráfico diário ser concluído...";
+    quizacertosflag = 0;
+    quizerrosflag = 0;
+    quizwarnflag = 1;
+    quiziflashv = 0;
+    quiziflash = 101;
+    return;
+    }
+
+  if (flagquiz == 1)
+    {
+    document.getElementById('quiz_resultado').value = "Clique em uma nova pergunta.";
+    quizacertosflag = 0;
+    quizerrosflag = 0;
+    quizwarnflag = 1;
+    quiziflashv = 0;
+    quiziflash = 101;
+    return;
+    }
+
+  if (antoniovandrenumeronaturalpositivo(strdivquiz[0].value) == "e")
+    {
+    document.getElementById('quiz_resultado').value = "A dificuldade deve ser um inteiro positivo.";
+    quizacertosflag = 0;
+    quizerrosflag = 0;
+    quizwarnflag = 1;
+    quiziflashv = 0;
+    quiziflash = 101;
+    return;
+    }
+
+  if (parseInt(strdivquiz[0].value) > 20)
+    {
+    document.getElementById('quiz_resultado').value = "A dificuldade deve ser um inteiro positivo entre 1 e 20.";
+    quizacertosflag = 0;
+    quizerrosflag = 0;
+    quizwarnflag = 1;
+    quiziflashv = 0;
+    quiziflash = 101;
+    return;
+    }
+
+  if (antoniovandrenumeroreal(strquiz[0].value) == "e")
+    {
+    document.getElementById('quiz_resultado').value = "A resposta deve ser um número.";
+    quizacertosflag = 0;
+    quizerrosflag = 0;
+    quizwarnflag = 1;
+    quiziflashv = 0;
+    return;
+    }
+  else
+    resposta = parseFloat(strquiz[0].value);
+
+  switch (quiz_operador)
+    {
+    case (0):
+      if (quiz_argumento_1 + quiz_argumento_2 == resposta)
+        {
+        document.getElementById('quiz_resultado').value = "Muito bom. Acertou!";
+        quiznacertos++;
+        quizstracertos = "";
+        if (quiznacertos == 1)
+          quizstracertos = quiznacertos.toString() + " acerto."
+        else
+          quizstracertos = quiznacertos.toString() + " acertos.";
+        flagquiz = 1;
+        quizacertosflag = 1;
+        quizerrosflag = 0;
+        quizwarnflag = 0;
+        }
+      else
+        {
+        document.getElementById('quiz_resultado').value = "Acho que houve um equívoco. Podemos tentar novamente.";
+        quiznerros++;
+        quizstrerros = "";
+        if (quiznerros == 1)
+          quizstrerros = quiznerros.toString() + " erro."
+        else
+          quizstrerros = quiznerros.toString() + " erros.";
+        quizacertosflag = 0;
+        quizerrosflag = 1;
+        quizwarnflag = 0;
+        }
+      break;
+    case (1):
+      if (quiz_argumento_1 - quiz_argumento_2 == resposta)
+        {
+        document.getElementById('quiz_resultado').value = "Muito bom. Acertou!";
+        quiznacertos++;
+        quizstracertos = "";
+        if (quiznacertos == 1)
+          quizstracertos = quiznacertos.toString() + " acerto."
+        else
+          quizstracertos = quiznacertos.toString() + " acertos.";
+        flagquiz = 1;
+        quizacertosflag = 1;
+        quizerrosflag = 0;
+        quizwarnflag = 0;
+        }
+      else
+        {
+        document.getElementById('quiz_resultado').value = "Acho que houve um equívoco. Podemos tentar novamente.";
+        quiznerros++;
+        quizstrerros = "";
+        if (quiznerros == 1)
+          quizstrerros = quiznerros.toString() + " erro."
+        else
+          quizstrerros = quiznerros.toString() + " erros.";
+        quizacertosflag = 0;
+        quizerrosflag = 1;
+        quizwarnflag = 0;
+        }
+      break;
+    case (2):
+      if (quiz_argumento_1 * quiz_argumento_2 == resposta)
+        {
+        document.getElementById('quiz_resultado').value = "Muito bom. Acertou!";
+        quiznacertos++;
+        quizstracertos = "";
+        if (quiznacertos == 1)
+          quizstracertos = quiznacertos.toString() + " acerto."
+        else
+          quizstracertos = quiznacertos.toString() + " acertos.";
+        flagquiz = 1;
+        quizacertosflag = 1;
+        quizerrosflag = 0;
+        quizwarnflag = 0;
+        }
+      else
+        {
+        document.getElementById('quiz_resultado').value = "Acho que houve um equívoco. Podemos tentar novamente.";
+        quiznerros++;
+        quizstrerros = "";
+        if (quiznerros == 1)
+          quizstrerros = quiznerros.toString() + " erro."
+        else
+          quizstrerros = quiznerros.toString() + " erros.";
+        quizacertosflag = 0;
+        quizerrosflag = 1;
+        quizwarnflag = 0;
+        }
+      break;
+    case (3):
+      if (quiz_argumento_1 / quiz_argumento_2 == resposta)
+        {
+        document.getElementById('quiz_resultado').value = "Muito bom. Acertou!";
+        quiznacertos++;
+        quizstracertos = "";
+        if (quiznacertos == 1)
+          quizstracertos = quiznacertos.toString() + " acerto."
+        else
+          quizstracertos = quiznacertos.toString() + " acertos.";
+        flagquiz = 1;
+        quizacertosflag = 1;
+        quizerrosflag = 0;
+        quizwarnflag = 0;
+        }
+      else
+        {
+        document.getElementById('quiz_resultado').value = "Acho que houve um equívoco. Podemos tentar novamente.";
+        quiznerros++;
+        quizstrerros = "";
+        if (quiznerros == 1)
+          quizstrerros = quiznerros.toString() + " erro."
+        else
+          quizstrerros = quiznerros.toString() + " erros.";
+        quizacertosflag = 0;
+        quizerrosflag = 1;
+        quizwarnflag = 0;
+        }
+      break;
+    case (4):
+      if (Math.pow(quiz_argumento_1, quiz_argumento_2) == resposta)
+        {
+        document.getElementById('quiz_resultado').value = "Muito bom. Acertou!";
+        quiznacertos++;
+        quizstracertos = "";
+        if (quiznacertos == 1)
+          quizstracertos = quiznacertos.toString() + " acerto."
+        else
+          quizstracertos = quiznacertos.toString() + " acertos.";
+        flagquiz = 1;
+        quizacertosflag = 1;
+        quizerrosflag = 0;
+        quizwarnflag = 0;
+        }
+      else
+        {
+        document.getElementById('quiz_resultado').value = "Acho que houve um equívoco. Podemos tentar novamente.";
+        quiznerros++;
+        quizstrerros = "";
+        if (quiznerros == 1)
+          quizstrerros = quiznerros.toString() + " erro."
+        else
+          quizstrerros = quiznerros.toString() + " erros.";
+        quizacertosflag = 0;
+        quizerrosflag = 1;
+        quizwarnflag = 0;
+        }
+      break;
+    }
+
+  atualizar_score();
+
+  var respostacurrentdate = new Date(); 
+  var respostatempo = respostacurrentdate.getDate() + "/" + (respostacurrentdate.getMonth()+1)  + "/" + respostacurrentdate.getFullYear() + " @ " + respostacurrentdate.getHours() + ":" + respostacurrentdate.getMinutes() + ":" + respostacurrentdate.getSeconds();
+
+  respostacurrentdate = null;
+
+  if ((quizacertosflag == 1) || (quizerrosflag == 1)) {quizhistorico = quizhistorico + document.getElementById('quiz_pergunta').value + " Resposta: " + resposta.toString(); if (quizacertosflag == 1) quizhistorico = quizhistorico + ". Acertou."; if (quizerrosflag == 1) quizhistorico = quizhistorico + ". Errou."; quizhistorico = quizhistorico + " Em " + respostatempo + ".\n"};
+
+  if (quizgraficohorariodinamicochecked == 1) processargraficohorarioquizhistorico();
+  if (quizgraficodiariodinamicochecked == 1) processargraficodiarioquizhistorico();
+  if (quizgraficomensaldinamicochecked == 1) processargraficomensalquizhistorico();
+
+  // Finalizando o processo.
+
+  document.getElementById("quizmyform").reset();
+  document.getElementById('quizuploadtext').value = "Nenhum carregado.";
+  quizflagupload = 0;
+  quiziacertos = 0;
+  quizierros = 0;
+  quiziflashv = 0;
+  quiziflash = 101;
+  }
+
+// Download dos resultados.
+
+function quizdownload() {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent("Número de acertos: " + quiznacertos.toString() + ". Número de erros: " + quiznerros.toString() + ". MD5sum: " + md5(quizhistorico) + ".\n" + quizhistorico));
+  element.setAttribute('download', "Mathematical Ramblings quiz data.txt");
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
+document.getElementById("dwn-btn").addEventListener("click", function(){quizdownload();}, false);
+
+// Upload dos resultados.
+
+document.forms['quizmyform'].elements['quizmyfile'].onchange = function(evt)
+  {
+  quizflagupload = 1;
+
+  if(!window.FileReader)
+    {
+    document.forms['quizmyform'].elements['quizuploadtext'].value = "O navegador é incompatível."; quizflagupload = 0;
+    return;
+    }
+
+  var reader = new FileReader();
+
+  document.forms['quizmyform'].elements['quizuploadtext'].value = "Carregando. Favor aguardar...";
+
+  reader.onload = function(evt) {
+    if(evt.target.readyState != 2) return;
+    if(evt.target.error) {
+        document.forms['quizmyform'].elements['quizuploadtext'].value = "Erro ao carregar o arquivo.";
+        quizflagupload = 0;
+        return;
+    }
+
+    var filecontent = evt.target.result;
+    var filecontentarr2 = filecontent.split("\n");
+    var filecontentarr3 = antoniovandreremoverstrings(filecontentarr2[0], "Número de acertos: , Número de erros: , MD5sum: ");
+    var filecontentarr = filecontentarr3.split(".");
+    filecontentarr2.splice(0, 1);
+    quizhistorico = filecontentarr2.join("\n");
+    filecontentarr3 = null;
+    filecontentarr2 = null;
+    filecontent = null;
+
+    if ((filecontentarr.length != 4) || (antoniovandrecompararstrings(md5(quizhistorico), filecontentarr[2]) == "e"))
+      {
+      document.forms['quizmyform'].elements['quizuploadtext'].value = "Arquivo corrompido.";
+      quizflagupload = 0;
+      return;
+      }
+
+    if ((antoniovandrenumeronatural(filecontentarr[0].toString()) == "e") || (antoniovandrenumeronatural(filecontentarr[1].toString()) == "e"))
+      {
+      document.forms['quizmyform'].elements['quizuploadtext'].value = "Arquivo corrompido.";
+      quizflagupload = 0;
+      return;
+      }
+
+    quiznacertosp = quiznacertos;
+    quiznerrosp = quiznerros;
+
+    quiznacertos = parseInt(filecontentarr[0]);
+    quiznerros = parseInt(filecontentarr[1]);
+
+    quizstracertos = "";
+     if (quiznacertos == 1)
+       quizstracertos = quiznacertos.toString() + " acerto."
+     else
+       quizstracertos = quiznacertos.toString() + " acertos.";
+
+    quizstrerros = "";
+      if (quiznerros == 1)
+        quizstrerros = quiznerros.toString() + " erro."
+      else
+        quizstrerros = quiznerros.toString() + " erros.";
+
+    document.forms['quizmyform'].elements['quizuploadtext'].value = "Sucesso ao carregar.";
+
+    atualizar_score();
+    processargraficohorarioquizhistorico();
+    processargraficodiarioquizhistorico();
+    processargraficomensalquizhistorico();
+
+    quizflagupload = 0;
+  };
+
+  reader.readAsText(evt.target.files[0]);
+};
+</script></!doctype>
