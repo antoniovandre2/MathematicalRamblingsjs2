@@ -5,11 +5,11 @@
 
 Projeto Mathematical Ramblings (mathematicalramblings.blogspot.com).
 
-Código HTML do widget Quiz.
+Código HTML do widget Quiz. Específico para Antonio Vandré.
 
 Licença de uso: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA).
 
-Útima atualização: 21-03-2025. Otimizado para mobiles.
+Útima atualização: 21-03-2025.
 -->
 
 <script src="MathematicalRamblings.js"></script>
@@ -151,14 +151,12 @@ Pergunta:
 Sua resposta:
 <table border="1" width="100%"><tr><td><textarea style="width: 100%;resize: none" name="quiz_resposta" id="quiz_resposta" rows="1"></textarea></td></tr></table>
 <br><br>
-<input type="button" onclick="processarquiz()" value="Responder"> <input type="button" onclick="quiznovo()" value="Nova pergunta"> 
+<input type="button" onclick="processarquiz()" value="Responder (ENTER)" id="BotaoResponder"> <input type="button" onclick="quiznovo()" value="Nova pergunta (Ctrl + ENTER)" id="BotaoNovaPergunta"> 
 <br><br>
 Resultado:
 <table border="1" width="100%"><tr><td><textarea style="width: 100%; resize: none" name="quiz_resultado" id="quiz_resultado" readonly rows="3"></textarea></td></tr></table>
-<!--
 <br>
 <div name="quizestatdiv" id="quizestatdiv" class="quizestatdiv" style="border-radius: 5px;"> <br></div>
--->
 <br>
 <div name="quiznacertosdiv" id="quiznacertosdiv" class="quiznacertosdiv" style="font-family: 'Orbitron', sans-serif; color: rgb(0, 128, 0); border-radius: 5px;"></div>
 <br>
@@ -204,7 +202,7 @@ Frequência mensal:
 Dificuldade:
 <table border="1" width="100%"><tr><td><textarea style="width: 100%; overflow-y: scroll; resize: none" name="quiz_dificuldade" id="quiz_dificuldade" rows="1">1</textarea></td></tr></table>
 <br><br>
-<input type="button" id="dwn-btn" value="Download dos resultados">
+<input type="button" id="dwn-btn" value="Download dos resultados (Shift + ENTER)">
 <br><br>
 Upload dos seus resultados:
 <br>
@@ -217,6 +215,10 @@ Upload dos seus resultados:
 </form>
 
 <script>
+const quizgraficohorarioheight = 50;
+const quizgraficodiarioheight = 50;
+const quizgraficomensalheight = 50;
+
 var strdivquiz = document.getElementsByName('quiz_dificuldade');
 var quiz_argumento_1;
 var quiz_argumento_2;
@@ -253,9 +255,20 @@ var quizgraficodiariodinamicochecked = 1;
 var flagquizgraficomensalquizhistorico = 0;
 var quizgraficomensaldinamicochecked = 1;
 
-const quizgraficohorarioheight = 50;
-const quizgraficodiarioheight = 50;
-const quizgraficomensalheight = 50;
+
+document.addEventListener("keypress", function(event) {
+	if (event.key === "Enter")
+		{
+		if (event.ctrlKey)
+			document.getElementById("BotaoNovaPergunta").click();
+		else if (event.shiftKey)
+			document.getElementById("dwn-btn").click();
+		else
+			document.getElementById("BotaoResponder").click();
+		}
+	else if ((event.key === "r") || (event.key === "R"))
+		$("#quiz_resposta").focus();
+});
 
 // Barras de frequência horária de uso.
 
@@ -478,27 +491,17 @@ var elemtquizmesdezc = document.getElementById('quizmesdezbarc');
 elemtquizmesdez.style.height = quizgraficomensalheight.toString() + "px";
 elemtquizmesdezc.style.height = quizgraficomensalheight.toString() + "px";
 
-// var intervalacertosbg = setInterval(function() {quizacertosElement.style.backgroundImage = "linear-gradient(to right, #77ff77, #ffffff " + (quiziacertosdivbg).toString() + "%, #77ff77)"; if (quiziacertosdivbg == 0) quiziacertosfatorbg = 1; if (quiziacertosdivbg == 100) quiziacertosfatorbg = -1; quiziacertosdivbg += quiziacertosfatorbg;}, 30);
+var intervalacertosbg = setInterval(function() {quizacertosElement.style.backgroundImage = "linear-gradient(to right, #77ff77, #ffffff " + (quiziacertosdivbg).toString() + "%, #77ff77)"; if (quiziacertosdivbg == 0) quiziacertosfatorbg = 1; if (quiziacertosdivbg == 100) quiziacertosfatorbg = -1; quiziacertosdivbg += quiziacertosfatorbg;}, 30);
 
-quizacertosElement.style.backgroundImage = "linear-gradient(to right, #77ff77, #ffffff 0%, #77ff77)";
+var intervalerrosbg = setInterval(function() {quizerrosElement.style.backgroundImage = "linear-gradient(to right, #ff7777, #ffffff " + (quizierrosdivbg).toString() + "%, #ff7777)"; if (quizierrosdivbg == 0) quizierrosfatorbg = 1; if (quizierrosdivbg == 100) quizierrosfatorbg = -1; quizierrosdivbg += quizierrosfatorbg;}, 30);
 
-// var intervalerrosbg = setInterval(function() {quizerrosElement.style.backgroundImage = "linear-gradient(to right, #ff7777, #ffffff " + (quizierrosdivbg).toString() + "%, #ff7777)"; if (quizierrosdivbg == 0) quizierrosfatorbg = 1; if (quizierrosdivbg == 100) quizierrosfatorbg = -1; quizierrosdivbg += quizierrosfatorbg;}, 30);
+var intervalacertos = setInterval(function() {if (quiznacertos != quiznacertosp) {if (quiziacertos == 0) $(".quiznacertosdiv").empty(); if (quiziacertos < quizstracertos.length) {$(".quiznacertosdiv").append(quizstracertos[quiziacertos]); quiziacertos++} else {quiznacertosp = quiznacertos;}} else {quiziacertos = 0;}}, 50);
 
-quizerrosElement.style.backgroundImage = "linear-gradient(to right, #ff7777, #ffffff 0%, #ff7777)";
+var intervalerros = setInterval(function() {if (quiznerros != quiznerrosp) {if (quizierros == 0) $(".quiznerrosdiv").empty(); if (quizierros < quizstrerros.length) {$(".quiznerrosdiv").append(quizstrerros[quizierros]); quizierros++} else {quiznerrosp = quiznerros;}} else {quizierros = 0;}}, 50);
 
-// var intervalacertos = setInterval(function() {if (quiznacertos != quiznacertosp) {if (quiziacertos == 0) $(".quiznacertosdiv").empty(); if (quiziacertos < quizstracertos.length) {$(".quiznacertosdiv").append(quizstracertos[quiziacertos]); quiziacertos++} else {quiznacertosp = quiznacertos;}} else {quiziacertos = 0;}}, 50);
+var intervalflash = setInterval(function() {if (quiziflash <= 100) {quizestatElement.style.backgroundImage = ""; if (quizacertosflag == 1) quizestatElement.style.backgroundColor = "rgba(0, 255, 0, " + (1 - quiziflash / 100).toString() + ")"; if (quizerrosflag == 1) quizestatElement.style.backgroundColor = "rgba(255, 0, 0, " + (1 - quiziflash / 100).toString() + ")"; if (quizwarnflag == 1) quizestatElement.style.backgroundColor = "rgba(255, 255, 0, " + (1 - quiziflash / 100).toString() + ")"; quiziflash++;};}, 30);
 
-// var intervalerros = setInterval(function() {if (quiznerros != quiznerrosp) {if (quizierros == 0) $(".quiznerrosdiv").empty(); if (quizierros < quizstrerros.length) {$(".quiznerrosdiv").append(quizstrerros[quizierros]); quizierros++} else {quiznerrosp = quiznerros;}} else {quizierros = 0;}}, 50);
-
-function atualizar_score() {$(".quiznacertosdiv").empty(); $(".quiznacertosdiv").append(quizstracertos);
-
-$(".quiznerrosdiv").empty(); $(".quiznerrosdiv").append(quizstrerros);}
-
-atualizar_score();
-
-// var intervalflash = setInterval(function() {if (quiziflash <= 100) {quizestatElement.style.backgroundImage = ""; if (quizacertosflag == 1) quizestatElement.style.backgroundColor = "rgba(0, 255, 0, " + (1 - quiziflash / 100).toString() + ")"; if (quizerrosflag == 1) quizestatElement.style.backgroundColor = "rgba(255, 0, 0, " + (1 - quiziflash / 100).toString() + ")"; if (quizwarnflag == 1) quizestatElement.style.backgroundColor = "rgba(255, 255, 0, " + (1 - quiziflash / 100).toString() + ")"; quiziflash++;};}, 30);
-
-// var intervalflashv = setInterval(function() {if (quiziflashv <= 800) {quizestatElement.style.backgroundColor = ""; if (quizacertosflag == 1) quizestatElement.style.backgroundImage = "linear-gradient(to bottom, #00ff00, #ffffff " + quiziflashv.toString() + "%, #ffffff)"; if (quizerrosflag == 1) quizestatElement.style.backgroundImage = "linear-gradient(to bottom, #ff0000, #ffffff " + quiziflashv.toString() + "%, #ffffff)"; if (quizwarnflag == 1) quizestatElement.style.backgroundImage = "linear-gradient(to bottom, #ffff00, #ffffff " + quiziflashv.toString() + "%, #ffffff)"; quiziflashv += 50; if (quiziflashv > 800) quiziflash = 0;};}, 30);
+var intervalflashv = setInterval(function() {if (quiziflashv <= 800) {quizestatElement.style.backgroundColor = ""; if (quizacertosflag == 1) quizestatElement.style.backgroundImage = "linear-gradient(to bottom, #00ff00, #ffffff " + quiziflashv.toString() + "%, #ffffff)"; if (quizerrosflag == 1) quizestatElement.style.backgroundImage = "linear-gradient(to bottom, #ff0000, #ffffff " + quiziflashv.toString() + "%, #ffffff)"; if (quizwarnflag == 1) quizestatElement.style.backgroundImage = "linear-gradient(to bottom, #ffff00, #ffffff " + quiziflashv.toString() + "%, #ffffff)"; quiziflashv += 50; if (quiziflashv > 800) quiziflash = 0;};}, 30);
 
 function quiznovo()
   {
@@ -613,7 +616,7 @@ function processargraficohorarioquizhistorico()
   var quizhora22 = 0;
   var quizhora23 = 0;
 
-  for (var i = 0; i < quizhorasuso.length; i++)
+  for (var i = 0; i < quizhorasusolength; i++)
     switch (quizhorasuso[i])
       {
       case "0":
@@ -817,7 +820,7 @@ function processargraficodiarioquizhistorico()
   var quizdiasab = 0;
   var quizdiadom = 0;
 
-  for (var i = 0; i < quizdiasuso.length; i++)
+  for (var i = 0; i < quizdiasusolength; i++)
     switch (quizdiasuso[i])
       {
       case "Monday":
@@ -1083,6 +1086,7 @@ function processarquiz()
   if (antoniovandrenumeroreal(strquiz[0].value) == "e")
     {
     document.getElementById('quiz_resultado').value = "A resposta deve ser um número.";
+    document.getElementById('quiz_resposta').value = "";
     quizacertosflag = 0;
     quizerrosflag = 0;
     quizwarnflag = 1;
@@ -1112,6 +1116,7 @@ function processarquiz()
       else
         {
         document.getElementById('quiz_resultado').value = "Acho que houve um equívoco. Podemos tentar novamente.";
+		document.getElementById('quiz_resposta').value = "";
         quiznerros++;
         quizstrerros = "";
         if (quiznerros == 1)
@@ -1141,6 +1146,7 @@ function processarquiz()
       else
         {
         document.getElementById('quiz_resultado').value = "Acho que houve um equívoco. Podemos tentar novamente.";
+		document.getElementById('quiz_resposta').value = "";
         quiznerros++;
         quizstrerros = "";
         if (quiznerros == 1)
@@ -1170,6 +1176,7 @@ function processarquiz()
       else
         {
         document.getElementById('quiz_resultado').value = "Acho que houve um equívoco. Podemos tentar novamente.";
+		document.getElementById('quiz_resposta').value = "";
         quiznerros++;
         quizstrerros = "";
         if (quiznerros == 1)
@@ -1199,6 +1206,7 @@ function processarquiz()
       else
         {
         document.getElementById('quiz_resultado').value = "Acho que houve um equívoco. Podemos tentar novamente.";
+		document.getElementById('quiz_resposta').value = "";
         quiznerros++;
         quizstrerros = "";
         if (quiznerros == 1)
@@ -1228,6 +1236,7 @@ function processarquiz()
       else
         {
         document.getElementById('quiz_resultado').value = "Acho que houve um equívoco. Podemos tentar novamente.";
+		document.getElementById('quiz_resposta').value = "";
         quiznerros++;
         quizstrerros = "";
         if (quiznerros == 1)
@@ -1241,8 +1250,6 @@ function processarquiz()
       break;
     }
 
-  atualizar_score();
-
   var respostacurrentdate = new Date(); 
   var respostatempo = respostacurrentdate.getDate() + "/" + (respostacurrentdate.getMonth()+1)  + "/" + respostacurrentdate.getFullYear() + " @ " + respostacurrentdate.getHours() + ":" + respostacurrentdate.getMinutes() + ":" + respostacurrentdate.getSeconds();
 
@@ -1251,7 +1258,9 @@ function processarquiz()
   if ((quizacertosflag == 1) || (quizerrosflag == 1)) {quizhistorico = quizhistorico + document.getElementById('quiz_pergunta').value + " Resposta: " + resposta.toString(); if (quizacertosflag == 1) quizhistorico = quizhistorico + ". Acertou."; if (quizerrosflag == 1) quizhistorico = quizhistorico + ". Errou."; quizhistorico = quizhistorico + " Em " + respostatempo + ".\n"};
 
   if (quizgraficohorariodinamicochecked == 1) processargraficohorarioquizhistorico();
+
   if (quizgraficodiariodinamicochecked == 1) processargraficodiarioquizhistorico();
+
   if (quizgraficomensaldinamicochecked == 1) processargraficomensalquizhistorico();
 
   // Finalizando o processo.
@@ -1282,7 +1291,7 @@ function quizdownload() {
 
 document.getElementById("dwn-btn").addEventListener("click", function(){quizdownload();}, false);
 
-// Upload dos resultados.
+// Carregamento / upload dos resultados.
 
 document.forms['quizmyform'].elements['quizmyfile'].onchange = function(evt)
   {
@@ -1350,7 +1359,6 @@ document.forms['quizmyform'].elements['quizmyfile'].onchange = function(evt)
 
     document.forms['quizmyform'].elements['quizuploadtext'].value = "Sucesso ao carregar.";
 
-    atualizar_score();
     processargraficohorarioquizhistorico();
     processargraficodiarioquizhistorico();
     processargraficomensalquizhistorico();
@@ -1360,4 +1368,67 @@ document.forms['quizmyform'].elements['quizmyfile'].onchange = function(evt)
 
   reader.readAsText(evt.target.files[0]);
 };
+
+jQuery.get("https://antoniovandre2.github.io/antoniovandre2/Mathematical%20Ramblings%20quiz%20data.txt", function(text) {
+  quizflagupload = 1;
+
+  document.forms['quizmyform'].elements['quizuploadtext'].value = "Carregando. Favor aguardar...";
+
+    var filecontent = text;
+    var filecontentarr2 = filecontent.split("\n");
+    var filecontentarr3 = antoniovandreremoverstrings(filecontentarr2[0], "Número de acertos: , Número de erros: , MD5sum: ");
+    var filecontentarr = filecontentarr3.split(".");
+    filecontentarr2.splice(0, 1);
+    quizhistorico = filecontentarr2.join("\n");
+    filecontentarr3 = null;
+    filecontentarr2 = null;
+    filecontent = null;
+
+    if ((filecontentarr.length != 4) || (antoniovandrecompararstrings(md5(quizhistorico), filecontentarr[2]) == "e"))
+      {
+      document.forms['quizmyform'].elements['quizuploadtext'].value = "Arquivo corrompido.";
+      quizflagupload = 0;
+      return;
+      }
+
+    if ((antoniovandrenumeronatural(filecontentarr[0].toString()) == "e") || (antoniovandrenumeronatural(filecontentarr[1].toString()) == "e"))
+      {
+      document.forms['quizmyform'].elements['quizuploadtext'].value = "Arquivo corrompido.";
+      quizflagupload = 0;
+      return;
+      }
+
+    quiznacertosp = quiznacertos;
+    quiznerrosp = quiznerros;
+
+    quiznacertos = parseInt(filecontentarr[0]);
+    quiznerros = parseInt(filecontentarr[1]);
+
+    quizstracertos = "";
+     if (quiznacertos == 1)
+       quizstracertos = quiznacertos.toString() + " acerto."
+     else
+       quizstracertos = quiznacertos.toString() + " acertos.";
+
+    quizstrerros = "";
+      if (quiznerros == 1)
+        quizstrerros = quiznerros.toString() + " erro."
+      else
+        quizstrerros = quiznerros.toString() + " erros.";
+
+    document.forms['quizmyform'].elements['quizuploadtext'].value = "Sucesso ao carregar do GitHub.";
+
+	processargraficohorarioquizhistorico();
+	processargraficodiarioquizhistorico();
+	processargraficomensalquizhistorico()
+
+	quizflagupload = 0;
+
+    return;
+  }).fail(function() {
+    document.forms['quizmyform'].elements['quizuploadtext'].value = "Erro ao carregar o arquivo.";
+    quizflagupload = 0;
+    return;
+});
+
 </script></!doctype>

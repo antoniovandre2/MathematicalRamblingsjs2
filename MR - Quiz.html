@@ -172,6 +172,8 @@ Frequência horária de uso:
 <br><center>100%</center>
 </div>
 <br><br>
+<div id="quiz_hora_text" name="quiz_hora_text" style="background: #000000; border-radius: 10px; color: white; font-family: Courier New; font-size: 12px; margin: auto; padding: 10px; text-aligh: left; width: 90%;"></div>
+<br><br>
 Frequência diária semanal:
 <br><br>
 <div style="font-family: 'Orbitron', sans-serif; color: rgb(0, 0, 0); border-radius: 20px; background-image: linear-gradient(to right bottom, #bbbbbb, #eeeeee); position: relative;">
@@ -182,6 +184,8 @@ Frequência diária semanal:
 <br><center>100%</center>
 </div>
 <br><br>
+<div id="quiz_dia_text" name="quiz_dia_text" style="background: #000000; border-radius: 10px; color: white; font-family: Courier New; font-size: 12px; margin: auto; padding: 10px; text-aligh: left; width: 90%;"></div>
+<br><br>
 Frequência mensal:
 <br><br>
 <div style="background-image: linear-gradient(to right bottom, #bbbbbb, #eeeeee); border-radius: 20px; color: black; font-family: 'Orbitron', sans-serif; position: relative;">
@@ -190,6 +194,9 @@ Frequência mensal:
 <center>0%</center><br>
 <center><table style="border-collapse: collapse;"><tr><td style="text-align: left; vertical-align: center; width: 100px;">Janeiro</td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesjanbarc" style="width: 5px;"><div id="quizmesjanbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesfevbarc" style="width: 5px;"><div id="quizmesfevbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesmarbarc" style="width: 5px;"><div id="quizmesmarbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesabrbarc" style="width: 5px;"><div id="quizmesabrbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesmaibarc" style="width: 5px;"><div id="quizmesmaibar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesjunbarc" style="width: 5px;"><div id="quizmesjunbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesjulbarc" style="width: 5px;"><div id="quizmesjulbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesagobarc" style="width: 5px;"><div id="quizmesagobar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmessetbarc" style="width: 5px;"><div id="quizmessetbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesoutbarc" style="width: 5px;"><div id="quizmesoutbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesnovbarc" style="width: 5px;"><div id="quizmesnovbar"></div></div></td><td style="border: 1px solid black; vertical-align: top;"><div id="quizmesdezbarc" style="width: 5px;"><div id="quizmesdezbar"></div></div></td><td style="text-align: right; vertical-align: center; width: 100px;">Dezembro</td></tr></table></center>
 <br><center>100%</center>
+</div>
+<br><br>
+<div id="quiz_mes_text" name="quiz_mes_text" style="background: #000000; border-radius: 10px; color: white; font-family: Courier New; font-size: 12px; margin: auto; padding: 10px; text-aligh: left; width: 90%;"></div>
 </div>
 <br><br>
 Dificuldade:
@@ -582,6 +589,7 @@ function processargraficohorarioquizhistorico()
       if (quizhistorico[i + 3] == ":") {quizhorasuso.push(quizhistorico[i + 2]);} else {quizhorasuso.push(quizhistorico[i + 2] + quizhistorico[i + 3]);}
       }
 
+  var quizhorasusolength = quizhorasuso.length;
   var quizhora0 = 0;
   var quizhora1 = 0;
   var quizhora2 = 0;
@@ -757,6 +765,8 @@ function processargraficohorarioquizhistorico()
 	elemtquizhora23.style.height = (Math.floor((quizhora23 / quizhorasuso.length) * quizgraficohorarioheight)).toString() + "px";
 	elemtquizhora23.style.backgroundColor = "green";
 
+	$('#quiz_hora_text').html("00 h: [ <font color=#00ff00>" + quizhora0.toString() + "</font> | <font color=#00ff00>" + (quizhora0 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "01 h: [ <font color=#00ff00>" + quizhora1.toString() + "</font> | <font color=#00ff00>" + (quizhora1 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "02 h: [ <font color=#00ff00>" + quizhora2.toString() + "</font> | <font color=#00ff00>" + (quizhora2 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "03 h: [ <font color=#00ff00>" + quizhora3.toString() + "</font> | <font color=#00ff00>" + (quizhora3 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "04 h: [ <font color=#00ff00>" + quizhora4.toString() + "</font> | <font color=#00ff00>" + (quizhora4 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "05 h: [ <font color=#00ff00>" + quizhora5.toString() + "</font> | <font color=#00ff00>" + (quizhora5 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "06 h: [ <font color=#00ff00>" + quizhora6.toString() + "</font> | <font color=#00ff00>" + (quizhora6 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "07 h: [ <font color=#00ff00>" + quizhora7.toString() + "</font> | <font color=#00ff00>" + (quizhora7 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "08 h: [ <font color=#00ff00>" + quizhora8.toString() + "</font> | <font color=#00ff00>" + (quizhora8 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "09 h: [ <font color=#00ff00>" + quizhora9.toString() + "</font> | <font color=#00ff00>" + (quizhora9 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "10 h: [ <font color=#00ff00>" + quizhora10.toString() + "</font> | <font color=#00ff00>" + (quizhora10 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "11 h: [ <font color=#00ff00>" + quizhora11.toString() + "</font> | <font color=#00ff00>" + (quizhora11 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "12 h: [ <font color=#00ff00>" + quizhora12.toString() + "</font> | <font color=#00ff00>" + (quizhora12 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "13 h: [ <font color=#00ff00>" + quizhora13.toString() + "</font> | <font color=#00ff00>" + (quizhora13 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "14 h: [ <font color=#00ff00>" + quizhora14.toString() + "</font> | <font color=#00ff00>" + (quizhora14 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "15 h: [ <font color=#00ff00>" + quizhora15.toString() + "</font> | <font color=#00ff00>" + (quizhora15 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "16 h: [ <font color=#00ff00>" + quizhora16.toString() + "</font> | <font color=#00ff00>" + (quizhora16 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "17 h: [ <font color=#00ff00>" + quizhora17.toString() + "</font> | <font color=#00ff00>" + (quizhora17 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "18 h: [ <font color=#00ff00>" + quizhora18.toString() + "</font> | <font color=#00ff00>" + (quizhora18 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "19 h: [ <font color=#00ff00>" + quizhora19.toString() + "</font> | <font color=#00ff00>" + (quizhora19 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "20 h: [ <font color=#00ff00>" + quizhora20.toString() + "</font> | <font color=#00ff00>" + (quizhora20 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "21 h: [ <font color=#00ff00>" + quizhora21.toString() + "</font> | <font color=#00ff00>" + (quizhora21 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "22 h: [ <font color=#00ff00>" + quizhora22.toString() + "</font> | <font color=#00ff00>" + (quizhora22 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "23 h: [ <font color=#00ff00>" + quizhora23.toString() + "</font> | <font color=#00ff00>" + (quizhora23 / quizhorasusolength * 100).toFixed(3).toString() + " %</font> ]");
+
   $('#quizloadinghorariogif').empty();
 
   flagquizgraficohorarioquizhistorico = 0;
@@ -800,6 +810,7 @@ function processargraficodiarioquizhistorico()
       quizdiasuso.push(moment(stringano + stringmes + stringdia, "YYYYMMDD").format('dddd'));
       }
 
+  var quizdiasusolength = quizdiasuso.length;
   var quizdiaseg = 0;
   var quizdiater = 0;
   var quizdiaqua = 0;
@@ -855,6 +866,8 @@ function processargraficodiarioquizhistorico()
 
 	elemtquizdiadom.style.height = (Math.floor((quizdiadom / quizdiasuso.length) * quizgraficodiarioheight)).toString() + "px";
 	elemtquizdiadom.style.backgroundColor = "green";
+
+	$('#quiz_dia_text').html("Segunda-feira: [ <font color=#00ff00>" + quizdiaseg.toString() + "</font> | <font color=#00ff00>" + (quizdiaseg / quizdiasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Terça-feira: [ <font color=#00ff00>" + quizdiater.toString() + "</font> | <font color=#00ff00>" + (quizdiater / quizdiasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Quarta-feira: [ <font color=#00ff00>" + quizdiaqua.toString() + "</font> | <font color=#00ff00>" + (quizdiaqua / quizdiasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Quinta-feira: [ <font color=#00ff00>" + quizdiaqui.toString() + "</font> | <font color=#00ff00>" + (quizdiaqui / quizdiasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Sexta-feira: [ <font color=#00ff00>" + quizdiasex.toString() + "</font> | <font color=#00ff00>" + (quizdiasex / quizdiasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Sábado: [ <font color=#00ff00>" + quizdiasab.toString() + "</font> | <font color=#00ff00>" + (quizdiasab / quizdiasusolength * 100).toFixed(3).toString() + " %</font> ]<br>" + "Domingo: [ <font color=#00ff00>" + quizdiadom.toString() + "</font> | <font color=#00ff00>" + (quizdiadom / quizdiasusolength * 100).toFixed(3).toString() + " %</font> ]");
 
   $('#quizloadingdiariogif').empty();
 
