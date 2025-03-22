@@ -2,11 +2,8 @@ Projeto Mathematical Ramblings.
 
 Índice de obras.
 
-Última atualização: 17-03-2025.
-
-As sessões são separadas por "_____", as subseções por "__".
-
-Na primeira subseção há o enunciado e/ou título do conteúdo, na segunda o caminho dentro do diretório "Mathematical Ramblings - Public", na terceira, se existir, se o conteúdo está publicado em "mathematicalramblings.blogspot.com".____________________
+Última atualização: 22-03-2025.
+____________________
 
 Determinante de matrizes de elementos consecutivos.
 _____
@@ -7482,4 +7479,16 @@ Meme: I love linear aplications. Me too.
 __
 
 Media/Memes/Mathematical Ramblings - 31-12-2024 - 1.png
+_____
+
+Sejam $A_1, \dots , A_r$ vetores não nulos perpendiculares dois a dois, $\{A_1, \dots , A_r\}$ é linearmente independente.
+__
+
+Artigos/Mathematical Ramblings - 21-03-2025 - 1.pdf
+_____
+
+Seja $\theta$ o ângulo entre dois vetores não nulos $u$ e $v$, se $\cos \theta = 1$, $u$ e $v$ possuem o mesmo sentido; se $\cos \theta = -1$, $u$ e $v$ possuem sentidos opostos.
+__
+
+Artigos/Mathematical Ramblings - 22-03-2025 - 1.pdf
 _____
