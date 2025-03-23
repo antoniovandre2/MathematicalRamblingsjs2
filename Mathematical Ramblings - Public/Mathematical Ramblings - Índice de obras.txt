@@ -2,7 +2,7 @@ Projeto Mathematical Ramblings.
 
 Índice de obras.
 
-Última atualização: 22-03-2025.
+Última atualização: 23-03-2025.
 ____________________
 
 Determinante de matrizes de elementos consecutivos.
@@ -7491,4 +7491,10 @@ Seja $\theta$ o ângulo entre dois vetores não nulos $u$ e $v$, se $\cos \theta
 __
 
 Artigos/Mathematical Ramblings - 22-03-2025 - 1.pdf
+_____
+
+Sejam $A$, $B$ e $C$ pontos, e $d(Y, X) = ||Y - X||$ a distância entre os pontos $Y$ e $X$, $d(B, A) \le d(C, B) + d(C, A)$.
+__
+
+Artigos/Mathematical Ramblings - 23-03-2025 - 1.pdf
 _____
