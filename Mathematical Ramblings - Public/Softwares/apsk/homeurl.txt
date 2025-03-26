@@ -1,3 +1,0 @@
-# Homepage do App.
-
-https://antoniovandre2.github.io/MathematicalRamblingsjs2/
